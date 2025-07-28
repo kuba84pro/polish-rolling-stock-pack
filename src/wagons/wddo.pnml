@@ -1,0 +1,198 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* Wddo sprites */
+spriteset(sset_wddo_purchase, "gfx/wddo.png")       { tmpl_sprite_purchase(4, 100) }
+spriteset(sset_wddo_empty, "gfx/wddo.png")          { tmpl_sprite_train(4, 20) }
+spriteset(sset_wddo_half, "gfx/wddo.png")           { tmpl_sprite_train(4, 120) }
+spriteset(sset_wddo_full, "gfx/wddo.png")           { tmpl_sprite_train(4, 200) }
+spriteset(sset_wddo_wood_half, "gfx/wddo.png")      { tmpl_sprite_train(4, 280) }
+spriteset(sset_wddo_wood_full, "gfx/wddo.png")      { tmpl_sprite_train(4, 360) }
+spriteset(sset_wddo_wdpr_half, "gfx/wddo.png")      { tmpl_sprite_train(4, 440) }
+spriteset(sset_wddo_wdpr_full, "gfx/wddo.png")      { tmpl_sprite_train(4, 520) }
+#ifdef ZOOM_SPRITES_ENABLED
+alternative_sprites(sset_wddo_empty,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/wddo-x2.png")    { tmpl_sprite_train_x2(8, 40) }
+alternative_sprites(sset_wddo_half,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/wddo-x2.png")    { tmpl_sprite_train_x2(8, 200) }
+alternative_sprites(sset_wddo_full,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/wddo-x2.png")    { tmpl_sprite_train_x2(8, 360) }
+alternative_sprites(sset_wddo_wood_half,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/wddo-x2.png")    { tmpl_sprite_train_x2(8, 520) }
+alternative_sprites(sset_wddo_wood_full,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/wddo-x2.png")    { tmpl_sprite_train_x2(8, 680) }
+alternative_sprites(sset_wddo_wdpr_half,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/wddo-x2.png")    { tmpl_sprite_train_x2(8, 840) }
+alternative_sprites(sset_wddo_wdpr_full,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/wddo-x2.png")    { tmpl_sprite_train_x2(8, 1000) }
+#endif
+spritegroup sgroup_wddo {
+    loaded:     [sset_wddo_empty, sset_wddo_half, sset_wddo_full];
+    loading:    [sset_wddo_empty, sset_wddo_half, sset_wddo_full];
+}
+spritegroup sgroup_wddo_wood {
+    loaded:     [sset_wddo_empty, sset_wddo_wood_half, sset_wddo_wood_full];
+    loading:    [sset_wddo_empty, sset_wddo_wood_half, sset_wddo_wood_full];
+}
+spritegroup sgroup_wddo_wdpr {
+    loaded:     [sset_wddo_empty, sset_wddo_wdpr_half, sset_wddo_wdpr_full];
+    loading:    [sset_wddo_empty, sset_wddo_wdpr_half, sset_wddo_wdpr_full];
+}
+/* Wddoh sprites */
+spriteset(sset_wddoh_purchase, "gfx/wddo.png")      { tmpl_sprite_purchase(124, 100) }
+spriteset(sset_wddoh_empty, "gfx/wddo.png")         { tmpl_sprite_train(4, 60) }
+spriteset(sset_wddoh_half, "gfx/wddo.png")          { tmpl_sprite_train(4, 160) }
+spriteset(sset_wddoh_full, "gfx/wddo.png")          { tmpl_sprite_train(4, 240) }
+spriteset(sset_wddoh_wood_half, "gfx/wddo.png")     { tmpl_sprite_train(4, 320) }
+spriteset(sset_wddoh_wood_full, "gfx/wddo.png")     { tmpl_sprite_train(4, 400) }
+spriteset(sset_wddoh_wdpr_half, "gfx/wddo.png")     { tmpl_sprite_train(4, 480) }
+spriteset(sset_wddoh_wdpr_full, "gfx/wddo.png")     { tmpl_sprite_train(4, 560) }
+#ifdef ZOOM_SPRITES_ENABLED
+alternative_sprites(sset_wddoh_empty,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/wddo-x2.png")    { tmpl_sprite_train_x2(8, 120) }
+alternative_sprites(sset_wddoh_half,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/wddo-x2.png")    { tmpl_sprite_train_x2(8, 280) }
+alternative_sprites(sset_wddoh_full,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/wddo-x2.png")    { tmpl_sprite_train_x2(8, 440) }
+alternative_sprites(sset_wddoh_wood_half,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/wddo-x2.png")    { tmpl_sprite_train_x2(8, 600) }
+alternative_sprites(sset_wddoh_wood_full,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/wddo-x2.png")    { tmpl_sprite_train_x2(8, 760) }
+alternative_sprites(sset_wddoh_wdpr_half,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/wddo-x2.png")    { tmpl_sprite_train_x2(8, 920) }
+alternative_sprites(sset_wddoh_wdpr_full,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/wddo-x2.png")    { tmpl_sprite_train_x2(8, 1080) }
+#endif
+spritegroup sgroup_wddoh {
+    loaded:     [sset_wddoh_empty, sset_wddoh_half, sset_wddoh_full];
+    loading:    [sset_wddoh_empty, sset_wddoh_half, sset_wddoh_full];
+}
+spritegroup sgroup_wddoh_wood {
+    loaded:     [sset_wddoh_empty, sset_wddoh_wood_half, sset_wddoh_wood_full];
+    loading:    [sset_wddoh_empty, sset_wddoh_wood_half, sset_wddoh_wood_full];
+}
+spritegroup sgroup_wddoh_wdpr {
+    loaded:     [sset_wddoh_empty, sset_wddoh_wdpr_half, sset_wddoh_wdpr_full];
+    loading:    [sset_wddoh_empty, sset_wddoh_wdpr_half, sset_wddoh_wdpr_full];
+}
+
+/* Wddo(h) switches */
+switch(FEAT_TRAINS, SELF, switch_wddoh_capacity, cargo_type_in_veh) {
+    WOOD: return 18;
+    WDPR: return 18;
+    return CB_FAILED;
+}
+switch(FEAT_TRAINS, SELF, switch_wddoh_loading_speed, cargo_type_in_veh) {
+    WOOD: return 3;
+    WDPR: return 3;     // 6 ticks
+    return CB_FAILED;   // 5 ticks
+}
+WAGON_RUNNING_COST_SWITCH(WDDOH, RUNNING_COST_CARGO_SMALL)
+
+/* Define the wagon without the break */
+item(FEAT_TRAINS, item_wddo, 20001) {
+    property {
+		/* common properties */
+        name:                           string(STR_WDDO_NAME);
+        variant_group:                  20000;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              PKP_INTRODUCTION_DATE;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_NORMAL_OPEN_WAGON_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_WDDO;
+        running_cost_factor:            RUNNING_COST_CARGO_NO_BRAKE;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          65 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 21;
+        weight:                         11 ton;
+        length:                         6;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_CARGO_WAGON);
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+	}
+} else {
+    property {
+        model_life:                     66;
+		retire_early:                   16;
+	}
+}
+
+    graphics {
+        WOOD:                       sgroup_wddo_wood;
+        WDPR:                       sgroup_wddo_wdpr;
+        purchase:                   sset_wddo_purchase;
+		additional_text:            return string(STR_PURCHASE_DESCR_2L, string(STR_BRAKE_NONE), string(STR_CAPACITY_NON_FRIABLE));
+        default:                    sgroup_wddo;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_wddoh_capacity;
+        loading_speed:              switch_wddoh_loading_speed;
+        colour_mapping:             switch_bulk_recolour;
+    }
+}
+
+/* Define the wagon with the break */
+item(FEAT_TRAINS, item_wddoh, 20002) {
+    property {
+		/* common properties */
+        name:                           string(STR_WDDOH_NAME);
+        variant_group:                  20000;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              PKP_INTRODUCTION_DATE;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_NORMAL_OPEN_WAGON_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_WDDOH;
+//        running_cost_factor:            RUNNING_COST_CARGO_SMALL+RUNNING_COST_BRAKEMAN;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          65 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 21;
+        weight:                         12 ton;
+        length:                         7;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_CARGO_WAGON);
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+	}
+} else {
+    property {
+        model_life:                     66;
+		retire_early:                   16;
+	}
+}
+
+    graphics {
+        WOOD:                       sgroup_wddoh_wood;
+        WDPR:                       sgroup_wddoh_wdpr;
+        purchase:                   sset_wddoh_purchase;
+		additional_text:            return string(STR_PURCHASE_DESCR_2L, string(STR_BRAKE_HAND), string(STR_CAPACITY_NON_FRIABLE));
+        default:                    sgroup_wddoh;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_wddoh_capacity;
+        loading_speed:              switch_wddoh_loading_speed;
+        colour_mapping:             switch_bulk_recolour;
+        WAGON_RUNNING_COST_CALLBACKS(WDDOH, RUNNING_COST_CARGO_SMALL)
+    }
+}

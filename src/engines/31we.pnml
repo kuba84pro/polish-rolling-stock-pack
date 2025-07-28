@@ -1,0 +1,444 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, GPL 2.0
+
+/* 31WE sprites */
+// KD //
+spriteset(sset_31we_purchase, "gfx/31we-kd.png")   { tmpl_sprite_purchase(4, 180) }
+spriteset(sset_31we_advert, "gfx/31we-kd.png")   { tmpl_sprite_advertisement200(4, 360) }
+spriteset(sset_31we_head_kd, "gfx/31we-kd.png")       { tmpl_sprite_train12(4, 20) }
+spriteset(sset_31we_mid_kd, "gfx/31we-kd.png")        { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_31we_mid2_kd, "gfx/31we-kd.png")       { tmpl_sprite_train10_offset(4, 100, 1) }
+spriteset(sset_31we_tail_kd, "gfx/31we-kd.png")       { tmpl_sprite_train12_offset(4, 140, 1) }
+spriteset(sset_31we_head_kd_open, "gfx/31we-kd.png")  { tmpl_sprite_train12(4, 200) }
+spriteset(sset_31we_mid_kd_open, "gfx/31we-kd.png")   { tmpl_sprite_train10_offset(4, 240, 1) }
+spriteset(sset_31we_mid2_kd_open, "gfx/31we-kd.png")  { tmpl_sprite_train10_offset(4, 280, 1) }
+spriteset(sset_31we_tail_kd_open, "gfx/31we-kd.png")  { tmpl_sprite_train12_offset(4, 320, 1) }
+// KML //
+spriteset(sset_en78_purchase_kml, "gfx/en78-kml.png")   { tmpl_sprite_purchase(4, 180) }
+spriteset(sset_en78_advert_kml, "gfx/en78-kml.png")   { tmpl_sprite_advertisement200(4, 360) }
+spriteset(sset_en78_head_kml, "gfx/en78-kml.png")       { tmpl_sprite_train12(4, 20) }
+spriteset(sset_en78_mid_kml, "gfx/en78-kml.png")        { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_en78_mid2_kml, "gfx/en78-kml.png")       { tmpl_sprite_train10_offset(4, 100, 1) }
+spriteset(sset_en78_tail_kml, "gfx/en78-kml.png")       { tmpl_sprite_train12_offset(4, 140, 1) }
+spriteset(sset_en78_head_kml_open, "gfx/en78-kml.png")  { tmpl_sprite_train12(4, 200) }
+spriteset(sset_en78_mid_kml_open, "gfx/en78-kml.png")   { tmpl_sprite_train10_offset(4, 240, 1) }
+spriteset(sset_en78_mid2_kml_open, "gfx/en78-kml.png")  { tmpl_sprite_train10_offset(4, 280, 1) }
+spriteset(sset_en78_tail_kml_open, "gfx/en78-kml.png")  { tmpl_sprite_train12_offset(4, 320, 1) }
+// ZACH-POM //
+spriteset(sset_ed78_purchase_zach_pom, "gfx/ed78-zach-pom.png")   { tmpl_sprite_purchase(4, 180) }
+spriteset(sset_ed78_advert_zach_pom, "gfx/ed78-zach-pom.png")   { tmpl_sprite_advertisement200(4, 360) }
+spriteset(sset_ed78_head_zach_pom, "gfx/ed78-zach-pom.png")       { tmpl_sprite_train12(4, 20) }
+spriteset(sset_ed78_mid_zach_pom, "gfx/ed78-zach-pom.png")        { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_ed78_mid2_zach_pom, "gfx/ed78-zach-pom.png")       { tmpl_sprite_train10_offset(4, 100, 1) }
+spriteset(sset_ed78_tail_zach_pom, "gfx/ed78-zach-pom.png")       { tmpl_sprite_train12_offset(4, 140, 1) }
+spriteset(sset_ed78_head_zach_pom_open, "gfx/ed78-zach-pom.png")  { tmpl_sprite_train12(4, 200) }
+spriteset(sset_ed78_mid_zach_pom_open, "gfx/ed78-zach-pom.png")   { tmpl_sprite_train10_offset(4, 240, 1) }
+spriteset(sset_ed78_mid2_zach_pom_open, "gfx/ed78-zach-pom.png")  { tmpl_sprite_train10_offset(4, 280, 1) }
+spriteset(sset_ed78_tail_zach_pom_open, "gfx/ed78-zach-pom.png")  { tmpl_sprite_train12_offset(4, 320, 1) }
+// ZACH-POM "DUMA POMORZA" //
+spriteset(sset_ed78_purchase_zach_pom_duma, "gfx/ed78-zach-pom-duma.png")   { tmpl_sprite_purchase(4, 180) }
+spriteset(sset_ed78_advert_zach_pom_duma, "gfx/ed78-zach-pom-duma.png")   { tmpl_sprite_advertisement200(4, 360) }
+spriteset(sset_ed78_head_zach_pom_duma, "gfx/ed78-zach-pom-duma.png")       { tmpl_sprite_train12(4, 20) }
+spriteset(sset_ed78_mid_zach_pom_duma, "gfx/ed78-zach-pom-duma.png")        { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_ed78_mid2_zach_pom_duma, "gfx/ed78-zach-pom-duma.png")       { tmpl_sprite_train10_offset(4, 100, 1) }
+spriteset(sset_ed78_tail_zach_pom_duma, "gfx/ed78-zach-pom-duma.png")       { tmpl_sprite_train12_offset(4, 140, 1) }
+spriteset(sset_ed78_head_zach_pom_duma_open, "gfx/ed78-zach-pom-duma.png")  { tmpl_sprite_train12(4, 200) }
+spriteset(sset_ed78_mid_zach_pom_duma_open, "gfx/ed78-zach-pom-duma.png")   { tmpl_sprite_train10_offset(4, 240, 1) }
+spriteset(sset_ed78_mid2_zach_pom_duma_open, "gfx/ed78-zach-pom-duma.png")  { tmpl_sprite_train10_offset(4, 280, 1) }
+spriteset(sset_ed78_tail_zach_pom_duma_open, "gfx/ed78-zach-pom-duma.png")  { tmpl_sprite_train12_offset(4, 320, 1) }
+// KD //
+spritegroup sgroup_31we_head_kd {
+    loaded:     [sset_31we_head_kd];
+    loading:    [sset_31we_head_kd_open];
+}
+spritegroup sgroup_31we_mid_kd {
+    loaded:     [sset_31we_mid_kd];
+    loading:    [sset_31we_mid_kd_open];
+}
+spritegroup sgroup_31we_mid2_kd {
+    loaded:     [sset_31we_mid2_kd];
+    loading:    [sset_31we_mid2_kd_open];
+}
+spritegroup sgroup_31we_tail_kd {
+    loaded:     [sset_31we_tail_kd];
+    loading:    [sset_31we_tail_kd_open];
+}
+// KML //
+spritegroup sgroup_en78_head_kml {
+    loaded:     [sset_en78_head_kml];
+    loading:    [sset_en78_head_kml_open];
+}
+spritegroup sgroup_en78_mid_kml {
+    loaded:     [sset_en78_mid_kml];
+    loading:    [sset_en78_mid_kml_open];
+}
+spritegroup sgroup_en78_mid2_kml {
+    loaded:     [sset_en78_mid2_kml];
+    loading:    [sset_en78_mid2_kml_open];
+}
+spritegroup sgroup_en78_tail_kml {
+    loaded:     [sset_en78_tail_kml];
+    loading:    [sset_en78_tail_kml_open];
+}
+// ZACH POM //
+spritegroup sgroup_ed78_head_zach_pom {
+    loaded:     [sset_ed78_head_zach_pom];
+    loading:    [sset_ed78_head_zach_pom_open];
+}
+spritegroup sgroup_ed78_mid_zach_pom {
+    loaded:     [sset_ed78_mid_zach_pom];
+    loading:    [sset_ed78_mid_zach_pom_open];
+}
+spritegroup sgroup_ed78_mid2_zach_pom {
+    loaded:     [sset_ed78_mid2_zach_pom];
+    loading:    [sset_ed78_mid2_zach_pom_open];
+}
+spritegroup sgroup_ed78_tail_zach_pom {
+    loaded:     [sset_ed78_tail_zach_pom];
+    loading:    [sset_ed78_tail_zach_pom_open];
+}
+// ZACH POM "DUMA POMORZA" //
+spritegroup sgroup_ed78_head_zach_pom_duma {
+    loaded:     [sset_ed78_head_zach_pom_duma];
+    loading:    [sset_ed78_head_zach_pom_duma_open];
+}
+spritegroup sgroup_ed78_mid_zach_pom_duma {
+    loaded:     [sset_ed78_mid_zach_pom_duma];
+    loading:    [sset_ed78_mid_zach_pom_duma_open];
+}
+spritegroup sgroup_ed78_mid2_zach_pom_duma {
+    loaded:     [sset_ed78_mid2_zach_pom_duma];
+    loading:    [sset_ed78_mid2_zach_pom_duma_open];
+}
+spritegroup sgroup_ed78_tail_zach_pom_duma {
+    loaded:     [sset_ed78_tail_zach_pom_duma];
+    loading:    [sset_ed78_tail_zach_pom_duma_open];
+}
+/* 31WE switches */
+switch(FEAT_TRAINS, SELF, switch_31we_articulated, extra_callback_info1) {
+    1..6: return item_31we_kd;     // including dummy parts
+    7: return item_dummy_2;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_31we_length, position_in_vehid_chain % 7) {
+    1: return 4;    // dummy part
+    3: return 1;    // dummy part
+    5: return 1;    // dummy part
+    return 8;
+}
+switch(FEAT_TRAINS, SELF, switch_31we_purchase, extra_callback_info1 & 0xFF) {
+    0x21: return sset_31we_advert;
+    return sset_31we_purchase;
+}
+switch(FEAT_TRAINS, SELF, switch_31we_graphics, position_in_vehid_chain % 7) {
+    0: return sgroup_31we_head_kd;
+    2: return sgroup_31we_mid_kd;
+    4: return sgroup_31we_mid2_kd;
+    6: return sgroup_31we_tail_kd;
+    return sset_dummy;      // dummy parts
+}
+switch(FEAT_TRAINS, SELF, switch_31we_tour_capacity, position_in_vehid_chain % 7) {
+    0: return 52;
+    2: return 52-2;
+    4: return 52-2;
+    6: return 52;
+    return 1;   // dummy parts
+}
+switch(FEAT_TRAINS, SELF, switch_31we_pass_capacity, position_in_vehid_chain % 7) {
+    0: return 52+26;    //52;
+    2: return 52+26-2;  //52;
+    4: return 52+26-2;    //52;
+    6: return 52+26;    //52;
+    return 1;   // dummy parts
+}
+switch(FEAT_TRAINS, SELF, switch_31we_capacity, cargo_type_in_veh) {
+    TOUR: return switch_31we_tour_capacity;
+    return switch_31we_pass_capacity;
+}
+switch(FEAT_TRAINS, SELF, switch_31we_visual_effect_local, position_in_vehid_chain % 7) {
+    2: return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 3, DISABLE_WAGON_POWER);
+    4: return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 3, DISABLE_WAGON_POWER);
+    return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+}
+switch (FEAT_TRAINS, SELF, switch_31we_start_stop, num_vehs_in_consist / 7) {
+    1..2: return CB_RESULT_NO_TEXT;
+    return string(STR_TRAIN_TOO_LONG, string(STR_31WE_KD_NAME));
+}
+ENGINE_RUNNING_COST_SWITCH(31we, 31WE)
+DIESEL_ELECTRIC_ENGINE_POWER_SWITCH(31we)
+ENGINE_VISUAL_EFFECT_SWITCH(31we)
+
+#ifdef SITTING_PLACES
+    #undef SITTING_PLACES
+#endif
+#ifdef STANDING_PLACES
+    #undef STANDING_PLACES
+#endif
+#define SITTING_PLACES 52*4
+#define STANDING_PLACES 26*4
+#define CARGO_CAPACITY_31WE     int((SITTING_PLACES+STANDING_PLACES)/7)
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_31we_kd, 2530) {
+    property {
+        /* common properties */
+        name:                           string(STR_31WE_KD_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2014, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  11;     // per part
+        cost_factor:                    PURCHASE_COST_31WE;
+        running_cost_factor:            RUNNING_COST_31WE;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          2000 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 CARGO_CAPACITY_31WE;
+        weight:                         135 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.25*75/110;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        variant_group:                  2500;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   switch_31we_purchase;
+        default:                    switch_31we_graphics;
+        articulated_part:           switch_31we_articulated;
+        additional_text:            switch_impuls1_4part_add_text;
+        length:                     switch_31we_length;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_31we_capacity;
+        visual_effect_and_powered:  switch_31we_visual_effect;
+        can_attach_wagon:           switch_impuls1_can_attach;
+        start_stop:                 switch_31we_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(31we)
+        ENGINE_POWER_CALLBACKS(31we)
+    }
+}
+/* EN78 KML switches */
+switch(FEAT_TRAINS, SELF, switch_en78_kml_articulated, extra_callback_info1) {
+    1..6: return item_en78_kml;     // including dummy parts
+    7: return item_dummy_2;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_en78_kml_purchase, extra_callback_info1 & 0xFF) {
+    0x21: return sset_en78_advert_kml;
+    return sset_en78_purchase_kml;
+}
+switch(FEAT_TRAINS, SELF, switch_en78_kml_graphics, position_in_vehid_chain % 7) {
+    0: return sgroup_en78_head_kml;
+    2: return sgroup_en78_mid_kml;
+    4: return sgroup_en78_mid2_kml;
+    6: return sgroup_en78_tail_kml;
+    return sset_dummy;      // dummy parts
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_en78_kml, 2531) {
+    property {
+        /* common properties */
+        name:                           string(STR_EN78_KML_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2016, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  11;     // per part
+        cost_factor:                    PURCHASE_COST_31WE;
+        running_cost_factor:            RUNNING_COST_31WE;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          2000 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 CARGO_CAPACITY_31WE;
+        weight:                         135 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.25*75/110;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        variant_group:                  2530;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   switch_en78_kml_purchase;
+        default:                    switch_en78_kml_graphics;
+        articulated_part:           switch_en78_kml_articulated;
+        additional_text:            switch_impuls1_4part_add_text;
+        length:                     switch_31we_length;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_31we_capacity;
+        visual_effect_and_powered:  switch_31we_visual_effect;
+        can_attach_wagon:           switch_impuls1_can_attach;
+        start_stop:                 switch_31we_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(31we)
+        ENGINE_POWER_CALLBACKS(31we)
+    }
+}
+/* ED78 ZACH POM switches */
+switch(FEAT_TRAINS, SELF, switch_ed78_zach_pom_articulated, extra_callback_info1) {
+    1..6: return item_ed78_zach_pom;     // including dummy parts
+    7: return item_dummy_2;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_ed78_zach_pom_purchase, extra_callback_info1 & 0xFF) {
+    0x21: return sset_ed78_advert_zach_pom;
+    return sset_ed78_purchase_zach_pom;
+}
+switch(FEAT_TRAINS, SELF, switch_ed78_zach_pom_graphics, position_in_vehid_chain % 7) {
+    0: return sgroup_ed78_head_zach_pom;
+    2: return sgroup_ed78_mid_zach_pom;
+    4: return sgroup_ed78_mid2_zach_pom;
+    6: return sgroup_ed78_tail_zach_pom;
+    return sset_dummy;      // dummy parts
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_ed78_zach_pom, 2532) {
+    property {
+        /* common properties */
+        name:                           string(STR_ED78_ZACH_POM_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2013, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  11;     // per part
+        cost_factor:                    PURCHASE_COST_31WE;
+        running_cost_factor:            RUNNING_COST_31WE;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          2000 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 CARGO_CAPACITY_31WE;
+        weight:                         135 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.25*75/110;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        variant_group:                  2530;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   switch_ed78_zach_pom_purchase;
+        default:                    switch_ed78_zach_pom_graphics;
+        articulated_part:           switch_ed78_zach_pom_articulated;
+        additional_text:            switch_impuls1_4part_add_text;
+        length:                     switch_31we_length;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_31we_capacity;
+        visual_effect_and_powered:  switch_31we_visual_effect;
+        can_attach_wagon:           switch_impuls1_can_attach;
+        start_stop:                 switch_31we_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(31we)
+        ENGINE_POWER_CALLBACKS(31we)
+    }
+}
+/* ED78 ZACH POM "DUMA POMORZA" switches */
+switch(FEAT_TRAINS, SELF, switch_ed78_zach_pom_duma_articulated, extra_callback_info1) {
+    1..6: return item_ed78_028;     // including dummy parts
+    7: return item_dummy_2;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_ed78_zach_pom_duma_purchase, extra_callback_info1 & 0xFF) {
+    0x21: return sset_ed78_advert_zach_pom_duma;
+    return sset_ed78_purchase_zach_pom_duma;
+}
+switch(FEAT_TRAINS, SELF, switch_ed78_zach_pom_duma_graphics, position_in_vehid_chain % 7) {
+    0: return sgroup_ed78_head_zach_pom_duma;
+    2: return sgroup_ed78_mid_zach_pom_duma;
+    4: return sgroup_ed78_mid2_zach_pom_duma;
+    6: return sgroup_ed78_tail_zach_pom_duma;
+    return sset_dummy;      // dummy parts
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_ed78_028, 2533) {
+    property {
+        /* common properties */
+        name:                           string(STR_ED78_ZACH_POM_DUMA_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2018, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  11;     // per part
+        cost_factor:                    PURCHASE_COST_31WE;
+        running_cost_factor:            RUNNING_COST_31WE;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          2000 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 CARGO_CAPACITY_31WE;
+        weight:                         135 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.25*75/110;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        variant_group:                  2530;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   switch_ed78_zach_pom_duma_purchase;
+        default:                    switch_ed78_zach_pom_duma_graphics;
+        articulated_part:           switch_ed78_zach_pom_duma_articulated;
+        additional_text:            switch_impuls1_4part_add_text;
+        length:                     switch_31we_length;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_31we_capacity;
+        visual_effect_and_powered:  switch_31we_visual_effect;
+        can_attach_wagon:           switch_impuls1_can_attach;
+        start_stop:                 switch_31we_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(31we)
+        ENGINE_POWER_CALLBACKS(31we)
+    }
+}

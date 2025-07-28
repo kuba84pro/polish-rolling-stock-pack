@@ -1,0 +1,143 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* Res sprites */
+spriteset(sset_res_purchase, "gfx/424z.png")        { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_res_empty, "gfx/424z.png")           { tmpl_sprite_train10(4, 20) }
+spriteset(sset_res_goods_1_3, "gfx/424z.png")       { tmpl_sprite_train10(4, 80) }
+spriteset(sset_res_goods_2_3, "gfx/424z.png")       { tmpl_sprite_train10(4, 120) }
+spriteset(sset_res_goods_full1, "gfx/424z.png")     { tmpl_sprite_train10(4, 160) }
+spriteset(sset_res_goods_full2, "gfx/424z.png")     { tmpl_sprite_train10(4, 200) }
+spriteset(sset_res_wood_half, "gfx/424z.png")       { tmpl_sprite_train10(4, 240) }
+spriteset(sset_res_wood_full, "gfx/424z.png")       { tmpl_sprite_train10(4, 280) }
+spriteset(sset_res_steel_1_3, "gfx/424z.png")       { tmpl_sprite_train10(4, 320) }
+spriteset(sset_res_steel_2_3, "gfx/424z.png")       { tmpl_sprite_train10(4, 360) }
+spriteset(sset_res_steel_full, "gfx/424z.png")      { tmpl_sprite_train10(4, 400) }
+spriteset(sset_res_coper_1_3, "gfx/424z.png")       { tmpl_sprite_train10(4, 440) }
+spriteset(sset_res_coper_2_3, "gfx/424z.png")       { tmpl_sprite_train10(4, 480) }
+spriteset(sset_res_coper_full, "gfx/424z.png")      { tmpl_sprite_train10(4, 520) }
+spriteset(sset_res_wdprd_half, "gfx/424z.png")      { tmpl_sprite_train10(4, 560) }
+spriteset(sset_res_wdprd_full, "gfx/424z.png")      { tmpl_sprite_train10(4, 600) }
+spriteset(sset_res_bdmat_half, "gfx/424z.png")      { tmpl_sprite_train10(4, 640) }
+spriteset(sset_res_bdmat_full, "gfx/424z.png")      { tmpl_sprite_train10(4, 680) }
+#ifdef ZOOM_SPRITES_ENABLED
+alternative_sprites(sset_res_empty,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/424z-x2.png")    { tmpl_sprite_train10_x2(8, 40) }
+alternative_sprites(sset_res_goods_1_3,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/424z-x2.png")    { tmpl_sprite_train10_x2(8, 120) }
+alternative_sprites(sset_res_goods_2_3,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/424z-x2.png")    { tmpl_sprite_train10_x2(8, 200) }
+alternative_sprites(sset_res_goods_full1,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/424z-x2.png")    { tmpl_sprite_train10_x2(8, 280) }
+alternative_sprites(sset_res_goods_full2,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/424z-x2.png")    { tmpl_sprite_train10_x2(8, 360) }
+alternative_sprites(sset_res_wood_half,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/424z-x2.png")    { tmpl_sprite_train10_x2(8, 440) }
+alternative_sprites(sset_res_wood_full,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/424z-x2.png")    { tmpl_sprite_train10_x2(8, 520) }
+alternative_sprites(sset_res_steel_1_3,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/424z-x2.png")    { tmpl_sprite_train10_x2(8, 600) }
+alternative_sprites(sset_res_steel_2_3,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/424z-x2.png")    { tmpl_sprite_train10_x2(8, 680) }
+alternative_sprites(sset_res_steel_full,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/424z-x2.png")    { tmpl_sprite_train10_x2(8, 760) }
+// to do: coper
+alternative_sprites(sset_res_wdprd_half,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/424z-x2.png")    { tmpl_sprite_train10_x2(8, 840) }
+alternative_sprites(sset_res_wdprd_full,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/424z-x2.png")    { tmpl_sprite_train10_x2(8, 920) }
+alternative_sprites(sset_res_bdmat_half,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/424z-x2.png")    { tmpl_sprite_train10_x2(8, 1000) }
+alternative_sprites(sset_res_bdmat_full,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/424z-x2.png")    { tmpl_sprite_train10_x2(8, 1080) }
+#endif
+spritegroup sgroup_res_goods1 {
+    loaded:     [sset_res_empty, sset_res_goods_1_3, sset_res_goods_2_3, sset_res_goods_full1];
+    loading:    [sset_res_empty, sset_res_goods_1_3, sset_res_goods_2_3, sset_res_goods_full1];
+}
+spritegroup sgroup_res_goods2 {
+    loaded:     [sset_res_empty, sset_res_goods_1_3, sset_res_goods_2_3, sset_res_goods_full2];
+    loading:    [sset_res_empty, sset_res_goods_1_3, sset_res_goods_2_3, sset_res_goods_full2];
+}
+spritegroup sgroup_res_wood {
+    loaded:     [sset_res_empty, sset_res_wood_half, sset_res_wood_full];
+    loading:    [sset_res_empty, sset_res_wood_half, sset_res_wood_full];
+}
+spritegroup sgroup_res_steel {
+    loaded:     [sset_res_empty, sset_res_steel_1_3, sset_res_steel_2_3, sset_res_steel_full];
+    loading:    [sset_res_empty, sset_res_steel_1_3, sset_res_steel_2_3, sset_res_steel_full];
+}
+spritegroup sgroup_res_coper {
+    loaded:     [sset_res_empty, sset_res_coper_1_3, sset_res_coper_2_3, sset_res_coper_full];
+    loading:    [sset_res_empty, sset_res_coper_1_3, sset_res_coper_2_3, sset_res_coper_full];
+}
+spritegroup sgroup_res_wdprd {
+    loaded:     [sset_res_empty, sset_res_wdprd_half, sset_res_wdprd_full];
+    loading:    [sset_res_empty, sset_res_wdprd_half, sset_res_wdprd_full];
+}
+spritegroup sgroup_res_bdmat {
+    loaded:     [sset_res_empty, sset_res_bdmat_half, sset_res_bdmat_full];
+    loading:    [sset_res_empty, sset_res_bdmat_half, sset_res_bdmat_full];
+}
+
+/* Res switches */
+switch(FEAT_TRAINS, SELF, switch_res_articulated, extra_callback_info1) {
+    1: return item_dummy_2;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+random_switch(FEAT_TRAINS, SELF, switch_res_goods, bitmask(TRIGGER_VEHICLE_NEW_LOAD)) {
+    1: return sgroup_res_goods1;
+    1: return sgroup_res_goods2;
+}
+switch(FEAT_TRAINS, SELF, switch_res_capacity, cargo_type_in_veh ) {
+    VEHI: return (16 * 56/ cargo_unit_weight);
+    return CB_FAILED;   // property value
+}
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_res, 20704) {
+    property {
+		/* common properties */
+        name:                           string(STR_RES_NAME);
+        variant_group:                  20700;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1979, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_NORMAL_FLATBED_WAGON_DEFINITION
+        loading_speed:                  8; 
+        cost_factor:                    PURCHASE_COST_RES;
+        running_cost_factor:            RUNNING_COST_CARGO_MEDIUM+1;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 56*CARGO_NORMAL_FLATBED_WAGON_MULTIPLIER;
+        weight:                         23 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_CARGO_WAGON);
+    }
+
+    graphics {
+        WOOD:                       sgroup_res_wood;
+        STEL:                       sgroup_res_steel;
+        METL:                       sgroup_res_steel;
+        COPR:                       sgroup_res_coper;
+        WDPR:                       sgroup_res_wdprd;
+        BDMT:                       sgroup_res_bdmat;
+        purchase:                   sset_res_purchase;
+        additional_text:            return string(STR_BRAKE_AIR);
+        default:                    switch_res_goods;
+        articulated_part:           switch_res_articulated;
+        random_trigger:             switch_res_goods;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_res_capacity;
+    }
+}

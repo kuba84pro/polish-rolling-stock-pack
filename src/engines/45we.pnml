@@ -1,0 +1,474 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, GPL 2.0
+
+/* 45WE sprites */
+spriteset(sset_45we_purchase, "gfx/45we-kd.png")   { tmpl_sprite_purchase(4, 430) }
+spriteset(sset_45we_advert, "gfx/45we-kd.png")   { tmpl_sprite_advertisement300(4, 450) }
+// KD //
+spriteset(sset_45we_head_kd, "gfx/45we-kd.png")       { tmpl_sprite_train12(4, 20) }
+spriteset(sset_45we_mid_kd, "gfx/45we-kd.png")        { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_45we_mid2_kd, "gfx/45we-kd.png")       { tmpl_sprite_train10_offset(4, 100, 1) }
+spriteset(sset_45we_mid3_kd, "gfx/45we-kd.png")       { tmpl_sprite_train10_offset(4, 140, 1) }
+spriteset(sset_45we_tail_kd, "gfx/45we-kd.png")       { tmpl_sprite_train12_offset(4, 180, 1) }
+spriteset(sset_45we_head_kd_open, "gfx/45we-kd.png")  { tmpl_sprite_train12(4, 230) }
+spriteset(sset_45we_mid_kd_open, "gfx/45we-kd.png")   { tmpl_sprite_train10_offset(4, 270, 1) }
+spriteset(sset_45we_mid2_kd_open, "gfx/45we-kd.png")  { tmpl_sprite_train10_offset(4, 310, 1) }
+spriteset(sset_45we_mid3_kd_open, "gfx/45we-kd.png")  { tmpl_sprite_train10_offset(4, 350, 1) }
+spriteset(sset_45we_tail_kd_open, "gfx/45we-kd.png")  { tmpl_sprite_train12_offset(4, 390, 1) }
+// KM //
+spriteset(sset_45we_km_purchase, "gfx/45we-km.png")   { tmpl_sprite_purchase(4, 430) }
+spriteset(sset_45we_km_advert, "gfx/45we-km.png")   { tmpl_sprite_advertisement300(4, 450) }
+spriteset(sset_45we_head_km, "gfx/45we-km.png")       { tmpl_sprite_train12(4, 20) }
+spriteset(sset_45we_mid_km, "gfx/45we-km.png")        { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_45we_mid2_km, "gfx/45we-km.png")       { tmpl_sprite_train10_offset(4, 100, 1) }
+spriteset(sset_45we_mid3_km, "gfx/45we-km.png")       { tmpl_sprite_train10_offset(4, 140, 1) }
+spriteset(sset_45we_tail_km, "gfx/45we-km.png")       { tmpl_sprite_train12_offset(4, 180, 1) }
+spriteset(sset_45we_head_km_open, "gfx/45we-km.png")  { tmpl_sprite_train12(4, 230) }
+spriteset(sset_45we_mid_km_open, "gfx/45we-km.png")   { tmpl_sprite_train10_offset(4, 270, 1) }
+spriteset(sset_45we_mid2_km_open, "gfx/45we-km.png")  { tmpl_sprite_train10_offset(4, 310, 1) }
+spriteset(sset_45we_mid3_km_open, "gfx/45we-km.png")  { tmpl_sprite_train10_offset(4, 350, 1) }
+spriteset(sset_45we_tail_km_open, "gfx/45we-km.png")  { tmpl_sprite_train12_offset(4, 390, 1) }
+// POMORSKIE //
+spriteset(sset_en90_pomorskie_purchase, "gfx/EN90_pom.png")   { tmpl_sprite_purchase(4, 430) }
+spriteset(sset_en90_pomorskie_advert, "gfx/EN90_pom.png")   { tmpl_sprite_advertisement300(4, 450) }
+spriteset(sset_en90_head_pomorskie, "gfx/EN90_pom.png")       { tmpl_sprite_train12(4, 20) }
+spriteset(sset_en90_mid_pomorskie, "gfx/EN90_pom.png")        { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_en90_mid2_pomorskie, "gfx/EN90_pom.png")       { tmpl_sprite_train10_offset(4, 100, 1) }
+spriteset(sset_en90_mid3_pomorskie, "gfx/EN90_pom.png")       { tmpl_sprite_train10_offset(4, 140, 1) }
+spriteset(sset_en90_tail_pomorskie, "gfx/EN90_pom.png")       { tmpl_sprite_train12_offset(4, 180, 1) }
+spriteset(sset_en90_head_pomorskie_open, "gfx/EN90_pom.png")  { tmpl_sprite_train12(4, 230) }
+spriteset(sset_en90_mid_pomorskie_open, "gfx/EN90_pom.png")   { tmpl_sprite_train10_offset(4, 270, 1) }
+spriteset(sset_en90_mid2_pomorskie_open, "gfx/EN90_pom.png")  { tmpl_sprite_train10_offset(4, 310, 1) }
+spriteset(sset_en90_mid3_pomorskie_open, "gfx/EN90_pom.png")  { tmpl_sprite_train10_offset(4, 350, 1) }
+spriteset(sset_en90_tail_pomorskie_open, "gfx/EN90_pom.png")  { tmpl_sprite_train12_offset(4, 390, 1) }
+// KML //
+spriteset(sset_en79_kml_purchase, "gfx/EN79-kml.png")   { tmpl_sprite_purchase(4, 430) }
+spriteset(sset_en79_kml_advert, "gfx/EN79-kml.png")   { tmpl_sprite_advertisement300(4, 450) }
+spriteset(sset_en79_head_kml, "gfx/EN79-kml.png")       { tmpl_sprite_train12(4, 20) }
+spriteset(sset_en79_mid_kml, "gfx/EN79-kml.png")        { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_en79_mid2_kml, "gfx/EN79-kml.png")       { tmpl_sprite_train10_offset(4, 100, 1) }
+spriteset(sset_en79_mid3_kml, "gfx/EN79-kml.png")       { tmpl_sprite_train10_offset(4, 140, 1) }
+spriteset(sset_en79_tail_kml, "gfx/EN79-kml.png")       { tmpl_sprite_train12_offset(4, 180, 1) }
+spriteset(sset_en79_head_kml_open, "gfx/EN79-kml.png")  { tmpl_sprite_train12(4, 230) }
+spriteset(sset_en79_mid_kml_open, "gfx/EN79-kml.png")   { tmpl_sprite_train10_offset(4, 270, 1) }
+spriteset(sset_en79_mid2_kml_open, "gfx/EN79-kml.png")  { tmpl_sprite_train10_offset(4, 310, 1) }
+spriteset(sset_en79_mid3_kml_open, "gfx/EN79-kml.png")  { tmpl_sprite_train10_offset(4, 350, 1) }
+spriteset(sset_en79_tail_kml_open, "gfx/EN79-kml.png")  { tmpl_sprite_train12_offset(4, 390, 1) }
+// KD //
+spritegroup sgroup_45we_head_kd {
+    loaded:     [sset_45we_head_kd];
+    loading:    [sset_45we_head_kd_open];
+}
+spritegroup sgroup_45we_mid_kd {
+    loaded:     [sset_45we_mid_kd];
+    loading:    [sset_45we_mid_kd_open];
+}
+spritegroup sgroup_45we_mid2_kd {
+    loaded:     [sset_45we_mid2_kd];
+    loading:    [sset_45we_mid2_kd_open];
+}
+spritegroup sgroup_45we_mid3_kd {
+    loaded:     [sset_45we_mid3_kd];
+    loading:    [sset_45we_mid3_kd_open];
+}
+spritegroup sgroup_45we_tail_kd {
+    loaded:     [sset_45we_tail_kd];
+    loading:    [sset_45we_tail_kd_open];
+}
+// KM //
+spritegroup sgroup_45we_head_km {
+    loaded:     [sset_45we_head_km];
+    loading:    [sset_45we_head_km_open];
+}
+spritegroup sgroup_45we_mid_km {
+    loaded:     [sset_45we_mid_km];
+    loading:    [sset_45we_mid_km_open];
+}
+spritegroup sgroup_45we_mid2_km {
+    loaded:     [sset_45we_mid2_km];
+    loading:    [sset_45we_mid2_km_open];
+}
+spritegroup sgroup_45we_mid3_km {
+    loaded:     [sset_45we_mid3_km];
+    loading:    [sset_45we_mid3_km_open];
+}
+spritegroup sgroup_45we_tail_km {
+    loaded:     [sset_45we_tail_km];
+    loading:    [sset_45we_tail_km_open];
+}
+// Pomorskie //
+spritegroup sgroup_en90_head_pomorskie {
+    loaded:     [sset_en90_head_pomorskie];
+    loading:    [sset_en90_head_pomorskie_open];
+}
+spritegroup sgroup_en90_mid_pomorskie {
+    loaded:     [sset_en90_mid_pomorskie];
+    loading:    [sset_en90_mid_pomorskie_open];
+}
+spritegroup sgroup_en90_mid2_pomorskie {
+    loaded:     [sset_en90_mid2_pomorskie];
+    loading:    [sset_en90_mid2_pomorskie_open];
+}
+spritegroup sgroup_en90_mid3_pomorskie {
+    loaded:     [sset_en90_mid3_pomorskie];
+    loading:    [sset_en90_mid3_pomorskie_open];
+}
+spritegroup sgroup_en90_tail_pomorskie {
+    loaded:     [sset_en90_tail_pomorskie];
+    loading:    [sset_en90_tail_pomorskie_open];
+}
+// KML //
+spritegroup sgroup_en79_head_kml {
+    loaded:     [sset_en79_head_kml];
+    loading:    [sset_en79_head_kml_open];
+}
+spritegroup sgroup_en79_mid_kml {
+    loaded:     [sset_en79_mid_kml];
+    loading:    [sset_en79_mid_kml_open];
+}
+spritegroup sgroup_en79_mid2_kml {
+    loaded:     [sset_en79_mid2_kml];
+    loading:    [sset_en79_mid2_kml_open];
+}
+spritegroup sgroup_en79_mid3_kml {
+    loaded:     [sset_en79_mid3_kml];
+    loading:    [sset_en79_mid3_kml_open];
+}
+spritegroup sgroup_en79_tail_kml {
+    loaded:     [sset_en79_tail_kml];
+    loading:    [sset_en79_tail_kml_open];
+}
+/* 45WE switches */
+switch(FEAT_TRAINS, SELF, switch_45we_articulated, extra_callback_info1) {
+    1..8: return item_45we_kd;     // including dummy parts
+    9: return item_dummy_2;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_45we_length, position_in_vehid_chain % 9) {
+    1: return 4;    // dummy part
+    3: return 1;    // dummy part
+    5: return 1;    // dummy part
+    7: return 1;    // dummy part
+    return 8;
+}
+switch(FEAT_TRAINS, SELF, switch_45we_purchase, extra_callback_info1 & 0xFF) {
+    0x21: return sset_45we_advert;
+    return sset_45we_purchase;
+}
+switch(FEAT_TRAINS, SELF, switch_45we_graphics, position_in_vehid_chain % 9) {
+    0: return sgroup_45we_head_kd;
+    2: return sgroup_45we_mid_kd;
+    4: return sgroup_45we_mid2_kd;
+    6: return sgroup_45we_mid3_kd;
+    8: return sgroup_45we_tail_kd;
+    return sset_dummy;      // dummy parts
+}
+switch(FEAT_TRAINS, SELF, switch_45we_tour_capacity, position_in_vehid_chain % 9) {
+    0: return 43;
+    2: return 44;
+    4: return 45;
+    6: return 44;
+    8: return 43;
+    return 1;   // dummy parts
+}
+switch(FEAT_TRAINS, SELF, switch_45we_pass_capacity, position_in_vehid_chain % 9) {
+    0: return 43+65;
+    2: return 44+65;
+    4: return 45+65;
+    6: return 44+65;
+    8: return 43+65;
+    return 1;   // dummy parts
+}
+switch(FEAT_TRAINS, SELF, switch_45we_capacity, cargo_type_in_veh) {
+    TOUR: return switch_45we_tour_capacity;
+    return switch_45we_pass_capacity;
+}
+switch(FEAT_TRAINS, SELF, switch_45we_visual_effect_local, position_in_vehid_chain % 9) {
+    6: return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 3, DISABLE_WAGON_POWER);
+    return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+}
+switch (FEAT_TRAINS, SELF, switch_45we_start_stop, num_vehs_in_consist / 7) {
+    1..2: return CB_RESULT_NO_TEXT;
+    return string(STR_TRAIN_TOO_LONG, string(STR_45WE_KD_NAME));
+}
+ENGINE_RUNNING_COST_SWITCH(45we, 45WE)
+DIESEL_ELECTRIC_ENGINE_POWER_SWITCH(45we)
+ENGINE_VISUAL_EFFECT_SWITCH(45we)
+
+#ifdef SITTING_PLACES
+    #undef SITTING_PLACES
+#endif
+#ifdef STANDING_PLACES
+    #undef STANDING_PLACES
+#endif
+#define SITTING_PLACES (43*5)+4
+#define STANDING_PLACES 65*6
+#define CARGO_CAPACITY_45WE     int((SITTING_PLACES+STANDING_PLACES)/9)
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_45we_kd, 2550) {
+    property {
+        /* common properties */
+        name:                           string(STR_45WE_KD_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2014, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  11;     // per part
+        cost_factor:                    PURCHASE_COST_45WE;
+        running_cost_factor:            RUNNING_COST_45WE;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          2000 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 CARGO_CAPACITY_45WE;
+        weight:                         159 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.25*75/110;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        variant_group:                  2500;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   switch_45we_purchase;
+        default:                    switch_45we_graphics;
+        articulated_part:           switch_45we_articulated;
+        additional_text:            switch_impuls1_5part_add_text;
+        length:                     switch_45we_length;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_45we_capacity;
+        visual_effect_and_powered:  switch_45we_visual_effect;
+        can_attach_wagon:           switch_impuls1_can_attach;
+        start_stop:                 switch_45we_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(45we)
+        ENGINE_POWER_CALLBACKS(45we)
+    }
+}
+/* 45WE_KM switches */
+switch(FEAT_TRAINS, SELF, switch_45we_km_articulated, extra_callback_info1) {
+    1..8: return item_45we_km;     // including dummy parts
+    9: return item_dummy_2;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_45we_km_purchase, extra_callback_info1 & 0xFF) {
+    0x21: return sset_45we_km_advert;
+    return sset_45we_km_purchase;
+}
+switch(FEAT_TRAINS, SELF, switch_45we_km_graphics, position_in_vehid_chain % 9) {
+    0: return sgroup_45we_head_km;
+    2: return sgroup_45we_mid_km;
+    4: return sgroup_45we_mid2_km;
+    6: return sgroup_45we_mid3_km;
+    8: return sgroup_45we_tail_km;
+    return sset_dummy;      // dummy parts
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_45we_km, 2551) {
+    property {
+        /* common properties */
+        name:                           string(STR_45WE_KM_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2014, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  11;     // per part
+        cost_factor:                    PURCHASE_COST_45WE;
+        running_cost_factor:            RUNNING_COST_45WE;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          2000 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 CARGO_CAPACITY_45WE;
+        weight:                         159 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.25*75/110;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        variant_group:                  2550;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   switch_45we_km_purchase;
+        default:                    switch_45we_km_graphics;
+        articulated_part:           switch_45we_km_articulated;
+        additional_text:            switch_impuls1_5part_add_text;
+        length:                     switch_45we_length;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_45we_capacity;
+        visual_effect_and_powered:  switch_45we_visual_effect;
+        can_attach_wagon:           switch_impuls1_can_attach;
+        start_stop:                 switch_45we_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(45we)
+        ENGINE_POWER_CALLBACKS(45we)
+    }
+}
+/* EN90_Pomorskie switches */
+switch(FEAT_TRAINS, SELF, switch_en90_pomorskie_articulated, extra_callback_info1) {
+    1..8: return item_en90_pomorskie;     // including dummy parts
+    9: return item_dummy_2;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_en90_pomorskie_purchase, extra_callback_info1 & 0xFF) {
+    0x21: return sset_en90_pomorskie_advert;
+    return sset_en90_pomorskie_purchase;
+}
+switch(FEAT_TRAINS, SELF, switch_en90_pomorskie_graphics, position_in_vehid_chain % 9) {
+    0: return sgroup_en90_head_pomorskie;
+    2: return sgroup_en90_mid_pomorskie;
+    4: return sgroup_en90_mid2_pomorskie;
+    6: return sgroup_en90_mid3_pomorskie;
+    8: return sgroup_en90_tail_pomorskie;
+    return sset_dummy;      // dummy parts
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_en90_pomorskie, 2552) {
+    property {
+        /* common properties */
+        name:                           string(STR_EN90_POMORSKIE_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2019, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  11;     // per part
+        cost_factor:                    PURCHASE_COST_45WE;
+        running_cost_factor:            RUNNING_COST_45WE;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          2000 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 CARGO_CAPACITY_45WE;
+        weight:                         159 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.25*75/110;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        variant_group:                  2550;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   switch_en90_pomorskie_purchase;
+        default:                    switch_en90_pomorskie_graphics;
+        articulated_part:           switch_en90_pomorskie_articulated;
+        additional_text:            switch_impuls1_5part_add_text;
+        length:                     switch_45we_length;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_45we_capacity;
+        visual_effect_and_powered:  switch_45we_visual_effect;
+        can_attach_wagon:           switch_impuls1_can_attach;
+        start_stop:                 switch_45we_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(45we)
+        ENGINE_POWER_CALLBACKS(45we)
+    }
+}
+/* EN79 KML switches */
+switch(FEAT_TRAINS, SELF, switch_en79_kml_articulated, extra_callback_info1) {
+    1..8: return item_en79_kml;     // including dummy parts
+    9: return item_dummy_2;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_en79_kml_purchase, extra_callback_info1 & 0xFF) {
+    0x21: return sset_en79_kml_advert;
+    return sset_en79_kml_purchase;
+}
+switch(FEAT_TRAINS, SELF, switch_en79_kml_graphics, position_in_vehid_chain % 9) {
+    0: return sgroup_en79_head_kml;
+    2: return sgroup_en79_mid_kml;
+    4: return sgroup_en79_mid2_kml;
+    6: return sgroup_en79_mid3_kml;
+    8: return sgroup_en79_tail_kml;
+    return sset_dummy;      // dummy parts
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_en79_kml, 2553) {
+    property {
+        /* common properties */
+        name:                           string(STR_EN79_KML_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2016, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  11;     // per part
+        cost_factor:                    PURCHASE_COST_45WE;
+        running_cost_factor:            RUNNING_COST_45WE;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          2000 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 CARGO_CAPACITY_45WE;
+        weight:                         159 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.25*75/110;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        variant_group:                  2550;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   switch_en79_kml_purchase;
+        default:                    switch_en79_kml_graphics;
+        articulated_part:           switch_en79_kml_articulated;
+        additional_text:            switch_impuls1_5part_add_text;
+        length:                     switch_45we_length;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_45we_capacity;
+        visual_effect_and_powered:  switch_45we_visual_effect;
+        can_attach_wagon:           switch_impuls1_can_attach;
+        start_stop:                 switch_45we_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(45we)
+        ENGINE_POWER_CALLBACKS(45we)
+    }
+}

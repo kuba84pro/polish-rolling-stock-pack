@@ -1,0 +1,219 @@
+##grflangid 0x35
+##plural 0
+
+# GRF name and description
+STR_GRF_NAME        :{TITLE} {VERSION}
+STR_GRF_DESCRIPTION :{ORANGE}{TITLE} {VERSION}{BLACK} sisältää useimmat tiedetyt Puolalaiset rautatieajoneuvot vuodesta 1918 nykyisyyteen.{}{COPYRIGHT}2011-2021{}Tekijä: {SILVER}TadeuszD{BLACK}, {SILVER}Mewa{BLACK}{}Grafiikat: {SILVER}TadeuszD{BLACK}, {SILVER}Walter Novotny{BLACK}, {SILVER}Sojita{BLACK}, {SILVER}McZapkie{BLACK}, {SILVER}Czajnikowiec{BLACK}, {SILVER}101ksl, {SILVER}Mewa{BLACK}{}Erityiskiitokset: {SILVER}niemiec{BLACK}{}Lisenssi: {SILVER}GPLv2{BLACK}{}WWW: {LTBLUE}http://openttd-polska.pl{BLACK}
+
+# GRF parameters
+STR_PARAM_NAME_DISABLE_ORIG     :Estä alkuperäiset perinteiset junat
+STR_PARAM_DESC_DISABLE_ORIG     :Valitse tämä asetus estääksesi alkuperäiset veturit ja vaunut. Ei päde yksiraiteiseen tai magleviin.
+STR_PARAM_NAME_DISABLE_MONO_MAGLEV  :Estä alkuperäiset yksiraiteiset ja maglev-junat
+STR_PARAM_DESC_DISABLE_MONO_MAGLEV  :Valitse tämä asetus estääksesi alkuperäiset yksiraiteiset ja maglev-veturit ja -vaunut. Ei päde perinteisiin juniin.
+STR_PARAM_NAME_KEEP_OLD_VEHS    :Säilytä vanhat ajoneuvot ostovalikossa
+STR_PARAM_DESC_KEEP_OLD_VEHS    :Valitse tämä asetus estääksesi vanhojen vetureiden ja vaunujen erääntyminen. Historialliset ajoneuvot säilyvät saatavilla ostovalikossa myös modernilla ajalla. Tämä asetus pätee vain tähän valikoimaan. Estääksesi muiden ajoneuvojen erääntyminen, käytä "Ajoneuvot eivät vanhene" -asetusta pelin Lisäasetuksissa.
+STR_PARAM_NAME_REPLACE_CARGOES  :Kuljeta käyttötavaroita erikoisvaunuissa
+STR_PARAM_DESC_REPLACE_CARGOES  :Osa tämän tämän setin vaunuista on suunniteltu FIRS:n ja ECS:n määrittelemille erikoisrahdeille. Nämä erikoisvaunut eivät ole käytettävissä ilman em. teollisuussettejä. Valitse tämä asetus, jos haluat käyttää erikoisvaunuja normaalirahtien kanssa.
+
+STR_PARAM_NAME_PURCHASE_COST    :Ostohinnan kerroin
+STR_PARAM_DESC_PURCHASE_COST    :Käytä tätä asetusta nostaaksesi vetureiden ja vaunujen ostohintoja. Pätee vain tämän valikoiman ajoneuvoihin.
+STR_PARAM_NAME_RUNNING_COST     :Käyttökustannuksen kerroin
+STR_PARAM_DESC_RUNNING_COST     :Käytä tätä asetusta nostaaksesi vetureiden ja vaunujen käyttökustannuksia. Pätee vain tämän valikoiman ajoneuvoihin.
+STR_PARAM_COST_X1               :1x
+STR_PARAM_COST_X2               :2x
+STR_PARAM_COST_X4               :4x
+STR_PARAM_COST_X8               :8x
+
+STR_PURCHASE_DESCR_2L           :{STRING}{}{BLACK}{STRING}
+STR_PURCHASE_DESCR_3L           :{STRING}{}{BLACK}{STRING}{}{BLACK}{STRING}
+STR_PURCHASE_DESCR_4L           :{STRING}{}{BLACK}{STRING}{}{BLACK}{STRING}{}{BLACK}{STRING}
+STR_SUBTYPE_DESCR_2P            :{STRING}{BLACK}, {STRING}
+
+STR_ENGINE_HEAVY_FREIGHT        :Info: {ORANGE}Veturi {YELLOW}raskaille tavarajunille
+STR_ENGINE_FREIGHT              :Info: {ORANGE}Veturi {YELLOW}tavarajuniin
+STR_ENGINE_PASSENGER_FREIGHT    :Info: {ORANGE}Yleispätevä veturi {YELLOW}matkustaja- ja tavarajuniin
+STR_ENGINE_PASSENGER            :Info: {ORANGE}Veturi {YELLOW}matkustajajuniin
+STR_ENGINE_EXPRESS              :Info: {ORANGE}Veturi {YELLOW}matkustaja- ja pikajuniin
+
+STR_BRAKE_NONE                  :Jarrujärjestelmä: {RED}Ei mitään
+STR_BRAKE_HAND                  :Jarrujärjestelmä: {GREEN}Käsikäyttöinen (jarrumiehen hytti)
+STR_BRAKE_AIR                   :Jarrujärjestelmä: {GREEN}Ilma (keskitetty)
+
+STR_HEATING_STEAM_TEXT          :Lämmitysjärjestelmä: {LTBLUE}höyry
+STR_HEATING_ST_EL_TEXT          :Lämmitysjärjestelmä: {LTBLUE}höyry/sähkö
+STR_HEATING_ELECTRIC_TEXT       :Lämmitysjärjestelmä: {LTBLUE}sähkö
+
+STR_INCOME_1_CLASS              :Huom. {YELLOW}Korkeampi tuloaste{RED} 1.{ORANGE} luokan pitkänmatkan matkustajista
+STR_INCOME_LOWER                :Huom. {RED}Alhaisempi tuloaste{ORANGE} pitkänmatkan matkustajille
+STR_INCOME_ALL_EXPRESS          :Huom: {YELLOW}Korkeampi tuloaste{ORANGE} kaikille pikamatkustajavaunujen matkustajille
+STR_INCOME_HIGH                 :Huom. {YELLOW}Korkeampi tuloaste{ORANGE} pitkänmatkan matkustajille
+STR_INCOME_CARGO_HIGH           :Huom. {YELLOW}Korkeampi tuloaste{ORANGE} pitkänmatkan rahdille
+STR_CAPACITY_NON_FRIABLE        :Huom. {RED}Alhaisempi tilavuus{ORANGE} muulle kuin irtotavararahdille
+
+STR_HEATING_NONE_TEXT           :Lämmitysteho: {RED}Ei mitään
+STR_HEATING_STEAM_POWER_TEXT    :Lämmitysteho: {LTBLUE}höyry ({SIGNED_WORD}kW)
+STR_HEATING_STEAM_CLAYTON_TEXT  :Lämmitysteho: {LTBLUE}höyry "Clayton" (150kW)
+STR_HEATING_COMBINED_TEXT       :Lämmitysteho: {LTBLUE}Yhdistetty diesel/sähkö (150kW)
+STR_HEATING_ELECTRIC_POWER_TEXT :Lämmitysteho: {LTBLUE}sähkö ({SIGNED_WORD}kW)
+
+STR_ATTACH_DISALLOW_MCAR        :Et voi käyttää moottorivaunua tavallisena vaununa.
+STR_ATTACH_DISALLOW_EZT2        :Yhteensopimattomat kytkinlaitteet. Et voi kytkeä sähkömoottorivaunuja erilaisiin kytkinlaitteisiin.
+STR_ATTACH_DISALLOW_EZT1        :Yhteensopimattomat kytkinlaitteet. Et voi kytkeä sähkömoottorivaunuja perinteisiin vetureihin/vaunuihin.
+STR_ATTACH_DISALLOW_TROLLEY     :Yhteensopimattomat luokat. Et voi kytkeä järjestelyveturia perinteisiin vetureihin/vaunuihin.
+STR_ATTACH_DISALLOW             :Et voi kytkeä tätä ajoneuvoa veturiin {STRING}.
+STR_TRAIN_TOO_LONG              :Liian monta ajoneuvoa yhdistetty veturiin {STRING}.
+STR_TRAIN_WITHOUT_BRAKE         :Junassa on liian vähän jarrullisia vaunuja.{} Lisää enemmän vaunuja, joissa on käsi- tai ilmakäyttöiset jarrut.
+STR_TRAIN_NOT_HEATED            :Junaa ei ole lämmitetty kunnolla. Lämmitysjärjestelmät ovat yhteensopimattomat tai ei ole tarpeeksi lämmitystehoa.{} Vaihda veturimalli tai lisää erityinen lämmitysvaunu.
+
+STR_SUBTYPE_OLD_2CLASS          :- 2. luokan osastot
+STR_SUBTYPE_OLD_12CLASS         :- 1. ja 2. luokan osastot
+STR_SUBTYPE_OLD_1CLASS          :- 1. luokan osastot
+STR_SUBTYPE_NEW_2CLASS          :- 2. luokan istuimet
+STR_SUBTYPE_NEW_1CLASS          :- 1. luokan istuimet
+
+STR_SUBTYPE_LIVERY_CLASSIC      :- Klassinen väritys
+STR_SUBTYPE_LIVERY_YEAR_DEP     :- Vuodesta riippuva väritys
+STR_SUBTYPE_LIVERY_CARGO_DEP    :- Rahdista riippuva väritys
+STR_SUBTYPE_LIVERY_RANDOM       :- Satunnainen väritys
+
+STR_SUBTYPE_LIVERY_PKP_IC       :- "PKP IC" -väritys
+STR_SUBTYPE_LIVERY_PKP_CARGO    :- "PKP Cargo" -väritys
+STR_SUBTYPE_LIVERY_PKP_PR       :- "PKP Przewozy Regionalne" -väritys
+STR_SUBTYPE_ENXX_ORANGE         :- Oranssi väritys
+STR_SUBTYPE_ENXX_RED_YEL        :- Punainen ja keltainen väritys
+STR_SUBTYPE_ENXX_BLU_YEL        :- Sininen ja keltainen väritys
+STR_SUBTYPE_ENXX_BLK_RED        :- Musta ja punainen -väritys
+STR_SUBTYPE_ENXX_KM             :- "Kojele Mazowieckie" -väritys
+
+STR_TKH1_NAME           :TKh1 (höyry)
+STR_TKI3_NAME           :TKi3 (höyry)
+STR_OD13_NAME           :Od13 (höyry)
+STR_TI12_NAME           :Ti12 (höyry)
+STR_TP4_NAME            :Tp4 (höyry)
+STR_OK1_NAME            :Ok1 (höyry)
+STR_TY23_NAME           :Ty23 (höyry)
+STR_OKL27_NAME          :OKl27 (höyry)
+STR_PT31_NAME           :Pt31 (höyry)
+STR_OKZ32_NAME          :OKz32 (höyry)
+STR_TY37_NAME           :Ty37 (höyry)
+STR_TY2_NAME            :Ty2 (höyry)
+STR_PT47_NAME           :Pt47 (höyry)
+STR_TKT48_NAME          :TKt48 (höyry)
+STR_OL49_NAME           :Ol49 (höyry)
+STR_TY51_NAME           :Ty51 (höyry)
+STR_SN61_NAME           :SN61 (Dieselmoottorivaunu)
+STR_SN61_TEXT           :Info: {ORANGE}Dieselmoottorivaunu - max. {YELLOW}3 yksikköä{ORANGE} ja {YELLOW}3 vaunua{ORANGE} sallittu
+STR_SA106_NAME          :SA106 (Dieselmoottorivaunu)
+STR_SA106_TEXT          :Info: {ORANGE}Dieselmoottorivaunu - max. {YELLOW}3 yksikköä{ORANGE} ja {YELLOW}3 vaunua{ORANGE} sallittu
+STR_SM30_NAME           :SM30 (Diesel)
+STR_SM41_NAME           :SM41 (Diesel)
+STR_SM42_NAME           :SM42 (Diesel)
+STR_SP42_NAME           :SP42 (Diesel)
+STR_SU42_NAME           :SU42 (Diesel)
+STR_ST43_NAME           :ST43 (Diesel)
+STR_ST44_NAME           :ST44 (Diesel)
+STR_SP45_NAME           :SP45 (Diesel)
+STR_SU45_NAME           :SU45 (Diesel)
+STR_SU46_NAME           :SU46 (Diesel)
+STR_SM31_NAME           :SM31 (Diesel)
+STR_SP32_NAME           :SP32 (Diesel)
+STR_SU160_NAME          :SU160-Gama (Diesel)
+STR_EP01_NAME           :EP01 (sähkö)
+STR_EP02_NAME           :EP02 (sähkö)
+STR_EU07_NAME           :EU07 (sähkö)
+STR_ET21_NAME           :ET21 (sähkö)
+STR_ET22_NAME           :ET22 (sähkö)
+STR_EP05_NAME           :EP05 (sähkö)
+STR_ET40_NAME           :ET40 (sähkö)
+STR_ET41_NAME           :ET41 (sähkö)
+STR_ET42_NAME           :ET42 (sähkö)
+STR_EP09_NAME           :EP09 (sähkö)
+STR_EU43_NAME           :EU43-Traxx (sähkö)
+STR_EU44_NAME           :EU44 "Husarz" (sähkö)
+STR_EU46_NAME           :EU46-Vectron (sähkö)
+STR_EN57_NAME           :EN57 (sähkömoottorijuna)
+STR_EN57_TEXT           :Info: {YELLOW}3{ORANGE}-osainen sähkömoottorijuna
+STR_EN71_NAME           :EN71 (sähkömoottorivaunu)
+STR_EN71_TEXT           :Info: {YELLOW}4{ORANGE}-osainen sähkömoottorijuna
+STR_ED72_NAME           :ED72 (Sähkömoottorijuna)
+STR_ED72_TEXT           :Info: {YELLOW}4{ORANGE}-osainen sähkömoottorijuna
+STR_EN76_NAME           :EN76-Elf (sähkömoottorivaunu)
+STR_ED250_NAME          :ED250 "Pendolino" (sähkömoottorivaunu)
+
+STR_GMY_NAME            :Postivaunu (Gmy)
+STR_GHMX_NAME           :Postivaunu (Ghmx)
+STR_GMW_NAME            :Postivaunu (Gmw)
+STR_PDN_NAME            :Postivaunu (Pdn)
+STR_OHXT_NAME           :Lämmitysvaunu (Ohxt)
+STR_FG_NAME             :Posti/matkatavaravaunu (Fg)
+STR_FY_NAME             :Matkatavaravaunu (Fy)
+STR_FHX_NAME            :Matkatavaravaunu (Fhx)
+STR_DHXT_NAME           :Matkatavaravaunu (Dhxt)
+STR_DWXZ_NAME           :Matkatavaravaunu (Dwxz)
+STR_BDWXZD_NAME         :Matkustaja/matkatavaravaunu (BDwxzd)
+STR_JHX_NAME            :Ravintolavaunu (Jhx)
+STR_JHIX_NAME           :Ravintolavaunu (Jhix)
+STR_WRDMNU_NAME         :Ravintolavaunu (WRdmnu)
+STR_WRMNOUZ_NAME        :Ravintolavaunu (WRmnouz)
+STR_BCY_NAME            :Matkustajavaunu (BCy)
+STR_BCYH_NAME           :Matkustajavaunu (BCyh)
+STR_BHXZ_NAME           :PIkavaunu (Bhxz)
+STR_ABHXZ_NAME          :PIkavaunu (A/Bhxz)
+STR_ABHXZ_TEXT          :Sovitettavissa: {RED}2.{ORANGE}, {RED}1. ja 2.{ORANGE} tai {RED}1.{ORANGE} luokan pikavaunuksi{BLACK}. Oletus: {RED}2.{ORANGE} luokan vaunu
+STR_BCI_NAME            :Matkustajavaunu "kowbojka" (BCi)
+STR_BH_RYF_NAME         :Matkustajavaunu "ryflak" (Bh)
+STR_BH_RYF_TEXT         :Info: {YELLOW}SN61 Dieselmoottorivaunun {ORANGE}perävaunu
+STR_WLAB_NAME           :Makuuvaunu (WLABd)
+STR_WLAB10MNOUZ_NAME    :Makuuvaunu (WLAB10mnouz)
+STR_ABDNU_NAME          :Pikamatkustajavaunu (A/Bdnu)
+STR_ABDNU_TEXT          :Sovitettavissa: {RED}2.{ORANGE}, {RED}1. ja 2.{ORANGE} tai {RED}1.{ORANGE} luokan pikamatkustavaunuksi{BLACK}. Oletus: {RED}2.{ORANGE} luokan vaunu
+STR_BH_BON_NAME         :Matkustajavaunu "bonanza" (Bh)
+STR_BH_BON_TEXT         :Info: {ORANGE}Liitevaunu {YELLOW}dieselmoottorivaunu SA106:lle
+STR_ABDHMNU_NAME        :InterCity-vaunu (A/Bdhmnu)
+STR_ABDHMNU_TEXT        :Sovitettavissa: {RED}2.{ORANGE} tai {RED}1.{ORANGE} luokan InterCity-vaunuksi{BLACK}. Oletus: {RED}2.{ORANGE} luokan vaunu
+STR_AB9MNOPUZ_NAME      :EuroCity-vaunu (A/B9mnopuz)
+STR_AB9MNOPUZ_TEXT      :Sovitettavissa: {RED}2.{ORANGE} tai {RED}1.{ORANGE} luokan EuroCity-vaunuksi{BLACK}. Oletus: {RED}2.{ORANGE} luokan vaunu
+STR_BIPA_NAME           :Kaksikerroksinen vaunu (Bhp)
+STR_BIPA_TEXT           :Info: {YELLOW}4{ORANGE}-osainen kaksikerroksinen matkustajavaunu{}{BLACK}Sovitettavissa: {YELLOW}2{ORANGE}-, {YELLOW}3{ORANGE}- tai {YELLOW}4{ORANGE}-osaiseksi vaunuksi
+STR_BIPA_4PARTS         :- 4-osainen vaunu
+STR_BIPA_3PARTS         :- 3-osainen vaunu
+STR_BIPA_2PARTS         :- 2-osainen vaunu
+STR_BDHPUMN_NAME        :Kaksikerroksinen vaunu (Bdhpumn)
+
+STR_WDDO_NAME           :Irtotavaravaunu (Wddo)
+STR_WDDOH_NAME          :Irtotavaravaunu (Wddoh)
+STR_WDDO_2W_NAME        :Irtotavaravaunu (Wddo), tyyppi 2W
+STR_ES_NAME             :Irtotavaravaunu (Es)
+STR_EAOS_NAME           :Irtotavaravaunu (Eaos)
+STR_EAMOS_NAME          :Raskas irtotavaravaunu (Eamos)
+STR_FALS_NAME           :Itsestääntyhjentyvä "talbot"-vaunu (Fals)
+STR_FALNS_NAME          :Itsestääntyhjentyvä "talbot"-vaunu (Falns)
+STR_TADNS_NAME          :Katettu suppilovaunu (Tadns)
+STR_KDT_NAME            :Katettu tavaravaunu (Kdt)
+STR_KDTH_NAME           :Katettu tavaravaunu (Kdth)
+STR_KDDET_NAME          :Katettu tavaravaunu (Kddet)
+STR_GGS_NAME            :Katettu tavaravaunu (Ggs)
+STR_GAGS_NAME           :Katettu tavaravaunu (Gags)
+STR_GBS_NAME            :Katettu tavaravaunu (Gbs)
+STR_HBBINS_NAME         :Katettu tavaravaunu (Hbbins)
+STR_HABBINS_NAME        :Katettu tavaravaunu (Habbins)
+STR_SLR_NAME            :Kylmävaunu (Slr)
+STR_IBHSS_NAME          :Kylmävaunu (Ibhss)
+STR_PDK31_NAME          :Avolavavaunu (Pdk31)
+STR_PDKH31_NAME         :Avolavavaunu (Pdkh31)
+STR_KBKKS_NAME          :Avolavavaunu (Kbkks)
+STR_KGNS_NAME           :Avolavavaunu (Kgns)
+STR_RES_NAME            :Avolavavaunu (Res)
+STR_SGS_NAME            :Konttivaunu (Sgs)
+STR_SDGMNSS_NAME        :Konttivaunu (Sdgmnss)
+STR_RH_NAME             :Säiliövaunu (Rh)
+STR_RBH_NAME            :Säiliövaunu (Rbh)
+STR_ZAES_NAME           :Säiliövaunu (Zaes)
+STR_SN_NAME             :Karjavaunu (Sn)
+STR_SDW_NAME            :Sementtivaunu (Sdw)
+STR_SDWH_NAME           :Sementtivaunu (Sdwh)
+STR_UACS_NAME           :Siilovaunu (Uacs)
+STR_LEKQSS_NAME         :Autonkuljetusvaunu (Lekqss)
+
+STR_WM15A_NAME          :Järjestelyveturi WM-15A (Diesel)
+STR_PWM15_NAME          :PWM-15 perävaunu

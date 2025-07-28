@@ -1,0 +1,624 @@
+grf {
+    grfid: "MV\01\05";
+    name: string(STR_GRF_NAME);
+    desc: string(STR_GRF_DESCRIPTION);
+    version: 7;
+    min_compatible_version: 1;
+
+    param {
+        param_disable_orig {
+            type: bool;
+            name: string(STR_PARAM_NAME_DISABLE_ORIG);
+            desc: string(STR_PARAM_DESC_DISABLE_ORIG);
+            def_value: 1;
+        }
+    }
+    param {
+        param_disable_mono_maglev {
+            type: bool;
+            name: string(STR_PARAM_NAME_DISABLE_MONO_MAGLEV);
+            desc: string(STR_PARAM_DESC_DISABLE_MONO_MAGLEV);
+            def_value: 1;
+        }
+    }
+    param {
+        param_keep_old_vehs {
+            type: bool;
+            bit:  0; // uses 1rd bit
+            name: string(STR_PARAM_NAME_KEEP_OLD_VEHS);
+            desc: string(STR_PARAM_DESC_KEEP_OLD_VEHS);
+        }
+        param_replace_cargoes {
+            type: bool;
+            bit:  1; // uses 2th bit
+            name: string(STR_PARAM_NAME_REPLACE_CARGOES);
+            desc: string(STR_PARAM_DESC_REPLACE_CARGOES);
+        }
+        param_orig_intro_dates {
+            type: bool;
+            bit:  2; // uses 3th bit
+            name: string(STR_PARAM_NAME_ORIG_INTRO_DATES);
+            desc: string(STR_PARAM_DESC_ORIG_INTRO_DATES);
+        }
+    }
+    param {
+        param_tourists {
+            type:   int;
+            min_value: 0;
+            max_value: 2;
+            def_value: 0;
+            name:   string(STR_PARAM_NAME_TOURISTS);
+            desc:   string(STR_PARAM_DESC_TOURISTS);
+            names: {
+                        0: string(STR_PARAM_TOURISTS_AUTO);
+                        1: string(STR_PARAM_TOURISTS_MANUAL);
+                        2: string(STR_PARAM_TOURISTS_OFF);
+            };
+        }
+    }
+    param {
+        param_purchase_cost {
+            type:   int;
+            min_value: 0;
+            max_value: 3;
+            def_value: 0;
+            name:   string(STR_PARAM_NAME_PURCHASE_COST);
+            desc:   string(STR_PARAM_DESC_PURCHASE_COST);
+            names: {
+                        0: string(STR_PARAM_COST_X1);
+                        1: string(STR_PARAM_COST_X2);
+                        2: string(STR_PARAM_COST_X4);
+                        3: string(STR_PARAM_COST_X8);
+            };
+        }
+    }
+    param {
+        param_running_cost {
+            type:   int;
+            min_value: 0;
+            max_value: 3;
+            def_value: 0;
+            name:   string(STR_PARAM_NAME_RUNNING_COST);
+            desc:   string(STR_PARAM_DESC_RUNNING_COST);
+            names: {
+                        0: string(STR_PARAM_COST_X1);
+                        1: string(STR_PARAM_COST_X2);
+                        2: string(STR_PARAM_COST_X4);
+                        3: string(STR_PARAM_COST_X8);
+            };
+        }
+    }
+}
+
+//check for OpenTTD and version
+if (ttd_platform != PLATFORM_OPENTTD) {
+    //requires OpenTTD
+    error(FATAL, USED_WITH, "OpenTTD");
+} else {
+    //check for OpenTTD version
+    if (openttd_version < version_openttd(1, 14, 0)) {
+        //requires OpenTTD version
+        error(FATAL, REQUIRES_OPENTTD, "1.14.0");
+    }
+}
+
+train_width_32_px = 1;
+traininfo_y_offset = 2;
+
+railtypetable {
+    RAIL,
+    ELRL,
+    "RLOW", "RMED", "RHIG",\
+	"SAAN", "SABN", "SACN", \
+	"SBAN", "SBBN", "SBCN", \
+	"SCAN", "SCBN", "SCCN", \
+	"SDAN", "SDBN", \
+	"ELOW", "EMED", "EHIG", "HSTR",\
+	"SAAE", "SABE", "SACE", \
+	"SBAE", "SBBE", "SBCE", \
+	"SCAE", "SCBE", "SCCE", \
+	"SDAE", "SDBE",\
+	"SEAE", "SEBE", \
+	"3RDC", "CLOW", "CMED",\
+	"SAAZ", "SABZ", "SACZ", \
+	"SBAZ", "SBBZ", "SBCZ", \
+	"SCAZ", "SCBZ", "SCCZ"
+}
+
+if(param_disable_orig) {
+    disable_item(FEAT_TRAINS, 0, 53);
+}
+if(param_disable_mono_maglev) {
+    disable_item(FEAT_TRAINS, 54, 115);
+}
+basecost {
+    PR_BUILD_VEHICLE_TRAIN:     param_purchase_cost;
+    PR_BUILD_VEHICLE_WAGON:     param_purchase_cost + 4;
+    PR_RUNNING_TRAIN_STEAM:     param_running_cost + 1;
+    PR_RUNNING_TRAIN_DIESEL:    param_running_cost + 1;
+    PR_RUNNING_TRAIN_ELECTRIC:  param_running_cost + 1;
+}
+
+// uncomment this lines to include additional ZOOM_LEVEL_IN sprites
+#define ZOOM_SPRITES_ENABLED
+#define ZOOM_SPRITES_NON_GPL_ENABLED
+
+#define PKP_CLIMATES            bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL)
+#define IS_PKP_CLIMATE          climate != CLIMATE_TOYLAND
+#define PKP_INTRODUCTION_DATE   date(1918, 1, 1)
+
+#define PKP_LIVERIES_AVAILABLE      current_year >= 1993
+#define AFTER_DATE(year)           (build_year >= year) || (date_of_last_service >= date(year, 1, 1))
+#define PKP_AUTO_LIVERY_AVAILABLE       AFTER_DATE(2003)
+#define PKP_CARGO_LIVERY_AVAILABLE      AFTER_DATE(2003)
+#define PKP_IC_LIVERY_AVAILABLE         AFTER_DATE(2008)
+#define PKP_PR_LIVERY_AVAILABLE         AFTER_DATE(2012)
+#define PKP_POLREGIO_LIVERY_AVAILABLE   AFTER_DATE(2017)
+#define PKP_MBL_LIVERY_AVAILABLE   AFTER_DATE(1985)
+#define PKP_MZI_LIVERY_AVAILABLE   AFTER_DATE(2010)
+#define PKP_MSZ_LIVERY_AVAILABLE   AFTER_DATE(2015)
+#define PKP_OPOCZNIANKA_LIVERY_AVAILABLE   AFTER_DATE(2020)
+#define PKP_ZP_LIVERY_AVAILABLE   AFTER_DATE(2016)
+
+#define HEATING_CLIMATES        bitmask(CLIMATE_ARCTIC)
+#define IS_HEATING_CLIMATE      climate == CLIMATE_ARCTIC
+
+#define VINFO_PASSENGER_WAGON       0
+#define VINFO_CARGO_WAGON           1
+#define VINFO_HIGH_SPEED_WAGON      2
+#define VINFO_LUGGAGE_WAGON         3
+#define VINFO_RESTAURANT_WAGON      4
+
+#define VINFO_WAGON_TYPE            bitmask(VINFO_PASSENGER_WAGON, VINFO_CARGO_WAGON, VINFO_HIGH_SPEED_WAGON)
+#define VINFO_WAGON_BONUS           bitmask(VINFO_LUGGAGE_WAGON, VINFO_RESTAURANT_WAGON)
+
+#define POST_MULTIPLIER             2
+
+/* Common definitions */
+#include "templates.pnml"
+#include "vehicleids.pnml"
+#include "cargos.pnml"
+#include "costs.pnml"
+#include "palettes.pnml"
+#include "switches.pnml"
+
+/* dummy vehicles */
+#include "dummy.pnml"
+
+/* Steam engines */
+#include "engines/tkh1.pnml"
+#include "engines/tki3.pnml"
+#include "engines/tp4.pnml"
+#include "engines/ok1.pnml"
+#include "engines/ty23.pnml"
+#include "engines/okl27.pnml"
+#include "engines/pt31.pnml"
+#include "engines/okz32.pnml"
+#include "engines/ty37.pnml"
+#include "engines/ty2.pnml"
+#include "engines/pt47.pnml"
+#include "engines/tkt48.pnml"
+#include "engines/ol49.pnml"
+#include "engines/ty51.pnml"
+
+/* Diesel engines */
+#include "engines/sm30.pnml"
+#include "engines/sm41.pnml"
+#include "engines/sm42.pnml"
+#include "engines/6dg.pnml"
+#include "engines/sm31.pnml"
+#include "engines/st43.pnml"
+#include "engines/st44.pnml"
+#include "engines/sp45.pnml"
+#include "engines/su45.pnml"
+#include "engines/su46.pnml"
+#include "engines/sp47.pnml"
+#include "engines/sp32.pnml"
+#include "engines/br285.pnml"
+#include "engines/6dl.pnml"
+#include "engines/su160.pnml"
+#include "wagons/bh-common.pnml"
+#include "wagons/bh-ryflak.pnml"    // trailer for SN61
+#include "engines/sn61.pnml"
+#include "engines/sn80.pnml"
+#include "engines/sn81.pnml"
+#include "engines/sa106.pnml"
+#include "engines/sa103.pnml"
+#include "engines/sa135.pnml"
+#include "engines/sa136.pnml"
+#include "engines/sa101_102.pnml"
+
+/* Electric engines */
+#include "engines/ep01.pnml"
+#include "engines/ep02.pnml"
+#include "engines/et21.pnml"
+#include "engines/eu07.pnml"
+#include "engines/ep08.pnml"
+#include "engines/ep05.pnml"
+#include "engines/et22.pnml"
+#include "engines/et40.pnml"
+#include "engines/et41.pnml"
+#include "engines/et42.pnml"
+#include "engines/ep09.pnml"
+#include "engines/e186.pnml"
+#include "engines/eu06.pnml"
+#include "engines/eu44.pnml"
+#include "engines/eu46.pnml"
+#include "engines/eu160.pnml"
+#include "engines/eu200.pnml"
+#include "engines/e4dcud.pnml"
+#include "engines/et26.pnml"
+#include "engines/111Ed.pnml"
+#include "engines/skoda163.pnml"
+#include "engines/skoda181.pnml"
+#include "engines/em10.pnml"
+#include "engines/eu07a.pnml"
+#include "engines/e6acta.pnml"
+#include "engines/e6act.pnml"
+
+/* EZT */
+#include "engines/en57.pnml"
+#include "engines/en57axx.pnml"
+// #include "engines/en57aks.pnml"
+#include "engines/en57alpr.pnml"
+#include "engines/en57spot.pnml"
+#include "engines/en71.pnml"
+#include "engines/en71aks.pnml"
+#include "engines/en71akm.pnml"
+#include "engines/ed72.pnml"
+#include "engines/ed74.pnml"
+#include "engines/en76-elf.pnml"
+#include "engines/ed250-pendolino.pnml"
+#include "engines/36wea.pnml"
+#include "engines/31we.pnml"
+#include "engines/45we.pnml"
+#include "engines/35we.pnml"
+#include "engines/ed161.pnml"
+#include "engines/ed160.pnml"
+#include "engines/er160.pnml"
+#include "engines/lm_4268.pnml"
+#include "engines/l_4268.pnml"
+
+/* Mail & luggage vans */
+#include "wagons/gmy.pnml"
+#include "wagons/ghmx.pnml"
+#include "wagons/gmw.pnml"
+#include "wagons/pdn.pnml"
+#include "wagons/ohxt.pnml"
+#include "wagons/fg.pnml"
+#include "wagons/fy.pnml"
+#include "wagons/fhx.pnml"
+#include "wagons/dhxt.pnml"
+#include "wagons/dwxz.pnml"
+#include "wagons/bdwxzd.pnml"
+/* Passenger & restaurant carriages */
+#include "wagons/bcy.pnml"
+#include "wagons/bci.pnml"
+#include "wagons/bh-bonanza.pnml"   // trailer for SA106
+#include "wagons/bipa.pnml"
+#include "wagons/bdhpumn.pnml"
+#include "wagons/twindexx.pnml"
+#include "wagons/twindexxcontrolcar.pnml"
+#include "wagons/bhxz.pnml"
+#include "wagons/abhxz.pnml"
+#include "wagons/abdnu.pnml"
+#include "wagons/abdhmnu.pnml"
+// #include "wagons/wgpolregio.pnml"
+#include "wagons/ab9mnopuz.pnml"
+#include "wagons/uic_y_174a.pnml"
+#include "wagons/uic_y_ab9nopuz.pnml"
+#include "wagons/wlabwxz.pnml"
+#include "wagons/wlab.pnml"
+#include "wagons/wlab10mnouz.pnml"
+#include "wagons/jhx.pnml"
+#include "wagons/jhix.pnml"
+#include "wagons/wrdmnu.pnml"
+#include "wagons/wrmnouz.pnml"
+#include "wagons/113A.pnml"
+/* Freight wagons */
+#include "wagons/wddo.pnml"
+#include "wagons/wddo-2w.pnml"
+#include "wagons/es.pnml"
+#include "wagons/eaos-spritesets.pnml"
+#include "wagons/eaos.pnml"
+#include "wagons/eaos2.pnml"
+#include "wagons/eanos.pnml"
+#include "wagons/eanos-445w.pnml"
+#include "wagons/eamos.pnml"
+#include "wagons/fals.pnml"
+#include "wagons/falns.pnml"
+#include "wagons/kdt.pnml"
+#include "wagons/kddet.pnml"
+#include "wagons/ggs.pnml"
+#include "wagons/gags.pnml"
+#include "wagons/gbs.pnml"
+#include "wagons/hbbins.pnml"
+#include "wagons/habbins.pnml"
+#include "wagons/slr.pnml"
+#include "wagons/slms.pnml"
+#include "wagons/ibhss.pnml"
+#include "wagons/pdk31.pnml"
+#include "wagons/kbkks.pnml"
+#include "wagons/kgns.pnml"
+#include "wagons/res.pnml"
+#include "wagons/sgs.pnml"
+#include "wagons/sdgmnss.pnml"
+#include "wagons/sggrss_spritesets.pnml"
+#include "wagons/sggrss-dbcargo.pnml"
+#include "wagons/sggrss-pcc.pnml"
+#include "wagons/sggrss-eurowagon.pnml"
+#include "wagons/sggrss-ermewa.pnml"
+#include "wagons/sggrss-gatx.pnml"
+#include "wagons/sggrss-cbrail.pnml"
+#include "wagons/sggrss.pnml"
+#include "wagons/rh.pnml"
+#include "wagons/rbh.pnml"
+#include "wagons/zaes.pnml"
+#include "wagons/zacens.pnml"
+#include "wagons/zags.pnml"
+#include "wagons/sn.pnml"
+#include "wagons/sdw.pnml"
+#include "wagons/uacs.pnml"
+#include "wagons/lekqss.pnml"
+#include "wagons/tads.pnml"
+
+/* Miscellaneous */
+#include "engines/wm15a.pnml"
+#include "engines/asf.pnml"
+#include "engines/od13.pnml"
+#include "wagons/wdn.pnml"
+#include "wagons/kd.pnml"
+#include "wagons/hes.pnml"
+#include "wagons/rnh.pnml"
+#include "wagons/rnh-5r.pnml"
+#include "wagons/uahs.pnml"
+#include "wagons/ppu.pnml"
+#include "engines/ti12.pnml"
+
+sort(FEAT_TRAINS,
+    // steam engines
+   [ 100, 101, 102, 103, 104, 105, 106, 107, 108,
+    109, 110, 111, 112, 113, 117, 114, 116, 115,
+    // diesel engines
+    // SM30 Variant_group
+    200, 201,
+    // SM41 Variant_group
+    210,
+    // SM42 Variant_group
+    250, 251, 252, 253, 254, 255, 256,
+    // SP42 Variant_group
+    270, 271,
+    // SU42 Variant_group
+    290, 291, 292, 294,
+    // SU4210 Variant_group
+    293,
+    // 6DG Variant_group
+    300,
+    // SM31 Variant_group
+    325, 326,
+    // ST43 Variant_group
+    330, 331,
+    // ST44 Variant_group
+    350, 351, 352, 353, 354, 355, 356, 357, 358, 359,
+    // SP45, SU45, ST45, 301Db Variant_group
+    400, 401, 402, 403, 404, 405,
+    // SU46, ST46 Variant_group
+    420, 421, 422, 423,
+    // SP47
+    425, 426,
+    // SP32 Variant_group
+    430, 431,
+    // SN61 Variant_group
+    440,
+    // SN80 Variant_group
+    444,
+    // SN81 Variant_group
+    445,
+    // Sa106 Variant_group
+    500,
+    // Sa103 Variant_group
+    510, 511, 512,
+    // Sa135 Variant_group
+    515,
+    // Sa136 Variant_group
+    520,
+    // Sa1101/102 Variant_group
+    521, 522,
+    // electric engines
+    // EP01, EP02 Variant_group
+    525, 526,
+    // SKODA 163 Variant_group
+    527, 528,
+    // SKODA 181 Variant_group
+    530, 531, 532,
+    // ET21 Variant_group
+    570, 571, 572, 573, 574, 575, 576, 577, 578,
+    // EU05/EP05 Variant_group
+    600, 603, 601, 604, 605, 602,
+    // EU06 Variant_group
+    610, 611, 612,
+    // EU07 Variant_group
+    620, 621, 643, 622, 644, 645, 647, 646, 623, 642, 629, 632, 624, 625, 626, 634, 637, 627, 628, 630, 631, 632, 633, 635, 636, 638, 639, 640, 641,
+    // EU07A Variant_group connected with EU07
+    680, 681,
+    // EP08 Variant_group
+    685, 686, 687, 688, 689,
+    // ET22 Variant_group
+    700, 701, 702, 703, 704, 705, 706, 707, 708,
+    // ET40 Variant_group
+    755, 756,
+    // ET41 Variant_group
+    760, 763, 764, 761, 765, 762,
+    // ET42 Variant_group
+    770, 771, 772,
+    // EM10 Variant_group
+    427, 428,
+    // EP09 Variant_group
+    792, 780, 791, 789, 782, 785, 786, 787, 788, 781, 790, 784, 783,
+    // EU44 Variant_group
+    850, 851,
+    // E186, 386, E483, EU43, EU47, BR285 Variant_group
+    900, 901, 902, 915, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 916, 917, 918, 919, 920,
+    // EU46, 193, 6193, X4EC, 383 Variant_group
+    1000, 1001, 1002, 1003, 
+    1005, 1030, 
+    1006, 1008, 1017, 1018, 1019, 1020, 1057, 1058,
+    1004, 1007, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1021, 1022, 1023, 1024, 1025, 1026, 1027, 1028, 1029, 1031, 1032, 1033, 1034, 1035, 1036, 1037, 1038, 1039, 1040, 1041, 1042, 1043, 1044, 1046, 1045, 1047, 1048, 1049, 1050, 1051, 1059, 1060,
+    1052, 1053, 1054, 1055, 1056,
+    // E6ACT Variant_group
+    1100, 1101, 1102, 1103,
+    // E6ACTa, E6ACTab, E6ACTad, E6ACTadb, ET26 Vehicle_id
+    1120, 1121, 1122, 1123, 1130, 1131, 1124, 1125, 1126, 1127, 1128, 1129, 1132, 1133, 1134, 1135, 1136, 1137,
+    // 111Ed, 111Eo, 111Db
+    1200, 1202, 1201, 1203, 1204,
+    // EU160, E4DCUd Variant_group
+    1230, 1231, 1232, 1233, 1235, 1236, 1234,
+    // EU200 Variant_group
+    1275, 1276,
+    // EN57 Variant_group
+    1800, 1801, 1802, 1803, 1804, 1805, 1806, 1807, 1808,
+    // EN57AL, EN57AKM, EN57AKS, EN57AP, EN57AKW, EN57SPOT, EN71KM, EN71AKS Variant_group
+    2000, 2001, 2002, 2003, 2004, 2007, 2008, 2009, 2010, 2011, 2005, 2006, 
+    // EN71 Variant_group
+    2100, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108,
+    // ED72 Variant_group
+    2200, 2201, 2202,
+    // ED74 Variant_group
+    2300, 2301,
+    // EN76 Variant_group
+    2400,
+    // Impuls one Variant_group
+    // 36wea
+    2500, 2501, 2502, 2503, 2504, 2505, 2506,
+    // 31we
+    2530, 2531, 2532, 2533,
+    // 45we, en90
+    2550, 2551, 2552, 2553,
+    // 35we
+    2560, 2561,
+    // L-4268, LM-4268, ER160, ED160 Variant_group
+    2605, 2604, 2601, 2600,
+    // ED161 Variant_group
+    2602,
+    // ED250 Variant_group
+    2603,
+    // misc.
+    // WM15A Variant_group
+    4000,
+    // ASF Variant_group
+    5000, 5001
+    ]);
+sort(FEAT_TRAINS,
+    // mail vans
+   [ 
+    // gmy, gmw, ghmx
+    10000, 10001, 10002,
+    // pdn
+    10010, 10011,
+    // luggage & special vans
+    // fg
+    10015,
+    // fy, fhx, dhxt, dwxz
+    10020, 10021, 10022, 10023, 10024,
+    // bdwxzd, 609a
+    10025, 10026,
+    // ohxt
+    10027,
+    // passenger & sleeping cars
+    // bci, bcy, bcyh
+    10030, 10031, 10032, 10033,
+    // bh "ryflak" Variant_group
+    441,
+    // bh bonanza, 120a
+    10035, 10036, 10037, 10038,
+    // bipa
+    10040, 10041, 10042, 10043, 10044, 10045,
+    // bochun
+    10050, 10051, 10052, 10053,
+    // twindexx, twindexxcc
+    10060, 10061,
+    // bhxz passenger
+    10070,
+    // ahxz, abhxz, bhxz express
+    10071, 10072, 10073,
+    // a/bwxz, a/bdnu, 141a, 140a, 112at (10100-10108)     
+    // UIC-Y cars, 174a, 141a-20, 140a-10 (11000-11002)
+    // 162a, 163a (10150-10153)
+    10102, 10101, 10100, 
+    10105,
+    10104, 10151, 10153,
+    10103, 10150, 10152,
+    10108, 11002, 
+    10107, 11001, 
+    10106, 11000,
+    // UIC-Z 152a, 154a (papuga version also)
+    // UIC-Z 158a, 159a
+    11104, 11105, 
+    11100, 11102, 
+    11101, 11103,
+    /*item_wgpolregio*/
+
+    // Sleeping cars
+    // wlabwxz
+    11200,
+    // wlab, gorlitz77
+    11201, 11202,
+    // wlab10mnouz 
+    11203,
+
+    // restaurant cars
+    // jhx, jhix, 113A, 113Aa
+    11300, 11301, 
+    11305, 11306,
+    // wrdmnu, bautzen89 (wrmnou), 407A (wrmnouz)
+    11302, 11303,
+    11304,
+    
+    // freight wagons
+    // wdn, wddo, wddoh, wddo_2w (2 liveries)
+    20000, 20001, 20002, 20003, 20004,
+    // es, eaos, eanos, eanos_445w
+    20050, 
+    20055, 20056, 20067, 20068, 20062, 20051, 20063, 20052, 20053, 20054, 20057, 20058, 20059, 20060, 20073, 20061, 20066, 20065, 20064, 20069, 20070, 20071, 20072,
+    20100, 20101,
+    20150,
+    // ppu, eamos
+    20200,
+    20201,
+    // fals, falns
+    20250, 20251,
+    20252, 20253,
+    // tadns
+    20300,
+    // kd, kdt, kdth, kddet
+    20400, 20401, 20402, 20403,
+    // ggs, gags, gbs
+    20500, 20501, 20502,
+    // hbbins, habbins
+    20600, 20601, 20602,
+    // pdk31, pdkh31, kbkks, kgns, res
+    20700, 20701, 20702, 20703, 20704,
+    // sgs, sdgmnss, sggrss
+    20800, 20801, 20805, 
+    15000, 15001, 15002, 15003, 15004, 15005, 15006,
+    // slr, slms, ibhss
+    21000, 21001, 21002,
+    // rh, rbh, zaes, zacens, zags
+    21100, 21101,
+    21102, 21103, 21104,
+    21105, 21106,
+    21107, 21108, 21109,
+    // sn, hes
+    21200, 21201,
+    // rnh, rnh_5r, uahs
+    21210, 21211, 21212, 21213,
+    // sdw, sdwh
+    21300, 21301,
+    // uacs
+    21310,
+    // lekqss
+    21400,
+    // misc.
+    // PWM15 Variant_group
+    4001
+    ]);

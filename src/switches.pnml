@@ -1,0 +1,607 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* Definitions for universal switches */
+#define BRAKE_WAGON_SMALL_45    4
+#define BRAKE_WAGON_SMALL_65    10
+#define BRAKE_WAGON_SMALL_80    12
+#define BRAKE_WAGON_MID_65      12
+#define BRAKE_WAGON_MID_80      15
+
+#define BRAKE_FORCE_WAGON_SMALL     10
+#define BRAKE_FORCE_WAGON_MID       12
+#define BRAKE_FORCE_WAGON_BIG       15
+#define BRAKE_FORCE_ENGINE_SMALL    20
+#define BRAKE_FORCE_ENGINE_MID      30
+#define BRAKE_FORCE_ENGINE_BIG      40
+
+#define BRAKE_FORCE \
+(count_veh_id(item_gmy) + count_veh_id(item_fg) + count_veh_id(item_fy) + \
+ count_veh_id(item_bci) + count_veh_id(item_wddoh) + count_veh_id(item_wddo_2w) + \
+ count_veh_id(item_es) + count_veh_id(item_ppu) + count_veh_id(item_kdth) + \
+ count_veh_id(item_kddet) + count_veh_id(item_ggs) + count_veh_id(item_gbs) + \
+ count_veh_id(item_hbbins) + count_veh_id(item_slr) + count_veh_id(item_slms) + \
+ count_veh_id(item_ibhss) + count_veh_id(item_pdkh31) + count_veh_id(item_kbkks) + \
+ count_veh_id(item_kgns) + count_veh_id(item_res) + count_veh_id(item_rh) + \
+ count_veh_id(item_rbh) + count_veh_id(item_sn) + count_veh_id(item_hes) + \
+ count_veh_id(item_rnh) + count_veh_id(item_rnh_5r) + count_veh_id(item_sdwh) + \
+ count_veh_id(item_lekqss) \
+)*BRAKE_FORCE_WAGON_SMALL + \
+(count_veh_id(item_gmw) + count_veh_id(item_pdn) + count_veh_id(item_fhx) + \
+ count_veh_id(item_ohxt) + count_veh_id(item_bcyh) + count_veh_id(item_bhxz) + \
+ count_veh_id(item_bh_ryf) + count_veh_id(item_abdnu) + count_veh_id(item_bh_bon) + \
+ count_veh_id(item_eaos) + count_veh_id(item_eanos) + count_veh_id(item_eamos) + \
+ count_veh_id(item_fals) + count_veh_id(item_falns) + count_veh_id(item_gags) + \
+ count_veh_id(item_habbins) + count_veh_id(item_sgs_pkp_cargo) + count_veh_id(item_sdgmnss) + \
+ count_veh_id(item_zaes) + count_veh_id(item_uahs) + count_veh_id(item_uacs) + \
+ count_veh_id(item_tadns) \
+)*BRAKE_FORCE_WAGON_MID + \
+(count_veh_id(item_ghmx) + \
+count_veh_id(item_dhxt) + \
+count_veh_id(item_dwxz) + \
+count_veh_id(item_bdwxzd) + \
+count_veh_id(item_abhxz) + \
+count_veh_id(item_152a)/2 + \
+count_veh_id(item_154a)/2 + \
+count_veh_id(item_158a)/2 + \
+count_veh_id(item_159a)/2 + \
+count_veh_id(item_wlabwxz) + \
+count_veh_id(item_wlab) + \
+count_veh_id(item_wlab10mnouz)/2 + \
+count_veh_id(item_jhx) + \
+count_veh_id(item_jhix) + \
+count_veh_id(item_wrdmnu)/2 + \
+count_veh_id(item_wrmnouz)/2 + \
+count_veh_id(item_bipa)/6 + \
+count_veh_id(item_bdhpumn)/2 + \
+count_veh_id(item_twindexx)/2 + \
+count_veh_id(item_twindexxcc)/2 \
+)*BRAKE_FORCE_WAGON_BIG + \
+(count_veh_id(item_tkh1) + count_veh_id(item_tki3) + count_veh_id(item_od13)/2 + \
+ count_veh_id(item_ti12)/2 + count_veh_id(item_okl27) + \
+ count_veh_id(item_tkt48) + count_veh_id(item_sm30) + count_veh_id(item_sm41) + \
+ count_veh_id(item_sm42) + count_veh_id(item_sp42) + count_veh_id(item_su42) + \
+ count_veh_id(item_sp32)/2 + count_veh_id(item_br285)/2 + count_veh_id(item_6dl) + \
+ count_veh_id(item_su160)/2 + count_veh_id(item_ep01)/2 + count_veh_id(item_ep02)/2 + \
+ count_veh_id(item_eu05)/2 + count_veh_id(item_eu07)/2 + count_veh_id(item_ep09)/2 + \
+ count_veh_id(item_e186)/2 + count_veh_id(item_eu44)/2 + count_veh_id(item_eu47_km)/2 + \
+ count_veh_id(item_eu46_red_pkp_cargo)/2 \
+)*BRAKE_FORCE_ENGINE_SMALL + \
+(count_veh_id(item_tp4)/2 + count_veh_id(item_ok1)/2 + count_veh_id(item_okz32)/2 + \
+ count_veh_id(item_st43)/2 + count_veh_id(item_st44)/2 + count_veh_id(item_sp45)/2 + \
+ count_veh_id(item_su45)/2 + count_veh_id(item_su46)/2 + count_veh_id(item_sm31)/2 + \
+ count_veh_id(item_et21)/2 + count_veh_id(item_et22)/2 + count_veh_id(item_et26)/3 \
+)*BRAKE_FORCE_ENGINE_MID + \
+(count_veh_id(item_ty23)/2 + count_veh_id(item_pt31)/2 + count_veh_id(item_ty37)/2 + \
+ count_veh_id(item_ty2)/3 + count_veh_id(item_pt47)/2 + count_veh_id(item_ol49)/2 + \
+ count_veh_id(item_ty51)/2 + count_veh_id(item_et40)/3 + count_veh_id(item_et41)/3 + \
+ count_veh_id(item_et42)/3 \
+)*BRAKE_FORCE_ENGINE_BIG - \
+ count_veh_id(item_bcy)*BRAKE_WAGON_MID_80 - count_veh_id(item_wdn)*BRAKE_WAGON_SMALL_45 - \
+ count_veh_id(item_wddo)*BRAKE_WAGON_SMALL_65 - count_veh_id(item_kd)*BRAKE_WAGON_SMALL_45 - \
+ count_veh_id(item_kdt)*BRAKE_WAGON_SMALL_65 - count_veh_id(item_sdw)*BRAKE_WAGON_SMALL_80 - \
+ count_veh_id(item_pdk31)*BRAKE_WAGON_SMALL_80
+
+#define HEATING_OLD_WAG     25
+#define HEATING_MID_WAG     36
+#define HEATING_NEW_WAG     45
+#define HEATING_BIPA_WAG    HEATING_NEW_WAG * 3
+
+#define HEATING_POWER_STEAM_LOW     150
+#define HEATING_POWER_STEAM_MID     180
+#define HEATING_POWER_STEAM_HI      225
+#define HEATING_POWER_STEAM_OHXT    270
+#define HEATING_POWER_ELECTRIC_LOW  200
+#define HEATING_POWER_ELECTRIC_MID  290
+#define HEATING_POWER_ELECTRIC_HI   450
+
+#define HEATING_POWER_STEAM \
+(count_veh_id(item_tkh1) + count_veh_id(item_tki3) + count_veh_id(item_od13)/2 + \
+ count_veh_id(item_ti12)/2 + count_veh_id(item_tp4)/2 + count_veh_id(item_ty23)/2 + \
+ count_veh_id(item_ty37)/2 \
+)*HEATING_POWER_STEAM_LOW + \
+(count_veh_id(item_ok1)/2 + count_veh_id(item_okl27) + count_veh_id(item_okz32)/2 + \
+ count_veh_id(item_tkt48) + count_veh_id(item_ty51)/2 + count_veh_id(item_sp42) + \
+ count_veh_id(item_sn80) \
+)*HEATING_POWER_STEAM_MID + \
+(count_veh_id(item_pt31)/2 + count_veh_id(item_ty2)/3 + count_veh_id(item_pt47)/2 + \
+ count_veh_id(item_ol49)/2 + count_veh_id(item_sp45)/2 \
+)*HEATING_POWER_STEAM_HI + \
+count_veh_id(item_ohxt)*HEATING_POWER_STEAM_OHXT
+
+#define HEATING_POWER_ELECTRIC \
+(count_veh_id(item_su42)/2 + \
+count_veh_id(item_ep02)/2 + \
+count_veh_id(item_sm42)/2 + \
+count_veh_id(item_su42_polsat)/2 + \
+count_veh_id(item_su42_pr)/2 + \
+count_veh_id(item_sp42)/2 + \
+count_veh_id(item_sp42_oliwkowe)/2 \
+)*HEATING_POWER_ELECTRIC_LOW + \
+(count_veh_id(item_su45)/2 + \
+ count_veh_id(item_sp32)/2 + \
+ count_veh_id(item_6dl) + \
+ count_veh_id(item_et21)/2 + \
+ count_veh_id(item_et22)/2 + \
+ count_veh_id(item_et40)/3 \
+)*HEATING_POWER_ELECTRIC_MID + \
+(count_veh_id(item_su46)/2 + \
+ count_veh_id(item_111ed)/2 + \
+ count_veh_id(item_111eo_pcc)/2 + \
+ count_veh_id(item_111ed_cu)/2 + \
+ count_veh_id(item_111eo_orion)/2 + \
+ count_veh_id(item_su160)/2 + \
+ count_veh_id(item_eu05)/2 + \
+ count_veh_id(item_eu07)/2 + \
+ count_veh_id(item_ep08)/2 + \
+ count_veh_id(item_ep08_pkp_old)/2 + \
+ count_veh_id(item_ep08_pkp_ic)/2 + \
+ count_veh_id(item_ep08_pkp_ic_new)/2 + \
+ count_veh_id(item_ep08_001)/2 + \
+ count_veh_id(item_ep09)/2 + \
+ count_veh_id(item_ep09_pkp_ic)/2 + \
+ count_veh_id(item_ep09_pkp_cargo)/2 + \
+ count_veh_id(item_ep09_zp)/2 + \
+ count_veh_id(item_ep09_olkol)/2 + \
+ count_veh_id(item_et41)/3 + \
+ count_veh_id(item_et42)/3 + \
+ count_veh_id(item_e186)/2 + \
+ count_veh_id(item_e186_pkp_pr)/2 + \
+ count_veh_id(item_eu43_pkp_cargo)/2 + \
+ count_veh_id(item_eu44)/2 + \
+ count_veh_id(item_eu44_niepodlegla)/2 + \
+ count_veh_id(item_eu47_km)/2 + \
+ count_veh_id(item_eu46_red_pkp_cargo)/2 + \
+ count_veh_id(item_eu46_blue_pkp_cargo)/2 + \
+ count_veh_id(item_eu46_504)/2 + \
+ count_veh_id(item_193_white)/2 + \
+ count_veh_id(item_193_mrce)/2 + \
+ count_veh_id(item_193_beacon)/2 + \
+ count_veh_id(item_193_626)/2 + \
+ count_veh_id(item_193_639)/2 + \
+ count_veh_id(item_6193_cargounit)/2 + \
+ count_veh_id(item_6193_cargounit_fpl)/2 + \
+ count_veh_id(item_6193_bahnoperator)/2 + \
+ count_veh_id(item_193_489)/2 + \
+ count_veh_id(item_193_568)/2 + \
+ count_veh_id(item_193_569)/2 + \
+ count_veh_id(item_193_cd_cargo)/2 + \
+ count_veh_id(item_et26)/2 + \
+ count_veh_id(item_eu07a)/2 + \
+ count_veh_id(item_eu07a_new)/2 + \
+ count_veh_id(item_111ed)/2 + \
+ count_veh_id(item_e6acta)/2 + \
+ count_veh_id(item_e6act_lotos)/2 + \
+ count_veh_id(item_eu160)/2 + \
+ count_veh_id(item_eu160_tyskie)/2 + \
+ count_veh_id(item_eu160_rmf)/2 + \
+ count_veh_id(item_eu160_wybierz_kolej)/2 + \
+ count_veh_id(item_eu160_20lat_polski)/2 + \
+ count_veh_id(item_eu160_powstanie_slaskie)/2 + \
+ count_veh_id(item_eu200)/2 + \
+ count_veh_id(item_eu200_002)/2 + \
+ count_veh_id(item_s181)/2 + \
+ count_veh_id(item_skoda163)/2 \
+)*HEATING_POWER_ELECTRIC_HI
+
+#define HEATING_CONSUMP_STEAM \
+(count_veh_id(item_bcy) + count_veh_id(item_bcyh) + count_veh_id(item_bci))*HEATING_OLD_WAG + \
+ count_veh_id(item_bhxz)*HEATING_MID_WAG + count_veh_id(item_abhxz)*HEATING_NEW_WAG
+
+#define HEATING_CONSUMP_ST_EL \
+(count_veh_id(item_bdwxzd) + \
+ count_veh_id(item_bh_ryf) + \
+ count_veh_id(item_bh_bon) \
+ )*HEATING_MID_WAG + \
+(count_veh_id(item_abdnu) + \
+ count_veh_id(item_jhix) \
+ )*HEATING_NEW_WAG + \
+ count_veh_id(item_bipa)/6*HEATING_BIPA_WAG
+
+#define HEATING_CONSUMP_ELECTRIC \
+(count_veh_id(item_bdhpumn)/2 + \
+ count_veh_id(item_twindexx)/2 + \
+ count_veh_id(item_twindexxcc)/2 + \
+ count_veh_id(item_bwxz)/2 + \
+ count_veh_id(item_abwxz)/2 + \
+ count_veh_id(item_awxz)/2 + \
+ count_veh_id(item_bdnu)/2 + \
+ count_veh_id(item_abdnu)/2 + \
+ count_veh_id(item_adnu)/2 + \
+ count_veh_id(item_141a)/2 + \
+ count_veh_id(item_112at)/2 + \
+ count_veh_id(item_140a)/2 + \
+ count_veh_id(item_174a)/2 + \
+ count_veh_id(item_162a)/2 + \
+ count_veh_id(item_163a)/2 + \
+ count_veh_id(item_152a)/2 + \
+ count_veh_id(item_154a)/2 + \
+ count_veh_id(item_158a)/2 + \
+ count_veh_id(item_159a)/2 + \
+ count_veh_id(item_wlab10mnouz)/2 + \
+ count_veh_id(item_113A)/2 + \
+ count_veh_id(item_113Aa)/2 + \
+ count_veh_id(item_wrdmnu)/2 + \
+ count_veh_id(item_wrmnouz)/2)*HEATING_NEW_WAG
+
+/* universal definitions */
+#define COUNT_EZT \
+ count_veh_id(item_en57)/5 + count_veh_id(item_en71)/7 + count_veh_id(item_ed72)/7
+
+#define PKPSET_ITEM_ID  (grfid==str2number("MV\01\05")) * vehicle_type_id
+
+#define KW_TO_HP(PowerKW)       int(PowerKW*1.3410)
+#define HP_TO_KW(PowerHP)       int(PowerHP*0.7457)
+
+/* Universal switches */
+switch(FEAT_TRAINS, SELF, switch_check_heating_combinations,
+  [ STORE_TEMP(HEATING_POWER_STEAM, 0),
+    STORE_TEMP(HEATING_POWER_ELECTRIC, 1),
+    STORE_TEMP(HEATING_CONSUMP_STEAM, 2),
+	STORE_TEMP(HEATING_CONSUMP_ST_EL, 3),
+    STORE_TEMP(HEATING_CONSUMP_ELECTRIC, 4),
+    ((LOAD_TEMP(0) >= LOAD_TEMP(2)+LOAD_TEMP(3)) && LOAD_TEMP(4) == 0) ||
+((LOAD_TEMP(1) >= LOAD_TEMP(3)+LOAD_TEMP(4)) && LOAD_TEMP(2) == 0) ])
+{
+    1: return CB_RESULT_NO_TEXT;
+    return string(STR_TRAIN_NOT_HEATED);
+}
+switch(FEAT_TRAINS, SELF, switch_check_heating, IS_HEATING_CLIMATE) {
+    1: switch_check_heating_combinations;
+    return CB_RESULT_NO_TEXT;
+}
+switch(FEAT_TRAINS, SELF, switch_check_features, BRAKE_FORCE >= 0) {
+    1: switch_check_heating;
+    return string(STR_TRAIN_WITHOUT_BRAKE);
+}
+switch(FEAT_TRAINS, SELF, switch_normal_start_stop, company_type == PLAYERTYPE_HUMAN) {
+    1: switch_check_features;
+    return CB_RESULT_NO_TEXT;
+}
+switch(FEAT_TRAINS, SELF, switch_normal_can_attach, vehicle_type_id) {
+    item_sn61:  return string(STR_ATTACH_DISALLOW_MCAR);
+    item_sn80:  return string(STR_ATTACH_DISALLOW_MCAR);
+    item_sn81:  return string(STR_ATTACH_DISALLOW_MCAR);
+    item_sa106_kd: return string(STR_ATTACH_DISALLOW_MCAR);
+    item_en57:  return string(STR_ATTACH_DISALLOW_EZT1);
+    item_en71:  return string(STR_ATTACH_DISALLOW_EZT1);
+    item_ed72:  return string(STR_ATTACH_DISALLOW_EZT1);
+    item_ed74:  return string(STR_ATTACH_DISALLOW_EZT1);
+    item_en76:  return string(STR_ATTACH_DISALLOW_EZT1);
+    item_ed250:  return string(STR_ATTACH_DISALLOW_EZT1);
+    item_ed161:  return string(STR_ATTACH_DISALLOW_EZT1);
+	item_wm15a: return string(STR_ATTACH_DISALLOW_TROLLEY);
+	item_pwm15: return string(STR_ATTACH_DISALLOW_TROLLEY);
+	item_asf: return string(STR_ATTACH_DISALLOW_TROLLEY);
+    return CB_RESULT_ATTACH_ALLOW;
+}
+/* Swithes for visual effects */
+switch(FEAT_TRAINS, SELF, switch_normal_steam_effect_local, position_in_vehid_chain % 2) {
+    0: return visual_effect_and_powered(VISUAL_EFFECT_STEAM, -3, DISABLE_WAGON_POWER);
+    return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+}
+switch(FEAT_TRAINS, PARENT, switch_normal_steam_effect, PKPSET_ITEM_ID) {
+    item_asf: return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+    return switch_normal_steam_effect_local;
+}
+#define ENGINE_VISUAL_EFFECT_SWITCH(engine) \
+switch(FEAT_TRAINS, PARENT, switch_##engine##_visual_effect, PKPSET_ITEM_ID) { \
+    item_asf: return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER); \
+    return switch_##engine##_visual_effect_local; \
+}
+
+/* Switches and callbacks for reducing wagon running cost (related with brakeman) */
+#define WAGON_RUNNING_COST_SWITCH(Wagon, BaseCost) \
+switch (FEAT_TRAINS, PARENT, switch_##Wagon##_running_cost, vehicle_is_in_depot & (current_speed == 0) ) { \
+	1: return BaseCost; \
+	return BaseCost+RUNNING_COST_BRAKEMAN; \
+}
+#define WAGON_RUNNING_COST_CALLBACKS(Wagon, BaseCost) \
+    purchase_running_cost_factor: return BaseCost+RUNNING_COST_BRAKEMAN; \
+    running_cost_factor:        switch_##Wagon##_running_cost;
+
+/* Switches and callbacks for reducing engine running cost */
+#define ENGINE_RUNNING_COST_SWITCH(Engine, ENGINE) \
+switch (FEAT_TRAINS, PARENT, switch_##Engine##_running_cost2, current_speed ) { \
+	0: return HALTED_COST_##ENGINE; \
+	return RUNNING_COST_##ENGINE; \
+} \
+switch (FEAT_TRAINS, PARENT, switch_##Engine##_running_cost, PKPSET_ITEM_ID) { \
+	item_asf: return 0; \
+	return switch_##Engine##_running_cost2; \
+}
+#define ENGINE_RUNNING_COST_CALLBACKS(Engine) \
+    purchase_running_cost_factor: return CB_FAILED; \
+    running_cost_factor:        switch_##Engine##_running_cost;
+
+/* Switches and callbacks for reducing engine power */
+#define STEAM_ENGINE_POWER_SWITCH(Engine, Power) \
+switch (FEAT_TRAINS, SELF, switch_##Engine##_power2, position_in_consist > 0 ) { \
+	1: return int(Power*0.67); \
+	return CB_FAILED; \
+} \
+switch (FEAT_TRAINS, PARENT, switch_##Engine##_power, PKPSET_ITEM_ID) { \
+	item_asf: return 0; \
+	return switch_##Engine##_power2; \
+}
+#define DIESEL_ELECTRIC_ENGINE_POWER_SWITCH(Engine) \
+switch (FEAT_TRAINS, PARENT, switch_##Engine##_power, PKPSET_ITEM_ID) { \
+	item_asf: return 0; \
+	return CB_FAILED; \
+}
+// for locomotives without multiple-unit train control
+#define DIESEL_ELECTRIC_2_ENGINE_POWER_SWITCH(Engine, Power) \
+switch (FEAT_TRAINS, SELF, switch_##Engine##_power3, position_in_consist > 0 ) { \
+	1: return int(Power*0.71); \
+	return CB_FAILED; \
+} \
+switch (FEAT_TRAINS, PARENT, switch_##Engine##_power, PKPSET_ITEM_ID) { \
+	item_asf: return 0; \
+	return switch_##Engine##_power3; \
+}
+// for high-power (>5000 kW) electric locomotives
+#define ELECTRIC_HI_ENGINE_POWER_SWITCH(Engine, Power) \
+switch (FEAT_TRAINS, SELF, switch_##Engine##_power5, position_in_consist > 0 ) { \
+	1: return int(Power*0.6); \
+	return CB_FAILED; \
+} \
+switch (FEAT_TRAINS, PARENT, switch_##Engine##_power, PKPSET_ITEM_ID) { \
+	item_asf: return 0; \
+	return switch_##Engine##_power5; \
+}
+
+#define ENGINE_POWER_CALLBACKS(Engine) \
+    purchase_power:             return CB_FAILED; \
+    power:                      switch_##Engine##_power;
+
+/* Properties and callbacks for engine capacity */
+#define ENGINE_CAPACITY_PROPERTY \
+    cargo_capacity:             1;
+
+#define ENGINE_CAPACITY_CALLBACKS \
+    purchase_cargo_capacity:    return 0; \
+    cargo_capacity:             return 0;
+
+#define ENGINE_CAPACITY_REFIT_PROPERTY      ENGINE_CAPACITY_PROPERTY
+#define ENGINE_CAPACITY_REFIT_CALLBACKS     ENGINE_CAPACITY_CALLBACKS
+
+/* Switches for subtype list */
+switch(FEAT_TRAINS, SELF, switch_old_subtype_text, cargo_subtype) {
+    0: return string(STR_SUBTYPE_OLD_2CLASS);
+    1: return string(STR_SUBTYPE_OLD_12CLASS);
+    2: return string(STR_SUBTYPE_OLD_1CLASS);
+    return CB_RESULT_NO_TEXT;
+}
+switch(FEAT_TRAINS, SELF, switch_new_subtype_text, cargo_subtype) {
+    0: return string(STR_SUBTYPE_NEW_2CLASS);
+    1: return string(STR_SUBTYPE_NEW_1CLASS);
+    return CB_RESULT_NO_TEXT;
+}
+
+/* Switches for refit cost */
+switch(FEAT_TRAINS, SELF, switch_old_refit_cost, ((extra_callback_info1>>8)&0xFF)%3 - cargo_subtype%3) {
+   -2: return (-2*REFIT_INCOME_12_CLASS_OLD) & CB_RESULT_REFIT_COST_MASK;
+   -1: return (-1*REFIT_INCOME_12_CLASS_OLD) & CB_RESULT_REFIT_COST_MASK;
+    1: return 1*REFIT_COST_12_CLASS_OLD;
+    2: return 2*REFIT_COST_12_CLASS_OLD;
+    return 0 | CB_RESULT_AUTOREFIT;
+}
+
+switch(FEAT_TRAINS, SELF, switch_new_refit_cost, ((extra_callback_info1>>8)&0xFF)%2 - cargo_subtype%2) {
+   -1: return (-1*REFIT_INCOME_12_CLASS_NEW) & CB_RESULT_REFIT_COST_MASK;
+    1: return 1*REFIT_COST_12_CLASS_NEW;
+    return 0 | CB_RESULT_AUTOREFIT;
+}
+
+/* Switches for calculating cargo_age_period */
+#define BONUS_RESTAURANT    2
+#define BONUS_LUGGAGE       1.41
+
+#define AGE_NORMAL_CAR      185
+switch(FEAT_TRAINS, PARENT, switch_normal_cargo_age_period, bitmask_consist_info & VINFO_WAGON_BONUS) {
+    bitmask(VINFO_LUGGAGE_WAGON): return int(AGE_NORMAL_CAR*BONUS_LUGGAGE);
+    bitmask(VINFO_RESTAURANT_WAGON): return int(AGE_NORMAL_CAR*BONUS_RESTAURANT);
+    bitmask(VINFO_LUGGAGE_WAGON, VINFO_RESTAURANT_WAGON): return int(AGE_NORMAL_CAR*BONUS_LUGGAGE*BONUS_RESTAURANT);
+    return AGE_NORMAL_CAR;
+}
+
+#define AGE_OLD_2_CLASS     185
+#define AGE_OLD_1_CLASS     185*2.83
+switch(FEAT_TRAINS, SELF, switch_old_cargo_age_period_normal, cargo_subtype % 3) {
+    1: return int((24*AGE_OLD_1_CLASS + 40*AGE_OLD_2_CLASS)/64);
+    2: return int(AGE_OLD_1_CLASS);
+    return AGE_OLD_2_CLASS;
+}
+switch(FEAT_TRAINS, SELF, switch_old_cargo_age_period_restaurant, cargo_subtype % 3) {
+    1: return int((24*AGE_OLD_1_CLASS + 40*AGE_OLD_2_CLASS)/64*BONUS_RESTAURANT);
+    2: return int(AGE_OLD_1_CLASS*BONUS_RESTAURANT);
+    return int(AGE_OLD_2_CLASS*BONUS_RESTAURANT);
+}
+switch(FEAT_TRAINS, SELF, switch_old_cargo_age_period_luggage, cargo_subtype % 3) {
+    1: return int((24*AGE_OLD_1_CLASS + 40*AGE_OLD_2_CLASS)/64*BONUS_LUGGAGE);
+    2: return int(AGE_OLD_1_CLASS*BONUS_LUGGAGE);
+    return int(AGE_OLD_2_CLASS*BONUS_LUGGAGE);
+}
+switch(FEAT_TRAINS, SELF, switch_old_cargo_age_period_all, cargo_subtype % 3) {
+    1: return int((24*AGE_OLD_1_CLASS + 40*AGE_OLD_2_CLASS)/64*BONUS_LUGGAGE*BONUS_RESTAURANT);
+    2: return int(AGE_OLD_1_CLASS*BONUS_LUGGAGE*BONUS_RESTAURANT);
+    return int(AGE_OLD_2_CLASS*BONUS_LUGGAGE*BONUS_RESTAURANT);
+}
+switch(FEAT_TRAINS, PARENT, switch_old_cargo_age_period, bitmask_consist_info & VINFO_WAGON_BONUS) {
+    bitmask(VINFO_LUGGAGE_WAGON): return switch_old_cargo_age_period_luggage;
+    bitmask(VINFO_RESTAURANT_WAGON): return switch_old_cargo_age_period_restaurant;
+    bitmask(VINFO_LUGGAGE_WAGON, VINFO_RESTAURANT_WAGON): return switch_old_cargo_age_period_all;
+    return switch_old_cargo_age_period_normal;
+}
+
+#define AGE_NEW_2_CLASS     185
+#define AGE_NEW_1_CLASS     185*2.83
+switch(FEAT_TRAINS, SELF, switch_new_cargo_age_period_normal, cargo_subtype % 2) {
+    1: return int(AGE_NEW_1_CLASS);
+    return AGE_NEW_2_CLASS;
+}
+switch(FEAT_TRAINS, SELF, switch_new_cargo_age_period_restaurant, cargo_subtype % 2) {
+    1: return int(AGE_NEW_1_CLASS*BONUS_RESTAURANT);
+    return int(AGE_NEW_2_CLASS*BONUS_RESTAURANT);
+}
+switch(FEAT_TRAINS, SELF, switch_new_cargo_age_period_luggage, cargo_subtype % 2) {
+    1: return int(AGE_NEW_1_CLASS*BONUS_LUGGAGE);
+    return int(AGE_NEW_2_CLASS*BONUS_LUGGAGE);
+}
+switch(FEAT_TRAINS, SELF, switch_new_cargo_age_period_all, cargo_subtype % 2) {
+    1: return int(AGE_NEW_1_CLASS*BONUS_LUGGAGE*BONUS_RESTAURANT);
+    return int(AGE_NEW_2_CLASS*BONUS_LUGGAGE*BONUS_RESTAURANT);
+}
+switch(FEAT_TRAINS, PARENT, switch_new_cargo_age_period, bitmask_consist_info & VINFO_WAGON_BONUS) {
+    bitmask(VINFO_LUGGAGE_WAGON): return switch_new_cargo_age_period_luggage;
+    bitmask(VINFO_RESTAURANT_WAGON): return switch_new_cargo_age_period_restaurant;
+    bitmask(VINFO_LUGGAGE_WAGON, VINFO_RESTAURANT_WAGON): return switch_new_cargo_age_period_all;
+    return switch_new_cargo_age_period_normal;
+}
+
+#define AGE_SLEEP_CAR       185*8
+switch(FEAT_TRAINS, PARENT, switch_sleep_cargo_age_period, bitmask_consist_info & VINFO_WAGON_BONUS) {
+    bitmask(VINFO_LUGGAGE_WAGON): return int(AGE_SLEEP_CAR*BONUS_LUGGAGE);
+    bitmask(VINFO_RESTAURANT_WAGON): return int(AGE_SLEEP_CAR*BONUS_RESTAURANT);
+    bitmask(VINFO_LUGGAGE_WAGON, VINFO_RESTAURANT_WAGON): return int(AGE_SLEEP_CAR*BONUS_LUGGAGE*BONUS_RESTAURANT);
+    return AGE_SLEEP_CAR;
+}
+// Can attach switches
+switch(FEAT_TRAINS, SELF, switch_en57axx_can_attach, vehicle_type_id) {
+    item_en57: return CB_RESULT_ATTACH_ALLOW;
+    item_en57_or: return CB_RESULT_ATTACH_ALLOW;
+    item_en57_ry: return CB_RESULT_ATTACH_ALLOW;
+    item_en57_by: return CB_RESULT_ATTACH_ALLOW;
+    item_en57_br: return CB_RESULT_ATTACH_ALLOW;
+    item_en57_km: return CB_RESULT_ATTACH_ALLOW;
+    item_en57_kd: return CB_RESULT_ATTACH_ALLOW;
+    item_en57_prk: return CB_RESULT_ATTACH_ALLOW;
+    item_en57_skmt: return CB_RESULT_ATTACH_ALLOW;
+    item_en57spot: return CB_RESULT_ATTACH_ALLOW;
+    item_en57spot_tg: return CB_RESULT_ATTACH_ALLOW;
+    item_en57spot_pr: return CB_RESULT_ATTACH_ALLOW;
+    item_en57akm: return CB_RESULT_ATTACH_ALLOW;
+    item_en57aks: return CB_RESULT_ATTACH_ALLOW;
+    item_en57akw: return CB_RESULT_ATTACH_ALLOW;
+    item_en57ap: return CB_RESULT_ATTACH_ALLOW;
+    item_en57alpr: return CB_RESULT_ATTACH_ALLOW;
+    item_en57al_kw: return CB_RESULT_ATTACH_ALLOW;
+    item_en57al_km: return CB_RESULT_ATTACH_ALLOW;
+    item_en71: return CB_RESULT_ATTACH_ALLOW;
+    item_en71_or: return CB_RESULT_ATTACH_ALLOW;
+    item_en71_ry: return CB_RESULT_ATTACH_ALLOW;
+    item_en71_by: return CB_RESULT_ATTACH_ALLOW;
+    item_en71_br: return CB_RESULT_ATTACH_ALLOW;
+    item_en71_km: return CB_RESULT_ATTACH_ALLOW;
+    item_en71_kd: return CB_RESULT_ATTACH_ALLOW;
+    item_en71_prk: return CB_RESULT_ATTACH_ALLOW;
+    item_en71_skmt: return CB_RESULT_ATTACH_ALLOW;
+    item_ed72: return CB_RESULT_ATTACH_ALLOW;
+    item_edi72: return CB_RESULT_ATTACH_ALLOW;
+    item_ed72_pr: return CB_RESULT_ATTACH_ALLOW;
+    item_en71akm: return CB_RESULT_ATTACH_ALLOW;
+    item_en71aks: return CB_RESULT_ATTACH_ALLOW;
+    item_ed74: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_ed74_pkp_ic: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en76: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_ed250: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_36wea_op: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_36wea_po: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_36wea_kd: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_36wea_kd_kolej: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_36wea_slaskie: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_36wea_km: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_36wea_sk: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_31we_kd: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en78_kml: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_ed78_zach_pom: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_ed78_028: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_45we_kd: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_45we_km: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en79_kml: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en90_pomorskie: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_35we_skm: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_35we_ks: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_ed161: return string(STR_ATTACH_DISALLOW_EZT2);
+    return string(STR_ATTACH_DISALLOW_EZT1);
+}
+switch(FEAT_TRAINS, SELF, switch_impuls1_can_attach, vehicle_type_id) {
+    item_en57: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en57_or: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en57_ry: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en57_by: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en57_br: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en57_km: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en57_kd: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en57_prk: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en57_skmt: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en57spot: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en57spot_tg: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en57spot_pr: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en57akm: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en57aks: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en57akw: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en57ap: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en57alpr: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en57al_kw: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en57al_km: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en71: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en71_or: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en71_ry: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en71_by: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en71_br: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en71_km: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en71_kd: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en71_prk: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en71_skmt: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_ed72: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_edi72: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_ed72_pr: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en71akm: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en71aks: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_ed74: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_ed74_pkp_ic: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en76: return CB_RESULT_ATTACH_ALLOW;
+    item_ed250: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_36wea_op: return CB_RESULT_ATTACH_ALLOW;
+    item_36wea_po: return CB_RESULT_ATTACH_ALLOW;
+    item_36wea_kd: return CB_RESULT_ATTACH_ALLOW;
+    item_36wea_kd_kolej: return CB_RESULT_ATTACH_ALLOW;
+    item_36wea_slaskie: return CB_RESULT_ATTACH_ALLOW;
+    item_36wea_km: return CB_RESULT_ATTACH_ALLOW;
+    item_36wea_sk: return CB_RESULT_ATTACH_ALLOW;
+    item_31we_kd: return CB_RESULT_ATTACH_ALLOW;
+    item_en78_kml: return CB_RESULT_ATTACH_ALLOW;
+    item_ed78_zach_pom: return CB_RESULT_ATTACH_ALLOW;
+    item_ed78_028: return CB_RESULT_ATTACH_ALLOW;
+    item_45we_kd: return CB_RESULT_ATTACH_ALLOW;
+    item_45we_km: return CB_RESULT_ATTACH_ALLOW;
+    item_en79_kml: return CB_RESULT_ATTACH_ALLOW;
+    item_en90_pomorskie: return CB_RESULT_ATTACH_ALLOW;
+    item_35we_skm: return CB_RESULT_ATTACH_ALLOW;
+    item_35we_ks: return CB_RESULT_ATTACH_ALLOW;
+    item_ed161: return string(STR_ATTACH_DISALLOW_EZT2);
+    return string(STR_ATTACH_DISALLOW_EZT1);
+}
+// Additional Text Impuls 1
+switch(FEAT_TRAINS, SELF, switch_impuls1_2part_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_2L, string(STR_HEATING_ELECTRIC_TEXT), string(STR_2PART_EMU_TEXT));
+    return string(STR_2PART_EMU_TEXT);
+}
+switch(FEAT_TRAINS, SELF, switch_impuls1_3part_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_2L, string(STR_HEATING_ELECTRIC_TEXT), string(STR_3PART_EMU_TEXT));
+    return string(STR_3PART_EMU_TEXT);
+}
+switch(FEAT_TRAINS, SELF, switch_impuls1_4part_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_2L, string(STR_HEATING_ELECTRIC_TEXT), string(STR_4PART_EMU_TEXT));
+    return string(STR_4PART_EMU_TEXT);
+}
+switch(FEAT_TRAINS, SELF, switch_impuls1_5part_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_2L, string(STR_HEATING_ELECTRIC_TEXT), string(STR_5PART_EMU_TEXT));
+    return string(STR_5PART_EMU_TEXT);
+}
+switch(FEAT_TRAINS, SELF, switch_impuls1_6part_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_2L, string(STR_HEATING_ELECTRIC_TEXT), string(STR_6PART_EMU_TEXT));
+    return string(STR_6PART_EMU_TEXT);
+}

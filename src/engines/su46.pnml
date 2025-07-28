@@ -1,0 +1,235 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* SU46 sprites */
+spriteset(sset_su46_purchase, "gfx/su46.png")       { tmpl_sprite_purchase(4, 180) }
+spriteset(sset_su46, "gfx/su46.png")                { tmpl_sprite_train10(4, 140) }
+spriteset(sset_st46_pkp_cargo_purchase, "gfx/su46.png")       { tmpl_sprite_purchase(4, 120) }
+spriteset(sset_st46_pkp_cargo, "gfx/su46.png")      { tmpl_sprite_train10(4, 80) }
+spriteset(sset_su46_yellow_purchase, "gfx/su46.png")       { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_su46_yellow, "gfx/su46.png")      { tmpl_sprite_train10(4, 20) }
+spriteset(sset_su46_nysa_purchase, "gfx/su46.png")       { tmpl_sprite_purchase(4, 240) }
+spriteset(sset_su46_nysa, "gfx/su46.png")      { tmpl_sprite_train10(4, 200) }
+
+/* SU46 switches */
+switch(FEAT_TRAINS, SELF, switch_su46_articulated, extra_callback_info1) {
+    1: return item_dummy_2;        // dummy parts
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_su46_visual_effect_local, position_in_vehid_chain % 2) {
+    0: return visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 1, DISABLE_WAGON_POWER);
+    return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+}
+switch (FEAT_TRAINS, SELF, switch_su46_add_text, IS_HEATING_CLIMATE ) {
+	1: return string(STR_PURCHASE_DESCR_2L, string(STR_HEATING_ELECTRIC_POWER_TEXT, HEATING_POWER_ELECTRIC_HI), string(STR_ENGINE_PASSENGER_FREIGHT));
+	return string(STR_ENGINE_PASSENGER_FREIGHT);
+}
+ENGINE_RUNNING_COST_SWITCH(su46, SU46)
+DIESEL_ELECTRIC_ENGINE_POWER_SWITCH(su46)
+ENGINE_VISUAL_EFFECT_SWITCH(su46)
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_su46, 420) {
+    property {
+		/* common properties */
+        name:                           string(STR_SU46_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1974, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_SU46;
+        running_cost_factor:            RUNNING_COST_SU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          120 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          1655 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         105 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.307;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_su46_purchase;
+        additional_text:            switch_su46_add_text;
+        default:                    sset_su46;
+        articulated_part:           switch_su46_articulated;
+        visual_effect_and_powered:  switch_su46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(su46)
+        ENGINE_POWER_CALLBACKS(su46)
+    }
+}
+/* SU46 yellow switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_su46_yellow, 421) {
+    property {
+		/* common properties */
+        name:                           string(STR_SU46_YELLOW_CZOLO_NAME);
+        variant_group:                  420;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1989, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_SU46;
+        running_cost_factor:            RUNNING_COST_SU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          120 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          1655 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         105 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.307;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_su46_yellow_purchase;
+        additional_text:            switch_su46_add_text;
+        default:                    sset_su46_yellow;
+        articulated_part:           switch_su46_articulated;
+        visual_effect_and_powered:  switch_su46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(su46)
+        ENGINE_POWER_CALLBACKS(su46)
+    }
+}
+/* ST46 pkp cargo switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_st46_pkp_cargo, 422) {
+    property {
+		/* common properties */
+        name:                           string(STR_ST46_PKP_CARGO_NAME);
+        variant_group:                  420;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2011, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_SU46;
+        running_cost_factor:            RUNNING_COST_SU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          120 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          1655 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         105 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.307;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_st46_pkp_cargo_purchase;
+        additional_text:            switch_su46_add_text;
+        default:                    sset_st46_pkp_cargo;
+        articulated_part:           switch_su46_articulated;
+        visual_effect_and_powered:  switch_su46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(su46)
+        ENGINE_POWER_CALLBACKS(su46)
+    }
+}
+item(FEAT_TRAINS, item_su46_nysa, 423) {
+    property {
+		/* common properties */
+        name:                           string(STR_SU46_NYSA_NAME);
+        variant_group:                  420;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1992, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_SU46;
+        running_cost_factor:            RUNNING_COST_SU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          120 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          1655 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         105 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.307;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_su46_nysa_purchase;
+        additional_text:            switch_su46_add_text;
+        default:                    sset_su46_nysa;
+        articulated_part:           switch_su46_articulated;
+        visual_effect_and_powered:  switch_su46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(su46)
+        ENGINE_POWER_CALLBACKS(su46)
+    }
+}

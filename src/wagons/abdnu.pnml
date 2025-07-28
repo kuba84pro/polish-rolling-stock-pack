@@ -1,0 +1,500 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* A/Bdnu sprites */
+#define ABDNU_OLD_FILE  "gfx/111a-112a.png"
+#define ABDNU_NEW_FILE  "gfx/111a-112a.png"
+#define ABDNU_IC_FILE   "gfx/140a-141a.png"
+// old livery
+spriteset(sset_bwxz_purchase, ABDNU_OLD_FILE)      { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_abwxz_purchase, ABDNU_OLD_FILE)      { tmpl_sprite_purchase(4, 740) }
+spriteset(sset_awxz_purchase, ABDNU_OLD_FILE)      { tmpl_sprite_purchase(4, 760) }
+spriteset(sset_bwxz, ABDNU_OLD_FILE)            { tmpl_sprite_train12(4, 20) }
+spriteset(sset_abwxz, ABDNU_OLD_FILE)           { tmpl_sprite_train12(4, 140) }
+spriteset(sset_awxz, ABDNU_OLD_FILE)            { tmpl_sprite_train12(4, 180) }
+spriteset(sset_bwxz_open, ABDNU_OLD_FILE)       { tmpl_sprite_train12(4, 300) }
+spriteset(sset_abwxz_open, ABDNU_OLD_FILE)      { tmpl_sprite_train12(4, 380) }
+spriteset(sset_awxz_open, ABDNU_OLD_FILE)       { tmpl_sprite_train12(4, 420) }
+spriteset(sset_bwxz_cut, ABDNU_OLD_FILE)        { tmpl_sprite_train12(4, 540) }
+spriteset(sset_abwxz_cut, ABDNU_OLD_FILE)       { tmpl_sprite_train12(4, 620) }
+// old livery
+spritegroup sgroup_bwxz {
+    loaded:     [sset_bwxz];
+    loading:    [sset_bwxz_open];
+}
+spritegroup sgroup_abwxz {
+    loaded:     [sset_abwxz];
+    loading:    [sset_abwxz_open];
+}
+spritegroup sgroup_awxz {
+    loaded:     [sset_awxz];
+    loading:    [sset_awxz_open];
+}
+// new livery
+spriteset(sset_bdnu_purchase, ABDNU_NEW_FILE)      { tmpl_sprite_purchase(4, 120) }
+spriteset(sset_abdnu_purchase, ABDNU_OLD_FILE)      { tmpl_sprite_purchase(4, 780) }
+spriteset(sset_adnu_purchase, ABDNU_OLD_FILE)      { tmpl_sprite_purchase(4, 800) }
+spriteset(sset_bdnu, ABDNU_NEW_FILE)            { tmpl_sprite_train12(4, 80) }
+spriteset(sset_abdnu, ABDNU_NEW_FILE)           { tmpl_sprite_train12(4, 220) }
+spriteset(sset_adnu, ABDNU_NEW_FILE)            { tmpl_sprite_train12(4, 260) }
+spriteset(sset_bdnu_open, ABDNU_NEW_FILE)       { tmpl_sprite_train12(4, 340) }
+spriteset(sset_abdnu_open, ABDNU_NEW_FILE)      { tmpl_sprite_train12(4, 460) }
+spriteset(sset_adnu_open, ABDNU_NEW_FILE)       { tmpl_sprite_train12(4, 500) }
+spriteset(sset_bdnu_cut, ABDNU_NEW_FILE)        { tmpl_sprite_train12(4, 580) }
+spriteset(sset_abdnu_cut, ABDNU_NEW_FILE)       { tmpl_sprite_train12(4, 660) }
+spriteset(sset_adnu_cut, ABDNU_NEW_FILE)        { tmpl_sprite_train12(4, 700) }
+// Green-Red livery
+spritegroup sgroup_bdnu {
+    loaded:     [sset_bdnu];
+    loading:    [sset_bdnu_open];
+}
+spritegroup sgroup_abdnu {
+    loaded:     [sset_abdnu];
+    loading:    [sset_abdnu_open];
+}
+spritegroup sgroup_adnu {
+    loaded:     [sset_adnu];
+    loading:    [sset_adnu_open];
+}
+// alternate IC livery
+spriteset(sset_141a_purchase, ABDNU_IC_FILE)      { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_140a_purchase, ABDNU_IC_FILE)      { tmpl_sprite_purchase(4, 400) }
+spriteset(sset_112at_purchase, ABDNU_IC_FILE)      { tmpl_sprite_purchase(4, 420) }
+spriteset(sset_140a, ABDNU_IC_FILE)              { tmpl_sprite_train12(4, 80) }
+spriteset(sset_141a, ABDNU_IC_FILE)              { tmpl_sprite_train12(4, 20) }
+spriteset(sset_112at, ABDNU_IC_FILE)            { tmpl_sprite_train12(4, 120) }
+spriteset(sset_140a_open, ABDNU_IC_FILE)         { tmpl_sprite_train12(4, 200) }
+spriteset(sset_141a_open, ABDNU_IC_FILE)         { tmpl_sprite_train12(4, 160) }
+spriteset(sset_112at_open, ABDNU_IC_FILE)       { tmpl_sprite_train12(4, 240) }
+spriteset(sset_140a_cut, ABDNU_IC_FILE)          { tmpl_sprite_train12(4, 320) }
+spriteset(sset_141a_cut, ABDNU_IC_FILE)          { tmpl_sprite_train12(4, 280) }
+spriteset(sset_112at_cut, ABDNU_IC_FILE)        { tmpl_sprite_train12(4, 360) }
+// alternate IC livery
+spritegroup sgroup_141a {
+    loaded:     [sset_141a];
+    loading:    [sset_141a_open];
+}
+spritegroup sgroup_140a {
+    loaded:     [sset_140a];
+    loading:    [sset_140a_open];
+}
+spritegroup sgroup_112at {
+    loaded:     [sset_112at];
+    loading:    [sset_112at_open];
+}
+
+/* OLIWKOWE bwxz switches */
+
+switch(FEAT_TRAINS, SELF, switch_abdnu_articulated, extra_callback_info1) {
+    1: return item_dummy_3;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_bwxz_graphics, (extra_callback_info1&0xFF)==0 && other_veh_is_hidden(1)) {
+    1: return sset_bwxz_cut;
+    return sgroup_bwxz;
+}
+switch (FEAT_TRAINS, SELF, switch_abdnu_oliwkowe_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_4L, string(STR_BRAKE_AIR), string(STR_HEATING_ST_EL_TEXT), string(STR_ABDNU_OLIWKOWE_TEXT), string(STR_INCOME_1_CLASS));
+    return string(STR_PURCHASE_DESCR_3L, string(STR_BRAKE_AIR), string(STR_ABDNU_OLIWKOWE_TEXT), string(STR_INCOME_1_CLASS));
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_bwxz, 10100) {
+    property {
+        /* common properties */
+        name:                           string(STR_BWXZ_NAME);
+        variant_group:                  10102;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1968, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  7;
+        cost_factor:                    PURCHASE_COST_ABDNU;
+        running_cost_factor:            RUNNING_COST_PASS_EXPRESS;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 80;
+        weight:                         39 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   sset_bwxz_purchase;
+        additional_text:            switch_abdnu_oliwkowe_add_text;
+        default:                    switch_bwxz_graphics;
+        articulated_part:           switch_abdnu_articulated;
+        cargo_age_period:           switch_old_cargo_age_period;
+    }
+}
+
+// abwxz
+
+switch(FEAT_TRAINS, SELF, switch_abwxz_graphics, (extra_callback_info1&0xFF)==0 && other_veh_is_hidden(1)) {
+    1: return sset_abwxz_cut;
+    return sgroup_abwxz;
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_abwxz, 10101) {
+    property {
+        /* common properties */
+        name:                           string(STR_ABWXZ_NAME);
+        variant_group:                  10102;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1968, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  7;
+        cost_factor:                    PURCHASE_COST_ABDNU;
+        running_cost_factor:            RUNNING_COST_PASS_EXPRESS;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 64;
+        weight:                         39 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   sset_abwxz_purchase;
+        additional_text:            switch_abdnu_oliwkowe_add_text;
+        default:                    switch_abwxz_graphics;
+        articulated_part:           switch_abdnu_articulated;
+        cargo_age_period:           switch_old_cargo_age_period;
+    }
+}
+
+// awxz
+
+switch(FEAT_TRAINS, SELF, switch_awxz_graphics, (extra_callback_info1&0xFF)==0 && other_veh_is_hidden(1)) {
+    1: return sset_abwxz_cut;
+    return sgroup_awxz;
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_awxz, 10102) {
+    property {
+        /* common properties */
+        name:                           string(STR_AWXZ_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1968, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  7;
+        cost_factor:                    PURCHASE_COST_ABDNU;
+        running_cost_factor:            RUNNING_COST_PASS_EXPRESS;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 54;
+        weight:                         39 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   sset_awxz_purchase;
+        additional_text:            switch_abdnu_oliwkowe_add_text;
+        default:                    switch_awxz_graphics;
+        articulated_part:           switch_abdnu_articulated;
+        cargo_age_period:           switch_old_cargo_age_period;
+    }
+}
+
+/* Green-Red bdnu switches */
+
+switch(FEAT_TRAINS, SELF, switch_bdnu_graphics, (extra_callback_info1&0xFF)==0 && other_veh_is_hidden(1)) {
+    1: return sset_bdnu_cut;
+    return sgroup_bdnu;
+}
+switch (FEAT_TRAINS, SELF, switch_abdnu_new_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_4L, string(STR_BRAKE_AIR), string(STR_HEATING_ST_EL_TEXT), string(STR_ABDNU_GREEN_RED_TEXT), string(STR_INCOME_1_CLASS));
+    return string(STR_PURCHASE_DESCR_3L, string(STR_BRAKE_AIR), string(STR_ABDNU_GREEN_RED_TEXT), string(STR_INCOME_1_CLASS));
+}
+item(FEAT_TRAINS, item_bdnu, 10103) {
+    property {
+        /* common properties */
+        name:                           string(STR_BDNU_NAME);
+        variant_group:                  10102;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1993, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  7;
+        cost_factor:                    PURCHASE_COST_ABDNU;
+        running_cost_factor:            RUNNING_COST_PASS_EXPRESS;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 80;
+        weight:                         39 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   sset_bdnu_purchase;
+        additional_text:            switch_abdnu_new_add_text;
+        default:                    switch_bdnu_graphics;
+        articulated_part:           switch_abdnu_articulated;
+        cargo_age_period:           switch_old_cargo_age_period;
+    }
+}
+
+// abdnu
+
+switch(FEAT_TRAINS, SELF, switch_abdnu_graphics, (extra_callback_info1&0xFF)==0 && other_veh_is_hidden(1)) {
+    1: return sset_abdnu_cut;
+    return sgroup_abdnu;
+}
+item(FEAT_TRAINS, item_abdnu, 10104) {
+    property {
+        /* common properties */
+        name:                           string(STR_ABDNU_NAME);
+        variant_group:                  10102;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1993, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  7;
+        cost_factor:                    PURCHASE_COST_ABDNU;
+        running_cost_factor:            RUNNING_COST_PASS_EXPRESS;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 64;
+        weight:                         39 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   sset_abdnu_purchase;
+        additional_text:            switch_abdnu_new_add_text;
+        default:                    switch_abdnu_graphics;
+        articulated_part:           switch_abdnu_articulated;
+        cargo_age_period:           switch_old_cargo_age_period;
+    }
+}
+
+// adnu
+
+switch(FEAT_TRAINS, SELF, switch_adnu_graphics, (extra_callback_info1&0xFF)==0 && other_veh_is_hidden(1)) {
+    1: return sset_adnu_cut;
+    return sgroup_adnu;
+}
+item(FEAT_TRAINS, item_adnu, 10105) {
+    property {
+        /* common properties */
+        name:                           string(STR_ADNU_NAME);
+        variant_group:                  10102;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1993, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  7;
+        cost_factor:                    PURCHASE_COST_ABDNU;
+        running_cost_factor:            RUNNING_COST_PASS_EXPRESS;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 54;
+        weight:                         39 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   sset_adnu_purchase;
+        additional_text:            switch_abdnu_new_add_text;
+        default:                    switch_adnu_graphics;
+        articulated_part:           switch_abdnu_articulated;
+        cargo_age_period:           switch_old_cargo_age_period;
+    }
+}
+
+/* IC 141a switches */
+
+switch(FEAT_TRAINS, SELF, switch_141a_graphics, (extra_callback_info1&0xFF)==0 && other_veh_is_hidden(1)) {
+    1: return sset_141a_cut;
+    return sgroup_141a;
+}
+switch (FEAT_TRAINS, SELF, switch_abdnu_ic_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_4L, string(STR_BRAKE_AIR), string(STR_HEATING_ST_EL_TEXT), string(STR_ABDNU_IC_TEXT), string(STR_INCOME_1_CLASS));
+    return string(STR_PURCHASE_DESCR_3L, string(STR_BRAKE_AIR), string(STR_ABDNU_IC_TEXT), string(STR_INCOME_1_CLASS));
+}
+item(FEAT_TRAINS, item_141a, 10106) {
+    property {
+        /* common properties */
+        name:                           string(STR_141A_NAME);
+        variant_group:                  10102;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2003, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  7;
+        cost_factor:                    PURCHASE_COST_ABDNU;
+        running_cost_factor:            RUNNING_COST_PASS_EXPRESS;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 80;
+        weight:                         39 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   sset_141a_purchase;
+        additional_text:            switch_abdnu_ic_add_text;
+        default:                    switch_141a_graphics;
+        articulated_part:           switch_abdnu_articulated;
+        cargo_age_period:           switch_old_cargo_age_period;
+    }
+}
+
+// 112at
+
+switch(FEAT_TRAINS, SELF, switch_112at_graphics, (extra_callback_info1&0xFF)==0 && other_veh_is_hidden(1)) {
+    1: return sset_112at_cut;
+    return sgroup_112at;
+}
+item(FEAT_TRAINS, item_112at, 10107) {
+    property {
+        /* common properties */
+        name:                           string(STR_112AT_NAME);
+        variant_group:                  10102;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2003, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  7;
+        cost_factor:                    PURCHASE_COST_ABDNU;
+        running_cost_factor:            RUNNING_COST_PASS_EXPRESS;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 64;
+        weight:                         39 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   sset_112at_purchase;
+        additional_text:            switch_abdnu_ic_add_text;
+        default:                    switch_112at_graphics;
+        articulated_part:           switch_abdnu_articulated;
+        cargo_age_period:           switch_old_cargo_age_period;
+    }
+}
+
+// 140a
+
+switch(FEAT_TRAINS, SELF, switch_140a_graphics, (extra_callback_info1&0xFF)==0 && other_veh_is_hidden(1)) {
+    1: return sset_140a_cut;
+    return sgroup_140a;
+}
+item(FEAT_TRAINS, item_140a, 10108) {
+    property {
+        /* common properties */
+        name:                           string(STR_140A_NAME);
+        variant_group:                  10102;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2003, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  7;
+        cost_factor:                    PURCHASE_COST_ABDNU;
+        running_cost_factor:            RUNNING_COST_PASS_EXPRESS;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 54;
+        weight:                         39 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   sset_140a_purchase;
+        additional_text:            switch_abdnu_ic_add_text;
+        default:                    switch_140a_graphics;
+        articulated_part:           switch_abdnu_articulated;
+        cargo_age_period:           switch_old_cargo_age_period;
+    }
+}
+

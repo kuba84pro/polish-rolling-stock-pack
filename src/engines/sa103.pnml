@@ -1,0 +1,268 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* SA103 sprites */
+spriteset(sset_sa103_pom_purchase, "gfx/sa103_pomorskie.png")         { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_sa103_pom, "gfx/sa103_pomorskie.png")                  { tmpl_sprite_train12(4, 20) }
+spriteset(sset_sa103_pom_open, "gfx/sa103_pomorskie.png")             { tmpl_sprite_train12(4, 80) }
+spriteset(sset_sa103_pom_cut, "gfx/sa103_pomorskie.png")              { tmpl_sprite_train12(4, 120) }
+spriteset(sset_sa103_podk_purchase, "gfx/sa103_podkarpackie.png")         { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_sa103_podk, "gfx/sa103_podkarpackie.png")                  { tmpl_sprite_train12(4, 20) }
+spriteset(sset_sa103_podk_open, "gfx/sa103_podkarpackie.png")             { tmpl_sprite_train12(4, 80) }
+spriteset(sset_sa103_podk_cut, "gfx/sa103_podkarpackie.png")              { tmpl_sprite_train12(4, 120) }
+spriteset(sset_sa103_pom_old_purchase, "gfx/sa106_p_old.png")         { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_sa103_pom_old, "gfx/sa106_p_old.png")                { tmpl_sprite_train12(4, 20) }
+spriteset(sset_sa103_pom_old_open, "gfx/sa106_p_old.png")              { tmpl_sprite_train12(4, 80) }
+spriteset(sset_sa103_pom_old_cut, "gfx/sa106_p_old.png")               { tmpl_sprite_train12(4, 120) }
+spritegroup sgroup_sa103_pom {
+    loaded:     [sset_sa103_pom];
+    loading:    [sset_sa103_pom_open];
+}
+spritegroup sgroup_sa103_podk {
+    loaded:     [sset_sa103_podk];
+    loading:    [sset_sa103_podk_open];
+}
+spritegroup sgroup_sa103_pom_old {
+    loaded:     [sset_sa103_pom_old];
+    loading:    [sset_sa103_pom_old_open];
+}
+
+#ifdef SITTING_PLACES
+    #undef SITTING_PLACES
+#endif
+#ifdef STANDING_PLACES
+    #undef STANDING_PLACES
+#endif
+#define SITTING_PLACES 60
+#define STANDING_PLACES 16
+
+/* SA103 POMORSKIE switches */
+switch(FEAT_TRAINS, SELF, switch_sa103_articulated, extra_callback_info1) {
+    1: return item_dummy_3;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_sa103_graphics, (extra_callback_info1&0xFF)==0 && other_veh_is_hidden(1)) {
+    1: return sset_sa103_pom_cut;
+    return sgroup_sa103_pom;
+}
+switch(FEAT_TRAINS, SELF, switch_sa103_capacity, cargo_type_in_veh) {
+    TOUR: return SITTING_PLACES;
+    return SITTING_PLACES+STANDING_PLACES;
+}
+switch(FEAT_TRAINS, PARENT, switch_sa103_visual_effect_local,0) {
+    return visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 1, DISABLE_WAGON_POWER);
+}
+switch(FEAT_TRAINS, SELF, switch_sa103_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_2L, string(STR_HEATING_COMBINED_TEXT), string(STR_SA103_TEXT));
+    return string(STR_SA103_TEXT);
+}
+switch(FEAT_TRAINS, SELF, switch_sa103_can_attach_arctic, IS_HEATING_CLIMATE ) {
+    1: return string(STR_ATTACH_DISALLOW, string(STR_SA103_NAME));
+    return CB_RESULT_ATTACH_ALLOW;
+}
+switch(FEAT_TRAINS, SELF, switch_sa103_can_attach, vehicle_type_id) {
+    item_sa103_pomorskie:   return CB_RESULT_ATTACH_ALLOW;
+    item_sa103_podkarpackie:   return CB_RESULT_ATTACH_ALLOW;
+    item_sa103_pomorskie_old:   return CB_RESULT_ATTACH_ALLOW;
+    item_bh_bon:  return CB_RESULT_ATTACH_ALLOW;
+    item_bh_bon_new:  return CB_RESULT_ATTACH_ALLOW;
+    item_120a_pr:  return CB_RESULT_ATTACH_ALLOW;
+    item_120a_malopolskie:  return CB_RESULT_ATTACH_ALLOW;
+    item_bdhpumn: return switch_sa103_can_attach_arctic;
+    item_bdhpumn_pr: return switch_sa103_can_attach_arctic;
+    item_bdhpumn_ir: return switch_sa103_can_attach_arctic;
+    item_bdhpumn_pl: return switch_sa103_can_attach_arctic;
+    item_bdwxzd:  return switch_sa103_can_attach_arctic;
+    return string(STR_ATTACH_DISALLOW, string(STR_SA103_NAME));
+}
+switch(FEAT_TRAINS, SELF, switch_sa103_start_stop, (count_veh_id(item_bh_bon)+count_veh_id(item_bdhpumn)/2+count_veh_id(item_bdwxzd) > 3) ) {
+    1: return string(STR_TRAIN_TOO_LONG, string(STR_SA103_NAME));
+    return CB_RESULT_NO_TEXT;
+}
+ENGINE_RUNNING_COST_SWITCH(sa103, SA103)
+DIESEL_ELECTRIC_ENGINE_POWER_SWITCH(sa103)
+ENGINE_VISUAL_EFFECT_SWITCH(sa103)
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_sa103_pomorskie, 510) {
+    property {
+        /* common properties */
+        name:                           string(STR_SA103_POMORSKIE_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2001, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  12;
+        cost_factor:                    PURCHASE_COST_SA103;
+        running_cost_factor:            RUNNING_COST_SA103;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          120 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          390 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        cargo_capacity:                 SITTING_PLACES+STANDING_PLACES;
+        weight:                         52 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.150;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        variant_group:                  500;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+    graphics {
+        purchase:                   sset_sa103_pom_purchase;
+        additional_text:            switch_sa103_add_text;
+        default:                    switch_sa103_graphics;
+        articulated_part:           switch_sa103_articulated;
+        visual_effect_and_powered:  switch_sa103_visual_effect;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_sa103_capacity;
+        colour_mapping:             switch_lights_engine_2;
+        can_attach_wagon:           switch_sa103_can_attach;
+        start_stop:                 switch_sa103_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(sa103)
+        ENGINE_POWER_CALLBACKS(sa103)
+    }
+}
+/* SA103 PODKARPACKIE switches */
+switch(FEAT_TRAINS, SELF, switch_sa103_podkarpackie_articulated, extra_callback_info1) {
+    1: return item_dummy_3;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_sa103_podkarpackie_graphics, (extra_callback_info1&0xFF)==0 && other_veh_is_hidden(1)) {
+    1: return sset_sa103_podk_cut;
+    return sgroup_sa103_podk;
+}
+switch(FEAT_TRAINS, SELF, switch_sa103_podk_start_stop, (count_veh_id(item_bh_bon)+count_veh_id(item_bdhpumn)/2+count_veh_id(item_bdwxzd) > 3) ) {
+    1: return string(STR_TRAIN_TOO_LONG, string(STR_SA103_NAME));
+    return CB_RESULT_NO_TEXT;
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_sa103_podkarpackie, 511) {
+    property {
+        /* common properties */
+        name:                           string(STR_SA103_PODKARPACKIE_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2001, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  12;
+        cost_factor:                    PURCHASE_COST_SA103;
+        running_cost_factor:            RUNNING_COST_SA103;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          120 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          390 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        cargo_capacity:                 SITTING_PLACES+STANDING_PLACES;
+        weight:                         52 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.150;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        variant_group:                  510;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+    graphics {
+        purchase:                   sset_sa103_podk_purchase;
+        additional_text:            switch_sa103_add_text;
+        default:                    switch_sa103_podkarpackie_graphics;
+        articulated_part:           switch_sa103_podkarpackie_articulated;
+        visual_effect_and_powered:  switch_sa103_visual_effect;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_sa103_capacity;
+        colour_mapping:             switch_lights_engine_2;
+        can_attach_wagon:           switch_sa103_can_attach;
+        start_stop:                 switch_sa103_podk_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(sa103)
+        ENGINE_POWER_CALLBACKS(sa103)
+    }
+}
+/* SA103 POMORSKIE OLD switches */
+switch(FEAT_TRAINS, SELF, switch_sa103_pomorskie_old_articulated, extra_callback_info1) {
+    1: return item_dummy_3;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_sa103_pomorskie_old_graphics, (extra_callback_info1&0xFF)==0 && other_veh_is_hidden(1)) {
+    1: return sset_sa103_pom_old_cut;
+    return sset_sa103_pom_old;
+}
+switch(FEAT_TRAINS, SELF, switch_sa103_pomorskie_old_start_stop, (count_veh_id(item_bh_bon)+count_veh_id(item_bdhpumn)/2+count_veh_id(item_bdwxzd) > 3) ) {
+    1: return string(STR_TRAIN_TOO_LONG, string(STR_SA103_NAME));
+    return CB_RESULT_NO_TEXT;
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_sa103_pomorskie_old, 512) {
+    property {
+        /* common properties */
+        name:                           string(STR_SA103_POMORSKIE_OLD_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2001, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  12;
+        cost_factor:                    PURCHASE_COST_SA103;
+        running_cost_factor:            RUNNING_COST_SA103;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          120 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          390 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        cargo_capacity:                 SITTING_PLACES+STANDING_PLACES;
+        weight:                         52 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.150;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        variant_group:                  510;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+    graphics {
+        purchase:                   sset_sa103_pom_old_purchase;
+        additional_text:            switch_sa103_add_text;
+        default:                    switch_sa103_pomorskie_old_graphics;
+        articulated_part:           switch_sa103_pomorskie_old_articulated;
+        visual_effect_and_powered:  switch_sa103_visual_effect;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_sa103_capacity;
+        colour_mapping:             switch_lights_engine_2;
+        can_attach_wagon:           switch_sa103_can_attach;
+        start_stop:                 switch_sa103_pomorskie_old_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(sa103)
+        ENGINE_POWER_CALLBACKS(sa103)
+    }
+}

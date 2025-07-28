@@ -1,0 +1,112 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* OKz32 sprites */
+spriteset(sset_okz32_purchase, "gfx/okz32.png")     { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_okz32, "gfx/okz32.png")              { tmpl_sprite_train10(4, 20) }
+spriteset(sset_okz32_rev, "gfx/okz32.png")          { tmpl_sprite_train10(4, 80) }
+
+/* OKz32 switches */
+switch(FEAT_TRAINS, SELF, switch_okz32_articulated, extra_callback_info1) {
+    1: return item_okz32;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_okz32_length, position_in_vehid_chain % 2) {
+    1: return 1;
+    return 8;
+}
+switch(FEAT_TRAINS, SELF, switch_okz32_graphics_normal, position_in_vehid_chain % 2) {
+    0: return sset_okz32;
+    return sset_dummy;
+}
+switch(FEAT_TRAINS, SELF, switch_okz32_graphics_rev, position_in_vehid_chain % 2) {
+    0: return sset_okz32_rev;
+    return sset_dummy;
+}
+switch(FEAT_TRAINS, PARENT, switch_okz32_graphics, vehicle_is_reversed) {
+    1: return switch_okz32_graphics_rev;
+    return switch_okz32_graphics_normal;
+}
+switch(FEAT_TRAINS, SELF, switch_okz32_visual_effect_normal, position_in_vehid_chain % 2) {
+    0: return visual_effect_and_powered(VISUAL_EFFECT_STEAM, -3, DISABLE_WAGON_POWER);
+    return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+}
+switch(FEAT_TRAINS, SELF, switch_okz32_visual_effect_rev, position_in_vehid_chain % 2) {
+    1: return visual_effect_and_powered(VISUAL_EFFECT_STEAM, -4, DISABLE_WAGON_POWER);
+    return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+}
+switch(FEAT_TRAINS, PARENT, switch_okz32_visual_effect_local, vehicle_is_reversed) {
+    1: return switch_okz32_visual_effect_rev;
+    return switch_okz32_visual_effect_normal;
+}
+switch (FEAT_TRAINS, SELF, switch_okz32_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_2L, string(STR_HEATING_STEAM_POWER_TEXT, HEATING_POWER_STEAM_MID), string(STR_ENGINE_PASSENGER_FREIGHT));
+    return string(STR_ENGINE_PASSENGER_FREIGHT);
+}
+ENGINE_RUNNING_COST_SWITCH(okz32, OKZ32)
+STEAM_ENGINE_POWER_SWITCH(okz32, KW_TO_HP(1380))
+ENGINE_VISUAL_EFFECT_SWITCH(okz32)
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_okz32, 109) {
+    property {
+        /* common properties */
+        name:                           string(STR_OKZ32_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1932, 1, 1);
+        vehicle_life:                   30;
+        reliability_decay:              18;     // 20
+        CARGO_LOCOMOTIVES_DEFINITION 
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_OKZ32;
+        running_cost_factor:            RUNNING_COST_OKZ32;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          75 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          1380 kW;
+        running_cost_base:              RUNNING_COST_STEAM;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_PROPERTY
+        weight:                         118 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_STEAM;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.149;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:         0 ton;
+        bitmask_vehicle_info:           0;
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     59;
+        retire_early:                   10;
+    }
+}
+
+    graphics {
+        purchase:                   sset_okz32_purchase;
+        additional_text:            switch_okz32_add_text;
+        default:                    switch_okz32_graphics;
+        articulated_part:           switch_okz32_articulated;
+        length:                     switch_okz32_length;
+        visual_effect_and_powered:  switch_okz32_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(okz32)
+        ENGINE_POWER_CALLBACKS(okz32)
+    }
+}

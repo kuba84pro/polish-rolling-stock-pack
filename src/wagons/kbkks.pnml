@@ -1,0 +1,128 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* Kbkks sprites */
+spriteset(sset_kbkks_purchase, "gfx/201z.png")       { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_kbkks_empty, "gfx/201z.png")          { tmpl_sprite_train(4, 20) }
+spriteset(sset_kbkks_goods_half, "gfx/201z.png")     { tmpl_sprite_train(4, 80) }
+spriteset(sset_kbkks_goods_full, "gfx/201z.png")     { tmpl_sprite_train(4, 120) }
+spriteset(sset_kbkks_wood_half, "gfx/201z.png")      { tmpl_sprite_train(4, 160) }
+spriteset(sset_kbkks_wood_full, "gfx/201z.png")      { tmpl_sprite_train(4, 200) }
+spriteset(sset_kbkks_steel_half, "gfx/201z.png")     { tmpl_sprite_train(4, 240) }
+spriteset(sset_kbkks_steel_full, "gfx/201z.png")     { tmpl_sprite_train(4, 280) }
+spriteset(sset_kbkks_coper_half, "gfx/201z.png")     { tmpl_sprite_train(4, 320) }
+spriteset(sset_kbkks_coper_full, "gfx/201z.png")     { tmpl_sprite_train(4, 360) }
+spriteset(sset_kbkks_wdprd_half, "gfx/201z.png")     { tmpl_sprite_train(4, 400) }
+spriteset(sset_kbkks_wdprd_full, "gfx/201z.png")     { tmpl_sprite_train(4, 440) }
+spriteset(sset_kbkks_bdmat_half, "gfx/201z.png")     { tmpl_sprite_train(4, 480) }
+spriteset(sset_kbkks_bdmat_full, "gfx/201z.png")     { tmpl_sprite_train(4, 520) }
+#ifdef ZOOM_SPRITES_ENABLED
+alternative_sprites(sset_kbkks_empty,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/201z-x2.png")    { tmpl_sprite_train_x2(8, 40) }
+alternative_sprites(sset_kbkks_goods_half,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/201z-x2.png")    { tmpl_sprite_train_x2(8, 120) }
+alternative_sprites(sset_kbkks_goods_full,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/201z-x2.png")    { tmpl_sprite_train_x2(8, 200) }
+alternative_sprites(sset_kbkks_wood_half,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/201z-x2.png")    { tmpl_sprite_train_x2(8, 280) }
+alternative_sprites(sset_kbkks_wood_full,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/201z-x2.png")    { tmpl_sprite_train_x2(8, 360) }
+alternative_sprites(sset_kbkks_steel_half,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/201z-x2.png")    { tmpl_sprite_train_x2(8, 440) }
+alternative_sprites(sset_kbkks_steel_full,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/201z-x2.png")    { tmpl_sprite_train_x2(8, 520) }
+// to do: coper
+alternative_sprites(sset_kbkks_wdprd_half,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/201z-x2.png")    { tmpl_sprite_train_x2(8, 600) }
+alternative_sprites(sset_kbkks_wdprd_full,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/201z-x2.png")    { tmpl_sprite_train_x2(8, 680) }
+alternative_sprites(sset_kbkks_bdmat_half,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/201z-x2.png")    { tmpl_sprite_train_x2(8, 760) }
+alternative_sprites(sset_kbkks_bdmat_full,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/201z-x2.png")    { tmpl_sprite_train_x2(8, 840) }
+#endif
+spritegroup sgroup_kbkks_goods {
+    loaded:     [sset_kbkks_empty, sset_kbkks_goods_half, sset_kbkks_goods_full];
+    loading:    [sset_kbkks_empty, sset_kbkks_goods_half, sset_kbkks_goods_full];
+}
+spritegroup sgroup_kbkks_wood {
+    loaded:     [sset_kbkks_empty, sset_kbkks_wood_half, sset_kbkks_wood_full];
+    loading:    [sset_kbkks_empty, sset_kbkks_wood_half, sset_kbkks_wood_full];
+}
+spritegroup sgroup_kbkks_steel {
+    loaded:     [sset_kbkks_empty, sset_kbkks_steel_half, sset_kbkks_steel_full];
+    loading:    [sset_kbkks_empty, sset_kbkks_steel_half, sset_kbkks_steel_full];
+}
+spritegroup sgroup_kbkks_coper {
+    loaded:     [sset_kbkks_empty, sset_kbkks_coper_half, sset_kbkks_coper_full];
+    loading:    [sset_kbkks_empty, sset_kbkks_coper_half, sset_kbkks_coper_full];
+}
+spritegroup sgroup_kbkks_wdprd {
+    loaded:     [sset_kbkks_empty, sset_kbkks_wdprd_half, sset_kbkks_wdprd_full];
+    loading:    [sset_kbkks_empty, sset_kbkks_wdprd_half, sset_kbkks_wdprd_full];
+}
+spritegroup sgroup_kbkks_bdmat {
+    loaded:     [sset_kbkks_empty, sset_kbkks_bdmat_half, sset_kbkks_bdmat_full];
+    loading:    [sset_kbkks_empty, sset_kbkks_bdmat_half, sset_kbkks_bdmat_full];
+}
+
+/* Kbkks switches */
+switch(FEAT_TRAINS, SELF, switch_kbkks_capacity, cargo_type_in_veh ) {
+    VEHI: return (16 * 24/ cargo_unit_weight);
+    return CB_FAILED;   // property value
+}
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_kbkks, 20702) {
+    property {
+        /* common properties */
+        name:                           string(STR_KBKKS_NAME);
+        variant_group:                  20700;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1954, 1, 1);
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_NORMAL_FLATBED_WAGON_DEFINITION
+        loading_speed:                  5;
+        cost_factor:                    PURCHASE_COST_KBKKS;
+        running_cost_factor:            RUNNING_COST_CARGO_SMALL;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 24*CARGO_NORMAL_FLATBED_WAGON_MULTIPLIER;
+        weight:                         12 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_CARGO_WAGON);
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     72;
+        retire_early:                   16;
+    }
+}
+    graphics {
+        WOOD:                       sgroup_kbkks_wood;
+        STEL:                       sgroup_kbkks_steel;
+        METL:                       sgroup_kbkks_steel;
+        COPR:                       sgroup_kbkks_coper;
+        WDPR:                       sgroup_kbkks_wdprd;
+        BDMT:                       sgroup_kbkks_bdmat;
+        purchase:                   sset_kbkks_purchase;
+        additional_text:            return string(STR_BRAKE_AIR);
+        default:                    sgroup_kbkks_goods;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_kbkks_capacity;
+    }
+}

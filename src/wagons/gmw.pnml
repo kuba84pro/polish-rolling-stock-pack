@@ -1,0 +1,58 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, McZapkie, licence: GPLv2
+
+/* Gmw sprites */
+spriteset(sset_gmw_purchase, "gfx/5g.png")      { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_gmw, "gfx/5g.png")               { tmpl_sprite_train(4, 20) }
+spriteset(sset_gmw_open, "gfx/5g.png")          { tmpl_sprite_train(4, 80) }
+spritegroup sgroup_gmw {
+    loaded:     [sset_gmw];
+    loading:    [sset_gmw_open];
+}
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_gmw, 10001) {
+    property {
+        /* common properties */
+        name:                           string(STR_GMW_NAME);
+        variant_group:                  10000;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1954, 1, 1);
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_MAIL_WAGON_DEFINITION
+        loading_speed:                  6;
+        cost_factor:                    PURCHASE_COST_GMW;
+        running_cost_factor:            RUNNING_COST_PASS_OLD + RUNNING_COST_POSTMAN;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 int(18*POST_MULTIPLIER);
+        weight:                         25 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     57;
+        retire_early:                   16;
+    }
+}
+    graphics {
+        purchase:                   sset_gmw_purchase;
+        additional_text:            return string(STR_BRAKE_AIR);
+        default:                    sgroup_gmw;
+    }
+}

@@ -1,0 +1,278 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, GPL 2.0
+
+/* 35WE sprites */
+spriteset(sset_35we_purchase, "gfx/35we-skm.png")   { tmpl_sprite_purchase(4, 540) }
+spriteset(sset_35we_ks_purchase, "gfx/35we-ks.png")   { tmpl_sprite_purchase(4, 540) }
+spriteset(sset_35we_advert, "gfx/35we-skm.png")   { tmpl_sprite_advertisement300(4, 560) }
+// SKM //
+spriteset(sset_35we_head_skm, "gfx/35we-skm.png")       { tmpl_sprite_train12(4, 20) }
+spriteset(sset_35we_mid_skm, "gfx/35we-skm.png")        { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_35we_mid2_skm, "gfx/35we-skm.png")       { tmpl_sprite_train10_offset(4, 100, 1) }
+spriteset(sset_35we_mid3_skm, "gfx/35we-skm.png")       { tmpl_sprite_train10_offset(4, 140, 1) }
+spriteset(sset_35we_mid4_skm, "gfx/35we-skm.png")       { tmpl_sprite_train10_offset(4, 180, 1) }
+spriteset(sset_35we_tail_skm, "gfx/35we-skm.png")       { tmpl_sprite_train12_offset(4, 220, 1) }
+spriteset(sset_35we_head_skm_open, "gfx/35we-skm.png")  { tmpl_sprite_train12(4, 280) }
+spriteset(sset_35we_mid_skm_open, "gfx/35we-skm.png")   { tmpl_sprite_train10_offset(4, 320, 1) }
+spriteset(sset_35we_mid2_skm_open, "gfx/35we-skm.png")  { tmpl_sprite_train10_offset(4, 360, 1) }
+spriteset(sset_35we_mid3_skm_open, "gfx/35we-skm.png")  { tmpl_sprite_train10_offset(4, 400, 1) }
+spriteset(sset_35we_mid4_skm_open, "gfx/35we-skm.png")  { tmpl_sprite_train10_offset(4, 440, 1) }
+spriteset(sset_35we_tail_skm_open, "gfx/35we-skm.png")  { tmpl_sprite_train12_offset(4, 480, 1) }
+// KS //
+spriteset(sset_35we_head_ks, "gfx/35we-ks.png")       { tmpl_sprite_train12(4, 20) }
+spriteset(sset_35we_mid_ks, "gfx/35we-ks.png")        { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_35we_mid2_ks, "gfx/35we-ks.png")       { tmpl_sprite_train10_offset(4, 100, 1) }
+spriteset(sset_35we_mid3_ks, "gfx/35we-ks.png")       { tmpl_sprite_train10_offset(4, 140, 1) }
+spriteset(sset_35we_mid4_ks, "gfx/35we-ks.png")       { tmpl_sprite_train10_offset(4, 180, 1) }
+spriteset(sset_35we_tail_ks, "gfx/35we-ks.png")       { tmpl_sprite_train12_offset(4, 220, 1) }
+spriteset(sset_35we_head_ks_open, "gfx/35we-ks.png")  { tmpl_sprite_train12(4, 280) }
+spriteset(sset_35we_mid_ks_open, "gfx/35we-ks.png")   { tmpl_sprite_train10_offset(4, 320, 1) }
+spriteset(sset_35we_mid2_ks_open, "gfx/35we-ks.png")  { tmpl_sprite_train10_offset(4, 360, 1) }
+spriteset(sset_35we_mid3_ks_open, "gfx/35we-ks.png")  { tmpl_sprite_train10_offset(4, 400, 1) }
+spriteset(sset_35we_mid4_ks_open, "gfx/35we-ks.png")  { tmpl_sprite_train10_offset(4, 440, 1) }
+spriteset(sset_35we_tail_ks_open, "gfx/35we-ks.png")  { tmpl_sprite_train12_offset(4, 480, 1) }
+// SKM //
+spritegroup sgroup_35we_head_skm {
+    loaded:     [sset_35we_head_skm];
+    loading:    [sset_35we_head_skm_open];
+}
+spritegroup sgroup_35we_mid_skm {
+    loaded:     [sset_35we_mid_skm];
+    loading:    [sset_35we_mid_skm_open];
+}
+spritegroup sgroup_35we_mid2_skm {
+    loaded:     [sset_35we_mid2_skm];
+    loading:    [sset_35we_mid2_skm_open];
+}
+spritegroup sgroup_35we_mid3_skm {
+    loaded:     [sset_35we_mid3_skm];
+    loading:    [sset_35we_mid3_skm_open];
+}
+spritegroup sgroup_35we_mid4_skm {
+    loaded:     [sset_35we_mid4_skm];
+    loading:    [sset_35we_mid4_skm_open];
+}
+spritegroup sgroup_35we_tail_skm {
+    loaded:     [sset_35we_tail_skm];
+    loading:    [sset_35we_tail_skm_open];
+}
+// SKM //
+spritegroup sgroup_35we_head_ks {
+    loaded:     [sset_35we_head_ks];
+    loading:    [sset_35we_head_ks_open];
+}
+spritegroup sgroup_35we_mid_ks {
+    loaded:     [sset_35we_mid_ks];
+    loading:    [sset_35we_mid_ks_open];
+}
+spritegroup sgroup_35we_mid2_ks {
+    loaded:     [sset_35we_mid2_ks];
+    loading:    [sset_35we_mid2_ks_open];
+}
+spritegroup sgroup_35we_mid3_ks {
+    loaded:     [sset_35we_mid3_ks];
+    loading:    [sset_35we_mid3_ks_open];
+}
+spritegroup sgroup_35we_mid4_ks {
+    loaded:     [sset_35we_mid4_ks];
+    loading:    [sset_35we_mid4_ks_open];
+}
+spritegroup sgroup_35we_tail_ks {
+    loaded:     [sset_35we_tail_ks];
+    loading:    [sset_35we_tail_ks_open];
+}
+/* 35WE switches */
+switch(FEAT_TRAINS, SELF, switch_35we_articulated, extra_callback_info1) {
+    1..10: return item_35we_skm;     // including dummy parts
+    11: return item_dummy_2;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_35we_length, position_in_vehid_chain % 11) {
+    1: return 4;    // dummy part
+    3: return 1;    // dummy part
+    5: return 2;    // dummy part
+    7: return 2;    // dummy part
+    9: return 1;    // dummy part
+    return 8;
+}
+switch(FEAT_TRAINS, SELF, switch_35we_purchase, extra_callback_info1 & 0xFF) {
+    0x21: return sset_35we_advert;
+    return sset_35we_purchase;
+}
+switch(FEAT_TRAINS, SELF, switch_35we_graphics, position_in_vehid_chain % 11) {
+    0: return sgroup_35we_head_skm;
+    2: return sgroup_35we_mid_skm;
+    4: return sgroup_35we_mid2_skm;
+    6: return sgroup_35we_mid3_skm;
+    8: return sgroup_35we_mid4_skm;
+    10: return sgroup_35we_tail_skm;
+    return sset_dummy;      // dummy parts
+}
+switch(FEAT_TRAINS, SELF, switch_35we_tour_capacity, position_in_vehid_chain % 11) {
+    0: return 36;
+    2: return 36;
+    4: return 37;
+    6: return 37;
+    8: return 36;
+    10: return 36;
+    return 1;   // dummy parts
+}
+switch(FEAT_TRAINS, SELF, switch_35we_pass_capacity, position_in_vehid_chain % 11) {
+    0: return 36+102;
+    2: return 36+102;
+    4: return 37+103;
+    6: return 37+103;
+    8: return 36+102;
+    10: return 36+103;
+    return 1;   // dummy parts
+}
+switch(FEAT_TRAINS, SELF, switch_35we_capacity, cargo_type_in_veh) {
+    TOUR: return switch_35we_tour_capacity;
+    return switch_35we_pass_capacity;
+}
+switch(FEAT_TRAINS, SELF, switch_35we_visual_effect_local, position_in_vehid_chain % 11) {
+    6: return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 3, DISABLE_WAGON_POWER);
+    return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+}
+switch (FEAT_TRAINS, SELF, switch_35we_start_stop, num_vehs_in_consist / 11) {
+    1..2: return CB_RESULT_NO_TEXT;
+    return string(STR_TRAIN_TOO_LONG, string(STR_35WE_SKMW_NAME));
+}
+ENGINE_RUNNING_COST_SWITCH(35we, 35WE)
+DIESEL_ELECTRIC_ENGINE_POWER_SWITCH(35we)
+ENGINE_VISUAL_EFFECT_SWITCH(35we)
+
+#ifdef SITTING_PLACES
+    #undef SITTING_PLACES
+#endif
+#ifdef STANDING_PLACES
+    #undef STANDING_PLACES
+#endif
+#define SITTING_PLACES 218
+#define STANDING_PLACES 615
+#define CARGO_CAPACITY_35WE     int((SITTING_PLACES+STANDING_PLACES)/11)
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_35we_skm, 2560) {
+    property {
+        /* common properties */
+        name:                           string(STR_35WE_SKMW_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2012, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  11;     // per part
+        cost_factor:                    PURCHASE_COST_35WE;
+        running_cost_factor:            RUNNING_COST_35WE;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          3200 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 CARGO_CAPACITY_35WE;
+        weight:                         197 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.25*75/110;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        variant_group:                  2500;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   sset_35we_purchase;
+        default:                    switch_35we_graphics;
+        articulated_part:           switch_35we_articulated;
+        additional_text:            switch_impuls1_6part_add_text;
+        length:                     switch_35we_length;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_35we_capacity;
+        visual_effect_and_powered:  switch_35we_visual_effect;
+        can_attach_wagon:           switch_impuls1_can_attach;
+        start_stop:                 switch_35we_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(35we)
+        ENGINE_POWER_CALLBACKS(35we)
+    }
+}
+
+switch(FEAT_TRAINS, SELF, switch_35we_ks_articulated, extra_callback_info1) {
+    1..10: return item_35we_ks;     // including dummy parts
+    11: return item_dummy_2;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch(FEAT_TRAINS, SELF, switch_35we_ks_graphics, position_in_vehid_chain % 11) {
+    0: return sgroup_35we_head_ks;
+    2: return sgroup_35we_mid_ks;
+    4: return sgroup_35we_mid2_ks;
+    6: return sgroup_35we_mid3_ks;
+    8: return sgroup_35we_mid4_ks;
+    10: return sgroup_35we_tail_ks;
+    return sset_dummy;      // dummy parts
+}
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_35we_ks, 2561) {
+    property {
+        /* common properties */
+        name:                           string(STR_35WE_KS_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2012, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  11;     // per part
+        cost_factor:                    PURCHASE_COST_35WE;
+        running_cost_factor:            RUNNING_COST_35WE;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          3200 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 CARGO_CAPACITY_35WE;
+        weight:                         197 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.25*75/110;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        variant_group:                  2560;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   sset_35we_ks_purchase;
+        default:                    switch_35we_ks_graphics;
+        articulated_part:           switch_35we_ks_articulated;
+        additional_text:            switch_impuls1_6part_add_text;
+        length:                     switch_35we_length;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_35we_capacity;
+        visual_effect_and_powered:  switch_35we_visual_effect;
+        can_attach_wagon:           switch_impuls1_can_attach;
+        start_stop:                 switch_35we_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(35we)
+        ENGINE_POWER_CALLBACKS(35we)
+    }
+}

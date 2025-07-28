@@ -1,0 +1,54 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* Ibhs sprites */
+spriteset(sset_ibhss_purchase, "gfx/202lc.png")      { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_ibhss, "gfx/202lc.png")               { tmpl_sprite_train_sym(4, 20) }
+alternative_sprites(sset_ibhss,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/202lc-x2.png")   { tmpl_sprite_train_sym_x2(8, 40) }
+spriteset(sset_ibhss_open, "gfx/202lc.png")          { tmpl_sprite_train_sym(4, 80) }
+alternative_sprites(sset_ibhss_open,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/202lc-x2.png")   { tmpl_sprite_train_sym_x2(8, 120) }
+spritegroup sgroup_ibhss {
+    loaded:     [sset_ibhss];
+    loading:    [sset_ibhss_open];
+}
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_ibhss, 21002) {
+    property {
+		/* common properties */
+        name:                           string(STR_IBHSS_NAME);
+        variant_group:                  21000;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1967, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_NORMAL_REFRIGERATED_WAGON_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_IBHSS;
+        running_cost_factor:            RUNNING_COST_CARGO_MEDIUM+1;
+        cargo_age_period:               int(185*1.41);  // slow ageing
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          120 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 21*CARGO_NORMAL_REFRIGERATED_WAGON_MULTIPLIER;
+        weight:                         16 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_CARGO_WAGON);
+    }
+
+    graphics {
+        purchase:                   sset_ibhss_purchase;
+        additional_text:            return string(STR_BRAKE_AIR);
+        default:                    sgroup_ibhss;
+    }
+}

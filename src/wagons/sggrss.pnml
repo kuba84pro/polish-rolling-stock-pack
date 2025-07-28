@@ -1,0 +1,128 @@
+// This is part of PRSP NewGRF.
+// Don't include any headers inside this file!
+// (c) kuba84pro, licence: GPLv2
+
+/* Sggrss switches */
+switch(FEAT_TRAINS, SELF, switch_sggrss_articulated, getbits(extra_callback_info1, 0, 8)) {
+    1: return item_sggrss;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+random_switch(FEAT_TRAINS, SELF, switch_sggrss_u1_graphics, bitmask(TRIGGER_VEHICLE_NEW_LOAD)) {
+    1: return sgroup_sggrss_u1_s1;
+    1: return sgroup_sggrss_u1_s2;
+    1: return sgroup_sggrss_u1_s3;
+    1: return sgroup_sggrss_u1_s4;
+    1: return sgroup_sggrss_u1_s5;
+    1: return sgroup_sggrss_u1_s6;
+    1: return sgroup_sggrss_u1_s7;
+    1: return sgroup_sggrss_u1_s8;
+    1: return sgroup_sggrss_u1_s9;
+    1: return sgroup_sggrss_u1_s10;
+    1: return sgroup_sggrss_u1_s11;
+    1: return sgroup_sggrss_u1_s12;
+    2: return sgroup_sggrss_u1_d1;
+    2: return sgroup_sggrss_u1_d2;
+    2: return sgroup_sggrss_u1_d3;
+    2: return sgroup_sggrss_u1_d4;
+    2: return sgroup_sggrss_u1_d5;
+    2: return sgroup_sggrss_u1_d6;
+    2: return sgroup_sggrss_u1_d7;
+    2: return sgroup_sggrss_u1_d8;
+    2: return sgroup_sggrss_u1_d9;
+    2: return sgroup_sggrss_u1_d10;
+    2: return sgroup_sggrss_u1_d11;
+    2: return sgroup_sggrss_u1_d12;
+    2: return sgroup_sggrss_u1_d13;
+    2: return sgroup_sggrss_u1_d14;
+    2: return sgroup_sggrss_u1_d15;
+    2: return sgroup_sggrss_u1_d16;
+    2: return sgroup_sggrss_u1_d17;
+    2: return sgroup_sggrss_u1_d18;
+    2: return sgroup_sggrss_u1_d19;
+    2: return sgroup_sggrss_u1_d20;
+    2: return sgroup_sggrss_u1_d21;
+    2: return sgroup_sggrss_u1_d22;
+}
+random_switch(FEAT_TRAINS, SELF, switch_sggrss_u2_graphics, bitmask(TRIGGER_VEHICLE_NEW_LOAD)) {
+    1: return sgroup_sggrss_u2_s1;
+    1: return sgroup_sggrss_u2_s2;
+    1: return sgroup_sggrss_u2_s3;
+    1: return sgroup_sggrss_u2_s4;
+    1: return sgroup_sggrss_u2_s5;
+    1: return sgroup_sggrss_u2_s6;
+    1: return sgroup_sggrss_u2_s7;
+    1: return sgroup_sggrss_u2_s8;
+    1: return sgroup_sggrss_u2_s9;
+    1: return sgroup_sggrss_u2_s10;
+    1: return sgroup_sggrss_u2_s11;
+    1: return sgroup_sggrss_u2_s12;
+    2: return sgroup_sggrss_u2_d1;
+    2: return sgroup_sggrss_u2_d2;
+    2: return sgroup_sggrss_u2_d3;
+    2: return sgroup_sggrss_u2_d4;
+    2: return sgroup_sggrss_u2_d5;
+    2: return sgroup_sggrss_u2_d6;
+    2: return sgroup_sggrss_u2_d7;
+    2: return sgroup_sggrss_u2_d8;
+    2: return sgroup_sggrss_u2_d9;
+    2: return sgroup_sggrss_u2_d10;
+    2: return sgroup_sggrss_u2_d11;
+    2: return sgroup_sggrss_u2_d12;
+    2: return sgroup_sggrss_u2_d13;
+    2: return sgroup_sggrss_u2_d14;
+    2: return sgroup_sggrss_u2_d15;
+    2: return sgroup_sggrss_u2_d16;
+    2: return sgroup_sggrss_u2_d17;
+    2: return sgroup_sggrss_u2_d18;
+    2: return sgroup_sggrss_u2_d19;
+    2: return sgroup_sggrss_u2_d20;
+    2: return sgroup_sggrss_u2_d21;
+    2: return sgroup_sggrss_u2_d22;
+}
+switch(FEAT_TRAINS, SELF, switch_sggrss_graphics, position_in_vehid_chain % 2) {
+    0: return switch_sggrss_u1_graphics;
+    return switch_sggrss_u2_graphics;
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_sggrss, 15000) {
+    property {
+		/* common properties */
+        name:                           string(STR_SGGRSS_PKP_CARGO_NAME);
+        variant_group:                  20800;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2014, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_CONTAINER_WAGON_DEFINITION
+        loading_speed:                  20;
+        cost_factor:                    PURCHASE_COST_SGGRSS;
+        running_cost_factor:            RUNNING_COST_CARGO_MEDIUM;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          120 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 SGGRSS_CAPACITY*2;
+        weight:                         27 ton;
+        length:                         7;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_CARGO_WAGON);
+    }
+
+    graphics {
+        purchase:                   sset_sggrss_purchase;
+        additional_text:            return string(STR_PURCHASE_DESCR_2L, string(STR_BRAKE_AIR), string(STR_120_100_CAR_SPEED_TEXT));
+        default:                    switch_sggrss_graphics;
+        articulated_part:           switch_sggrss_articulated;
+        purchase_cargo_capacity:    return 108;
+        cargo_capacity:             switch_sggrss_cargo_capacity;
+        random_trigger:             switch_sggrss_graphics;
+        purchase_speed:             return 120;
+        speed:                      switch_sggrss_speed;
+        loading_speed:              return 20*(cargo_capacity/SGGRSS_CAPACITY);
+    }
+}

@@ -1,0 +1,163 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* graphics definition */
+template tmpl_sprite_purchase(x, y) {
+// [left_x,   upper_y,    width,    height,    offset_x,    offset_y]
+    [x,          y,       50,        12,         -25,         -8]
+}
+template tmpl_sprite_advertisement200(x, y) {
+// [left_x,   upper_y,    width,    height,    offset_x,    offset_y]
+    [x,          y,       200,       12,        -100,         -8]
+}
+template tmpl_sprite_advertisement300(x, y) {
+// [left_x,   upper_y,    width,    height,    offset_x,    offset_y]
+    [x,          y,       300,       12,        -150,         -8]
+}
+template tmpl_sprite_train_block1(x, y, z) {
+// [left_x,   upper_y,    width,    height,    offset_x,    offset_y]
+    [x,          y,       12*z,      28*z,       -5*z,       -16*z]
+    [x+ 16*z,    y,       26*z,      28*z,      -17*z,       -18*z]
+    [x+ 46*z,    y,       36*z,      20*z,      -17*z,       -14*z]
+    [x+ 86*z,    y,       26*z,      28*z,       -7*z,       -18*z]
+}
+template tmpl_sprite_train_block2(x, y, z) {
+// [left_x,   upper_y,    width,    height,    offset_x,    offset_y]
+    [x+120*z,    y,       12*z,      28*z,       -5*z,       -16*z]
+    [x+136*z,    y,       26*z,      28*z,      -17*z,       -18*z]
+    [x+166*z,    y,       36*z,      20*z,      -17*z,       -14*z]
+    [x+206*z,    y,       26*z,      28*z,       -7*z,       -18*z]
+}
+template tmpl_sprite_train(x, y) {
+    tmpl_sprite_train_block1(x, y, 1)
+    tmpl_sprite_train_block2(x, y, 1)
+}
+template tmpl_sprite_train_sym(x, y) {
+    tmpl_sprite_train_block1(x, y, 1)
+}
+template tmpl_sprite_train_8(x, y) {
+    tmpl_sprite_train_block1(x, y, 1)
+    tmpl_sprite_train_block1(x, y, 1)
+}
+template tmpl_sprite_train_x2(x, y) {
+    tmpl_sprite_train_block1(x, y, 2)
+    tmpl_sprite_train_block2(x, y, 2)
+}
+template tmpl_sprite_train_sym_x2(x, y) {
+    tmpl_sprite_train_block1(x, y, 2)
+}
+template tmpl_sprite_train_8_x2(x, y) {
+    tmpl_sprite_train_block1(x, y, 2)
+    tmpl_sprite_train_block1(x, y, 2)
+}
+template tmpl_sprite_train10_block(x, y, z, d) {
+// [left_x,   upper_y,    width,    height,    offset_x,      offset_y]
+    [x,          y,       12*z,      32*z,       -5*z,        (-16-2*d)*z]
+    [x+ 16*z,    y,       30*z,      30*z,     (-21+2*d)*z,   (-18-d)*z  ]
+    [x+ 50*z,    y,       44*z,      20*z,     (-25+4*d)*z,    -14*z     ]
+    [x+ 98*z,    y,       30*z,      30*z,     (-11+2*d)*z,   (-20+d)*z  ]
+    [x+134*z,    y,       12*z,      32*z,       -5*z,        (-20+2*d)*z]
+    [x+150*z,    y,       30*z,      30*z,     (-17-2*d)*z,   (-20+d)*z  ]
+    [x+184*z,    y,       44*z,      20*z,     (-17-4*d)*z,    -14*z     ]
+    [x+232*z,    y,       30*z,      30*z,      (-7-2*d)*z,   (-18-d)*z  ]
+}
+template tmpl_sprite_train10(x, y) {
+    tmpl_sprite_train10_block(x, y, 1, 0)
+}
+template tmpl_sprite_train10_x2(x, y) {
+    tmpl_sprite_train10_block(x, y, 2, 0)
+}
+template tmpl_sprite_train10_offset(x, y, d) {
+    tmpl_sprite_train10_block(x, y, 1, d)
+}
+template tmpl_sprite_train10_offset_x2(x, y, d) {
+    tmpl_sprite_train10_block(x, y, 2, d)
+}
+template tmpl_sprite_train12_block(x, y, z, d) {
+// [left_x,   upper_y,    width,    height,    offset_x,      offset_y]
+    [x,          y,       12*z,      36*z,       -5*z,        (-16-2*d)*z]
+    [x+ 16*z,    y,       34*z,      32*z,     (-25+2*d)*z,   (-18-d)*z  ]
+    [x+ 54*z,    y,       52*z,      20*z,     (-33+4*d)*z,    -14*z     ]
+    [x+110*z,    y,       34*z,      32*z,     (-15+2*d)*z,   (-22+d)*z  ]
+    [x+148*z,    y,       12*z,      36*z,       -5*z,        (-24+2*d)*z]
+    [x+164*z,    y,       34*z,      32*z,     (-17-2*d)*z,   (-22+d)*z  ]
+    [x+202*z,    y,       52*z,      20*z,     (-17-4*d)*z,    -14*z     ]
+    [x+258*z,    y,       34*z,      32*z,      (-7-2*d)*z,   (-18-d)*z  ]
+}
+template tmpl_sprite_train12(x, y) {
+    tmpl_sprite_train12_block(x, y, 1, 0)
+}
+template tmpl_sprite_train12_x2(x, y) {
+    tmpl_sprite_train12_block(x, y, 2, 0)
+}
+template tmpl_sprite_train12_offset(x, y, d) {
+    tmpl_sprite_train12_block(x, y, 1, d)
+}
+template tmpl_sprite_train12_offset_x2(x, y, d) {
+    tmpl_sprite_train12_block(x, y, 2, d)
+}
+/* template tmpl_sprite_train12_block_l(x, y, z) {
+// [left_x,   upper_y,    width,    height,    offset_x,      offset_y]
+    [x,          y,       23*z,      31*z,      -15*z,         -16*z] // N
+    [x+ 27*z,    y,       42*z,      25*z,      -33*z,         -15*z] // NE
+    [x+ 73*z,    y,       42*z,      25*z,      -23*z,         -18*z] // E
+    [x+119*z,    y,       23*z,      31*z,       -5*z,         -21*z] // SE
+    [x+148*z,    y,       23*z,      31*z,       -6*z,         -19*z] // S
+    [x+175*z,    y,       42*z,      25*z,      -15*z,         -15*z] // SW
+    [x+221*z,    y,       42*z,      25*z,      -17*z,         -15*z] // W
+    [x+267*z,    y,       23*z,      31*z,       -6*z,         -12*z] // NW
+}
+template tmpl_sprite_train12_block_r(x, y, z) {
+// [left_x,   upper_y,    width,    height,    offset_x,      offset_y]
+    [x+267*z,    y,       23*z,      31*z,       -6*z,         -16*z] // N
+    [x,          y,       23*z,      31*z,      -15*z,         -12*z] // NE
+    [x+ 27*z,    y,       42*z,      25*z,      -23*z,         -15*z] // E
+    [x+ 73*z,    y,       42*z,      25*z,      -25*z,         -15*z] // SE
+    [x+119*z,    y,       23*z,      31*z,      -15*z,         -19*z] // S
+    [x+148*z,    y,       23*z,      31*z,      -16*z,         -21*z] // SW
+    [x+175*z,    y,       42*z,      25*z,      -17*z,         -18*z] // W
+    [x+221*z,    y,       42*z,      25*z,       -7*z,         -15*z] // NW
+}*/
+template tmpl_sprite_train12_block_l(x, y, z) {
+// [left_x,   upper_y,    width,    height,    offset_x,      offset_y]
+    [x,          y,       23*z,      31*z,      -13*z,         -16*z] // N*
+    [x+ 27*z,    y,       42*z,      25*z,      -33*z,         -14*z] // NE*
+    [x+ 73*z,    y,       42*z,      25*z,      -23*z,         -17*z] // E*
+    [x+119*z,    y,       23*z,      31*z,       -6*z,         -19*z] // SE*
+    [x+148*z,    y,       23*z,      31*z,       -8*z,         -19*z] // S*
+    [x+175*z,    y,       42*z,      25*z,      -15*z,         -16*z] // SW*
+    [x+221*z,    y,       42*z,      25*z,      -17*z,         -16*z] // W*
+    [x+267*z,    y,       23*z,      31*z,       -5*z,         -14*z] // NW*
+}
+template tmpl_sprite_train12_block_r(x, y, z) {
+// [left_x,   upper_y,    width,    height,    offset_x,      offset_y]
+    [x+267*z,    y,       23*z,      31*z,       -8*z,         -16*z] // N*
+    [x,          y,       23*z,      31*z,      -16*z,         -14*z] // NE*
+    [x+ 27*z,    y,       42*z,      25*z,      -23*z,         -16*z] // E*
+    [x+ 73*z,    y,       42*z,      25*z,      -25*z,         -16*z] // SE*
+    [x+119*z,    y,       23*z,      31*z,      -13*z,         -19*z] // S*
+    [x+148*z,    y,       23*z,      31*z,      -15*z,         -19*z] // SW*
+    [x+175*z,    y,       42*z,      25*z,      -17*z,         -17*z] // W*
+    [x+221*z,    y,       42*z,      25*z,       -7*z,         -14*z] // NW*
+}
+template tmpl_sprite_train12_l(x, y) {
+    tmpl_sprite_train12_block_l(x, y, 1)
+}
+template tmpl_sprite_train12_r(x, y) {
+    tmpl_sprite_train12_block_r(x, y, 1)
+}
+template tmpl_sprite_train12_rear_block(x, y, z) {
+// [left_x,   upper_y,    width,    height,    offset_x,    offset_y]
+    [x,          y+ 18*z, 12*z,      18*z,       -5*z,       -14*z]
+    [x+ 16*z,    y+ 16*z, 16*z,      16*z,       -9*z,       -10*z]
+    [x+ 54*z,    y,       18*z,      20*z,       -1*z,       -14*z]
+    [x+110*z,    y,       16*z,      22*z,        1*z,       -14*z]
+    [x+148*z,    y,        1*z,       1*z,        0*z,         0*z]
+    [x+182*z,    y,       16*z,      22*z,      -15*z,       -14*z]
+    [x+236*z,    y,       18*z,      20*z,      -15*z,       -14*z]
+    [x+276*z,    y+ 16*z, 16*z,      16*z,       -5*z,       -10*z]
+}
+template tmpl_sprite_train12_rear(x, y) {
+    tmpl_sprite_train12_rear_block(x, y, 1)
+}

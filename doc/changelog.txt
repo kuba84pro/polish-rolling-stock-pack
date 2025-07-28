@@ -1,0 +1,29 @@
+Polish Rolling Stock Pack - Change log
+================================
+
+0.15.5
+Published to bananas
+
+Added:
+- LM-4268
+- L-4268
+- 6193 "Baltic Express"
+- 6193 "Adriatic Express"
+- 193-428 "Kierunek Europa"
+- 193 "Ceske Drahy"
+
+0.15.4
+Added:
+- Tkt48 with black livery
+- Ol49 with black livery
+- SN80
+- SM42/ SU42 Polregio
+- EU07 303e type with 5 liveries
+- EP07-1020
+- ET41 3 liveries
+- 162a/ 163a polregio livery
+- 35we Koleje Slaskie
+
+Fixed:
+- introduction dates in few vehicles (sm42, en71 etc)
+- some sprites

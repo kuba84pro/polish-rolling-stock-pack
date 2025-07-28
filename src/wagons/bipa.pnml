@@ -1,0 +1,549 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* Bipa sprites */
+spriteset(sset_bipa_purchase, "gfx/bipa.png")       { tmpl_sprite_purchase(4, 180) }
+spriteset(sset_bipa4_head, "gfx/bipa.png")          { tmpl_sprite_train10(4, 20) }
+spriteset(sset_bipa4_mid1, "gfx/bipa.png")          { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_bipa4_mid2, "gfx/bipa.png")          { tmpl_sprite_train10(4, 100) }
+spriteset(sset_bipa4_tail, "gfx/bipa.png")          { tmpl_sprite_train10_offset(4, 140, 2) }
+spriteset(sset_bipa4_head_open, "gfx/bipa.png")     { tmpl_sprite_train10(4, 200) }
+spriteset(sset_bipa4_mid1_open, "gfx/bipa.png")     { tmpl_sprite_train10_offset(4, 240, 1) }
+spriteset(sset_bipa4_mid2_open, "gfx/bipa.png")     { tmpl_sprite_train10(4, 280) }
+spriteset(sset_bipa4_tail_open, "gfx/bipa.png")     { tmpl_sprite_train10_offset(4, 320, 2) }
+spriteset(sset_bipa23_head, "gfx/bipa.png")         { tmpl_sprite_train10(4, 380) }
+spriteset(sset_bipa23_mid, "gfx/bipa.png")          { tmpl_sprite_train10(4, 420) }
+spriteset(sset_bipa23_tail, "gfx/bipa.png")         { tmpl_sprite_train10_offset(4, 460, 2) }
+spriteset(sset_bipa23_head_open, "gfx/bipa.png")    { tmpl_sprite_train10(4, 500) }
+spriteset(sset_bipa23_mid_open, "gfx/bipa.png")     { tmpl_sprite_train10(4, 540) }
+spriteset(sset_bipa23_tail_open, "gfx/bipa.png")    { tmpl_sprite_train10_offset(4, 580, 2) }
+
+spriteset(sset_bipa_pr_purchase, "gfx/bipa_pr.png")       { tmpl_sprite_purchase(4, 180) }
+spriteset(sset_bipa4_pr_head, "gfx/bipa_pr.png")          { tmpl_sprite_train10(4, 20) }
+spriteset(sset_bipa4_pr_mid1, "gfx/bipa_pr.png")          { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_bipa4_pr_mid2, "gfx/bipa_pr.png")          { tmpl_sprite_train10(4, 100) }
+spriteset(sset_bipa4_pr_tail, "gfx/bipa_pr.png")          { tmpl_sprite_train10_offset(4, 140, 2) }
+spriteset(sset_bipa4_pr_head_open, "gfx/bipa_pr.png")     { tmpl_sprite_train10(4, 200) }
+spriteset(sset_bipa4_pr_mid1_open, "gfx/bipa_pr.png")     { tmpl_sprite_train10_offset(4, 240, 1) }
+spriteset(sset_bipa4_pr_mid2_open, "gfx/bipa_pr.png")     { tmpl_sprite_train10(4, 280) }
+spriteset(sset_bipa4_pr_tail_open, "gfx/bipa_pr.png")     { tmpl_sprite_train10_offset(4, 320, 2) }
+spriteset(sset_bipa23_pr_head, "gfx/bipa_pr.png")         { tmpl_sprite_train10(4, 380) }
+spriteset(sset_bipa23_pr_mid, "gfx/bipa_pr.png")          { tmpl_sprite_train10(4, 420) }
+spriteset(sset_bipa23_pr_tail, "gfx/bipa_pr.png")         { tmpl_sprite_train10_offset(4, 460, 2) }
+spriteset(sset_bipa23_pr_head_open, "gfx/bipa_pr.png")    { tmpl_sprite_train10(4, 500) }
+spriteset(sset_bipa23_pr_mid_open, "gfx/bipa_pr.png")     { tmpl_sprite_train10(4, 540) }
+spriteset(sset_bipa23_pr_tail_open, "gfx/bipa_pr.png")    { tmpl_sprite_train10_offset(4, 580, 2) }
+
+spritegroup sgroup_bipa4_head {
+    loaded:     [sset_bipa4_head];
+    loading:    [sset_bipa4_head_open];
+}
+spritegroup sgroup_bipa4_mid1 {
+    loaded:     [sset_bipa4_mid1];
+    loading:    [sset_bipa4_mid1_open];
+}
+spritegroup sgroup_bipa4_mid2 {
+    loaded:     [sset_bipa4_mid2];
+    loading:    [sset_bipa4_mid2_open];
+}
+spritegroup sgroup_bipa4_tail {
+    loaded:     [sset_bipa4_tail];
+    loading:    [sset_bipa4_tail_open];
+}
+spritegroup sgroup_bipa23_head {
+    loaded:     [sset_bipa23_head];
+    loading:    [sset_bipa23_head_open];
+}
+spritegroup sgroup_bipa23_mid {
+    loaded:     [sset_bipa23_mid];
+    loading:    [sset_bipa23_mid_open];
+}
+spritegroup sgroup_bipa23_tail {
+    loaded:     [sset_bipa23_tail];
+    loading:    [sset_bipa23_tail_open];
+}
+
+spritegroup sgroup_bipa4_pr_head {
+    loaded:     [sset_bipa4_pr_head];
+    loading:    [sset_bipa4_pr_head_open];
+}
+spritegroup sgroup_bipa4_pr_mid1 {
+    loaded:     [sset_bipa4_pr_mid1];
+    loading:    [sset_bipa4_pr_mid1_open];
+}
+spritegroup sgroup_bipa4_pr_mid2 {
+    loaded:     [sset_bipa4_pr_mid2];
+    loading:    [sset_bipa4_pr_mid2_open];
+}
+spritegroup sgroup_bipa4_pr_tail {
+    loaded:     [sset_bipa4_pr_tail];
+    loading:    [sset_bipa4_pr_tail_open];
+}
+spritegroup sgroup_bipa23_pr_head {
+    loaded:     [sset_bipa23_pr_head];
+    loading:    [sset_bipa23_pr_head_open];
+}
+spritegroup sgroup_bipa23_pr_mid {
+    loaded:     [sset_bipa23_pr_mid];
+    loading:    [sset_bipa23_pr_mid_open];
+}
+spritegroup sgroup_bipa23_pr_tail {
+    loaded:     [sset_bipa23_pr_tail];
+    loading:    [sset_bipa23_pr_tail_open];
+}
+
+/* Bipa 2-part switches */
+switch(FEAT_TRAINS, SELF, switch_bipa_articulated, extra_callback_info1) {
+    1..5: return item_bipa;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_bipa2_graphics, position_in_vehid_chain % 6) {
+    0: return sgroup_bipa23_head;
+    5: return sgroup_bipa23_tail;
+    return sset_dummy;
+}
+switch(FEAT_TRAINS, SELF, switch_bipa2_length, position_in_vehid_chain % 6) {
+    1: return 1;
+    2: return 1;
+    3: return 1;
+    4: return 1;
+    return 8;
+}
+switch(FEAT_TRAINS, SELF, switch_bipa2_tour_capacity, position_in_vehid_chain % 6) {
+    0: return 90-2;
+    5: return 90-2;
+    return 1;
+}
+switch(FEAT_TRAINS, SELF, switch_bipa2_pass_capacity, position_in_vehid_chain % 6) {
+    0: return 90+14;  //90;
+    5: return 90+14;  //90;
+    return 1;
+}
+switch(FEAT_TRAINS, SELF, switch_bipa2_capacity, cargo_type_in_veh) {
+    TOUR: return switch_bipa2_tour_capacity;
+    return switch_bipa2_pass_capacity;
+}
+switch (FEAT_TRAINS, SELF, switch_bipa_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_4L, string(STR_BRAKE_AIR), string(STR_HEATING_ST_EL_TEXT), string(STR_BIPA_TEXT), string(STR_INCOME_LOWER));
+    return string(STR_PURCHASE_DESCR_3L, string(STR_BRAKE_AIR), string(STR_BIPA_TEXT), string(STR_INCOME_LOWER));
+}
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_bipa, 10040) {
+    property {
+        /* common properties */
+        name:                           string(STR_BIPA_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1957, 1, 1);
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  22;
+        cost_factor:                    PURCHASE_COST_BIPA;
+        running_cost_factor:            11;
+        cargo_age_period:               int(185*0.84);  // faster ageing
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          120 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 35;
+        weight:                         72 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     88;
+        retire_early:                   16;
+    }
+}
+    graphics {
+        purchase:                   sset_bipa_purchase;
+        additional_text:            switch_bipa_add_text;
+        default:                    switch_bipa2_graphics;
+        articulated_part:           switch_bipa_articulated;
+        length:                     switch_bipa2_length;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_bipa2_capacity;
+        colour_mapping:             switch_lights_wagon_olive_1;
+    }
+}
+/* Bipa 3-part switches */
+switch(FEAT_TRAINS, SELF, switch_bipa3_articulated, extra_callback_info1) {
+    1..5: return item_bipa3;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_bipa3_graphics, position_in_vehid_chain % 6) {
+    0: return sgroup_bipa23_head;
+    2: return sgroup_bipa23_mid;
+    5: return sgroup_bipa23_tail;
+    return sset_dummy;
+}
+switch(FEAT_TRAINS, SELF, switch_bipa3_length, position_in_vehid_chain % 6) {
+    1: return 2;
+    3: return 1;
+    4: return 2;
+    return 8;
+}
+switch(FEAT_TRAINS, SELF, switch_bipa3_tour_capacity, position_in_vehid_chain % 6) {
+    0: return 89;
+    2: return 80;
+    5: return 88;
+    return 1;
+}
+switch(FEAT_TRAINS, SELF, switch_bipa3_pass_capacity, position_in_vehid_chain % 6) {
+    0: return 90+15;  //90;
+    2: return 80+16;    //80;
+    5: return 90+14;  //90;
+    return 1;
+}
+switch(FEAT_TRAINS, SELF, switch_bipa3_capacity, cargo_type_in_veh) {
+    TOUR: return switch_bipa3_tour_capacity;
+    return switch_bipa3_pass_capacity;
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_bipa3, 10041) {
+    property {
+        /* common properties */
+        name:                           string(STR_BIPA_NAME);
+        variant_group:                  10040;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1957, 1, 1);
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  22;
+        cost_factor:                    PURCHASE_COST_BIPA3;
+        running_cost_factor:            16;
+        cargo_age_period:               int(185*0.84);  // faster ageing
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          120 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 51;
+        weight:                         102 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     88;
+        retire_early:                   16;
+    }
+}
+    graphics {
+        purchase:                   sset_bipa_purchase;
+        additional_text:            switch_bipa_add_text;
+        default:                    switch_bipa3_graphics;
+        articulated_part:           switch_bipa3_articulated;
+        length:                     switch_bipa3_length;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_bipa3_capacity;
+        colour_mapping:             switch_lights_wagon_olive_1;
+    }
+}
+/* Bipa 4-part switches */
+switch(FEAT_TRAINS, SELF, switch_bipa4_articulated, extra_callback_info1) {
+    1..5: return item_bipa4;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_bipa4_graphics, position_in_vehid_chain % 6) {
+    0: return sgroup_bipa4_head;
+    2: return sgroup_bipa4_mid1;
+    3: return sgroup_bipa4_mid2;
+    5: return sgroup_bipa4_tail;
+    return sset_dummy;
+}
+switch(FEAT_TRAINS, SELF, switch_bipa4_length, position_in_vehid_chain % 6) {
+    1: return 3;
+    4: return 3;
+    return 8;
+}
+switch(FEAT_TRAINS, SELF, switch_bipa4_tour_capacity, position_in_vehid_chain % 6) {
+    0: return 89;
+    2: return 80;
+    3: return 80;
+    5: return 89;
+    return 1;
+}
+switch(FEAT_TRAINS, SELF, switch_bipa4_pass_capacity, position_in_vehid_chain % 6) {
+    0: return 90+15;  //90;
+    2: return 80+16;    //80;
+    3: return 80+16;    //80;
+    5: return 90+15;  //90;
+    return 1;
+}
+switch(FEAT_TRAINS, SELF, switch_bipa4_capacity, cargo_type_in_veh) {
+    TOUR: return switch_bipa4_tour_capacity;
+    return switch_bipa4_pass_capacity;
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_bipa4, 10042) {
+    property {
+        /* common properties */
+        name:                           string(STR_BIPA_NAME);
+        variant_group:                  10040;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1957, 1, 1);
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  22;
+        cost_factor:                    PURCHASE_COST_BIPA4;
+        running_cost_factor:            21;
+        cargo_age_period:               int(185*0.84);  // faster ageing
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          120 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 67;
+        weight:                         132 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     88;
+        retire_early:                   16;
+    }
+}
+    graphics {
+        purchase:                   sset_bipa_purchase;
+        additional_text:            switch_bipa_add_text;
+        default:                    switch_bipa4_graphics;
+        articulated_part:           switch_bipa4_articulated;
+        length:                     switch_bipa4_length;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_bipa4_capacity;
+        colour_mapping:             switch_lights_wagon_olive_1;
+    }
+}
+
+
+
+// PRZEWOZY REGIONALNE 
+
+
+
+/* Bipa 2-part switches */
+switch(FEAT_TRAINS, SELF, switch_bipa_pr_articulated, extra_callback_info1) {
+    1..5: return item_bipa_pr;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_bipa2_pr_graphics, position_in_vehid_chain % 6) {
+    0: return sgroup_bipa23_pr_head;
+    5: return sgroup_bipa23_pr_tail;
+    return sset_dummy;
+}
+switch (FEAT_TRAINS, SELF, switch_bipa_pr_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_4L, string(STR_BRAKE_AIR), string(STR_HEATING_ST_EL_TEXT), string(STR_BIPA_TEXT), string(STR_INCOME_LOWER));
+    return string(STR_PURCHASE_DESCR_3L, string(STR_BRAKE_AIR), string(STR_BIPA_TEXT), string(STR_INCOME_LOWER));
+}
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_bipa_pr, 10043) {
+    property {
+        /* common properties */
+        name:                           string(STR_BIPA_PR_NAME);
+        variant_group:                  10040;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1957, 1, 1);
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  22;
+        cost_factor:                    PURCHASE_COST_BIPA;
+        running_cost_factor:            11;
+        cargo_age_period:               int(185*0.84);  // faster ageing
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          120 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 35;
+        weight:                         72 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     88;
+        retire_early:                   16;
+    }
+}
+    graphics {
+        purchase:                   sset_bipa_pr_purchase;
+        additional_text:            switch_bipa_pr_add_text;
+        default:                    switch_bipa2_pr_graphics;
+        articulated_part:           switch_bipa_pr_articulated;
+        length:                     switch_bipa2_length;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_bipa2_capacity;
+        colour_mapping:             switch_lights_wagon_olive_1;
+    }
+}
+/* Bipa 3-part switches */
+switch(FEAT_TRAINS, SELF, switch_bipa3_pr_articulated, extra_callback_info1) {
+    1..5: return item_bipa3_pr;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_bipa3_pr_graphics, position_in_vehid_chain % 6) {
+    0: return sgroup_bipa23_pr_head;
+    2: return sgroup_bipa23_pr_mid;
+    5: return sgroup_bipa23_pr_tail;
+    return sset_dummy;
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_bipa3_pr, 10044) {
+    property {
+        /* common properties */
+        name:                           string(STR_BIPA_PR_NAME);
+        variant_group:                  10043;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1957, 1, 1);
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  22;
+        cost_factor:                    PURCHASE_COST_BIPA3;
+        running_cost_factor:            16;
+        cargo_age_period:               int(185*0.84);  // faster ageing
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          120 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 51;
+        weight:                         102 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     88;
+        retire_early:                   16;
+    }
+}
+    graphics {
+        purchase:                   sset_bipa_pr_purchase;
+        additional_text:            switch_bipa_pr_add_text;
+        default:                    switch_bipa3_pr_graphics;
+        articulated_part:           switch_bipa3_pr_articulated;
+        length:                     switch_bipa3_length;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_bipa3_capacity;
+        colour_mapping:             switch_lights_wagon_olive_1;
+    }
+}
+/* Bipa 4-part switches */
+switch(FEAT_TRAINS, SELF, switch_bipa4_pr_articulated, extra_callback_info1) {
+    1..5: return item_bipa4_pr;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_bipa4_pr_graphics, position_in_vehid_chain % 6) {
+    0: return sgroup_bipa4_pr_head;
+    2: return sgroup_bipa4_pr_mid1;
+    3: return sgroup_bipa4_pr_mid2;
+    5: return sgroup_bipa4_pr_tail;
+    return sset_dummy;
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_bipa4_pr, 10045) {
+    property {
+        /* common properties */
+        name:                           string(STR_BIPA_PR_NAME);
+        variant_group:                  10043;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1957, 1, 1);
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  22;
+        cost_factor:                    PURCHASE_COST_BIPA4;
+        running_cost_factor:            21;
+        cargo_age_period:               int(185*0.84);  // faster ageing
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          120 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 67;
+        weight:                         132 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     88;
+        retire_early:                   16;
+    }
+}
+    graphics {
+        purchase:                   sset_bipa_pr_purchase;
+        additional_text:            switch_bipa_pr_add_text;
+        default:                    switch_bipa4_pr_graphics;
+        articulated_part:           switch_bipa4_pr_articulated;
+        length:                     switch_bipa4_length;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_bipa4_capacity;
+        colour_mapping:             switch_lights_wagon_olive_1;
+    }
+}

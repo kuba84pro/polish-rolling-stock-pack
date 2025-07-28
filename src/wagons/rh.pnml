@@ -1,0 +1,56 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* Rh sprites */
+spriteset(sset_rh_purchase, "gfx/rh.png")       { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_rh, "gfx/rh.png")                { tmpl_sprite_train(4, 20) }
+#ifdef _ZOOM_SPRITES_ENABLED_
+alternative_sprites(sset_rh,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/rh-x2.png")      { tmpl_sprite_train_sym_x2(8, 40) }
+#endif
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_rh, 21100) {
+    property {
+        /* common properties */
+        name:                           string(STR_RH_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              PKP_INTRODUCTION_DATE;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_NORMAL_TANK_WAGON_DEFINITION
+        loading_speed:                  5;
+        cost_factor:                    PURCHASE_COST_RH;
+        running_cost_factor:            RUNNING_COST_CARGO_SMALL+RUNNING_COST_BRAKEMAN;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          65 km/h;
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 17;
+        weight:                         14 ton;
+        length:                         6;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_CARGO_WAGON);
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     69;
+        retire_early:                   16;
+    }
+}
+
+    graphics {
+        purchase:                   sset_rh_purchase;
+        additional_text:            return string(STR_BRAKE_HAND);
+        default:                    sset_rh;
+    }
+}

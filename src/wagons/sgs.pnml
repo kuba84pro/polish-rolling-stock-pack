@@ -1,0 +1,395 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* Sgs sprites */
+// PKP CARGO //
+spriteset(sset_sgs_purchase, "gfx/412z.png")       { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_sgs_empty, "gfx/412z.png")          { tmpl_sprite_train10(4, 20) }
+spriteset(sset_sgs_s1_full, "gfx/412z.png")        { tmpl_sprite_train10(4, 80) }
+spriteset(sset_sgs_s2_full, "gfx/412z.png")        { tmpl_sprite_train10(4, 120) }
+spriteset(sset_sgs_s3_full, "gfx/412z.png")        { tmpl_sprite_train10(4, 160) }
+spriteset(sset_sgs_s4_full, "gfx/412z.png")        { tmpl_sprite_train10(4, 200) }
+spriteset(sset_sgs_s5_full, "gfx/412z.png")        { tmpl_sprite_train10(4, 240) }
+spriteset(sset_sgs_s6_full, "gfx/412z.png")        { tmpl_sprite_train10(4, 280) }
+spriteset(sset_sgs_s7_full, "gfx/412z.png")        { tmpl_sprite_train10(4, 320) }
+spriteset(sset_sgs_s8_full, "gfx/412z.png")        { tmpl_sprite_train10(4, 360) }
+spriteset(sset_sgs_s9_full, "gfx/412z.png")        { tmpl_sprite_train10(4, 400) }
+spriteset(sset_sgs_s10_full, "gfx/412z.png")       { tmpl_sprite_train10(4, 440) }
+spriteset(sset_sgs_s11_full, "gfx/412z.png")       { tmpl_sprite_train10(4, 480) }
+spriteset(sset_sgs_s12_full, "gfx/412z.png")       { tmpl_sprite_train10(4, 520) }
+// PCC //
+spriteset(sset_sgs_pcc_purchase, "gfx/412z_pcc_sgs.png")       { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_sgs_pcc_empty, "gfx/412z_pcc_sgs.png")          { tmpl_sprite_train10(4, 20) }
+spriteset(sset_sgs_s1_pcc_full, "gfx/412z_pcc_sgs.png")        { tmpl_sprite_train10(4, 80) }
+spriteset(sset_sgs_s2_pcc_full, "gfx/412z_pcc_sgs.png")        { tmpl_sprite_train10(4, 120) }
+spriteset(sset_sgs_s3_pcc_full, "gfx/412z_pcc_sgs.png")        { tmpl_sprite_train10(4, 160) }
+spriteset(sset_sgs_s4_pcc_full, "gfx/412z_pcc_sgs.png")        { tmpl_sprite_train10(4, 200) }
+spriteset(sset_sgs_s5_pcc_full, "gfx/412z_pcc_sgs.png")        { tmpl_sprite_train10(4, 240) }
+spriteset(sset_sgs_s6_pcc_full, "gfx/412z_pcc_sgs.png")        { tmpl_sprite_train10(4, 280) }
+spriteset(sset_sgs_s7_pcc_full, "gfx/412z_pcc_sgs.png")        { tmpl_sprite_train10(4, 320) }
+spriteset(sset_sgs_s8_pcc_full, "gfx/412z_pcc_sgs.png")        { tmpl_sprite_train10(4, 360) }
+spriteset(sset_sgs_s9_pcc_full, "gfx/412z_pcc_sgs.png")        { tmpl_sprite_train10(4, 400) }
+spriteset(sset_sgs_s10_pcc_full, "gfx/412z_pcc_sgs.png")       { tmpl_sprite_train10(4, 440) }
+spriteset(sset_sgs_s11_pcc_full, "gfx/412z_pcc_sgs.png")       { tmpl_sprite_train10(4, 480) }
+spriteset(sset_sgs_s12_pcc_full, "gfx/412z_pcc_sgs.png")       { tmpl_sprite_train10(4, 520) }
+// PKP CARGO //
+spritegroup sgroup_sgs_s1 {
+    loaded:     [sset_sgs_empty, sset_sgs_s1_full];
+    loading:    [sset_sgs_empty, sset_sgs_s1_full];
+}
+spritegroup sgroup_sgs_s2 {
+    loaded:     [sset_sgs_empty, sset_sgs_s2_full];
+    loading:    [sset_sgs_empty, sset_sgs_s2_full];
+}
+spritegroup sgroup_sgs_s3 {
+    loaded:     [sset_sgs_empty, sset_sgs_s3_full];
+    loading:    [sset_sgs_empty, sset_sgs_s3_full];
+}
+spritegroup sgroup_sgs_s4 {
+    loaded:     [sset_sgs_empty, sset_sgs_s4_full];
+    loading:    [sset_sgs_empty, sset_sgs_s4_full];
+}
+spritegroup sgroup_sgs_s5 {
+    loaded:     [sset_sgs_empty, sset_sgs_s5_full];
+    loading:    [sset_sgs_empty, sset_sgs_s5_full];
+}
+spritegroup sgroup_sgs_s6 {
+    loaded:     [sset_sgs_empty, sset_sgs_s6_full];
+    loading:    [sset_sgs_empty, sset_sgs_s6_full];
+}
+spritegroup sgroup_sgs_s7 {
+    loaded:     [sset_sgs_empty, sset_sgs_s7_full];
+    loading:    [sset_sgs_empty, sset_sgs_s7_full];
+}
+spritegroup sgroup_sgs_s8 {
+    loaded:     [sset_sgs_empty, sset_sgs_s8_full];
+    loading:    [sset_sgs_empty, sset_sgs_s8_full];
+}
+spritegroup sgroup_sgs_s9 {
+    loaded:     [sset_sgs_empty, sset_sgs_s9_full];
+    loading:    [sset_sgs_empty, sset_sgs_s9_full];
+}
+spritegroup sgroup_sgs_s10 {
+    loaded:     [sset_sgs_empty, sset_sgs_s10_full];
+    loading:    [sset_sgs_empty, sset_sgs_s10_full];
+}
+spritegroup sgroup_sgs_s11 {
+    loaded:     [sset_sgs_empty, sset_sgs_s11_full];
+    loading:    [sset_sgs_empty, sset_sgs_s11_full];
+}
+spritegroup sgroup_sgs_s12 {
+    loaded:     [sset_sgs_empty, sset_sgs_s12_full];
+    loading:    [sset_sgs_empty, sset_sgs_s12_full];
+}
+// PCC //
+spritegroup sgroup_sgs_s1_pcc {
+    loaded:     [sset_sgs_pcc_empty, sset_sgs_s1_pcc_full];
+    loading:    [sset_sgs_pcc_empty, sset_sgs_s1_pcc_full];
+}
+spritegroup sgroup_sgs_s2_pcc {
+    loaded:     [sset_sgs_pcc_empty, sset_sgs_s2_pcc_full];
+    loading:    [sset_sgs_pcc_empty, sset_sgs_s2_pcc_full];
+}
+spritegroup sgroup_sgs_s3_pcc {
+    loaded:     [sset_sgs_pcc_empty, sset_sgs_s3_pcc_full];
+    loading:    [sset_sgs_pcc_empty, sset_sgs_s3_pcc_full];
+}
+spritegroup sgroup_sgs_s4_pcc {
+    loaded:     [sset_sgs_pcc_empty, sset_sgs_s4_pcc_full];
+    loading:    [sset_sgs_pcc_empty, sset_sgs_s4_pcc_full];
+}
+spritegroup sgroup_sgs_s5_pcc {
+    loaded:     [sset_sgs_pcc_empty, sset_sgs_s5_pcc_full];
+    loading:    [sset_sgs_pcc_empty, sset_sgs_s5_pcc_full];
+}
+spritegroup sgroup_sgs_s6_pcc {
+    loaded:     [sset_sgs_pcc_empty, sset_sgs_s6_pcc_full];
+    loading:    [sset_sgs_pcc_empty, sset_sgs_s6_pcc_full];
+}
+spritegroup sgroup_sgs_s7_pcc {
+    loaded:     [sset_sgs_pcc_empty, sset_sgs_s7_pcc_full];
+    loading:    [sset_sgs_pcc_empty, sset_sgs_s7_pcc_full];
+}
+spritegroup sgroup_sgs_s8_pcc {
+    loaded:     [sset_sgs_pcc_empty, sset_sgs_s8_pcc_full];
+    loading:    [sset_sgs_pcc_empty, sset_sgs_s8_pcc_full];
+}
+spritegroup sgroup_sgs_s9_pcc {
+    loaded:     [sset_sgs_pcc_empty, sset_sgs_s9_pcc_full];
+    loading:    [sset_sgs_pcc_empty, sset_sgs_s9_pcc_full];
+}
+spritegroup sgroup_sgs_s10_pcc {
+    loaded:     [sset_sgs_pcc_empty, sset_sgs_s10_pcc_full];
+    loading:    [sset_sgs_pcc_empty, sset_sgs_s10_pcc_full];
+}
+spritegroup sgroup_sgs_s11_pcc {
+    loaded:     [sset_sgs_pcc_empty, sset_sgs_s11_pcc_full];
+    loading:    [sset_sgs_pcc_empty, sset_sgs_s11_pcc_full];
+}
+spritegroup sgroup_sgs_s12_pcc {
+    loaded:     [sset_sgs_pcc_empty, sset_sgs_s12_pcc_full];
+    loading:    [sset_sgs_pcc_empty, sset_sgs_s12_pcc_full];
+}
+// PKP CARGO //
+spriteset(sset_sgs_d1_full, "gfx/412z_2.png")      { tmpl_sprite_train10(4, 20) }
+spriteset(sset_sgs_d1_half, "gfx/412z_2.png")      { tmpl_sprite_train10(4, 60) }
+spriteset(sset_sgs_d2_full, "gfx/412z_2.png")      { tmpl_sprite_train10(4, 100) }
+spriteset(sset_sgs_d2_half, "gfx/412z_2.png")      { tmpl_sprite_train10(4, 140) }
+spriteset(sset_sgs_d3_full, "gfx/412z_2.png")      { tmpl_sprite_train10(4, 180) }
+spriteset(sset_sgs_d3_half, "gfx/412z_2.png")      { tmpl_sprite_train10(4, 220) }
+spriteset(sset_sgs_d4_full, "gfx/412z_2.png")      { tmpl_sprite_train10(4, 260) }
+spriteset(sset_sgs_d4_half, "gfx/412z_2.png")      { tmpl_sprite_train10(4, 300) }
+spriteset(sset_sgs_d5_full, "gfx/412z_2.png")      { tmpl_sprite_train10(4, 340) }
+spriteset(sset_sgs_d5_half, "gfx/412z_2.png")      { tmpl_sprite_train10(4, 380) }
+spriteset(sset_sgs_d6_full, "gfx/412z_2.png")      { tmpl_sprite_train10(4, 420) }
+spriteset(sset_sgs_d6_half, "gfx/412z_2.png")      { tmpl_sprite_train10(4, 460) }
+spriteset(sset_sgs_d7_full, "gfx/412z_2.png")      { tmpl_sprite_train10(4, 500) }
+spriteset(sset_sgs_d7_half, "gfx/412z_2.png")      { tmpl_sprite_train10(4, 540) }
+spriteset(sset_sgs_d8_full, "gfx/412z_2.png")      { tmpl_sprite_train10(4, 580) }
+spriteset(sset_sgs_d8_half, "gfx/412z_2.png")      { tmpl_sprite_train10(4, 620) }
+spriteset(sset_sgs_d9_full, "gfx/412z_2.png")      { tmpl_sprite_train10(4, 660) }
+spriteset(sset_sgs_d9_half, "gfx/412z_2.png")      { tmpl_sprite_train10(4, 700) }
+spriteset(sset_sgs_d10_full, "gfx/412z_2.png")     { tmpl_sprite_train10(4, 740) }
+spriteset(sset_sgs_d10_half, "gfx/412z_2.png")     { tmpl_sprite_train10(4, 780) }
+// PCC //
+spriteset(sset_sgs_d1_pcc_full, "gfx/412z_pcc_sgs2.png")      { tmpl_sprite_train10(4, 20) }
+spriteset(sset_sgs_d1_pcc_half, "gfx/412z_pcc_sgs2.png")      { tmpl_sprite_train10(4, 60) }
+spriteset(sset_sgs_d2_pcc_full, "gfx/412z_pcc_sgs2.png")      { tmpl_sprite_train10(4, 100) }
+spriteset(sset_sgs_d2_pcc_half, "gfx/412z_pcc_sgs2.png")      { tmpl_sprite_train10(4, 140) }
+spriteset(sset_sgs_d3_pcc_full, "gfx/412z_pcc_sgs2.png")      { tmpl_sprite_train10(4, 180) }
+spriteset(sset_sgs_d3_pcc_half, "gfx/412z_pcc_sgs2.png")      { tmpl_sprite_train10(4, 220) }
+spriteset(sset_sgs_d4_pcc_full, "gfx/412z_pcc_sgs2.png")      { tmpl_sprite_train10(4, 260) }
+spriteset(sset_sgs_d4_pcc_half, "gfx/412z_pcc_sgs2.png")      { tmpl_sprite_train10(4, 300) }
+spriteset(sset_sgs_d5_pcc_full, "gfx/412z_pcc_sgs2.png")      { tmpl_sprite_train10(4, 340) }
+spriteset(sset_sgs_d5_pcc_half, "gfx/412z_pcc_sgs2.png")      { tmpl_sprite_train10(4, 380) }
+spriteset(sset_sgs_d6_pcc_full, "gfx/412z_pcc_sgs2.png")      { tmpl_sprite_train10(4, 420) }
+spriteset(sset_sgs_d6_pcc_half, "gfx/412z_pcc_sgs2.png")      { tmpl_sprite_train10(4, 460) }
+spriteset(sset_sgs_d7_pcc_full, "gfx/412z_pcc_sgs2.png")      { tmpl_sprite_train10(4, 500) }
+spriteset(sset_sgs_d7_pcc_half, "gfx/412z_pcc_sgs2.png")      { tmpl_sprite_train10(4, 540) }
+spriteset(sset_sgs_d8_pcc_full, "gfx/412z_pcc_sgs2.png")      { tmpl_sprite_train10(4, 580) }
+spriteset(sset_sgs_d8_pcc_half, "gfx/412z_pcc_sgs2.png")      { tmpl_sprite_train10(4, 620) }
+spriteset(sset_sgs_d9_pcc_full, "gfx/412z_pcc_sgs2.png")      { tmpl_sprite_train10(4, 660) }
+spriteset(sset_sgs_d9_pcc_half, "gfx/412z_pcc_sgs2.png")      { tmpl_sprite_train10(4, 700) }
+spriteset(sset_sgs_d10_pcc_full, "gfx/412z_pcc_sgs2.png")     { tmpl_sprite_train10(4, 740) }
+spriteset(sset_sgs_d10_pcc_half, "gfx/412z_pcc_sgs2.png")     { tmpl_sprite_train10(4, 780) }
+// PKP CARGO //
+spritegroup sgroup_sgs_d1 {
+    loaded:     [sset_sgs_empty, sset_sgs_d1_half, sset_sgs_d1_full];
+    loading:    [sset_sgs_empty, sset_sgs_d1_half, sset_sgs_d1_full];
+}
+spritegroup sgroup_sgs_d2 {
+    loaded:     [sset_sgs_empty, sset_sgs_d2_half, sset_sgs_d2_full];
+    loading:    [sset_sgs_empty, sset_sgs_d2_half, sset_sgs_d2_full];
+}
+spritegroup sgroup_sgs_d3 {
+    loaded:     [sset_sgs_empty, sset_sgs_d3_half, sset_sgs_d3_full];
+    loading:    [sset_sgs_empty, sset_sgs_d3_half, sset_sgs_d3_full];
+}
+spritegroup sgroup_sgs_d4 {
+    loaded:     [sset_sgs_empty, sset_sgs_d4_half, sset_sgs_d4_full];
+    loading:    [sset_sgs_empty, sset_sgs_d4_half, sset_sgs_d4_full];
+}
+spritegroup sgroup_sgs_d5 {
+    loaded:     [sset_sgs_empty, sset_sgs_d5_half, sset_sgs_d5_full];
+    loading:    [sset_sgs_empty, sset_sgs_d5_half, sset_sgs_d5_full];
+}
+spritegroup sgroup_sgs_d6 {
+    loaded:     [sset_sgs_empty, sset_sgs_d6_half, sset_sgs_d6_full];
+    loading:    [sset_sgs_empty, sset_sgs_d6_half, sset_sgs_d6_full];
+}
+spritegroup sgroup_sgs_d7 {
+    loaded:     [sset_sgs_empty, sset_sgs_d7_half, sset_sgs_d7_full];
+    loading:    [sset_sgs_empty, sset_sgs_d7_half, sset_sgs_d7_full];
+}
+spritegroup sgroup_sgs_d8 {
+    loaded:     [sset_sgs_empty, sset_sgs_d8_half, sset_sgs_d8_full];
+    loading:    [sset_sgs_empty, sset_sgs_d8_half, sset_sgs_d8_full];
+}
+spritegroup sgroup_sgs_d9 {
+    loaded:     [sset_sgs_empty, sset_sgs_d9_half, sset_sgs_d9_full];
+    loading:    [sset_sgs_empty, sset_sgs_d9_half, sset_sgs_d9_full];
+}
+spritegroup sgroup_sgs_d10 {
+    loaded:     [sset_sgs_empty, sset_sgs_d10_half, sset_sgs_d10_full];
+    loading:    [sset_sgs_empty, sset_sgs_d10_half, sset_sgs_d10_full];
+}
+// PCC //
+spritegroup sgroup_sgs_d1_pcc {
+    loaded:     [sset_sgs_pcc_empty, sset_sgs_d1_pcc_half, sset_sgs_d1_pcc_full];
+    loading:    [sset_sgs_pcc_empty, sset_sgs_d1_pcc_half, sset_sgs_d1_pcc_full];
+}
+spritegroup sgroup_sgs_d2_pcc {
+    loaded:     [sset_sgs_pcc_empty, sset_sgs_d2_pcc_half, sset_sgs_d2_pcc_full];
+    loading:    [sset_sgs_pcc_empty, sset_sgs_d2_pcc_half, sset_sgs_d2_pcc_full];
+}
+spritegroup sgroup_sgs_d3_pcc {
+    loaded:     [sset_sgs_pcc_empty, sset_sgs_d3_pcc_half, sset_sgs_d3_pcc_full];
+    loading:    [sset_sgs_pcc_empty, sset_sgs_d3_pcc_half, sset_sgs_d3_pcc_full];
+}
+spritegroup sgroup_sgs_d4_pcc {
+    loaded:     [sset_sgs_pcc_empty, sset_sgs_d4_pcc_half, sset_sgs_d4_pcc_full];
+    loading:    [sset_sgs_pcc_empty, sset_sgs_d4_pcc_half, sset_sgs_d4_pcc_full];
+}
+spritegroup sgroup_sgs_d5_pcc {
+    loaded:     [sset_sgs_pcc_empty, sset_sgs_d5_pcc_half, sset_sgs_d5_pcc_full];
+    loading:    [sset_sgs_pcc_empty, sset_sgs_d5_pcc_half, sset_sgs_d5_pcc_full];
+}
+spritegroup sgroup_sgs_d6_pcc {
+    loaded:     [sset_sgs_pcc_empty, sset_sgs_d6_pcc_half, sset_sgs_d6_pcc_full];
+    loading:    [sset_sgs_pcc_empty, sset_sgs_d6_pcc_half, sset_sgs_d6_pcc_full];
+}
+spritegroup sgroup_sgs_d7_pcc {
+    loaded:     [sset_sgs_pcc_empty, sset_sgs_d7_pcc_half, sset_sgs_d7_pcc_full];
+    loading:    [sset_sgs_pcc_empty, sset_sgs_d7_pcc_half, sset_sgs_d7_pcc_full];
+}
+spritegroup sgroup_sgs_d8_pcc {
+    loaded:     [sset_sgs_pcc_empty, sset_sgs_d8_pcc_half, sset_sgs_d8_pcc_full];
+    loading:    [sset_sgs_pcc_empty, sset_sgs_d8_pcc_half, sset_sgs_d8_pcc_full];
+}
+spritegroup sgroup_sgs_d9_pcc {
+    loaded:     [sset_sgs_pcc_empty, sset_sgs_d9_pcc_half, sset_sgs_d9_pcc_full];
+    loading:    [sset_sgs_pcc_empty, sset_sgs_d9_pcc_half, sset_sgs_d9_pcc_full];
+}
+spritegroup sgroup_sgs_d10_pcc {
+    loaded:     [sset_sgs_pcc_empty, sset_sgs_d10_pcc_half, sset_sgs_d10_pcc_full];
+    loading:    [sset_sgs_pcc_empty, sset_sgs_d10_pcc_half, sset_sgs_d10_pcc_full];
+}
+/* sgs switches */
+switch(FEAT_TRAINS, SELF, switch_sgs_articulated, extra_callback_info1) {
+    1: return item_dummy_2;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+random_switch(FEAT_TRAINS, SELF, switch_sgs_graphics, bitmask(TRIGGER_VEHICLE_NEW_LOAD)) {
+    1: return sgroup_sgs_s1;
+    1: return sgroup_sgs_s2;
+    1: return sgroup_sgs_s3;
+    1: return sgroup_sgs_s4;
+    1: return sgroup_sgs_s5;
+    1: return sgroup_sgs_s6;
+    1: return sgroup_sgs_s7;
+    1: return sgroup_sgs_s8;
+    1: return sgroup_sgs_s9;
+    1: return sgroup_sgs_s10;
+    1: return sgroup_sgs_s11;
+    1: return sgroup_sgs_s12;
+    2: return sgroup_sgs_d1;
+    2: return sgroup_sgs_d2;
+    2: return sgroup_sgs_d3;
+    2: return sgroup_sgs_d4;
+    2: return sgroup_sgs_d5;
+    2: return sgroup_sgs_d6;
+    2: return sgroup_sgs_d7;
+    2: return sgroup_sgs_d8;
+    2: return sgroup_sgs_d9;
+    2: return sgroup_sgs_d10;
+}
+random_switch(FEAT_TRAINS, SELF, switch_sgs_pcc_graphics, bitmask(TRIGGER_VEHICLE_NEW_LOAD)) {
+    1: return sgroup_sgs_s1_pcc;
+    1: return sgroup_sgs_s2_pcc;
+    1: return sgroup_sgs_s3_pcc;
+    1: return sgroup_sgs_s4_pcc;
+    1: return sgroup_sgs_s5_pcc;
+    1: return sgroup_sgs_s6_pcc;
+    1: return sgroup_sgs_s7_pcc;
+    1: return sgroup_sgs_s8_pcc;
+    1: return sgroup_sgs_s9_pcc;
+    1: return sgroup_sgs_s10_pcc;
+    1: return sgroup_sgs_s11_pcc;
+    1: return sgroup_sgs_s12_pcc;
+    2: return sgroup_sgs_d1_pcc;
+    2: return sgroup_sgs_d2_pcc;
+    2: return sgroup_sgs_d3_pcc;
+    2: return sgroup_sgs_d4_pcc;
+    2: return sgroup_sgs_d5_pcc;
+    2: return sgroup_sgs_d6_pcc;
+    2: return sgroup_sgs_d7_pcc;
+    2: return sgroup_sgs_d8_pcc;
+    2: return sgroup_sgs_d9_pcc;
+    2: return sgroup_sgs_d10_pcc;
+}
+switch(FEAT_TRAINS, SELF, switch_sgs_cargo_capacity, cargo_type_in_veh) {
+    GOOD: return 58*2;
+    return 58;
+}
+/* Define the actual train */
+#define SGS_CAPACITY    58
+item(FEAT_TRAINS, item_sgs_pkp_cargo, 20800) {
+    property {
+		/* common properties */
+        name:                           string(STR_SGS_PKP_CARGO_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1970, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_CONTAINER_WAGON_DEFINITION
+        loading_speed:                  20;
+        cost_factor:                    PURCHASE_COST_SGS;
+        running_cost_factor:            RUNNING_COST_CARGO_MEDIUM;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 SGS_CAPACITY*CARGO_CONTAINER_WAGON_MULTIPLIER;
+        weight:                         22 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_CARGO_WAGON);
+    }
+
+    graphics {
+        purchase:                   sset_sgs_purchase;
+        additional_text:            return string(STR_BRAKE_AIR);
+        default:                    switch_sgs_graphics;
+        articulated_part:           switch_sgs_articulated;
+        purchase_cargo_capacity:    return 58*2;
+        cargo_capacity:             switch_sgs_cargo_capacity;
+        random_trigger:             switch_sgs_graphics;
+        loading_speed:              return 20*(cargo_capacity/SGS_CAPACITY);
+    }
+}
+item(FEAT_TRAINS, item_sgs_pcc, 20801) {
+    property {
+		/* common properties */
+        name:                           string(STR_SGS_PCC_NAME);
+        variant_group:                  20800;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2010, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_CONTAINER_WAGON_DEFINITION
+        loading_speed:                  20;
+        cost_factor:                    PURCHASE_COST_SGS;
+        running_cost_factor:            RUNNING_COST_CARGO_MEDIUM;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 SGS_CAPACITY;
+        weight:                         22 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_CARGO_WAGON);
+    }
+
+    graphics {
+        purchase:                   sset_sgs_pcc_purchase;
+        additional_text:            return string(STR_BRAKE_AIR);
+        default:                    switch_sgs_pcc_graphics;
+        articulated_part:           switch_sgs_articulated;
+        purchase_cargo_capacity:    return 58*2;
+        cargo_capacity:             switch_sgs_cargo_capacity;
+        random_trigger:             switch_sgs_pcc_graphics;
+        loading_speed:              return 20*(cargo_capacity/SGS_CAPACITY);
+    }
+}

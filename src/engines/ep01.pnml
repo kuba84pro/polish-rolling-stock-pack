@@ -1,0 +1,79 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* EP01 sprites */
+spriteset(sset_ep01_purchase, "gfx/ep01.png")   { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_ep01, "gfx/ep01.png")            { tmpl_sprite_train(4, 20) }
+
+/* EP01 switches */
+switch(FEAT_TRAINS, PARENT, switch_ep01_visual_effect_local, 0) {
+    return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+}
+switch (FEAT_TRAINS, SELF, switch_ep01_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_2L, string(STR_HEATING_NONE_TEXT), string(STR_ENGINE_EXPRESS));
+    return string(STR_ENGINE_EXPRESS);
+}
+ENGINE_RUNNING_COST_SWITCH(ep01, EP01)
+DIESEL_ELECTRIC_2_ENGINE_POWER_SWITCH(ep01, KW_TO_HP(1352))
+ENGINE_VISUAL_EFFECT_SWITCH(ep01)
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_ep01, 525) {
+    property {
+        /* common properties */
+        name:                           string(STR_EP01_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1934, 1, 1);
+        vehicle_life:                   30;
+        reliability_decay:              35;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5;
+        cost_factor:                    PURCHASE_COST_EP01;
+        running_cost_factor:            RUNNING_COST_EP01;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          1352 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_PROPERTY
+        weight:                         75 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.230;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     32;
+        retire_early:                   -1;
+    }
+}
+
+    graphics {
+        purchase:                   sset_ep01_purchase;
+        additional_text:            switch_ep01_add_text;
+        default:                    sset_ep01;
+        visual_effect_and_powered:  switch_ep01_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(ep01)
+        ENGINE_POWER_CALLBACKS(ep01)
+    }
+}

@@ -1,0 +1,146 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* WLAB sprites */
+#define WLAB_FILE       "gfx/wlab.png"
+#define WLAB_IC_FILE    "gfx/gorlitz77.png"
+// classic livery
+spriteset(sset_wlab_purchase, WLAB_FILE)            { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_wlab, WLAB_FILE)                     { tmpl_sprite_train12(4, 20) }
+spriteset(sset_wlab_open, WLAB_FILE)                { tmpl_sprite_train12(4, 80) }
+spriteset(sset_wlab_cut, WLAB_FILE)                 { tmpl_sprite_train12(4, 120) }
+// alternate IC livery
+spriteset(sset_wlab_ic_purchase, WLAB_IC_FILE)      { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_wlab_ic, WLAB_IC_FILE)               { tmpl_sprite_train12(4, 20) }
+spriteset(sset_wlab_ic_open, WLAB_IC_FILE)          { tmpl_sprite_train12(4, 80) }
+spriteset(sset_wlab_ic_cut, WLAB_IC_FILE)           { tmpl_sprite_train12(4, 120) }
+// classic livery
+spritegroup sgroup_wlab {
+    loaded:     [sset_wlab];
+    loading:    [sset_wlab_open];
+}
+// alternate IC livery
+spritegroup sgroup_wlab_ic {
+    loaded:     [sset_wlab_ic];
+    loading:    [sset_wlab_ic_open];
+}
+
+/* WLAB switches */
+switch(FEAT_TRAINS, SELF, switch_wlab_articulated, extra_callback_info1) {
+    1: return item_dummy_3;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_wlab_classic_graphics, (extra_callback_info1&0xFF)==0 && other_veh_is_hidden(1)) {
+    1: return sset_wlab_cut;
+    return sgroup_wlab;
+}
+switch(FEAT_TRAINS, SELF, switch_wlab_ic_graphics, (extra_callback_info1&0xFF)==0 && other_veh_is_hidden(1)) {
+    1: return sset_wlab_ic_cut;
+    return sgroup_wlab_ic;
+}
+
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_wlab, 11201) {
+    property {
+        /* common properties */
+        name:                           string(STR_WLAB_NAME);
+        variant_group:                  11200;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1977, 1, 1);
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  6;
+        cost_factor:                    PURCHASE_COST_WLAB;
+        running_cost_factor:            RUNNING_COST_PASS_EXPRESS + RUNNING_COST_SLEEP_CREW;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 32;
+        weight:                         49 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     69;
+        retire_early:                   16;
+    }
+}
+
+    graphics {
+        purchase:                   sset_wlab_purchase;
+        additional_text:            return string(STR_PURCHASE_DESCR_2L, string(STR_BRAKE_AIR), string(STR_INCOME_HIGH));
+        default:                    switch_wlab_classic_graphics;
+        articulated_part:           switch_wlab_articulated;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             return CB_FAILED;
+        cargo_age_period:           switch_sleep_cargo_age_period;
+        colour_mapping:             switch_lights_wagon_dkblue_2;
+    }
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_gorlitz77, 11202) {
+    property {
+        /* common properties */
+        name:                           string(STR_GORLITZ77_NAME);
+        variant_group:                  11200;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1977, 1, 1);
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  6;
+        cost_factor:                    PURCHASE_COST_WLAB;
+        running_cost_factor:            RUNNING_COST_PASS_EXPRESS + RUNNING_COST_SLEEP_CREW;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 32;
+        weight:                         49 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     69;
+        retire_early:                   16;
+    }
+}
+
+    graphics {
+        purchase:                   sset_wlab_ic_purchase;
+        additional_text:            return string(STR_PURCHASE_DESCR_2L, string(STR_BRAKE_AIR), string(STR_INCOME_HIGH));
+        default:                    switch_wlab_ic_graphics;
+        articulated_part:           switch_wlab_articulated;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             return CB_FAILED;
+        cargo_age_period:           switch_sleep_cargo_age_period;
+        colour_mapping:             switch_lights_wagon_dkblue_2;
+    }
+}
+

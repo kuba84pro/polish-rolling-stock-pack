@@ -1,0 +1,80 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* WLABwxz sprites */
+spriteset(sset_wlabwxz_purchase, "gfx/gorlitz67.png")            { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_wlabwxz, "gfx/gorlitz67.png")                     { tmpl_sprite_train12(4, 20) }
+spriteset(sset_wlabwxz_open, "gfx/gorlitz67.png")                { tmpl_sprite_train12(4, 80) }
+spriteset(sset_wlabwxz_cut, "gfx/gorlitz67.png")                 { tmpl_sprite_train12(4, 120) }
+
+spritegroup sgroup_wlabwxz {
+    loaded:     [sset_wlabwxz];
+    loading:    [sset_wlabwxz_open];
+}
+
+/* WLABwxz switches */
+switch(FEAT_TRAINS, SELF, switch_wlabwxz_articulated, extra_callback_info1) {
+    1: return item_dummy_3;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_wlabwxz_graphics, (extra_callback_info1&0xFF)==0 && other_veh_is_hidden(1)) {
+    1: return sset_wlabwxz_cut;
+    return sgroup_wlabwxz;
+}
+
+#ifdef SITTING_PLACES
+    #undef SITTING_PLACES
+#endif
+#define SITTING_PLACES 32
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_wlabwxz, 11200) {
+    property {
+        /* common properties */
+        name:                           string(STR_WLABWXZ_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1967, 1, 1);
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  6;
+        cost_factor:                    PURCHASE_COST_WLABWXZ;
+        running_cost_factor:            RUNNING_COST_PASS_EXPRESS + RUNNING_COST_SLEEP_CREW;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          140 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 SITTING_PLACES;
+        weight:                         48 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     18;
+        retire_early:                   1;
+    }
+}
+
+    graphics {
+        purchase:                   sset_wlabwxz_purchase;
+        additional_text:            return string(STR_PURCHASE_DESCR_2L, string(STR_BRAKE_AIR), string(STR_INCOME_HIGH));
+        default:                    switch_wlabwxz_graphics;
+        articulated_part:           switch_wlabwxz_articulated;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             return CB_FAILED;
+        cargo_age_period:           switch_sleep_cargo_age_period;
+        colour_mapping:             switch_lights_wagon_dkblue_2;
+    }
+}

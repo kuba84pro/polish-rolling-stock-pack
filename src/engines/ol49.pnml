@@ -1,0 +1,186 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* Ol49 sprites */
+spriteset(sset_ol49_purchase, "gfx/ol49.png")       { tmpl_sprite_purchase(4, 100) }
+spriteset(sset_ol49_f1, "gfx/ol49.png")             { tmpl_sprite_train(4, 20) }
+spriteset(sset_ol49_f2, "gfx/ol49.png")             { tmpl_sprite_train(4, 20) }
+spriteset(sset_ol49_tender, "gfx/ol49.png")         { tmpl_sprite_train(4, 60) }
+spriteset(sset_ol49_black_purchase, "gfx/ol49_black.png")       { tmpl_sprite_purchase(4, 100) }
+spriteset(sset_ol49_black_f1, "gfx/ol49_black.png")             { tmpl_sprite_train(4, 20) }
+spriteset(sset_ol49_black_f2, "gfx/ol49_black.png")             { tmpl_sprite_train(4, 20) }
+spriteset(sset_ol49_black_tender, "gfx/ol49_black.png")         { tmpl_sprite_train(4, 60) }
+#ifdef ZOOM_SPRITES_ENABLED
+alternative_sprites(sset_ol49_f1,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/ol49-x2.png")    { tmpl_sprite_train_x2(8, 40) }
+alternative_sprites(sset_ol49_f2,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/ol49-x2.png")    { tmpl_sprite_train_x2(8, 120) }
+alternative_sprites(sset_ol49_tender,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/ol49-x2.png")    { tmpl_sprite_train_x2(8, 200) }
+#endif
+
+/* Ol49 switches */
+switch(FEAT_TRAINS, SELF, switch_ol49_articulated, getbits(extra_callback_info1, 0, 8)) {
+    1: return item_ol49;    // add tender
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_ol49_graphics_frames, motion_counter % 4) {
+    0..1: return sset_ol49_f1;
+    return sset_ol49_f2;
+}
+switch(FEAT_TRAINS, SELF, switch_ol49_graphics, position_in_articulated_veh) {
+    0: return switch_ol49_graphics_frames;
+    return sset_ol49_tender;
+}
+switch(FEAT_TRAINS, SELF, switch_ol49_length, position_in_articulated_veh) {
+    1: return 5;
+    return 8;
+}
+switch(FEAT_TRAINS, SELF, switch_ol49_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_2L, string(STR_HEATING_STEAM_POWER_TEXT, HEATING_POWER_STEAM_HI), string(STR_ENGINE_PASSENGER));
+    return string(STR_ENGINE_PASSENGER);
+}
+ENGINE_RUNNING_COST_SWITCH(ol49, OL49)
+STEAM_ENGINE_POWER_SWITCH(ol49, KW_TO_HP(950))
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_ol49, 114) {
+    property {
+        /* common properties */
+        name:                           string(STR_OL49_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1949, 1, 1);
+        vehicle_life:                   30;
+        reliability_decay:              18;     // 20
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_OL49;
+        running_cost_factor:            RUNNING_COST_OL49;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          950 kW;
+        running_cost_base:              RUNNING_COST_STEAM;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_PROPERTY
+        weight:                         145 ton;    // 83+62 t
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_STEAM;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.086;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     64;
+        retire_early:                   16;
+    }
+}
+
+    graphics {
+        purchase:                   sset_ol49_purchase;
+        additional_text:            switch_ol49_add_text;
+        default:                    switch_ol49_graphics;
+        articulated_part:           switch_ol49_articulated;
+        length:                     switch_ol49_length;
+        visual_effect_and_powered:  switch_normal_steam_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(ol49)
+        ENGINE_POWER_CALLBACKS(ol49)
+    }
+}
+/* Ol49 switches */
+switch(FEAT_TRAINS, SELF, switch_ol49_black_articulated, getbits(extra_callback_info1, 0, 8)) {
+    1: return item_ol49_black;    // add tender
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_ol49_black_graphics_frames, motion_counter % 4) {
+    0..1: return sset_ol49_black_f1;
+    return sset_ol49_black_f2;
+}
+switch(FEAT_TRAINS, SELF, switch_ol49_black_graphics, position_in_articulated_veh) {
+    0: return switch_ol49_black_graphics_frames;
+    return sset_ol49_black_tender;
+}
+switch(FEAT_TRAINS, SELF, switch_ol49_black_length, position_in_articulated_veh) {
+    1: return 5;
+    return 8;
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_ol49_black, 116) {
+    property {
+        /* common properties */
+        name:                           string(STR_OL49_BLACK_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1949, 1, 1);
+        vehicle_life:                   30;
+        reliability_decay:              18;     // 20
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_OL49;
+        running_cost_factor:            RUNNING_COST_OL49;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          950 kW;
+        running_cost_base:              RUNNING_COST_STEAM;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_PROPERTY
+        weight:                         145 ton;    // 83+62 t
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_STEAM;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.086;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        variant_group:                  114;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     64;
+        retire_early:                   16;
+    }
+}
+
+    graphics {
+        purchase:                   sset_ol49_black_purchase;
+        additional_text:            switch_ol49_add_text;
+        default:                    switch_ol49_black_graphics;
+        articulated_part:           switch_ol49_black_articulated;
+        length:                     switch_ol49_black_length;
+        visual_effect_and_powered:  switch_normal_steam_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(ol49)
+        ENGINE_POWER_CALLBACKS(ol49)
+    }
+}

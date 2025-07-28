@@ -1,0 +1,96 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* WRmnouz sprites */
+spriteset(sset_wrmnouz_purchase, "gfx/407a.png")    { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_wrmnouz, "gfx/407a.png")             { tmpl_sprite_train12(4, 20) }
+spriteset(sset_wrmnouz_open, "gfx/407a.png")        { tmpl_sprite_train12(4, 80) }
+spriteset(sset_wrmnouz_l, "gfx/407a.png")           { tmpl_sprite_train12_l(4, 120) }
+spriteset(sset_wrmnouz_r, "gfx/407a.png")           { tmpl_sprite_train12_r(4, 120) }
+spriteset(sset_wrmnouz_cut, "gfx/407a.png")         { tmpl_sprite_train12(4, 160) }
+spriteset(sset_wrmnouz_rear, "gfx/407a.png")        { tmpl_sprite_train12_rear(4, 20) }
+spriteset(sset_wrmnouz_rear_open, "gfx/407a.png")   { tmpl_sprite_train12_rear(4, 80) }
+spritegroup sgroup_wrmnouz {
+    loaded:     [sset_wrmnouz];
+    loading:    [sset_wrmnouz_open];
+}
+spritegroup sgroup_wrmnouz_rear {
+    loaded:     [sset_wrmnouz_rear];
+    loading:    [sset_wrmnouz_rear_open];
+}
+
+/* WRmnouz switches */
+switch(FEAT_TRAINS, SELF, switch_wrmnouz_articulated, extra_callback_info1) {
+    1: return item_dummy_4;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_wrmnouz_cut_front, other_veh_is_hidden(1)) {
+    1: return sset_wrmnouz_cut;
+    return sgroup_wrmnouz;
+}
+switch(FEAT_TRAINS, SELF, switch_wrmnouz_extra_front,
+   [STORE_TEMP(curv_info_prev_cur, 0), STORE_TEMP(curv_info_cur_next, 1),
+    STORE_TEMP((LOAD_TEMP(0)<0 && LOAD_TEMP(1)<0)?0:LOAD_TEMP(1), 1),
+    STORE_TEMP((LOAD_TEMP(0)>0 && LOAD_TEMP(1)>0)?0:LOAD_TEMP(1), 1),
+    LOAD_TEMP(1)]) {
+    -2..-1: return sset_wrmnouz_l;
+    1..2:   return sset_wrmnouz_r;
+    return switch_wrmnouz_cut_front;
+}
+switch(FEAT_TRAINS, SELF, switch_wrmnouz_front, (extra_callback_info1&0xFF)==0) {
+    1: return switch_wrmnouz_extra_front;  // viewport
+    return sgroup_wrmnouz;
+}
+switch(FEAT_TRAINS, SELF, switch_wrmnouz_rear, (extra_callback_info1&0xFF)==0 && curv_info_prev_cur==0 && other_veh_z_offset(-1)==0 ) {
+    1: return sgroup_wrmnouz_rear;  // viewport & no curves
+    return sset_dummy;
+}
+switch(FEAT_TRAINS, SELF, switch_wrmnouz_graphics, position_in_vehid_chain % 2) {
+    1: return switch_wrmnouz_rear;
+    return switch_wrmnouz_front;
+}
+switch (FEAT_TRAINS, SELF, switch_wrmnouz_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_4L, string(STR_BRAKE_AIR), string(STR_HEATING_ELECTRIC_TEXT), string(STR_407A_TEXT), string(STR_INCOME_ALL_EXPRESS));
+    return string(STR_PURCHASE_DESCR_3L, string(STR_BRAKE_AIR), string(STR_407A_TEXT), string(STR_INCOME_ALL_EXPRESS));
+}
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_wrmnouz, 11304) {
+    property {
+        /* common properties */
+        name:                           string(STR_407A_NAME);
+        variant_group:                  11302;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2013, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  5;
+        cost_factor:                    PURCHASE_COST_WRMNOUZ;
+        running_cost_factor:            RUNNING_COST_PASS_EXPRESS+2 + RUNNING_COST_COOK_CREW;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          200 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 1;
+        weight:                         56 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON, VINFO_RESTAURANT_WAGON);
+    }
+
+    graphics {
+        purchase:                   sset_wrmnouz_purchase;
+        additional_text:            switch_wrmnouz_add_text;
+        default:                    switch_wrmnouz_graphics;
+        articulated_part:           switch_wrmnouz_articulated;
+        purchase_cargo_capacity:    return 0;
+        cargo_capacity:             return 0;
+    }
+}

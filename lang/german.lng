@@ -1,0 +1,220 @@
+##grflangid 0x02
+##plural 0
+##gender m w n p
+
+# GRF name and description
+STR_GRF_NAME        :{TITLE} {VERSION}
+STR_GRF_DESCRIPTION :{ORANGE}{TITLE} {VERSION}{BLACK} enthält die bekanntesten Züge Polens von 1918 bis in die Gegenwart.{}{COPYRIGHT}2011-2021{}Erstellt von: {SILVER}TadeuszD, {SILVER}Mewa{BLACK}{BLACK}{}Grafiken: {SILVER}TadeuszD{BLACK}, {SILVER}Walter Novotny{BLACK}, {SILVER}Sojita{BLACK}, {SILVER}McZapkie{BLACK}, {SILVER}Czajnikowiec{BLACK}, {SILVER}101ksl{BLACK}, {SILVER}Mewa{BLACK}{}Besonderer Dank an: {SILVER}niemiec{BLACK}{}Lizenz: {SILVER}GPLv2{BLACK}{}WWW: {LTBLUE}http://openttd-polska.pl{BLACK}
+
+# GRF parameters
+STR_PARAM_NAME_DISABLE_ORIG     :Die spieleigenen Züge für normale und elektrifizierte Gleise deaktivieren
+STR_PARAM_DESC_DISABLE_ORIG     :Deaktiviert die standardmäßig im Spiel vorhandenen Lokomotiven und Waggons für normale und elektrifizierte Gleise. Hat keinen Einfluß auf Züge für Monorail und Maglev.
+STR_PARAM_NAME_DISABLE_MONO_MAGLEV  :Die spieleigenen Monorail- und Maglev-Züge deaktivieren
+STR_PARAM_DESC_DISABLE_MONO_MAGLEV  :Deaktiviert die standardmäßig im Spiel vorhandenen Lokomotiven und Waggons für Monorail und Maglev. Hat keinen Einfluss auf Züge für normale oder elektrifizierte Gleise.
+STR_PARAM_NAME_KEEP_OLD_VEHS    :Veraltete Fahrzeugmodelle nicht aus dem Kaufmenü entfernen
+STR_PARAM_DESC_KEEP_OLD_VEHS    :Mit dieser Option wird die Entferung von alten Lokomotiven und Waggons aus dem Kaufmenü ausgeschaltet. Historische Fahrzeuge bleiben so auch in späteren Spieljahren noch verfügbar. Diese Option hat nur Einfluss auf die Fahrzeuge in diesem Set. Um die Ausmusterung von anderen Fahrzeugen zu verhindern, muss die Option "Fahrzeuge veralten nie" in den erweiterten Spieleinstellungen aktiviert werden.
+STR_PARAM_NAME_REPLACE_CARGOES  :Transportiere 'Waren' in Spezialwaggons
+STR_PARAM_DESC_REPLACE_CARGOES  :Einige Waggons dieses Sets sind für den Transport spezieller Frachten, die von den Industriesets FIRS und ECS generiert werden, vorgesehen. Wenn du keines dieser Sets spielst, werden die Waggons deaktiviert. Aktiviere diese Option, um sie mit normalen Frachten zu nutzen.
+
+STR_PARAM_NAME_PURCHASE_COST    :Kaufpreismultiplikator
+STR_PARAM_DESC_PURCHASE_COST    :Mit dieser Option lässt sich der Kaufpreis von Lokomotiven und Waggons erhöhen. Hat nur Einfluss auf Fahrzeuge dieses Sets.
+STR_PARAM_NAME_RUNNING_COST     :Betriebskostenmultiplikator
+STR_PARAM_DESC_RUNNING_COST     :Erhöht die Betriebskosten von Lokomotiven und Waggons. Betrifft nur die Fahrzeuge in diesem Set.
+STR_PARAM_COST_X1               :1x
+STR_PARAM_COST_X2               :2x
+STR_PARAM_COST_X4               :4x
+STR_PARAM_COST_X8               :8x
+
+STR_PURCHASE_DESCR_2L           :{STRING}{}{BLACK}{STRING}
+STR_PURCHASE_DESCR_3L           :{STRING}{}{BLACK}{STRING}{}{BLACK}{STRING}
+STR_PURCHASE_DESCR_4L           :{STRING}{}{BLACK}{STRING}{}{BLACK}{STRING}{}{BLACK}{STRING}
+STR_SUBTYPE_DESCR_2P            :{STRING}{BLACK}, {STRING}
+
+STR_ENGINE_HEAVY_FREIGHT        :Info: {ORANGE}Lokomotive für {YELLOW}schwere Güterzüge
+STR_ENGINE_FREIGHT              :Info: {ORANGE}Lokomotive für {YELLOW}Güterzüge
+STR_ENGINE_PASSENGER_FREIGHT    :Info: {ORANGE}Universallokomotive für {YELLOW}Personen- und Güterzüge
+STR_ENGINE_PASSENGER            :Info: {ORANGE}Lokomotive für {YELLOW}Personenzüge
+STR_ENGINE_EXPRESS              :Info: {ORANGE}Lokomotive für {YELLOW}Schnellzüge und normale Personenzüge
+
+STR_BRAKE_NONE                  :Bremssystem: {RED}Ohne Bremse
+STR_BRAKE_HAND                  :Bremssystem: {GREEN}Handbetätigung (Bremswagen)
+STR_BRAKE_AIR                   :Bremssystem: {GREEN}Luftdruck (zentral gesteuert)
+
+STR_HEATING_STEAM_TEXT          :Heizung: {LTBLUE}Dampf
+STR_HEATING_ST_EL_TEXT          :Heizung: {LTBLUE}Dampf/Elektrisch
+STR_HEATING_ELECTRIC_TEXT       :Heizung: {LTBLUE}Elektrisch
+
+STR_INCOME_1_CLASS              :Info: {YELLOW}Höherer Einkommensrate{ORANGE} für Passagiere der {RED}1. {ORANGE}Klasse über lange Entfernungen
+STR_INCOME_LOWER                :Info: {RED}Niedrigere Einkommensrate{ORANGE} für Passagiere über lange Entfernungen
+STR_INCOME_ALL_EXPRESS          :Info: {YELLOW}Erhöht die Einkommensrate{ORANGE} für Passagiere in allen Expresszügen
+STR_INCOME_HIGH                 :Info: {YELLOW}Hohe Einkommensrate{ORANGE} für Passagiere über lange Entfernungen
+STR_INCOME_CARGO_HIGH           :Info: {YELLOW}Hohe Einkommensrate{ORANGE} für Frachten über lange Entfernungen
+STR_CAPACITY_NON_FRIABLE        :Info: {RED}Verringerte Kapazität{ORANGE} für zu verzurrende Frachten
+
+STR_HEATING_NONE_TEXT           :Heizleistung: {RED}Keine Heizung
+STR_HEATING_STEAM_POWER_TEXT    :Heizleistung: {LTBLUE}{SIGNED_WORD}kW (Dampf)
+STR_HEATING_STEAM_CLAYTON_TEXT  :Heizleistung: {LTBLUE}150kW (Dampf, Typ "Clayton")
+STR_HEATING_COMBINED_TEXT       :Heizleistung: {LTBLUE}150kW (Diesel/Elektrisch)
+STR_HEATING_ELECTRIC_POWER_TEXT :Heizleistung: {LTBLUE}{SIGNED_WORD}kW (Elektrisch)
+
+STR_ATTACH_DISALLOW_MCAR        :Ein Triebwagen kann nicht als normaler Waggon angekuppelt werden!
+STR_ATTACH_DISALLOW_EZT2        :Falscher Kupplungstyp! Triebwagen (EMUs) mit unterschiedlichen Kupplungstypen lassen sich nicht aneinanderkuppeln.
+STR_ATTACH_DISALLOW_EZT1        :Falscher Kupplungstyp! Triebwagen (EMUs) und normale Lokomotiven oder Waggons können nicht aneinandergekuppelt werden.
+STR_ATTACH_DISALLOW_TROLLEY     :Falscher Fahrzeugtyp! Draisinenfahrzeuge können nicht mit normalen Lokomotiven oder Waggons zusammengekuppelt werden.
+STR_ATTACH_DISALLOW             :Dieses Fahrzeug kann nicht an {STRING} gekuppelt werden.
+STR_TRAIN_TOO_LONG              :Ein Zug dieser Länge kann nicht an {STRING} angekuppelt werden.
+STR_TRAIN_WITHOUT_BRAKE         :Dieser Zug benötigt mehr Waggons mit Bremsen.{} Es müssen mehr Waggons mit hand- oder luftdruckbetätigten Bremsen hinzugefügt werden.
+STR_TRAIN_NOT_HEATED            :Dieser Zug wird nicht ausreichend beheizt! Die verwendeten Heizsysteme passen nicht zusammen oder die Heizleistung ist zu gering.{} Bitte eine andere Lokomotive verwenden oder spezielle Heizwagens hinzufügen.
+
+STR_SUBTYPE_OLD_2CLASS          :- 2.-Klasse-Abteile
+STR_SUBTYPE_OLD_12CLASS         :- 1.- und 2.-Klasse-Abteile
+STR_SUBTYPE_OLD_1CLASS          :- 1.-Klasse-Abteile
+STR_SUBTYPE_NEW_2CLASS          :- 2.-Klasse-Plätze
+STR_SUBTYPE_NEW_1CLASS          :- 1.-Klasse-Plätze
+
+STR_SUBTYPE_LIVERY_CLASSIC      :- klassische Lackierung
+STR_SUBTYPE_LIVERY_YEAR_DEP     :- zeitabhängige Lackierung
+STR_SUBTYPE_LIVERY_CARGO_DEP    :- frachtabhängige Lackierung
+STR_SUBTYPE_LIVERY_RANDOM       :- zufällige Lackierung
+
+STR_SUBTYPE_LIVERY_PKP_IC       :- Lackierung "PKP IC"
+STR_SUBTYPE_LIVERY_PKP_CARGO    :- Lackierung „PKP Cargo“
+STR_SUBTYPE_LIVERY_PKP_PR       :- "PKP Przewozy Regionalne" Lackierung
+STR_SUBTYPE_ENXX_ORANGE         :- Orange Lackierung
+STR_SUBTYPE_ENXX_RED_YEL        :- Rot-gelbe Lackierung
+STR_SUBTYPE_ENXX_BLU_YEL        :- Blau-Gelbe Lackierung
+STR_SUBTYPE_ENXX_BLK_RED        :- Schwarz-Rote Lackierung
+STR_SUBTYPE_ENXX_KM             :- Lackierung „Masowische Eisenbahnen“
+
+STR_TKH1_NAME           :TKh1 (Dampf)
+STR_TKI3_NAME           :TKi3 (Dampf)
+STR_OD13_NAME           :Od13 (Dampf)
+STR_TI12_NAME           :Ti12 (Dampf)
+STR_TP4_NAME            :Tp4 (Dampf)
+STR_OK1_NAME            :Ok1 (Dampf)
+STR_TY23_NAME           :Ty23 (Dampf)
+STR_OKL27_NAME          :OKl27 (Dampf)
+STR_PT31_NAME           :Pt31 (Dampf)
+STR_OKZ32_NAME          :OKz32 (Dampf)
+STR_TY37_NAME           :Ty37 (Dampf)
+STR_TY2_NAME            :Ty2 (Dampf)
+STR_PT47_NAME           :Pt47 (Dampf)
+STR_TKT48_NAME          :TKt48 (Dampf)
+STR_OL49_NAME           :Ol49 (Dampf)
+STR_TY51_NAME           :Ty51 (Dampf)
+STR_SN61_NAME           :SN61 (Dieseltriebwagen)
+STR_SN61_TEXT           :Info: {ORANGE}höchstens {YELLOW}3 Triebwagen{ORANGE} und {YELLOW}3 Beiwagen{ORANGE} pro Zug erlaubt
+STR_SA106_NAME          :SA106 (Diesel-Schienenbus)
+STR_SA106_TEXT          :Info: {ORANGE}Diesel-Schienenbus - höchstens {YELLOW}3 Triebwagen{ORANGE} und {YELLOW}3 Beiwagen{ORANGE} pro Zug erlaubt
+STR_SM30_NAME           :SM30 (Diesel)
+STR_SM41_NAME           :SM41 (Diesel)
+STR_SM42_NAME           :SM42 (Diesel)
+STR_SP42_NAME           :SP42 (Diesel)
+STR_SU42_NAME           :SU42 (Diesel)
+STR_ST43_NAME           :ST43 (Diesel)
+STR_ST44_NAME           :ST44 (Diesel)
+STR_SP45_NAME           :SP45 (Diesel)
+STR_SU45_NAME           :SU45 (Diesel)
+STR_SU46_NAME           :SU46 (Diesel)
+STR_SM31_NAME           :SM31 (Diesel)
+STR_SP32_NAME           :SP32 (Diesel)
+STR_SU160_NAME          :SU160-Gama (Diesel)
+STR_EP01_NAME           :EP01 (Elektrisch)
+STR_EP02_NAME           :EP02 (Elektrisch)
+STR_EU07_NAME           :EU07 (Elektrisch)
+STR_ET21_NAME           :ET21 (Elektrisch)
+STR_ET22_NAME           :ET22 (Elektrisch)
+STR_EP05_NAME           :EP05 (Elektrisch)
+STR_ET40_NAME           :ET40 (Elektrisch)
+STR_ET41_NAME           :ET41 (Elektrisch)
+STR_ET42_NAME           :ET42 (Elektrisch)
+STR_EP09_NAME           :EP09 (Elektrisch)
+STR_EU43_NAME           :EU43-Traxx (Elektrisch)
+STR_EU44_NAME           :EU44 "Husarz" (Elektrisch)
+STR_EU46_NAME           :EU46-Vectron (Elektrisch)
+STR_EN57_NAME           :EN57 (EMU)
+STR_EN57_TEXT           :Info: {YELLOW}3{ORANGE}-teiliger Elektrotriebwagen
+STR_EN71_NAME           :EN71 (EMU)
+STR_EN71_TEXT           :Info: {YELLOW}4{ORANGE}-teiliger Elektrotriebwagen
+STR_ED72_NAME           :ED72 (Elektrischer Triebwagen)
+STR_ED72_TEXT           :Info: {YELLOW}4{ORANGE}-teiliger Elektrotriebwagen
+STR_EN76_NAME           :EN76-Elf (EMU)
+STR_ED250_NAME          :ED250 "Pendolino" (EMU)
+
+STR_GMY_NAME            :Bahnpostwagen (Gmy)
+STR_GHMX_NAME           :Bahnpostwagen (Ghmx)
+STR_GMW_NAME            :Bahnpostwagen (Gmw)
+STR_PDN_NAME            :Bahnpostwagen (Pdn)
+STR_OHXT_NAME           :Heizwagen (Ohxt)
+STR_FG_NAME             :Post-Gepäckwagen (Fg)
+STR_FY_NAME             :Gepäckwagen (Fy)
+STR_FHX_NAME            :Gepäckwagen (Fhx)
+STR_DHXT_NAME           :Gepäckwagen (Dhxt)
+STR_DWXZ_NAME           :Gepäckwagen (Dwxz)
+STR_BDWXZD_NAME         :Personen- und Gepäckwagen (BDwxzd)
+STR_JHX_NAME            :Speisewagen (Jhx)
+STR_JHIX_NAME           :Speisewagen (Jhix)
+STR_WRDMNU_NAME         :Speisewagen (WRdmnu)
+STR_WRMNOUZ_NAME        :Speisewagen (WRmnouz)
+STR_BCY_NAME            :Personenwagen (BCy)
+STR_BCYH_NAME           :Personenwagen (BCyh)
+STR_BHXZ_NAME           :Schnellzugwagen (Bhxz)
+STR_ABHXZ_NAME          :Schnellzugwagen (A/Bhxz)
+STR_ABHXZ_TEXT          :Umrüstbar auf: {RED}2.{ORANGE}, {RED}1./2.{ORANGE} oder {RED}1.{ORANGE} Klasse Schnellzugwagen{BLACK}. Standard: {RED}2.{ORANGE} Klasse Schnellzugwagen
+STR_BCI_NAME            :Personenwagen "kowbojka" (BCi)
+STR_BH_RYF_NAME         :Nahverkehrswagen "ryflak" (Bh)
+STR_BH_RYF_TEXT         :Info: {ORANGE}Beiwagen für {YELLOW}Dieseltriebwagen SN61
+STR_WLAB_NAME           :Schlafwagen (WLABd)
+STR_WLAB10MNOUZ_NAME    :Schlafwagen (WLAB10mnouz)
+STR_ABDNU_NAME          :Reisezugwagen (A/Bdnu)
+STR_ABDNU_TEXT          :Umrüstbar auf: {RED}2.{ORANGE}, {RED}1./2.{ORANGE} oder {RED}1.{ORANGE} Klasse Reisezugwagen{BLACK}. Standard: {RED}2.{ORANGE} Klasse Reisezugwagen
+STR_BH_BON_NAME         :Nahverkehrswagen "bonanza" (Bh)
+STR_BH_BON_TEXT         :Info: {ORANGE}Anhänger für {YELLOW}Diesel-Schienenbus SA106
+STR_ABDHMNU_NAME        :InterCity-Schnellzugwagen (A/Bdhmnu)
+STR_ABDHMNU_TEXT        :Umrüstbar auf: {RED}2.{ORANGE} oder {RED}1.{ORANGE} Klasse InterCity-Schnellzugwagen{BLACK}. Standard: {RED}2.{ORANGE} Klasse InterCity-Schnellzugwagen
+STR_AB9MNOPUZ_NAME      :EuroCity-Schnellzugwagen (A/B9mnopuz)
+STR_AB9MNOPUZ_TEXT      :Umrüstbar auf: {RED}2.{ORANGE} oder {RED}1.{ORANGE} Klasse EuroCity-Schnellzugwagen{BLACK}. Standard: {RED}2.{ORANGE} Klasse EuroCity-Schnellzugwagen
+STR_BIPA_NAME           :Doppelstockwagen (Bhp)
+STR_BIPA_TEXT           :Info: {YELLOW}4{ORANGE}-teiliger Doppelstockwagen{}{BLACK}Umrüstbar auf: {YELLOW}2{ORANGE}-, {YELLOW}3{ORANGE}- oder {YELLOW}4{ORANGE}-teiliger Doppelstockwagen
+STR_BIPA_4PARTS         :- 4-teiliger Doppelstockwagen
+STR_BIPA_3PARTS         :- 3-teiliger Doppelstockwagen
+STR_BIPA_2PARTS         :- 2-teiliger Doppelstockwagen
+STR_BDHPUMN_NAME        :Doppelstockwagen (Bdhpumn)
+
+STR_WDDO_NAME           :Schüttgutwagen (Wddo)
+STR_WDDOH_NAME          :Schüttgutwagen (Wddoh)
+STR_WDDO_2W_NAME        :Schüttgutwagen (Wddo) Typ 2W
+STR_ES_NAME             :Schüttgutwagen (Es)
+STR_EAOS_NAME           :Schüttgutwagen (Eaos)
+STR_EAMOS_NAME          :Schwerer Schüttgutwagen (Eamos)
+STR_FALS_NAME           :Selbstentladewagen "talbot" (Fals)
+STR_FALNS_NAME          :Selbstentladewagen "talbot" (Falns)
+STR_TADNS_NAME          :Gedeckter Schüttgutwagen (Tadns)
+STR_KDT_NAME            :Gedeckter Güterwagen (Kdt)
+STR_KDTH_NAME           :Gedeckter Güterwagen (Kdth)
+STR_KDDET_NAME          :Gedeckter Güterwagen (Kddet)
+STR_GGS_NAME            :Gedeckter Güterwagen (Ggs)
+STR_GAGS_NAME           :Gedeckter Güterwagen (Gags)
+STR_GBS_NAME            :Gedeckter Güterwagen (Gbs)
+STR_HBBINS_NAME         :Gedeckter Güterwagen (Hbbins)
+STR_HABBINS_NAME        :Gedeckter Güterwagen (Habbins)
+STR_SLR_NAME            :Kühlwagen (Slr)
+STR_IBHSS_NAME          :Kühlwagen (Ibhss)
+STR_PDK31_NAME          :Flachbettwagen (Pdk31)
+STR_PDKH31_NAME         :Flachbettwagen (Pdkh31)
+STR_KBKKS_NAME          :Flachbettwagen (Kbkks)
+STR_KGNS_NAME           :Flachbettwagen (Kgns)
+STR_RES_NAME            :Flachbettwagen (Res)
+STR_SGS_NAME            :Containertragwagen (Sgs)
+STR_SDGMNSS_NAME        :Containertragwagen (Sdgmnss)
+STR_RH_NAME             :Kesselwagen (Rh)
+STR_RBH_NAME            :Kesselwagen (Rbh)
+STR_ZAES_NAME           :Kesselwagen (Zaes)
+STR_SN_NAME             :Viehwagen (Sn)
+STR_SDW_NAME            :Zementwagen (Sdw)
+STR_SDWH_NAME           :Zementwagen (Sdwh)
+STR_UACS_NAME           :Silowagen (Uacs)
+STR_LEKQSS_NAME         :Autoverladewagen (Lekqss)
+
+STR_WM15A_NAME          :Motordraisine WM-15A (Diesel)
+STR_PWM15_NAME          :Draisinenwagen PWM-15

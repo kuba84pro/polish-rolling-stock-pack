@@ -1,0 +1,83 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* Dummy sprite */
+spriteset(sset_dummy, "gfx/dummy.png")   { [0, 0, 1, 1, 0, 0] }
+
+/* Dummy vehicles */
+item(FEAT_TRAINS, item_dummy_1, 50) {
+    property {
+        climates_available:             NO_CLIMATE;
+        introduction_date:              PKP_INTRODUCTION_DATE;
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        CARGO_LOCOMOTIVES_DEFINITION
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        track_type:                     RAIL;
+        power:                          0;
+        cargo_capacity:                 0;
+        weight:                         0;
+        length:                         1;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+    }
+    graphics {
+        default:                    sset_dummy;
+    }
+}
+
+item(FEAT_TRAINS, item_dummy_2, 51) {
+    property {
+        climates_available:             NO_CLIMATE;
+        introduction_date:              PKP_INTRODUCTION_DATE;
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        CARGO_LOCOMOTIVES_DEFINITION
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        track_type:                     RAIL;
+        power:                          0;
+        cargo_capacity:                 0;
+        weight:                         0;
+        length:                         2;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+    }
+    graphics {
+        default:                    sset_dummy;
+    }
+}
+
+item(FEAT_TRAINS, item_dummy_3, 52) {
+    property {
+        climates_available:             NO_CLIMATE;
+        introduction_date:              PKP_INTRODUCTION_DATE;
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        CARGO_LOCOMOTIVES_DEFINITION
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        track_type:                     RAIL;
+        power:                          0;
+        cargo_capacity:                 0;
+        weight:                         0;
+        length:                         3;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+    }
+    graphics {
+        default:                    sset_dummy;
+    }
+}
+
+item(FEAT_TRAINS, item_dummy_4, 53) {
+    property {
+        climates_available:             NO_CLIMATE;
+        introduction_date:              PKP_INTRODUCTION_DATE;
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        CARGO_LOCOMOTIVES_DEFINITION
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        track_type:                     RAIL;
+        power:                          0;
+        cargo_capacity:                 0;
+        weight:                         0;
+        length:                         4;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+    }
+    graphics {
+        default:                    sset_dummy;
+    }
+}

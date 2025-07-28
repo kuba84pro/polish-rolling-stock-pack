@@ -1,0 +1,67 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* Ggs sprites */
+spriteset(sset_ggs_purchase, "gfx/23k.png")         { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_ggs, "gfx/23k.png")                  { tmpl_sprite_train(4, 20) }
+spriteset(sset_ggs_open_empty, "gfx/23k.png")       { tmpl_sprite_train(4, 80) }
+spriteset(sset_ggs_open_full, "gfx/23k.png")        { tmpl_sprite_train(4, 120) }
+#ifdef ZOOM_SPRITES_ENABLED
+alternative_sprites(sset_ggs,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/23k-x2.png")     { tmpl_sprite_train_x2(8, 40) }
+alternative_sprites(sset_ggs_open_empty,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/23k-x2.png")     { tmpl_sprite_train_x2(8, 120) }
+alternative_sprites(sset_ggs_open_full,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/23k-x2.png")     { tmpl_sprite_train_x2(8, 200) }
+#endif
+spritegroup sgroup_ggs {
+    loaded:     [sset_ggs_open_empty, sset_ggs, sset_ggs];
+    loading:    [sset_ggs_open_empty, sset_ggs_open_full];
+}
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_ggs, 20500) {
+    property {
+        /* common properties */
+        name:                           string(STR_GGS_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1956, 1, 1);
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_NORMAL_COVERED_WAGON_DEFINITION
+        loading_speed:                  5;
+        cost_factor:                    PURCHASE_COST_GGS;
+        running_cost_factor:            RUNNING_COST_CARGO_MEDIUM;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 24*CARGO_NORMAL_COVERED_WAGON_MULTIPLIER;
+        weight:                         12 ton;
+        length:                         7;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_CARGO_WAGON);
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     68;
+        retire_early:                   16;
+    }
+}
+
+    graphics {
+        purchase:                   sset_ggs_purchase;
+        additional_text:            return string(STR_BRAKE_AIR);
+        default:                    sgroup_ggs;
+    }
+}

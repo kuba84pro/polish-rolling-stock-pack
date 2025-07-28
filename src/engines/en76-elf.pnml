@@ -1,0 +1,151 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, GPL 2.0
+
+/* EN76 sprites */
+spriteset(sset_en76_purchase, "gfx/en76-elf.png")   { tmpl_sprite_purchase(4, 140) }
+spriteset(sset_en76_advert, "gfx/en76-elf.png")   { tmpl_sprite_purchase(4, 280) }
+
+spriteset(sset_en76_head, "gfx/en76-elf.png")       { tmpl_sprite_train10(4, 20) }
+spriteset(sset_en76_mid1, "gfx/en76-elf.png")       { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_en76_mid2, "gfx/en76-elf.png")       { tmpl_sprite_train10(4, 60) }
+spriteset(sset_en76_tail, "gfx/en76-elf.png")       { tmpl_sprite_train10_offset(4, 100, 2) }
+spriteset(sset_en76_head_open, "gfx/en76-elf.png")  { tmpl_sprite_train10(4, 160) }
+spriteset(sset_en76_mid1_open, "gfx/en76-elf.png")  { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_en76_mid2_open, "gfx/en76-elf.png")  { tmpl_sprite_train10(4, 200) }
+spriteset(sset_en76_tail_open, "gfx/en76-elf.png")  { tmpl_sprite_train10_offset(4, 240, 2) }
+spritegroup sgroup_en76_head {
+    loaded:     [sset_en76_head];
+    loading:    [sset_en76_head_open];
+}
+spritegroup sgroup_en76_mid1 {
+    loaded:     [sset_en76_mid1];
+    loading:    [sset_en76_mid1_open];
+}
+spritegroup sgroup_en76_mid2 {
+    loaded:     [sset_en76_mid2];
+    loading:    [sset_en76_mid2_open];
+}
+spritegroup sgroup_en76_tail {
+    loaded:     [sset_en76_tail];
+    loading:    [sset_en76_tail_open];
+}
+
+/* EN76 switches */
+switch(FEAT_TRAINS, SELF, switch_en76_articulated, extra_callback_info1) {
+    1..5: return item_en76;     // including dummy parts
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_en76_length, position_in_vehid_chain % 6) {
+    1: return 3;    // dummy part
+    4: return 3;    // dummy part
+    return 8;
+}
+switch(FEAT_TRAINS, SELF, switch_en76_purchase, extra_callback_info1 & 0xFF) {
+    0x21: return sset_en76_advert;
+    return sset_en76_purchase;
+}
+switch(FEAT_TRAINS, SELF, switch_en76_graphics, position_in_vehid_chain % 6) {
+    0: return sgroup_en76_head;
+    2: return sgroup_en76_mid1;
+    3: return sgroup_en76_mid2;
+    5: return sgroup_en76_tail;
+    return sset_dummy;      // dummy parts
+}
+switch(FEAT_TRAINS, SELF, switch_en76_tour_capacity, position_in_vehid_chain % 6) {
+    0: return 50;
+    2: return 50-1;
+    3: return 50-1;
+    5: return 50;
+    return 1;   // dummy parts
+}
+switch(FEAT_TRAINS, SELF, switch_en76_pass_capacity, position_in_vehid_chain % 6) {
+    0: return 50+24;    //50;
+    2: return 50+24-1;  //50;
+    3: return 50+24-1;  //50;
+    5: return 50+24;    //50;
+    return 1;   // dummy parts
+}
+switch(FEAT_TRAINS, SELF, switch_en76_capacity, cargo_type_in_veh) {
+    TOUR: return switch_en76_tour_capacity;
+    return switch_en76_pass_capacity;
+}
+switch(FEAT_TRAINS, SELF, switch_en76_visual_effect_local, position_in_vehid_chain % 6) {
+    0: return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 3, DISABLE_WAGON_POWER);
+    5: return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, -3, DISABLE_WAGON_POWER);
+    return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+}
+switch(FEAT_TRAINS, SELF, switch_en76_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_3L, string(STR_HEATING_ELECTRIC_TEXT), string(STR_4PART_EMU_TEXT), string(STR_INCOME_LOWER));
+    return string(STR_PURCHASE_DESCR_2L, string(STR_4PART_EMU_TEXT), string(STR_INCOME_LOWER));
+}
+switch (FEAT_TRAINS, SELF, switch_en76_start_stop, num_vehs_in_consist / 6) {
+    1..3: return CB_RESULT_NO_TEXT;
+    return string(STR_TRAIN_TOO_LONG, string(STR_EN76_NAME));
+}
+ENGINE_RUNNING_COST_SWITCH(en76, EN76)
+DIESEL_ELECTRIC_ENGINE_POWER_SWITCH(en76)
+ENGINE_VISUAL_EFFECT_SWITCH(en76)
+
+#ifdef SITTING_PLACES
+    #undef SITTING_PLACES
+#endif
+#ifdef STANDING_PLACES
+    #undef STANDING_PLACES
+#endif
+#define SITTING_PLACES 50*4
+#define STANDING_PLACES 24*4
+#define CARGO_CAPACITY_EN76     int((SITTING_PLACES+STANDING_PLACES+3)/6)
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_en76, 2400) {
+    property {
+        /* common properties */
+        name:                           string(STR_EN76_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2010, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  21;     // per part
+        cost_factor:                    PURCHASE_COST_EN76;
+        running_cost_factor:            RUNNING_COST_EN76;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          2000 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 CARGO_CAPACITY_EN76;
+        weight:                         135 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.27*75/135;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   switch_en76_purchase;
+        default:                    switch_en76_graphics;
+        articulated_part:           switch_en76_articulated;
+        additional_text:            switch_en76_add_text;
+        length:                     switch_en76_length;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_en76_capacity;
+        visual_effect_and_powered:  switch_en76_visual_effect;
+        can_attach_wagon:           switch_impuls1_can_attach;
+        start_stop:                 switch_en76_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(en76)
+        ENGINE_POWER_CALLBACKS(en76)
+    }
+}

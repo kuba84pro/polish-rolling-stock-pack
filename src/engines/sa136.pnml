@@ -1,0 +1,154 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, GPL 2.0
+
+/* SA136 sprites */
+spriteset(sset_sa136_purchase, "gfx/sa136.png")   { tmpl_sprite_purchase(4, 140) }
+spriteset(sset_sa136_advert, "gfx/sa136.png")   { tmpl_sprite_advertisement200(4, 280) }
+
+spriteset(sset_sa136_head, "gfx/sa136.png")       { tmpl_sprite_train12(4, 20) }
+spriteset(sset_sa136_mid, "gfx/sa136.png")       { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_sa136_tail, "gfx/sa136.png")       { tmpl_sprite_train12_offset(4, 100, 3) }
+spriteset(sset_sa136_head_open, "gfx/sa136.png")  { tmpl_sprite_train12(4, 160) }
+spriteset(sset_sa136_mid_open, "gfx/sa136.png")  { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_sa136_tail_open, "gfx/sa136.png")  { tmpl_sprite_train12_offset(4, 240, 3) }
+spritegroup sgroup_sa136_head {
+    loaded:     [sset_sa136_head];
+    loading:    [sset_sa136_head_open];
+}
+spritegroup sgroup_sa136_mid {
+    loaded:     [sset_sa136_mid];
+    loading:    [sset_sa136_mid_open];
+}
+spritegroup sgroup_sa136_tail {
+    loaded:     [sset_sa136_tail];
+    loading:    [sset_sa136_tail_open];
+}
+
+/* SA136 switches */
+switch(FEAT_TRAINS, SELF, switch_sa136_articulated, extra_callback_info1) {
+    1..4: return item_sa136;     // including dummy parts
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_sa136_length, position_in_vehid_chain % 5) {
+    1: return 4;    // dummy part
+    3: return 3;    // dummy part
+    return 8;
+}
+switch(FEAT_TRAINS, SELF, switch_sa136_purchase, extra_callback_info1 & 0xFF) {
+    0x21: return sset_sa136_advert;
+    return sset_sa136_purchase;
+}
+switch(FEAT_TRAINS, SELF, switch_sa136_graphics, position_in_vehid_chain % 5) {
+    0: return sgroup_sa136_head;
+    2: return sgroup_sa136_mid;
+    4: return sgroup_sa136_tail;
+    return sset_dummy;      // dummy parts
+}
+switch(FEAT_TRAINS, SELF, switch_sa136_tour_capacity, position_in_vehid_chain % 5) {
+    0: return 52;
+    2: return 52-2;
+    4: return 52;
+    return 1;   // dummy parts
+}
+switch(FEAT_TRAINS, SELF, switch_sa136_pass_capacity, position_in_vehid_chain % 5) {
+    0: return 52+26;    //52;
+    2: return 52+26-2;  //52;
+    4: return 52+26;    //52;
+    return 1;   // dummy parts
+}
+switch(FEAT_TRAINS, SELF, switch_sa136_capacity, cargo_type_in_veh) {
+    TOUR: return switch_sa136_tour_capacity;
+    return switch_sa136_pass_capacity;
+}
+switch(FEAT_TRAINS, SELF, switch_sa136_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_2L, string(STR_HEATING_COMBINED_TEXT), string(STR_SA136_TEXT));
+    return string(STR_SA136_TEXT);
+}
+switch(FEAT_TRAINS, SELF, switch_sa136_visual_effect_local, position_in_vehid_chain % 5) {
+    0: return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 3, DISABLE_WAGON_POWER);
+    3: return visual_effect_and_powered(VISUAL_EFFECT_DIESEL, -3, DISABLE_WAGON_POWER);
+    return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+}
+switch(FEAT_TRAINS, SELF, switch_sa136_can_attach, vehicle_type_id) {
+    item_sa136:  return CB_RESULT_ATTACH_ALLOW;
+    item_en57:  return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en71:  return string(STR_ATTACH_DISALLOW_EZT2);
+    item_ed72:  return string(STR_ATTACH_DISALLOW_EZT2);
+    item_ed74:  return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en76:  return string(STR_ATTACH_DISALLOW_EZT2);
+    item_ed250:  return string(STR_ATTACH_DISALLOW_EZT2);
+    item_36wea_op:  return string(STR_ATTACH_DISALLOW_EZT2);
+    item_ed161:  return string(STR_ATTACH_DISALLOW_EZT2);
+    return string(STR_ATTACH_DISALLOW_EZT1);
+}
+switch(FEAT_TRAINS, SELF, switch_sa136_start_stop, (count_veh_id(item_bh_bon)+count_veh_id(item_bdhpumn)/2+count_veh_id(item_bdwxzd) > 3) ) {
+    1: return string(STR_TRAIN_TOO_LONG, string(STR_SA136_NAME));
+    return CB_RESULT_NO_TEXT;
+}
+ENGINE_RUNNING_COST_SWITCH(sa136, SA136)
+DIESEL_ELECTRIC_ENGINE_POWER_SWITCH(sa136)
+ENGINE_VISUAL_EFFECT_SWITCH(sa136)
+
+#ifdef SITTING_PLACES
+    #undef SITTING_PLACES
+#endif
+#ifdef STANDING_PLACES
+    #undef STANDING_PLACES
+#endif
+#define SITTING_PLACES 52*3
+#define STANDING_PLACES 26*3
+#define CARGO_CAPACITY_SA136     int((SITTING_PLACES+STANDING_PLACES+2)/5)
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_sa136, 520) {
+    property {
+        /* common properties */
+        name:                           string(STR_SA136_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2007, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  11;     // per part
+        cost_factor:                    PURCHASE_COST_SA136;
+        running_cost_factor:            RUNNING_COST_SA136;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          120 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          764 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        cargo_capacity:                 CARGO_CAPACITY_SA136;
+        weight:                         108 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.25*75/110;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   switch_sa136_purchase;
+        default:                    switch_sa136_graphics;
+        articulated_part:           switch_sa136_articulated;
+        additional_text:            switch_sa136_add_text;
+        length:                     switch_sa136_length;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_sa136_capacity;
+        visual_effect_and_powered:  switch_sa136_visual_effect;
+        can_attach_wagon:           switch_sa136_can_attach;
+        start_stop:                 switch_sa136_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(sa136)
+        ENGINE_POWER_CALLBACKS(sa136)
+    }
+}

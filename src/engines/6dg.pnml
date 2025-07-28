@@ -1,0 +1,67 @@
+// This is part of PRSP NewGRF.
+// Don't include any headers inside this file!
+// (c) kuba84pro, licence: GPLv2
+
+/* 6dg sprites */
+// 6dg PKP Cargo
+spriteset(sset_6dg_purchase, "gfx/sm42.png")                { tmpl_sprite_purchase(244, 60) }
+spriteset(sset_6dg, "gfx/sm42.png")                         { tmpl_sprite_train(244, 20) }
+
+// 6dg switches
+switch(FEAT_TRAINS, PARENT, switch_6dg_visual_effect_local, 0) {
+    return visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 0, DISABLE_WAGON_POWER);
+}
+switch (FEAT_TRAINS, SELF, switch_6dg_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_2L, string(STR_HEATING_NONE_TEXT), string(STR_ENGINE_FREIGHT));
+    return string(STR_ENGINE_FREIGHT);
+}
+/* Define the actual trains */
+item(FEAT_TRAINS, item_6dg, 300) {
+    property {
+        /* common properties */
+        name:                           string(STR_6DG_NAME);
+        variant_group:                  250;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2011, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5;
+        cost_factor:                    PURCHASE_COST_6DG;
+        running_cost_factor:            RUNNING_COST_6DG;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          90 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          652 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         70 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.300;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_6dg_purchase;
+        additional_text:            switch_6dg_add_text;
+        default:                    sset_6dg;
+        visual_effect_and_powered:  switch_6dg_visual_effect_local;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(sm42)
+        ENGINE_POWER_CALLBACKS(sm42)
+    }
+}

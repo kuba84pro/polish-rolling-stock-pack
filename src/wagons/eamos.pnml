@@ -1,0 +1,93 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* Eamos sprites */
+spriteset(sset_eamos_purchase, "gfx/401zb.png")         { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_eamos_empty, "gfx/401zb.png")            { tmpl_sprite_train(4, 20) }
+spriteset(sset_eamos_half, "gfx/401zb.png")             { tmpl_sprite_train(4, 80) }
+spriteset(sset_eamos_full, "gfx/401zb.png")             { tmpl_sprite_train(4, 120) }
+spriteset(sset_eamos_steel_half, "gfx/401zb.png")       { tmpl_sprite_train(4, 160) }
+spriteset(sset_eamos_steel_full, "gfx/401zb.png")       { tmpl_sprite_train(4, 200) }
+spriteset(sset_eamos_coper_half, "gfx/401zb.png")       { tmpl_sprite_train(4, 240) }
+spriteset(sset_eamos_coper_full, "gfx/401zb.png")       { tmpl_sprite_train(4, 280) }
+spriteset(sset_eamos_bdmat_half, "gfx/401zb.png")       { tmpl_sprite_train(4, 320) }
+spriteset(sset_eamos_bdmat_full, "gfx/401zb.png")       { tmpl_sprite_train(4, 360) }
+#ifdef ZOOM_SPRITES_ENABLED
+alternative_sprites(sset_eamos_empty,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/401zb-x2.png")   { tmpl_sprite_train_x2(8, 40) }
+alternative_sprites(sset_eamos_half,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/401zb-x2.png")   { tmpl_sprite_train_x2(8, 120) }
+alternative_sprites(sset_eamos_full,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/401zb-x2.png")   { tmpl_sprite_train_x2(8, 200) }
+alternative_sprites(sset_eamos_steel_half,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/401zb-x2.png")   { tmpl_sprite_train_x2(8, 280) }
+alternative_sprites(sset_eamos_steel_full,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/401zb-x2.png")   { tmpl_sprite_train_x2(8, 360) }
+alternative_sprites(sset_eamos_coper_half,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/401zb-x2.png")   { tmpl_sprite_train_x2(8, 440) }
+alternative_sprites(sset_eamos_coper_full,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/401zb-x2.png")   { tmpl_sprite_train_x2(8, 520) }
+alternative_sprites(sset_eamos_bdmat_half,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/401zb-x2.png")   { tmpl_sprite_train_x2(8, 600) }
+alternative_sprites(sset_eamos_bdmat_full,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/401zb-x2.png")   { tmpl_sprite_train_x2(8, 680) }
+#endif
+spritegroup sgroup_eamos {
+    loaded:     [sset_eamos_empty, sset_eamos_half, sset_eamos_full];
+    loading:    [sset_eamos_empty, sset_eamos_half, sset_eamos_full];
+}
+spritegroup sgroup_eamos_steel {
+    loaded:     [sset_eamos_empty, sset_eamos_steel_half, sset_eamos_steel_full];
+    loading:    [sset_eamos_empty, sset_eamos_steel_half, sset_eamos_steel_full];
+}
+spritegroup sgroup_eamos_coper {
+    loaded:     [sset_eamos_empty, sset_eamos_coper_half, sset_eamos_coper_full];
+    loading:    [sset_eamos_empty, sset_eamos_coper_half, sset_eamos_coper_full];
+}
+spritegroup sgroup_eamos_bdmat {
+    loaded:     [sset_eamos_empty, sset_eamos_bdmat_half, sset_eamos_bdmat_full];
+    loading:    [sset_eamos_empty, sset_eamos_bdmat_half, sset_eamos_bdmat_full];
+}
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_eamos, 20201) {
+    property {
+		/* common properties */
+        name:                           string(STR_EAMOS_NAME);
+        variant_group:                  20200;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1960, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_HEAVY_OPEN_WAGON_DEFINITION
+        loading_speed:                  6; 
+        cost_factor:                    PURCHASE_COST_EAMOS;
+        running_cost_factor:            RUNNING_COST_CARGO_MEDIUM;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 50;
+        weight:                         22 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_CARGO_WAGON);
+    }
+
+    graphics {
+        STEL:                       sgroup_eamos_steel;
+        METL:                       sgroup_eamos_steel;
+        COPR:                       sgroup_eamos_coper;
+        BDMT:                       sgroup_eamos_bdmat;
+        purchase:                   sset_eamos_purchase;
+        additional_text:            return string(STR_BRAKE_AIR);
+        default:                    sgroup_eamos;
+        colour_mapping:             switch_bulk_recolour;
+    }
+}

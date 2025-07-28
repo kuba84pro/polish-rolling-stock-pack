@@ -1,0 +1,99 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* Bh "ryflak" sprites */
+spriteset(sset_bh_ryf_purchase, "gfx/43a.png")      { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_bh_ryf, "gfx/43a.png")               { tmpl_sprite_train12(4, 20) }
+spriteset(sset_bh_ryf_open, "gfx/43a.png")          { tmpl_sprite_train12(4, 80) }
+spriteset(sset_bh_ryf_cut, "gfx/43a.png")           { tmpl_sprite_train12(4, 120) }
+#ifdef ZOOM_SPRITES_ENABLED
+alternative_sprites(sset_bh_ryf,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/43a-x2.png")     { tmpl_sprite_train12_x2(8, 40) }
+alternative_sprites(sset_bh_ryf_open,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/43a-x2.png")     { tmpl_sprite_train12_x2(8, 120) }
+alternative_sprites(sset_bh_ryf_cut,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/43a-x2.png")     { tmpl_sprite_train12_x2(8, 200) }
+#endif
+spritegroup sgroup_bh_ryf {
+    loaded:     [sset_bh_ryf];
+    loading:    [sset_bh_ryf_open];
+}
+
+#ifdef SITTING_PLACES
+    #undef SITTING_PLACES
+#endif
+#ifdef STANDING_PLACES
+    #undef STANDING_PLACES
+#endif
+#define SITTING_PLACES 76-24
+#define STANDING_PLACES 8
+
+/* Bh "ryflak" switches */
+switch(FEAT_TRAINS, SELF, switch_bh_ryf_articulated, extra_callback_info1) {
+    1: return item_bh_mail_dummy_3;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_bh_ryf_classic, (extra_callback_info1&0xFF)==0 && other_veh_is_hidden(1)) {
+    1: return sset_bh_ryf_cut;
+    return sgroup_bh_ryf;
+}
+switch(FEAT_TRAINS, SELF, switch_bh_ryf_capacity, cargo_type_in_veh) {
+    TOUR: return SITTING_PLACES;
+    return SITTING_PLACES+STANDING_PLACES;
+}
+switch (FEAT_TRAINS, SELF, switch_bh_ryf_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_4L, string(STR_BRAKE_AIR), string(STR_HEATING_ST_EL_TEXT), string(STR_BH_RYF_TEXT), string(STR_INCOME_LOWER));
+    return string(STR_PURCHASE_DESCR_3L, string(STR_BRAKE_AIR), string(STR_BH_RYF_TEXT), string(STR_INCOME_LOWER));
+}
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_bh_ryf, 441) {
+    property {
+        /* common properties */
+        name:                           string(STR_BH_RYF_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1958, 1, 1);
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  10; // 15;
+        cost_factor:                    PURCHASE_COST_BH_RYF;
+        running_cost_factor:            RUNNING_COST_PASS_SUBURB;
+        cargo_age_period:               int(185*0.84);  // faster ageing
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          120 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 SITTING_PLACES+STANDING_PLACES;
+        weight:                         39 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     67;
+        retire_early:                   16;
+    }
+}
+
+    graphics {
+        purchase:                   sset_bh_ryf_purchase;
+        additional_text:            switch_bh_ryf_add_text;
+        default:                    switch_bh_ryf_classic;
+        articulated_part:           switch_bh_ryf_articulated;
+        purchase_cargo_capacity:    return SITTING_PLACES+STANDING_PLACES;
+        cargo_capacity:             switch_bh_ryf_capacity;
+        colour_mapping:             switch_lights_wagon_olive_2;
+    }
+}

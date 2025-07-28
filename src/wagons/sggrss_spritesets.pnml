@@ -1,0 +1,407 @@
+// This file is for spritesets/groups only
+
+#define SGGRSS40 "gfx/SGGRSS80'_pkpcargo_40'.png"
+#define SGGRSS20 "gfx/SGGRSS80'_pkpcargo_20'.png"
+#define SGGRSS20_HALF "gfx/SGGRSS80'_pkpcargo_20'_half.png"
+
+/* Sggrss sprites */
+
+// PKP CARGO //
+spriteset(sset_sggrss_purchase, SGGRSS20_HALF)       { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_sggrss_u1_empty, SGGRSS20_HALF)          { tmpl_sprite_train(4, 20) }
+spriteset(sset_sggrss_u2_empty, SGGRSS20_HALF)          { tmpl_sprite_train(244, 20) }
+// 40"
+// PKP CARGO
+// First Unit
+spriteset(sset_sggrss_u1_s1_full, SGGRSS40)        { tmpl_sprite_train(4, 80) }
+spriteset(sset_sggrss_u1_s2_full, SGGRSS40)        { tmpl_sprite_train(4, 110) }
+spriteset(sset_sggrss_u1_s3_full, SGGRSS40)        { tmpl_sprite_train(4, 140) }
+spriteset(sset_sggrss_u1_s4_full, SGGRSS40)        { tmpl_sprite_train(4, 170) }
+spriteset(sset_sggrss_u1_s5_full, SGGRSS40)        { tmpl_sprite_train(4, 200) }
+spriteset(sset_sggrss_u1_s6_full, SGGRSS40)        { tmpl_sprite_train(4, 230) }
+spriteset(sset_sggrss_u1_s7_full, SGGRSS40)        { tmpl_sprite_train(4, 260) }
+spriteset(sset_sggrss_u1_s8_full, SGGRSS40)        { tmpl_sprite_train(4, 290) }
+spriteset(sset_sggrss_u1_s9_full, SGGRSS40)        { tmpl_sprite_train(4, 320) }
+spriteset(sset_sggrss_u1_s10_full, SGGRSS40)       { tmpl_sprite_train(4, 350) }
+spriteset(sset_sggrss_u1_s11_full, SGGRSS40)       { tmpl_sprite_train(4, 380) }
+spriteset(sset_sggrss_u1_s12_full, SGGRSS40)       { tmpl_sprite_train(4, 410) }
+// Second Unit
+spriteset(sset_sggrss_u2_s1_full, SGGRSS40)        { tmpl_sprite_train(244, 80) }
+spriteset(sset_sggrss_u2_s2_full, SGGRSS40)        { tmpl_sprite_train(244, 110) }
+spriteset(sset_sggrss_u2_s3_full, SGGRSS40)        { tmpl_sprite_train(244, 140) }
+spriteset(sset_sggrss_u2_s4_full, SGGRSS40)        { tmpl_sprite_train(244, 170) }
+spriteset(sset_sggrss_u2_s5_full, SGGRSS40)        { tmpl_sprite_train(244, 200) }
+spriteset(sset_sggrss_u2_s6_full, SGGRSS40)        { tmpl_sprite_train(244, 230) }
+spriteset(sset_sggrss_u2_s7_full, SGGRSS40)        { tmpl_sprite_train(244, 260) }
+spriteset(sset_sggrss_u2_s8_full, SGGRSS40)        { tmpl_sprite_train(244, 290) }
+spriteset(sset_sggrss_u2_s9_full, SGGRSS40)        { tmpl_sprite_train(244, 320) }
+spriteset(sset_sggrss_u2_s10_full, SGGRSS40)       { tmpl_sprite_train(244, 350) }
+spriteset(sset_sggrss_u2_s11_full, SGGRSS40)       { tmpl_sprite_train(244, 380) }
+spriteset(sset_sggrss_u2_s12_full, SGGRSS40)       { tmpl_sprite_train(244, 410) }
+
+// PKP CARGO
+// First Unit
+spritegroup sgroup_sggrss_u1_s1 {
+    loaded:     [sset_sggrss_u1_empty, sset_sggrss_u1_s1_full];
+    loading:    [sset_sggrss_u1_empty, sset_sggrss_u1_s1_full];
+}
+spritegroup sgroup_sggrss_u1_s2 {
+    loaded:     [sset_sggrss_u1_empty, sset_sggrss_u1_s2_full];
+    loading:    [sset_sggrss_u1_empty, sset_sggrss_u1_s2_full];
+}
+spritegroup sgroup_sggrss_u1_s3 {
+    loaded:     [sset_sggrss_u1_empty, sset_sggrss_u1_s3_full];
+    loading:    [sset_sggrss_u1_empty, sset_sggrss_u1_s3_full];
+}
+spritegroup sgroup_sggrss_u1_s4 {
+    loaded:     [sset_sggrss_u1_empty, sset_sggrss_u1_s4_full];
+    loading:    [sset_sggrss_u1_empty, sset_sggrss_u1_s4_full];
+}
+spritegroup sgroup_sggrss_u1_s5 {
+    loaded:     [sset_sggrss_u1_empty, sset_sggrss_u1_s5_full];
+    loading:    [sset_sggrss_u1_empty, sset_sggrss_u1_s5_full];
+}
+spritegroup sgroup_sggrss_u1_s6 {
+    loaded:     [sset_sggrss_u1_empty, sset_sggrss_u1_s6_full];
+    loading:    [sset_sggrss_u1_empty, sset_sggrss_u1_s6_full];
+}
+spritegroup sgroup_sggrss_u1_s7 {
+    loaded:     [sset_sggrss_u1_empty, sset_sggrss_u1_s7_full];
+    loading:    [sset_sggrss_u1_empty, sset_sggrss_u1_s7_full];
+}
+spritegroup sgroup_sggrss_u1_s8 {
+    loaded:     [sset_sggrss_u1_empty, sset_sggrss_u1_s8_full];
+    loading:    [sset_sggrss_u1_empty, sset_sggrss_u1_s8_full];
+}
+spritegroup sgroup_sggrss_u1_s9 {
+    loaded:     [sset_sggrss_u1_empty, sset_sggrss_u1_s9_full];
+    loading:    [sset_sggrss_u1_empty, sset_sggrss_u1_s9_full];
+}
+spritegroup sgroup_sggrss_u1_s10 {
+    loaded:     [sset_sggrss_u1_empty, sset_sggrss_u1_s10_full];
+    loading:    [sset_sggrss_u1_empty, sset_sggrss_u1_s10_full];
+}
+spritegroup sgroup_sggrss_u1_s11 {
+    loaded:     [sset_sggrss_u1_empty, sset_sggrss_u1_s11_full];
+    loading:    [sset_sggrss_u1_empty, sset_sggrss_u1_s11_full];
+}
+spritegroup sgroup_sggrss_u1_s12 {
+    loaded:     [sset_sggrss_u1_empty, sset_sggrss_u1_s12_full];
+    loading:    [sset_sggrss_u1_empty, sset_sggrss_u1_s12_full];
+}
+
+// Second Unit
+spritegroup sgroup_sggrss_u2_s1 {
+    loaded:     [sset_sggrss_u2_empty, sset_sggrss_u2_s1_full];
+    loading:    [sset_sggrss_u2_empty, sset_sggrss_u2_s1_full];
+}
+spritegroup sgroup_sggrss_u2_s2 {
+    loaded:     [sset_sggrss_u2_empty, sset_sggrss_u2_s2_full];
+    loading:    [sset_sggrss_u2_empty, sset_sggrss_u2_s2_full];
+}
+spritegroup sgroup_sggrss_u2_s3 {
+    loaded:     [sset_sggrss_u2_empty, sset_sggrss_u2_s3_full];
+    loading:    [sset_sggrss_u2_empty, sset_sggrss_u2_s3_full];
+}
+spritegroup sgroup_sggrss_u2_s4 {
+    loaded:     [sset_sggrss_u2_empty, sset_sggrss_u2_s4_full];
+    loading:    [sset_sggrss_u2_empty, sset_sggrss_u2_s4_full];
+}
+spritegroup sgroup_sggrss_u2_s5 {
+    loaded:     [sset_sggrss_u2_empty, sset_sggrss_u2_s5_full];
+    loading:    [sset_sggrss_u2_empty, sset_sggrss_u2_s5_full];
+}
+spritegroup sgroup_sggrss_u2_s6 {
+    loaded:     [sset_sggrss_u2_empty, sset_sggrss_u2_s6_full];
+    loading:    [sset_sggrss_u2_empty, sset_sggrss_u2_s6_full];
+}
+spritegroup sgroup_sggrss_u2_s7 {
+    loaded:     [sset_sggrss_u2_empty, sset_sggrss_u2_s7_full];
+    loading:    [sset_sggrss_u2_empty, sset_sggrss_u2_s7_full];
+}
+spritegroup sgroup_sggrss_u2_s8 {
+    loaded:     [sset_sggrss_u2_empty, sset_sggrss_u2_s8_full];
+    loading:    [sset_sggrss_u2_empty, sset_sggrss_u2_s8_full];
+}
+spritegroup sgroup_sggrss_u2_s9 {
+    loaded:     [sset_sggrss_u2_empty, sset_sggrss_u2_s9_full];
+    loading:    [sset_sggrss_u2_empty, sset_sggrss_u2_s9_full];
+}
+spritegroup sgroup_sggrss_u2_s10 {
+    loaded:     [sset_sggrss_u2_empty, sset_sggrss_u2_s10_full];
+    loading:    [sset_sggrss_u2_empty, sset_sggrss_u2_s10_full];
+}
+spritegroup sgroup_sggrss_u2_s11 {
+    loaded:     [sset_sggrss_u2_empty, sset_sggrss_u2_s11_full];
+    loading:    [sset_sggrss_u2_empty, sset_sggrss_u2_s11_full];
+}
+spritegroup sgroup_sggrss_u2_s12 {
+    loaded:     [sset_sggrss_u2_empty, sset_sggrss_u2_s12_full];
+    loading:    [sset_sggrss_u2_empty, sset_sggrss_u2_s12_full];
+}
+
+// 20" Half
+// PKP CARGO
+// First Unit
+spriteset(sset_sggrss_u1_d1_half, SGGRSS20_HALF)        { tmpl_sprite_train(4, 80) }
+spriteset(sset_sggrss_u1_d2_half, SGGRSS20_HALF)        { tmpl_sprite_train(4, 110) }
+spriteset(sset_sggrss_u1_d3_half, SGGRSS20_HALF)        { tmpl_sprite_train(4, 140) }
+spriteset(sset_sggrss_u1_d4_half, SGGRSS20_HALF)        { tmpl_sprite_train(4, 170) }
+spriteset(sset_sggrss_u1_d5_half, SGGRSS20_HALF)        { tmpl_sprite_train(4, 200) }
+spriteset(sset_sggrss_u1_d6_half, SGGRSS20_HALF)        { tmpl_sprite_train(4, 230) }
+spriteset(sset_sggrss_u1_d7_half, SGGRSS20_HALF)        { tmpl_sprite_train(4, 260) }
+spriteset(sset_sggrss_u1_d8_half, SGGRSS20_HALF)        { tmpl_sprite_train(4, 290) }
+spriteset(sset_sggrss_u1_d9_half, SGGRSS20_HALF)        { tmpl_sprite_train(4, 320) }
+spriteset(sset_sggrss_u1_d10_half, SGGRSS20_HALF)        { tmpl_sprite_train(4, 350) }
+spriteset(sset_sggrss_u1_d11_half, SGGRSS20_HALF)        { tmpl_sprite_train(4, 380) }
+// Second Unit
+spriteset(sset_sggrss_u2_d1_half, SGGRSS20_HALF)        { tmpl_sprite_train(244, 80) }
+spriteset(sset_sggrss_u2_d2_half, SGGRSS20_HALF)        { tmpl_sprite_train(244, 110) }
+spriteset(sset_sggrss_u2_d3_half, SGGRSS20_HALF)        { tmpl_sprite_train(244, 140) }
+spriteset(sset_sggrss_u2_d4_half, SGGRSS20_HALF)        { tmpl_sprite_train(244, 170) }
+spriteset(sset_sggrss_u2_d5_half, SGGRSS20_HALF)        { tmpl_sprite_train(244, 200) }
+spriteset(sset_sggrss_u2_d6_half, SGGRSS20_HALF)        { tmpl_sprite_train(244, 230) }
+spriteset(sset_sggrss_u2_d7_half, SGGRSS20_HALF)        { tmpl_sprite_train(244, 260) }
+spriteset(sset_sggrss_u2_d8_half, SGGRSS20_HALF)        { tmpl_sprite_train(244, 290) }
+spriteset(sset_sggrss_u2_d9_half, SGGRSS20_HALF)        { tmpl_sprite_train(244, 320) }
+spriteset(sset_sggrss_u2_d10_half, SGGRSS20_HALF)        { tmpl_sprite_train(244, 350) }
+spriteset(sset_sggrss_u2_d11_half, SGGRSS20_HALF)        { tmpl_sprite_train(244, 380) }
+
+// 20"
+// PKP CARGO
+// First Unit
+spriteset(sset_sggrss_u1_d1, SGGRSS20)        { tmpl_sprite_train(4, 80) }
+spriteset(sset_sggrss_u1_d2, SGGRSS20)        { tmpl_sprite_train(4, 110) }
+spriteset(sset_sggrss_u1_d3, SGGRSS20)        { tmpl_sprite_train(4, 140) }
+spriteset(sset_sggrss_u1_d4, SGGRSS20)        { tmpl_sprite_train(4, 170) }
+spriteset(sset_sggrss_u1_d5, SGGRSS20)        { tmpl_sprite_train(4, 200) }
+spriteset(sset_sggrss_u1_d6, SGGRSS20)        { tmpl_sprite_train(4, 230) }
+spriteset(sset_sggrss_u1_d7, SGGRSS20)        { tmpl_sprite_train(4, 260) }
+spriteset(sset_sggrss_u1_d8, SGGRSS20)        { tmpl_sprite_train(4, 290) }
+spriteset(sset_sggrss_u1_d9, SGGRSS20)        { tmpl_sprite_train(4, 320) }
+spriteset(sset_sggrss_u1_d10, SGGRSS20)        { tmpl_sprite_train(4, 350) }
+spriteset(sset_sggrss_u1_d11, SGGRSS20)        { tmpl_sprite_train(4, 380) }
+spriteset(sset_sggrss_u1_d12, SGGRSS20)        { tmpl_sprite_train(4, 410) }
+spriteset(sset_sggrss_u1_d13, SGGRSS20)        { tmpl_sprite_train(4, 440) }
+spriteset(sset_sggrss_u1_d14, SGGRSS20)        { tmpl_sprite_train(4, 470) }
+spriteset(sset_sggrss_u1_d15, SGGRSS20)        { tmpl_sprite_train(4, 500) }
+spriteset(sset_sggrss_u1_d16, SGGRSS20)        { tmpl_sprite_train(4, 530) }
+spriteset(sset_sggrss_u1_d17, SGGRSS20)        { tmpl_sprite_train(4, 560) }
+spriteset(sset_sggrss_u1_d18, SGGRSS20)        { tmpl_sprite_train(4, 590) }
+spriteset(sset_sggrss_u1_d19, SGGRSS20)        { tmpl_sprite_train(4, 620) }
+spriteset(sset_sggrss_u1_d20, SGGRSS20)        { tmpl_sprite_train(4, 650) }
+spriteset(sset_sggrss_u1_d21, SGGRSS20)        { tmpl_sprite_train(4, 680) }
+spriteset(sset_sggrss_u1_d22, SGGRSS20)        { tmpl_sprite_train(4, 710) }
+// Second Unit
+spriteset(sset_sggrss_u2_d1, SGGRSS20)        { tmpl_sprite_train(244, 80) }
+spriteset(sset_sggrss_u2_d2, SGGRSS20)        { tmpl_sprite_train(244, 110) }
+spriteset(sset_sggrss_u2_d3, SGGRSS20)        { tmpl_sprite_train(244, 140) }
+spriteset(sset_sggrss_u2_d4, SGGRSS20)        { tmpl_sprite_train(244, 170) }
+spriteset(sset_sggrss_u2_d5, SGGRSS20)        { tmpl_sprite_train(244, 200) }
+spriteset(sset_sggrss_u2_d6, SGGRSS20)        { tmpl_sprite_train(244, 230) }
+spriteset(sset_sggrss_u2_d7, SGGRSS20)        { tmpl_sprite_train(244, 260) }
+spriteset(sset_sggrss_u2_d8, SGGRSS20)        { tmpl_sprite_train(244, 290) }
+spriteset(sset_sggrss_u2_d9, SGGRSS20)        { tmpl_sprite_train(244, 320) }
+spriteset(sset_sggrss_u2_d10, SGGRSS20)        { tmpl_sprite_train(244, 350) }
+spriteset(sset_sggrss_u2_d11, SGGRSS20)        { tmpl_sprite_train(244, 380) }
+spriteset(sset_sggrss_u2_d12, SGGRSS20)        { tmpl_sprite_train(244, 410) }
+spriteset(sset_sggrss_u2_d13, SGGRSS20)        { tmpl_sprite_train(244, 440) }
+spriteset(sset_sggrss_u2_d14, SGGRSS20)        { tmpl_sprite_train(244, 470) }
+spriteset(sset_sggrss_u2_d15, SGGRSS20)        { tmpl_sprite_train(244, 500) }
+spriteset(sset_sggrss_u2_d16, SGGRSS20)        { tmpl_sprite_train(244, 530) }
+spriteset(sset_sggrss_u2_d17, SGGRSS20)        { tmpl_sprite_train(244, 560) }
+spriteset(sset_sggrss_u2_d18, SGGRSS20)        { tmpl_sprite_train(244, 590) }
+spriteset(sset_sggrss_u2_d19, SGGRSS20)        { tmpl_sprite_train(244, 620) }
+spriteset(sset_sggrss_u2_d20, SGGRSS20)        { tmpl_sprite_train(244, 650) }
+spriteset(sset_sggrss_u2_d21, SGGRSS20)        { tmpl_sprite_train(244, 680) }
+spriteset(sset_sggrss_u2_d22, SGGRSS20)        { tmpl_sprite_train(244, 710) }
+
+// PKP CARGO
+// First Unit
+spritegroup sgroup_sggrss_u1_d1 {
+    loaded:     [sset_sggrss_u1_empty, sset_sggrss_u1_d1_half, sset_sggrss_u1_d1];
+    loading:    [sset_sggrss_u1_empty, sset_sggrss_u1_d1_half, sset_sggrss_u1_d1];
+}
+spritegroup sgroup_sggrss_u1_d2 {
+    loaded:     [sset_sggrss_u1_empty, sset_sggrss_u1_d2_half, sset_sggrss_u1_d2];
+    loading:    [sset_sggrss_u1_empty, sset_sggrss_u1_d2_half, sset_sggrss_u1_d2];
+}
+spritegroup sgroup_sggrss_u1_d3 {
+    loaded:     [sset_sggrss_u1_empty, sset_sggrss_u1_d2_half, sset_sggrss_u1_d3];
+    loading:    [sset_sggrss_u1_empty, sset_sggrss_u1_d2_half, sset_sggrss_u1_d3];
+}
+spritegroup sgroup_sggrss_u1_d4 {
+    loaded:     [sset_sggrss_u1_empty, sset_sggrss_u1_d3_half, sset_sggrss_u1_d4];
+    loading:    [sset_sggrss_u1_empty, sset_sggrss_u1_d3_half, sset_sggrss_u1_d4];
+}
+spritegroup sgroup_sggrss_u1_d5 {
+    loaded:     [sset_sggrss_u1_empty, sset_sggrss_u1_d2_half, sset_sggrss_u1_d5];
+    loading:    [sset_sggrss_u1_empty, sset_sggrss_u1_d2_half, sset_sggrss_u1_d5];
+}
+spritegroup sgroup_sggrss_u1_d6 {
+    loaded:     [sset_sggrss_u1_empty, sset_sggrss_u1_d4_half, sset_sggrss_u1_d6];
+    loading:    [sset_sggrss_u1_empty, sset_sggrss_u1_d4_half, sset_sggrss_u1_d6];
+}
+spritegroup sgroup_sggrss_u1_d7 {
+    loaded:     [sset_sggrss_u1_empty, sset_sggrss_u1_d5_half, sset_sggrss_u1_d7];
+    loading:    [sset_sggrss_u1_empty, sset_sggrss_u1_d5_half, sset_sggrss_u1_d7];
+}
+spritegroup sgroup_sggrss_u1_d8 {
+    loaded:     [sset_sggrss_u1_empty, sset_sggrss_u1_d4_half, sset_sggrss_u1_d8];
+    loading:    [sset_sggrss_u1_empty, sset_sggrss_u1_d4_half, sset_sggrss_u1_d8];
+}
+spritegroup sgroup_sggrss_u1_d9 {
+    loaded:     [sset_sggrss_u1_empty, sset_sggrss_u1_d5_half, sset_sggrss_u1_d9];
+    loading:    [sset_sggrss_u1_empty, sset_sggrss_u1_d5_half, sset_sggrss_u1_d9];
+}
+spritegroup sgroup_sggrss_u1_d10 {
+    loaded:     [sset_sggrss_u1_empty, sset_sggrss_u1_d1_half, sset_sggrss_u1_d10];
+    loading:    [sset_sggrss_u1_empty, sset_sggrss_u1_d1_half, sset_sggrss_u1_d10];
+}
+spritegroup sgroup_sggrss_u1_d11 {
+    loaded:     [sset_sggrss_u1_empty, sset_sggrss_u1_d5_half, sset_sggrss_u1_d11];
+    loading:    [sset_sggrss_u1_empty, sset_sggrss_u1_d5_half, sset_sggrss_u1_d11];
+}
+spritegroup sgroup_sggrss_u1_d12 {
+    loaded:     [sset_sggrss_u1_empty, sset_sggrss_u1_d6_half, sset_sggrss_u1_d12];
+    loading:    [sset_sggrss_u1_empty, sset_sggrss_u1_d6_half, sset_sggrss_u1_d12];
+}
+spritegroup sgroup_sggrss_u1_d13 {
+    loaded:     [sset_sggrss_u1_empty, sset_sggrss_u1_d7_half, sset_sggrss_u1_d13];
+    loading:    [sset_sggrss_u1_empty, sset_sggrss_u1_d7_half, sset_sggrss_u1_d13];
+}
+spritegroup sgroup_sggrss_u1_d14 {
+    loaded:     [sset_sggrss_u1_empty, sset_sggrss_u1_d3_half, sset_sggrss_u1_d14];
+    loading:    [sset_sggrss_u1_empty, sset_sggrss_u1_d3_half, sset_sggrss_u1_d14];
+}
+spritegroup sgroup_sggrss_u1_d15 {
+    loaded:     [sset_sggrss_u1_empty, sset_sggrss_u1_d8_half, sset_sggrss_u1_d15];
+    loading:    [sset_sggrss_u1_empty, sset_sggrss_u1_d8_half, sset_sggrss_u1_d15];
+}
+spritegroup sgroup_sggrss_u1_d16 {
+    loaded:     [sset_sggrss_u1_empty, sset_sggrss_u1_d9_half, sset_sggrss_u1_d16];
+    loading:    [sset_sggrss_u1_empty, sset_sggrss_u1_d9_half, sset_sggrss_u1_d16];
+}
+spritegroup sgroup_sggrss_u1_d17 {
+    loaded:     [sset_sggrss_u1_empty, sset_sggrss_u1_d9_half, sset_sggrss_u1_d17];
+    loading:    [sset_sggrss_u1_empty, sset_sggrss_u1_d9_half, sset_sggrss_u1_d17];
+}
+spritegroup sgroup_sggrss_u1_d18 {
+    loaded:     [sset_sggrss_u1_empty, sset_sggrss_u1_d1_half, sset_sggrss_u1_d18];
+    loading:    [sset_sggrss_u1_empty, sset_sggrss_u1_d1_half, sset_sggrss_u1_d18];
+}
+spritegroup sgroup_sggrss_u1_d19 {
+    loaded:     [sset_sggrss_u1_empty, sset_sggrss_u1_d7_half, sset_sggrss_u1_d19];
+    loading:    [sset_sggrss_u1_empty, sset_sggrss_u1_d7_half, sset_sggrss_u1_d19];
+}
+spritegroup sgroup_sggrss_u1_d20 {
+    loaded:     [sset_sggrss_u1_empty, sset_sggrss_u1_d8_half, sset_sggrss_u1_d20];
+    loading:    [sset_sggrss_u1_empty, sset_sggrss_u1_d8_half, sset_sggrss_u1_d20];
+}
+spritegroup sgroup_sggrss_u1_d21 {
+    loaded:     [sset_sggrss_u1_empty, sset_sggrss_u1_d10_half, sset_sggrss_u1_d21];
+    loading:    [sset_sggrss_u1_empty, sset_sggrss_u1_d10_half, sset_sggrss_u1_d21];
+}
+spritegroup sgroup_sggrss_u1_d22 {
+    loaded:     [sset_sggrss_u1_empty, sset_sggrss_u1_d11_half, sset_sggrss_u1_d22];
+    loading:    [sset_sggrss_u1_empty, sset_sggrss_u1_d11_half, sset_sggrss_u1_d22];
+}
+
+// Second Unit
+spritegroup sgroup_sggrss_u2_d1 {
+    loaded:     [sset_sggrss_u2_empty, sset_sggrss_u2_d1_half, sset_sggrss_u2_d1];
+    loading:    [sset_sggrss_u2_empty, sset_sggrss_u2_d1_half, sset_sggrss_u2_d1];
+}
+spritegroup sgroup_sggrss_u2_d2 {
+    loaded:     [sset_sggrss_u2_empty, sset_sggrss_u2_d2_half, sset_sggrss_u2_d2];
+    loading:    [sset_sggrss_u2_empty, sset_sggrss_u2_d2_half, sset_sggrss_u2_d2];
+}
+spritegroup sgroup_sggrss_u2_d3 {
+    loaded:     [sset_sggrss_u2_empty, sset_sggrss_u2_d2_half, sset_sggrss_u2_d3];
+    loading:    [sset_sggrss_u2_empty, sset_sggrss_u2_d2_half, sset_sggrss_u2_d3];
+}
+spritegroup sgroup_sggrss_u2_d4 {
+    loaded:     [sset_sggrss_u2_empty, sset_sggrss_u2_d3_half, sset_sggrss_u2_d4];
+    loading:    [sset_sggrss_u2_empty, sset_sggrss_u2_d3_half, sset_sggrss_u2_d4];
+}
+spritegroup sgroup_sggrss_u2_d5 {
+    loaded:     [sset_sggrss_u2_empty, sset_sggrss_u2_d2_half, sset_sggrss_u2_d5];
+    loading:    [sset_sggrss_u2_empty, sset_sggrss_u2_d2_half, sset_sggrss_u2_d5];
+}
+spritegroup sgroup_sggrss_u2_d6 {
+    loaded:     [sset_sggrss_u2_empty, sset_sggrss_u2_d4_half, sset_sggrss_u2_d6];
+    loading:    [sset_sggrss_u2_empty, sset_sggrss_u2_d4_half, sset_sggrss_u2_d6];
+}
+spritegroup sgroup_sggrss_u2_d7 {
+    loaded:     [sset_sggrss_u2_empty, sset_sggrss_u2_d5_half, sset_sggrss_u2_d7];
+    loading:    [sset_sggrss_u2_empty, sset_sggrss_u2_d5_half, sset_sggrss_u2_d7];
+}
+spritegroup sgroup_sggrss_u2_d8 {
+    loaded:     [sset_sggrss_u2_empty, sset_sggrss_u2_d4_half, sset_sggrss_u2_d8];
+    loading:    [sset_sggrss_u2_empty, sset_sggrss_u2_d4_half, sset_sggrss_u2_d8];
+}
+spritegroup sgroup_sggrss_u2_d9 {
+    loaded:     [sset_sggrss_u2_empty, sset_sggrss_u2_d5_half, sset_sggrss_u2_d9];
+    loading:    [sset_sggrss_u2_empty, sset_sggrss_u2_d5_half, sset_sggrss_u2_d9];
+}
+spritegroup sgroup_sggrss_u2_d10 {
+    loaded:     [sset_sggrss_u2_empty, sset_sggrss_u2_d1_half, sset_sggrss_u2_d10];
+    loading:    [sset_sggrss_u2_empty, sset_sggrss_u2_d1_half, sset_sggrss_u2_d10];
+}
+spritegroup sgroup_sggrss_u2_d11 {
+    loaded:     [sset_sggrss_u2_empty, sset_sggrss_u2_d5_half, sset_sggrss_u2_d11];
+    loading:    [sset_sggrss_u2_empty, sset_sggrss_u2_d5_half, sset_sggrss_u2_d11];
+}
+spritegroup sgroup_sggrss_u2_d12 {
+    loaded:     [sset_sggrss_u2_empty, sset_sggrss_u2_d6_half, sset_sggrss_u2_d12];
+    loading:    [sset_sggrss_u2_empty, sset_sggrss_u2_d6_half, sset_sggrss_u2_d12];
+}
+spritegroup sgroup_sggrss_u2_d13 {
+    loaded:     [sset_sggrss_u2_empty, sset_sggrss_u2_d7_half, sset_sggrss_u2_d13];
+    loading:    [sset_sggrss_u2_empty, sset_sggrss_u2_d7_half, sset_sggrss_u2_d13];
+}
+spritegroup sgroup_sggrss_u2_d14 {
+    loaded:     [sset_sggrss_u2_empty, sset_sggrss_u2_d3_half, sset_sggrss_u2_d14];
+    loading:    [sset_sggrss_u2_empty, sset_sggrss_u2_d3_half, sset_sggrss_u2_d14];
+}
+spritegroup sgroup_sggrss_u2_d15 {
+    loaded:     [sset_sggrss_u2_empty, sset_sggrss_u2_d8_half, sset_sggrss_u2_d15];
+    loading:    [sset_sggrss_u2_empty, sset_sggrss_u2_d8_half, sset_sggrss_u2_d15];
+}
+spritegroup sgroup_sggrss_u2_d16 {
+    loaded:     [sset_sggrss_u2_empty, sset_sggrss_u2_d9_half, sset_sggrss_u2_d16];
+    loading:    [sset_sggrss_u2_empty, sset_sggrss_u2_d9_half, sset_sggrss_u2_d16];
+}
+spritegroup sgroup_sggrss_u2_d17 {
+    loaded:     [sset_sggrss_u2_empty, sset_sggrss_u2_d9_half, sset_sggrss_u2_d17];
+    loading:    [sset_sggrss_u2_empty, sset_sggrss_u2_d9_half, sset_sggrss_u2_d17];
+}
+spritegroup sgroup_sggrss_u2_d18 {
+    loaded:     [sset_sggrss_u2_empty, sset_sggrss_u2_d1_half, sset_sggrss_u2_d18];
+    loading:    [sset_sggrss_u2_empty, sset_sggrss_u2_d1_half, sset_sggrss_u2_d18];
+}
+spritegroup sgroup_sggrss_u2_d19 {
+    loaded:     [sset_sggrss_u2_empty, sset_sggrss_u2_d7_half, sset_sggrss_u2_d19];
+    loading:    [sset_sggrss_u2_empty, sset_sggrss_u2_d7_half, sset_sggrss_u2_d19];
+}
+spritegroup sgroup_sggrss_u2_d20 {
+    loaded:     [sset_sggrss_u2_empty, sset_sggrss_u2_d8_half, sset_sggrss_u2_d20];
+    loading:    [sset_sggrss_u2_empty, sset_sggrss_u2_d8_half, sset_sggrss_u2_d20];
+}
+spritegroup sgroup_sggrss_u2_d21 {
+    loaded:     [sset_sggrss_u2_empty, sset_sggrss_u2_d10_half, sset_sggrss_u2_d21];
+    loading:    [sset_sggrss_u2_empty, sset_sggrss_u2_d10_half, sset_sggrss_u2_d21];
+}
+spritegroup sgroup_sggrss_u2_d22 {
+    loaded:     [sset_sggrss_u2_empty, sset_sggrss_u2_d11_half, sset_sggrss_u2_d22];
+    loading:    [sset_sggrss_u2_empty, sset_sggrss_u2_d11_half, sset_sggrss_u2_d22];
+}
+switch(FEAT_TRAINS, SELF, switch_sggrss_cargo_capacity, cargo_type_in_veh) {
+    GOOD: return 108;
+    return 108/2;
+}
+switch(FEAT_TRAINS, SELF, switch_sggrss_speed, cargo_count % 109) {
+    1..108: return 100;
+    return 120;
+}
+#define SGGRSS_CAPACITY    108

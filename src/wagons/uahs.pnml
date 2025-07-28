@@ -1,0 +1,110 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* Uahs sprites */
+spriteset(sset_uahs_purchase, "gfx/408r.png")       { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_uahs_yellow, "gfx/408r.png")         { tmpl_sprite_train(4, 20) }
+spriteset(sset_uahs_blue_purchase, "gfx/408r.png")       { tmpl_sprite_purchase(4, 110) }
+spriteset(sset_uahs_blue, "gfx/408r.png")           { tmpl_sprite_train(4, 80) }
+
+#define UAHS_CAPACITY   42
+// was 34
+
+/* Define the wagon without the break */
+item(FEAT_TRAINS, item_uahs, 21212) {
+    property {
+		/* common properties */
+        name:                           string(STR_UAHS_NAME);
+        variant_group:                  21210;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1966, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+//        CARGO_CHEMICALS_WAGON_DEFINITION
+        loading_speed:                  6; 
+        cost_factor:                    PURCHASE_COST_UAHS;
+        running_cost_factor:            RUNNING_COST_CARGO_SMALL + 1;
+        cargo_age_period:               int(185*1.41);  // slow ageing
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+//        cargo_capacity:                 34;
+        weight:                         22 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_CARGO_WAGON);
+    }
+
+if(param_replace_cargoes) {
+    property {
+        CARGO_GOODS_WAGON_DEFINITION
+        cargo_capacity:                 UAHS_CAPACITY*2;
+    }
+} else {
+    property {
+        CARGO_CHEMICALS_WAGON_DEFINITION
+        cargo_capacity:                 UAHS_CAPACITY;
+    }
+}
+
+    graphics {
+        purchase:                   sset_uahs_purchase;
+		additional_text:            return string(STR_PURCHASE_DESCR_2L, string(STR_BRAKE_AIR), string(STR_INCOME_CARGO_HIGH));
+        default:                    sset_uahs_yellow;
+    }
+}
+item(FEAT_TRAINS, item_uahs_blue, 21213) {
+    property {
+		/* common properties */
+        name:                           string(STR_UAHS_NAME);
+        variant_group:                  21212;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1966, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+//        CARGO_CHEMICALS_WAGON_DEFINITION
+        loading_speed:                  6; 
+        cost_factor:                    PURCHASE_COST_UAHS;
+        running_cost_factor:            RUNNING_COST_CARGO_SMALL + 1;
+        cargo_age_period:               int(185*1.41);  // slow ageing
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+//        cargo_capacity:                 34;
+        weight:                         22 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_CARGO_WAGON);
+    }
+
+if(param_replace_cargoes) {
+    property {
+        CARGO_GOODS_WAGON_DEFINITION
+        cargo_capacity:                 UAHS_CAPACITY*2;
+    }
+} else {
+    property {
+        CARGO_CHEMICALS_WAGON_DEFINITION
+        cargo_capacity:                 UAHS_CAPACITY;
+    }
+}
+
+    graphics {
+        purchase:                   sset_uahs_blue_purchase;
+		additional_text:            return string(STR_PURCHASE_DESCR_2L, string(STR_BRAKE_AIR), string(STR_INCOME_CARGO_HIGH));
+        default:                    sset_uahs_blue;
+    }
+}

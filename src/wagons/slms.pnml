@@ -1,0 +1,64 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* Ibhs sprites */
+spriteset(sset_slms_purchase, "gfx/4l.png")      { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_slms, "gfx/4l.png")               { tmpl_sprite_train_sym(4, 20) }
+alternative_sprites(sset_slms,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/4l-x2.png")   { tmpl_sprite_train_sym_x2(8, 40) }
+spriteset(sset_slms_open, "gfx/4l.png")          { tmpl_sprite_train_sym(4, 80) }
+alternative_sprites(sset_slms_open,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/4l-x2.png")   { tmpl_sprite_train_sym_x2(8, 120) }
+spritegroup sgroup_slms {
+    loaded:     [sset_slms];
+    loading:    [sset_slms_open];
+}
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_slms, 21001) {
+    property {
+		/* common properties */
+        name:                           string(STR_SLMS_NAME);
+        variant_group:                  21000;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1957, 1, 1);
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_NORMAL_REFRIGERATED_WAGON_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_SLMS;
+        running_cost_factor:            RUNNING_COST_CARGO_MEDIUM;
+        cargo_age_period:               int(185*1.41);  // slow ageing
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 17*CARGO_NORMAL_REFRIGERATED_WAGON_MULTIPLIER;
+        weight:                         18 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_CARGO_WAGON);
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     35;
+        retire_early:                   16;
+    }
+}
+
+    graphics {
+        purchase:                   sset_slms_purchase;
+        additional_text:            return string(STR_BRAKE_AIR);
+        default:                    sgroup_slms;
+    }
+}

@@ -1,0 +1,105 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* Es sprites */
+spriteset(sset_es_purchase, "gfx/9w.png")           { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_es_empty, "gfx/9w.png")              { tmpl_sprite_train(4, 20) }
+spriteset(sset_es_half, "gfx/9w.png")               { tmpl_sprite_train(4, 80) }
+spriteset(sset_es_full, "gfx/9w.png")               { tmpl_sprite_train(4, 120) }
+spriteset(sset_es_wood_half, "gfx/9w.png")          { tmpl_sprite_train(4, 160) }
+spriteset(sset_es_wood_full, "gfx/9w.png")          { tmpl_sprite_train(4, 200) }
+spriteset(sset_es_wdpr_half, "gfx/9w.png")          { tmpl_sprite_train(4, 240) }
+spriteset(sset_es_wdpr_full, "gfx/9w.png")          { tmpl_sprite_train(4, 280) }
+#ifdef ZOOM_SPRITES_ENABLED
+alternative_sprites(sset_es_empty,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/9w-x2.png")      { tmpl_sprite_train_x2(8, 40) }
+alternative_sprites(sset_es_half,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/9w-x2.png")      { tmpl_sprite_train_x2(8, 120) }
+alternative_sprites(sset_es_full,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/9w-x2.png")      { tmpl_sprite_train_x2(8, 200) }
+alternative_sprites(sset_es_wood_half,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/9w-x2.png")      { tmpl_sprite_train_x2(8, 280) }
+alternative_sprites(sset_es_wood_full,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/9w-x2.png")      { tmpl_sprite_train_x2(8, 360) }
+alternative_sprites(sset_es_wdpr_half,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/9w-x2.png")      { tmpl_sprite_train_x2(8, 440) }
+alternative_sprites(sset_es_wdpr_full,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/9w-x2.png")      { tmpl_sprite_train_x2(8, 520) }
+#endif
+spritegroup sgroup_es {
+    loaded:     [sset_es_empty, sset_es_half, sset_es_full];
+    loading:    [sset_es_empty, sset_es_half, sset_es_full];
+}
+spritegroup sgroup_es_wood {
+    loaded:     [sset_es_empty, sset_es_wood_half, sset_es_wood_full];
+    loading:    [sset_es_empty, sset_es_wood_half, sset_es_wood_full];
+}
+spritegroup sgroup_es_wdpr {
+    loaded:     [sset_es_empty, sset_es_wdpr_half, sset_es_wdpr_full];
+    loading:    [sset_es_empty, sset_es_wdpr_half, sset_es_wdpr_full];
+}
+
+/* Es switches */
+switch(FEAT_TRAINS, SELF, switch_es_capacity, cargo_type_in_veh) {
+    WOOD: return 21;
+    WDPR: return 21;
+    return CB_FAILED;
+}
+switch(FEAT_TRAINS, SELF, switch_es_loading_speed, cargo_type_in_veh) {
+    WOOD: return 4;
+    WDPR: return 4;     // 6 ticks
+    return CB_FAILED;   // 5 ticks
+}
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_es, 20050) {
+    property {
+        /* common properties */
+        name:                           string(STR_ES_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1952, 1, 1);
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_NORMAL_OPEN_WAGON_DEFINITION
+        loading_speed:                  6;
+        cost_factor:                    PURCHASE_COST_ES;
+        running_cost_factor:            RUNNING_COST_CARGO_SMALL;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 25;
+        weight:                         11 ton;
+        length:                         7;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_CARGO_WAGON);
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     70;
+        retire_early:                   16;
+    }
+}
+
+    graphics {
+        WOOD:                       sgroup_es_wood;
+        WDPR:                       sgroup_es_wdpr;
+        purchase:                   sset_es_purchase;
+        additional_text:            return string(STR_PURCHASE_DESCR_2L, string(STR_BRAKE_AIR), string(STR_CAPACITY_NON_FRIABLE));
+        default:                    sgroup_es;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_es_capacity;
+        loading_speed:              switch_es_loading_speed;
+        colour_mapping:             switch_bulk_recolour;
+    }
+}

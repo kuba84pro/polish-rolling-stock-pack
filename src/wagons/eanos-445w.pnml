@@ -1,0 +1,102 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* Eanos (445W) sprites */
+spriteset(sset_eanos_445w_purchase, "gfx/445w.png")       { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_eanos_445w_empty, "gfx/445w.png")          { tmpl_sprite_train(4, 20) }
+spriteset(sset_eanos_445w_half, "gfx/445w.png")           { tmpl_sprite_train(4, 80) }
+spriteset(sset_eanos_445w_full, "gfx/445w.png")           { tmpl_sprite_train(4, 120) }
+spriteset(sset_eanos_445w_wood_half, "gfx/445w.png")      { tmpl_sprite_train(4, 160) }
+spriteset(sset_eanos_445w_wood_full, "gfx/445w.png")      { tmpl_sprite_train(4, 200) }
+spriteset(sset_eanos_445w_wdpr_half, "gfx/445w.png")      { tmpl_sprite_train(4, 240) }
+spriteset(sset_eanos_445w_wdpr_full, "gfx/445w.png")      { tmpl_sprite_train(4, 280) }
+/*#ifdef ZOOM_SPRITES_ENABLED
+alternative_sprites(sset_eanos_445w_empty,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/445w-x2.png")    { tmpl_sprite_train_x2(8, 40) }
+alternative_sprites(sset_eanos_445w_half,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/445w-x2.png")    { tmpl_sprite_train_x2(8, 120) }
+alternative_sprites(sset_eanos_445w_full,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/445w-x2.png")    { tmpl_sprite_train_x2(8, 200) }
+alternative_sprites(sset_eanos_445w_wood_half,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/445w-x2.png")    { tmpl_sprite_train_x2(8, 280) }
+alternative_sprites(sset_eanos_445w_wood_full,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/445w-x2.png")    { tmpl_sprite_train_x2(8, 360) }
+alternative_sprites(sset_eanos_445w_wdpr_half,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/445w-x2.png")    { tmpl_sprite_train_x2(8, 440) }
+alternative_sprites(sset_eanos_445w_wdpr_full,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/445w-x2.png")    { tmpl_sprite_train_x2(8, 520) }
+#endif */
+spritegroup sgroup_eanos_445w {
+    loaded:     [sset_eanos_445w_empty, sset_eanos_445w_half, sset_eanos_445w_full];
+    loading:    [sset_eanos_445w_empty, sset_eanos_445w_half, sset_eanos_445w_full];
+}
+spritegroup sgroup_eanos_445w_wood {
+    loaded:     [sset_eanos_445w_empty, sset_eanos_445w_wood_half, sset_eanos_445w_wood_full];
+    loading:    [sset_eanos_445w_empty, sset_eanos_445w_wood_half, sset_eanos_445w_wood_full];
+}
+spritegroup sgroup_eanos_445w_wdpr {
+    loaded:     [sset_eanos_445w_empty, sset_eanos_445w_wdpr_half, sset_eanos_445w_wdpr_full];
+    loading:    [sset_eanos_445w_empty, sset_eanos_445w_wdpr_half, sset_eanos_445w_wdpr_full];
+}
+
+/* Eanos (445W) switches */
+switch(FEAT_TRAINS, SELF, switch_eanos_445w_capacity, cargo_type_in_veh) {
+    WOOD: return 45;
+    WDPR: return 45;
+    return CB_FAILED;
+}
+switch(FEAT_TRAINS, SELF, switch_eanos_445w_loading_speed, cargo_type_in_veh) {
+    WOOD: return 6;
+    WDPR: return 6;     // 8 ticks
+    return CB_FAILED;   // 7 ticks
+}
+switch(FEAT_TRAINS, SELF, switch_eanos_445w_speed, cargo_count % 61) {
+    1..60: return 100;
+    return 120;
+}
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_eanos_445w, 20150) {
+    property {
+		/* common properties */
+        name:                           string(STR_EANOS_445W_NAME);
+        variant_group:                  20050;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2011, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_NORMAL_OPEN_WAGON_DEFINITION
+        loading_speed:                  8; 
+        cost_factor:                    PURCHASE_COST_EANOS_445W;
+        running_cost_factor:            RUNNING_COST_CARGO_LARGE;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          120 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 60;
+        weight:                         22 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_CARGO_WAGON);
+    }
+
+    graphics {
+        WOOD:                       sgroup_eanos_445w_wood;
+        WDPR:                       sgroup_eanos_445w_wdpr;
+        purchase:                   sset_eanos_445w_purchase;
+        additional_text:            return string(STR_PURCHASE_DESCR_3L, string(STR_BRAKE_AIR), string(STR_CAPACITY_NON_FRIABLE), string(STR_120_100_CAR_SPEED_TEXT));
+        default:                    sgroup_eanos_445w;
+        purchase_cargo_capacity:    return CB_FAILED;
+        purchase_speed:             return 120;
+        speed:                      switch_eanos_445w_speed;
+        cargo_capacity:             switch_eanos_445w_capacity;
+        loading_speed:              switch_eanos_445w_loading_speed;
+        colour_mapping:             switch_bulk_recolour;
+    }
+}

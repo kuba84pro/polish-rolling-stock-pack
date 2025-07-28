@@ -1,0 +1,55 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+#ifdef SITTING_PLACES
+    #undef SITTING_PLACES
+#endif
+#define SITTING_PLACES 24
+
+/* Special mail articulated part switches */
+switch(FEAT_TRAINS, SELF, switch_bh_mail_dummy_3_capacity, cargo_classes) {
+    bitmask(CC_MAIL): return int(6*POST_MULTIPLIER);
+    return SITTING_PLACES;  // passengers/tourists
+}
+switch(FEAT_TRAINS, SELF, switch_bh_mail_dummy_3_cargo_age, cargo_classes) {
+    bitmask(CC_PASSENGERS): return int(185*0.84);   // faster ageing
+    return 185;
+}
+
+/* Define post special articulated part */
+item(FEAT_TRAINS, item_bh_mail_dummy_3) {
+    property {
+        /* common properties */
+        climates_available:             NO_CLIMATE;
+        introduction_date:              PKP_INTRODUCTION_DATE;
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        // refit to passenger or mail available
+        refittable_cargo_classes:       bitmask(CC_PASSENGERS, CC_MAIL);
+        non_refittable_cargo_classes:   bitmask(); 
+        default_cargo_type:             PASS;
+        loading_speed:                  4;
+        cost_factor:                    0;
+        running_cost_factor:            0;
+        cargo_age_period:               int(185*0.84);  // faster ageing
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        misc_flags:                     bitmask();  // disallow autorefit for special part
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        cargo_capacity:                 SITTING_PLACES;
+        weight:                         0;
+        length:                         3;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+    graphics {
+        default:                    sset_dummy;
+        purchase_cargo_capacity:    return SITTING_PLACES;
+        cargo_capacity:             switch_bh_mail_dummy_3_capacity;
+        cargo_age_period:           switch_bh_mail_dummy_3_cargo_age;
+    }
+}

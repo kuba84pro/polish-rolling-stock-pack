@@ -1,0 +1,124 @@
+// This is part of PRSP NewGRF.
+// Don't include any headers inside this file!
+// (c) kuba84pro, licence: GPLv2
+
+/* SN80 sprites */
+spriteset(sset_sn80_purchase, "gfx/sn80.png")           { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_sn80, "gfx/sn80.png")                    { tmpl_sprite_train12(4, 20) }
+spriteset(sset_sn80_open, "gfx/sn80.png")               { tmpl_sprite_train12(4, 80) }
+spriteset(sset_sn80_cut, "gfx/sn80.png")                { tmpl_sprite_train12(4, 128) }
+spritegroup sgroup_sn80 {
+    loaded:     [sset_sn80];
+    loading:    [sset_sn80_open];
+}
+#ifdef SITTING_PLACES
+    #undef SITTING_PLACES
+#endif
+#ifdef STANDING_PLACES
+    #undef STANDING_PLACES
+#endif
+#define SITTING_PLACES 48
+#define STANDING_PLACES 8
+
+/* SN80 switches */
+switch(FEAT_TRAINS, SELF, switch_sn80_articulated, extra_callback_info1) {
+    1: return item_dummy_3;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_sn80_graphics, (extra_callback_info1&0xFF)==0 && other_veh_is_hidden(1)) {
+    1: return sset_sn80_cut;
+    return sgroup_sn80;
+}
+switch(FEAT_TRAINS, SELF, switch_sn80_capacity, cargo_type_in_veh) {
+    TOUR: return SITTING_PLACES;
+    return SITTING_PLACES+STANDING_PLACES;
+}
+switch(FEAT_TRAINS, PARENT, switch_sn80_visual_effect_local, 0) {
+    return visual_effect_and_powered(VISUAL_EFFECT_DIESEL, -2, DISABLE_WAGON_POWER);
+}
+switch (FEAT_TRAINS, SELF, switch_sn80_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_2L, string(STR_HEATING_STEAM_CLAYTON_TEXT), string(STR_SN80_TEXT));
+    return string(STR_SN80_TEXT);
+}
+switch(FEAT_TRAINS, SELF, switch_sn80_can_attach, vehicle_type_id) {
+    item_sn80:   return CB_RESULT_ATTACH_ALLOW;
+    item_bh_ryf: return CB_RESULT_ATTACH_ALLOW;
+    item_bh_bon:  return CB_RESULT_ATTACH_ALLOW;
+    item_bh_bon_new:  return CB_RESULT_ATTACH_ALLOW;
+    item_120a_pr:  return CB_RESULT_ATTACH_ALLOW;
+    item_120a_malopolskie:  return CB_RESULT_ATTACH_ALLOW;
+    item_bdnu:  return CB_RESULT_ATTACH_ALLOW;
+    item_abdnu:  return CB_RESULT_ATTACH_ALLOW;
+    item_adnu:  return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_ATTACH_DISALLOW, string(STR_SN80_NAME));
+}
+switch(FEAT_TRAINS, SELF, switch_sn80_start_stop, (count_veh_id(item_sn80) > 3 || count_veh_id(item_bh_ryf) > 3 || count_veh_id(item_bh_bon) > 3 || count_veh_id(item_bh_bon_new) > 3 || count_veh_id(item_120a_pr) > 3 || count_veh_id(item_120a_malopolskie) > 3 || count_veh_id(item_bdnu) > 3 || count_veh_id(item_abdnu) > 3 || count_veh_id(item_adnu) > 3)) {
+    1: return string(STR_TRAIN_TOO_LONG, string(STR_SN80_NAME));
+    return CB_RESULT_NO_TEXT;
+}
+ENGINE_RUNNING_COST_SWITCH(sn80, SN80)
+DIESEL_ELECTRIC_ENGINE_POWER_SWITCH(sn80)
+ENGINE_VISUAL_EFFECT_SWITCH(sn80)
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_sn80, 444) {
+    property {
+        /* common properties */
+        name:                           string(STR_SN80_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1961, 1, 1);
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  11;
+        cost_factor:                    PURCHASE_COST_SN80;
+        running_cost_factor:            RUNNING_COST_SN80;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          257 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        cargo_capacity:                 SITTING_PLACES+STANDING_PLACES;
+        weight:                         50 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.088;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     51;
+        retire_early:                   12;
+    }
+}
+
+    graphics {
+        purchase:                   sset_sn80_purchase;
+        additional_text:            switch_sn80_add_text;
+        default:                    switch_sn80_graphics;
+        articulated_part:           switch_sn80_articulated;
+        visual_effect_and_powered:  switch_sn80_visual_effect;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_sn80_capacity;
+        colour_mapping:             switch_lights_engine_2;
+        can_attach_wagon:           switch_sn80_can_attach;
+        start_stop:                 switch_sn80_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(sn80)
+        ENGINE_POWER_CALLBACKS(sn80)
+    }
+}

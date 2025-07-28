@@ -1,0 +1,514 @@
+// This is part of PRSP NewGRF.
+// Don't include any headers inside this file!
+// (c) kuba84pro, licence: GPLv2
+
+#define SGGRSS40_GATX "gfx/SGGRSS80'_gatx_40'.png"
+#define SGGRSS20_GATX "gfx/SGGRSS80'_gatx_20'.png"
+#define SGGRSS20_HALF_GATX "gfx/SGGRSS80'_gatx_20'_half.png"
+// GATX //
+spriteset(sset_sggrss_gatx_purchase, SGGRSS20_HALF_GATX)       { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_sggrss_gatx_u1_empty, SGGRSS20_HALF_GATX)          { tmpl_sprite_train(4, 20) }
+spriteset(sset_sggrss_gatx_u2_empty, SGGRSS20_HALF_GATX)          { tmpl_sprite_train(244, 20) }
+// GATX
+// First Unit
+spriteset(sset_sggrss_gatx_u1_s1_full, SGGRSS40_GATX)        { tmpl_sprite_train(4, 80) }
+spriteset(sset_sggrss_gatx_u1_s2_full, SGGRSS40_GATX)        { tmpl_sprite_train(4, 110) }
+spriteset(sset_sggrss_gatx_u1_s3_full, SGGRSS40_GATX)        { tmpl_sprite_train(4, 140) }
+spriteset(sset_sggrss_gatx_u1_s4_full, SGGRSS40_GATX)        { tmpl_sprite_train(4, 170) }
+spriteset(sset_sggrss_gatx_u1_s5_full, SGGRSS40_GATX)        { tmpl_sprite_train(4, 200) }
+spriteset(sset_sggrss_gatx_u1_s6_full, SGGRSS40_GATX)        { tmpl_sprite_train(4, 230) }
+spriteset(sset_sggrss_gatx_u1_s7_full, SGGRSS40_GATX)        { tmpl_sprite_train(4, 260) }
+spriteset(sset_sggrss_gatx_u1_s8_full, SGGRSS40_GATX)        { tmpl_sprite_train(4, 290) }
+spriteset(sset_sggrss_gatx_u1_s9_full, SGGRSS40_GATX)        { tmpl_sprite_train(4, 320) }
+spriteset(sset_sggrss_gatx_u1_s10_full, SGGRSS40_GATX)       { tmpl_sprite_train(4, 350) }
+spriteset(sset_sggrss_gatx_u1_s11_full, SGGRSS40_GATX)       { tmpl_sprite_train(4, 380) }
+spriteset(sset_sggrss_gatx_u1_s12_full, SGGRSS40_GATX)       { tmpl_sprite_train(4, 410) }
+// Second Unit
+spriteset(sset_sggrss_gatx_u2_s1_full, SGGRSS40_GATX)        { tmpl_sprite_train(244, 80) }
+spriteset(sset_sggrss_gatx_u2_s2_full, SGGRSS40_GATX)        { tmpl_sprite_train(244, 110) }
+spriteset(sset_sggrss_gatx_u2_s3_full, SGGRSS40_GATX)        { tmpl_sprite_train(244, 140) }
+spriteset(sset_sggrss_gatx_u2_s4_full, SGGRSS40_GATX)        { tmpl_sprite_train(244, 170) }
+spriteset(sset_sggrss_gatx_u2_s5_full, SGGRSS40_GATX)        { tmpl_sprite_train(244, 200) }
+spriteset(sset_sggrss_gatx_u2_s6_full, SGGRSS40_GATX)        { tmpl_sprite_train(244, 230) }
+spriteset(sset_sggrss_gatx_u2_s7_full, SGGRSS40_GATX)        { tmpl_sprite_train(244, 260) }
+spriteset(sset_sggrss_gatx_u2_s8_full, SGGRSS40_GATX)        { tmpl_sprite_train(244, 290) }
+spriteset(sset_sggrss_gatx_u2_s9_full, SGGRSS40_GATX)        { tmpl_sprite_train(244, 320) }
+spriteset(sset_sggrss_gatx_u2_s10_full, SGGRSS40_GATX)       { tmpl_sprite_train(244, 350) }
+spriteset(sset_sggrss_gatx_u2_s11_full, SGGRSS40_GATX)       { tmpl_sprite_train(244, 380) }
+spriteset(sset_sggrss_gatx_u2_s12_full, SGGRSS40_GATX)       { tmpl_sprite_train(244, 410) }
+// GATX
+// First Unit
+spritegroup sgroup_sggrss_gatx_u1_s1 {
+    loaded:     [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_s1_full];
+    loading:    [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_s1_full];
+}
+spritegroup sgroup_sggrss_gatx_u1_s2 {
+    loaded:     [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_s2_full];
+    loading:    [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_s2_full];
+}
+spritegroup sgroup_sggrss_gatx_u1_s3 {
+    loaded:     [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_s3_full];
+    loading:    [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_s3_full];
+}
+spritegroup sgroup_sggrss_gatx_u1_s4 {
+    loaded:     [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_s4_full];
+    loading:    [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_s4_full];
+}
+spritegroup sgroup_sggrss_gatx_u1_s5 {
+    loaded:     [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_s5_full];
+    loading:    [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_s5_full];
+}
+spritegroup sgroup_sggrss_gatx_u1_s6 {
+    loaded:     [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_s6_full];
+    loading:    [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_s6_full];
+}
+spritegroup sgroup_sggrss_gatx_u1_s7 {
+    loaded:     [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_s7_full];
+    loading:    [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_s7_full];
+}
+spritegroup sgroup_sggrss_gatx_u1_s8 {
+    loaded:     [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_s8_full];
+    loading:    [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_s8_full];
+}
+spritegroup sgroup_sggrss_gatx_u1_s9 {
+    loaded:     [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_s9_full];
+    loading:    [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_s9_full];
+}
+spritegroup sgroup_sggrss_gatx_u1_s10 {
+    loaded:     [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_s10_full];
+    loading:    [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_s10_full];
+}
+spritegroup sgroup_sggrss_gatx_u1_s11 {
+    loaded:     [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_s11_full];
+    loading:    [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_s11_full];
+}
+spritegroup sgroup_sggrss_gatx_u1_s12 {
+    loaded:     [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_s12_full];
+    loading:    [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_s12_full];
+}
+
+// Second Unit
+spritegroup sgroup_sggrss_gatx_u2_s1 {
+    loaded:     [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_s1_full];
+    loading:    [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_s1_full];
+}
+spritegroup sgroup_sggrss_gatx_u2_s2 {
+    loaded:     [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_s2_full];
+    loading:    [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_s2_full];
+}
+spritegroup sgroup_sggrss_gatx_u2_s3 {
+    loaded:     [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_s3_full];
+    loading:    [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_s3_full];
+}
+spritegroup sgroup_sggrss_gatx_u2_s4 {
+    loaded:     [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_s4_full];
+    loading:    [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_s4_full];
+}
+spritegroup sgroup_sggrss_gatx_u2_s5 {
+    loaded:     [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_s5_full];
+    loading:    [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_s5_full];
+}
+spritegroup sgroup_sggrss_gatx_u2_s6 {
+    loaded:     [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_s6_full];
+    loading:    [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_s6_full];
+}
+spritegroup sgroup_sggrss_gatx_u2_s7 {
+    loaded:     [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_s7_full];
+    loading:    [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_s7_full];
+}
+spritegroup sgroup_sggrss_gatx_u2_s8 {
+    loaded:     [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_s8_full];
+    loading:    [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_s8_full];
+}
+spritegroup sgroup_sggrss_gatx_u2_s9 {
+    loaded:     [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_s9_full];
+    loading:    [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_s9_full];
+}
+spritegroup sgroup_sggrss_gatx_u2_s10 {
+    loaded:     [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_s10_full];
+    loading:    [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_s10_full];
+}
+spritegroup sgroup_sggrss_gatx_u2_s11 {
+    loaded:     [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_s11_full];
+    loading:    [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_s11_full];
+}
+spritegroup sgroup_sggrss_gatx_u2_s12 {
+    loaded:     [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_s12_full];
+    loading:    [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_s12_full];
+}
+// GATX
+// First Unit
+spriteset(sset_sggrss_gatx_u1_d1_half, SGGRSS20_HALF_GATX)        { tmpl_sprite_train(4, 80) }
+spriteset(sset_sggrss_gatx_u1_d2_half, SGGRSS20_HALF_GATX)        { tmpl_sprite_train(4, 110) }
+spriteset(sset_sggrss_gatx_u1_d3_half, SGGRSS20_HALF_GATX)        { tmpl_sprite_train(4, 140) }
+spriteset(sset_sggrss_gatx_u1_d4_half, SGGRSS20_HALF_GATX)        { tmpl_sprite_train(4, 170) }
+spriteset(sset_sggrss_gatx_u1_d5_half, SGGRSS20_HALF_GATX)        { tmpl_sprite_train(4, 200) }
+spriteset(sset_sggrss_gatx_u1_d6_half, SGGRSS20_HALF_GATX)        { tmpl_sprite_train(4, 230) }
+spriteset(sset_sggrss_gatx_u1_d7_half, SGGRSS20_HALF_GATX)        { tmpl_sprite_train(4, 260) }
+spriteset(sset_sggrss_gatx_u1_d8_half, SGGRSS20_HALF_GATX)        { tmpl_sprite_train(4, 290) }
+spriteset(sset_sggrss_gatx_u1_d9_half, SGGRSS20_HALF_GATX)        { tmpl_sprite_train(4, 320) }
+spriteset(sset_sggrss_gatx_u1_d10_half, SGGRSS20_HALF_GATX)        { tmpl_sprite_train(4, 350) }
+spriteset(sset_sggrss_gatx_u1_d11_half, SGGRSS20_HALF_GATX)        { tmpl_sprite_train(4, 380) }
+// Second Unit
+spriteset(sset_sggrss_gatx_u2_d1_half, SGGRSS20_HALF_GATX)        { tmpl_sprite_train(244, 80) }
+spriteset(sset_sggrss_gatx_u2_d2_half, SGGRSS20_HALF_GATX)        { tmpl_sprite_train(244, 110) }
+spriteset(sset_sggrss_gatx_u2_d3_half, SGGRSS20_HALF_GATX)        { tmpl_sprite_train(244, 140) }
+spriteset(sset_sggrss_gatx_u2_d4_half, SGGRSS20_HALF_GATX)        { tmpl_sprite_train(244, 170) }
+spriteset(sset_sggrss_gatx_u2_d5_half, SGGRSS20_HALF_GATX)        { tmpl_sprite_train(244, 200) }
+spriteset(sset_sggrss_gatx_u2_d6_half, SGGRSS20_HALF_GATX)        { tmpl_sprite_train(244, 230) }
+spriteset(sset_sggrss_gatx_u2_d7_half, SGGRSS20_HALF_GATX)        { tmpl_sprite_train(244, 260) }
+spriteset(sset_sggrss_gatx_u2_d8_half, SGGRSS20_HALF_GATX)        { tmpl_sprite_train(244, 290) }
+spriteset(sset_sggrss_gatx_u2_d9_half, SGGRSS20_HALF_GATX)        { tmpl_sprite_train(244, 320) }
+spriteset(sset_sggrss_gatx_u2_d10_half, SGGRSS20_HALF_GATX)        { tmpl_sprite_train(244, 350) }
+spriteset(sset_sggrss_gatx_u2_d11_half, SGGRSS20_HALF_GATX)        { tmpl_sprite_train(244, 380) }
+// GATX
+// First Unit
+spriteset(sset_sggrss_gatx_u1_d1, SGGRSS20_GATX)        { tmpl_sprite_train(4, 80) }
+spriteset(sset_sggrss_gatx_u1_d2, SGGRSS20_GATX)        { tmpl_sprite_train(4, 110) }
+spriteset(sset_sggrss_gatx_u1_d3, SGGRSS20_GATX)        { tmpl_sprite_train(4, 140) }
+spriteset(sset_sggrss_gatx_u1_d4, SGGRSS20_GATX)        { tmpl_sprite_train(4, 170) }
+spriteset(sset_sggrss_gatx_u1_d5, SGGRSS20_GATX)        { tmpl_sprite_train(4, 200) }
+spriteset(sset_sggrss_gatx_u1_d6, SGGRSS20_GATX)        { tmpl_sprite_train(4, 230) }
+spriteset(sset_sggrss_gatx_u1_d7, SGGRSS20_GATX)        { tmpl_sprite_train(4, 260) }
+spriteset(sset_sggrss_gatx_u1_d8, SGGRSS20_GATX)        { tmpl_sprite_train(4, 290) }
+spriteset(sset_sggrss_gatx_u1_d9, SGGRSS20_GATX)        { tmpl_sprite_train(4, 320) }
+spriteset(sset_sggrss_gatx_u1_d10, SGGRSS20_GATX)        { tmpl_sprite_train(4, 350) }
+spriteset(sset_sggrss_gatx_u1_d11, SGGRSS20_GATX)        { tmpl_sprite_train(4, 380) }
+spriteset(sset_sggrss_gatx_u1_d12, SGGRSS20_GATX)        { tmpl_sprite_train(4, 410) }
+spriteset(sset_sggrss_gatx_u1_d13, SGGRSS20_GATX)        { tmpl_sprite_train(4, 440) }
+spriteset(sset_sggrss_gatx_u1_d14, SGGRSS20_GATX)        { tmpl_sprite_train(4, 470) }
+spriteset(sset_sggrss_gatx_u1_d15, SGGRSS20_GATX)        { tmpl_sprite_train(4, 500) }
+spriteset(sset_sggrss_gatx_u1_d16, SGGRSS20_GATX)        { tmpl_sprite_train(4, 530) }
+spriteset(sset_sggrss_gatx_u1_d17, SGGRSS20_GATX)        { tmpl_sprite_train(4, 560) }
+spriteset(sset_sggrss_gatx_u1_d18, SGGRSS20_GATX)        { tmpl_sprite_train(4, 590) }
+spriteset(sset_sggrss_gatx_u1_d19, SGGRSS20_GATX)        { tmpl_sprite_train(4, 620) }
+spriteset(sset_sggrss_gatx_u1_d20, SGGRSS20_GATX)        { tmpl_sprite_train(4, 650) }
+spriteset(sset_sggrss_gatx_u1_d21, SGGRSS20_GATX)        { tmpl_sprite_train(4, 680) }
+spriteset(sset_sggrss_gatx_u1_d22, SGGRSS20_GATX)        { tmpl_sprite_train(4, 710) }
+// Second Unit
+spriteset(sset_sggrss_gatx_u2_d1, SGGRSS20_GATX)        { tmpl_sprite_train(244, 80) }
+spriteset(sset_sggrss_gatx_u2_d2, SGGRSS20_GATX)        { tmpl_sprite_train(244, 110) }
+spriteset(sset_sggrss_gatx_u2_d3, SGGRSS20_GATX)        { tmpl_sprite_train(244, 140) }
+spriteset(sset_sggrss_gatx_u2_d4, SGGRSS20_GATX)        { tmpl_sprite_train(244, 170) }
+spriteset(sset_sggrss_gatx_u2_d5, SGGRSS20_GATX)        { tmpl_sprite_train(244, 200) }
+spriteset(sset_sggrss_gatx_u2_d6, SGGRSS20_GATX)        { tmpl_sprite_train(244, 230) }
+spriteset(sset_sggrss_gatx_u2_d7, SGGRSS20_GATX)        { tmpl_sprite_train(244, 260) }
+spriteset(sset_sggrss_gatx_u2_d8, SGGRSS20_GATX)        { tmpl_sprite_train(244, 290) }
+spriteset(sset_sggrss_gatx_u2_d9, SGGRSS20_GATX)        { tmpl_sprite_train(244, 320) }
+spriteset(sset_sggrss_gatx_u2_d10, SGGRSS20_GATX)        { tmpl_sprite_train(244, 350) }
+spriteset(sset_sggrss_gatx_u2_d11, SGGRSS20_GATX)        { tmpl_sprite_train(244, 380) }
+spriteset(sset_sggrss_gatx_u2_d12, SGGRSS20_GATX)        { tmpl_sprite_train(244, 410) }
+spriteset(sset_sggrss_gatx_u2_d13, SGGRSS20_GATX)        { tmpl_sprite_train(244, 440) }
+spriteset(sset_sggrss_gatx_u2_d14, SGGRSS20_GATX)        { tmpl_sprite_train(244, 470) }
+spriteset(sset_sggrss_gatx_u2_d15, SGGRSS20_GATX)        { tmpl_sprite_train(244, 500) }
+spriteset(sset_sggrss_gatx_u2_d16, SGGRSS20_GATX)        { tmpl_sprite_train(244, 530) }
+spriteset(sset_sggrss_gatx_u2_d17, SGGRSS20_GATX)        { tmpl_sprite_train(244, 560) }
+spriteset(sset_sggrss_gatx_u2_d18, SGGRSS20_GATX)        { tmpl_sprite_train(244, 590) }
+spriteset(sset_sggrss_gatx_u2_d19, SGGRSS20_GATX)        { tmpl_sprite_train(244, 620) }
+spriteset(sset_sggrss_gatx_u2_d20, SGGRSS20_GATX)        { tmpl_sprite_train(244, 650) }
+spriteset(sset_sggrss_gatx_u2_d21, SGGRSS20_GATX)        { tmpl_sprite_train(244, 680) }
+spriteset(sset_sggrss_gatx_u2_d22, SGGRSS20_GATX)        { tmpl_sprite_train(244, 710) }
+// GATX
+// First Unit
+spritegroup sgroup_sggrss_gatx_u1_d1 {
+    loaded:     [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d1_half, sset_sggrss_gatx_u1_d1];
+    loading:    [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d1_half, sset_sggrss_gatx_u1_d1];
+}
+spritegroup sgroup_sggrss_gatx_u1_d2 {
+    loaded:     [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d2_half, sset_sggrss_gatx_u1_d2];
+    loading:    [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d2_half, sset_sggrss_gatx_u1_d2];
+}
+spritegroup sgroup_sggrss_gatx_u1_d3 {
+    loaded:     [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d2_half, sset_sggrss_gatx_u1_d3];
+    loading:    [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d2_half, sset_sggrss_gatx_u1_d3];
+}
+spritegroup sgroup_sggrss_gatx_u1_d4 {
+    loaded:     [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d3_half, sset_sggrss_gatx_u1_d4];
+    loading:    [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d3_half, sset_sggrss_gatx_u1_d4];
+}
+spritegroup sgroup_sggrss_gatx_u1_d5 {
+    loaded:     [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d2_half, sset_sggrss_gatx_u1_d5];
+    loading:    [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d2_half, sset_sggrss_gatx_u1_d5];
+}
+spritegroup sgroup_sggrss_gatx_u1_d6 {
+    loaded:     [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d4_half, sset_sggrss_gatx_u1_d6];
+    loading:    [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d4_half, sset_sggrss_gatx_u1_d6];
+}
+spritegroup sgroup_sggrss_gatx_u1_d7 {
+    loaded:     [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d5_half, sset_sggrss_gatx_u1_d7];
+    loading:    [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d5_half, sset_sggrss_gatx_u1_d7];
+}
+spritegroup sgroup_sggrss_gatx_u1_d8 {
+    loaded:     [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d4_half, sset_sggrss_gatx_u1_d8];
+    loading:    [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d4_half, sset_sggrss_gatx_u1_d8];
+}
+spritegroup sgroup_sggrss_gatx_u1_d9 {
+    loaded:     [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d5_half, sset_sggrss_gatx_u1_d9];
+    loading:    [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d5_half, sset_sggrss_gatx_u1_d9];
+}
+spritegroup sgroup_sggrss_gatx_u1_d10 {
+    loaded:     [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d1_half, sset_sggrss_gatx_u1_d10];
+    loading:    [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d1_half, sset_sggrss_gatx_u1_d10];
+}
+spritegroup sgroup_sggrss_gatx_u1_d11 {
+    loaded:     [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d5_half, sset_sggrss_gatx_u1_d11];
+    loading:    [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d5_half, sset_sggrss_gatx_u1_d11];
+}
+spritegroup sgroup_sggrss_gatx_u1_d12 {
+    loaded:     [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d6_half, sset_sggrss_gatx_u1_d12];
+    loading:    [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d6_half, sset_sggrss_gatx_u1_d12];
+}
+spritegroup sgroup_sggrss_gatx_u1_d13 {
+    loaded:     [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d7_half, sset_sggrss_gatx_u1_d13];
+    loading:    [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d7_half, sset_sggrss_gatx_u1_d13];
+}
+spritegroup sgroup_sggrss_gatx_u1_d14 {
+    loaded:     [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d3_half, sset_sggrss_gatx_u1_d14];
+    loading:    [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d3_half, sset_sggrss_gatx_u1_d14];
+}
+spritegroup sgroup_sggrss_gatx_u1_d15 {
+    loaded:     [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d8_half, sset_sggrss_gatx_u1_d15];
+    loading:    [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d8_half, sset_sggrss_gatx_u1_d15];
+}
+spritegroup sgroup_sggrss_gatx_u1_d16 {
+    loaded:     [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d9_half, sset_sggrss_gatx_u1_d16];
+    loading:    [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d9_half, sset_sggrss_gatx_u1_d16];
+}
+spritegroup sgroup_sggrss_gatx_u1_d17 {
+    loaded:     [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d9_half, sset_sggrss_gatx_u1_d17];
+    loading:    [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d9_half, sset_sggrss_gatx_u1_d17];
+}
+spritegroup sgroup_sggrss_gatx_u1_d18 {
+    loaded:     [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d1_half, sset_sggrss_gatx_u1_d18];
+    loading:    [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d1_half, sset_sggrss_gatx_u1_d18];
+}
+spritegroup sgroup_sggrss_gatx_u1_d19 {
+    loaded:     [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d7_half, sset_sggrss_gatx_u1_d19];
+    loading:    [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d7_half, sset_sggrss_gatx_u1_d19];
+}
+spritegroup sgroup_sggrss_gatx_u1_d20 {
+    loaded:     [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d8_half, sset_sggrss_gatx_u1_d20];
+    loading:    [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d8_half, sset_sggrss_gatx_u1_d20];
+}
+spritegroup sgroup_sggrss_gatx_u1_d21 {
+    loaded:     [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d10_half, sset_sggrss_gatx_u1_d21];
+    loading:    [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d10_half, sset_sggrss_gatx_u1_d21];
+}
+spritegroup sgroup_sggrss_gatx_u1_d22 {
+    loaded:     [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d11_half, sset_sggrss_gatx_u1_d22];
+    loading:    [sset_sggrss_gatx_u1_empty, sset_sggrss_gatx_u1_d11_half, sset_sggrss_gatx_u1_d22];
+}
+
+// Second Unit
+spritegroup sgroup_sggrss_gatx_u2_d1 {
+    loaded:     [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d1_half, sset_sggrss_gatx_u2_d1];
+    loading:    [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d1_half, sset_sggrss_gatx_u2_d1];
+}
+spritegroup sgroup_sggrss_gatx_u2_d2 {
+    loaded:     [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d2_half, sset_sggrss_gatx_u2_d2];
+    loading:    [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d2_half, sset_sggrss_gatx_u2_d2];
+}
+spritegroup sgroup_sggrss_gatx_u2_d3 {
+    loaded:     [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d2_half, sset_sggrss_gatx_u2_d3];
+    loading:    [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d2_half, sset_sggrss_gatx_u2_d3];
+}
+spritegroup sgroup_sggrss_gatx_u2_d4 {
+    loaded:     [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d3_half, sset_sggrss_gatx_u2_d4];
+    loading:    [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d3_half, sset_sggrss_gatx_u2_d4];
+}
+spritegroup sgroup_sggrss_gatx_u2_d5 {
+    loaded:     [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d2_half, sset_sggrss_gatx_u2_d5];
+    loading:    [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d2_half, sset_sggrss_gatx_u2_d5];
+}
+spritegroup sgroup_sggrss_gatx_u2_d6 {
+    loaded:     [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d4_half, sset_sggrss_gatx_u2_d6];
+    loading:    [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d4_half, sset_sggrss_gatx_u2_d6];
+}
+spritegroup sgroup_sggrss_gatx_u2_d7 {
+    loaded:     [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d5_half, sset_sggrss_gatx_u2_d7];
+    loading:    [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d5_half, sset_sggrss_gatx_u2_d7];
+}
+spritegroup sgroup_sggrss_gatx_u2_d8 {
+    loaded:     [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d4_half, sset_sggrss_gatx_u2_d8];
+    loading:    [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d4_half, sset_sggrss_gatx_u2_d8];
+}
+spritegroup sgroup_sggrss_gatx_u2_d9 {
+    loaded:     [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d5_half, sset_sggrss_gatx_u2_d9];
+    loading:    [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d5_half, sset_sggrss_gatx_u2_d9];
+}
+spritegroup sgroup_sggrss_gatx_u2_d10 {
+    loaded:     [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d1_half, sset_sggrss_gatx_u2_d10];
+    loading:    [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d1_half, sset_sggrss_gatx_u2_d10];
+}
+spritegroup sgroup_sggrss_gatx_u2_d11 {
+    loaded:     [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d5_half, sset_sggrss_gatx_u2_d11];
+    loading:    [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d5_half, sset_sggrss_gatx_u2_d11];
+}
+spritegroup sgroup_sggrss_gatx_u2_d12 {
+    loaded:     [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d6_half, sset_sggrss_gatx_u2_d12];
+    loading:    [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d6_half, sset_sggrss_gatx_u2_d12];
+}
+spritegroup sgroup_sggrss_gatx_u2_d13 {
+    loaded:     [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d7_half, sset_sggrss_gatx_u2_d13];
+    loading:    [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d7_half, sset_sggrss_gatx_u2_d13];
+}
+spritegroup sgroup_sggrss_gatx_u2_d14 {
+    loaded:     [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d3_half, sset_sggrss_gatx_u2_d14];
+    loading:    [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d3_half, sset_sggrss_gatx_u2_d14];
+}
+spritegroup sgroup_sggrss_gatx_u2_d15 {
+    loaded:     [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d8_half, sset_sggrss_gatx_u2_d15];
+    loading:    [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d8_half, sset_sggrss_gatx_u2_d15];
+}
+spritegroup sgroup_sggrss_gatx_u2_d16 {
+    loaded:     [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d9_half, sset_sggrss_gatx_u2_d16];
+    loading:    [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d9_half, sset_sggrss_gatx_u2_d16];
+}
+spritegroup sgroup_sggrss_gatx_u2_d17 {
+    loaded:     [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d9_half, sset_sggrss_gatx_u2_d17];
+    loading:    [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d9_half, sset_sggrss_gatx_u2_d17];
+}
+spritegroup sgroup_sggrss_gatx_u2_d18 {
+    loaded:     [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d1_half, sset_sggrss_gatx_u2_d18];
+    loading:    [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d1_half, sset_sggrss_gatx_u2_d18];
+}
+spritegroup sgroup_sggrss_gatx_u2_d19 {
+    loaded:     [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d7_half, sset_sggrss_gatx_u2_d19];
+    loading:    [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d7_half, sset_sggrss_gatx_u2_d19];
+}
+spritegroup sgroup_sggrss_gatx_u2_d20 {
+    loaded:     [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d8_half, sset_sggrss_gatx_u2_d20];
+    loading:    [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d8_half, sset_sggrss_gatx_u2_d20];
+}
+spritegroup sgroup_sggrss_gatx_u2_d21 {
+    loaded:     [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d10_half, sset_sggrss_gatx_u2_d21];
+    loading:    [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d10_half, sset_sggrss_gatx_u2_d21];
+}
+spritegroup sgroup_sggrss_gatx_u2_d22 {
+    loaded:     [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d11_half, sset_sggrss_gatx_u2_d22];
+    loading:    [sset_sggrss_gatx_u2_empty, sset_sggrss_gatx_u2_d11_half, sset_sggrss_gatx_u2_d22];
+}
+
+/* Sggrss switches */
+switch(FEAT_TRAINS, SELF, switch_sggrss_gatx_articulated, getbits(extra_callback_info1, 0, 8)) {
+    1: return item_sggrss_gatx;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+random_switch(FEAT_TRAINS, SELF, switch_sggrss_gatx_u1_graphics, bitmask(TRIGGER_VEHICLE_NEW_LOAD)) {
+    1: return sgroup_sggrss_gatx_u1_s1;
+    1: return sgroup_sggrss_gatx_u1_s2;
+    1: return sgroup_sggrss_gatx_u1_s3;
+    1: return sgroup_sggrss_gatx_u1_s4;
+    1: return sgroup_sggrss_gatx_u1_s5;
+    1: return sgroup_sggrss_gatx_u1_s6;
+    1: return sgroup_sggrss_gatx_u1_s7;
+    1: return sgroup_sggrss_gatx_u1_s8;
+    1: return sgroup_sggrss_gatx_u1_s9;
+    1: return sgroup_sggrss_gatx_u1_s10;
+    1: return sgroup_sggrss_gatx_u1_s11;
+    1: return sgroup_sggrss_gatx_u1_s12;
+    2: return sgroup_sggrss_gatx_u1_d1;
+    2: return sgroup_sggrss_gatx_u1_d2;
+    2: return sgroup_sggrss_gatx_u1_d3;
+    2: return sgroup_sggrss_gatx_u1_d4;
+    2: return sgroup_sggrss_gatx_u1_d5;
+    2: return sgroup_sggrss_gatx_u1_d6;
+    2: return sgroup_sggrss_gatx_u1_d7;
+    2: return sgroup_sggrss_gatx_u1_d8;
+    2: return sgroup_sggrss_gatx_u1_d9;
+    2: return sgroup_sggrss_gatx_u1_d10;
+    2: return sgroup_sggrss_gatx_u1_d11;
+    2: return sgroup_sggrss_gatx_u1_d12;
+    2: return sgroup_sggrss_gatx_u1_d13;
+    2: return sgroup_sggrss_gatx_u1_d14;
+    2: return sgroup_sggrss_gatx_u1_d15;
+    2: return sgroup_sggrss_gatx_u1_d16;
+    2: return sgroup_sggrss_gatx_u1_d17;
+    2: return sgroup_sggrss_gatx_u1_d18;
+    2: return sgroup_sggrss_gatx_u1_d19;
+    2: return sgroup_sggrss_gatx_u1_d20;
+    2: return sgroup_sggrss_gatx_u1_d21;
+    2: return sgroup_sggrss_gatx_u1_d22;
+}
+random_switch(FEAT_TRAINS, SELF, switch_sggrss_gatx_u2_graphics, bitmask(TRIGGER_VEHICLE_NEW_LOAD)) {
+    1: return sgroup_sggrss_gatx_u2_s1;
+    1: return sgroup_sggrss_gatx_u2_s2;
+    1: return sgroup_sggrss_gatx_u2_s3;
+    1: return sgroup_sggrss_gatx_u2_s4;
+    1: return sgroup_sggrss_gatx_u2_s5;
+    1: return sgroup_sggrss_gatx_u2_s6;
+    1: return sgroup_sggrss_gatx_u2_s7;
+    1: return sgroup_sggrss_gatx_u2_s8;
+    1: return sgroup_sggrss_gatx_u2_s9;
+    1: return sgroup_sggrss_gatx_u2_s10;
+    1: return sgroup_sggrss_gatx_u2_s11;
+    1: return sgroup_sggrss_gatx_u2_s12;
+    2: return sgroup_sggrss_gatx_u2_d1;
+    2: return sgroup_sggrss_gatx_u2_d2;
+    2: return sgroup_sggrss_gatx_u2_d3;
+    2: return sgroup_sggrss_gatx_u2_d4;
+    2: return sgroup_sggrss_gatx_u2_d5;
+    2: return sgroup_sggrss_gatx_u2_d6;
+    2: return sgroup_sggrss_gatx_u2_d7;
+    2: return sgroup_sggrss_gatx_u2_d8;
+    2: return sgroup_sggrss_gatx_u2_d9;
+    2: return sgroup_sggrss_gatx_u2_d10;
+    2: return sgroup_sggrss_gatx_u2_d11;
+    2: return sgroup_sggrss_gatx_u2_d12;
+    2: return sgroup_sggrss_gatx_u2_d13;
+    2: return sgroup_sggrss_gatx_u2_d14;
+    2: return sgroup_sggrss_gatx_u2_d15;
+    2: return sgroup_sggrss_gatx_u2_d16;
+    2: return sgroup_sggrss_gatx_u2_d17;
+    2: return sgroup_sggrss_gatx_u2_d18;
+    2: return sgroup_sggrss_gatx_u2_d19;
+    2: return sgroup_sggrss_gatx_u2_d20;
+    2: return sgroup_sggrss_gatx_u2_d21;
+    2: return sgroup_sggrss_gatx_u2_d22;
+}
+switch(FEAT_TRAINS, SELF, switch_sggrss_gatx_graphics, position_in_vehid_chain % 2) {
+    0: return switch_sggrss_gatx_u1_graphics;
+    return switch_sggrss_gatx_u2_graphics;
+}
+item(FEAT_TRAINS, item_sggrss_gatx, 15005) {
+    property {
+		/* common properties */
+        name:                           string(STR_SGGRSS_GATX_NAME);
+        variant_group:                  15000;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2014, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_CONTAINER_WAGON_DEFINITION
+        loading_speed:                  20;
+        cost_factor:                    PURCHASE_COST_SGGRSS;
+        running_cost_factor:            RUNNING_COST_CARGO_MEDIUM;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          120 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 SGGRSS_CAPACITY*2;
+        weight:                         27 ton;
+        length:                         7;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_CARGO_WAGON);
+    }
+
+    graphics {
+        purchase:                   sset_sggrss_gatx_purchase;
+        additional_text:            return string(STR_PURCHASE_DESCR_2L, string(STR_BRAKE_AIR), string(STR_120_100_CAR_SPEED_TEXT));
+        default:                    switch_sggrss_gatx_graphics;
+        articulated_part:           switch_sggrss_gatx_articulated;
+        purchase_cargo_capacity:    return 108;
+        cargo_capacity:             switch_sggrss_cargo_capacity;
+        random_trigger:             switch_sggrss_gatx_graphics;
+        purchase_speed:             return 120;
+        speed:                      switch_sggrss_speed;
+        loading_speed:              return 20*(cargo_capacity/SGGRSS_CAPACITY);
+    }
+}

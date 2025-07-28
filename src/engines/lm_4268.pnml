@@ -1,0 +1,142 @@
+// This is part of PRSP NewGRF.
+// Don't include any headers inside this file!
+// (c) kuba84pro, GPL 2.0
+
+/* LM-4268 sprites */
+spriteset(sset_lm4268_purchase, "gfx/LM-4268.png")   { tmpl_sprite_purchase(4, 270) }
+spriteset(sset_lm4268_advert, "gfx/LM-4268.png")   { tmpl_sprite_advertisement200(4, 290) }
+
+spriteset(sset_lm4268_head, "gfx/LM-4268.png")       { tmpl_sprite_train12(4, 20) }
+spriteset(sset_lm4268_mid, "gfx/LM-4268.png")       { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_lm4268_tail, "gfx/LM-4268.png")       { tmpl_sprite_train12_offset(4, 100, 1) }
+spriteset(sset_lm4268_head_open, "gfx/LM-4268.png")  { tmpl_sprite_train12(4, 150) }
+spriteset(sset_lm4268_mid_open, "gfx/LM-4268.png")  { tmpl_sprite_train10_offset(4, 190, 1) }
+spriteset(sset_lm4268_tail_open, "gfx/LM-4268.png")  { tmpl_sprite_train12_offset(4, 230, 1) }
+spritegroup sgroup_lm4268_head {
+    loaded:     [sset_lm4268_head];
+    loading:    [sset_lm4268_head_open];
+}
+spritegroup sgroup_lm4268_mid {
+    loaded:     [sset_lm4268_mid];
+    loading:    [sset_lm4268_mid_open];
+}
+spritegroup sgroup_lm4268_tail {
+    loaded:     [sset_lm4268_tail];
+    loading:    [sset_lm4268_tail_open];
+}
+
+#ifdef SITTING_PLACES
+    #undef SITTING_PLACES
+#endif
+#ifdef STANDING_PLACES
+    #undef STANDING_PLACES
+#endif
+#define SITTING_PLACES 186
+#define STANDING_PLACES 241
+#define CARGO_CAPACITY_LM4268    int((SITTING_PLACES+STANDING_PLACES)/5)
+
+/* LM-4268 switches */
+switch(FEAT_TRAINS, SELF, switch_lm4268_articulated, extra_callback_info1) {
+    1..4: return item_lm4268;     // including dummy parts
+    5: return item_dummy_2;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_lm4268_length, position_in_vehid_chain % 5) {
+    1: return 4;    // dummy part
+    3: return 1;    // dummy part
+    5: return 2;    // dummy part
+    return 8;
+}
+switch(FEAT_TRAINS, SELF, switch_lm4268_purchase, extra_callback_info1 & 0xFF) {
+    0x21: return sset_lm4268_advert;
+    return sset_lm4268_purchase;
+}
+switch(FEAT_TRAINS, SELF, switch_lm4268_graphics, position_in_vehid_chain % 5) {
+    0: return sgroup_lm4268_head;
+    2: return sgroup_lm4268_mid;
+    4: return sgroup_lm4268_tail;
+    return sset_dummy;      // dummy parts
+}
+switch(FEAT_TRAINS, SELF, switch_lm4268_capacity, position_in_vehid_chain % 5) {
+    0: return 142;
+    2: return 142;
+    4: return 142;
+    return 1;   // dummy parts
+}
+switch(FEAT_TRAINS, SELF, switch_lm4268_visual_effect_local, position_in_vehid_chain % 5) {
+    5: return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 3, DISABLE_WAGON_POWER);
+    return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+}
+switch(FEAT_TRAINS, SELF, switch_lm4268_can_attach, vehicle_type_id) {
+    item_en57:  return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en71:  return string(STR_ATTACH_DISALLOW_EZT2);
+    item_ed72:  return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en76:  return string(STR_ATTACH_DISALLOW_EZT2);
+    item_ed74:  return string(STR_ATTACH_DISALLOW_EZT2);
+    item_ed250:  return string(STR_ATTACH_DISALLOW_EZT2);
+    item_er160:  return string(STR_ATTACH_DISALLOW_EZT2);
+    item_lm4268:  return CB_RESULT_ATTACH_ALLOW;
+    item_l4268:  return CB_RESULT_ATTACH_ALLOW;
+    item_ed160:  return string(STR_ATTACH_DISALLOW_EZT2);
+    item_ed161:  return string(STR_ATTACH_DISALLOW_EZT2);
+    return string(STR_ATTACH_DISALLOW_EZT1);
+}
+switch(FEAT_TRAINS, SELF, switch_lm4268_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_3L, string(STR_HEATING_ELECTRIC_TEXT), string(STR_LM4268_TEXT));
+    return string(STR_PURCHASE_DESCR_2L, string(STR_LM4268_TEXT));
+}
+ENGINE_RUNNING_COST_SWITCH(lm4268, LM4268)
+DIESEL_ELECTRIC_ENGINE_POWER_SWITCH(lm4268)
+ENGINE_VISUAL_EFFECT_SWITCH(lm4268)
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_lm4268, 2604) {
+    property {
+        /* common properties */
+        name:                           string(STR_LM4268_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2014, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  8;     // per part
+        cost_factor:                    PURCHASE_COST_LM4268;
+        running_cost_factor:            RUNNING_COST_LM4268;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          1400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 CARGO_CAPACITY_LM4268;
+        weight:                         109 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.2807;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   switch_lm4268_purchase;
+        additional_text:            switch_lm4268_add_text;
+        default:                    switch_lm4268_graphics;
+        articulated_part:           switch_lm4268_articulated;
+        length:                     switch_lm4268_length;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_lm4268_capacity;
+        visual_effect_and_powered:  switch_lm4268_visual_effect;
+        can_attach_wagon:           switch_lm4268_can_attach;
+        ENGINE_RUNNING_COST_CALLBACKS(lm4268)
+        ENGINE_POWER_CALLBACKS(lm4268)
+    }
+}

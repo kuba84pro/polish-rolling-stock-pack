@@ -1,0 +1,566 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* Registering vehicle IDs */
+/* IDs of articulated parts *
+item(FEAT_TRAINS, item_dummy_1, 50) { }
+item(FEAT_TRAINS, item_dummy_2, 51) { }
+item(FEAT_TRAINS, item_dummy_3, 52) { }
+item(FEAT_TRAINS, item_dummy_4, 53) { }
+item(FEAT_TRAINS, item_goods_dummy_1) { }
+item(FEAT_TRAINS, item_goods_dummy_3) { }
+item(FEAT_TRAINS, item_bh_mail_dummy_3) { }
+
+item(FEAT_TRAINS, item_od13, 101) { }
+item(FEAT_TRAINS, item_ti12, 102) { }
+item(FEAT_TRAINS, item_tp4, 104) { }
+item(FEAT_TRAINS, item_ok1, 105) { }
+item(FEAT_TRAINS, item_ty23, 106) { }
+item(FEAT_TRAINS, item_pt31, 108) { }
+item(FEAT_TRAINS, item_okz32, 109) { }
+item(FEAT_TRAINS, item_ty37, 110) { }
+item(FEAT_TRAINS, item_ty2, 111) { }
+item(FEAT_TRAINS, item_pt47, 112) { }
+item(FEAT_TRAINS, item_ol49, 114) { }
+item(FEAT_TRAINS, item_ol49_black, 116) { }
+item(FEAT_TRAINS, item_ty51, 115) { }
+
+item(FEAT_TRAINS, item_st43, 330) { }
+item(FEAT_TRAINS, item_st43_yellow, 331) { }
+item(FEAT_TRAINS, item_st44, 350) { }
+item(FEAT_TRAINS, item_st44_yellow_front, 351) { }
+item(FEAT_TRAINS, item_st44_pkp_cargo, 352) { }
+item(FEAT_TRAINS, item_st44_pmt, 353) { }
+item(FEAT_TRAINS, item_st44_ptkigk, 354) { }
+item(FEAT_TRAINS, item_st44_orlen, 355) { }
+item(FEAT_TRAINS, item_st44_tabor_debica, 356) { }
+item(FEAT_TRAINS, item_st44_orion, 357) { }
+item(FEAT_TRAINS, item_st44_lhs, 358) { }
+item(FEAT_TRAINS, item_st44_lhs_new, 359) { }
+item(FEAT_TRAINS, item_sp45, 400) { }
+item(FEAT_TRAINS, item_su45, 401) { }
+item(FEAT_TRAINS, item_su45_yellow, 402) { }
+item(FEAT_TRAINS, item_su45_pkp_regio, 403) { }
+item(FEAT_TRAINS, item_st45_pkp_cargo, 404) { }
+item(FEAT_TRAINS, item_su45_skpl, 405) { }
+item(FEAT_TRAINS, item_su46, 420) { }
+item(FEAT_TRAINS, item_su46_yellow, 421) { }
+item(FEAT_TRAINS, item_st46_pkp_cargo, 422) { }
+item(FEAT_TRAINS, item_su46_nysa, 423) { }
+item(FEAT_TRAINS, item_sp47, 425) { }
+item(FEAT_TRAINS, item_sp47_green, 426) { }
+item(FEAT_TRAINS, item_sm31, 325) { }
+item(FEAT_TRAINS, item_sm31_pkp_cargo, 326) { }
+item(FEAT_TRAINS, item_sp32, 430) { }
+item(FEAT_TRAINS, item_sp32_pr, 431) { }
+item(FEAT_TRAINS, item_class66) { }   // for future use
+item(FEAT_TRAINS, item_br285, 920) { }
+item(FEAT_TRAINS, item_sn81, 445) { }
+item(FEAT_TRAINS, item_sa106_kd, 500) { }
+item(FEAT_TRAINS, item_sa103_pomorskie, 510) { }
+item(FEAT_TRAINS, item_sa103_podkarpackie, 511) { }
+item(FEAT_TRAINS, item_sa103_pomorskie_old, 512) { }
+item(FEAT_TRAINS, item_sa135_km, 515) { }
+item(FEAT_TRAINS, item_sa136, 520) { }
+item(FEAT_TRAINS, item_sa101, 521) { }
+item(FEAT_TRAINS, item_sa102, 522) { }
+
+item(FEAT_TRAINS, item_em10, 427) { }
+item(FEAT_TRAINS, item_em10_pkp_cargo, 428) { }
+item(FEAT_TRAINS, item_ep02, 526) { }
+item(FEAT_TRAINS, item_et21, 570) { }
+item(FEAT_TRAINS, item_et21_green, 571) { }
+item(FEAT_TRAINS, item_et21_yellow_front, 572) { }
+item(FEAT_TRAINS, item_et21_ctl, 573) { }
+item(FEAT_TRAINS, item_et21_ctlnew, 574) { }
+item(FEAT_TRAINS, item_et21_ptkigk, 575) { }
+item(FEAT_TRAINS, item_et21_db, 576) { }
+item(FEAT_TRAINS, item_et21_skpl, 577) { }
+item(FEAT_TRAINS, item_et21_trainspeed, 578) { }
+item(FEAT_TRAINS, item_eu06, 610) { }
+item(FEAT_TRAINS, item_eu06_green, 611) { }
+item(FEAT_TRAINS, item_eu06_yellow, 612) { }
+item(FEAT_TRAINS, item_eu07, 620) { }
+item(FEAT_TRAINS, item_eu07_green, 621) { }
+item(FEAT_TRAINS, item_eu07_yellow_front, 622) { }
+item(FEAT_TRAINS, item_ep07_budyn, 623) { }
+item(FEAT_TRAINS, item_ep07_denaturat, 624) { }
+item(FEAT_TRAINS, item_eu07_km, 625) { }
+item(FEAT_TRAINS, item_eu07_pkp_cargo, 626) { }
+item(FEAT_TRAINS, item_ep07_pkp_ic_old, 627) { }
+item(FEAT_TRAINS, item_ep07_pkp_ic, 628) { }
+item(FEAT_TRAINS, item_ep07p_papuga, 629) { }
+item(FEAT_TRAINS, item_eu07_chocolate, 630) { }
+item(FEAT_TRAINS, item_eu07_tabor_debica, 631) { }
+item(FEAT_TRAINS, item_ep07p_polregio, 632) { }
+item(FEAT_TRAINS, item_eu07_pcc, 633) { }
+item(FEAT_TRAINS, item_ep07_1067, 634) { }
+item(FEAT_TRAINS, item_eu07_ecco, 635) { }
+item(FEAT_TRAINS, item_eu07_ltg, 636) { }
+item(FEAT_TRAINS, item_eu07_pkp_cargo_rw, 637) { }
+item(FEAT_TRAINS, item_eu07_captrain, 638) { }
+item(FEAT_TRAINS, item_eu07_cargounit, 639) { }
+item(FEAT_TRAINS, item_eu07_puk_kolprem, 640) { }
+item(FEAT_TRAINS, item_eu07_dolata, 641) { }
+item(FEAT_TRAINS, item_ep07_1020, 642) { }
+item(FEAT_TRAINS, item_eu07_303e_classic, 643) { }
+item(FEAT_TRAINS, item_eu07_303e_yellow_front, 644) { }
+item(FEAT_TRAINS, item_eu07_303e_trapeze_yellow_front, 645) { }
+item(FEAT_TRAINS, item_ep07_361, 646) { }
+item(FEAT_TRAINS, item_eu07_303e_turquoise_yellow_front, 647) { }
+item(FEAT_TRAINS, item_eu07a, 680) { }
+item(FEAT_TRAINS, item_eu07a_new, 681) { }
+item(FEAT_TRAINS, item_ep08, 685) { }
+item(FEAT_TRAINS, item_ep08_pkp_old, 686) { }
+item(FEAT_TRAINS, item_ep08_pkp_ic, 687) { }
+item(FEAT_TRAINS, item_ep08_pkp_ic_new, 688) { }
+item(FEAT_TRAINS, item_ep08_001, 689) { }
+item(FEAT_TRAINS, item_et22, 700) { }
+item(FEAT_TRAINS, item_et22_green, 701) { }
+item(FEAT_TRAINS, item_et22_yellow_front, 702) { }
+item(FEAT_TRAINS, item_et22_pkp_cargo, 703) { }
+item(FEAT_TRAINS, item_et22_910, 704) { }
+item(FEAT_TRAINS, item_et22_ctl_old, 705) { }
+item(FEAT_TRAINS, item_et22_tabor_debica, 706) { }
+item(FEAT_TRAINS, item_201eo_cu, 707) { }
+item(FEAT_TRAINS, item_201eo_rail_polska, 708) { }
+item(FEAT_TRAINS, item_eu05, 600) { }
+item(FEAT_TRAINS, item_ep05, 601) { }
+item(FEAT_TRAINS, item_ep05_pkpcargo, 602) { }
+item(FEAT_TRAINS, item_ep05_without_tc, 603) { }
+item(FEAT_TRAINS, item_ep05_023, 604) { }
+item(FEAT_TRAINS, item_ep05_023_anniversary, 605) { }
+item(FEAT_TRAINS, item_et40, 755) { }
+item(FEAT_TRAINS, item_et40_lotos, 756) { }
+item(FEAT_TRAINS, item_et41, 760) { }
+item(FEAT_TRAINS, item_et41_yellow_front, 761) { }
+item(FEAT_TRAINS, item_et41_pkp_cargo, 762) { }
+item(FEAT_TRAINS, item_et41_classic_2, 763) { }
+item(FEAT_TRAINS, item_et41_classic_3, 764) { }
+item(FEAT_TRAINS, item_et41_yellow_2, 765) { }
+item(FEAT_TRAINS, item_et42, 770) { }
+item(FEAT_TRAINS, item_et42_yellow, 771) { }
+item(FEAT_TRAINS, item_et42_pkp_cargo, 772) { }
+// EP09 Vehicle_id
+item(FEAT_TRAINS, item_ep09, 780) { }
+item(FEAT_TRAINS, item_ep09_pkp_ic, 781) { }
+item(FEAT_TRAINS, item_ep09_pkp_cargo, 782) { }
+item(FEAT_TRAINS, item_ep09_zp, 783) { }
+item(FEAT_TRAINS, item_ep09_olkol, 784) { }
+item(FEAT_TRAINS, item_ep09_db, 785) { }
+item(FEAT_TRAINS, item_ep09_db_P5, 786) { }
+item(FEAT_TRAINS, item_ep09_016, 787) { }
+item(FEAT_TRAINS, item_ep09_pkp_ic_old, 788) { }
+item(FEAT_TRAINS, item_ep09_046, 789) { }
+item(FEAT_TRAINS, item_ep09_026, 790) { }
+item(FEAT_TRAINS, item_ep09_026_rodzyn, 791) { }
+item(FEAT_TRAINS, item_ep09_classic, 792) { }
+// E186, 386, E483, EU43, EU47, BR285 Vehicle_id
+item(FEAT_TRAINS, item_e186, 900) { }
+item(FEAT_TRAINS, item_e186_pkp_pr, 901) { }
+item(FEAT_TRAINS, item_e186_lotos, 902) { }
+item(FEAT_TRAINS, item_e186_szaro_zielone, 903) { }
+item(FEAT_TRAINS, item_e186_szaro_zielone_captrain, 904) { }
+item(FEAT_TRAINS, item_e186_biale, 905) { }
+item(FEAT_TRAINS, item_e186_biale_captrain, 906) { }
+item(FEAT_TRAINS, item_e186_szare, 907) { }
+item(FEAT_TRAINS, item_e186_szare2, 908) { }
+item(FEAT_TRAINS, item_e186_akiem, 909) { }
+item(FEAT_TRAINS, item_e186_cargounit, 910) { }
+item(FEAT_TRAINS, item_e186_lte1, 911) { }
+item(FEAT_TRAINS, item_e186_942, 912) { }
+item(FEAT_TRAINS, item_e186_944, 913) { }
+item(FEAT_TRAINS, item_e186_pcc, 914) { }
+item(FEAT_TRAINS, item_e186_orlen, 915) { }
+item(FEAT_TRAINS, item_386_metrans, 916) { }
+item(FEAT_TRAINS, item_e483_pmt, 917) { }
+item(FEAT_TRAINS, item_eu43_pkp_cargo, 918) { }
+item(FEAT_TRAINS, item_eu47_km, 919) { }
+// EU160, E4DCUd Vehicle_id
+item(FEAT_TRAINS, item_eu160, 1230) { }
+item(FEAT_TRAINS, item_eu160_tyskie, 1231) { }
+item(FEAT_TRAINS, item_eu160_rmf, 1232) { }
+item(FEAT_TRAINS, item_eu160_wybierz_kolej, 1233) { }
+item(FEAT_TRAINS, item_e4dcud, 1234) { }
+item(FEAT_TRAINS, item_eu160_20lat_polski, 1235) { }
+item(FEAT_TRAINS, item_eu160_powstanie_slaskie, 1236) { }
+// EU200 Vehicle_id
+item(FEAT_TRAINS, item_eu200, 1275) { }
+item(FEAT_TRAINS, item_eu200_002, 1276) { }
+// EU44 Vehicle_id
+item(FEAT_TRAINS, item_eu44, 850) { }
+item(FEAT_TRAINS, item_eu44_niepodlegla, 851) { }
+// EU46, 193, 6193, 383, X4EC Vehicle_id
+item(FEAT_TRAINS, item_eu46_red_pkp_cargo, 1000) { }
+item(FEAT_TRAINS, item_eu46_blue_pkp_cargo, 1001) { }
+item(FEAT_TRAINS, item_eu46_504, 1002) { }
+item(FEAT_TRAINS, item_eu46_bg_pkp_cargo, 1003) { }
+item(FEAT_TRAINS, item_383_pkp_cargo_international, 1005) { }
+item(FEAT_TRAINS, item_383_metrans, 1030) { }
+item(FEAT_TRAINS, item_6193_005, 1006) { }
+item(FEAT_TRAINS, item_6193_160, 1008) { }
+item(FEAT_TRAINS, item_6193_cargounit, 1017) { }
+item(FEAT_TRAINS, item_6193_cargounit_fpl, 1018) { }
+item(FEAT_TRAINS, item_6193_274, 1019) { }
+item(FEAT_TRAINS, item_6193_bahnoperator, 1020) { }
+item(FEAT_TRAINS, item_193_590, 1004) { }
+item(FEAT_TRAINS, item_193_railpool, 1007) { }
+item(FEAT_TRAINS, item_193_white, 1009) { }
+item(FEAT_TRAINS, item_193_mrce, 1010) { }
+item(FEAT_TRAINS, item_193_beacon, 1011) { }
+item(FEAT_TRAINS, item_193_626, 1012) { }
+item(FEAT_TRAINS, item_193_639, 1013) { }
+item(FEAT_TRAINS, item_193_694, 1014) { }
+item(FEAT_TRAINS, item_193_488, 1015) { }
+item(FEAT_TRAINS, item_193_captrain, 1016) { }
+item(FEAT_TRAINS, item_193_489, 1021) { }
+item(FEAT_TRAINS, item_193_568, 1022) { }
+item(FEAT_TRAINS, item_193_569, 1023) { }
+item(FEAT_TRAINS, item_193_cd_cargo, 1024) { }
+item(FEAT_TRAINS, item_193_627, 1025) { }
+item(FEAT_TRAINS, item_193_949, 1026) { }
+item(FEAT_TRAINS, item_193_509, 1027) { }
+item(FEAT_TRAINS, item_193_723, 1028) { }
+item(FEAT_TRAINS, item_193_617, 1029) { }
+item(FEAT_TRAINS, item_193_ell, 1031) { }
+item(FEAT_TRAINS, item_193_216, 1032) { }
+item(FEAT_TRAINS, item_193_232, 1033) { }
+item(FEAT_TRAINS, item_193_cargo_motion, 1034) { }
+item(FEAT_TRAINS, item_193_729, 1035) { }
+item(FEAT_TRAINS, item_193_738, 1036) { }
+item(FEAT_TRAINS, item_193_740, 1037) { }
+item(FEAT_TRAINS, item_193_956, 1038) { }
+item(FEAT_TRAINS, item_193_big_lokotrain, 1039) { }
+item(FEAT_TRAINS, item_193_720, 1040) { }
+item(FEAT_TRAINS, item_193_rfo_ell, 1041) { }
+item(FEAT_TRAINS, item_193_yellow_lokotrain, 1042) { }
+item(FEAT_TRAINS, item_193_726, 1043) { }
+item(FEAT_TRAINS, item_193_732, 1044) { }
+item(FEAT_TRAINS, item_193_792, 1045) { }
+item(FEAT_TRAINS, item_193_791, 1046) { }
+item(FEAT_TRAINS, item_193_793, 1047) { }
+item(FEAT_TRAINS, item_193_565, 1048) { }
+item(FEAT_TRAINS, item_193_945, 1049) { }
+item(FEAT_TRAINS, item_193_485, 1050) { }
+item(FEAT_TRAINS, item_193_824, 1051) { }
+item(FEAT_TRAINS, item_x4ec_db_cargo, 1052) { }
+item(FEAT_TRAINS, item_x4eab_044, 1053) { }
+item(FEAT_TRAINS, item_x4eab_045, 1054) { }
+item(FEAT_TRAINS, item_x4eab_046, 1055) { }
+item(FEAT_TRAINS, item_x4eab_047, 1056) { }
+// E6ACT Vehicle_id
+item(FEAT_TRAINS, item_e6act_lotos, 1100) { }
+item(FEAT_TRAINS, item_e6act_cu, 1101) { }
+item(FEAT_TRAINS, item_e6act_fpl, 1102) { }
+item(FEAT_TRAINS, item_e6act_rp, 1103) { }
+// E6ACTa, E6ACTab, E6ACTad, E6ACTadb, ET26 Vehicle_id
+item(FEAT_TRAINS, item_e6acta, 1120) { }
+item(FEAT_TRAINS, item_e6acta_cs_cargounit, 1121) { }
+item(FEAT_TRAINS, item_e6acta_cs_kolprem, 1122) { }
+item(FEAT_TRAINS, item_e6acta_cs_ciech_cargo, 1123) { }
+item(FEAT_TRAINS, item_e6acta_cargounit, 1124) { }
+item(FEAT_TRAINS, item_e6acta_jaxan, 1125) { }
+item(FEAT_TRAINS, item_e6acta_lotos, 1126) { }
+item(FEAT_TRAINS, item_e6acta_laude, 1127) { }
+item(FEAT_TRAINS, item_e6acta_rcp, 1128) { }
+item(FEAT_TRAINS, item_e6acta_rcp2, 1129) { }
+item(FEAT_TRAINS, item_e6acta_cs_natrix, 1130) { }
+item(FEAT_TRAINS, item_e6acta_cs_jaxan, 1131) { }
+item(FEAT_TRAINS, item_e6acta_railpolonia, 1132) { }
+item(FEAT_TRAINS, item_e6acta_cemet, 1133) { }
+item(FEAT_TRAINS, item_e6acta_railstm, 1134) { }
+item(FEAT_TRAINS, item_e6acta_dolata, 1135) { }
+item(FEAT_TRAINS, item_e6acta_grupa_azoty, 1136) { }
+item(FEAT_TRAINS, item_et26, 1137) { }
+
+item(FEAT_TRAINS, item_skoda163, 527) { }
+item(FEAT_TRAINS, item_skoda163_pr, 528) { }
+item(FEAT_TRAINS, item_s181, 530) { }
+item(FEAT_TRAINS, item_s181_ciech, 531) { }
+item(FEAT_TRAINS, item_s181_cu, 532) { }
+item(FEAT_TRAINS, item_111ed, 1200) { }
+item(FEAT_TRAINS, item_111eo_pcc, 1201) { }
+item(FEAT_TRAINS, item_111ed_cu, 1202) { }
+item(FEAT_TRAINS, item_111eo_orion, 1203) { }
+item(FEAT_TRAINS, item_su160, 1204) { }
+
+item(FEAT_TRAINS, item_en57, 1800) { }
+item(FEAT_TRAINS, item_en57_or, 1801) { }
+item(FEAT_TRAINS, item_en57_ry, 1802) { }
+item(FEAT_TRAINS, item_en57_by, 1803) { }
+item(FEAT_TRAINS, item_en57_br, 1804) { }
+item(FEAT_TRAINS, item_en57_km, 1805) { }
+item(FEAT_TRAINS, item_en57_kd, 1806) { }
+item(FEAT_TRAINS, item_en57_prk, 1807) { }
+item(FEAT_TRAINS, item_en57_skmt, 1808) { }
+item(FEAT_TRAINS, item_en57alpr, 2000) { }
+item(FEAT_TRAINS, item_en57al_kw, 2001) { }
+item(FEAT_TRAINS, item_en57al_km, 2002) { }
+item(FEAT_TRAINS, item_en57akm, 2003) { }
+item(FEAT_TRAINS, item_en57aks, 2004) { }
+item(FEAT_TRAINS, item_en71akm, 2005) { }
+item(FEAT_TRAINS, item_en71aks, 2006) { }
+item(FEAT_TRAINS, item_en57akw, 2007) { }
+item(FEAT_TRAINS, item_en57ap, 2008) { }
+item(FEAT_TRAINS, item_en57spot, 2009) { }
+item(FEAT_TRAINS, item_en57spot_tg, 2010) { }
+item(FEAT_TRAINS, item_en57spot_pr, 2011) { }
+item(FEAT_TRAINS, item_en71, 2100) { }
+item(FEAT_TRAINS, item_en71_or, 2101) { }
+item(FEAT_TRAINS, item_en71_ry, 2102) { }
+item(FEAT_TRAINS, item_en71_by, 2103) { }
+item(FEAT_TRAINS, item_en71_br, 2104) { }
+item(FEAT_TRAINS, item_en71_km, 2105) { }
+item(FEAT_TRAINS, item_en71_kd, 2106) { }
+item(FEAT_TRAINS, item_en71_prk, 2107) { }
+item(FEAT_TRAINS, item_en71_skmt, 2108) { }
+item(FEAT_TRAINS, item_ed72, 2200) { }
+item(FEAT_TRAINS, item_edi72, 2201) { }
+item(FEAT_TRAINS, item_ed72_pr, 2202) { }
+item(FEAT_TRAINS, item_ed74, 2300) { }
+item(FEAT_TRAINS, item_ed74_pkp_ic, 2301) { }
+item(FEAT_TRAINS, item_en76, 2400) { }
+item(FEAT_TRAINS, item_ed250, 2603) { }
+item(FEAT_TRAINS, item_36wea_op, 2500) { }
+item(FEAT_TRAINS, item_36wea_po, 2501) { }
+item(FEAT_TRAINS, item_36wea_kd, 2502) { }
+item(FEAT_TRAINS, item_36wea_kd_kolej, 2503) { }
+item(FEAT_TRAINS, item_36wea_slaskie, 2504) { }
+item(FEAT_TRAINS, item_36wea_km, 2505) { }
+item(FEAT_TRAINS, item_36wea_sk, 2506) { }
+item(FEAT_TRAINS, item_31we_kd, 2530) { }
+item(FEAT_TRAINS, item_en78_kml, 2531) { }
+item(FEAT_TRAINS, item_ed78_zach_pom, 2532) { }
+item(FEAT_TRAINS, item_ed78_028, 2533) { }
+item(FEAT_TRAINS, item_45we_kd, 2550) { }
+item(FEAT_TRAINS, item_45we_km, 2551) { }
+item(FEAT_TRAINS, item_en90_pomorskie, 2552) { }
+item(FEAT_TRAINS, item_en79_kml, 2553) { }
+item(FEAT_TRAINS, item_35we_skm, 2560) { }
+item(FEAT_TRAINS, item_35we_ks, 2561) { }
+item(FEAT_TRAINS, item_ed161, 2602) { }
+item(FEAT_TRAINS, item_ed160, 2601) { }
+item(FEAT_TRAINS, item_er160, 2600) { }
+
+item(FEAT_TRAINS, item_152a, 11100) { }
+item(FEAT_TRAINS, item_154a, 11101) { }
+item(FEAT_TRAINS, item_152a_papuga, 11104) { }
+item(FEAT_TRAINS, item_154a_papuga, 11105) { }
+// item(FEAT_TRAINS, item_wgpolregio) { }
+item(FEAT_TRAINS, item_158a, 11102) { }
+item(FEAT_TRAINS, item_159a, 11103) { }
+item(FEAT_TRAINS, item_bipa, 10040) { }
+item(FEAT_TRAINS, item_bipa3, 10041) { }
+item(FEAT_TRAINS, item_bipa4, 10042) { }
+item(FEAT_TRAINS, item_bipa_pr, 10043) { }
+item(FEAT_TRAINS, item_bipa3_pr, 10044) { }
+item(FEAT_TRAINS, item_bipa4_pr, 10045) { }
+item(FEAT_TRAINS, item_bdhpumn, 10050) { }
+item(FEAT_TRAINS, item_bdhpumn_pr, 10051) { }
+item(FEAT_TRAINS, item_bdhpumn_ir, 10052) { }
+item(FEAT_TRAINS, item_bdhpumn_pl, 10053) { }
+item(FEAT_TRAINS, item_twindexx, 10060) { }
+item(FEAT_TRAINS, item_twindexxcc, 10061) { }
+
+item(FEAT_TRAINS, item_articulated_reserved_1) { }
+
+/* IDs of single vehicles *
+item(FEAT_TRAINS, item_tkh1, 100) { }
+item(FEAT_TRAINS, item_tki3, 103) { }
+item(FEAT_TRAINS, item_okl27, 107) { }
+item(FEAT_TRAINS, item_tkt48, 113) { }
+item(FEAT_TRAINS, item_tkt48_black, 117) { }
+
+item(FEAT_TRAINS, item_sm30, 200) { }
+item(FEAT_TRAINS, item_sm30_pkp_cargo, 201) { }
+item(FEAT_TRAINS, item_sm41, 210) { }
+item(FEAT_TRAINS, item_sm42, 250) { }
+item(FEAT_TRAINS, item_sm42_oliwkowe, 251) { }
+item(FEAT_TRAINS, item_sm42_pkp_cargo, 252) { }
+item(FEAT_TRAINS, item_sm42_pkp_ic, 253) { }
+item(FEAT_TRAINS, item_sm42_tabor_debica, 254) { }
+item(FEAT_TRAINS, item_sm42_skpl, 255) { }
+item(FEAT_TRAINS, item_sm42_polregio, 256) { }
+item(FEAT_TRAINS, item_sp42, 270) { }
+item(FEAT_TRAINS, item_sp42_oliwkowe, 271) { }
+item(FEAT_TRAINS, item_su42, 290) { }
+item(FEAT_TRAINS, item_su42_polsat, 291) { }
+item(FEAT_TRAINS, item_su42_pr, 292) { }
+item(FEAT_TRAINS, item_su42_polregio, 294) { }
+item(FEAT_TRAINS, item_6dg, 300) { }
+item(FEAT_TRAINS, item_6dl, 293) { }
+item(FEAT_TRAINS, item_sn61, 440) { }
+
+item(FEAT_TRAINS, item_ep01, 525) { }
+
+item(FEAT_TRAINS, item_gmy, 10000) { }
+item(FEAT_TRAINS, item_ghmx, 10002) { }
+item(FEAT_TRAINS, item_gmw, 10001) { }
+item(FEAT_TRAINS, item_pdn, 10010) { }
+item(FEAT_TRAINS, item_pdn_new, 10011) { }
+item(FEAT_TRAINS, item_ohtx, 10030) { }
+
+item(FEAT_TRAINS, item_fg, 10015) { }
+item(FEAT_TRAINS, item_fy, 10020) { }
+item(FEAT_TRAINS, item_fhx, 10021) { }
+item(FEAT_TRAINS, item_dhxt, 10022) { }
+item(FEAT_TRAINS, item_dwxz, 10023) { }
+item(FEAT_TRAINS, item_dwxz_new, 10024) { }
+item(FEAT_TRAINS, item_bdwxzd, 10025) { }
+item(FEAT_TRAINS, item_bdwxzd_ic, 10026) { }
+
+item(FEAT_TRAINS, item_bcy, 10032) { }
+item(FEAT_TRAINS, item_bcyh, 10033) { }
+item(FEAT_TRAINS, item_bci, 10030) { }
+item(FEAT_TRAINS, item_bci2, 10031) { }
+item(FEAT_TRAINS, item_bh_ryf, 441) { }
+item(FEAT_TRAINS, item_bh_bon, 10035) { }
+item(FEAT_TRAINS, item_bh_bon_new, 10036) { }
+item(FEAT_TRAINS, item_120a_pr, 10037) { }
+item(FEAT_TRAINS, item_120a_malopolskie, 10038) { }
+
+item(FEAT_TRAINS, item_bhxz_passenger, 10070) { }
+item(FEAT_TRAINS, item_ahxz, 10071) { }
+item(FEAT_TRAINS, item_abhxz, 10072) { }
+item(FEAT_TRAINS, item_bhxz, 10073) { }
+item(FEAT_TRAINS, item_bwxz, 10100) { }
+item(FEAT_TRAINS, item_abwxz, 10101) { }
+item(FEAT_TRAINS, item_awxz, 10102) { }
+item(FEAT_TRAINS, item_bdnu, 10103) { }
+item(FEAT_TRAINS, item_abdnu, 10104) { }
+item(FEAT_TRAINS, item_adnu, 10105) { }
+item(FEAT_TRAINS, item_141a, 10106) { }
+item(FEAT_TRAINS, item_112at, 10107) { }
+item(FEAT_TRAINS, item_140a, 10108) { }
+item(FEAT_TRAINS, item_174a, 11000) { }
+item(FEAT_TRAINS, item_141a_20, 11001) { }
+item(FEAT_TRAINS, item_140a_10, 11002) { }
+item(FEAT_TRAINS, item_162a, 10150) { }
+item(FEAT_TRAINS, item_163a, 10151) { }
+
+item(FEAT_TRAINS, item_wlabwxz, 11200) { }
+item(FEAT_TRAINS, item_wlab, 11201) { }
+item(FEAT_TRAINS, item_gorlitz77, 11202) { }
+item(FEAT_TRAINS, item_wlab10mnouz, 11203) { }
+item(FEAT_TRAINS, item_jhx, 11300) { }
+item(FEAT_TRAINS, item_jhix, 11301) { }
+item(FEAT_TRAINS, item_113A, 11305) { }
+item(FEAT_TRAINS, item_113Aa, 11306) { }
+item(FEAT_TRAINS, item_wrdmnu, 11302) { }
+item(FEAT_TRAINS, item_bautzen89, 11303) { }
+item(FEAT_TRAINS, item_wrmnouz, 11304) { }
+
+item(FEAT_TRAINS, item_wdn, 20000) { }
+item(FEAT_TRAINS, item_wddo, 20001) { }
+item(FEAT_TRAINS, item_wddoh, 20002) { }
+item(FEAT_TRAINS, item_wddo_2w, 20003) { }
+item(FEAT_TRAINS, item_wddo_2w_brown, 20004) { }
+item(FEAT_TRAINS, item_es, 20050) { }
+
+item(FEAT_TRAINS, item_eaos, 20055) { }
+item(FEAT_TRAINS, item_eaos_blue_pkp, 20056) { }
+item(FEAT_TRAINS, item_eaos_pmt, 20051) { }
+item(FEAT_TRAINS, item_eaos_ptk, 20052) { }
+item(FEAT_TRAINS, item_eaos_ctl, 20053) { }
+item(FEAT_TRAINS, item_eaos_fpl, 20054) { }
+item(FEAT_TRAINS, item_eaos_ecco, 20057) { }
+item(FEAT_TRAINS, item_eaos_rkm, 20058) { }
+item(FEAT_TRAINS, item_eaos_srr, 20059) { }
+item(FEAT_TRAINS, item_eaos_euwag_black, 20060) { }
+item(FEAT_TRAINS, item_eaos_railpolska, 20061) { }
+item(FEAT_TRAINS, item_eaos_pmt_old, 20062) { }
+item(FEAT_TRAINS, item_eaos_pmt_new, 20063) { }
+item(FEAT_TRAINS, item_eaos_dbcargo_new, 20064) { }
+item(FEAT_TRAINS, item_eaos_dbcargo, 20065) { }
+item(FEAT_TRAINS, item_eaos_dbcargo_old, 20066) { }
+item(FEAT_TRAINS, item_eaos_pkpcargo_lt, 20067) { }
+item(FEAT_TRAINS, item_eaos_pkpcargo_dk, 20068) { }
+item(FEAT_TRAINS, item_eaos_zvolen, 20069) { }
+item(FEAT_TRAINS, item_eaos_zvolen_old, 20070) { }
+item(FEAT_TRAINS, item_eaos_ciech_cargo, 20071) { }
+item(FEAT_TRAINS, item_eaos_qemetica_cargo, 20072) { }
+item(FEAT_TRAINS, item_eaos_euwag_blue, 20073) { }
+
+item(FEAT_TRAINS, item_eanos, 20100) { }
+item(FEAT_TRAINS, item_eanos_new, 20101) { }
+item(FEAT_TRAINS, item_eanos_445w, 20150) { }
+item(FEAT_TRAINS, item_ppu, 20200) { }
+item(FEAT_TRAINS, item_eamos, 20201) { }
+item(FEAT_TRAINS, item_fals, 20250) { }
+item(FEAT_TRAINS, item_fals_brown, 20251) { }
+item(FEAT_TRAINS, item_falns, 20252) { }
+item(FEAT_TRAINS, item_falns_blue, 20253) { }
+item(FEAT_TRAINS, item_tadns, 20300) { }
+item(FEAT_TRAINS, item_kd, 20400) { }
+item(FEAT_TRAINS, item_kdt, 20401) { }
+item(FEAT_TRAINS, item_kdth, 20402) { }
+item(FEAT_TRAINS, item_kddet, 20403) { }
+item(FEAT_TRAINS, item_ggs, 20500) { }
+item(FEAT_TRAINS, item_gags, 20501) { }
+item(FEAT_TRAINS, item_gbss) { }   // for future use
+item(FEAT_TRAINS, item_gbs, 20502) { }
+item(FEAT_TRAINS, item_hbbins, 20600) { }
+item(FEAT_TRAINS, item_habbins, 20601) { }
+item(FEAT_TRAINS, item_habbins2, 20602) { }
+item(FEAT_TRAINS, item_slr, 21000) { }
+item(FEAT_TRAINS, item_slrh, ) { }
+item(FEAT_TRAINS, item_slms, 21001) { }
+item(FEAT_TRAINS, item_ibhss, 21002) { }
+item(FEAT_TRAINS, item_pdk31, 20700) { }
+item(FEAT_TRAINS, item_pdkh31, 20701) { }
+item(FEAT_TRAINS, item_kbkks, 20702) { }
+item(FEAT_TRAINS, item_kgns, 20703) { }
+item(FEAT_TRAINS, item_res, 20704) { }
+item(FEAT_TRAINS, item_roos) { }   // for future use
+item(FEAT_TRAINS, item_sgs_pkp_cargo, 20800) { }
+item(FEAT_TRAINS, item_sgs_pcc, 20801) { }
+item(FEAT_TRAINS, item_sdgmnss, 20805) { }
+item(FEAT_TRAINS, item_sggrss, 15000) { }
+item(FEAT_TRAINS, item_sggrss_dbcargo, 15001) { }
+item(FEAT_TRAINS, item_sggrss_pcc, 15002) { }
+item(FEAT_TRAINS, item_sggrss_eurowagon, 15003) { }
+item(FEAT_TRAINS, item_sggrss_ermewa, 15004) { }
+item(FEAT_TRAINS, item_sggrss_gatx, 15005) { }
+item(FEAT_TRAINS, item_sggrss_cbrail, 15006) { }
+item(FEAT_TRAINS, item_simms) { }   // for future use
+item(FEAT_TRAINS, item_smms) { }   // for future use
+item(FEAT_TRAINS, item_rh, 21100) { }
+item(FEAT_TRAINS, item_rbh, 21101) { }
+item(FEAT_TRAINS, item_zaes, 21102) { }
+item(FEAT_TRAINS, item_zaes_red, 21103) { }
+item(FEAT_TRAINS, item_zaes_white_orange, 21104) { }
+item(FEAT_TRAINS, item_zacens_gatx, 21105) { }
+item(FEAT_TRAINS, item_zacens_gatx2, 21106) { }
+item(FEAT_TRAINS, item_zags_gatx, 21107) { }
+item(FEAT_TRAINS, item_zags_ermewa, 21108) { }
+item(FEAT_TRAINS, item_zags_wascosa, 21109) { }
+item(FEAT_TRAINS, item_zas) { }   // for future use
+item(FEAT_TRAINS, item_zans) { }   // for future use
+item(FEAT_TRAINS, item_rgh) { }   // for future use
+item(FEAT_TRAINS, item_uahs, 21212) { }
+item(FEAT_TRAINS, item_uahs_blue, 21213) { }
+item(FEAT_TRAINS, item_zaekks) { }   // for future use
+item(FEAT_TRAINS, item_sn, 21200) { }
+item(FEAT_TRAINS, item_hes, 21201) { }
+item(FEAT_TRAINS, item_rnh, 21210) { }
+item(FEAT_TRAINS, item_rnh_5r, 21211) { }
+item(FEAT_TRAINS, item_sdw, 21300) { }
+item(FEAT_TRAINS, item_sdwh, 21301) { }
+item(FEAT_TRAINS, item_sddw_1s) { }   // for future use
+item(FEAT_TRAINS, item_sddw_2s) { }   // for future use
+item(FEAT_TRAINS, item_tikkms) { }   // for future use
+item(FEAT_TRAINS, item_ucs) { }   // for future use
+item(FEAT_TRAINS, item_uacs, 21310) { }
+item(FEAT_TRAINS, item_uacns) { }   // for future use
+item(FEAT_TRAINS, item_ugpps) { }   // for future use
+item(FEAT_TRAINS, item_lekqss, 21400) { }
+
+/* Other vehicles *
+item(FEAT_TRAINS, item_wm15a, 4000) { }
+item(FEAT_TRAINS, item_pwm15, 4001) { }
+item(FEAT_TRAINS, item_asf, 5000) { }
+item(FEAT_TRAINS, item_asf_inv, 5001) { }
+
+/* New vehicles */
+// add here...*/

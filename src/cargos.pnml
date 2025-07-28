@@ -1,0 +1,232 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, GPL 2.0
+
+// Cargo table and cargo definitions
+cargotable {
+    PASS, COAL, MAIL, OIL_, LVST, GOOD, GRAI, WOOD, IORE, STEL, VALU, PAPR, WHEA, FOOD, GOLD, RUBR,
+    FRUT, MAIZ, CORE, WATR, DIAM, AORE, BEER, BDMT, BRCK, CERA, CERE, CLAY, CMNT, COPR, DYES, ENSP,
+    FERT, FICR, FISH, FMSP, FRVG, GLAS, GRVL, LIME, MILK, MNSP, OLSD, PETR, PLAS, POTA, RCYC, RFPR,
+    SAND, SCMT, SGBT, SGCN, SULP, TOUR, VEHI, WDPR, WOOL,
+    // new cargoes
+    SUGR, BEAN, BOOM, CASS, COKE, EOIL, IRON, METL, MNO2, NICK, NITR, NUTS, PHOS, PIPE, PORE, QLME,
+    SASH, SLAG, VBOD, VPTS, ACID, CHLO, JAVA, POWR, KAOL, PEAT, SALT, ZINC,
+    // new FIRS 4 cargoes
+    STAL, ALUM, NH3_, CBLK, STCB, CSTI, SOAP, CTAR, FECR, LYE_, O2__, COAT, STST, STSE, STSH, STWR,
+    TYRE, VENG
+}
+    
+#define CARGO_LOCOMOTIVES_DEFINITION \
+        refittable_cargo_classes:       bitmask(CC_PASSENGERS); \
+        non_refittable_cargo_classes:   bitmask(); \
+        cargo_disallow_refit:           [TOUR];
+
+// Cargos definitions for post vans (UIC class: P)
+#define CARGO_MAIL_WAGON_DEFINITION \
+        refittable_cargo_classes:       bitmask(CC_MAIL, CC_ARMOURED); \
+        non_refittable_cargo_classes:   bitmask(); \
+        cargo_allow_refit:              []; \
+        cargo_disallow_refit:           []; \
+        default_cargo_type:             MAIL;
+
+// Cargos definitions for passenger wagons (UIC class: A, B, WR, WL)
+#define CARGO_PASSENGERS_WAGON_DEFINITION \
+        refittable_cargo_classes:       bitmask(CC_PASSENGERS); \
+        non_refittable_cargo_classes:   bitmask(); \
+        cargo_allow_refit:              []; \
+        cargo_disallow_refit:           []; \
+        default_cargo_type:             PASS;
+
+#define CARGO_ONLY_PASSENGERS_WAGON_DEFINITION \
+        refittable_cargo_classes:       bitmask(); \
+        non_refittable_cargo_classes:   bitmask(); \
+        cargo_allow_refit:              [PASS]; \
+        cargo_disallow_refit:           []; \
+        default_cargo_type:             PASS;
+
+// Cargos definitions for luggage wagons (UIC class: D)
+#define CARGO_LUGGAGE_WAGON_DEFINITION \
+        refittable_cargo_classes:       bitmask(); \
+        non_refittable_cargo_classes:   bitmask(); \
+        cargo_allow_refit:              [GOOD]; \
+        cargo_disallow_refit:           []; \
+        default_cargo_type:             GOOD;
+
+// Cargo definitions for open wagons (UIC class: E)
+#define CARGO_EARLY_OPEN_WAGON_DEFINITION \
+        refittable_cargo_classes:       bitmask(CC_BULK); \
+        non_refittable_cargo_classes:   bitmask(CC_REFRIGERATED); \
+        cargo_allow_refit:              [WOOD, STEL, BDMT]; \
+        cargo_disallow_refit:           [GRAI, WHEA, CERE, FICR, CBLK, CMNT, SUGR, BEAN, QLME, SASH, KAOL, SALT, PLAS, FERT]; \
+        default_cargo_type:             COAL;
+
+#define CARGO_NORMAL_OPEN_WAGON_DEFINITION \
+        refittable_cargo_classes:       bitmask(CC_BULK); \
+        non_refittable_cargo_classes:   bitmask(CC_REFRIGERATED); \
+        cargo_allow_refit:              [WOOD]; \
+        cargo_disallow_refit:           [GRAI, WHEA, CERE, FICR, CBLK, CMNT, SUGR, BEAN, QLME, SASH, KAOL, SALT, PLAS, FERT]; \
+        default_cargo_type:             COAL;
+
+#define CARGO_HEAVY_OPEN_WAGON_DEFINITION \
+        refittable_cargo_classes:       bitmask(CC_BULK); \
+        non_refittable_cargo_classes:   bitmask(CC_REFRIGERATED); \
+        cargo_allow_refit:              [STEL, COPR, IRON, METL]; \
+        cargo_disallow_refit:           [CBLK, COAL, GRAI, WHEA, CERE, FICR, OLSD, SGBT, SGCN, WDPR, SUGR, BEAN, QLME, SASH, FERT, SULP, KAOL, SALT, PLAS]; \
+        default_cargo_type:             IORE;
+
+// Cargo definitions for special open wagons (UIC class: F)
+#define CARGO_NORMAL_SELF_DISCHARGING_WAGON_DEFINITION \
+        refittable_cargo_classes:       bitmask(CC_BULK); \
+        non_refittable_cargo_classes:   bitmask(CC_PIECE_GOODS, CC_REFRIGERATED, CC_COVERED, CC_NON_POURABLE); \
+        cargo_allow_refit:              []; \
+        cargo_disallow_refit:           [GRAI, WHEA, MAIZ, SGBT, CLAY, BEAN, SALT]; \
+        default_cargo_type:             COAL;
+
+// Cargo definitions for covered wagons (UIC class: T)
+#define CARGO_COVERED_SELF_DISCHARGING_WAGON_DEFINITION \
+        refittable_cargo_classes:       bitmask(CC_BULK, CC_COVERED); \
+        non_refittable_cargo_classes:   bitmask(CC_PIECE_GOODS, CC_REFRIGERATED, CC_NON_POURABLE); \
+        cargo_allow_refit:              [BOOM, CBLK, FERT, PLAS]; \
+        cargo_disallow_refit:           [COAL, IORE, CORE, AORE, GRVL, CLAY, SAND, PORE, COKE, PEAT, ZINC, FECR, LIME, MNO2, POTA, CASS]; \
+        default_cargo_type:             GRAI;
+
+// Cargo definitions for covered wagons (UIC class: G)
+#define CARGO_EARLY_COVERED_WAGON_DEFINITION \
+        refittable_cargo_classes:       bitmask(CC_EXPRESS, CC_PIECE_GOODS, CC_LIQUID, CC_COVERED); \
+        non_refittable_cargo_classes:   bitmask(CC_PASSENGERS, CC_OVERSIZED); \
+        cargo_allow_refit:              [GRAI, WHEA, MAIZ, CERE, BEAN, QLME, SASH, SALT]; \
+        cargo_disallow_refit:           [CLAY, SULP, WOOD, VBOD, VEHI]; \
+        default_cargo_type:             GOOD;
+#define CARGO_EARLY_COVERED_WAGON_MULTIPLIER   2
+
+#define CARGO_NORMAL_COVERED_WAGON_DEFINITION \
+        refittable_cargo_classes:       bitmask(CC_EXPRESS, CC_PIECE_GOODS); \
+        non_refittable_cargo_classes:   bitmask(CC_PASSENGERS, CC_REFRIGERATED, CC_OVERSIZED); \
+        cargo_allow_refit:              [GRAI, WHEA, MAIZ, CERE, BEAN, QLME, SASH, SALT, KAOL]; \
+        cargo_disallow_refit:           [ALUM, CLAY, COPR, CSTI, IRON, METL, STAL, STCB, STAL, STEL, STST, WOOD, VEHI, VBOD, ZINC]; \
+        default_cargo_type:             GOOD;
+#define CARGO_NORMAL_COVERED_WAGON_MULTIPLIER   2
+
+// Cargo definitions for covered wagons (UIC class: H)
+#define CARGO_SPECIAL_COVERED_WAGON_DEFINITION \
+        refittable_cargo_classes:       bitmask(CC_EXPRESS, CC_PIECE_GOODS); \
+        non_refittable_cargo_classes:   bitmask(CC_PASSENGERS, CC_REFRIGERATED, CC_OVERSIZED); \
+        cargo_allow_refit:              [SALT]; \
+        cargo_disallow_refit:           [LVST, WOOD, VEHI, VBOD]; \
+        default_cargo_type:             GOOD;
+#define CARGO_SPECIAL_COVERED_WAGON_MULTIPLIER  2
+
+// Cargo definitions for flatbed wagons (UIC class: K, R)
+#define CARGO_NORMAL_FLATBED_WAGON_DEFINITION \
+        refittable_cargo_classes:       bitmask(CC_EXPRESS, CC_PIECE_GOODS); \
+        non_refittable_cargo_classes:   bitmask(CC_PASSENGERS, CC_REFRIGERATED, CC_COVERED); \
+        cargo_allow_refit:              []; \
+        cargo_disallow_refit:           [LVST, PAPR, BEER, BOOM, DYES, EOIL, FERT, JAVA, NUTS, POWR, RFPR, SOAP]; \
+        default_cargo_type:             WOOD;
+#define CARGO_NORMAL_FLATBED_WAGON_MULTIPLIER   1
+
+// Cargo definitions for special flatbed wagons (UIC class: S)
+#define CARGO_CONTAINER_WAGON_DEFINITION \
+        refittable_cargo_classes:       bitmask(CC_EXPRESS, CC_PIECE_GOODS); \
+        non_refittable_cargo_classes:   bitmask(CC_PASSENGERS, CC_REFRIGERATED, CC_OVERSIZED); \
+        cargo_allow_refit:              []; \
+        cargo_disallow_refit:           [LVST, WOOD, ALUM, CSTI, IRON, STAL, STEL, STCB, STST, COPR, VEHI, VBOD, ZINC]; \
+        default_cargo_type:             GOOD;
+#define CARGO_CONTAINER_WAGON_MULTIPLIER  2
+
+#define CARGO_SPECIAL_CONTAINER_WAGON_DEFINITION \
+        refittable_cargo_classes:       bitmask(CC_MAIL, CC_EXPRESS, CC_PIECE_GOODS); \
+        non_refittable_cargo_classes:   bitmask(CC_PASSENGERS, CC_OVERSIZED); \
+        cargo_allow_refit:              [RFPR]; \
+        cargo_disallow_refit:           [LVST, WOOD, ALUM, CSTI, IRON, STAL, STEL, STCB, STST, COPR, VEHI, VBOD, ZINC]; \
+        default_cargo_type:             GOOD;
+#define CARGO_SPECIAL_CONTAINER_WAGON_MULTIPLIER  2
+
+// Cargo definitions for refrigerated wagons (UIC class: I)
+#define CARGO_NORMAL_REFRIGERATED_WAGON_DEFINITION \
+        refittable_cargo_classes:       bitmask(CC_REFRIGERATED); \
+        non_refittable_cargo_classes:   bitmask(); \
+        cargo_allow_refit:              [BEER, EOIL]; \
+        cargo_disallow_refit:           []; \
+        default_cargo_type:             FOOD;
+#define CARGO_NORMAL_REFRIGERATED_WAGON_MULTIPLIER  1
+
+// Cargo definitions for tank wagons (UIC class: Z)
+#define CARGO_NORMAL_TANK_WAGON_DEFINITION \
+        refittable_cargo_classes:       bitmask(CC_LIQUID); \
+        non_refittable_cargo_classes:   bitmask(); \
+        cargo_allow_refit:              []; \
+        cargo_disallow_refit:           [ACID, BEER, CHLO, COAT, LYE_, O2__, NH3_, SOAP, SULP]; \
+        default_cargo_type:             OIL_;
+
+// Cargo definitions for special purpose wagons
+#define CARGO_LIVESTOCK_WAGON_DEFINITION \
+        refittable_cargo_classes:       bitmask(); \
+        non_refittable_cargo_classes:   bitmask(); \
+        cargo_allow_refit:              [LVST]; \
+        cargo_disallow_refit:           []; \
+        default_cargo_type:             LVST;
+#define CARGO_LIVESTOCK_WAGON_MULTIPLIER  1
+
+#define CARGO_LIME_WAGON_DEFINITION \
+        refittable_cargo_classes:       bitmask(); \
+        non_refittable_cargo_classes:   bitmask(); \
+        cargo_allow_refit:              [BDMT, CBLK, CMNT, KAOL, LIME, QLME, SASH]; \
+        cargo_disallow_refit:           []; \
+        default_cargo_type:             BDMT;
+
+#define CARGO_CEMENT_WAGON_DEFINITION \
+        refittable_cargo_classes:       bitmask(); \
+        non_refittable_cargo_classes:   bitmask(); \
+        cargo_allow_refit:              [BDMT, CBLK, CMNT, QLME, SASH]; \
+        cargo_disallow_refit:           []; \
+        default_cargo_type:             BDMT;
+
+#define CARGO_CHEMICALS_WAGON_DEFINITION \
+        refittable_cargo_classes:       bitmask(); \
+        non_refittable_cargo_classes:   bitmask(); \
+        cargo_allow_refit:              [RFPR, DYES, ACID, LYE_, SOAP, SULP, COAT, CHLO, O2__, NH3_]; \
+        cargo_disallow_refit:           []; \
+        default_cargo_type:             RFPR;
+
+#define CARGO_GAS_WAGON_DEFINITION \
+        refittable_cargo_classes:       bitmask(); \
+        non_refittable_cargo_classes:   bitmask(); \
+        cargo_allow_refit:              [CHLO, O2__, NH3_]; \
+        cargo_disallow_refit:           []; \
+        default_cargo_type:             CHLO;
+        
+#define CARGO_VEHICLES_WAGON_DEFINITION \
+        refittable_cargo_classes:       bitmask(); \
+        non_refittable_cargo_classes:   bitmask(); \
+        cargo_allow_refit:              [ENSP, VEHI, VBOD]; \
+        cargo_disallow_refit:           []; \
+        default_cargo_type:             VEHI;
+
+#define CARGO_GOODS_WAGON_DEFINITION \
+        refittable_cargo_classes:       bitmask(); \
+        non_refittable_cargo_classes:   bitmask(); \
+        cargo_allow_refit:              [GOOD]; \
+        cargo_disallow_refit:           []; \
+        default_cargo_type:             GOOD;
+
+// parameter's dependent definitions
+#define SUBURBAN_WAGON_PROPERTIES \
+if(param_tourists == 0) { \
+    property { \
+        CARGO_PASSENGERS_WAGON_DEFINITION \
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT); \
+    } \
+} else { \
+    if(param_tourists == 1) { \
+        property { \
+            CARGO_PASSENGERS_WAGON_DEFINITION \
+            misc_flags:                     bitmask(); \
+        } \
+    } else { \
+        property { \
+            CARGO_ONLY_PASSENGERS_WAGON_DEFINITION \
+            misc_flags:                     bitmask(); \
+        } \
+    } \
+}

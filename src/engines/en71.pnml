@@ -1,0 +1,892 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+// This file requires enxx-common.pnml included before
+
+/* EN71 sprites */
+spriteset(sset_en71_advert, "gfx/en57.png")         { tmpl_sprite_advertisement200(4, 300) }
+
+// default livery
+spriteset(sset_en71_purchase, "gfx/en57.png")       { tmpl_sprite_purchase(4, 140) }
+spriteset(sset_en71_head, "gfx/en57.png")           { tmpl_sprite_train12(4, 20) }
+spriteset(sset_en71_mid, "gfx/en57.png")            { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_en71_mid2, "gfx/en57.png")            { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_en71_tail, "gfx/en57.png")           { tmpl_sprite_train12_offset(4, 100, 3) }
+spriteset(sset_en71_head_open, "gfx/en57.png")      { tmpl_sprite_train12(4, 160) }
+spriteset(sset_en71_mid_open, "gfx/en57.png")       { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_en71_mid2_open, "gfx/en57.png")       { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_en71_tail_open, "gfx/en57.png")      { tmpl_sprite_train12_offset(4, 240, 3) }
+// livery orange
+spriteset(sset_en71_or_purchase, "gfx/en57-orange.png")         { tmpl_sprite_purchase(4, 140) }
+spriteset(sset_en71_or_head, "gfx/en57-orange.png")             { tmpl_sprite_train12(4, 20) }
+spriteset(sset_en71_or_mid, "gfx/en57-orange.png")              { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_en71_or_mid2, "gfx/en57-orange.png")              { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_en71_or_tail, "gfx/en57-orange.png")             { tmpl_sprite_train12_offset(4, 100, 3) }
+spriteset(sset_en71_or_head_open, "gfx/en57-orange.png")        { tmpl_sprite_train12(4, 160) }
+spriteset(sset_en71_or_mid_open, "gfx/en57-orange.png")         { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_en71_or_mid2_open, "gfx/en57-orange.png")         { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_en71_or_tail_open, "gfx/en57-orange.png")        { tmpl_sprite_train12_offset(4, 240, 3) }
+// livery red-yellow
+spriteset(sset_en71_ry_purchase, "gfx/en57-red-yellow.png")     { tmpl_sprite_purchase(4, 140) }
+spriteset(sset_en71_ry_head, "gfx/en57-red-yellow.png")         { tmpl_sprite_train12(4, 20) }
+spriteset(sset_en71_ry_mid, "gfx/en57-red-yellow.png")          { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_en71_ry_mid2, "gfx/en57-red-yellow.png")          { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_en71_ry_tail, "gfx/en57-red-yellow.png")         { tmpl_sprite_train12_offset(4, 100, 3) }
+spriteset(sset_en71_ry_head_open, "gfx/en57-red-yellow.png")    { tmpl_sprite_train12(4, 160) }
+spriteset(sset_en71_ry_mid_open, "gfx/en57-red-yellow.png")     { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_en71_ry_mid2_open, "gfx/en57-red-yellow.png")     { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_en71_ry_tail_open, "gfx/en57-red-yellow.png")    { tmpl_sprite_train12_offset(4, 240, 3) }
+// livery blue-yellow
+spriteset(sset_en71_by_purchase, "gfx/en57-blue-yellow.png")    { tmpl_sprite_purchase(4, 140) }
+spriteset(sset_en71_by_head, "gfx/en57-blue-yellow.png")        { tmpl_sprite_train12(4, 20) }
+spriteset(sset_en71_by_mid, "gfx/en57-blue-yellow.png")         { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_en71_by_mid2, "gfx/en57-blue-yellow.png")         { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_en71_by_tail, "gfx/en57-blue-yellow.png")        { tmpl_sprite_train12_offset(4, 100, 3) }
+spriteset(sset_en71_by_head_open, "gfx/en57-blue-yellow.png")   { tmpl_sprite_train12(4, 160) }
+spriteset(sset_en71_by_mid_open, "gfx/en57-blue-yellow.png")    { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_en71_by_mid2_open, "gfx/en57-blue-yellow.png")    { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_en71_by_tail_open, "gfx/en57-blue-yellow.png")   { tmpl_sprite_train12_offset(4, 240, 3) }
+// livery black-red
+spriteset(sset_en71_br_purchase, "gfx/en57-black-red.png")      { tmpl_sprite_purchase(4, 140) }
+spriteset(sset_en71_br_head, "gfx/en57-black-red.png")          { tmpl_sprite_train12(4, 20) }
+spriteset(sset_en71_br_mid, "gfx/en57-black-red.png")           { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_en71_br_mid2, "gfx/en57-black-red.png")           { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_en71_br_tail, "gfx/en57-black-red.png")          { tmpl_sprite_train12_offset(4, 100, 3) }
+spriteset(sset_en71_br_head_open, "gfx/en57-black-red.png")     { tmpl_sprite_train12(4, 160) }
+spriteset(sset_en71_br_mid_open, "gfx/en57-black-red.png")      { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_en71_br_mid2_open, "gfx/en57-black-red.png")      { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_en71_br_tail_open, "gfx/en57-black-red.png")     { tmpl_sprite_train12_offset(4, 240, 3) }
+// livery "Koleje Mazowieckie"
+spriteset(sset_en71_km_purchase, "gfx/en57-k-mazow.png")        { tmpl_sprite_purchase(4, 140) }
+spriteset(sset_en71_km_head, "gfx/en57-k-mazow.png")            { tmpl_sprite_train12(4, 20) }
+spriteset(sset_en71_km_mid, "gfx/en57-k-mazow.png")             { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_en71_km_mid2, "gfx/en57-k-mazow.png")             { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_en71_km_tail, "gfx/en57-k-mazow.png")            { tmpl_sprite_train12_offset(4, 100, 3) }
+spriteset(sset_en71_km_head_open, "gfx/en57-k-mazow.png")       { tmpl_sprite_train12(4, 160) }
+spriteset(sset_en71_km_mid_open, "gfx/en57-k-mazow.png")        { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_en71_km_mid2_open, "gfx/en57-k-mazow.png")        { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_en71_km_tail_open, "gfx/en57-k-mazow.png")       { tmpl_sprite_train12_offset(4, 240, 3) }
+// livery "Koleje Dolnoslaskie"
+spriteset(sset_en71_kd_purchase, "gfx/EN57-kd.png")        { tmpl_sprite_purchase(4, 140) }
+spriteset(sset_en71_kd_head, "gfx/EN57-kd.png")            { tmpl_sprite_train12(4, 20) }
+spriteset(sset_en71_kd_mid, "gfx/EN57-kd.png")             { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_en71_kd_mid2, "gfx/EN57-kd.png")             { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_en71_kd_tail, "gfx/EN57-kd.png")            { tmpl_sprite_train12_offset(4, 100, 3) }
+spriteset(sset_en71_kd_head_open, "gfx/EN57-kd.png")       { tmpl_sprite_train12(4, 160) }
+spriteset(sset_en71_kd_mid_open, "gfx/EN57-kd.png")        { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_en71_kd_mid2_open, "gfx/EN57-kd.png")        { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_en71_kd_tail_open, "gfx/EN57-kd.png")       { tmpl_sprite_train12_offset(4, 240, 3) }
+// livery "Polregio"
+spriteset(sset_en71_prk_purchase, "gfx/en57-polregio.png")        { tmpl_sprite_purchase(4, 140) }
+spriteset(sset_en71_prk_head, "gfx/en57-polregio.png")            { tmpl_sprite_train12(4, 20) }
+spriteset(sset_en71_prk_mid, "gfx/en57-polregio.png")             { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_en71_prk_mid2, "gfx/en57-polregio.png")             { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_en71_prk_tail, "gfx/en57-polregio.png")            { tmpl_sprite_train12_offset(4, 100, 3) }
+spriteset(sset_en71_prk_head_open, "gfx/en57-polregio.png")       { tmpl_sprite_train12(4, 160) }
+spriteset(sset_en71_prk_mid_open, "gfx/en57-polregio.png")        { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_en71_prk_mid2_open, "gfx/en57-polregio.png")        { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_en71_prk_tail_open, "gfx/en57-polregio.png")       { tmpl_sprite_train12_offset(4, 240, 3) }
+// livery "SKM T"
+spriteset(sset_en71_skmt_purchase, "gfx/en57_skmt_new.png")        { tmpl_sprite_purchase(4, 140) }
+spriteset(sset_en71_skmt_head, "gfx/en57_skmt_new.png")            { tmpl_sprite_train12(4, 20) }
+spriteset(sset_en71_skmt_mid, "gfx/en57_skmt_new.png")             { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_en71_skmt_mid2, "gfx/en57_skmt_new.png")             { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_en71_skmt_tail, "gfx/en57_skmt_new.png")            { tmpl_sprite_train12_offset(4, 100, 3) }
+spriteset(sset_en71_skmt_head_open, "gfx/en57_skmt_new.png")       { tmpl_sprite_train12(4, 160) }
+spriteset(sset_en71_skmt_mid_open, "gfx/en57_skmt_new.png")        { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_en71_skmt_mid2_open, "gfx/en57_skmt_new.png")        { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_en71_skmt_tail_open, "gfx/en57_skmt_new.png")       { tmpl_sprite_train12_offset(4, 240, 3) }
+
+// Sgroups
+// default livery
+spritegroup sgroup_en71_head {
+    loaded:     [sset_en71_head];
+    loading:    [sset_en71_head_open];
+}
+spritegroup sgroup_en71_mid {
+    loaded:     [sset_en71_mid];
+    loading:    [sset_en71_mid_open];
+}
+spritegroup sgroup_en71_mid2 {
+    loaded:     [sset_en71_mid2];
+    loading:    [sset_en71_mid2_open];
+}
+spritegroup sgroup_en71_tail {
+    loaded:     [sset_en71_tail];
+    loading:    [sset_en71_tail_open];
+}
+// livery orange
+spritegroup sgroup_en71_or_head {
+    loaded:     [sset_en71_or_head];
+    loading:    [sset_en71_or_head_open];
+}
+spritegroup sgroup_en71_or_mid {
+    loaded:     [sset_en71_or_mid];
+    loading:    [sset_en71_or_mid_open];
+}
+spritegroup sgroup_en71_or_mid2 {
+    loaded:     [sset_en71_or_mid2];
+    loading:    [sset_en71_or_mid2_open];
+}
+spritegroup sgroup_en71_or_tail {
+    loaded:     [sset_en71_or_tail];
+    loading:    [sset_en71_or_tail_open];
+}
+// livery red-yellow
+spritegroup sgroup_en71_ry_head {
+    loaded:     [sset_en71_ry_head];
+    loading:    [sset_en71_ry_head_open];
+}
+spritegroup sgroup_en71_ry_mid {
+    loaded:     [sset_en71_ry_mid];
+    loading:    [sset_en71_ry_mid_open];
+}
+spritegroup sgroup_en71_ry_mid2 {
+    loaded:     [sset_en71_ry_mid2];
+    loading:    [sset_en71_ry_mid2_open];
+}
+spritegroup sgroup_en71_ry_tail {
+    loaded:     [sset_en71_ry_tail];
+    loading:    [sset_en71_ry_tail_open];
+}
+// livery blue-yellow
+spritegroup sgroup_en71_by_head {
+    loaded:     [sset_en71_by_head];
+    loading:    [sset_en71_by_head_open];
+}
+spritegroup sgroup_en71_by_mid {
+    loaded:     [sset_en71_by_mid];
+    loading:    [sset_en71_by_mid_open];
+}
+spritegroup sgroup_en71_by_mid2 {
+    loaded:     [sset_en71_by_mid2];
+    loading:    [sset_en71_by_mid2_open];
+}
+spritegroup sgroup_en71_by_tail {
+    loaded:     [sset_en71_by_tail];
+    loading:    [sset_en71_by_tail_open];
+}
+// livery black-red
+spritegroup sgroup_en71_br_head {
+    loaded:     [sset_en71_br_head];
+    loading:    [sset_en71_br_head_open];
+}
+spritegroup sgroup_en71_br_mid {
+    loaded:     [sset_en71_br_mid];
+    loading:    [sset_en71_br_mid_open];
+}
+spritegroup sgroup_en71_br_mid2 {
+    loaded:     [sset_en71_br_mid2];
+    loading:    [sset_en71_br_mid2_open];
+}
+spritegroup sgroup_en71_br_tail {
+    loaded:     [sset_en71_br_tail];
+    loading:    [sset_en71_br_tail_open];
+}
+// livery "Koleje Mazowieckie"
+spritegroup sgroup_en71_km_head {
+    loaded:     [sset_en71_km_head];
+    loading:    [sset_en71_km_head_open];
+}
+spritegroup sgroup_en71_km_mid {
+    loaded:     [sset_en71_km_mid];
+    loading:    [sset_en71_km_mid_open];
+}
+spritegroup sgroup_en71_km_mid2 {
+    loaded:     [sset_en71_km_mid2];
+    loading:    [sset_en71_km_mid2_open];
+}
+spritegroup sgroup_en71_km_tail {
+    loaded:     [sset_en71_km_tail];
+    loading:    [sset_en71_km_tail_open];
+}
+// livery "Koleje Dolnoslaskie"
+spritegroup sgroup_en71_kd_head {
+    loaded:     [sset_en71_kd_head];
+    loading:    [sset_en71_kd_head_open];
+}
+spritegroup sgroup_en71_kd_mid {
+    loaded:     [sset_en71_kd_mid];
+    loading:    [sset_en71_kd_mid_open];
+}
+spritegroup sgroup_en71_kd_mid2 {
+    loaded:     [sset_en71_kd_mid2];
+    loading:    [sset_en71_kd_mid2_open];
+}
+spritegroup sgroup_en71_kd_tail {
+    loaded:     [sset_en71_kd_tail];
+    loading:    [sset_en71_kd_tail_open];
+}
+// livery "POLREGIO"
+spritegroup sgroup_en71_prk_head {
+    loaded:     [sset_en71_prk_head];
+    loading:    [sset_en71_prk_head_open];
+}
+spritegroup sgroup_en71_prk_mid {
+    loaded:     [sset_en71_prk_mid];
+    loading:    [sset_en71_prk_mid_open];
+}
+spritegroup sgroup_en71_prk_mid2 {
+    loaded:     [sset_en71_prk_mid2];
+    loading:    [sset_en71_prk_mid2_open];
+}
+spritegroup sgroup_en71_prk_tail {
+    loaded:     [sset_en71_prk_tail];
+    loading:    [sset_en71_prk_tail_open];
+}
+// livery "SKM T"
+spritegroup sgroup_en71_skmt_head {
+    loaded:     [sset_en71_skmt_head];
+    loading:    [sset_en71_skmt_head_open];
+}
+spritegroup sgroup_en71_skmt_mid {
+    loaded:     [sset_en71_skmt_mid];
+    loading:    [sset_en71_skmt_mid_open];
+}
+spritegroup sgroup_en71_skmt_mid2 {
+    loaded:     [sset_en71_skmt_mid2];
+    loading:    [sset_en71_skmt_mid2_open];
+}
+spritegroup sgroup_en71_skmt_tail {
+    loaded:     [sset_en71_skmt_tail];
+    loading:    [sset_en71_skmt_tail_open];
+}
+
+/* EN71 switches */
+switch(FEAT_TRAINS, SELF, switch_en71_articulated, extra_callback_info1) {
+    1..6: return item_en71;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_en71_length, position_in_vehid_chain % 7) {
+    1: return 4;    // dummy part
+    3: return 2;    // dummy part
+    5: return 4;    // dummy part
+    return 8;
+}
+switch(FEAT_TRAINS, SELF, switch_en71_tour_capacity, position_in_vehid_chain % 7) {
+    0: return 56;
+    2: return 76-2;
+    4: return 76-1;
+    6: return 56;
+    return 1;
+}
+switch(FEAT_TRAINS, SELF, switch_en71_pass_capacity, position_in_vehid_chain % 7) {
+    0: return 56+26;   //56;
+    2: return 76+24-2; //76;
+    4: return 76+24-1; //76;
+    6: return 56+26;   //56;
+    return 1;
+}
+switch(FEAT_TRAINS, SELF, switch_en71_capacity, cargo_type_in_veh) {
+    TOUR: return switch_en71_tour_capacity;
+    return switch_en71_pass_capacity;
+}
+switch(FEAT_TRAINS, SELF, switch_en71_graphics, position_in_vehid_chain % 7) {
+    0: return sgroup_en71_head;
+    2: return sgroup_en71_mid;
+    4: return sgroup_en71_mid2;
+    6: return sgroup_en71_tail;
+    return sset_dummy;
+}
+switch(FEAT_TRAINS, SELF, switch_en71_visual_effect_local, position_in_vehid_chain % 7) {
+    2: return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 3, DISABLE_WAGON_POWER);
+    4: return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 3, DISABLE_WAGON_POWER);
+    return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+}
+switch(FEAT_TRAINS, SELF, switch_en71_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_3L, string(STR_HEATING_ELECTRIC_TEXT), string(STR_EN71_TEXT), string(STR_INCOME_LOWER));
+    return string(STR_PURCHASE_DESCR_2L, string(STR_EN71_TEXT), string(STR_INCOME_LOWER));
+}
+switch(FEAT_TRAINS, SELF, switch_en71_start_stop, COUNT_EZT > 3) {
+    1: return string(STR_TRAIN_TOO_LONG, string(STR_EN71_NAME));
+    return CB_RESULT_NO_TEXT;
+}
+ENGINE_RUNNING_COST_SWITCH(en71, EN71)
+DIESEL_ELECTRIC_ENGINE_POWER_SWITCH(en71)
+ENGINE_VISUAL_EFFECT_SWITCH(en71)
+
+#ifdef SITTING_PLACES
+    #undef SITTING_PLACES
+#endif
+#ifdef STANDING_PLACES
+    #undef STANDING_PLACES
+#endif
+#define SITTING_PLACES 56*2+76*2
+#define STANDING_PLACES 26*2+24*2
+#define CARGO_CAPACITY_EN71     int((SITTING_PLACES+STANDING_PLACES+3)/7)
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_en71, 2100) {
+    property {
+        /* common properties */
+        name:                           string(STR_EN71_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1976, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  25;     // per part
+        cost_factor:                    PURCHASE_COST_EN71;
+        running_cost_factor:            RUNNING_COST_EN71;
+        cargo_age_period:               int(185*0.84);  // faster ageing
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          110 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          1560 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 CARGO_CAPACITY_EN71;
+        weight:                         182 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.110;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+    graphics {
+        purchase:                   sset_en71_purchase;
+        additional_text:            switch_en71_add_text;
+        default:                    switch_en71_graphics;
+        articulated_part:           switch_en71_articulated;
+        length:                     switch_en71_length;
+        visual_effect_and_powered:  switch_en71_visual_effect;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_en71_capacity;
+        can_attach_wagon:           switch_en57axx_can_attach;
+        start_stop:                 switch_en71_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(en71)
+        ENGINE_POWER_CALLBACKS(en71)
+    }
+}
+/* EN71 Orange switches */
+switch(FEAT_TRAINS, SELF, switch_en71_or_articulated, extra_callback_info1) {
+    1..6: return item_en71_or;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_en71_or_graphics, position_in_vehid_chain % 7) {
+    0: return sgroup_en71_or_head;
+    2: return sgroup_en71_or_mid;
+    4: return sgroup_en71_or_mid2;
+    6: return sgroup_en71_or_tail;
+    return sset_dummy;
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_en71_or, 2101) {
+    property {
+        /* common properties */
+        name:                           string(STR_EN71_OR_NAME);
+        variant_group:                  2100;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1990, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  25;     // per part
+        cost_factor:                    PURCHASE_COST_EN71;
+        running_cost_factor:            RUNNING_COST_EN71;
+        cargo_age_period:               int(185*0.84);  // faster ageing
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          110 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          1560 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 CARGO_CAPACITY_EN71;
+        weight:                         182 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.110;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+    graphics {
+        purchase:                   sset_en71_or_purchase;
+        additional_text:            switch_en71_add_text;
+        default:                    switch_en71_or_graphics;
+        articulated_part:           switch_en71_or_articulated;
+        length:                     switch_en71_length;
+        visual_effect_and_powered:  switch_en71_visual_effect;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_en71_capacity;
+        can_attach_wagon:           switch_en57axx_can_attach;
+        start_stop:                 switch_en71_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(en71)
+        ENGINE_POWER_CALLBACKS(en71)
+    }
+}
+/* EN71 Red-Yellow switches */
+switch(FEAT_TRAINS, SELF, switch_en71_ry_articulated, extra_callback_info1) {
+    1..6: return item_en71_ry;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_en71_ry_graphics, position_in_vehid_chain % 7) {
+    0: return sgroup_en71_ry_head;
+    2: return sgroup_en71_ry_mid;
+    4: return sgroup_en71_ry_mid2;
+    6: return sgroup_en71_ry_tail;
+    return sset_dummy;
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_en71_ry, 2102) {
+    property {
+        /* common properties */
+        name:                           string(STR_EN71_RY_NAME);
+        variant_group:                  2100;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2000, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  25;     // per part
+        cost_factor:                    PURCHASE_COST_EN71;
+        running_cost_factor:            RUNNING_COST_EN71;
+        cargo_age_period:               int(185*0.84);  // faster ageing
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          110 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          1560 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 CARGO_CAPACITY_EN71;
+        weight:                         182 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.110;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+    graphics {
+        purchase:                   sset_en71_ry_purchase;
+        additional_text:            switch_en71_add_text;
+        default:                    switch_en71_ry_graphics;
+        articulated_part:           switch_en71_ry_articulated;
+        length:                     switch_en71_length;
+        visual_effect_and_powered:  switch_en71_visual_effect;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_en71_capacity;
+        can_attach_wagon:           switch_en57axx_can_attach;
+        start_stop:                 switch_en71_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(en71)
+        ENGINE_POWER_CALLBACKS(en71)
+    }
+}
+/* EN71 Blue-Yellow switches */
+switch(FEAT_TRAINS, SELF, switch_en71_by_articulated, extra_callback_info1) {
+    1..6: return item_en71_by;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_en71_by_graphics, position_in_vehid_chain % 7) {
+    0: return sgroup_en71_by_head;
+    2: return sgroup_en71_by_mid;
+    4: return sgroup_en71_by_mid2;
+    6: return sgroup_en71_by_tail;
+    return sset_dummy;
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_en71_by, 2103) {
+    property {
+        /* common properties */
+        name:                           string(STR_EN71_BY_NAME);
+        variant_group:                  2100;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2004, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  25;     // per part
+        cost_factor:                    PURCHASE_COST_EN71;
+        running_cost_factor:            RUNNING_COST_EN71;
+        cargo_age_period:               int(185*0.84);  // faster ageing
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          110 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          1560 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 CARGO_CAPACITY_EN71;
+        weight:                         182 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.110;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+    graphics {
+        purchase:                   sset_en71_by_purchase;
+        additional_text:            switch_en71_add_text;
+        default:                    switch_en71_by_graphics;
+        articulated_part:           switch_en71_by_articulated;
+        length:                     switch_en71_length;
+        visual_effect_and_powered:  switch_en71_visual_effect;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_en71_capacity;
+        can_attach_wagon:           switch_en57axx_can_attach;
+        start_stop:                 switch_en71_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(en71)
+        ENGINE_POWER_CALLBACKS(en71)
+    }
+}
+/* EN71 Blue-red switches */
+switch(FEAT_TRAINS, SELF, switch_en71_br_articulated, extra_callback_info1) {
+    1..6: return item_en71_br;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_en71_br_graphics, position_in_vehid_chain % 7) {
+    0: return sgroup_en71_br_head;
+    2: return sgroup_en71_br_mid;
+    4: return sgroup_en71_br_mid2;
+    6: return sgroup_en71_br_tail;
+    return sset_dummy;
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_en71_br, 2104) {
+    property {
+        /* common properties */
+        name:                           string(STR_EN71_BR_NAME);
+        variant_group:                  2100;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2006, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  25;     // per part
+        cost_factor:                    PURCHASE_COST_EN71;
+        running_cost_factor:            RUNNING_COST_EN71;
+        cargo_age_period:               int(185*0.84);  // faster ageing
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          110 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          1560 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 CARGO_CAPACITY_EN71;
+        weight:                         182 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.110;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+    graphics {
+        purchase:                   sset_en71_br_purchase;
+        additional_text:            switch_en71_add_text;
+        default:                    switch_en71_br_graphics;
+        articulated_part:           switch_en71_br_articulated;
+        length:                     switch_en71_length;
+        visual_effect_and_powered:  switch_en71_visual_effect;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_en71_capacity;
+        can_attach_wagon:           switch_en57axx_can_attach;
+        start_stop:                 switch_en71_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(en71)
+        ENGINE_POWER_CALLBACKS(en71)
+    }
+}
+/* EN71 Koleje Mazowieckie switches */
+switch(FEAT_TRAINS, SELF, switch_en71_km_articulated, extra_callback_info1) {
+    1..6: return item_en71_km;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_en71_km_graphics, position_in_vehid_chain % 7) {
+    0: return sgroup_en71_km_head;
+    2: return sgroup_en71_km_mid;
+    4: return sgroup_en71_km_mid2;
+    6: return sgroup_en71_km_tail;
+    return sset_dummy;
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_en71_km, 2105) {
+    property {
+        /* common properties */
+        name:                           string(STR_EN71_KM_NAME);
+        variant_group:                  2100;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2005, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  25;     // per part
+        cost_factor:                    PURCHASE_COST_EN71;
+        running_cost_factor:            RUNNING_COST_EN71;
+        cargo_age_period:               int(185*0.84);  // faster ageing
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          110 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          1560 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 CARGO_CAPACITY_EN71;
+        weight:                         182 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.110;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+    graphics {
+        purchase:                   sset_en71_km_purchase;
+        additional_text:            switch_en71_add_text;
+        default:                    switch_en71_km_graphics;
+        articulated_part:           switch_en71_km_articulated;
+        length:                     switch_en71_length;
+        visual_effect_and_powered:  switch_en71_visual_effect;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_en71_capacity;
+        can_attach_wagon:           switch_en57axx_can_attach;
+        start_stop:                 switch_en71_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(en71)
+        ENGINE_POWER_CALLBACKS(en71)
+    }
+}
+/* EN71 Koleje Dolnoslaskie switches */
+switch(FEAT_TRAINS, SELF, switch_en71_kd_articulated, extra_callback_info1) {
+    1..6: return item_en71_kd;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_en71_kd_graphics, position_in_vehid_chain % 7) {
+    0: return sgroup_en71_kd_head;
+    2: return sgroup_en71_kd_mid;
+    4: return sgroup_en71_kd_mid2;
+    6: return sgroup_en71_kd_tail;
+    return sset_dummy;
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_en71_kd, 2106) {
+    property {
+        /* common properties */
+        name:                           string(STR_EN71_KD_NAME);
+        variant_group:                  2100;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2008, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  25;     // per part
+        cost_factor:                    PURCHASE_COST_EN71;
+        running_cost_factor:            RUNNING_COST_EN71;
+        cargo_age_period:               int(185*0.84);  // faster ageing
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          110 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          1560 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 CARGO_CAPACITY_EN71;
+        weight:                         182 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.110;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+    graphics {
+        purchase:                   sset_en71_kd_purchase;
+        additional_text:            switch_en71_add_text;
+        default:                    switch_en71_kd_graphics;
+        articulated_part:           switch_en71_kd_articulated;
+        length:                     switch_en71_length;
+        visual_effect_and_powered:  switch_en71_visual_effect;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_en71_capacity;
+        can_attach_wagon:           switch_en57axx_can_attach;
+        start_stop:                 switch_en71_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(en71)
+        ENGINE_POWER_CALLBACKS(en71)
+    }
+}
+/* EN71 POLREGIO switches */
+switch(FEAT_TRAINS, SELF, switch_en71_prk_articulated, extra_callback_info1) {
+    1..6: return item_en71_prk;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_en71_prk_graphics, position_in_vehid_chain % 7) {
+    0: return sgroup_en71_prk_head;
+    2: return sgroup_en71_prk_mid;
+    4: return sgroup_en71_prk_mid2;
+    6: return sgroup_en71_prk_tail;
+    return sset_dummy;
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_en71_prk, 2107) {
+    property {
+        /* common properties */
+        name:                           string(STR_EN71_POLREGIO_NAME);
+        variant_group:                  2100;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2017, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  25;     // per part
+        cost_factor:                    PURCHASE_COST_EN71;
+        running_cost_factor:            RUNNING_COST_EN71;
+        cargo_age_period:               int(185*0.84);  // faster ageing
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          110 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          1560 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 CARGO_CAPACITY_EN71;
+        weight:                         182 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.110;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+    graphics {
+        purchase:                   sset_en71_prk_purchase;
+        additional_text:            switch_en71_add_text;
+        default:                    switch_en71_prk_graphics;
+        articulated_part:           switch_en71_prk_articulated;
+        length:                     switch_en71_length;
+        visual_effect_and_powered:  switch_en71_visual_effect;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_en71_capacity;
+        can_attach_wagon:           switch_en57axx_can_attach;
+        start_stop:                 switch_en71_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(en71)
+        ENGINE_POWER_CALLBACKS(en71)
+    }
+}
+/* EN71 SKMT switches */
+switch(FEAT_TRAINS, SELF, switch_en71_skmt_articulated, extra_callback_info1) {
+    1..6: return item_en71_skmt;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_en71_skmt_graphics, position_in_vehid_chain % 7) {
+    0: return sgroup_en71_skmt_head;
+    2: return sgroup_en71_skmt_mid;
+    4: return sgroup_en71_skmt_mid2;
+    6: return sgroup_en71_skmt_tail;
+    return sset_dummy;
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_en71_skmt, 2108) {
+    property {
+        /* common properties */
+        name:                           string(STR_EN71_SKMT_NAME);
+        variant_group:                  2100;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2000, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  25;     // per part
+        cost_factor:                    PURCHASE_COST_EN71;
+        running_cost_factor:            RUNNING_COST_EN71;
+        cargo_age_period:               int(185*0.84);  // faster ageing
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          110 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          1560 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 CARGO_CAPACITY_EN71;
+        weight:                         182 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.110;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+    graphics {
+        purchase:                   sset_en71_skmt_purchase;
+        additional_text:            switch_en71_add_text;
+        default:                    switch_en71_skmt_graphics;
+        articulated_part:           switch_en71_skmt_articulated;
+        length:                     switch_en71_length;
+        visual_effect_and_powered:  switch_en71_visual_effect;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_en71_capacity;
+        can_attach_wagon:           switch_en57axx_can_attach;
+        start_stop:                 switch_en71_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(en71)
+        ENGINE_POWER_CALLBACKS(en71)
+    }
+}
+
+

@@ -1,0 +1,170 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* EU200 sprites */
+spriteset(sset_eu200_purchase, "gfx/eu200.png")   { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_eu200, "gfx/eu200.png")            { tmpl_sprite_train12(4, 20) }
+spriteset(sset_eu200_002_purchase, "gfx/eu200.png")   { tmpl_sprite_purchase(4, 120) }
+spriteset(sset_eu200_002, "gfx/eu200.png")            { tmpl_sprite_train12(4, 78) }
+
+/* EU200 (GRIFFIN) switches */
+switch(FEAT_TRAINS, SELF, switch_eu200_articulated, extra_callback_info1) {
+    1: return item_dummy_3;        // dummy parts
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_eu200_visual_effect_local, position_in_vehid_chain % 2) {
+    0: return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 3, DISABLE_WAGON_POWER);
+    return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+}
+switch (FEAT_TRAINS, SELF, switch_eu200_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_3L, string(STR_HEATING_ELECTRIC_POWER_TEXT, HEATING_POWER_ELECTRIC_HI), string(STR_EU200_TEXT), string(STR_ENGINE_EXPRESS));
+    return string(STR_PURCHASE_DESCR_2L, string(STR_EU200_TEXT), string(STR_ENGINE_EXPRESS));
+}
+ENGINE_RUNNING_COST_SWITCH(eu200, EU200)
+ENGINE_VISUAL_EFFECT_SWITCH(eu200)
+
+switch (FEAT_TRAINS, SELF, switch_eu200_power2, position_in_consist > 2 ) { \
+	1: return 1935; \
+	return CB_FAILED; \
+} \
+switch (FEAT_TRAINS, PARENT, switch_eu200_power, PKPSET_ITEM_ID) { \
+	item_asf: return 0; \
+	item_ep01: return 1935; \
+	item_ep02: return 1935; \
+	item_eu07: return 1935; \
+	item_et21: return 1935; \
+	item_et22: return 1935; \
+	item_et26: return 1935; \
+	item_ep09: return 1935; \
+	item_e186: return 1935; \
+	item_eu44: return 1935; \
+	item_eu46_red_pkp_cargo: return 1935; \
+	item_eu47_km: return 1935; \
+	item_skoda163: return 1935; \
+	item_s181: return 1935; \
+	return switch_eu200_power2; \
+}
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_eu200, 1275) {
+    property {
+        /* common properties */
+        name:                           string(STR_EU200_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2023, 1, 1);
+        vehicle_life:                   60;	// 55;
+        reliability_decay:              60;     // 50;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  3;
+        cost_factor:                    PURCHASE_COST_EU200;
+        running_cost_factor:            RUNNING_COST_EU200;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          200 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          5600 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_PROPERTY
+        weight:                         88 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.385680751;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     40;
+        retire_early:                   2;
+    }
+}
+
+    graphics {
+        purchase:                   sset_eu200_purchase;
+        additional_text:            switch_eu200_add_text;
+        default:                    sset_eu200;
+        articulated_part:           switch_eu200_articulated;
+        visual_effect_and_powered:  switch_eu200_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu200)
+        ENGINE_POWER_CALLBACKS(eu200)
+    }
+}
+/* EU200-002 (GRIFFIN) switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_eu200_002, 1276) {
+    property {
+        /* common properties */
+        name:                           string(STR_EU200_002_NAME);
+        variant_group:                  1275;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2023, 1, 1);
+        vehicle_life:                   60;	// 55;
+        reliability_decay:              60;     // 50;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  3;
+        cost_factor:                    PURCHASE_COST_EU200;
+        running_cost_factor:            RUNNING_COST_EU200;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          200 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          5600 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_PROPERTY
+        weight:                         88 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.385680751;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     40;
+        retire_early:                   2;
+    }
+}
+
+    graphics {
+        purchase:                   sset_eu200_002_purchase;
+        additional_text:            switch_eu200_add_text;
+        default:                    sset_eu200_002;
+        articulated_part:           switch_eu200_articulated;
+        visual_effect_and_powered:  switch_eu200_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu200)
+        ENGINE_POWER_CALLBACKS(eu200)
+    }
+}

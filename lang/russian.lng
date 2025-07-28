@@ -1,0 +1,241 @@
+##grflangid 0x07
+##plural 6
+##gender p n m f
+##case acc nom pre f abl m n dat p gen
+
+# GRF name and description
+STR_GRF_NAME        :{TITLE} {VERSION}
+STR_GRF_DESCRIPTION :{ORANGE}{TITLE} {VERSION}{BLACK} Содержит наиболее широко известные модели подвижного состава Польши с 1918 года и по настоящее время.{}{COPYRIGHT}2011-2021{}Author: {SILVER}TadeuszD{BLACK}, {SILVER}Mewa{BLACK}{}Графика: {SILVER}TadeuszD{BLACK}, {SILVER}Walter Novotny{BLACK}, {SILVER}Sojita{BLACK}, {SILVER}McZapkie{BLACK}, {SILVER}Czajnikowiec{BLACK}, {SILVER}101ksl{BLACK}, {SILVER}Mewa{BLACK}{}Особое спасибо: {SILVER}niemiec{BLACK}{}Лицензия: {SILVER}GPLv2{BLACK}{}WWW: {LTBLUE}http://openttd-polska.pl{BLACK}
+
+# GRF parameters
+STR_PARAM_NAME_DISABLE_ORIG     :Отключить стандартные поезда
+STR_PARAM_DESC_DISABLE_ORIG     :Используйте эту опцию чтобы отключить стандартные поезда для обычных рельсов. Не распростроняется на монорельс и маглев.
+STR_PARAM_NAME_DISABLE_MONO_MAGLEV  :Отключить стандарные поезда (монорельс и маглев)
+STR_PARAM_DESC_DISABLE_MONO_MAGLEV  :Используйте эту опцию чтобы отключить стандартные поезда для монорельса и маглева. Не распростроняется на обычные рельсы.
+STR_PARAM_NAME_KEEP_OLD_VEHS    :Сохранять старые поезда в меню покупки
+STR_PARAM_DESC_KEEP_OLD_VEHS    :Используйте эту опцию чтобы отключить исчезноваение старых поездов. Старые поезда останутся в меню покупки в поздние годы. Опция применима только к поездам этого сета. Для отключения исчезноваения старых поездов других сетов используйте опцию "Vehicles never expire" в настройках игры.
+STR_PARAM_NAME_REPLACE_CARGOES  :Перевозка товаров в специальных вагонах
+STR_PARAM_DESC_REPLACE_CARGOES  :Некоторые вагоны предназначены для перевозки специальных грузов, представленных в наборах FIRS и ECS. Если вы играете без наборов FIRS и ECS, эти вагоны недоступны. Используйте эту опцию чтобы определить эти вагоны для перевозки товаров.
+STR_PARAM_NAME_ORIG_INTRO_DATES :Использовать исторические даты появления для раннего подвижного состава
+STR_PARAM_DESC_ORIG_INTRO_DATES :Используйте эту опцию для выбора исторических дат появления подвижного состава Польши вместо 1918 года (год получения независимости).{}Когда опция выбрана, первый подвижной состав появляется в 1882 году.
+STR_PARAM_NAME_TOURISTS         :Туристы ECS в пассажирских вагонах пригородного сообщения
+STR_PARAM_DESC_TOURISTS         :Эта опция пока не реализована.
+STR_PARAM_TOURISTS_AUTO         :Автоматическое переоборудование
+STR_PARAM_TOURISTS_MANUAL       :Ручное переоборудование
+STR_PARAM_TOURISTS_OFF          :Отключено
+
+STR_PARAM_NAME_PURCHASE_COST    :Увеличение стоимости поездов
+STR_PARAM_DESC_PURCHASE_COST    :Используйте эту опцию чтобы увеличить стоимость поездов. Опция применима только к поездам этого сета.
+STR_PARAM_NAME_RUNNING_COST     :Увеличение стоимости эксплуатации поездов
+STR_PARAM_DESC_RUNNING_COST     :Используйте эту опцию чтобы увеличить стоимость эксплуатации поездов. Опция применима только к поездам этого сета.
+STR_PARAM_COST_X1               :1x
+STR_PARAM_COST_X2               :2x
+STR_PARAM_COST_X4               :4x
+STR_PARAM_COST_X8               :8x
+
+STR_PURCHASE_DESCR_2L           :{STRING}{}{BLACK}{STRING}
+STR_PURCHASE_DESCR_3L           :{STRING}{}{BLACK}{STRING}{}{BLACK}{STRING}
+STR_PURCHASE_DESCR_4L           :{STRING}{}{BLACK}{STRING}{}{BLACK}{STRING}{}{BLACK}{STRING}
+STR_SUBTYPE_DESCR_2P            :{STRING}{BLACK}, {STRING}
+
+STR_ENGINE_HEAVY_FREIGHT        :Информация: {ORANGE}Локомотив для {YELLOW}тяжёлых грузовых поездов
+STR_ENGINE_FREIGHT              :Информация: {ORANGE}Локомотив для {YELLOW}грузовых поездов
+STR_ENGINE_PASSENGER_FREIGHT    :Информация: {ORANGE}Локомотив для {YELLOW}пассажирских и грузовых поездов
+STR_ENGINE_PASSENGER            :Информация: {ORANGE}Локомотив для {YELLOW}пассажирских поездов
+STR_ENGINE_EXPRESS              :Информация: {ORANGE}Локомотив для {YELLOW}пассажирских и скоростных поездов
+STR_ENGINE_SHUNTER              :Информация: {YELLOW}Маневровый локомотив
+
+STR_BRAKE_NONE                  :Тормозная система: {RED}Отсутсвует
+STR_BRAKE_HAND                  :Тормозная система: {GREEN}Ручная (с кабиной оператора)
+STR_BRAKE_AIR                   :Тормозная система: {GREEN}Воздушная (централизованная)
+
+STR_HEATING_STEAM_TEXT          :Система отопления: {LTBLUE}Пар
+STR_HEATING_ST_EL_TEXT          :Система отопления: {LTBLUE}Пар/Электричество
+STR_HEATING_ELECTRIC_TEXT       :Система отопления: {LTBLUE}Электричество
+
+STR_INCOME_1_CLASS              :Прим.: {YELLOW}высокий доход{ORANGE} для пассажирских перевозок {RED}1{ORANGE}-ого класса на большие расстояния
+STR_INCOME_LOWER                :Прим.: {RED}низкий доход{ORANGE} для пассажирских перевозок на большие расстояния
+STR_INCOME_ALL_EXPRESS          :Прим.: {YELLOW}высокий доход{ORANGE} для пассажирских перевозок скоростными поездами
+STR_INCOME_HIGH                 :Прим.: {YELLOW}высокий доход{ORANGE} для пассажирских перевозок на большие расстояния
+STR_INCOME_CARGO_HIGH           :Прим.: {YELLOW}высокий доход{ORANGE} для грузовых перевозок на большие расстояния
+STR_CAPACITY_NON_FRIABLE        :Прим.: {RED}меньшая вместимость{ORANGE} для не сыпучих грузов
+STR_CAPACITY_LIQUID             :Прим.: {RED}меньшая вместимость{ORANGE} для жидких грузов
+
+STR_HEATING_NONE_TEXT           :Мощность системы отопления: {RED}0 кВ (Нет)
+STR_HEATING_STEAM_POWER_TEXT    :Мощность системы отопления: {LTBLUE}{SIGNED_WORD} кВ (Пар)
+STR_HEATING_STEAM_CLAYTON_TEXT  :Мощность системы отопления: {LTBLUE}150 кВ (Пар, система "Клайтон")
+STR_HEATING_COMBINED_TEXT       :Мощность системы отопления: {LTBLUE}150 кВ (Дизель-электрическая)
+STR_HEATING_ELECTRIC_POWER_TEXT :Мощность системы отопления: {LTBLUE}{SIGNED_WORD} кВ (Электричество)
+
+STR_ATTACH_DISALLOW_MCAR        :Не допускается соединять присоединять вагон на тепловозной тяге в качестве обычного вагона.
+STR_ATTACH_DISALLOW_EZT2        :Несовместимая система автосцепки. Не допускается соединять МВЭПС с различными системами автосцепки.
+STR_ATTACH_DISALLOW_EZT1        :Несовместимая система автосцепки. Не допускается соединять МВЭПС с обычными вагонами и локомотивами.
+STR_ATTACH_DISALLOW_TROLLEY     :Несовместимая система. Не допускается соединять дрезины с обычными вагонами и локомотивами.
+STR_ATTACH_DISALLOW             :Не допускается присоединять этот поезд к {STRING}.
+STR_TRAIN_TOO_LONG              :Не допускается присоединять так много поездов к {STRING}.
+STR_TRAIN_WITHOUT_BRAKE         :Недостаточно вагонов с тормозами.{} Требуется прицепить больше вагонов, оборудованных ручной или воздушной тормозной системой.
+STR_TRAIN_NOT_HEATED            :Неверная система отопления. Несоответствие систем отопления или недостаточная мощность системы отопления.{} Требуется заменить локомотив или присоединить специальный отопительный вагон.
+
+STR_SUBTYPE_OLD_2CLASS          :- купе 2-ого класса
+STR_SUBTYPE_OLD_12CLASS         :- купе 1/2-ого класса
+STR_SUBTYPE_OLD_1CLASS          :- купе 1-ого класса
+STR_SUBTYPE_NEW_2CLASS          :- сидячий вагон 2-ого класса
+STR_SUBTYPE_NEW_1CLASS          :- сидячий вагон 1-ого класса
+
+STR_SUBTYPE_LIVERY_CLASSIC      :- Классическая окраска
+STR_SUBTYPE_LIVERY_YEAR_DEP     :- Окраска, определяемая датой
+STR_SUBTYPE_LIVERY_CARGO_DEP    : - Окраска определяется грузом
+STR_SUBTYPE_LIVERY_RANDOM       : - Случайная окраска
+STR_SUBTYPE_LIVERY_VISIBLE      : - видимый транспорт
+STR_SUBTYPE_LIVERY_INVISIBLE    : - невидимый транспорт
+
+STR_SUBTYPE_LIVERY_PKP_IC       : - Окраска "ПГЖД ПС"
+STR_SUBTYPE_LIVERY_PKP_CARGO    : - Окраска "ПГЖДГ"
+STR_SUBTYPE_LIVERY_PKP_PR       : - Окраска "Региональный транспорт"
+STR_SUBTYPE_LIVERY_PKP_POLREGIO : - окраска PKP POLREGIO
+STR_SUBTYPE_ENXX_ORANGE         : - Оранжевая окраска
+STR_SUBTYPE_ENXX_RED_YEL        : - Красно-жёлтая окраска
+STR_SUBTYPE_ENXX_BLU_YEL        : - Сине-жёлтая окраска
+STR_SUBTYPE_ENXX_BLK_RED        : - Чёрно-красная окраска
+STR_SUBTYPE_ENXX_KM             : - Окраска Мазовецких железных дорог
+
+STR_TKH1_NAME           :TKh1 (Паровоз)
+STR_TKI3_NAME           :TKi3 (Паровоз)
+STR_OD13_NAME           :Od13 (Паровоз)
+STR_TI12_NAME           :Ti12 (Паровоз)
+STR_TP4_NAME            :Tp4 (Паровоз)
+STR_OK1_NAME            :Ok1 (Паровоз)
+STR_TY23_NAME           :Ty23 (Паровоз)
+STR_OKL27_NAME          :OKl27 (Паровоз)
+STR_PT31_NAME           :Pt31 (Паровоз)
+STR_OKZ32_NAME          :OKz32 (Паровоз)
+STR_TY37_NAME           :Ty37 (Паровоз)
+STR_TY2_NAME            :Ty2 (Паровоз)
+STR_PT47_NAME           :Pt47 (Паровоз)
+STR_TKT48_NAME          :TKt48 (Паровоз)
+STR_OL49_NAME           :Ol49 (Паровоз)
+STR_TY51_NAME           :Ty51 (Паровоз)
+STR_SN61_NAME           :SN61 (Вагон на тепловозной тяге)
+STR_SN61_TEXT           :Информация: {ORANGE}Вагон на тепловозной тяге - допускается максимум {YELLOW}3 вагона с тягой{ORANGE} и {YELLOW}3 прицепных вагона без тяги{ORANGE}
+STR_SA106_NAME          :SA106 (Вагон на тепловозной тяге)
+STR_SA106_TEXT          :Информация: {ORANGE}Вагон на тепловозной тяге - допускается максимум {YELLOW}3 вагона с тягой{ORANGE} и {YELLOW}3 прицепных вагона без тяги{ORANGE}
+STR_SM30_NAME           :SM30 (Тепловоз)
+STR_SM41_NAME           :SM41 (Тепловоз)
+STR_SM42_NAME           :SM42 (Тепловоз)
+STR_SP42_NAME           :SP42 (Тепловоз)
+STR_SU42_NAME           :SU42 (Тепловоз)
+STR_ST43_NAME           :ST43 (Тепловоз)
+STR_ST44_NAME           :ST44 (Тепловоз)
+STR_SP45_NAME           :SP45 (Тепловоз)
+STR_SU45_NAME           :SU45 (Тепловоз)
+STR_SU46_NAME           :SU46 (Тепловоз)
+STR_SM31_NAME           :SM31 (Тепловоз)
+STR_SP32_NAME           :SP32 (Тепловоз)
+STR_SU160_NAME          :SU160-Gama (Тепловоз)
+STR_EP01_NAME           :EP01 (Электровоз)
+STR_EP02_NAME           :EP02 (Электровоз)
+STR_EU07_NAME           :EU07 (Электровоз)
+STR_ET21_NAME           :ET21 (Электровоз)
+STR_ET22_NAME           :ET22 (Электровоз)
+STR_EP05_NAME           :EP05 (Электровоз)
+STR_ET40_NAME           :ET40 (Электровоз)
+STR_ET41_NAME           :ET41 (Электровоз)
+STR_ET42_NAME           :ET42 (Электровоз)
+STR_EP09_NAME           :EP09 (Электровоз)
+STR_EU43_NAME           :EU43-Traxx (Электровоз)
+STR_EU44_NAME           :EU44 "Husarz" (Электровоз)
+STR_EU46_NAME           :EU46-Vectron (Электровоз)
+STR_EN57_NAME           :EN57 (Электропоезд)
+STR_EN57_TEXT           :Информация: {YELLOW}3{ORANGE}-вагонный электропоезд
+STR_EN71_NAME           :EN71 (Электропоезд)
+STR_EN71_TEXT           :Информация: {YELLOW}4{ORANGE}-вагонный электропоезд
+STR_ED72_NAME           :ED72 (Электропоезд)
+STR_ED72_TEXT           :Информация: {YELLOW}4{ORANGE}-вагонный электропоезд
+STR_EN76_NAME           :EN76-Elf (Электропоезд)
+STR_ED250_NAME          :ED250 "Pendolino" (Электропоезд)
+
+STR_GMY_NAME            :Почтовый вагон (Gmy)
+STR_GHMX_NAME           :Почтовый вагон (Ghmx)
+STR_GMW_NAME            :Почтовый вагон (Gmw)
+STR_PDN_NAME            :Почтовый вагон (Pdn)
+STR_OHXT_NAME           :Heaing wagon (Ohxt)
+STR_FG_NAME             :Почтово-багажный вагон (Fg)
+STR_FY_NAME             :Багажный вагон (Fy)
+STR_FHX_NAME            :Багажный вагон (Fhx)
+STR_DHXT_NAME           :Багажный вагон (Dhxt)
+STR_DWXZ_NAME           :Багажный вагон (Dwxz)
+STR_BDWXZD_NAME         :Пассажирский вагон с багажным отделением (BDwxzd)
+STR_JHX_NAME            :Вагон-ресторан (Jhx)
+STR_JHIX_NAME           :Вагон-ресторан (Jhix)
+STR_WRDMNU_NAME         :Вагон-ресторан (WRdmnu)
+STR_WRMNOUZ_NAME        :Вагон-ресторан (WRmnouz)
+STR_BCY_NAME            :Пассажирский вагон (BCy)
+STR_BCYH_NAME           :Пассажирский вагон (BCyh)
+STR_BHXZ_NAME           :Скоростной пассажирский вагон (Bhxz)
+STR_ABHXZ_NAME          :Скоростной пассажирский вагон (A/Bhxz)
+STR_ABHXZ_TEXT          :Может быть переоснащён в скоростной вагон {RED}2{ORANGE}-ого, {RED}1/2{ORANGE}-ого или {RED}1{ORANGE}-ого класса{BLACK}. По-умолчанию: {ORANGE} вагон{RED}2{ORANGE}-ого класса
+STR_BCI_NAME            :Пассажирский вагон "Ковбойка" (BCi)
+STR_BH_RYF_NAME         :Пассажирский вагон "ryflak" (Bh)
+STR_BH_RYF_TEXT         :Информация: {ORANGE}Прицепной вагон для {YELLOW}вагона на тепловозной тяге SN61
+STR_WLAB_NAME           :Спальный вагон (WLABd)
+STR_WLAB10MNOUZ_NAME    :Спальный вагон (WLAB10mnouz)
+STR_ABDNU_NAME          :Скоростной пассажирский вагон (A/Bdnu)
+STR_ABDNU_TEXT          :Может быть переоснащён в скоростной пассажирский вагон {RED}2{ORANGE}-ого, {RED}1/2{ORANGE}-ого или {RED}1{ORANGE}-ого класса{BLACK}. По-умолчанию: {ORANGE} вагон{RED}2{ORANGE}-ого класса
+STR_BH_BON_NAME         :Пассажирский вагон "bonanza" (Bh)
+STR_BH_BON_TEXT         :Информация: {ORANGE}Прицепной вагон для {YELLOW}вагона на тепловозной тяге SA106
+STR_ABDHMNU_NAME        :Пассажирский вагон пригородного сообщения (A/Bdhmnu)
+STR_ABDHMNU_TEXT        :Может быть переоснащён в вагон пригородного сообщения {RED}2{ORANGE}-ого или {RED}1{ORANGE}-ого класса{BLACK}. По-умолчанию: {ORANGE} вагон{RED}2{ORANGE}-ого класса
+STR_AB9MNOPUZ_NAME      :Пассажирский вагон международного сообщения (A/B9mnopuz)
+STR_AB9MNOPUZ_TEXT      :Может быть переоснащён в вагон международного сообщения {RED}2{ORANGE}-ого или {RED}1{ORANGE}-ого класса{BLACK}. По-умолчанию: вагон{RED}2{ORANGE}-ого класса
+STR_BIPA_NAME           :Двухэтажный вагон (Bhp)
+STR_BIPA_TEXT           :Информация: {ORANGE}составной двухэтажный вагон {BLACK} может быть переоборудован в: {YELLOW}2{ORANGE}-х, {YELLOW}3{ORANGE}-х или {YELLOW}4{ORANGE}-х вагонный вариант{BLACK}. По-умолчанию: {YELLOW}2{ORANGE}-вагонный вариант
+STR_BIPA_4PARTS         :- 4-х вагонный
+STR_BIPA_3PARTS         :- 3-х вагонный
+STR_BIPA_2PARTS         :- 2-х вагонный
+STR_BDHPUMN_NAME        :Двухэтажный вагон (Bdhpumn)
+
+STR_WDN_NAME            :Полувагон (Wdn)
+STR_WDDO_NAME           :Полувагон (Wddo)
+STR_WDDOH_NAME          :Полувагон (Wddoh)
+STR_WDDO_2W_NAME        :Полувагон (Wddo) тип 2W
+STR_ES_NAME             :Полувагон (Es)
+STR_EAOS_NAME           :Полувагон (Eaos)
+STR_PPU_NAME            :Полувагон для тяжеловесных грузов (PPu)
+STR_EAMOS_NAME          :Платформа для тяжеловесных грузов (Eamos)
+STR_FALS_NAME           :Хоппер "talbot" (Fals)
+STR_FALNS_NAME          :Хоппер "talbot" (Falns)
+STR_TADNS_NAME          :Крытый вагон-хоппер (Tadns)
+STR_KD_NAME             :Крытый вагон (Kd)
+STR_KDT_NAME            :Крытый вагон (Kdt)
+STR_KDTH_NAME           :Крытый вагон (Kdth)
+STR_KDDET_NAME          :Крытый вагон (Kddet)
+STR_GGS_NAME            :Крытый вагон (Ggs)
+STR_GAGS_NAME           :Крытый вагон (Gags)
+STR_GBS_NAME            :Крытый вагон (Gbs)
+STR_HBBINS_NAME         :Крытый вагон (Hbbins)
+STR_HABBINS_NAME        :Крытый вагон (Habbins)
+STR_SLR_NAME            :Вагон-холодильник (Slr)
+STR_IBHSS_NAME          :Вагон-холодильник (Ibhss)
+STR_PDK31_NAME          :Платформа (Pdk31)
+STR_PDKH31_NAME         :Платформа (Pdkh31)
+STR_KBKKS_NAME          :Платформа (Kbkks)
+STR_KGNS_NAME           :Платформа (Kgns)
+STR_RES_NAME            :Платформа (Res)
+STR_SGS_NAME            :Платформа для контейнеров (Sgs)
+STR_SDGMNSS_NAME        :Платформа для контейнеров (Sdgmnss)
+STR_RH_NAME             :Цистерна (Rh)
+STR_RBH_NAME            :Цистерна (Rbh)
+STR_ZAES_NAME           :Цистерна (Zaes)
+STR_SN_NAME             :Вагон для перевозки скота (Sn)
+STR_HES_NAME            :Вагон для перевозки скота (Hes)
+STR_RNH_NAME            :Цистерна для химикатов (Rnh)
+STR_RNH_5R_NAME         :Цистерна для химикатов (Rnh) тип 5R
+STR_UAHS_NAME           :Цистерна для химикатов (Uahs)
+STR_SDW_NAME            :Хоппер-цементовоз (Sdw)
+STR_SDWH_NAME           :Хоппер-цементовоз (Sdwh)
+STR_UACS_NAME           :Хоппер бункерного типа (Uacs)
+STR_LEKQSS_NAME         :Двух-ярусная платформа (Lekqss)
+
+STR_WM15A_NAME          :Дрезина WM-15A (Тепловоз)
+STR_PWM15_NAME          :Прицеп PWM-15
+STR_ASF_NAME            :Аккумуляторный эвакуатор ASF EL16

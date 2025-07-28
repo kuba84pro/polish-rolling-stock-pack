@@ -1,0 +1,3302 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, GPL 2.0
+
+/* EU46, 193, 383, 6193, X4EC sprites */
+spriteset(sset_eu46_red_pkp_cargo_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_eu46_red_pkp_cargo, "gfx/vectron.png")            { tmpl_sprite_train10(4, 20) }
+spriteset(sset_eu46_blue_pkp_cargo_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(4, 1560) }
+spriteset(sset_eu46_blue_pkp_cargo, "gfx/vectron.png")            { tmpl_sprite_train10(4, 1520) }
+spriteset(sset_eu46_504_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(4, 1620) }
+spriteset(sset_eu46_504, "gfx/vectron.png")            { tmpl_sprite_train10(4, 1580) }
+spriteset(sset_eu46_bg_pkp_cargo_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(4, 1680) }
+spriteset(sset_eu46_bg_pkp_cargo, "gfx/vectron.png")            { tmpl_sprite_train10(4, 1640) }
+spriteset(sset_193_590_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(4, 1500) }
+spriteset(sset_193_590, "gfx/vectron.png")            { tmpl_sprite_train10(4, 1460) }
+spriteset(sset_383_pkp_cargo_international_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(4, 1800) }
+spriteset(sset_383_pkp_cargo_international, "gfx/vectron.png")            { tmpl_sprite_train10(4, 1760) }
+spriteset(sset_6193_005_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(4, 120) }
+spriteset(sset_6193_005, "gfx/vectron.png")            { tmpl_sprite_train10(4, 80) }
+spriteset(sset_193_railpool_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(4, 180) }
+spriteset(sset_193_railpool, "gfx/vectron.png")            { tmpl_sprite_train10(4, 140) }
+spriteset(sset_6193_160_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(4, 240) }
+spriteset(sset_6193_160, "gfx/vectron.png")            { tmpl_sprite_train10(4, 200) }
+spriteset(sset_193_white_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(4, 300) }
+spriteset(sset_193_white, "gfx/vectron.png")            { tmpl_sprite_train10(4, 260) }
+spriteset(sset_193_mrce_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(4, 360) }
+spriteset(sset_193_mrce, "gfx/vectron.png")            { tmpl_sprite_train10(4, 320) }
+spriteset(sset_193_beacon_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(4, 420) }
+spriteset(sset_193_beacon, "gfx/vectron.png")            { tmpl_sprite_train10(4, 380) }
+spriteset(sset_193_626_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(4, 480) }
+spriteset(sset_193_626, "gfx/vectron.png")            { tmpl_sprite_train10(4, 440) }
+spriteset(sset_193_639_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(4, 540) }
+spriteset(sset_193_639, "gfx/vectron.png")            { tmpl_sprite_train10(4, 500) }
+spriteset(sset_193_694_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(4, 600) }
+spriteset(sset_193_694, "gfx/vectron.png")            { tmpl_sprite_train10(4, 560) }
+spriteset(sset_193_488_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(4, 660) }
+spriteset(sset_193_488, "gfx/vectron.png")            { tmpl_sprite_train10(4, 620) }
+spriteset(sset_193_captrain_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(4, 720) }
+spriteset(sset_193_captrain, "gfx/vectron.png")            { tmpl_sprite_train10(4, 680) }
+spriteset(sset_6193_cargounit_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(4, 780) }
+spriteset(sset_6193_cargounit, "gfx/vectron.png")            { tmpl_sprite_train10(4, 740) }
+spriteset(sset_6193_cargounit_fpl_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(4, 840) }
+spriteset(sset_6193_cargounit_fpl, "gfx/vectron.png")            { tmpl_sprite_train10(4, 800) }
+spriteset(sset_6193_274_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(4, 900) }
+spriteset(sset_6193_274, "gfx/vectron.png")            { tmpl_sprite_train10(4, 860) }
+spriteset(sset_6193_bahnoperator_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(4, 960) }
+spriteset(sset_6193_bahnoperator, "gfx/vectron.png")            { tmpl_sprite_train10(4, 920) }
+spriteset(sset_193_489_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(4, 1020) }
+spriteset(sset_193_489, "gfx/vectron.png")            { tmpl_sprite_train10(4, 980) }
+spriteset(sset_193_568_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(4, 1080) }
+spriteset(sset_193_568, "gfx/vectron.png")            { tmpl_sprite_train10(4, 1040) }
+spriteset(sset_193_569_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(4, 1140) }
+spriteset(sset_193_569, "gfx/vectron.png")            { tmpl_sprite_train10(4, 1100) }
+spriteset(sset_193_cd_cargo_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(4, 1200) }
+spriteset(sset_193_cd_cargo, "gfx/vectron.png")            { tmpl_sprite_train10(4, 1160) }
+spriteset(sset_193_627_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(4, 1260) }
+spriteset(sset_193_627, "gfx/vectron.png")            { tmpl_sprite_train10(4, 1220) }
+spriteset(sset_193_949_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(4, 1320) }
+spriteset(sset_193_949, "gfx/vectron.png")            { tmpl_sprite_train10(4, 1280) }
+spriteset(sset_193_509_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(4, 1380) }
+spriteset(sset_193_509, "gfx/vectron.png")            { tmpl_sprite_train10(4, 1340) }
+spriteset(sset_193_723_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(4, 1440) }
+spriteset(sset_193_723, "gfx/vectron.png")            { tmpl_sprite_train10(4, 1400) }
+spriteset(sset_193_617_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(4, 1740) }
+spriteset(sset_193_617, "gfx/vectron.png")            { tmpl_sprite_train10(4, 1700) }
+spriteset(sset_383_metrans_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(4, 1860) }
+spriteset(sset_383_metrans, "gfx/vectron.png")            { tmpl_sprite_train10(4, 1820) }
+
+spriteset(sset_193_ell_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(274, 60) }
+spriteset(sset_193_ell, "gfx/vectron.png")            { tmpl_sprite_train10(274, 20) }
+spriteset(sset_193_216_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(274, 120) }
+spriteset(sset_193_216, "gfx/vectron.png")            { tmpl_sprite_train10(274, 80) }
+spriteset(sset_193_232_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(274, 180) }
+spriteset(sset_193_232, "gfx/vectron.png")            { tmpl_sprite_train10(274, 140) }
+spriteset(sset_193_cargo_motion_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(274, 240) }
+spriteset(sset_193_cargo_motion, "gfx/vectron.png")            { tmpl_sprite_train10(274, 200) }
+spriteset(sset_193_729_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(274, 300) }
+spriteset(sset_193_729, "gfx/vectron.png")            { tmpl_sprite_train10(274, 260) }
+spriteset(sset_193_738_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(274, 360) }
+spriteset(sset_193_738, "gfx/vectron.png")            { tmpl_sprite_train10(274, 320) }
+spriteset(sset_193_740_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(274, 420) }
+spriteset(sset_193_740, "gfx/vectron.png")            { tmpl_sprite_train10(274, 380) }
+spriteset(sset_193_956_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(274, 480) }
+spriteset(sset_193_956, "gfx/vectron.png")            { tmpl_sprite_train10(274, 440) }
+spriteset(sset_193_big_lokotrain_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(274, 540) }
+spriteset(sset_193_big_lokotrain, "gfx/vectron.png")            { tmpl_sprite_train10(274, 500) }
+spriteset(sset_193_720_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(274, 600) }
+spriteset(sset_193_720, "gfx/vectron.png")            { tmpl_sprite_train10(274, 560) }
+spriteset(sset_193_rfo_ell_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(274, 660) }
+spriteset(sset_193_rfo_ell, "gfx/vectron.png")            { tmpl_sprite_train10(274, 620) }
+spriteset(sset_193_yellow_lokotrain_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(274, 720) }
+spriteset(sset_193_yellow_lokotrain, "gfx/vectron.png")            { tmpl_sprite_train10(274, 680) }
+spriteset(sset_193_726_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(274, 780) }
+spriteset(sset_193_726, "gfx/vectron.png")            { tmpl_sprite_train10(274, 740) }
+spriteset(sset_193_732_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(274, 840) }
+spriteset(sset_193_732, "gfx/vectron.png")            { tmpl_sprite_train10(274, 800) }
+spriteset(sset_193_792_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(274, 900) }
+spriteset(sset_193_792, "gfx/vectron.png")            { tmpl_sprite_train10(274, 860) }
+spriteset(sset_193_791_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(274, 960) }
+spriteset(sset_193_791, "gfx/vectron.png")            { tmpl_sprite_train10(274, 920) }
+spriteset(sset_193_793_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(274, 1020) }
+spriteset(sset_193_793, "gfx/vectron.png")            { tmpl_sprite_train10(274, 980) }
+spriteset(sset_193_565_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(274, 1080) }
+spriteset(sset_193_565, "gfx/vectron.png")            { tmpl_sprite_train10(274, 1040) }
+spriteset(sset_193_945_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(274, 1140) }
+spriteset(sset_193_945, "gfx/vectron.png")            { tmpl_sprite_train10(274, 1100) }
+spriteset(sset_193_485_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(274, 1200) }
+spriteset(sset_193_485, "gfx/vectron.png")            { tmpl_sprite_train10(274, 1160) }
+spriteset(sset_193_824_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(274, 1260) }
+spriteset(sset_193_824, "gfx/vectron.png")            { tmpl_sprite_train10(274, 1220) }
+spriteset(sset_x4ec_db_cargo_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(274, 1320) }
+spriteset(sset_x4ec_db_cargo, "gfx/vectron.png")            { tmpl_sprite_train10(274, 1280) }
+spriteset(sset_x4eab_044_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(274, 1380) }
+spriteset(sset_x4eab_044, "gfx/vectron.png")            { tmpl_sprite_train10(274, 1340) }
+spriteset(sset_x4eab_045_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(274, 1440) }
+spriteset(sset_x4eab_045, "gfx/vectron.png")            { tmpl_sprite_train10(274, 1400) }
+spriteset(sset_x4eab_046_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(274, 1500) }
+spriteset(sset_x4eab_046, "gfx/vectron.png")            { tmpl_sprite_train10(274, 1460) }
+spriteset(sset_x4eab_047_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(274, 1560) }
+spriteset(sset_x4eab_047, "gfx/vectron.png")            { tmpl_sprite_train10(274, 1520) }
+spriteset(sset_baltic_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(274, 1620) }
+spriteset(sset_baltic, "gfx/vectron.png")            { tmpl_sprite_train10(274, 1580) }
+spriteset(sset_adriatic_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(274, 1680) }
+spriteset(sset_adriatic, "gfx/vectron.png")            { tmpl_sprite_train10(274, 1640) }
+spriteset(sset_193_428_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(274, 1740) }
+spriteset(sset_193_428, "gfx/vectron.png")            { tmpl_sprite_train10(274, 1700) }
+spriteset(sset_ceske_drahy_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(274, 1800) }
+spriteset(sset_ceske_drahy, "gfx/vectron.png")            { tmpl_sprite_train10(274, 1760) }
+
+/* EU46 RED PKP CARGO switches */
+switch(FEAT_TRAINS, SELF, switch_vectron_articulated, extra_callback_info1) {
+    1: return item_dummy_2;        // dummy parts
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_eu46_visual_effect_local, position_in_vehid_chain % 2) {
+    0: return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 3, DISABLE_WAGON_POWER);
+    return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+}
+switch (FEAT_TRAINS, SELF, switch_eu46_add_text, IS_HEATING_CLIMATE ) {
+	1: return string(STR_PURCHASE_DESCR_2L, string(STR_HEATING_ELECTRIC_POWER_TEXT, HEATING_POWER_ELECTRIC_MID), string(STR_ENGINE_HEAVY_FREIGHT));
+	return string(STR_ENGINE_HEAVY_FREIGHT);
+}
+ENGINE_RUNNING_COST_SWITCH(eu46, EU46)
+DIESEL_ELECTRIC_2_ENGINE_POWER_SWITCH(eu46, KW_TO_HP(6400))
+ENGINE_VISUAL_EFFECT_SWITCH(eu46)
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_eu46_red_pkp_cargo, 1000) {
+    property {
+		/* common properties */
+        name:                           string(STR_EU46_RED_PKP_CARGO_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2015, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_eu46_red_pkp_cargo_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_eu46_red_pkp_cargo;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* EU46 BLUE PKP CARGO switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_eu46_blue_pkp_cargo, 1001) {
+    property {
+		/* common properties */
+        name:                           string(STR_EU46_BLUE_PKP_CARGO_NAME);
+        variant_group:                  1000;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2021, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_eu46_blue_pkp_cargo_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_eu46_blue_pkp_cargo;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* EU46 504 switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_eu46_504, 1002) {
+    property {
+		/* common properties */
+        name:                           string(STR_EU46_504_NAME);
+        variant_group:                  1001;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2022, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_eu46_504_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_eu46_504;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* EU46 bg_pkp_cargo switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_eu46_bg_pkp_cargo, 1003) {
+    property {
+		/* common properties */
+        name:                           string(STR_EU46_BG_PKP_CARGO_NAME);
+        variant_group:                  1001;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2023, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_eu46_bg_pkp_cargo_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_eu46_bg_pkp_cargo;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_590 switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_590, 1004) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_590_NAME);
+        variant_group:                  1000;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2022, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_590_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_590;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 383_pkp_cargo_international switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_383_pkp_cargo_international, 1005) {
+    property {
+		/* common properties */
+        name:                           string(STR_383_PKP_CARGO_INTERNATIONAL_NAME);
+        variant_group:                  1000;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2016, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_383_pkp_cargo_international_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_383_pkp_cargo_international;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 6193_005 switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_6193_005, 1006) {
+    property {
+		/* common properties */
+        name:                           string(STR_6193_005_NAME);
+        variant_group:                  1000;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2021, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_6193_005_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_6193_005;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_railpool switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_railpool, 1007) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_RAILPOOL_NAME);
+        variant_group:                  1004;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2013, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_railpool_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_railpool;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 6193_160 switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_6193_160, 1008) {
+    property {
+		/* common properties */
+        name:                           string(STR_6193_160_NAME);
+        variant_group:                  1006;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2024, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_6193_160_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_6193_160;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_white switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_white, 1009) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_WHITE_NAME);
+        variant_group:                  1004;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2012, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_white_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_white;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_mrce switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_mrce, 1010) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_MRCE_NAME);
+        variant_group:                  1004;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2014, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_mrce_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_mrce;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_beacon switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_beacon, 1011) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_BEACON_NAME);
+        variant_group:                  1004;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2023, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_beacon_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_beacon;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_626 switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_626, 1012) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_626_NAME);
+        variant_group:                  1011;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2023, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_626_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_626;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_639 switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_639, 1013) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_639_NAME);
+        variant_group:                  1011;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2023, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_639_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_639;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_694 switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_694, 1014) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_694_NAME);
+        variant_group:                  1004;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2017, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_694_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_694;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_488 switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_488, 1015) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_488_NAME);
+        variant_group:                  1004;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2021, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_488_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_488;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_captrain switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_captrain, 1016) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_CAPTRAIN_NAME);
+        variant_group:                  1004;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2015, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_captrain_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_captrain;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 6193_cargounit switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_6193_cargounit, 1017) {
+    property {
+		/* common properties */
+        name:                           string(STR_6193_CARGOUNIT_NAME);
+        variant_group:                  1006;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2017, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_6193_cargounit_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_6193_cargounit;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 6193_cargounit_fpl switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_6193_cargounit_fpl, 1018) {
+    property {
+		/* common properties */
+        name:                           string(STR_6193_CARGOUNIT_FPL_NAME);
+        variant_group:                  1017;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2022, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_6193_cargounit_fpl_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_6193_cargounit_fpl;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 6193_274 switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_6193_274, 1019) {
+    property {
+		/* common properties */
+        name:                           string(STR_6193_274_NAME);
+        variant_group:                  1017;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2023, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_6193_274_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_6193_274;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 6193_bahnoperator switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_6193_bahnoperator, 1020) {
+    property {
+		/* common properties */
+        name:                           string(STR_6193_BAHNOPERATOR_NAME);
+        variant_group:                  1006;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2023, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_6193_bahnoperator_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_6193_bahnoperator;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_489 switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_489, 1021) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_489_NAME);
+        variant_group:                  1004;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2021, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_489_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_489;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_568 switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_568, 1022) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_568_NAME);
+        variant_group:                  1021;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2024, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_568_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_568;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_569 switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_569, 1023) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_569_NAME);
+        variant_group:                  1021;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2021, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_569_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_569;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_cd_cargo switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_cd_cargo, 1024) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_CD_CARGO_NAME);
+        variant_group:                  1004;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2017, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_cd_cargo_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_cd_cargo;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_627 switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_627, 1025) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_627_NAME);
+        variant_group:                  1004;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2020, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_627_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_627;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_949 switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_949, 1026) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_949_NAME);
+        variant_group:                  1004;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2020, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_949_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_949;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_509 switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_509, 1027) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_509_NAME);
+        variant_group:                  1004;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2024, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_509_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_509;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_723 switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_723, 1028) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_723_NAME);
+        variant_group:                  1027;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2024, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_723_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_723;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_617 switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_617, 1029) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_617_NAME);
+        variant_group:                  1004;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2021, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_617_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_617;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 383_metrans switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_383_metrans, 1030) {
+    property {
+		/* common properties */
+        name:                           string(STR_383_METRANS_NAME);
+        variant_group:                  1005;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2017, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_383_metrans_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_383_metrans;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_ell switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_ell, 1031) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_ELL_NAME);
+        variant_group:                  1004;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2014, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_ell_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_ell;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_216 switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_216, 1032) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_216_NAME);
+        variant_group:                  1031;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2015, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_216_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_216;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_232 switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_232, 1033) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_232_NAME);
+        variant_group:                  1031;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2018, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_232_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_232;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_cargo_motion switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_cargo_motion, 1034) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_CARGO_MOTION_NAME);
+        variant_group:                  1031;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2020, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_cargo_motion_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_cargo_motion;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_729 switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_729, 1035) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_729_NAME);
+        variant_group:                  1031;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2018, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_729_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_729;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_738 switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_738, 1036) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_738_NAME);
+        variant_group:                  1031;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2019, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_738_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_738;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_740 switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_740, 1037) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_740_NAME);
+        variant_group:                  1031;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2018, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_740_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_740;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_956 switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_956, 1038) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_956_NAME);
+        variant_group:                  1031;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2023, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_956_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_956;
+        articulated_part:           switch_vectron_articulated;    
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_big_lokotrain switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_big_lokotrain, 1039) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_BIG_LOKOTRAIN_NAME);
+        variant_group:                  1031;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2016, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_big_lokotrain_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_big_lokotrain;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_720 switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_720, 1040) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_720_NAME);
+        variant_group:                  1031;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2019, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_720_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_720;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_rfo_ell switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_rfo_ell, 1041) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_RFO_ELL_NAME);
+        variant_group:                  1031;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2018, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_rfo_ell_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_rfo_ell;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_yellow_lokotrain switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_yellow_lokotrain, 1042) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_YELLOW_LOKOTRAIN_NAME);
+        variant_group:                  1031;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2016, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_yellow_lokotrain_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_yellow_lokotrain;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_726 switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_726, 1043) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_726_NAME);
+        variant_group:                  1031;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2018, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_726_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_726;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_732 switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_732, 1044) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_732_NAME);
+        variant_group:                  1031;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2023, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_732_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_732;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_792 switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_792, 1045) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_792_NAME);
+        variant_group:                  1046;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2018, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_792_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_792;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_791 switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_791, 1046) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_791_NAME);
+        variant_group:                  1004;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2018, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_791_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_791;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_793 switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_793, 1047) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_793_NAME);
+        variant_group:                  1046;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2018, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_793_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_793;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_565 switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_565, 1048) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_565_NAME);
+        variant_group:                  1046;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2018, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_565_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_565;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_945 switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_945, 1049) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_945_NAME);
+        variant_group:                  1046;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2023, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_945_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_945;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_485 switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_485, 1050) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_485_NAME);
+        variant_group:                  1046;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2022, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_485_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_485;
+        articulated_part:           switch_vectron_articulated;   
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* 193_824 switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_193_824, 1051) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_824_NAME);
+        variant_group:                  1046;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2018, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_824_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_824;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* x4ec_db_cargo switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_x4ec_db_cargo, 1052) {
+    property {
+		/* common properties */
+        name:                           string(STR_X4EC_DB_CARGO_NAME);
+        variant_group:                  1000;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2015, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_x4ec_db_cargo_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_x4ec_db_cargo;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+/* x4eab switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_x4eab_044, 1053) {
+    property {
+		/* common properties */
+        name:                           string(STR_X4EAB_044_NAME);
+        variant_group:                  1052;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2021, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_x4eab_044_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_x4eab_044;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+item(FEAT_TRAINS, item_x4eab_045, 1054) {
+    property {
+		/* common properties */
+        name:                           string(STR_X4EAB_045_NAME);
+        variant_group:                  1053;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2021, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_x4eab_045_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_x4eab_045;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+item(FEAT_TRAINS, item_x4eab_046, 1055) {
+    property {
+		/* common properties */
+        name:                           string(STR_X4EAB_046_NAME);
+        variant_group:                  1053;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2021, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_x4eab_046_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_x4eab_046;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+item(FEAT_TRAINS, item_x4eab_047, 1056) {
+    property {
+		/* common properties */
+        name:                           string(STR_X4EAB_047_NAME);
+        variant_group:                  1053;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2021, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_x4eab_047_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_x4eab_047;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+item(FEAT_TRAINS, item_baltic, 1057) {
+    property {
+		/* common properties */
+        name:                           string(STR_BALTIC_NAME);
+        variant_group:                  1006;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2024, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_baltic_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_baltic;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+item(FEAT_TRAINS, item_adriatic, 1058) {
+    property {
+		/* common properties */
+        name:                           string(STR_ADRIATIC_NAME);
+        variant_group:                  1057;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2025, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_adriatic_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_adriatic;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+item(FEAT_TRAINS, item_193_428, 1059) {
+    property {
+		/* common properties */
+        name:                           string(STR_193_428_NAME);
+        variant_group:                  1004;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2025, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_193_428_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_193_428;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}
+item(FEAT_TRAINS, item_ceske_drahy, 1060) {
+    property {
+		/* common properties */
+        name:                           string(STR_CESKE_DRAHY_NAME);
+        variant_group:                  1004;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2021, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU46;
+        running_cost_factor:            RUNNING_COST_EU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         87 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.355555556;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_ceske_drahy_purchase;
+        additional_text:            switch_eu46_add_text;
+        default:                    sset_ceske_drahy;
+        articulated_part:           switch_vectron_articulated;
+        visual_effect_and_powered:  switch_eu46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu46)
+        ENGINE_POWER_CALLBACKS(eu46)
+    }
+}

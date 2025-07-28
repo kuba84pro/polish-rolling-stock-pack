@@ -1,0 +1,240 @@
+##grflangid 0x03
+##plural 2
+##gender m m2 f
+
+# GRF name and description
+STR_GRF_NAME        :{TITLE} {VERSION}
+STR_GRF_DESCRIPTION :{ORANGE}{TITLE} {VERSION}{BLACK} présente le matériel roulant le plus rencontré en Pologne, depuis 1918 jusqu'à présent.{}{COPYRIGHT}2011-2021{}Auteur{NBSP}: {SILVER}TadeuszD{BLACK}, {SILVER}Mewa{BLACK}{}Graphismes{NBSP}: {SILVER}TadeuszD{BLACK}, {SILVER}Walter Novotny{BLACK}, {SILVER}Sojita{BLACK}, {SILVER}McZapkie{BLACK}, {SILVER}Czajnikowiec{BLACK}, {SILVER}101ksl{BLACK}, {SILVER}Mewa{BLACK}{}Remerciements spéciaux à{NBSP}: {SILVER}niemiec{BLACK}{}Licence: {SILVER}GPLv2{BLACK}{}WWW{NBSP}: {LTBLUE}http://openttd-polska.pl{BLACK}
+
+# GRF parameters
+STR_PARAM_NAME_DISABLE_ORIG     :Désactiver les trains originaux
+STR_PARAM_DESC_DISABLE_ORIG     :Ce paramètre désactive le matériel roulant du jeu de base (sauf pour le monorail et le MagLev).
+STR_PARAM_NAME_DISABLE_MONO_MAGLEV  :Désactiver les monorails et MagLevs originaux
+STR_PARAM_DESC_DISABLE_MONO_MAGLEV  :Ce paramètre désactive les monorails et les MagLevs du jeu de base.
+STR_PARAM_NAME_KEEP_OLD_VEHS    :Garder les anciens véhicules dans le catalogue
+STR_PARAM_DESC_KEEP_OLD_VEHS    :Ce paramètre permet de désactiver la date d'expiration du matériel roulant, de façon à ce que les premiers véhicules restent disponibles même à l'ère moderne. Seuls les véhicules de ce set sont concernés. Pour désactiver la date d'expiration de tous les véhicules, acitver le paramètre correspondant dans les réglages du jeu.
+STR_PARAM_NAME_REPLACE_CARGOES  :Transporter les marchandises dans des wagons spéciaux
+STR_PARAM_DESC_REPLACE_CARGOES  :Certains wagons de ce set transportent uniquement certaines cargaisons définies par les nouvelles industries de FIRS ou de ECS. Sans l'un de ces sets, les wagons spéciaux sont désactivés. Ce paramètre permet d'activer quand même ces wagons pour qu'ils transportent la cargaison 'marchandises'.
+STR_PARAM_NAME_ORIG_INTRO_DATES :Véritables dates de mise en service pour les tout premiers véhicules
+STR_PARAM_DESC_ORIG_INTRO_DATES :Ce paramètre permet d'introduire le matériel roulant PKP aux véritables dates de mise en service au lieu de 1918 (date de l'indépendance de la Pologne).{}Quand ce paramètre est activé, les premiers véhicules sont disponibles dès 1882.
+STR_PARAM_NAME_TOURISTS         :Touristes (ECS) dans les voitures de ligne/banlieue
+STR_PARAM_DESC_TOURISTS         :Ce paramètre ne fonctionne pas encore.
+STR_PARAM_TOURISTS_AUTO         :Réaménagement automatique
+STR_PARAM_TOURISTS_MANUAL       :Manuel
+STR_PARAM_TOURISTS_OFF          :Désactivé
+
+STR_PARAM_NAME_PURCHASE_COST    :Multiplicateur du prix d'achat
+STR_PARAM_DESC_PURCHASE_COST    :Ce paramètre permet d'augmenter le prix d'achat des locomotives et des wagons de ce Set.
+STR_PARAM_NAME_RUNNING_COST     :Multiplicateur du coût d'entretien
+STR_PARAM_DESC_RUNNING_COST     :Ce paramètre permet d'augmenter le coût d'entretien des locomotives et des wagons de ce Set.
+STR_PARAM_COST_X1               :1x
+STR_PARAM_COST_X2               :2x
+STR_PARAM_COST_X4               :4x
+STR_PARAM_COST_X8               :8x
+
+STR_PURCHASE_DESCR_2L           :{STRING}{}{BLACK}{STRING}
+STR_PURCHASE_DESCR_3L           :{STRING}{}{BLACK}{STRING}{}{BLACK}{STRING}
+STR_PURCHASE_DESCR_4L           :{STRING}{}{BLACK}{STRING}{}{BLACK}{STRING}{}{BLACK}{STRING}
+STR_SUBTYPE_DESCR_2P            :{STRING}{BLACK}, {STRING}
+
+STR_ENGINE_HEAVY_FREIGHT        :Info{NBSP}: {ORANGE}Locomotive pour {YELLOW}trains de fret lourd
+STR_ENGINE_FREIGHT              :Info{NBSP}: {ORANGE}Locomotive pour {YELLOW}trains de fret
+STR_ENGINE_PASSENGER_FREIGHT    :Info{NBSP}: {ORANGE}Locomotive universelle pour {YELLOW}trains passagers et fret
+STR_ENGINE_PASSENGER            :Info{NBSP}: {ORANGE}Locomotive pour {YELLOW}trains passagers
+STR_ENGINE_EXPRESS              :Info{NBSP}: {ORANGE}Locomotive pour {YELLOW}trains passagers et express
+STR_ENGINE_SHUNTER              :Info: {YELLOW}Machine de manoeuvre
+
+STR_BRAKE_NONE                  :Freinage{NBSP}: {RED}Aucun
+STR_BRAKE_HAND                  :Freinage{NBSP}: {GREEN}Manuel (cabine de serre-frein)
+STR_BRAKE_AIR                   :Freinage{NBSP}: {GREEN}Air (centralisé)
+
+STR_HEATING_STEAM_TEXT          :Chauffage{NBSP}: {LTBLUE}Vapeur
+STR_HEATING_ST_EL_TEXT          :Chauffage{NBSP}: {LTBLUE}Vapeur/électrique
+STR_HEATING_ELECTRIC_TEXT       :Chauffage{NBSP}: {LTBLUE}Électrique
+
+STR_INCOME_1_CLASS              :Note{NBSP}: {YELLOW}Revenus augmentés{ORANGE} pour le transport de passagers de {RED}1{ORANGE}ère classe sur des longues distances
+STR_INCOME_LOWER                :Note{NBSP}: {RED}Revenus diminués{ORANGE} pour le transport de passagers sur des longues distances
+STR_INCOME_ALL_EXPRESS          :Note{NBSP}: {YELLOW}Augmente les revenus{ORANGE} pour les passagers des voitures express du train
+STR_INCOME_HIGH                 :Note{NBSP}: {YELLOW}Revenus augmentés{ORANGE} pour le transport de passagers sur des longues distances
+STR_INCOME_CARGO_HIGH           :Note{NBSP}: {YELLOW}Revenus augmentés{ORANGE} pour le transport de cargaisons sur des longues distances
+STR_CAPACITY_NON_FRIABLE        :Note{NBSP}: {RED}Contenance plus faible{ORANGE} pour les matières non friables
+STR_CAPACITY_LIQUID             :Note{NBSP}: {RED}Contenance plus faible{ORANGE} pour les liquides
+
+STR_HEATING_NONE_TEXT           :Puissance du chauffage{NBSP}: {RED}Pas de chauffage
+STR_HEATING_STEAM_POWER_TEXT    :Puissance du chauffage{NBSP}: {LTBLUE}Vapeur ({SIGNED_WORD}kW)
+STR_HEATING_STEAM_CLAYTON_TEXT  :Puissance du chauffage{NBSP}: {LTBLUE}Vapeur "Clayton" (150kW)
+STR_HEATING_COMBINED_TEXT       :Puissance du chauffage{NBSP}: {LTBLUE}Diesel-électrique (150kW)
+STR_HEATING_ELECTRIC_POWER_TEXT :Puissance du chauffage{NBSP}: {LTBLUE}Électrique ({SIGNED_WORD}kW)
+
+STR_ATTACH_DISALLOW_MCAR        :Un autorail ne peut pas servir de wagon.
+STR_ATTACH_DISALLOW_EZT2        :Attelage incompatible. Les rames électriques avec différents attelages ne peuvent pas être couplées entre elles.
+STR_ATTACH_DISALLOW_EZT1        :Attelage incompatible. Les rames électriques ne peuvent pas être attelées au matériel roulant classique.
+STR_ATTACH_DISALLOW_TROLLEY     :Attelage incompatible. Les remorques ne peuvent pas être attelées au matériel roulant classique.
+STR_ATTACH_DISALLOW             :Ce véhicule ne peut pas être attaché avec {STRING}.
+STR_TRAIN_TOO_LONG              :Il y a trop de véhicules attelés à {STRING}
+STR_TRAIN_WITHOUT_BRAKE         :La train n'a pas assez de freins.{} Il faudrait ajouter davantage de wagons avec freins (à air ou à main).
+STR_TRAIN_NOT_HEATED            :Le train n'est pas chauffé correctement. Le système de chauffage n'est pas adapté, ou pas assez puissant.{} Il faudrait changer la locomotive, ou ajouter un fourgon-chaudière.
+
+STR_SUBTYPE_OLD_2CLASS          : - compartiments 2ème classe
+STR_SUBTYPE_OLD_12CLASS         : - compartiments 1ère/2ème classe
+STR_SUBTYPE_OLD_1CLASS          : - compartiments 1ère classe
+STR_SUBTYPE_NEW_2CLASS          : - fauteuils 2ème classe
+STR_SUBTYPE_NEW_1CLASS          : - fauteuils 1ère classe
+
+STR_SUBTYPE_LIVERY_CLASSIC      : - livrée classique
+STR_SUBTYPE_LIVERY_YEAR_DEP     : - livrée changeante au fil du temps
+STR_SUBTYPE_LIVERY_CARGO_DEP    : - livrée dépendante de la cargaison
+STR_SUBTYPE_LIVERY_RANDOM       : - livrée aléatoire
+STR_SUBTYPE_LIVERY_VISIBLE      : - Véhicule visible
+STR_SUBTYPE_LIVERY_INVISIBLE    : - Véhicule invisible
+
+STR_SUBTYPE_LIVERY_PKP_IC       : - livrée "PKP IC"
+STR_SUBTYPE_LIVERY_PKP_CARGO    : - livrée "PKP Cargo"
+STR_SUBTYPE_LIVERY_PKP_PR       : - livrée "PKP Przewozy Regionalne"
+STR_SUBTYPE_LIVERY_PKP_POLREGIO : - livrée "PKP POLREGIO"
+STR_SUBTYPE_ENXX_ORANGE         : - livrée orange
+STR_SUBTYPE_ENXX_RED_YEL        : - livrée rouge/jaune
+STR_SUBTYPE_ENXX_BLU_YEL        : - livrée bleu/jaune
+STR_SUBTYPE_ENXX_BLK_RED        : - livrée noir/rouge
+STR_SUBTYPE_ENXX_KM             : - livrée "Koleje Mazowieckie"
+
+STR_TKH1_NAME           :TKh1 (Vapeur)
+STR_TKI3_NAME           :TKi3 (Vapeur)
+STR_OD13_NAME           :Od13 (Vapeur)
+STR_TI12_NAME           :Ti12 (Vapeur)
+STR_TP4_NAME            :Tp4 (Vapeur)
+STR_OK1_NAME            :Ok1 (Vapeur)
+STR_TY23_NAME           :Ty23 (Vapeur)
+STR_OKL27_NAME          :OKl27 (Vapeur)
+STR_PT31_NAME           :Pt31 (Vapeur)
+STR_OKZ32_NAME          :OKz32 (Vapeur)
+STR_TY37_NAME           :Ty37 (Vapeur)
+STR_TY2_NAME            :Ty2 (Vapeur)
+STR_PT47_NAME           :Pt47 (Vapeur)
+STR_TKT48_NAME          :TKt48 (Vapeur)
+STR_OL49_NAME           :Ol49 (Vapeur)
+STR_TY51_NAME           :Ty51 (Vapeur)
+STR_SN61_NAME           :SN61 (Autorail diesel)
+STR_SN61_TEXT           :Info{NBSP}: {ORANGE}Autorail diesel - max. {YELLOW}3 motrices{ORANGE} et {YELLOW}3 remorques{ORANGE} par train
+STR_SA106_NAME          :SA106 (Autorail diesel)
+STR_SA106_TEXT          :Info{NBSP}: {ORANGE}Autorail diesel - max. {YELLOW}3 motrices{ORANGE} et {YELLOW}3 remorques{ORANGE} par train
+STR_SM30_NAME           :SM30 (Diesel)
+STR_SM41_NAME           :SM41 (Diesel)
+STR_SM42_NAME           :SM42 (Diesel)
+STR_SP42_NAME           :SP42 (Diesel)
+STR_SU42_NAME           :SU42 (Diesel)
+STR_ST43_NAME           :ST43 (Diesel)
+STR_ST44_NAME           :ST44 (Diesel)
+STR_SP45_NAME           :SP45 (Diesel)
+STR_SU45_NAME           :SU45 (Diesel)
+STR_SU46_NAME           :SU46 (Diesel)
+STR_SM31_NAME           :SM31 (Diesel)
+STR_SP32_NAME           :SP32 (Diesel)
+STR_SU160_NAME          :SU160-Gama (Diesel)
+STR_EP01_NAME           :EP01 (Électrique)
+STR_EP02_NAME           :EP02 (Électrique)
+STR_EU07_NAME           :EU07 (Électrique)
+STR_ET21_NAME           :ET21 (Électrique)
+STR_ET22_NAME           :ET22 (Électrique)
+STR_EP05_NAME           :EP05 (Électrique)
+STR_ET40_NAME           :ET40 (Électrique)
+STR_ET41_NAME           :ET41 (Électrique)
+STR_ET42_NAME           :ET42 (Électrique)
+STR_EP09_NAME           :EP09 (Électrique)
+STR_EU43_NAME           :EU43-Traxx (Électrique)
+STR_EU44_NAME           :EU44 "Husarz" (Électrique)
+STR_EU46_NAME           :EU46-Vectron (Électrique)
+STR_EN57_NAME           :EN57 (Rame électrique)
+STR_EN57_TEXT           :Info{NBSP}: {ORANGE}Rame électrique en {YELLOW}3{ORANGE} parties
+STR_EN71_NAME           :EN71 (Rame électrique)
+STR_EN71_TEXT           :Info{NBSP}: {ORANGE}Rame électrique en {YELLOW}4{ORANGE} parties
+STR_ED72_NAME           :ED72 (Rame électrique)
+STR_ED72_TEXT           :Info{NBSP}: {ORANGE}Rame électrique en {YELLOW}4{ORANGE} parties
+STR_EN76_NAME           :EN76-Elf (Rame électrique)
+STR_ED250_NAME          :ED250 "Pendolino" (Rame électrique)
+
+STR_GMY_NAME            :Fourgon postal (Gmy)
+STR_GHMX_NAME           :Fourgon postal (Ghmx)
+STR_GMW_NAME            :Fourgon postal (Gmw)
+STR_PDN_NAME            :Fourgon postal (Pdn)
+STR_OHXT_NAME           :Fourgon-chaudière (Ohxt)
+STR_FG_NAME             :Fourgon postal-bagages (Fg)
+STR_FY_NAME             :Fourgon à bagages (Fy)
+STR_FHX_NAME            :Fourgon à bagages (Fhx)
+STR_DHXT_NAME           :Fourgon à bagages (Dhxt)
+STR_DWXZ_NAME           :Fourgon à bagages (Dwxz)
+STR_BDWXZD_NAME         :Voiture passagers + compartiment à bagages (BDwxzd)
+STR_JHX_NAME            :Wagon-restaurant (Jhx)
+STR_JHIX_NAME           :Wagon-restaurant (Jhix)
+STR_WRDMNU_NAME         :Wagon-restaurant (WRdmnu)
+STR_WRMNOUZ_NAME        :Wagon-restaurant (WRmnouz)
+STR_BCY_NAME            :Voiture passagers (BCy)
+STR_BCYH_NAME           :Voiture passagers (BCyh)
+STR_BHXZ_NAME           :Voiture express (Bhxz)
+STR_ABHXZ_NAME          :Voiture express (A/Bhxz)
+STR_ABHXZ_TEXT          :Réaménageable{NBSP}: {RED}2{ORANGE}ème, mixte {RED}1{ORANGE}ère/RED}2{ORANGE}ème, ou {RED}1{ORANGE}ère classe{BLACK}. Par défaut{NBSP}: {RED}2{ORANGE}-ème classe
+STR_BCI_NAME            :Voiture passagers "kowbojka" (BCi)
+STR_BH_RYF_NAME         :Voiture passagers "ryflak" (Bh)
+STR_BH_RYF_TEXT         :Info{NBSP}: {ORANGE}Remorque pour  l'{YELLOW}autorail diesel SN61
+STR_WLAB_NAME           :Voiture couchettes (WLABd)
+STR_WLAB10MNOUZ_NAME    :Voiture couchettes (WLAB10mnouz)
+STR_ABDNU_NAME          :Voiture express (A/Bdnu)
+STR_ABDNU_TEXT          :Réaménageable{NBSP}: {RED}2{ORANGE}ème, mixte {RED}1{ORANGE}ère/{RED}2{ORANGE}ème, ou {RED}1{ORANGE}ère classe{BLACK}. Par défaut{NBSP}: {RED}2{ORANGE}ème classe
+STR_BH_BON_NAME         :Voiture passagers "bonanza" (Bh)
+STR_BH_BON_TEXT         :Info{NBSP}: {ORANGE}Remorque pour l'{YELLOW}autorail diesel SA106
+STR_ABDHMNU_NAME        :Voiture InterCity (A/Bdhmnu)
+STR_ABDHMNU_TEXT        :Réaménageable{NBSP}: {ORANGE}InterCity {RED}2{ORANGE}ème ou {RED}1{ORANGE}ère classe{BLACK}. Par défaut{NBSP}: {RED}2{ORANGE}ème classe
+STR_AB9MNOPUZ_NAME      :Voiture EuroCity (A/B9mnopuz)
+STR_AB9MNOPUZ_TEXT      :Réaménageable{NBSP}: {ORANGE}EuroCity {RED}2{ORANGE}ème ou {RED}1{ORANGE}ère classe {BLACK}. Par défaut{NBSP}: {RED}2{ORANGE}ème classe
+STR_BIPA_NAME           :Voiture à 2 étages (Bhp)
+STR_BIPA_TEXT           :Info{NBSP}: {ORANGE}Voiture à 2 étages en {YELLOW}4{ORANGE} parties{}{BLACK}Réaménageable{NBSP}: Voiture en {YELLOW}2{ORANGE}, {YELLOW}3{ORANGE} or {YELLOW}4{ORANGE} parties{BLACK}. Par défaut{NBSP}: {YELLOW}2{ORANGE} parties
+STR_BIPA_4PARTS         : - voiture en 4 parties
+STR_BIPA_3PARTS         : - voiture en 3 parties
+STR_BIPA_2PARTS         : - voiture en 2 parties
+STR_BDHPUMN_NAME        :Voiture à 2 étages (Bdhpumn)
+
+STR_WDN_NAME            :Wagon-tombereau (Wdn)
+STR_WDDO_NAME           :Wagon-tombereau (Wddo)
+STR_WDDOH_NAME          :Wagon-tombereau (Wddoh)
+STR_WDDO_2W_NAME        :Wagon-tombereau (Wddo) de type 2W
+STR_ES_NAME             :Wagon-tombereau (Es)
+STR_EAOS_NAME           :Wagon-tombereau (Eaos)
+STR_PPU_NAME            :Wagon-tombereau lourd (PPu)
+STR_EAMOS_NAME          :Wagon-tombereau lourd (Eamos)
+STR_FALS_NAME           :Wagon auto-déchargeable "talbot" (Fals)
+STR_FALNS_NAME          :Wagon auto-déchargeable "talbot" (Falns)
+STR_TADNS_NAME          :Wagon-trémie couvert (Tadns)
+STR_KD_NAME             :Wagon couvert (Kd)
+STR_KDT_NAME            :Wagon couvert (Kdt)
+STR_KDTH_NAME           :Wagon couvert (Kdth)
+STR_KDDET_NAME          :Wagon couvert (Kddet)
+STR_GGS_NAME            :Wagon couvert (Ggs)
+STR_GAGS_NAME           :Wagon couvert (Gags)
+STR_GBS_NAME            :Wagon couvert (Gbs)
+STR_HBBINS_NAME         :Wagon couvert (Hbbins)
+STR_HABBINS_NAME        :Wagon couvert (Habbins)
+STR_SLR_NAME            :Wagon frigorifique (Slr)
+STR_IBHSS_NAME          :Wagon frigorifique (Ibhss)
+STR_PDK31_NAME          :Wagon plat (Pdk31)
+STR_PDKH31_NAME         :Wagon plat (Pdkh31)
+STR_KBKKS_NAME          :Wagon plat (Kbkks)
+STR_KGNS_NAME           :Wagon plat (Kgns)
+STR_RES_NAME            :Wagon plat (Res)
+STR_SGS_NAME            :Wagon porte-containers (Sgs)
+STR_SDGMNSS_NAME        :Wagon intermodal (Sdgmnss)
+STR_RH_NAME             :Wagon-citerne (Rh)
+STR_RBH_NAME            :Wagon-citerne (Rbh)
+STR_ZAES_NAME           :Wagon-citerne (Zaes)
+STR_SN_NAME             :Wagon à bétail (Sn)
+STR_HES_NAME            :Wagon à bétail (Hes)
+STR_RNH_NAME            :Wagon pour produits chimiques (Rnh)
+STR_RNH_5R_NAME         :Wagon-citerne chimique (Rnh) de type 5R
+STR_UAHS_NAME           :Wagon-citerne chimique (Uahs)
+STR_SDW_NAME            :Wagon à ciment (Sdw)
+STR_SDWH_NAME           :Wagon à ciment (Sdwh)
+STR_UACS_NAME           :Wagon silo (Uacs)
+STR_LEKQSS_NAME         :Wagon porte-automobiles (Lekqss)
+
+STR_WM15A_NAME          :Draisine WM-15A (Diesel)
+STR_PWM15_NAME          :Remorque PWM-15
+STR_ASF_NAME            :Dépanneuse ASF EL16 (Batterie)

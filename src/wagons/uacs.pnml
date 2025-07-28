@@ -1,0 +1,54 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* Uacs sprites */
+spriteset(sset_uacs_purchase, "gfx/408s.png")       { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_uacs, "gfx/408s.png")                { tmpl_sprite_train_sym(4, 20) }
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_uacs, 21310) {
+    property {
+		/* common properties */
+        name:                           string(STR_UACS_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1967, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+//        CARGO_CEMENT_WAGON_DEFINITION
+        loading_speed:                  12; 
+        cost_factor:                    PURCHASE_COST_UACS;
+        running_cost_factor:            RUNNING_COST_CARGO_SPECIAL-1;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+//        cargo_capacity:                 56;
+        weight:                         24 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_CARGO_WAGON);
+    }
+
+if(param_replace_cargoes) {
+    property {
+        CARGO_GOODS_WAGON_DEFINITION
+        cargo_capacity:                 56*2;
+    }
+} else {
+    property {
+        CARGO_CEMENT_WAGON_DEFINITION
+        cargo_capacity:                 56;
+    }
+}
+
+    graphics {
+        purchase:                   sset_uacs_purchase;
+        additional_text:            return string(STR_BRAKE_AIR);
+        default:                    sset_uacs;
+    }
+}

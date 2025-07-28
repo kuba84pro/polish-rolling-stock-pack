@@ -1,0 +1,234 @@
+##grflangid 0x04
+##plural 0
+##gender m f
+
+# GRF name and description
+STR_GRF_NAME        :{TITLE} {VERSION}
+STR_GRF_DESCRIPTION :{ORANGE}{TITLE} {VERSION}{BLACK} contiene los trenes polacos más conocidos y usados en los últimos años, desde 1918 hasta el presente.{}{COPYRIGHT}2011-2021{}Autor: {SILVER}TadeuszD{BLACK}, {SILVER}Mewa{BLACK}{}Gráficos: {SILVER}TadeuszD{BLACK}, {SILVER}Walter Novotny{BLACK}, {SILVER}Sojita{BLACK}, {SILVER}McZapkie{BLACK}, {SILVER}Czajnikowiec{BLACK}, {SILVER}101ksl{BLACK}, {SILVER}Mewa{BLACK}{}Un agradecimiento especial a: {SILVER}niemiec{BLACK}{}Licencia: {SILVER}GPLv2{BLACK}{}WWW: {LTBLUE}http://openttd-polska.pl{BLACK}
+
+# GRF parameters
+STR_PARAM_NAME_DISABLE_ORIG     :Desactiva los trenes normales originales
+STR_PARAM_DESC_DISABLE_ORIG     :Usa esta opción para desactivar los trenes originales (tanto maquinas como vagones) de las vías convencionales. Obviamente, esto no se aplica a los trenes monorraíl ni maglev.
+STR_PARAM_NAME_DISABLE_MONO_MAGLEV  :Desactiva los trenes originales monorraíl y maglev
+STR_PARAM_DESC_DISABLE_MONO_MAGLEV  :Usa esta opción para desactivar todos los vehículos monorraíl y maglev originales. Obviamente, esto no afecta a los trenes de vía normales.
+STR_PARAM_NAME_KEEP_OLD_VEHS    :Mantener los vehículos antiguos en el menú de compra
+STR_PARAM_DESC_KEEP_OLD_VEHS    :Usa esta opción para desactivar la expiración de las maquinas y vagones antiguos. Así, los vehículos históricos seguirán disponibles para su compra incluso en los tiempos modernos. Esta opción sólo es aplicable a este set. Para desactivar la expiración de todos los vehículos utiliza la opción "Vehículos nunca caducan" dentro de las opciones de configuración del juego.
+STR_PARAM_NAME_REPLACE_CARGOES  :Transportar 'Mercancías' en vagones especiales
+STR_PARAM_DESC_REPLACE_CARGOES  :Algunos vagones de este set están dedicados a transportar cargas especiales, han sido preparados para funcionar con los sets de industrias FIRS y ECS. Si juegas una partida que no incluya a FIRS o a ECS, estos vagones estarán desactivados. Selecciona esta opción para utilizar estos vagones con las 'Mercancías' como su carga estandar.
+STR_PARAM_NAME_TOURISTS         :Turistas en vagones de pasajeros/suburbanos
+STR_PARAM_TOURISTS_MANUAL       :Manual
+STR_PARAM_TOURISTS_OFF          :Desactivado
+
+STR_PARAM_NAME_PURCHASE_COST    :Multiplicador del precio de compra
+STR_PARAM_DESC_PURCHASE_COST    :Usa esta opción para aumentar el precio de compra de los motores y vagones. Sólo se aplica a los vehículos de este set.
+STR_PARAM_NAME_RUNNING_COST     :Multiplicador del coste de funcionamiento
+STR_PARAM_DESC_RUNNING_COST     :Usa esta opción para aumentar los costes de funcionamiento de los motores y vagones. Sólo se aplica a los vehículos de este set.
+STR_PARAM_COST_X1               :1x
+STR_PARAM_COST_X2               :2x
+STR_PARAM_COST_X4               :4x
+STR_PARAM_COST_X8               :8x
+
+STR_PURCHASE_DESCR_2L           :{STRING}{}{BLACK}{STRING}
+STR_PURCHASE_DESCR_3L           :{STRING}{}{BLACK}{STRING}{}{BLACK}{STRING}
+STR_PURCHASE_DESCR_4L           :{STRING}{}{BLACK}{STRING}{}{BLACK}{STRING}{}{BLACK}{STRING}
+STR_SUBTYPE_DESCR_2P            :{STRING}{BLACK}, {STRING}
+
+STR_ENGINE_HEAVY_FREIGHT        :Info: {ORANGE}Locomotora para {YELLOW}trenes de carga de gran tonelaje
+STR_ENGINE_FREIGHT              :Info: {ORANGE}Locomotora para {YELLOW}trenes de carga
+STR_ENGINE_PASSENGER_FREIGHT    :Info: {ORANGE}Locomotora universal para {YELLOW}trenes de pasajeros y/o carga
+STR_ENGINE_PASSENGER            :Info: {ORANGE}Locomotora para {YELLOW}trenes de pasajeros
+STR_ENGINE_EXPRESS              :Info: {ORANGE}Locomotora para {YELLOW}pasajeros y trenes expresos
+
+STR_BRAKE_NONE                  :Sistema de frenado: {RED}Ninguno
+STR_BRAKE_HAND                  :Sistema de frenado: {GREEN}Manual (cabina de frenado)
+STR_BRAKE_AIR                   :Sistema de frenado: {GREEN}Aire (centralizado)
+
+STR_HEATING_STEAM_TEXT          :Sistema de calefacción: {LTBLUE}Vapor
+STR_HEATING_ST_EL_TEXT          :Sistema de calefacción: {LTBLUE}Vapor/Eléctrico
+STR_HEATING_ELECTRIC_TEXT       :Sistema de calefacción: {LTBLUE}Eléctrico
+
+STR_INCOME_1_CLASS              :Nota: {YELLOW}Tasa máxima de ingresos{ORANGE} para pasajeros de {RED}1{ORANGE}a clase a través de largas distancias.
+STR_INCOME_LOWER                :Nota: {RED}Baja tasa de ingresos{ORANGE} para pasajeros a través de largas distancias.
+STR_INCOME_ALL_EXPRESS          :Nota: {YELLOW}Aumenta la tasa de ingresos{ORANGE} para pasajeros en todos los vagones expresos del tren
+STR_INCOME_HIGH                 :Nota: {YELLOW}Alta tasa de ingresos{ORANGE} para pasajeros a través de largas distancias.
+STR_INCOME_CARGO_HIGH           :Nota: {YELLOW}La mayor tasa de ingresos{ORANGE} para las cargas a través de largas distancias.
+STR_CAPACITY_NON_FRIABLE        :Nota: {RED}Menor capacidad{ORANGE} para las cargas no desmenuzables.
+STR_CAPACITY_LIQUID             :Nota: {RED}Menor capacidad{ORANGE} para las cargas líquidas.
+
+STR_HEATING_NONE_TEXT           :Potencia (y fuente) calorífica: {RED}Ninguna
+STR_HEATING_STEAM_POWER_TEXT    :Potencia (y fuente) calorífica: {LTBLUE}Calefacción a vapor ({SIGNED_WORD}kW)
+STR_HEATING_STEAM_CLAYTON_TEXT  :Potencia (y fuente) calorífica: {LTBLUE}Calefacción a vapor "Clayton" (150kW)
+STR_HEATING_COMBINED_TEXT       :Potencia (y fuente) calorífica: {LTBLUE}Calefacción combinada diésel/eléctrica (150kW)
+STR_HEATING_ELECTRIC_POWER_TEXT :Potencia (y fuente) calorífica: {LTBLUE}Calefacción eléctrica ({SIGNED_WORD}kW)
+
+STR_ATTACH_DISALLOW_MCAR        :No se puede usar el coche motor como un vagón ordinario.
+STR_ATTACH_DISALLOW_EZT2        :Unión incompatible. No se pueden juntar EMUs con diferentes tipos de enganches.
+STR_ATTACH_DISALLOW_EZT1        :Unión incompatible. No se pueden juntar EMUs con los motores/vagones clásicos.
+STR_ATTACH_DISALLOW_TROLLEY     :Tipos incompatibles. No se puede conectar ese coche con los motores/vagones clásicos.
+STR_ATTACH_DISALLOW             :No puedes añadir este vehículo a {STRING}.
+STR_TRAIN_TOO_LONG              :Hay demasiados vehículos conectados a {STRING}.
+STR_TRAIN_WITHOUT_BRAKE         :El tren tiene muy pocos vagones con frenos.{} Agrega más vagones con frenos de mano/aire.
+STR_TRAIN_NOT_HEATED            :El tren no está siendo calentado debidamente. Hay un error en los sistemas de calefacción o una falta de energía en el sistema calefactor.{} Debes cambiar el motor o añadir un vagón especial de calefacción.
+
+STR_SUBTYPE_OLD_2CLASS          :Compartimentos de 2a clase
+STR_SUBTYPE_OLD_12CLASS         :Compartimentos de 1/2a clase
+STR_SUBTYPE_OLD_1CLASS          :Compartimentos de 1a clase
+STR_SUBTYPE_NEW_2CLASS          :Asientos de 2a clase
+STR_SUBTYPE_NEW_1CLASS          :Asientos de 1a clase
+
+STR_SUBTYPE_LIVERY_CLASSIC      :- Librea clásica
+STR_SUBTYPE_LIVERY_YEAR_DEP     :- Librea dependiente del año
+STR_SUBTYPE_LIVERY_CARGO_DEP    :- Librea dependiente de la carga
+STR_SUBTYPE_LIVERY_RANDOM       :- Librea aleatoria
+STR_SUBTYPE_LIVERY_INVISIBLE    : - Vehículo invisible
+
+STR_SUBTYPE_LIVERY_PKP_IC       :- Librea "PKP IC"
+STR_SUBTYPE_LIVERY_PKP_CARGO    :- Librea "PKP Cargo"
+STR_SUBTYPE_LIVERY_PKP_PR       :- Librea "PKP Przewozy Regionalne"
+STR_SUBTYPE_LIVERY_PKP_POLREGIO :- Librea "PKP POLREGIO"
+STR_SUBTYPE_LIVERY_LOTOS        :- Librea "Lotos Kolej"
+STR_SUBTYPE_ENXX_ORANGE         :- Librea naranja
+STR_SUBTYPE_ENXX_RED_YEL        :- Librea amarilla/roja
+STR_SUBTYPE_ENXX_BLU_YEL        :- Librea amarilla/azul
+STR_SUBTYPE_ENXX_BLK_RED        :- Librea roja/negra
+STR_SUBTYPE_ENXX_KM             :- Librea "Koleje Mazowieckie"
+
+STR_TKH1_NAME           :TKh1 (Vapor)
+STR_TKI3_NAME           :TKi3 (Vapor)
+STR_OD13_NAME           :Od13 (Vapor)
+STR_TI12_NAME           :Ti12 (Vapor)
+STR_TP4_NAME            :Tp4 (Vapor)
+STR_OK1_NAME            :Ok1 (Vapor)
+STR_TY23_NAME           :Ty23 (Vapor)
+STR_OKL27_NAME          :OKl27 (Vapor)
+STR_PT31_NAME           :Pt31 (Vapor)
+STR_OKZ32_NAME          :OKz32 (Vapor)
+STR_TY37_NAME           :Ty37 (Vapor)
+STR_TY2_NAME            :Ty2 (Vapor)
+STR_PT47_NAME           :Pt47 (Vapor)
+STR_TKT48_NAME          :TKt48 (Vapor)
+STR_OL49_NAME           :Ol49 (Vapor)
+STR_TY51_NAME           :Ty51 (Vapor)
+STR_SN61_NAME           :SN61 (Coche de motor diésel)
+STR_SN61_TEXT           :Info: {ORANGE}Coche con motor diésel – Máximo permitido: {YELLOW}3 unidades{ORANGE} y {YELLOW}3 remolques{ORANGE}
+STR_SA106_NAME          :SA106 (Railbus diésel)
+STR_SA106_TEXT          :Info: {ORANGE}Railbus diésel - Máximo permitido: {YELLOW}3 unidades{ORANGE} y {YELLOW}3 remolques{ORANGE}
+STR_SM30_NAME           :SM30 (Diésel)
+STR_SM41_NAME           :SM41 (Diésel)
+STR_SM42_NAME           :SM42 (Diésel)
+STR_SP42_NAME           :SP42 (Diésel)
+STR_SU42_NAME           :SU42 (Diésel)
+STR_ST43_NAME           :ST43 (Diésel)
+STR_ST44_NAME           :ST44 (Diésel)
+STR_SP45_NAME           :SP45 (Diésel)
+STR_SU45_NAME           :SU45 (Diésel)
+STR_SU46_NAME           :SU46 (Diésel)
+STR_SM31_NAME           :SM31 (Diésel)
+STR_SP32_NAME           :SP32 (Diésel)
+STR_SU160_NAME          :SU160-Gama (Diésel)
+STR_EP01_NAME           :EP01 (Eléctrico)
+STR_EP02_NAME           :EP02 (Eléctrico)
+STR_EU07_NAME           :EU07 (Eléctrico)
+STR_ET21_NAME           :ET21 (Eléctrico)
+STR_ET22_NAME           :ET22 (Eléctrico)
+STR_EP05_NAME           :EP05 (Eléctrico)
+STR_ET40_NAME           :ET40 (Eléctrico)
+STR_ET41_NAME           :ET41 (Eléctrico)
+STR_ET42_NAME           :ET42 (Eléctrico)
+STR_EP09_NAME           :EP09 (Eléctrico)
+STR_EU43_NAME           :EU43-Traxx (Eléctrico)
+STR_EU44_NAME           :EU44 "Husarz" (Eléctrico)
+STR_EU46_NAME           :EU46-Vectron (Eléctrico)
+STR_ET26_NAME           :ET26-Dragon 2 (Eléctrico)
+STR_EN57_NAME           :EN57 (EMU)
+STR_EN57_TEXT           :Info: {ORANGE}Unidad Múltiple Eléctrica de {YELLOW}3{ORANGE} partes
+STR_EN71_NAME           :EN71 (EMU)
+STR_EN71_TEXT           :Info: {ORANGE}Unidad Múltiple Eléctrica de {YELLOW}4{ORANGE} partes
+STR_ED72_NAME           :ED72 (EMU)
+STR_ED72_TEXT           :Info: {ORANGE}Unidad Múltiple Eléctrica de {YELLOW}4{ORANGE} partes
+STR_EN76_NAME           :EN76-Elf (EMU)
+STR_ED250_NAME          :ED250 "Pendolino" (EMU)
+STR_EN63A_NAME	     	:EN63A-Impuls (EMU)
+STR_ED161_NAME		    :ED161 "Dart" (EMU)
+
+STR_GMY_NAME            :Vagón de correo (Gmy)
+STR_GHMX_NAME           :Vagón de correo (Ghmx)
+STR_GMW_NAME            :Vagón de correo (Gmw)
+STR_PDN_NAME            :Vagón de correo (Pdn)
+STR_OHXT_NAME           :Vagón calefacción (Ohxt)
+STR_FG_NAME             :Vagón de correo/equipaje (Fg)
+STR_FY_NAME             :Vagón de equipaje (Fy)
+STR_FHX_NAME            :Vagón de equipaje (Fhx)
+STR_DHXT_NAME           :Vagón de equipaje (Dhxt)
+STR_DWXZ_NAME           :Vagón de equipaje (Dwxz)
+STR_BDWXZD_NAME         :Vagón de pasajeros/equipaje (BDwxzd)
+STR_JHX_NAME            :Vagón restaurante (Jhx)
+STR_JHIX_NAME           :Vagón restaurante (Jhix)
+STR_WRDMNU_NAME         :Vagón restaurante (WRdmnu)
+STR_WRMNOUZ_NAME        :Vagón restaurante (WRmnouz)
+STR_BCY_NAME            :Vagón de pasajeros (BCy)
+STR_BCYH_NAME           :Vagón de pasajeros (BCyh)
+STR_BHXZ_NAME           :Vagón expreso (Bhxz)
+STR_ABHXZ_NAME          :Vagón expreso (A/Bhxz)
+STR_ABHXZ_TEXT          :Reformable a: {ORANGE}Vagón expreso de {RED}2{ORANGE}a, {RED}1/2{ORANGE}a ó {RED}1{ORANGE}a clase{BLACK}. Por defecto: {ORANGE}Vagón de {RED}2{ORANGE}a clase
+STR_BCI_NAME            :Vagón de pasajeros "kowbojka" (BCi)
+STR_BH_RYF_NAME         :Vagón de pasajeros "ryflak" (Bh)
+STR_BH_RYF_TEXT         :Info: {ORANGE}Remolque para {YELLOW}coche de motor diésel SN61
+STR_WLABWXZ_NAME        :Coche cama (WLABwzx)
+STR_WLAB_NAME           :Coche cama (WLABd)
+STR_WLAB10MNOUZ_NAME    :Coche cama (WLAB10mnouz)
+STR_ABDNU_NAME          :Vagón expreso (A/Bdnu)
+STR_ABDNU_TEXT          :Reformable a: {ORANGE}Vagón expreso de {RED}2{ORANGE}a, {RED}1/2{ORANGE}a ó {RED}1{ORANGE}a clase{BLACK}. Por defecto: {ORANGE}Vagón de {RED}2{ORANGE}a clase
+STR_BH_BON_NAME         :Vagón de pasajeros "bonanza" (Bh)
+STR_BH_BON_TEXT         :Info: {ORANGE}Remolque para {YELLOW}railbus diésel SA106
+STR_ABDHMNU_NAME        :Vagón de pasajeros InterCity (A/Bdhmnu)
+STR_ABDHMNU_TEXT        :Reformable a: {ORANGE}Vagón InterCity de {RED}2{ORANGE}a ó {RED}1{ORANGE}a clase{BLACK}. Por defecto: {ORANGE}Vagón de {RED}2{ORANGE}a clase
+STR_AB9MNOPUZ_NAME      :Vagón de pasajeros EuroCity (A/B9mnopuz)
+STR_AB9MNOPUZ_TEXT      :Reformable a: {ORANGE}Vagón EuroCity de {RED}2{ORANGE}a ó {RED}1{ORANGE}a clase{BLACK}. Por defecto: {ORANGE}Vagón de {RED}2{ORANGE}a clase
+STR_BIPA_NAME           :Vagón de dos pisos (Bhp)
+STR_BIPA_TEXT           :Info: {ORANGE}Vagón multiparte de pasajeros de dos pisos{}{BLACK}Reformable a: Vagón de {YELLOW}2{ORANGE}, {YELLOW}3{ORANGE} ó {YELLOW}4{ORANGE} partes. Por defecto: {YELLOW}2{ORANGE} partes
+STR_BIPA_4PARTS         :Vagón de 4 partes
+STR_BIPA_3PARTS         :Vagón de 3 partes
+STR_BIPA_2PARTS         :Vagón de 2 partes
+STR_BDHPUMN_NAME        :Vagón de dos pisos (Bdhpumn)
+
+STR_WDDO_NAME           :Vagón de carga a granel (Wddo)
+STR_WDDOH_NAME          :Vagón de carga a granel (Wddoh)
+STR_WDDO_2W_NAME        :Vagón de carga a granel (Wddo) tipo 2W
+STR_ES_NAME             :Vagón de carga a granel (Es)
+STR_EAOS_NAME           :Vagón de carga a granel (Eaos)
+STR_EAMOS_NAME          :Vagón pesado de carga a granel (Eamos)
+STR_FALS_NAME           :Vagón con autodescarga "talbot" (Fals)
+STR_FALNS_NAME          :Vagón con autodescarga "talbot" (Falns)
+STR_TADNS_NAME          :Vagón tolva cubierto (Tadns)
+STR_KD_NAME             :Vagón cubierto (Kd)
+STR_KDT_NAME            :Vagón cubierto (Kdt)
+STR_KDTH_NAME           :Vagón cubierto (Kdth)
+STR_KDDET_NAME          :Vagón cubierto (Kddet)
+STR_GGS_NAME            :Vagón cubierto (Ggs)
+STR_GAGS_NAME           :Vagón cubierto (Gags)
+STR_GBS_NAME            :Vagón cubierto (Gbs)
+STR_HBBINS_NAME         :Vagón cubierto (Hbbins)
+STR_HABBINS_NAME        :Vagón cubierto (Habbins)
+STR_SLR_NAME            :Vagón refrigerado (Slr)
+STR_SLMS_NAME           :Vagón refrigerado (Slms)
+STR_IBHSS_NAME          :Vagón refrigerado (Ibhss)
+STR_PDK31_NAME          :Vagón plataforma (Pdk31)
+STR_PDKH31_NAME         :Vagón plataforma (Pdkh31)
+STR_KBKKS_NAME          :Vagón plataforma (Kbkks)
+STR_KGNS_NAME           :Vagón plataforma (Kgns)
+STR_RES_NAME            :Vagón plataforma (Res)
+STR_SGS_NAME            :Vagón portacontenedores (Sgs)
+STR_SDGMNSS_NAME        :Vagón intermodal (Sdgmnss)
+STR_RH_NAME             :Vagón cisterna (Rh)
+STR_RBH_NAME            :Vagón cisterna (Rbh)
+STR_ZAES_NAME           :Vagón cisterna (Zaes)
+STR_SN_NAME             :Vagón de ganado (Sn)
+STR_HES_NAME            :Vagón de ganado (Hes)
+STR_SDW_NAME            :Vagón de cemento (Sdw)
+STR_SDWH_NAME           :Vagón de cemento (Sdwh)
+STR_UACS_NAME           :Vagón silo (Uacs) (usado para cemento y, ocasionalmente, materiales de construcción)
+STR_LEKQSS_NAME         :Vagón Autorack (Lekqss)
+
+STR_WM15A_NAME          :Trolley WM-15A (Diésel)
+STR_PWM15_NAME          :Remolque PWM-15

@@ -1,0 +1,130 @@
+// This is part of PRSP NewGRF.
+// Don't include any headers inside this file!
+// (c) kuba84pro, licence: GPLv2
+
+/* em10 sprites */
+// em10 PKP Cargo
+spriteset(sset_em10_purchase, "gfx/em10.png")                { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_em10, "gfx/em10.png")                         { tmpl_sprite_train10(4, 20) }
+spriteset(sset_em10_pkp_cargo_purchase, "gfx/em10.png")      { tmpl_sprite_purchase(4, 120) }
+spriteset(sset_em10_pkp_cargo, "gfx/em10.png")               { tmpl_sprite_train10(4, 80) }
+
+// em10 switches
+switch(FEAT_TRAINS, SELF, switch_em10_articulated, getbits(extra_callback_info1, 0, 8)) {
+    1: return item_dummy_1;        // dummy parts
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, PARENT, switch_em10_visual_effect_local, position_in_vehid_chain % 2) {
+    0:return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 0, DISABLE_WAGON_POWER);
+    return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+}
+switch (FEAT_TRAINS, SELF, switch_em10_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_2L, string(STR_HEATING_NONE_TEXT), string(STR_ENGINE_SHUNTER));
+    return string(STR_ENGINE_SHUNTER);
+}
+
+ENGINE_RUNNING_COST_SWITCH(em10, EM10)
+DIESEL_ELECTRIC_2_ENGINE_POWER_SWITCH(em10, KW_TO_HP(960))
+ENGINE_VISUAL_EFFECT_SWITCH(em10)
+
+/* Define the actual trains */
+item(FEAT_TRAINS, item_em10, 427) {
+    property {
+        /* common properties */
+        name:                           string(STR_EM10_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1990, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5;
+        cost_factor:                    PURCHASE_COST_EM10;
+        running_cost_factor:            RUNNING_COST_EM10;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          80 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          960 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_PROPERTY
+        weight:                         72 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.354;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_em10_purchase;
+        additional_text:            switch_em10_add_text;
+        default:                    sset_em10;
+        articulated_part:           switch_em10_articulated;
+        visual_effect_and_powered:  switch_em10_visual_effect_local;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(em10)
+        ENGINE_POWER_CALLBACKS(em10)
+    }
+}
+/* Define the actual trains */
+item(FEAT_TRAINS, item_em10_pkp_cargo, 428) {
+    property {
+        /* common properties */
+        name:                           string(STR_EM10_PKP_CARGO_NAME);
+        variant_group:                  427;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2004, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5;
+        cost_factor:                    PURCHASE_COST_EM10;
+        running_cost_factor:            RUNNING_COST_EM10;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          80 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          960 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_PROPERTY
+        weight:                         72 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.354;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_em10_pkp_cargo_purchase;
+        articulated_part:           switch_em10_articulated;
+        additional_text:            switch_em10_add_text;
+        default:                    sset_em10_pkp_cargo;
+        visual_effect_and_powered:  switch_em10_visual_effect_local;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(em10)
+        ENGINE_POWER_CALLBACKS(em10)
+    }
+}

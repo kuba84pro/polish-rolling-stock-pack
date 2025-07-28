@@ -1,0 +1,100 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* Od13 sprites */
+spriteset(sset_od13_purchase, "gfx/od13.png")   { tmpl_sprite_purchase(4, 100) }
+spriteset(sset_od13, "gfx/od13.png")            { tmpl_sprite_train(4, 20) }
+spriteset(sset_od13_tender, "gfx/od13.png")     { tmpl_sprite_train(4, 60) }
+
+/* Od13 switches */
+switch(FEAT_TRAINS, SELF, switch_od13_articulated, extra_callback_info1) {
+    1: return item_od13;    // add tender
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_od13_graphics, position_in_vehid_chain % 2) {
+    0: return sset_od13;
+    return sset_od13_tender;
+}
+switch(FEAT_TRAINS, SELF, switch_od13_length, position_in_vehid_chain % 2) {
+    1: return 3;
+    return 6;
+}
+switch (FEAT_TRAINS, SELF, switch_od13_add_text, IS_HEATING_CLIMATE ) {
+	1: return string(STR_PURCHASE_DESCR_2L, string(STR_HEATING_STEAM_POWER_TEXT, HEATING_POWER_STEAM_MID), string(STR_ENGINE_PASSENGER));
+	return string(STR_ENGINE_PASSENGER);
+}
+ENGINE_RUNNING_COST_SWITCH(od13, OD13)
+STEAM_ENGINE_POWER_SWITCH(od13, KW_TO_HP(370))
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_od13, 101) {
+    property {
+        /* common properties */
+        name:                           string(STR_OD13_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              PKP_INTRODUCTION_DATE;
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              18;     // 20
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5;
+        cost_factor:                    PURCHASE_COST_OD13;
+        running_cost_factor:            RUNNING_COST_OD13;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          80 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          370 kW;
+        running_cost_base:              RUNNING_COST_STEAM;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_PROPERTY
+        weight:                         77 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_STEAM;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.069;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+if(param_orig_intro_dates) {
+    property {
+        introduction_date:              date(1885, 1, 1);
+    }
+}
+
+if(!param_keep_old_vehs) {
+    if(param_orig_intro_dates) {
+        property {
+            model_life:                 37+33;
+            retire_early:               10;
+        }
+    } else {
+        property {
+            model_life:                 37;
+            retire_early:               10;
+        }
+    }
+}
+
+    graphics {
+        purchase:                   sset_od13_purchase;
+        additional_text:            switch_od13_add_text;
+        default:                    switch_od13_graphics;
+        articulated_part:           switch_od13_articulated;
+        length:                     switch_od13_length;
+        visual_effect_and_powered:  switch_normal_steam_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(od13)
+        ENGINE_POWER_CALLBACKS(od13)
+    }
+}

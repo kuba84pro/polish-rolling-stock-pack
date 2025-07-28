@@ -1,0 +1,114 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* Twindexx sprites */
+spriteset(sset_twindexx_purchase, "gfx/twindexx.png")  { tmpl_sprite_purchase(4, 520) }
+spriteset(sset_twindexx, "gfx/twindexx.png")           { tmpl_sprite_train12(4, 20) }
+spriteset(sset_twindexx_open, "gfx/twindexx.png")      { tmpl_sprite_train12(4, 120) }
+spriteset(sset_twindexx_cut, "gfx/twindexx.png")       { tmpl_sprite_train12(4, 280) }
+spriteset(sset_twindexx_rear, "gfx/twindexx.png")      { tmpl_sprite_train(32, 360) }
+spriteset(sset_twindexx_rear_open, "gfx/twindexx.png") { tmpl_sprite_train(32, 400) }
+spriteset(sset_twindexx_l, "gfx/twindexx.png")         { tmpl_sprite_train12_l(4, 200) }
+spriteset(sset_twindexx_r, "gfx/twindexx.png")         { tmpl_sprite_train12_r(4, 200) }
+
+spritegroup sgroup_twindexx {
+    loaded:     [sset_twindexx];
+    loading:    [sset_twindexx_open];
+}
+spritegroup sgroup_twindexx_rear {
+    loaded:     [sset_twindexx_rear];
+    loading:    [sset_twindexx_rear_open];
+}
+
+#ifdef SITTING_PLACES
+    #undef SITTING_PLACES
+#endif
+#define SITTING_PLACES 133
+
+/* Twindexx switches */
+switch(FEAT_TRAINS, SELF, switch_twindexx_articulated, extra_callback_info1) {
+    1: return item_twindexx;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_twindexx_cut_front, other_veh_is_hidden(1)) {
+    1: return sset_twindexx_cut;  // hidden vehicle
+    return sgroup_twindexx;
+}
+switch(FEAT_TRAINS, SELF, switch_twindexx_extra_front,
+   [STORE_TEMP(curv_info_prev_cur, 0), STORE_TEMP(curv_info_cur_next, 1),
+    STORE_TEMP((LOAD_TEMP(0)<0 && LOAD_TEMP(1)<0)?0:LOAD_TEMP(1), 1),
+    STORE_TEMP((LOAD_TEMP(0)>0 && LOAD_TEMP(1)>0)?0:LOAD_TEMP(1), 1),
+    LOAD_TEMP(1)]) {
+    -2..-1: return sset_twindexx_l;
+    1..2:   return sset_twindexx_r;
+    return switch_twindexx_cut_front;
+}
+switch(FEAT_TRAINS, SELF, switch_twindexx_front, (extra_callback_info1&0xFF)==0) {
+    1: return switch_twindexx_extra_front;    // viewport
+    return sgroup_twindexx;
+}
+switch(FEAT_TRAINS, SELF, switch_twindexx_rear, (extra_callback_info1&0xFF)==0 && curv_info_prev_cur==0 && other_veh_z_offset(-1)==0 ) {
+    1: return sgroup_twindexx_rear;   // viewport & no curves & no Z-offset
+    return sset_dummy;
+}
+switch(FEAT_TRAINS, SELF, switch_twindexx_graphics, position_in_vehid_chain % 2) {
+    1: return switch_twindexx_rear;
+    return switch_twindexx_front;
+}
+
+switch(FEAT_TRAINS, SELF, switch_twindexx_length, position_in_vehid_chain % 2) {
+    1: return 4;
+    return 8;
+}
+switch(FEAT_TRAINS, SELF, switch_twindexx_capacity, position_in_vehid_chain % 2) {
+    0: return SITTING_PLACES-1;
+    return 1;  // hack for prevent "N/D"
+}
+switch (FEAT_TRAINS, SELF, switch_twindexx_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_3L, string(STR_BRAKE_AIR), string(STR_HEATING_ELECTRIC_TEXT), string(STR_TWINDEXX_TEXT));
+    return string(STR_PURCHASE_DESCR_2L, string(STR_BRAKE_AIR), string(STR_TWINDEXX_TEXT));
+}
+
+#define CARGO_CAPACITY_TWINDEXX      int(SITTING_PLACES/2)
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_twindexx, 10060) {
+    property {
+        /* common properties */
+        name:                           string(STR_TWINDEXX_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2008, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  30;
+        cost_factor:                    PURCHASE_COST_TWINDEXX;
+        running_cost_factor:            RUNNING_COST_PASS_EXPRESS+1;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 CARGO_CAPACITY_TWINDEXX;
+        weight:                         50 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   sset_twindexx_purchase;
+        additional_text:            switch_twindexx_add_text;
+        default:                    switch_twindexx_graphics;
+//        cargo_subtype_text:         switch_twindexx_subtype_text;
+        articulated_part:           switch_twindexx_articulated;
+        length:                     switch_twindexx_length;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_twindexx_capacity;
+    }
+}

@@ -1,0 +1,302 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, GPL 2.0
+
+/* EN57SPOT sprites */
+// Default Livery
+spriteset(sset_en57spotpr_purchase, "gfx/en57_spotpr.png")   { tmpl_sprite_purchase(4, 140) }
+spriteset(sset_en57spotpr_head, "gfx/en57_spotpr.png")       { tmpl_sprite_train12(4, 20) }
+spriteset(sset_en57spotpr_mid, "gfx/en57_spotpr.png")       { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_en57spotpr_tail, "gfx/en57_spotpr.png")       { tmpl_sprite_train12_offset(4, 100, 3) }
+spriteset(sset_en57spotpr_head_open, "gfx/en57_spotpr.png")  { tmpl_sprite_train12(4, 160) }
+spriteset(sset_en57spotpr_mid_open, "gfx/en57_spotpr.png")  { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_en57spotpr_tail_open, "gfx/en57_spotpr.png")  { tmpl_sprite_train12_offset(4, 240, 3) }
+// Livery "Tygrys"
+spriteset(sset_en57spottg_purchase, "gfx/en57_spottg.png")   { tmpl_sprite_purchase(4, 140) }
+spriteset(sset_en57spottg_head, "gfx/en57_spottg.png")       { tmpl_sprite_train12(4, 20) }
+spriteset(sset_en57spottg_mid, "gfx/en57_spottg.png")       { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_en57spottg_tail, "gfx/en57_spottg.png")       { tmpl_sprite_train12_offset(4, 100, 3) }
+spriteset(sset_en57spottg_head_open, "gfx/en57_spottg.png")  { tmpl_sprite_train12(4, 160) }
+spriteset(sset_en57spottg_mid_open, "gfx/en57_spottg.png")  { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_en57spottg_tail_open, "gfx/en57_spottg.png")  { tmpl_sprite_train12_offset(4, 240, 3) }
+// Livery "Black-Red"
+spriteset(sset_en57spot_purchase, "gfx/en57_spot-black-red.png")   { tmpl_sprite_purchase(4, 140) }
+spriteset(sset_en57spot_head, "gfx/en57_spot-black-red.png")       { tmpl_sprite_train12(4, 20) }
+spriteset(sset_en57spot_mid, "gfx/en57_spot-black-red.png")       { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_en57spot_tail, "gfx/en57_spot-black-red.png")       { tmpl_sprite_train12_offset(4, 100, 3) }
+spriteset(sset_en57spot_head_open, "gfx/en57_spot-black-red.png")  { tmpl_sprite_train12(4, 160) }
+spriteset(sset_en57spot_mid_open, "gfx/en57_spot-black-red.png")  { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_en57spot_tail_open, "gfx/en57_spot-black-red.png")  { tmpl_sprite_train12_offset(4, 240, 3) }
+// Default Livery
+spritegroup sgroup_en57spotpr_head {
+    loaded:     [sset_en57spotpr_head];
+    loading:    [sset_en57spotpr_head_open];
+}
+spritegroup sgroup_en57spotpr_mid {
+    loaded:     [sset_en57spotpr_mid];
+    loading:    [sset_en57spotpr_mid_open];
+}
+spritegroup sgroup_en57spotpr_tail {
+    loaded:     [sset_en57spotpr_tail];
+    loading:    [sset_en57spotpr_tail_open];
+}
+// Livery "Tygrys"
+spritegroup sgroup_en57spottg_head {
+    loaded:     [sset_en57spottg_head];
+    loading:    [sset_en57spottg_head_open];
+}
+spritegroup sgroup_en57spottg_mid {
+    loaded:     [sset_en57spottg_mid];
+    loading:    [sset_en57spottg_mid_open];
+}
+spritegroup sgroup_en57spottg_tail {
+    loaded:     [sset_en57spottg_tail];
+    loading:    [sset_en57spottg_tail_open];
+}
+// Livery "Black-Red"
+spritegroup sgroup_en57spot_head {
+    loaded:     [sset_en57spot_head];
+    loading:    [sset_en57spot_head_open];
+}
+spritegroup sgroup_en57spot_mid {
+    loaded:     [sset_en57spot_mid];
+    loading:    [sset_en57spot_mid_open];
+}
+spritegroup sgroup_en57spot_tail {
+    loaded:     [sset_en57spot_tail];
+    loading:    [sset_en57spot_tail_open];
+}
+
+/* EN57SPOT switches */
+switch(FEAT_TRAINS, SELF, switch_en57spot_articulated, extra_callback_info1) {
+    1..4: return item_en57spot;     // including dummy parts
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_en57spotpr_length, position_in_vehid_chain % 5) {
+    1: return 4;    // dummy part
+    3: return 4;    // dummy part
+    return 8;
+}
+switch(FEAT_TRAINS, SELF, switch_en57spot_graphics, position_in_vehid_chain % 5) {
+    0: return sgroup_en57spot_head;
+    2: return sgroup_en57spot_mid;
+    4: return sgroup_en57spot_tail;
+    return sset_dummy;      // dummy parts
+}
+switch(FEAT_TRAINS, SELF, switch_en57spotpr_tour_capacity, position_in_vehid_chain % 5) {
+    0: return 52;
+    2: return 52-2;
+    4: return 52;
+    return 1;   // dummy parts
+}
+switch(FEAT_TRAINS, SELF, switch_en57spotpr_pass_capacity, position_in_vehid_chain % 5) {
+    0: return 52+26;    //52;
+    2: return 52+26-2;  //52;
+    4: return 52+26;    //52;
+    return 1;   // dummy parts
+}
+switch(FEAT_TRAINS, SELF, switch_en57spotpr_capacity, cargo_type_in_veh) {
+    TOUR: return switch_en57spotpr_tour_capacity;
+    return switch_en57spotpr_pass_capacity;
+}
+switch(FEAT_TRAINS, SELF, switch_en57spotpr_visual_effect_local, position_in_vehid_chain % 5) {
+    0: return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 3, DISABLE_WAGON_POWER);
+    3: return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, -3, DISABLE_WAGON_POWER);
+    return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+}
+switch (FEAT_TRAINS, SELF, switch_en57spotpr_start_stop, num_vehs_in_consist / 5) {
+    1..3: return CB_RESULT_NO_TEXT;
+    return string(STR_TRAIN_TOO_LONG, string(STR_EN57SPOT_NAME));
+}
+ENGINE_RUNNING_COST_SWITCH(en57spotpr, EN57SPOTPR)
+DIESEL_ELECTRIC_ENGINE_POWER_SWITCH(en57spotpr)
+ENGINE_VISUAL_EFFECT_SWITCH(en57spotpr)
+
+#ifdef SITTING_PLACES
+    #undef SITTING_PLACES
+#endif
+#ifdef STANDING_PLACES
+    #undef STANDING_PLACES
+#endif
+#define SITTING_PLACES 60*3
+#define STANDING_PLACES 40*3
+#define CARGO_CAPACITY_EN57SPOTPR     int((SITTING_PLACES+STANDING_PLACES+2)/5)
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_en57spot, 2009) {
+    property {
+        /* common properties */
+        name:                           string(STR_EN57SPOT_NAME);
+        variant_group:                  2000;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2006, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  11;     // per part
+        cost_factor:                    PURCHASE_COST_EN57SPOTPR;
+        running_cost_factor:            RUNNING_COST_EN57SPOTPR;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          110 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          580 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 CARGO_CAPACITY_EN57SPOTPR;
+        weight:                         124 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.25*75/110;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   sset_en57spot_purchase;
+        default:                    switch_en57spot_graphics;
+        articulated_part:           switch_en57spot_articulated;
+        length:                     switch_en57spotpr_length;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_en57spotpr_capacity;
+        visual_effect_and_powered:  switch_en57spotpr_visual_effect;
+        can_attach_wagon:           switch_en57axx_can_attach;
+        start_stop:                 switch_en57spotpr_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(en57spotpr)
+        ENGINE_POWER_CALLBACKS(en57spotpr)
+    }
+}
+// EN57SPOT tygrysie switches
+switch(FEAT_TRAINS, SELF, switch_en57spottg_articulated, extra_callback_info1) {
+    1..4: return item_en57spot_tg;     // including dummy parts
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_en57spottg_graphics, position_in_vehid_chain % 5) {
+    0: return sgroup_en57spottg_head;
+    2: return sgroup_en57spottg_mid;
+    4: return sgroup_en57spottg_tail;
+    return sset_dummy;      // dummy parts
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_en57spot_tg, 2010) {
+    property {
+        /* common properties */
+        name:                           string(STR_EN57SPOT_TG_NAME);
+        variant_group:                  2009;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2016, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  11;     // per part
+        cost_factor:                    PURCHASE_COST_EN57SPOTPR;
+        running_cost_factor:            RUNNING_COST_EN57SPOTPR;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          110 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          580 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 CARGO_CAPACITY_EN57SPOTPR;
+        weight:                         124 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.25*75/110;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   sset_en57spottg_purchase;
+        default:                    switch_en57spottg_graphics;
+        articulated_part:           switch_en57spottg_articulated;
+        length:                     switch_en57spotpr_length;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_en57spotpr_capacity;
+        visual_effect_and_powered:  switch_en57spotpr_visual_effect;
+        can_attach_wagon:           switch_en57axx_can_attach;
+        start_stop:                 switch_en57spotpr_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(en57spotpr)
+        ENGINE_POWER_CALLBACKS(en57spotpr)
+    }
+}
+// EN57SPOT polregio switches
+switch(FEAT_TRAINS, SELF, switch_en57spotpr_articulated, extra_callback_info1) {
+    1..4: return item_en57spot_pr;     // including dummy parts
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_en57spotpr_graphics, position_in_vehid_chain % 5) {
+    0: return sgroup_en57spotpr_head;
+    2: return sgroup_en57spotpr_mid;
+    4: return sgroup_en57spotpr_tail;
+    return sset_dummy;      // dummy parts
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_en57spot_pr, 2011) {
+    property {
+        /* common properties */
+        name:                           string(STR_EN57SPOT_POLREGIO_NAME);
+        variant_group:                  2009;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2017, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  11;     // per part
+        cost_factor:                    PURCHASE_COST_EN57SPOTPR;
+        running_cost_factor:            RUNNING_COST_EN57SPOTPR;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          110 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          580 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 CARGO_CAPACITY_EN57SPOTPR;
+        weight:                         124 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.25*75/110;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   sset_en57spotpr_purchase;
+        default:                    switch_en57spotpr_graphics;
+        articulated_part:           switch_en57spotpr_articulated;
+        length:                     switch_en57spotpr_length;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_en57spotpr_capacity;
+        visual_effect_and_powered:  switch_en57spotpr_visual_effect;
+        can_attach_wagon:           switch_en57axx_can_attach;
+        start_stop:                 switch_en57spotpr_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(en57spotpr)
+        ENGINE_POWER_CALLBACKS(en57spotpr)
+    }
+}

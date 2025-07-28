@@ -1,0 +1,72 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* Jhx sprites */
+spriteset(sset_jhx_purchase, "gfx/wr4u-34.png")         { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_jhx, "gfx/wr4u-34.png")                  { tmpl_sprite_train12(4, 20) }
+spriteset(sset_jhx_open, "gfx/wr4u-34.png")             { tmpl_sprite_train12(4, 80) }
+spriteset(sset_jhx_cut, "gfx/wr4u-34.png")              { tmpl_sprite_train12(4, 120) }
+spritegroup sgroup_jhx {
+    loaded:     [sset_jhx];
+    loading:    [sset_jhx_open];
+}
+
+/* Jhx switches */
+switch(FEAT_TRAINS, SELF, switch_jhx_articulated, extra_callback_info1) {
+    1: return item_dummy_3;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_jhx_graphics, (extra_callback_info1&0xFF)==0 && other_veh_is_hidden(1)) {
+    1: return sset_jhx_cut;
+    return sgroup_jhx;
+}
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_jhx, 11300) {
+    property {
+        /* common properties */
+        name:                           string(STR_JHX_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1934, 1, 1);
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  1;
+        cost_factor:                    PURCHASE_COST_JHX;
+        running_cost_factor:            RUNNING_COST_PASS_EXPRESS + RUNNING_COST_COOK_CREW;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 1;
+        weight:                         41 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON, VINFO_RESTAURANT_WAGON);
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     56;
+        retire_early:                   16;
+    }
+}
+    graphics {
+        purchase:                   sset_jhx_purchase;
+        additional_text:            return string(STR_PURCHASE_DESCR_2L, string(STR_BRAKE_AIR), string(STR_INCOME_ALL_EXPRESS));
+        default:                    switch_jhx_graphics;
+        articulated_part:           switch_jhx_articulated;
+        purchase_cargo_capacity:    return 0;
+        cargo_capacity:             return 0;
+        colour_mapping:             switch_lights_wagon_olive_2;
+    }
+}

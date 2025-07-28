@@ -1,0 +1,156 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, GPL 2.0
+
+/* TKt48 sprites */
+spriteset(sset_tkt48_purchase, "gfx/tkt48.png")     { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_tkt48, "gfx/tkt48.png")              { tmpl_sprite_train(4, 20) }
+spriteset(sset_tkt48_rev, "gfx/tkt48.png")          { tmpl_sprite_train(4, 80) }
+spriteset(sset_tkt48_black_purchase, "gfx/tkt48_czarne.png")     { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_tkt48_black, "gfx/tkt48_czarne.png")              { tmpl_sprite_train(4, 20) }
+spriteset(sset_tkt48_black_rev, "gfx/tkt48_czarne.png")          { tmpl_sprite_train(4, 80) }
+
+/* TKt48 switches */
+switch(FEAT_TRAINS, PARENT, switch_tkt48_graphics, vehicle_is_reversed) {
+	1: return sset_tkt48_rev;
+    return sset_tkt48;
+}
+switch(FEAT_TRAINS, PARENT, switch_tkt48_visual_effect_local, vehicle_is_reversed) {
+    1: return visual_effect_and_powered(VISUAL_EFFECT_STEAM, 3, DISABLE_WAGON_POWER);
+    return visual_effect_and_powered(VISUAL_EFFECT_STEAM, -3, DISABLE_WAGON_POWER);
+}
+switch (FEAT_TRAINS, SELF, switch_tkt48_add_text, IS_HEATING_CLIMATE ) {
+	1: return string(STR_PURCHASE_DESCR_2L, string(STR_HEATING_STEAM_POWER_TEXT, HEATING_POWER_STEAM_MID), string(STR_ENGINE_PASSENGER_FREIGHT));
+	return string(STR_ENGINE_PASSENGER_FREIGHT);
+}
+ENGINE_RUNNING_COST_SWITCH(tkt48, TKT48)
+STEAM_ENGINE_POWER_SWITCH(tkt48, KW_TO_HP(785))
+ENGINE_VISUAL_EFFECT_SWITCH(tkt48)
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_tkt48, 113) {
+    property {
+		/* common properties */
+        name:                           string(STR_TKT48_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1948, 1, 1);
+        vehicle_life:                   30;
+        reliability_decay:              16;     // 20
+        CARGO_LOCOMOTIVES_DEFINITION 
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_TKT48;
+        running_cost_factor:            RUNNING_COST_TKT48;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          80 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          785 kW;
+        running_cost_base:              RUNNING_COST_STEAM;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_PROPERTY
+        weight:                         98 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_STEAM;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.161;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:         0 ton;
+        bitmask_vehicle_info:           0;
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+	}
+} else {
+    property {
+        model_life:                     64;
+		retire_early:                   16;
+	}
+}
+
+    graphics {
+        purchase:                   sset_tkt48_purchase;
+        additional_text:            switch_tkt48_add_text;
+        default:                    switch_tkt48_graphics;
+        visual_effect_and_powered:  switch_tkt48_visual_effect;
+		can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(tkt48)
+        ENGINE_POWER_CALLBACKS(tkt48)
+    }
+}
+
+switch(FEAT_TRAINS, PARENT, switch_tkt48_black_graphics, vehicle_is_reversed) {
+	1: return sset_tkt48_black_rev;
+    return sset_tkt48_black;
+}
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_tkt48_black, 117) {
+    property {
+		/* common properties */
+        name:                           string(STR_TKT48_BLACK_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1948, 1, 1);
+        vehicle_life:                   30;
+        reliability_decay:              16;     // 20
+        CARGO_LOCOMOTIVES_DEFINITION 
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_TKT48;
+        running_cost_factor:            RUNNING_COST_TKT48;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          80 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          785 kW;
+        running_cost_base:              RUNNING_COST_STEAM;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_PROPERTY
+        weight:                         98 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_STEAM;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.161;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        variant_group:                 113;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:         0 ton;
+        bitmask_vehicle_info:           0;
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+	}
+} else {
+    property {
+        model_life:                     64;
+		retire_early:                   16;
+	}
+}
+
+    graphics {
+        purchase:                   sset_tkt48_black_purchase;
+        additional_text:            switch_tkt48_add_text;
+        default:                    switch_tkt48_black_graphics;
+        visual_effect_and_powered:  switch_tkt48_visual_effect;
+		can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(tkt48)
+        ENGINE_POWER_CALLBACKS(tkt48)
+    }
+}

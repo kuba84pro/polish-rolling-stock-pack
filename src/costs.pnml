@@ -1,0 +1,432 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+// For easy balancing engine purchase costs.
+/* Steam engines */
+#define PURCHASE_COST_TKH1      5
+#define PURCHASE_COST_TKI3      11
+#define PURCHASE_COST_OD13      14
+#define PURCHASE_COST_TI12      10
+#define PURCHASE_COST_TP4       12
+#define PURCHASE_COST_OK1       21
+#define PURCHASE_COST_TY23      13
+#define PURCHASE_COST_OKL27     16
+#define PURCHASE_COST_PT31      28
+#define PURCHASE_COST_OKZ32     20
+#define PURCHASE_COST_TY37      19
+#define PURCHASE_COST_TY2       20
+#define PURCHASE_COST_PT47      31
+#define PURCHASE_COST_TKT48     17
+#define PURCHASE_COST_OL49      23
+#define PURCHASE_COST_TY51      22
+
+/* Diesel engines */
+#define PURCHASE_COST_SM30      9
+#define PURCHASE_COST_SM41      15
+#define PURCHASE_COST_SM42      18
+#define PURCHASE_COST_SP42      PURCHASE_COST_SM42+1
+#define PURCHASE_COST_SU42      PURCHASE_COST_SM42+1
+#define PURCHASE_COST_6DG       21
+#define PURCHASE_COST_ST43      19
+#define PURCHASE_COST_ST44      25
+#define PURCHASE_COST_SP45      29
+#define PURCHASE_COST_SU45      PURCHASE_COST_SP45
+#define PURCHASE_COST_SU46      32
+#define PURCHASE_COST_SP47      38
+#define PURCHASE_COST_SM31      17
+#define PURCHASE_COST_SP32      23
+#define PURCHASE_COST_BR285     40
+#define PURCHASE_COST_6DL       19
+#define PURCHASE_COST_SU160     45
+#define PURCHASE_COST_SN61      20
+#define PURCHASE_COST_SN80      18
+#define PURCHASE_COST_SN81      16
+#define PURCHASE_COST_SA106     28
+#define PURCHASE_COST_SA103     25
+#define PURCHASE_COST_SA135     27
+#define PURCHASE_COST_SA136     35
+#define PURCHASE_COST_SA101     20
+#define PURCHASE_COST_SA102     23
+
+/* Electric engines */
+#define PURCHASE_COST_EP01      25+2
+#define PURCHASE_COST_EP02      28
+#define PURCHASE_COST_ET21      29
+#define PURCHASE_COST_EU07      35
+#define PURCHASE_COST_EU07A      45
+#define PURCHASE_COST_EU06      40
+#define PURCHASE_COST_EU05      40
+#define PURCHASE_COST_EP05      44
+#define PURCHASE_COST_ET22      41
+#define PURCHASE_COST_EP08      38
+#define PURCHASE_COST_ET40      44
+#define PURCHASE_COST_ET41      49
+#define PURCHASE_COST_ET42      46
+#define PURCHASE_COST_EP09      49
+#define PURCHASE_COST_E186      60
+#define PURCHASE_COST_EU44      83
+#define PURCHASE_COST_EU47      69
+#define PURCHASE_COST_EU46      79
+#define PURCHASE_COST_EU160      80
+#define PURCHASE_COST_EU200      85
+#define PURCHASE_COST_E4DCUD      80
+#define PURCHASE_COST_ET26      71
+#define PURCHASE_COST_SKODA163  40
+#define PURCHASE_COST_S181  25
+#define PURCHASE_COST_EM10  30
+#define PURCHASE_COST_111ED  70
+#define PURCHASE_COST_E6ACTA  71
+#define PURCHASE_COST_E6ACT  71
+
+/* EZT */
+#define PURCHASE_COST_EN57      50
+#define PURCHASE_COST_EN57AKM      58
+#define PURCHASE_COST_EN57AKS      58
+#define PURCHASE_COST_EN57AKW      58
+#define PURCHASE_COST_EN57AP      58
+#define PURCHASE_COST_EN57ALPR      58
+#define PURCHASE_COST_EN57SPOTPR      56
+#define PURCHASE_COST_EN71      71
+#define PURCHASE_COST_EN71AKS      71
+#define PURCHASE_COST_EN71AKM      71
+#define PURCHASE_COST_ED72      57
+#define PURCHASE_COST_ED74      80
+#define PURCHASE_COST_EN76      74
+#define PURCHASE_COST_ED250     255
+#define PURCHASE_COST_36WEA     60
+#define PURCHASE_COST_31WE     70
+#define PURCHASE_COST_45WE     80
+#define PURCHASE_COST_35WE     95
+#define PURCHASE_COST_ED161     120
+#define PURCHASE_COST_ED160     120
+#define PURCHASE_COST_ER160     110
+#define PURCHASE_COST_LM4268     95
+#define PURCHASE_COST_L4268     88
+
+#define PURCHASE_COST_WM15A     11
+#define PURCHASE_COST_ASF       1
+
+// For easy balancing engine running costs.
+/* Steam engines */
+#define RUNNING_COST_TKH1       31
+#define RUNNING_COST_TKI3       43
+#define RUNNING_COST_OD13       48
+#define RUNNING_COST_TI12       52
+#define RUNNING_COST_TP4        78
+#define RUNNING_COST_OK1        68+1
+#define RUNNING_COST_TY23       81
+#define RUNNING_COST_OKL27      68-1
+#define RUNNING_COST_PT31       118+1
+#define RUNNING_COST_OKZ32      108-1
+#define RUNNING_COST_TY37       102
+#define RUNNING_COST_TY2        98
+#define RUNNING_COST_PT47       126-1
+#define RUNNING_COST_TKT48      74-1
+#define RUNNING_COST_OL49       87
+#define RUNNING_COST_TY51       122
+
+/* Diesel engines */
+#define RUNNING_COST_SM30       40
+#define RUNNING_COST_SM41       52
+#define RUNNING_COST_SM42       62
+#define RUNNING_COST_SP42       RUNNING_COST_SM42+1
+#define RUNNING_COST_SU42       RUNNING_COST_SM42+2
+#define RUNNING_COST_6DG        67
+#define RUNNING_COST_ST43       93
+#define RUNNING_COST_ST44       116
+#define RUNNING_COST_SP45       114
+#define RUNNING_COST_SU45       RUNNING_COST_SP45+1
+#define RUNNING_COST_SU46       138
+#define RUNNING_COST_SP47       150
+#define RUNNING_COST_SM31       80
+#define RUNNING_COST_SP32       90
+#define RUNNING_COST_BR285      175
+#define RUNNING_COST_6DL        70
+#define RUNNING_COST_SU160      194
+#define RUNNING_COST_SN61       50-1
+#define RUNNING_COST_SN80       47
+#define RUNNING_COST_SN81       40
+#define RUNNING_COST_SA106      70-2
+#define RUNNING_COST_SA103      60
+#define RUNNING_COST_SA135      70
+#define RUNNING_COST_SA136      85-2
+#define RUNNING_COST_SA101      65
+#define RUNNING_COST_SA102      69
+
+/* Electric engines */
+#define RUNNING_COST_EP01       55+2
+#define RUNNING_COST_EP02       57+1
+#define RUNNING_COST_ET21       70
+#define RUNNING_COST_EU07       80-1
+#define RUNNING_COST_EU07A       90-1
+#define RUNNING_COST_EU06       95
+#define RUNNING_COST_EU05       94+2
+#define RUNNING_COST_EP05       99
+#define RUNNING_COST_ET22       110
+#define RUNNING_COST_EP08       79
+#define RUNNING_COST_ET40       137
+#define RUNNING_COST_ET41       140
+#define RUNNING_COST_ET42       149
+#define RUNNING_COST_EP09       119
+#define RUNNING_COST_E186       191
+#define RUNNING_COST_EU44       226
+#define RUNNING_COST_EU47       205
+#define RUNNING_COST_EU46       228
+#define RUNNING_COST_EU160       190
+#define RUNNING_COST_EU200       230
+#define RUNNING_COST_E4DCUD       190
+#define RUNNING_COST_ET26       201
+#define RUNNING_COST_SKODA163   70
+#define RUNNING_COST_S181   65
+#define RUNNING_COST_EM10  50
+#define RUNNING_COST_111ED   150
+#define RUNNING_COST_E6ACTA   201
+#define RUNNING_COST_E6ACT       201
+
+/* EZT */
+#define RUNNING_COST_EN57       38
+#define RUNNING_COST_EN57AKM       40
+#define RUNNING_COST_EN57AKS       40
+#define RUNNING_COST_EN57AKW       40
+#define RUNNING_COST_EN57AP       40
+#define RUNNING_COST_EN57ALPR       41
+#define RUNNING_COST_EN57SPOTPR       39
+#define RUNNING_COST_EN71       61
+#define RUNNING_COST_EN71AKS       61
+#define RUNNING_COST_EN71AKM       61
+#define RUNNING_COST_ED72       64
+#define RUNNING_COST_ED74       89
+#define RUNNING_COST_EN76       89+1
+#define RUNNING_COST_ED250      235
+#define RUNNING_COST_36WEA      69
+#define RUNNING_COST_31WE      75
+#define RUNNING_COST_45WE      80
+#define RUNNING_COST_35WE      95
+#define RUNNING_COST_ED161      145
+#define RUNNING_COST_ED160      145
+#define RUNNING_COST_ER160      95
+#define RUNNING_COST_LM4268      80
+#define RUNNING_COST_L4268      70
+
+#define RUNNING_COST_WM15A      25-2
+#define RUNNING_COST_ASF        0
+
+// For easy balancing engine costs when halted.
+/* Steam engines */
+#define HALTED_COST_TKH1        11
+#define HALTED_COST_TKI3        14
+#define HALTED_COST_OD13        15
+#define HALTED_COST_TI12        15
+#define HALTED_COST_TP4         16
+#define HALTED_COST_OK1         18
+#define HALTED_COST_TY23        16
+#define HALTED_COST_OKL27       17-1
+#define HALTED_COST_PT31        23
+#define HALTED_COST_OKZ32       20
+#define HALTED_COST_TY37        20
+#define HALTED_COST_TY2         20
+#define HALTED_COST_PT47        24
+#define HALTED_COST_TKT48       17-1
+#define HALTED_COST_OL49        18
+#define HALTED_COST_TY51        21
+
+/* Diesel engines */
+#define HALTED_COST_SM30        8
+#define HALTED_COST_SM41        10
+#define HALTED_COST_SM42        12
+#define HALTED_COST_SP42        HALTED_COST_SM42+1
+#define HALTED_COST_SU42        HALTED_COST_SM42+1
+#define HALTED_COST_6DG         14
+#define HALTED_COST_ST43        16
+#define HALTED_COST_ST44        16
+#define HALTED_COST_SP45        20-1
+#define HALTED_COST_SU45        HALTED_COST_SP45+1
+#define HALTED_COST_SU46        20
+#define HALTED_COST_SP47        25
+#define HALTED_COST_SM31        13
+#define HALTED_COST_SP32        15
+#define HALTED_COST_BR285       21
+#define HALTED_COST_6DL         12
+#define HALTED_COST_SU160       32
+#define HALTED_COST_SN61        15-1
+#define HALTED_COST_SN80        13
+#define HALTED_COST_SN81        10
+#define HALTED_COST_SA106       24-2
+#define HALTED_COST_SA103       20
+#define HALTED_COST_SA135       21
+#define HALTED_COST_SA136       30-2
+#define HALTED_COST_SA101       20
+#define HALTED_COST_SA102       22
+
+/* Electric engines */
+#define HALTED_COST_EP01        10+1
+#define HALTED_COST_EP02        11
+#define HALTED_COST_ET21        10
+#define HALTED_COST_EU07        14-1
+#define HALTED_COST_EU07A        21-1
+#define HALTED_COST_EU06        18
+#define HALTED_COST_EU05        21+1
+#define HALTED_COST_EP05        24
+#define HALTED_COST_ET22        14
+#define HALTED_COST_EP08        21
+#define HALTED_COST_ET40        10
+#define HALTED_COST_ET41        14
+#define HALTED_COST_ET42        10+1
+#define HALTED_COST_EP09        21
+#define HALTED_COST_E186        17
+#define HALTED_COST_EU44        38
+#define HALTED_COST_EU47        27
+#define HALTED_COST_EU46        28
+#define HALTED_COST_EU160        26
+#define HALTED_COST_EU200        30
+#define HALTED_COST_E4DCUD        26
+#define HALTED_COST_ET26        18
+#define HALTED_COST_SKODA163    14
+#define HALTED_COST_S181    8
+#define HALTED_COST_EM10  12
+#define HALTED_COST_111ED    5
+#define HALTED_COST_E6ACTA    18
+#define HALTED_COST_E6ACT    18
+
+/* EZT */
+#define HALTED_COST_EN57        14
+#define HALTED_COST_EN57AKM        16
+#define HALTED_COST_EN57AKS        16
+#define HALTED_COST_EN57AKW        16
+#define HALTED_COST_EN57AP        16
+#define HALTED_COST_EN57ALPR        17
+#define HALTED_COST_EN57SPOTPR        15
+#define HALTED_COST_EN71        14
+#define HALTED_COST_EN71AKS        14
+#define HALTED_COST_EN71AKM        14
+#define HALTED_COST_ED72        18-1
+#define HALTED_COST_ED74        25
+#define HALTED_COST_EN76        25+1
+#define HALTED_COST_ED250       47
+#define HALTED_COST_36WEA       20
+#define HALTED_COST_31WE       30
+#define HALTED_COST_45WE       35
+#define HALTED_COST_35WE       40
+#define HALTED_COST_ED161       44
+#define HALTED_COST_ED160       44
+#define HALTED_COST_ER160       35
+#define HALTED_COST_LM4268       28
+#define HALTED_COST_L4268       22
+
+#define HALTED_COST_WM15A       10-2
+
+// For easy balancing wagon purchase costs.
+/* Passenger wagons */
+#define PURCHASE_COST_GMY       32
+#define PURCHASE_COST_GHMX      58
+#define PURCHASE_COST_GMW       46
+#define PURCHASE_COST_PDN       68
+#define PURCHASE_COST_OHTX      56
+#define PURCHASE_COST_FG        36
+#define PURCHASE_COST_FY        32
+#define PURCHASE_COST_FHX       52
+#define PURCHASE_COST_DHXT      62
+#define PURCHASE_COST_DWXZ      74
+#define PURCHASE_COST_BDWXZD    76
+#define PURCHASE_COST_JHX       56
+#define PURCHASE_COST_JHIX      70
+#define PURCHASE_COST_113A      76
+#define PURCHASE_COST_WRDMNU    80
+#define PURCHASE_COST_WRMNOUZ   96
+
+#define PURCHASE_COST_BCY       34
+#define PURCHASE_COST_BCYH      36
+#define PURCHASE_COST_BHXZ      50+2
+#define PURCHASE_COST_ABHXZ     58
+#define PURCHASE_COST_BCI       38
+#define PURCHASE_COST_BH_RYF    (62-3)
+#define PURCHASE_COST_WLABWXZ   71
+#define PURCHASE_COST_WLAB      72
+#define PURCHASE_COST_WLAB10MNOUZ 94
+#define PURCHASE_COST_ABDNU     70
+#define PURCHASE_COST_BH_BON    (68-3)
+#define PURCHASE_COST_ABDHMNU   88
+#define PURCHASE_COST_WGPOLREGIO   70
+#define PURCHASE_COST_AB9MNOPUZ 98
+#define PURCHASE_COST_AB9NOPUZ 85
+#define PURCHASE_COST_174A 105
+#define PURCHASE_COST_BIPA 80
+#define PURCHASE_COST_BIPA3 105
+#define PURCHASE_COST_BIPA4 125
+#define PURCHASE_COST_BDHPUMN   70
+#define PURCHASE_COST_TWINDEXX  100
+#define PURCHASE_COST_TWINDEXXCC 106
+
+/* Cargo wagons */
+#define PURCHASE_COST_WDN       10-2
+#define PURCHASE_COST_WDDO      12
+#define PURCHASE_COST_WDDOH     13
+#define PURCHASE_COST_WDDO_2W   16
+#define PURCHASE_COST_ES        18
+#define PURCHASE_COST_EAOS      23
+#define PURCHASE_COST_EANOS     29
+#define PURCHASE_COST_EANOS_445W    28
+#define PURCHASE_COST_PPU       15
+#define PURCHASE_COST_EAMOS     23
+#define PURCHASE_COST_FALS      26
+#define PURCHASE_COST_FALNS     30-1
+#define PURCHASE_COST_KD        10-2
+#define PURCHASE_COST_KDT       12
+#define PURCHASE_COST_KDTH      13
+#define PURCHASE_COST_KDDET     16
+#define PURCHASE_COST_GGS       19
+#define PURCHASE_COST_GAGS      26
+#define PURCHASE_COST_GBS       20
+#define PURCHASE_COST_HBBINS    26
+#define PURCHASE_COST_HABBINS   28
+#define PURCHASE_COST_SLR       14+1
+#define PURCHASE_COST_SLMS      20
+#define PURCHASE_COST_IBHSS     25
+#define PURCHASE_COST_PDK31     13
+#define PURCHASE_COST_PDKH31    14
+#define PURCHASE_COST_KBKKS     19
+#define PURCHASE_COST_KGNS      25-1
+#define PURCHASE_COST_RES       25
+#define PURCHASE_COST_SGS       24
+#define PURCHASE_COST_SDGMNSS   28
+#define PURCHASE_COST_SGGRSS   40
+#define PURCHASE_COST_RH        14
+#define PURCHASE_COST_RBH       17
+#define PURCHASE_COST_ZAES      24
+#define PURCHASE_COST_ZACENS    24
+#define PURCHASE_COST_ZAGS    32
+#define PURCHASE_COST_SN        14
+#define PURCHASE_COST_HES       21
+#define PURCHASE_COST_RNH       14-1
+#define PURCHASE_COST_RNH_5R    16-1
+#define PURCHASE_COST_UAHS      24-2
+#define PURCHASE_COST_SDW       13
+#define PURCHASE_COST_SDWH      14
+#define PURCHASE_COST_UACS      24
+#define PURCHASE_COST_LEKQSS    25
+#define PURCHASE_COST_TADS      30
+
+#define PURCHASE_COST_PWM15     20-3
+
+// For easy balancing additional wagon costs.
+#define RUNNING_COST_BRAKEMAN       3
+#define RUNNING_COST_POSTMAN        3
+#define RUNNING_COST_SLEEP_CREW     4
+#define RUNNING_COST_COOK_CREW      4
+#define RUNNING_COST_OTHER          3
+#define RUNNING_COST_PASS_NO_BRAKE  2
+#define RUNNING_COST_PASS_OLD       3
+#define RUNNING_COST_PASS_SUBURB    5
+#define RUNNING_COST_PASS_EXPRESS   8
+#define RUNNING_COST_CARGO_EARLY    0
+#define RUNNING_COST_CARGO_NO_BRAKE 1
+#define RUNNING_COST_CARGO_SMALL    2
+#define RUNNING_COST_CARGO_MEDIUM   3
+#define RUNNING_COST_CARGO_LARGE    5
+#define RUNNING_COST_CARGO_SPECIAL  4
+
+#define REFIT_COST_12_CLASS_OLD     39
+#define REFIT_INCOME_12_CLASS_OLD   int(REFIT_COST_12_CLASS_OLD / 3)
+#define REFIT_COST_12_CLASS_NEW     54
+#define REFIT_INCOME_12_CLASS_NEW   int(REFIT_COST_12_CLASS_NEW / 3)

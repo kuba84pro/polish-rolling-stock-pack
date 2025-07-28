@@ -1,0 +1,205 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* WM15A sprites */
+spriteset(sset_wm15a_purchase, "gfx/wm15a.png")         { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_wm15a_empty, "gfx/wm15a.png")            { tmpl_sprite_train(4, 20) }
+spriteset(sset_pwm15_purchase, "gfx/wm15a.png")         { tmpl_sprite_purchase(244, 60) }
+spriteset(sset_pwm15_empty, "gfx/wm15a.png")            { tmpl_sprite_train(244, 20) }
+/* WM15A sprites with cargos */
+spriteset(sset_wm15a_goods_half, "gfx/wm15a.png")       { tmpl_sprite_train(4, 80) }
+spriteset(sset_wm15a_goods_full, "gfx/wm15a.png")       { tmpl_sprite_train(4, 120) }
+spriteset(sset_pwm15_goods_half, "gfx/wm15a.png")       { tmpl_sprite_train(244, 80) }
+spriteset(sset_pwm15_goods_full, "gfx/wm15a.png")       { tmpl_sprite_train(244, 120) }
+spritegroup sgroup_wm15a_goods {
+	loaded:  [sset_wm15a_empty, sset_wm15a_goods_half, sset_wm15a_goods_half, sset_wm15a_goods_full];
+	loading: [sset_wm15a_empty, sset_wm15a_goods_half, sset_wm15a_goods_half, sset_wm15a_goods_full];
+}
+spritegroup sgroup_pwm15_goods {
+	loaded:  [sset_pwm15_empty, sset_pwm15_goods_half, sset_pwm15_goods_half, sset_pwm15_goods_full];
+	loading: [sset_pwm15_empty, sset_pwm15_goods_half, sset_pwm15_goods_half, sset_pwm15_goods_full];
+}
+spriteset(sset_wm15a_wood_half, "gfx/wm15a.png")        { tmpl_sprite_train(4, 160) }
+spriteset(sset_wm15a_wood_full, "gfx/wm15a.png")        { tmpl_sprite_train(4, 200) }
+spriteset(sset_pwm15_wood_half, "gfx/wm15a.png")        { tmpl_sprite_train(244, 160) }
+spriteset(sset_pwm15_wood_full, "gfx/wm15a.png")        { tmpl_sprite_train(244, 200) }
+spritegroup sgroup_wm15a_wood {
+	loaded:  [sset_wm15a_empty, sset_wm15a_wood_half, sset_wm15a_wood_half, sset_wm15a_wood_full];
+	loading: [sset_wm15a_empty, sset_wm15a_wood_half, sset_wm15a_wood_half, sset_wm15a_wood_full];
+}
+spritegroup sgroup_pwm15_wood {
+	loaded:  [sset_pwm15_empty, sset_pwm15_wood_half, sset_pwm15_wood_half, sset_pwm15_wood_full];
+	loading: [sset_pwm15_empty, sset_pwm15_wood_half, sset_pwm15_wood_half, sset_pwm15_wood_full];
+}
+spriteset(sset_wm15a_steel_half, "gfx/wm15a.png")       { tmpl_sprite_train(4, 240) }
+spriteset(sset_wm15a_steel_full, "gfx/wm15a.png")       { tmpl_sprite_train(4, 280) }
+spriteset(sset_pwm15_steel_half, "gfx/wm15a.png")       { tmpl_sprite_train(244, 240) }
+spriteset(sset_pwm15_steel_full, "gfx/wm15a.png")       { tmpl_sprite_train(244, 280) }
+spritegroup sgroup_wm15a_steel {
+	loaded:  [sset_wm15a_empty, sset_wm15a_steel_half, sset_wm15a_steel_half, sset_wm15a_steel_full];
+	loading: [sset_wm15a_empty, sset_wm15a_steel_half, sset_wm15a_steel_half, sset_wm15a_steel_full];
+}
+spritegroup sgroup_pwm15_steel {
+	loaded:  [sset_pwm15_empty, sset_pwm15_steel_half, sset_pwm15_steel_half, sset_pwm15_steel_full];
+	loading: [sset_pwm15_empty, sset_pwm15_steel_half, sset_pwm15_steel_half, sset_pwm15_steel_full];
+}
+spriteset(sset_wm15a_lvstck_half, "gfx/wm15a.png")      { tmpl_sprite_train(4, 320) }
+spriteset(sset_wm15a_lvstck_full, "gfx/wm15a.png")      { tmpl_sprite_train(4, 360) }
+spriteset(sset_pwm15_lvstck_half, "gfx/wm15a.png")      { tmpl_sprite_train(244, 320) }
+spriteset(sset_pwm15_lvstck_full, "gfx/wm15a.png")      { tmpl_sprite_train(244, 360) }
+spritegroup sgroup_wm15a_lvstck {
+	loaded:  [sset_wm15a_empty, sset_wm15a_lvstck_half, sset_wm15a_lvstck_half, sset_wm15a_lvstck_full];
+	loading: [sset_wm15a_empty, sset_wm15a_lvstck_half, sset_wm15a_lvstck_half, sset_wm15a_lvstck_full];
+}
+spritegroup sgroup_pwm15_lvstck {
+	loaded:  [sset_pwm15_empty, sset_pwm15_lvstck_half, sset_pwm15_lvstck_half, sset_pwm15_lvstck_full];
+	loading: [sset_pwm15_empty, sset_pwm15_lvstck_half, sset_pwm15_lvstck_half, sset_pwm15_lvstck_full];
+}
+spriteset(sset_wm15a_paper_half, "gfx/wm15a.png")       { tmpl_sprite_train(4, 400) }
+spriteset(sset_wm15a_paper_full, "gfx/wm15a.png")       { tmpl_sprite_train(4, 440) }
+spriteset(sset_pwm15_paper_half, "gfx/wm15a.png")       { tmpl_sprite_train(244, 400) }
+spriteset(sset_pwm15_paper_full, "gfx/wm15a.png")       { tmpl_sprite_train(244, 440) }
+spritegroup sgroup_wm15a_paper {
+	loaded:  [sset_wm15a_empty, sset_wm15a_paper_half, sset_wm15a_paper_half, sset_wm15a_paper_full];
+	loading: [sset_wm15a_empty, sset_wm15a_paper_half, sset_wm15a_paper_half, sset_wm15a_paper_full];
+}
+spritegroup sgroup_pwm15_paper {
+	loaded:  [sset_pwm15_empty, sset_pwm15_paper_half, sset_pwm15_paper_half, sset_pwm15_paper_full];
+	loading: [sset_pwm15_empty, sset_pwm15_paper_half, sset_pwm15_paper_half, sset_pwm15_paper_full];
+}
+
+/* WM15A switches */
+switch(FEAT_TRAINS, PARENT, switch_wm15a_visual_effect_local, 0) {
+    return visual_effect_and_powered(VISUAL_EFFECT_DIESEL, -2, DISABLE_WAGON_POWER);
+}
+switch(FEAT_TRAINS, SELF, switch_wm15a_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_2L, string(STR_HEATING_ELECTRIC_TEXT), string(STR_WM15A_TEXT));
+    return string(STR_WM15A_TEXT);
+}
+switch(FEAT_TRAINS, SELF, switch_wm15a_can_attach, vehicle_type_id) {
+    item_pwm15:  return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_ATTACH_DISALLOW, string(STR_WM15A_NAME));
+}
+switch (FEAT_TRAINS, SELF, switch_wm15a_start_stop, num_vehs_in_consist) {
+    1..2: return CB_RESULT_NO_TEXT;
+    return string(STR_TRAIN_TOO_LONG, string(STR_WM15A_NAME));
+}
+switch (FEAT_TRAINS, SELF, switch_wm15a_capacity, cargo_type_in_veh) {
+    PASS: return 7;
+    TOUR: return 7;
+    MAIL: return 30;
+    VEHI: return 2;
+    return 15;
+}
+ENGINE_RUNNING_COST_SWITCH(wm15a, WM15A)
+DIESEL_ELECTRIC_ENGINE_POWER_SWITCH(wm15a)
+ENGINE_VISUAL_EFFECT_SWITCH(wm15a)
+
+/* PWM15 switches */
+switch (FEAT_TRAINS, SELF, switch_pwm15_capacity, cargo_type_in_veh) {
+	MAIL: return 30;
+    VEHI: return 2;
+	return 15;
+}
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_wm15a, 4000) {
+    property {
+        /* common properties */
+        name:                           string(STR_WM15A_NAME);
+        climates_available:             PKP_CLIMATES;
+        introduction_date:              date(1977, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              5;     // 20
+        refittable_cargo_classes:       bitmask(CC_PASSENGERS, CC_MAIL, CC_EXPRESS, CC_PIECE_GOODS);
+        non_refittable_cargo_classes:   bitmask(CC_REFRIGERATED, CC_LIQUID);
+        cargo_allow_refit:              [];
+        cargo_disallow_refit:           [];
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_WM15A;
+        running_cost_factor:            RUNNING_COST_WM15A;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          80 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          147 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        cargo_capacity:                 15;
+        weight:                         20 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.3;
+        air_drag_coefficient:           0.1;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_CARGO_WAGON);
+    }
+
+    graphics {
+        PASS:                       sset_wm15a_empty;
+        TOUR:                       sset_wm15a_empty;
+        WOOD:                       sgroup_wm15a_wood;
+        LVST:                       sgroup_wm15a_lvstck;
+        STEL:                       sgroup_wm15a_steel;
+        PAPR:                       sgroup_wm15a_paper;
+        purchase:                   sset_wm15a_purchase;
+        default:                    sgroup_wm15a_goods;
+        additional_text:            switch_wm15a_add_text;
+        visual_effect_and_powered:  switch_wm15a_visual_effect;
+        can_attach_wagon:           switch_wm15a_can_attach;
+        start_stop:                 switch_wm15a_start_stop;
+        cargo_capacity:             switch_wm15a_capacity;
+        ENGINE_RUNNING_COST_CALLBACKS(wm15a)
+        ENGINE_POWER_CALLBACKS(wm15a)
+    }
+}
+
+item(FEAT_TRAINS, item_pwm15, 4001) {
+    property {
+        /* common properties */
+        name:                           string(STR_PWM15_NAME);
+        climates_available:             PKP_CLIMATES;
+        introduction_date:              date(1977, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        refittable_cargo_classes:       bitmask(CC_MAIL, CC_EXPRESS, CC_PIECE_GOODS);
+        non_refittable_cargo_classes:   bitmask(CC_REFRIGERATED, CC_LIQUID);
+        cargo_allow_refit:              [];
+        cargo_disallow_refit:           [TOUR];
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_PWM15;
+        running_cost_factor:            RUNNING_COST_CARGO_SMALL;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          80 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 15;
+        weight:                         12 ton;
+        length:                         7;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_CARGO_WAGON);
+    }
+
+    graphics {
+        WOOD:                   sgroup_pwm15_wood;
+        LVST:                   sgroup_pwm15_lvstck;
+        STEL:                   sgroup_pwm15_steel;
+        PAPR:                   sgroup_pwm15_paper;
+        default:                sgroup_pwm15_goods;
+		purchase:               sset_pwm15_purchase;
+		cargo_capacity:         switch_pwm15_capacity;
+    }
+}

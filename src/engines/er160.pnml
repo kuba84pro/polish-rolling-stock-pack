@@ -1,0 +1,160 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, GPL 2.0
+
+/* ER160 sprites */
+spriteset(sset_er160_purchase, "gfx/ER160.png")   { tmpl_sprite_purchase(4, 450) }
+spriteset(sset_er160_advert, "gfx/ER160.png")   { tmpl_sprite_advertisement300(4, 470) }
+
+spriteset(sset_er160_head, "gfx/ER160.png")       { tmpl_sprite_train12(4, 20) }
+spriteset(sset_er160_mid1, "gfx/ER160.png")       { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_er160_mid2, "gfx/ER160.png")       { tmpl_sprite_train10_offset(4, 100, 1) }
+spriteset(sset_er160_mid3, "gfx/ER160.png")       { tmpl_sprite_train10_offset(4, 140, 1) }
+spriteset(sset_er160_tail, "gfx/ER160.png")       { tmpl_sprite_train12_offset(4, 180, 1) }
+spriteset(sset_er160_head_open, "gfx/ER160.png")  { tmpl_sprite_train12(4, 240) }
+spriteset(sset_er160_mid1_open, "gfx/ER160.png")  { tmpl_sprite_train10_offset(4, 280, 1) }
+spriteset(sset_er160_mid2_open, "gfx/ER160.png")  { tmpl_sprite_train10_offset(4, 320, 1) }
+spriteset(sset_er160_mid3_open, "gfx/ER160.png")  { tmpl_sprite_train10_offset(4, 360, 1) }
+spriteset(sset_er160_tail_open, "gfx/ER160.png")  { tmpl_sprite_train12_offset(4, 400, 1) }
+spritegroup sgroup_er160_head {
+    loaded:     [sset_er160_head];
+    loading:    [sset_er160_head_open];
+}
+spritegroup sgroup_er160_mid1 {
+    loaded:     [sset_er160_mid1];
+    loading:    [sset_er160_mid1_open];
+}
+spritegroup sgroup_er160_mid2 {
+    loaded:     [sset_er160_mid2];
+    loading:    [sset_er160_mid2_open];
+}
+spritegroup sgroup_er160_mid3 {
+    loaded:     [sset_er160_mid3];
+    loading:    [sset_er160_mid3_open];
+}
+spritegroup sgroup_er160_tail {
+    loaded:     [sset_er160_tail];
+    loading:    [sset_er160_tail_open];
+}
+
+/* ER160 switches */
+switch(FEAT_TRAINS, SELF, switch_er160_articulated, extra_callback_info1) {
+    1..8: return item_er160;     // including dummy parts
+    9: return item_dummy_2;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_er160_length, position_in_vehid_chain % 9) {
+    1: return 4;    // dummy part
+    3: return 1;    // dummy part
+    5: return 1;    // dummy part
+    7: return 1;    // dummy part
+    9: return 2;    // dummy part
+    return 8;
+}
+switch(FEAT_TRAINS, SELF, switch_er160_purchase, extra_callback_info1 & 0xFF) {
+    0x21: return sset_er160_advert;
+    return sset_er160_purchase;
+}
+switch(FEAT_TRAINS, SELF, switch_er160_graphics, position_in_vehid_chain % 9) {
+    0: return sgroup_er160_head;
+    2: return sgroup_er160_mid1;
+    4: return sgroup_er160_mid2;
+    6: return sgroup_er160_mid3;
+    8: return sgroup_er160_tail;
+    return sset_dummy;      // dummy parts
+}
+switch(FEAT_TRAINS, SELF, switch_er160_capacity, position_in_vehid_chain % 9) {
+    0: return 118;
+    2: return 118;
+    4: return 118;
+    6: return 118;
+    8: return 118;
+    return 1;   // dummy parts
+}
+switch(FEAT_TRAINS, SELF, switch_er160_visual_effect_local, position_in_vehid_chain % 9) {
+    8: return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 3, DISABLE_WAGON_POWER);
+    return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+}
+switch(FEAT_TRAINS, SELF, switch_er160_can_attach, vehicle_type_id) {
+    item_en57:  return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en71:  return string(STR_ATTACH_DISALLOW_EZT2);
+    item_ed72:  return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en76:  return string(STR_ATTACH_DISALLOW_EZT2);
+    item_ed74:  return string(STR_ATTACH_DISALLOW_EZT2);
+    item_ed250:  return string(STR_ATTACH_DISALLOW_EZT2);
+    item_er160:  return CB_RESULT_ATTACH_ALLOW;
+    item_ed160:  return string(STR_ATTACH_DISALLOW_EZT2);
+    item_ed161:  return string(STR_ATTACH_DISALLOW_EZT2);
+    return string(STR_ATTACH_DISALLOW_EZT1);
+}
+switch (FEAT_TRAINS, SELF, switch_er160_start_stop, num_vehs_in_consist / 9) {
+    1..2: return CB_RESULT_NO_TEXT;
+    return string(STR_TRAIN_TOO_LONG, string(STR_ER160_NAME));
+}
+switch(FEAT_TRAINS, SELF, switch_er160_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_3L, string(STR_HEATING_ELECTRIC_TEXT), string(STR_ER160_TEXT));
+    return string(STR_PURCHASE_DESCR_2L, string(STR_ER160_TEXT));
+}
+ENGINE_RUNNING_COST_SWITCH(er160, ER160)
+DIESEL_ELECTRIC_ENGINE_POWER_SWITCH(er160)
+ENGINE_VISUAL_EFFECT_SWITCH(er160)
+
+
+#ifdef SITTING_PLACES
+    #undef SITTING_PLACES
+#endif
+#define SITTING_PLACES 590
+#define CARGO_CAPACITY_ER160    int((SITTING_PLACES)/9)
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_er160, 2600) {
+    property {
+        /* common properties */
+        name:                           string(STR_ER160_KM_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2019, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  8;     // per part
+        cost_factor:                    PURCHASE_COST_ER160;
+        running_cost_factor:            RUNNING_COST_ER160;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          3000 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 CARGO_CAPACITY_ER160;
+        weight:                         140 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.3*80/249;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   switch_er160_purchase;
+        additional_text:            switch_er160_add_text;
+        default:                    switch_er160_graphics;
+        articulated_part:           switch_er160_articulated;
+        length:                     switch_er160_length;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_er160_capacity;
+        visual_effect_and_powered:  switch_er160_visual_effect;
+        can_attach_wagon:           switch_er160_can_attach;
+        start_stop:                 switch_er160_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(er160)
+        ENGINE_POWER_CALLBACKS(er160)
+    }
+}

@@ -1,0 +1,516 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, GPL 2.0
+
+/* ET22 sprites */
+// ET22 Historic Light Green
+spriteset(sset_et22_purchase, "gfx/et22.png")   { tmpl_sprite_purchase(4, 174) }
+spriteset(sset_et22, "gfx/et22.png")            { tmpl_sprite_train10(4, 134) }
+// ET22 Historic Green
+spriteset(sset_et22_green_purchase, "gfx/et22.png")   { tmpl_sprite_purchase(4, 228) }
+spriteset(sset_et22_green, "gfx/et22.png")  { tmpl_sprite_train10(4, 194) }
+// ET22 Historic Yellow Front
+spriteset(sset_et22_yellow_front_purchase, "gfx/et22.png")   { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_et22_yellow_front, "gfx/et22.png")  { tmpl_sprite_train10(4, 20) }
+// ET22 PKP Cargo
+spriteset(sset_et22_pkp_cargo_purchase, "gfx/et22.png")   { tmpl_sprite_purchase(4, 113) }
+spriteset(sset_et22_pkp_cargo, "gfx/et22.png")  { tmpl_sprite_train10(4, 80) }
+// ET22-910
+spriteset(sset_et22_910_purchase, "gfx/et22.png")   { tmpl_sprite_purchase(4, 291) }
+spriteset(sset_et22_910, "gfx/et22.png")  { tmpl_sprite_train10(4, 251) }
+// ET22 CTL OLD
+spriteset(sset_et22_ctl_old_purchase, "gfx/et22.png")   { tmpl_sprite_purchase(4, 360) }
+spriteset(sset_et22_ctl_old, "gfx/et22.png")  { tmpl_sprite_train10(4, 320) }
+// ET22 TABOR DEBICA
+spriteset(sset_et22_tabor_debica_purchase, "gfx/et22.png")   { tmpl_sprite_purchase(4, 420) }
+spriteset(sset_et22_tabor_debica, "gfx/et22.png")  { tmpl_sprite_train10(4, 380) }
+// 201eo Cargounit
+spriteset(sset_201eo_cu_purchase, "gfx/et22.png")   { tmpl_sprite_purchase(4, 480) }
+spriteset(sset_201eo_cu, "gfx/et22.png")  { tmpl_sprite_train10(4, 440) }
+// 201eo Rail Polska
+spriteset(sset_201eo_rail_polska_purchase, "gfx/et22.png")   { tmpl_sprite_purchase(4, 540) }
+spriteset(sset_201eo_rail_polska, "gfx/et22.png")  { tmpl_sprite_train10(4, 500) }
+
+/* ET22 switches */
+switch(FEAT_TRAINS, SELF, switch_et22_articulated, extra_callback_info1) {
+    1: return item_dummy_2;        // dummy parts
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_et22_visual_effect_local, position_in_vehid_chain % 2) {
+    0: return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 3, DISABLE_WAGON_POWER);
+    return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+}
+switch (FEAT_TRAINS, SELF, switch_et22_add_text, IS_HEATING_CLIMATE ) {
+	1: return string(STR_PURCHASE_DESCR_2L, string(STR_HEATING_ELECTRIC_POWER_TEXT, HEATING_POWER_ELECTRIC_MID), string(STR_ENGINE_HEAVY_FREIGHT));
+	return string(STR_ENGINE_HEAVY_FREIGHT);
+}
+ENGINE_RUNNING_COST_SWITCH(et22, ET22)
+DIESEL_ELECTRIC_2_ENGINE_POWER_SWITCH(et22, KW_TO_HP(3000))
+ENGINE_VISUAL_EFFECT_SWITCH(et22)
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_et22, 700) {
+    property {
+		/* common properties */
+        name:                           string(STR_ET22_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1969, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_ET22;
+        running_cost_factor:            RUNNING_COST_ET22;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          125 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          3000 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         120 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.3516819571865443;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_et22_purchase;
+        additional_text:            switch_et22_add_text;
+        default:                    sset_et22;
+        articulated_part:           switch_et22_articulated;
+        visual_effect_and_powered:  switch_et22_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(et22)
+        ENGINE_POWER_CALLBACKS(et22)
+    }
+}
+// ET22 Green
+/* Define the actual train */
+item(FEAT_TRAINS, item_et22_green, 701) {
+    property {
+		/* common properties */
+        name:                           string(STR_ET22_GREEN_NAME);
+        variant_group:                  700;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1969, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_ET22;
+        running_cost_factor:            RUNNING_COST_ET22;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          125 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          3000 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         120 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.3516819571865443;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_et22_green_purchase;
+        additional_text:            switch_et22_add_text;
+        default:                    sset_et22_green;
+        articulated_part:           switch_et22_articulated;
+        visual_effect_and_powered:  switch_et22_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(et22)
+        ENGINE_POWER_CALLBACKS(et22)
+    }
+}
+// ET22 Yellow Front
+/* Define the actual train */
+item(FEAT_TRAINS, item_et22_yellow_front, 702) {
+    property {
+		/* common properties */
+        name:                           string(STR_ET22_YELLOW_FRONT_NAME);
+        variant_group:                  700;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1989, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_ET22;
+        running_cost_factor:            RUNNING_COST_ET22;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          125 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          3000 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         120 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.3516819571865443;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_et22_yellow_front_purchase;
+        additional_text:            switch_et22_add_text;
+        default:                    sset_et22_yellow_front;
+        articulated_part:           switch_et22_articulated;
+        visual_effect_and_powered:  switch_et22_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(et22)
+        ENGINE_POWER_CALLBACKS(et22)
+    }
+}
+// ET22 PKP_CARGO
+/* Define the actual train */
+item(FEAT_TRAINS, item_et22_pkp_cargo, 703) {
+    property {
+		/* common properties */
+        name:                           string(STR_ET22_PKP_CARGO_NAME);
+        variant_group:                  700;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2010, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_ET22;
+        running_cost_factor:            RUNNING_COST_ET22;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          125 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          3000 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         120 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.3516819571865443;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_et22_pkp_cargo_purchase;
+        additional_text:            switch_et22_add_text;
+        default:                    sset_et22_pkp_cargo;
+        articulated_part:           switch_et22_articulated;
+        visual_effect_and_powered:  switch_et22_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(et22)
+        ENGINE_POWER_CALLBACKS(et22)
+    }
+}
+// ET22 910
+/* Define the actual train */
+item(FEAT_TRAINS, item_et22_910, 704) {
+    property {
+		/* common properties */
+        name:                           string(STR_ET22_910_NAME);
+        variant_group:                  700;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2016, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_ET22;
+        running_cost_factor:            RUNNING_COST_ET22;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          125 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          3000 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         120 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.3516819571865443;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_et22_910_purchase;
+        additional_text:            switch_et22_add_text;
+        default:                    sset_et22_910;
+        articulated_part:           switch_et22_articulated;
+        visual_effect_and_powered:  switch_et22_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(et22)
+        ENGINE_POWER_CALLBACKS(et22)
+    }
+}
+// ET22 CLT_OLD
+/* Define the actual train */
+item(FEAT_TRAINS, item_et22_ctl_old, 705) {
+    property {
+		/* common properties */
+        name:                           string(STR_ET22_CTL_OLD_NAME);
+        variant_group:                  700;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2009, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_ET22;
+        running_cost_factor:            RUNNING_COST_ET22;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          125 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          3000 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         120 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.3516819571865443;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_et22_ctl_old_purchase;
+        additional_text:            switch_et22_add_text;
+        default:                    sset_et22_ctl_old;
+        articulated_part:           switch_et22_articulated;
+        visual_effect_and_powered:  switch_et22_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(et22)
+        ENGINE_POWER_CALLBACKS(et22)
+    }
+}
+// ET22 TABOR_DEBICA
+/* Define the actual train */
+item(FEAT_TRAINS, item_et22_tabor_debica, 706) {
+    property {
+		/* common properties */
+        name:                           string(STR_ET22_TABOR_DEBICA_NAME);
+        variant_group:                  700;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2020, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_ET22;
+        running_cost_factor:            RUNNING_COST_ET22;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          125 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          3000 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         120 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.3516819571865443;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_et22_tabor_debica_purchase;
+        additional_text:            switch_et22_add_text;
+        default:                    sset_et22_tabor_debica;
+        articulated_part:           switch_et22_articulated;
+        visual_effect_and_powered:  switch_et22_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(et22)
+        ENGINE_POWER_CALLBACKS(et22)
+    }
+}
+// 201Eo Cargounit
+/* Define the actual train */
+item(FEAT_TRAINS, item_201eo_cargounit, 707) {
+    property {
+		/* common properties */
+        name:                           string(STR_201EO_CARGOUNIT_NAME);
+        variant_group:                  700;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2019, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_ET22;
+        running_cost_factor:            RUNNING_COST_ET22;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          125 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          3000 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         120 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.3516819571865443;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_201eo_cu_purchase;
+        additional_text:            switch_et22_add_text;
+        default:                    sset_201eo_cu;
+        articulated_part:           switch_et22_articulated;
+        visual_effect_and_powered:  switch_et22_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(et22)
+        ENGINE_POWER_CALLBACKS(et22)
+    }
+}
+// 201Eo Rail Polska
+/* Define the actual train */
+item(FEAT_TRAINS, item_201eo_rail_polska, 708) {
+    property {
+		/* common properties */
+        name:                           string(STR_201EO_RAIL_POLSKA_NAME);
+        variant_group:                  700;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2019, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_ET22;
+        running_cost_factor:            RUNNING_COST_ET22;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          125 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          3000 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         120 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.3516819571865443;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_201eo_rail_polska_purchase;
+        additional_text:            switch_et22_add_text;
+        default:                    sset_201eo_rail_polska;
+        articulated_part:           switch_et22_articulated;
+        visual_effect_and_powered:  switch_et22_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(et22)
+        ENGINE_POWER_CALLBACKS(et22)
+    }
+}

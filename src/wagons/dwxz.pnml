@@ -1,0 +1,118 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, GPL 2.0
+
+/* Dwxz sprites */
+spriteset(sset_dwxz_old_purchase, "gfx/209c.png")    { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_dwxz_new_purchase, "gfx/209c.png")    { tmpl_sprite_purchase(4, 120) }
+spriteset(sset_dwxz_old, "gfx/209c.png")             { tmpl_sprite_train12(4, 20) }
+spriteset(sset_dwxz_new, "gfx/209c.png")             { tmpl_sprite_train12(4, 80) }
+spriteset(sset_dwxz_old_open, "gfx/209c.png")        { tmpl_sprite_train12(4, 140) }
+spriteset(sset_dwxz_new_open, "gfx/209c.png")        { tmpl_sprite_train12(4, 180) }
+spriteset(sset_dwxz_old_cut, "gfx/209c.png")         { tmpl_sprite_train12(4, 220) }
+spriteset(sset_dwxz_new_cut, "gfx/209c.png")         { tmpl_sprite_train12(4, 260) }
+spritegroup sgroup_dwxz_old {
+    loaded:     [sset_dwxz_old];
+    loading:    [sset_dwxz_old_open];
+}
+spritegroup sgroup_dwxz_new {
+    loaded:     [sset_dwxz_new];
+    loading:    [sset_dwxz_new_open];
+}
+
+/* Dwxz switches */
+switch(FEAT_TRAINS, SELF, switch_dwxz_articulated, extra_callback_info1) {
+    1: return item_dummy_3;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_dwxz_new_articulated, extra_callback_info1) {
+    1: return item_dummy_3;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_dwxz_old_graphics, (extra_callback_info1&0xFF)==0 && other_veh_is_hidden(1)) {
+    1: return sset_dwxz_old_cut;
+    return sgroup_dwxz_old;
+}
+switch(FEAT_TRAINS, SELF, switch_dwxz_new_graphics, (extra_callback_info1&0xFF)==0 && other_veh_is_hidden(1)) {
+    1: return sset_dwxz_new_cut;
+    return sgroup_dwxz_new;
+}
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_dwxz, 10023) {
+    property {
+		/* common properties */
+        name:                           string(STR_DWXZ_NAME);
+        variant_group:                  10020;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1975, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_LUGGAGE_WAGON_DEFINITION
+        loading_speed:                  7;
+        cost_factor:                    PURCHASE_COST_DWXZ;
+        running_cost_factor:            RUNNING_COST_PASS_EXPRESS + RUNNING_COST_POSTMAN;
+        cargo_age_period:               int(185*1.41);  // slow ageing
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 36;
+        weight:                         43 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON, VINFO_LUGGAGE_WAGON);
+    }
+
+    graphics {
+        purchase:                   sset_dwxz_old_purchase;
+		additional_text:            return string(STR_BRAKE_AIR);
+        default:                    switch_dwxz_old_graphics;
+        articulated_part:           switch_dwxz_articulated;
+        colour_mapping:             switch_lights_wagon_olive_2;
+    }
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_dwxz_new, 10024) {
+    property {
+		/* common properties */
+        name:                           string(STR_DWXZ_NAME);
+        variant_group:                  10023;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1993, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_LUGGAGE_WAGON_DEFINITION
+        loading_speed:                  7;
+        cost_factor:                    PURCHASE_COST_DWXZ;
+        running_cost_factor:            RUNNING_COST_PASS_EXPRESS + RUNNING_COST_POSTMAN;
+        cargo_age_period:               int(185*1.41);  // slow ageing
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 36;
+        weight:                         43 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON, VINFO_LUGGAGE_WAGON);
+    }
+
+    graphics {
+        purchase:                   sset_dwxz_new_purchase;
+		additional_text:            return string(STR_BRAKE_AIR);
+        default:                    switch_dwxz_new_graphics;
+        articulated_part:           switch_dwxz_new_articulated;
+        colour_mapping:             switch_lights_wagon_brown_2;
+    }
+}

@@ -1,0 +1,103 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* Ok1 sprites */
+spriteset(sset_ok1_purchase, "gfx/ok1.png")         { tmpl_sprite_purchase(4, 100) }
+spriteset(sset_ok1_f1, "gfx/ok1.png")               { tmpl_sprite_train(4, 20) }
+spriteset(sset_ok1_f2, "gfx/ok1.png")               { tmpl_sprite_train(4, 20) }
+spriteset(sset_ok1_tender, "gfx/ok1.png")           { tmpl_sprite_train(4, 60) }
+#ifdef ZOOM_SPRITES_ENABLED
+alternative_sprites(sset_ok1_f1,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/ok1-x2.png")     { tmpl_sprite_train_x2(8, 40) }
+alternative_sprites(sset_ok1_f2,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/ok1-x2.png")     { tmpl_sprite_train_x2(8, 120) }
+alternative_sprites(sset_ok1_tender,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/ok1-x2.png")     { tmpl_sprite_train_x2(8, 200) }
+#endif
+
+/* Ok1 switches */
+switch(FEAT_TRAINS, SELF, switch_ok1_articulated, extra_callback_info1) {
+    1: return item_ok1;    // add tender
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_ok1_graphics_frames, motion_counter % 4) {
+    0..1: return sset_ok1_f1;
+    return sset_ok1_f2;
+}
+switch(FEAT_TRAINS, SELF, switch_ok1_graphics, position_in_vehid_chain % 2) {
+    0: return switch_ok1_graphics_frames;
+    return sset_ok1_tender;
+}
+switch(FEAT_TRAINS, SELF, switch_ok1_length, position_in_vehid_chain % 2) {
+    1: return 5;
+    return 7;
+}
+switch (FEAT_TRAINS, SELF, switch_ok1_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_2L, string(STR_HEATING_STEAM_POWER_TEXT, HEATING_POWER_STEAM_MID), string(STR_ENGINE_PASSENGER));
+    return string(STR_ENGINE_PASSENGER);
+}
+ENGINE_RUNNING_COST_SWITCH(ok1, OK1)
+STEAM_ENGINE_POWER_SWITCH(ok1, KW_TO_HP(662))
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_ok1, 105) {
+    property {
+        /* common properties */
+        name:                           string(STR_OK1_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              PKP_INTRODUCTION_DATE;
+        vehicle_life:                   30;
+        reliability_decay:              18;     // 20
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5;
+        cost_factor:                    PURCHASE_COST_OK1;
+        running_cost_factor:            RUNNING_COST_OK1;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          662 kW;
+        running_cost_base:              RUNNING_COST_STEAM;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_PROPERTY
+        weight:                         123 ton;    // 78+45 ton
+        ai_engine_rank:                 0;  // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_STEAM;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.093;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     62;
+        retire_early:                   8;
+    }
+}
+
+    graphics {
+        purchase:                   sset_ok1_purchase;
+        additional_text:            switch_ok1_add_text;
+        default:                    switch_ok1_graphics;
+        articulated_part:           switch_ok1_articulated;
+        length:                     switch_ok1_length;
+        visual_effect_and_powered:  switch_normal_steam_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(ok1)
+        ENGINE_POWER_CALLBACKS(ok1)
+    }
+}

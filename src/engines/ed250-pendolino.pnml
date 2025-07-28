@@ -1,0 +1,236 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* ED250 sprites */
+#define ED250_FILE   "gfx/ed250-pendolino.png"
+spriteset(sset_ed250_purchase, ED250_FILE)          { tmpl_sprite_purchase(4, 1140) }
+spriteset(sset_ed250_advert, ED250_FILE)            { tmpl_sprite_advertisement300(4, 1160) }
+
+/* spriteset & spritegroup template */
+#define ED250_SPRITES(part, x, y) \
+spriteset(sset_ed250_##part, ED250_FILE)            { tmpl_sprite_train12(x, y) } \
+spriteset(sset_ed250_##part##_open, ED250_FILE)     { tmpl_sprite_train12(x, y+280) } \
+spriteset(sset_ed250_##part##_cut, ED250_FILE)      { tmpl_sprite_train12(x, y+840) } \
+spriteset(sset_ed250_##part##_rear, ED250_FILE)     { tmpl_sprite_train12_rear(x, y) } \
+spriteset(sset_ed250_##part##_rear_open, ED250_FILE) { tmpl_sprite_train12_rear(x, y+280) } \
+spriteset(sset_ed250_##part##_l, ED250_FILE)        { tmpl_sprite_train12_l(x, y+560) } \
+spriteset(sset_ed250_##part##_r, ED250_FILE)        { tmpl_sprite_train12_r(x, y+560) } \
+spritegroup sgroup_ed250_##part { \
+    loaded:     [sset_ed250_##part]; \
+    loading:    [sset_ed250_##part##_open]; \
+} \
+spritegroup sgroup_ed250_##part##_rear { \
+    loaded:     [sset_ed250_##part##_rear]; \
+    loading:    [sset_ed250_##part##_rear_open]; \
+}
+ED250_SPRITES(1, 4, 20)
+ED250_SPRITES(7, 4, 260)
+/* sprites for normal train */
+ED250_SPRITES(2_normal, 4, 60)
+ED250_SPRITES(3_normal, 4, 100)
+ED250_SPRITES(4_normal, 4, 140)
+ED250_SPRITES(5_normal, 4, 180)
+ED250_SPRITES(6_normal, 4, 220)
+/* sprites for reversed train */
+ED250_SPRITES(2_rev, 304, 60)
+ED250_SPRITES(3_rev, 304, 100)
+ED250_SPRITES(4_rev, 304, 140)
+ED250_SPRITES(5_rev, 304, 180)
+ED250_SPRITES(6_rev, 304, 220)
+
+/* ED250 switches */
+switch(FEAT_TRAINS, SELF, switch_ed250_articulated, extra_callback_info1) {
+    1..13: return item_ed250;   // including dummy parts
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_ed250_length, position_in_vehid_chain % 14) {
+    1: return 4;    // dummy part
+    3: return 4;    // dummy part
+    5: return 4;    // dummy part
+    7: return 4;    // dummy part
+    9: return 4;    // dummy part
+    11: return 4;   // dummy part
+    13: return 4;   // dummy part
+    return 8;
+}
+switch(FEAT_TRAINS, SELF, switch_ed250_purchase, extra_callback_info1 & 0xFF) {
+    0x21: return sset_ed250_advert;
+    return sset_ed250_purchase;
+}
+/* graphic switches template */
+#define ED250_GRAPHICS_SWITCHES(part) \
+switch(FEAT_TRAINS, SELF, switch_ed250_##part##_cut_front, other_veh_is_hidden(1)) { \
+    1: return sset_ed250_##part##_cut; \
+    return sgroup_ed250_##part; \
+} \
+switch(FEAT_TRAINS, SELF, switch_ed250_##part##_extra_front, \
+   [STORE_TEMP(curv_info_prev_cur, 0), STORE_TEMP(curv_info_cur_next, 1), \
+    STORE_TEMP((LOAD_TEMP(0)<0 && LOAD_TEMP(1)<0)?0:LOAD_TEMP(1), 1), \
+    STORE_TEMP((LOAD_TEMP(0)>0 && LOAD_TEMP(1)>0)?0:LOAD_TEMP(1), 1), LOAD_TEMP(1)]) { \
+    -2..-1: return sset_ed250_##part##_l; \
+    1..2:   return sset_ed250_##part##_r; \
+    return switch_ed250_##part##_cut_front; \
+} \
+switch(FEAT_TRAINS, SELF, switch_ed250_##part##_front, (extra_callback_info1&0xFF)==0) { \
+    1: return switch_ed250_##part##_extra_front; \
+    return sgroup_ed250_##part; \
+} \
+switch(FEAT_TRAINS, SELF, switch_ed250_##part##_rear, (extra_callback_info1&0xFF)==0 && curv_info_prev_cur==0 && other_veh_z_offset(-1)==0 ) { \
+    1: return sgroup_ed250_##part##_rear; \
+    return sset_dummy; \
+}
+
+#define ED250_DIRECTION_SWITCHES(part) \
+switch(FEAT_TRAINS, PARENT, switch_ed250_##part##_front, vehicle_is_reversed) { \
+    1: return switch_ed250_##part##_rev_front; \
+    return switch_ed250_##part##_normal_front; \
+} \
+switch(FEAT_TRAINS, PARENT, switch_ed250_##part##_rear, vehicle_is_reversed) { \
+    1: return switch_ed250_##part##_rev_rear; \
+    return switch_ed250_##part##_normal_rear; \
+}
+
+ED250_GRAPHICS_SWITCHES(1)
+ED250_GRAPHICS_SWITCHES(7)
+/* switches for normal train */
+ED250_GRAPHICS_SWITCHES(2_normal)
+ED250_GRAPHICS_SWITCHES(3_normal)
+ED250_GRAPHICS_SWITCHES(4_normal)
+ED250_GRAPHICS_SWITCHES(5_normal)
+ED250_GRAPHICS_SWITCHES(6_normal)
+/* switches for reversed train */
+ED250_GRAPHICS_SWITCHES(2_rev)
+ED250_GRAPHICS_SWITCHES(3_rev)
+ED250_GRAPHICS_SWITCHES(4_rev)
+ED250_GRAPHICS_SWITCHES(5_rev)
+ED250_GRAPHICS_SWITCHES(6_rev)
+/* direction switches */
+ED250_DIRECTION_SWITCHES(2)
+ED250_DIRECTION_SWITCHES(3)
+ED250_DIRECTION_SWITCHES(4)
+ED250_DIRECTION_SWITCHES(5)
+ED250_DIRECTION_SWITCHES(6)
+
+switch(FEAT_TRAINS, SELF, switch_ed250_graphics, position_in_vehid_chain % 14) {
+    0: return switch_ed250_1_front;
+    1: return switch_ed250_1_rear;
+    2: return switch_ed250_2_front;
+    3: return switch_ed250_2_rear;
+    4: return switch_ed250_3_front;
+    5: return switch_ed250_3_rear;
+    6: return switch_ed250_4_front;
+    7: return switch_ed250_4_rear;
+    8: return switch_ed250_5_front;
+    9: return switch_ed250_5_rear;
+    10: return switch_ed250_6_front;
+    11: return switch_ed250_6_rear;
+    12: return switch_ed250_7_front;
+    13: return switch_ed250_7_rear;
+    return CB_FAILED;
+}
+switch(FEAT_TRAINS, SELF, switch_ed250_capacity, position_in_vehid_chain % 14) {
+    0: return 45-1;
+    2: return 56-1;
+    4: return 18-1;
+    6: return 74-1;
+    8: return 74-1;
+    10: return 74-1;
+    12: return 61-1;
+    return 1;   // dummy parts
+}
+switch(FEAT_TRAINS, SELF, switch_ed250_visual_effect_normal, position_in_vehid_chain % 14) {
+    9: return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, -4, DISABLE_WAGON_POWER);
+    return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+}
+switch(FEAT_TRAINS, SELF, switch_ed250_visual_effect_rev, position_in_vehid_chain % 14) {
+    7: return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, -4, DISABLE_WAGON_POWER);
+    return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+}
+switch(FEAT_TRAINS, PARENT, switch_ed250_visual_effect_local, vehicle_is_reversed) {
+    1: return switch_ed250_visual_effect_rev;
+    return switch_ed250_visual_effect_normal;
+}
+switch(FEAT_TRAINS, SELF, switch_ed250_can_attach, vehicle_type_id) {
+    item_en57:  return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en71:  return string(STR_ATTACH_DISALLOW_EZT2);
+    item_ed72:  return string(STR_ATTACH_DISALLOW_EZT2);
+    item_ed74:  return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en76:  return string(STR_ATTACH_DISALLOW_EZT2);
+    item_ed250:  return CB_RESULT_ATTACH_ALLOW;
+    item_ed161:  return string(STR_ATTACH_DISALLOW_EZT2);
+    return string(STR_ATTACH_DISALLOW_EZT1);
+}
+switch(FEAT_TRAINS, SELF, switch_ed250_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_3L, string(STR_HEATING_ELECTRIC_TEXT), string(STR_ED250_TEXT), string(STR_INCOME_1_CLASS));
+    return string(STR_PURCHASE_DESCR_2L, string(STR_ED250_TEXT), string(STR_INCOME_1_CLASS));
+}
+switch (FEAT_TRAINS, SELF, switch_ed250_start_stop, num_vehs_in_consist / 14) {
+    1..2: return CB_RESULT_NO_TEXT;
+    return string(STR_TRAIN_TOO_LONG, string(STR_ED250_NAME));
+}
+ENGINE_RUNNING_COST_SWITCH(ed250, ED250)
+DIESEL_ELECTRIC_ENGINE_POWER_SWITCH(ed250)
+ENGINE_VISUAL_EFFECT_SWITCH(ed250)
+
+#ifdef SITTING_PLACES
+    #undef SITTING_PLACES
+#endif
+#define SITTING_PLACES 45+56+18+3*74+61
+#define CARGO_CAPACITY_ED250    int((SITTING_PLACES+7)/14)
+
+#define AGE_ED250_2_CLASS   185*1.9
+#define AGE_ED250_1_CLASS   (185*2.82)*1.9
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_ed250, 2603) {
+    property {
+        /* common properties */
+        name:                           string(STR_ED250_PKP_IC_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2013, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  6;      // per part
+        cost_factor:                    PURCHASE_COST_ED250;
+        running_cost_factor:            RUNNING_COST_ED250;
+        cargo_age_period:               int((45*AGE_ED250_1_CLASS + (402-45)*AGE_ED250_2_CLASS)/402);
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          250 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          5600 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 CARGO_CAPACITY_ED250;
+        weight:                         410 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.26*8/28;
+        air_drag_coefficient:           0.06;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+    graphics {
+        purchase:                   switch_ed250_purchase;
+        additional_text:            switch_ed250_add_text;
+        default:                    switch_ed250_graphics;
+        articulated_part:           switch_ed250_articulated;
+        length:                     switch_ed250_length;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_ed250_capacity;
+        visual_effect_and_powered:  switch_ed250_visual_effect;
+        can_attach_wagon:           switch_ed250_can_attach;
+        start_stop:                 switch_ed250_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(ed250)
+        ENGINE_POWER_CALLBACKS(ed250)
+    }
+}

@@ -1,0 +1,219 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* ET42 sprites */
+spriteset(sset_et42_purchase, "gfx/et42.png")           { tmpl_sprite_purchase(4, 100) }
+spriteset(sset_et42_head, "gfx/et42.png")               { tmpl_sprite_train10(4, 20) }
+spriteset(sset_et42_tail, "gfx/et42.png")               { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_et42_purchase_pkp_cargo, "gfx/et42.png")           { tmpl_sprite_purchase(4, 200) }
+spriteset(sset_et42_head_pkp_cargo, "gfx/et42.png")     { tmpl_sprite_train10(4, 119) }
+spriteset(sset_et42_tail_pkp_cargo, "gfx/et42.png")     { tmpl_sprite_train10_offset(4, 159, 1) }
+spriteset(sset_et42_purchase_yellow, "gfx/et42.png")           { tmpl_sprite_purchase(4, 306) }
+spriteset(sset_et42_head_yellow, "gfx/et42.png")        { tmpl_sprite_train10(4, 228) }
+spriteset(sset_et42_tail_yellow, "gfx/et42.png")        { tmpl_sprite_train10_offset(4, 268, 1) }
+
+/* ET42 switches */
+#define ET42_YELLOW current_year >= 1989
+#define ET42_PKP_CARGO current_year >= 2010
+switch(FEAT_TRAINS, SELF, switch_et42_articulated, extra_callback_info1) {
+    1..2: return item_et42;     // add second part
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_et42_length, position_in_vehid_chain % 3) {
+    1: return 2;                // dummy parts
+    return 8;
+}
+switch(FEAT_TRAINS, SELF, switch_et42_graphics, position_in_vehid_chain % 3) {
+    0: return sset_et42_head;
+    2: return sset_et42_tail;
+    return sset_dummy;
+}
+switch(FEAT_TRAINS, SELF, switch_et42_visual_effect_local, position_in_vehid_chain % 3) {
+    0: return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 3, DISABLE_WAGON_POWER);
+    2: return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+    return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+}
+switch (FEAT_TRAINS, SELF, switch_et42_add_text, IS_HEATING_CLIMATE ) {
+	1: return string(STR_PURCHASE_DESCR_2L, string(STR_HEATING_ELECTRIC_POWER_TEXT, HEATING_POWER_ELECTRIC_HI), string(STR_ENGINE_HEAVY_FREIGHT));
+	return string(STR_ENGINE_HEAVY_FREIGHT);
+}
+ENGINE_RUNNING_COST_SWITCH(et42, ET42)
+DIESEL_ELECTRIC_2_ENGINE_POWER_SWITCH(et42, KW_TO_HP(4480))
+ENGINE_VISUAL_EFFECT_SWITCH(et42)
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_et42, 770) {
+    property {
+		/* common properties */
+        name:                           string(STR_ET42_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1979, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_ET42;
+        running_cost_factor:            RUNNING_COST_ET42;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          4480 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         164 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.305;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_et42_purchase;
+        additional_text:            switch_et42_add_text;
+        default:                    switch_et42_graphics;
+        articulated_part:           switch_et42_articulated;
+        length:                     switch_et42_length;
+        visual_effect_and_powered:  switch_et42_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(et42)
+        ENGINE_POWER_CALLBACKS(et42)
+    }
+}
+/* ET42 YELLOW switches */
+switch(FEAT_TRAINS, SELF, switch_et42_yellow_articulated, extra_callback_info1) {
+    1..2: return item_et42_yellow;     // add second part
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_et42_yellow_graphics, position_in_vehid_chain % 3) {
+    0: return sset_et42_head_yellow;
+    2: return sset_et42_tail_yellow;
+    return sset_dummy;
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_et42_yellow, 771) {
+    property {
+		/* common properties */
+        name:                           string(STR_ET42_YELLOW_FRONT_NAME);
+        variant_group:                  770;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1989, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_ET42;
+        running_cost_factor:            RUNNING_COST_ET42;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          4480 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         164 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.305;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_et42_purchase_yellow;
+        additional_text:            switch_et42_add_text;
+        default:                    switch_et42_yellow_graphics;
+        articulated_part:           switch_et42_yellow_articulated;
+        length:                     switch_et42_length;
+        visual_effect_and_powered:  switch_et42_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(et42)
+        ENGINE_POWER_CALLBACKS(et42)
+    }
+}
+/* ET42 PKP_CARGO switches */
+switch(FEAT_TRAINS, SELF, switch_et42_pkp_cargo_articulated, extra_callback_info1) {
+    1..2: return item_et42_pkp_cargo;     // add second part
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_et42_pkp_cargo_graphics, position_in_vehid_chain % 3) {
+    0: return sset_et42_head_pkp_cargo;
+    2: return sset_et42_tail_pkp_cargo;
+    return sset_dummy;
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_et42_pkp_cargo, 772) {
+    property {
+		/* common properties */
+        name:                           string(STR_ET42_PKP_CARGO_NAME);
+        variant_group:                  770;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2010, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_ET42;
+        running_cost_factor:            RUNNING_COST_ET42;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          4480 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         164 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.305;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_et42_purchase_pkp_cargo;
+        additional_text:            switch_et42_add_text;
+        default:                    switch_et42_pkp_cargo_graphics;
+        articulated_part:           switch_et42_pkp_cargo_articulated;
+        length:                     switch_et42_length;
+        visual_effect_and_powered:  switch_et42_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(et42)
+        ENGINE_POWER_CALLBACKS(et42)
+    }
+}

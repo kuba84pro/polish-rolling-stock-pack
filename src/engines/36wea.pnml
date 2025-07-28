@@ -1,0 +1,673 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, GPL 2.0
+
+/* 36WEA sprites */
+spriteset(sset_36wea_purchase, "gfx/en63OP.png")   { tmpl_sprite_purchase(4, 140) }
+spriteset(sset_36wea_advert, "gfx/en63OP.png")   { tmpl_sprite_advertisement200(4, 280) }
+// Opolskie //
+spriteset(sset_36wea_head_opolskie, "gfx/en63OP.png")       { tmpl_sprite_train12(4, 20) }
+spriteset(sset_36wea_mid_opolskie, "gfx/en63OP.png")       { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_36wea_tail_opolskie, "gfx/en63OP.png")       { tmpl_sprite_train12_offset(4, 100, 3) }
+spriteset(sset_36wea_head_opolskie_open, "gfx/en63OP.png")  { tmpl_sprite_train12(4, 160) }
+spriteset(sset_36wea_mid_opolskie_open, "gfx/en63OP.png")  { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_36wea_tail_opolskie_open, "gfx/en63OP.png")  { tmpl_sprite_train12_offset(4, 240, 3) }
+// Podkarpackie //
+spriteset(sset_36wea_podkarpackie_purchase, "gfx/en63PO.png")   { tmpl_sprite_purchase(4, 140) }
+spriteset(sset_36wea_podkarpackie_advert, "gfx/en63PO.png")   { tmpl_sprite_advertisement200(4, 280) }
+spriteset(sset_36wea_head_podkarpackie, "gfx/en63PO.png")       { tmpl_sprite_train12(4, 20) }
+spriteset(sset_36wea_mid_podkarpackie, "gfx/en63PO.png")       { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_36wea_tail_podkarpackie, "gfx/en63PO.png")       { tmpl_sprite_train12_offset(4, 100, 3) }
+spriteset(sset_36wea_head_podkarpackie_open, "gfx/en63PO.png")  { tmpl_sprite_train12(4, 160) }
+spriteset(sset_36wea_mid_podkarpackie_open, "gfx/en63PO.png")  { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_36wea_tail_podkarpackie_open, "gfx/en63PO.png")  { tmpl_sprite_train12_offset(4, 240, 3) }
+// KD //
+spriteset(sset_36wea_kd_purchase, "gfx/36wea-kd.png")   { tmpl_sprite_purchase(4, 140) }
+spriteset(sset_36wea_kd_advert, "gfx/36wea-kd.png")   { tmpl_sprite_advertisement200(4, 280) }
+spriteset(sset_36wea_head_kd, "gfx/36wea-kd.png")       { tmpl_sprite_train12(4, 20) }
+spriteset(sset_36wea_mid_kd, "gfx/36wea-kd.png")       { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_36wea_tail_kd, "gfx/36wea-kd.png")       { tmpl_sprite_train12_offset(4, 100, 3) }
+spriteset(sset_36wea_head_kd_open, "gfx/36wea-kd.png")  { tmpl_sprite_train12(4, 160) }
+spriteset(sset_36wea_mid_kd_open, "gfx/36wea-kd.png")  { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_36wea_tail_kd_open, "gfx/36wea-kd.png")  { tmpl_sprite_train12_offset(4, 240, 3) }
+// KD "kolej na kolej" //
+spriteset(sset_36wea_kd_kolej_purchase, "gfx/36wea-kd-kolej.png")   { tmpl_sprite_purchase(4, 140) }
+spriteset(sset_36wea_kd_kolej_advert, "gfx/36wea-kd-kolej.png")   { tmpl_sprite_advertisement200(4, 280) }
+spriteset(sset_36wea_head_kd_kolej, "gfx/36wea-kd-kolej.png")       { tmpl_sprite_train12(4, 20) }
+spriteset(sset_36wea_mid_kd_kolej, "gfx/36wea-kd-kolej.png")       { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_36wea_tail_kd_kolej, "gfx/36wea-kd-kolej.png")       { tmpl_sprite_train12_offset(4, 100, 3) }
+spriteset(sset_36wea_head_kd_kolej_open, "gfx/36wea-kd-kolej.png")  { tmpl_sprite_train12(4, 160) }
+spriteset(sset_36wea_mid_kd_kolej_open, "gfx/36wea-kd-kolej.png")  { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_36wea_tail_kd_kolej_open, "gfx/36wea-kd-kolej.png")  { tmpl_sprite_train12_offset(4, 240, 3) }
+// Slaskie //
+spriteset(sset_36wea_slaskie_purchase, "gfx/36wea-ks.png")   { tmpl_sprite_purchase(4, 140) }
+spriteset(sset_36wea_slaskie_advert, "gfx/36wea-ks.png")   { tmpl_sprite_advertisement200(4, 280) }
+spriteset(sset_36wea_head_slaskie, "gfx/36wea-ks.png")       { tmpl_sprite_train12(4, 20) }
+spriteset(sset_36wea_mid_slaskie, "gfx/36wea-ks.png")       { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_36wea_tail_slaskie, "gfx/36wea-ks.png")       { tmpl_sprite_train12_offset(4, 100, 3) }
+spriteset(sset_36wea_head_slaskie_open, "gfx/36wea-ks.png")  { tmpl_sprite_train12(4, 160) }
+spriteset(sset_36wea_mid_slaskie_open, "gfx/36wea-ks.png")  { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_36wea_tail_slaskie_open, "gfx/36wea-ks.png")  { tmpl_sprite_train12_offset(4, 240, 3) }
+// Malopolskie //
+spriteset(sset_36wea_km_purchase, "gfx/36wea-km.png")   { tmpl_sprite_purchase(4, 140) }
+spriteset(sset_36wea_km_advert, "gfx/36wea-km.png")   { tmpl_sprite_advertisement200(4, 280) }
+spriteset(sset_36wea_head_km, "gfx/36wea-km.png")       { tmpl_sprite_train12(4, 20) }
+spriteset(sset_36wea_mid_km, "gfx/36wea-km.png")       { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_36wea_tail_km, "gfx/36wea-km.png")       { tmpl_sprite_train12_offset(4, 100, 3) }
+spriteset(sset_36wea_head_km_open, "gfx/36wea-km.png")  { tmpl_sprite_train12(4, 160) }
+spriteset(sset_36wea_mid_km_open, "gfx/36wea-km.png")  { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_36wea_tail_km_open, "gfx/36wea-km.png")  { tmpl_sprite_train12_offset(4, 240, 3) }
+// Swietorzyskie //
+spriteset(sset_36wea_sk_purchase, "gfx/en63a-sk.png")   { tmpl_sprite_purchase(4, 140) }
+spriteset(sset_36wea_sk_advert, "gfx/en63a-sk.png")   { tmpl_sprite_advertisement200(4, 280) }
+spriteset(sset_36wea_head_sk, "gfx/en63a-sk.png")       { tmpl_sprite_train12(4, 20) }
+spriteset(sset_36wea_mid_sk, "gfx/en63a-sk.png")       { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_36wea_tail_sk, "gfx/en63a-sk.png")       { tmpl_sprite_train12_offset(4, 100, 3) }
+spriteset(sset_36wea_head_sk_open, "gfx/en63a-sk.png")  { tmpl_sprite_train12(4, 160) }
+spriteset(sset_36wea_mid_sk_open, "gfx/en63a-sk.png")  { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_36wea_tail_sk_open, "gfx/en63a-sk.png")  { tmpl_sprite_train12_offset(4, 240, 3) }
+// Opolskie //
+spritegroup sgroup_36wea_head_opolskie {
+    loaded:     [sset_36wea_head_opolskie];
+    loading:    [sset_36wea_head_opolskie_open];
+}
+spritegroup sgroup_36wea_mid_opolskie {
+    loaded:     [sset_36wea_mid_opolskie];
+    loading:    [sset_36wea_mid_opolskie_open];
+}
+spritegroup sgroup_36wea_tail_opolskie {
+    loaded:     [sset_36wea_tail_opolskie];
+    loading:    [sset_36wea_tail_opolskie_open];
+}
+/* 36WEA switches */
+switch(FEAT_TRAINS, SELF, switch_36wea_articulated, extra_callback_info1) {
+    1..4: return item_36wea_op;     // including dummy parts
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_36wea_length, position_in_vehid_chain % 5) {
+    1: return 4;    // dummy part
+    3: return 3;    // dummy part
+    return 8;
+}
+
+switch(FEAT_TRAINS, SELF, switch_36wea_purchase, extra_callback_info1 & 0xFF) {
+    0x21: return sset_36wea_advert;
+    return sset_36wea_purchase;
+}
+switch(FEAT_TRAINS, SELF, switch_36wea_graphics, position_in_vehid_chain % 5) {
+    0: return sgroup_36wea_head_opolskie;
+    2: return sgroup_36wea_mid_opolskie;
+    4: return sgroup_36wea_tail_opolskie;
+    return sset_dummy;      // dummy parts
+}
+switch(FEAT_TRAINS, SELF, switch_36wea_tour_capacity, position_in_vehid_chain % 5) {
+    0: return 52;
+    2: return 52-2;
+    4: return 52;
+    return 1;   // dummy parts
+}
+switch(FEAT_TRAINS, SELF, switch_36wea_pass_capacity, position_in_vehid_chain % 5) {
+    0: return 52+26;    //52;
+    2: return 52+26-2;  //52;
+    4: return 52+26;    //52;
+    return 1;   // dummy parts
+}
+switch(FEAT_TRAINS, SELF, switch_36wea_capacity, cargo_type_in_veh) {
+    TOUR: return switch_36wea_tour_capacity;
+    return switch_36wea_pass_capacity;
+}
+switch(FEAT_TRAINS, SELF, switch_36wea_visual_effect_local, position_in_vehid_chain % 5) {
+    0: return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 3, DISABLE_WAGON_POWER);
+    3: return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, -3, DISABLE_WAGON_POWER);
+    return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+}
+switch (FEAT_TRAINS, SELF, switch_36wea_start_stop, num_vehs_in_consist / 5) {
+    1..3: return CB_RESULT_NO_TEXT;
+    return string(STR_TRAIN_TOO_LONG, string(STR_36WEA_OP_NAME));
+}
+ENGINE_RUNNING_COST_SWITCH(36wea, 36WEA)
+DIESEL_ELECTRIC_ENGINE_POWER_SWITCH(36wea)
+ENGINE_VISUAL_EFFECT_SWITCH(36wea)
+
+#ifdef SITTING_PLACES
+    #undef SITTING_PLACES
+#endif
+#ifdef STANDING_PLACES
+    #undef STANDING_PLACES
+#endif
+#define SITTING_PLACES 52*3
+#define STANDING_PLACES 26*3
+#define CARGO_CAPACITY_36WEA     int((SITTING_PLACES+STANDING_PLACES+2)/5)
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_36wea_op, 2500) {
+    property {
+        /* common properties */
+        name:                           string(STR_36WEA_OP_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2014, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  11;     // per part
+        cost_factor:                    PURCHASE_COST_36WEA;
+        running_cost_factor:            RUNNING_COST_36WEA;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          1600 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 CARGO_CAPACITY_36WEA;
+        weight:                         110 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.25*75/110;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   switch_36wea_purchase;
+        default:                    switch_36wea_graphics;
+        articulated_part:           switch_36wea_articulated;
+        additional_text:            switch_impuls1_3part_add_text;
+        length:                     switch_36wea_length;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_36wea_capacity;
+        visual_effect_and_powered:  switch_36wea_visual_effect;
+        can_attach_wagon:           switch_impuls1_can_attach;
+        start_stop:                 switch_36wea_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(36wea)
+        ENGINE_POWER_CALLBACKS(36wea)
+    }
+}
+// Podkarpackie //
+spritegroup sgroup_36wea_head_podkarpackie {
+    loaded:     [sset_36wea_head_podkarpackie];
+    loading:    [sset_36wea_head_podkarpackie_open];
+}
+spritegroup sgroup_36wea_mid_podkarpackie {
+    loaded:     [sset_36wea_mid_podkarpackie];
+    loading:    [sset_36wea_mid_podkarpackie_open];
+}
+spritegroup sgroup_36wea_tail_podkarpackie {
+    loaded:     [sset_36wea_tail_podkarpackie];
+    loading:    [sset_36wea_tail_podkarpackie_open];
+}
+/* 36WEA_PO switches */
+switch(FEAT_TRAINS, SELF, switch_36wea_podkarpackie_articulated, extra_callback_info1) {
+    1..4: return item_36wea_po;     // including dummy parts
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_36wea_podkarpackie_purchase, extra_callback_info1 & 0xFF) {
+    0x21: return sset_36wea_podkarpackie_advert;
+    return sset_36wea_podkarpackie_purchase;
+}
+switch(FEAT_TRAINS, SELF, switch_36wea_podkarpackie_graphics, position_in_vehid_chain % 5) {
+    0: return sgroup_36wea_head_podkarpackie;
+    2: return sgroup_36wea_mid_podkarpackie;
+    4: return sgroup_36wea_tail_podkarpackie;
+    return sset_dummy;      // dummy parts
+}
+item(FEAT_TRAINS, item_36wea_po, 2501) {
+    property {
+        /* common properties */
+        name:                           string(STR_36WEA_PO_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2014, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  11;     // per part
+        cost_factor:                    PURCHASE_COST_36WEA;
+        running_cost_factor:            RUNNING_COST_36WEA;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          1600 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 CARGO_CAPACITY_36WEA;
+        weight:                         110 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.25*75/110;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        variant_group:                  2500;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   switch_36wea_podkarpackie_purchase;
+        default:                    switch_36wea_podkarpackie_graphics;
+        articulated_part:           switch_36wea_podkarpackie_articulated;
+        additional_text:            switch_impuls1_3part_add_text;
+        length:                     switch_36wea_length;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_36wea_capacity;
+        visual_effect_and_powered:  switch_36wea_visual_effect;
+        can_attach_wagon:           switch_impuls1_can_attach;
+        start_stop:                 switch_36wea_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(36wea)
+        ENGINE_POWER_CALLBACKS(36wea)
+    }
+}
+// KD //
+spritegroup sgroup_36wea_head_kd {
+    loaded:     [sset_36wea_head_kd];
+    loading:    [sset_36wea_head_kd_open];
+}
+spritegroup sgroup_36wea_mid_kd {
+    loaded:     [sset_36wea_mid_kd];
+    loading:    [sset_36wea_mid_kd_open];
+}
+spritegroup sgroup_36wea_tail_kd {
+    loaded:     [sset_36wea_tail_kd];
+    loading:    [sset_36wea_tail_kd_open];
+}
+/* 36WEA_KD switches */
+switch(FEAT_TRAINS, SELF, switch_36wea_kd_articulated, extra_callback_info1) {
+    1..4: return item_36wea_kd;     // including dummy parts
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_36wea_kd_purchase, extra_callback_info1 & 0xFF) {
+    0x21: return sset_36wea_kd_advert;
+    return sset_36wea_kd_purchase;
+}
+switch(FEAT_TRAINS, SELF, switch_36wea_kd_graphics, position_in_vehid_chain % 5) {
+    0: return sgroup_36wea_head_kd;
+    2: return sgroup_36wea_mid_kd;
+    4: return sgroup_36wea_tail_kd;
+    return sset_dummy;      // dummy parts
+}
+item(FEAT_TRAINS, item_36wea_kd, 2502) {
+    property {
+        /* common properties */
+        name:                           string(STR_36WEA_KD_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2014, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  11;     // per part
+        cost_factor:                    PURCHASE_COST_36WEA;
+        running_cost_factor:            RUNNING_COST_36WEA;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          1600 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 CARGO_CAPACITY_36WEA;
+        weight:                         110 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.25*75/110;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        variant_group:                  2500;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   switch_36wea_kd_purchase;
+        default:                    switch_36wea_kd_graphics;
+        articulated_part:           switch_36wea_kd_articulated;
+        additional_text:            switch_impuls1_3part_add_text;
+        length:                     switch_36wea_length;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_36wea_capacity;
+        visual_effect_and_powered:  switch_36wea_visual_effect;
+        can_attach_wagon:           switch_impuls1_can_attach;
+        start_stop:                 switch_36wea_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(36wea)
+        ENGINE_POWER_CALLBACKS(36wea)
+    }
+}
+// KD "kolej na kolej" //
+spritegroup sgroup_36wea_head_kd_kolej {
+    loaded:     [sset_36wea_head_kd_kolej];
+    loading:    [sset_36wea_head_kd_kolej_open];
+}
+spritegroup sgroup_36wea_mid_kd_kolej {
+    loaded:     [sset_36wea_mid_kd_kolej];
+    loading:    [sset_36wea_mid_kd_kolej_open];
+}
+spritegroup sgroup_36wea_tail_kd_kolej {
+    loaded:     [sset_36wea_tail_kd_kolej];
+    loading:    [sset_36wea_tail_kd_kolej_open];
+}
+/* 36WEA_KD_KOLEJ switches */
+switch(FEAT_TRAINS, SELF, switch_36wea_kd_kolej_articulated, extra_callback_info1) {
+    1..4: return item_36wea_kd_kolej;     // including dummy parts
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_36wea_kd_kolej_purchase, extra_callback_info1 & 0xFF) {
+    0x21: return sset_36wea_kd_kolej_advert;
+    return sset_36wea_kd_kolej_purchase;
+}
+switch(FEAT_TRAINS, SELF, switch_36wea_kd_kolej_graphics, position_in_vehid_chain % 5) {
+    0: return sgroup_36wea_head_kd_kolej;
+    2: return sgroup_36wea_mid_kd_kolej;
+    4: return sgroup_36wea_tail_kd_kolej;
+    return sset_dummy;      // dummy parts
+}
+item(FEAT_TRAINS, item_36wea_kd_kolej, 2503) {
+    property {
+        /* common properties */
+        name:                           string(STR_36WEA_KD_KOLEJ_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2014, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  11;     // per part
+        cost_factor:                    PURCHASE_COST_36WEA;
+        running_cost_factor:            RUNNING_COST_36WEA;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          1600 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 CARGO_CAPACITY_36WEA;
+        weight:                         110 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.25*75/110;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        variant_group:                  2500;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   switch_36wea_kd_kolej_purchase;
+        default:                    switch_36wea_kd_kolej_graphics;
+        articulated_part:           switch_36wea_kd_kolej_articulated;
+        additional_text:            switch_impuls1_3part_add_text;
+        length:                     switch_36wea_length;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_36wea_capacity;
+        visual_effect_and_powered:  switch_36wea_visual_effect;
+        can_attach_wagon:           switch_impuls1_can_attach;
+        start_stop:                 switch_36wea_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(36wea)
+        ENGINE_POWER_CALLBACKS(36wea)
+    }
+}
+// Slaskie //
+spritegroup sgroup_36wea_head_slaskie {
+    loaded:     [sset_36wea_head_slaskie];
+    loading:    [sset_36wea_head_slaskie_open];
+}
+spritegroup sgroup_36wea_mid_slaskie {
+    loaded:     [sset_36wea_mid_slaskie];
+    loading:    [sset_36wea_mid_slaskie_open];
+}
+spritegroup sgroup_36wea_tail_slaskie {
+    loaded:     [sset_36wea_tail_slaskie];
+    loading:    [sset_36wea_tail_slaskie_open];
+}
+/* 36WEA_SLASKIE switches */
+switch(FEAT_TRAINS, SELF, switch_36wea_slaskie_articulated, extra_callback_info1) {
+    1..4: return item_36wea_slaskie;     // including dummy parts
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_36wea_slaskie_purchase, extra_callback_info1 & 0xFF) {
+    0x21: return sset_36wea_slaskie_advert;
+    return sset_36wea_slaskie_purchase;
+}
+switch(FEAT_TRAINS, SELF, switch_36wea_slaskie_graphics, position_in_vehid_chain % 5) {
+    0: return sgroup_36wea_head_slaskie;
+    2: return sgroup_36wea_mid_slaskie;
+    4: return sgroup_36wea_tail_slaskie;
+    return sset_dummy;      // dummy parts
+}
+item(FEAT_TRAINS, item_36wea_slaskie, 2504) {
+    property {
+        /* common properties */
+        name:                           string(STR_36WEA_SLASKIE_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2014, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  11;     // per part
+        cost_factor:                    PURCHASE_COST_36WEA;
+        running_cost_factor:            RUNNING_COST_36WEA;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          1600 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 CARGO_CAPACITY_36WEA;
+        weight:                         110 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.25*75/110;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        variant_group:                  2500;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   switch_36wea_slaskie_purchase;
+        default:                    switch_36wea_slaskie_graphics;
+        articulated_part:           switch_36wea_slaskie_articulated;
+        additional_text:            switch_impuls1_3part_add_text;
+        length:                     switch_36wea_length;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_36wea_capacity;
+        visual_effect_and_powered:  switch_36wea_visual_effect;
+        can_attach_wagon:           switch_impuls1_can_attach;
+        start_stop:                 switch_36wea_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(36wea)
+        ENGINE_POWER_CALLBACKS(36wea)
+    }
+}
+// Malopolskie //
+spritegroup sgroup_36wea_head_km {
+    loaded:     [sset_36wea_head_km];
+    loading:    [sset_36wea_head_km_open];
+}
+spritegroup sgroup_36wea_mid_km {
+    loaded:     [sset_36wea_mid_km];
+    loading:    [sset_36wea_mid_km_open];
+}
+spritegroup sgroup_36wea_tail_km {
+    loaded:     [sset_36wea_tail_km];
+    loading:    [sset_36wea_tail_km_open];
+}
+/* 36WEA_KM switches */
+switch(FEAT_TRAINS, SELF, switch_36wea_km_articulated, extra_callback_info1) {
+    1..4: return item_36wea_km;     // including dummy parts
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_36wea_km_purchase, extra_callback_info1 & 0xFF) {
+    0x21: return sset_36wea_km_advert;
+    return sset_36wea_km_purchase;
+}
+switch(FEAT_TRAINS, SELF, switch_36wea_km_graphics, position_in_vehid_chain % 5) {
+    0: return sgroup_36wea_head_km;
+    2: return sgroup_36wea_mid_km;
+    4: return sgroup_36wea_tail_km;
+    return sset_dummy;      // dummy parts
+}
+item(FEAT_TRAINS, item_36wea_km, 2505) {
+    property {
+        /* common properties */
+        name:                           string(STR_36WEA_KM_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2014, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  11;     // per part
+        cost_factor:                    PURCHASE_COST_36WEA;
+        running_cost_factor:            RUNNING_COST_36WEA;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          1600 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 CARGO_CAPACITY_36WEA;
+        weight:                         110 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.25*75/110;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        variant_group:                  2500;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   switch_36wea_km_purchase;
+        default:                    switch_36wea_km_graphics;
+        articulated_part:           switch_36wea_km_articulated;
+        additional_text:            switch_impuls1_3part_add_text;
+        length:                     switch_36wea_length;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_36wea_capacity;
+        visual_effect_and_powered:  switch_36wea_visual_effect;
+        can_attach_wagon:           switch_impuls1_can_attach;
+        start_stop:                 switch_36wea_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(36wea)
+        ENGINE_POWER_CALLBACKS(36wea)
+    }
+}
+// Swietokrzyskie //
+spritegroup sgroup_36wea_head_sk {
+    loaded:     [sset_36wea_head_sk];
+    loading:    [sset_36wea_head_sk_open];
+}
+spritegroup sgroup_36wea_mid_sk {
+    loaded:     [sset_36wea_mid_sk];
+    loading:    [sset_36wea_mid_sk_open];
+}
+spritegroup sgroup_36wea_tail_sk {
+    loaded:     [sset_36wea_tail_sk];
+    loading:    [sset_36wea_tail_sk_open];
+}
+/* 36WEA_SK switches */
+switch(FEAT_TRAINS, SELF, switch_36wea_sk_articulated, extra_callback_info1) {
+    1..4: return item_36wea_sk;     // including dummy parts
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_36wea_sk_purchase, extra_callback_info1 & 0xFF) {
+    0x21: return sset_36wea_sk_advert;
+    return sset_36wea_sk_purchase;
+}
+switch(FEAT_TRAINS, SELF, switch_36wea_sk_graphics, position_in_vehid_chain % 5) {
+    0: return sgroup_36wea_head_sk;
+    2: return sgroup_36wea_mid_sk;
+    4: return sgroup_36wea_tail_sk;
+    return sset_dummy;      // dummy parts
+}
+item(FEAT_TRAINS, item_36wea_sk, 2506) {
+    property {
+        /* common properties */
+        name:                           string(STR_36WEA_SK_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2014, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  11;     // per part
+        cost_factor:                    PURCHASE_COST_36WEA;
+        running_cost_factor:            RUNNING_COST_36WEA;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          1600 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 CARGO_CAPACITY_36WEA;
+        weight:                         110 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.25*75/110;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        variant_group:                  2500;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   switch_36wea_sk_purchase;
+        default:                    switch_36wea_sk_graphics;
+        articulated_part:           switch_36wea_sk_articulated;
+        additional_text:            switch_impuls1_3part_add_text;
+        length:                     switch_36wea_length;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_36wea_capacity;
+        visual_effect_and_powered:  switch_36wea_visual_effect;
+        can_attach_wagon:           switch_impuls1_can_attach;
+        start_stop:                 switch_36wea_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(36wea)
+        ENGINE_POWER_CALLBACKS(36wea)
+    }
+}

@@ -1,0 +1,376 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* ENXX sprites */
+// default livery
+spriteset(sset_enxx_purchase, "gfx/en57.png")       { tmpl_sprite_purchase(4, 140) }
+spriteset(sset_enxx_head, "gfx/en57.png")           { tmpl_sprite_train12(4, 20) }
+spriteset(sset_enxx_mid, "gfx/en57.png")            { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_enxx_tail, "gfx/en57.png")           { tmpl_sprite_train12_offset(4, 100, 1) }
+spriteset(sset_enxx_head_open, "gfx/en57.png")      { tmpl_sprite_train12(4, 160) }
+spriteset(sset_enxx_mid_open, "gfx/en57.png")       { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_enxx_tail_open, "gfx/en57.png")      { tmpl_sprite_train12_offset(4, 240, 1) }
+// livery orange
+spriteset(sset_enxx_or_head, "gfx/en57-orange.png")             { tmpl_sprite_train12(4, 20) }
+spriteset(sset_enxx_or_mid, "gfx/en57-orange.png")              { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_enxx_or_tail, "gfx/en57-orange.png")             { tmpl_sprite_train12_offset(4, 100, 1) }
+spriteset(sset_enxx_or_head_open, "gfx/en57-orange.png")        { tmpl_sprite_train12(4, 160) }
+spriteset(sset_enxx_or_mid_open, "gfx/en57-orange.png")         { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_enxx_or_tail_open, "gfx/en57-orange.png")        { tmpl_sprite_train12_offset(4, 240, 1) }
+// livery red-yellow
+spriteset(sset_enxx_ry_head, "gfx/en57-red-yellow.png")         { tmpl_sprite_train12(4, 20) }
+spriteset(sset_enxx_ry_mid, "gfx/en57-red-yellow.png")          { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_enxx_ry_tail, "gfx/en57-red-yellow.png")         { tmpl_sprite_train12_offset(4, 100, 1) }
+spriteset(sset_enxx_ry_head_open, "gfx/en57-red-yellow.png")    { tmpl_sprite_train12(4, 160) }
+spriteset(sset_enxx_ry_mid_open, "gfx/en57-red-yellow.png")     { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_enxx_ry_tail_open, "gfx/en57-red-yellow.png")    { tmpl_sprite_train12_offset(4, 240, 1) }
+// livery blue-yellow
+spriteset(sset_enxx_by_head, "gfx/en57-blue-yellow.png")        { tmpl_sprite_train12(4, 20) }
+spriteset(sset_enxx_by_mid, "gfx/en57-blue-yellow.png")         { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_enxx_by_tail, "gfx/en57-blue-yellow.png")        { tmpl_sprite_train12_offset(4, 100, 1) }
+spriteset(sset_enxx_by_head_open, "gfx/en57-blue-yellow.png")   { tmpl_sprite_train12(4, 160) }
+spriteset(sset_enxx_by_mid_open, "gfx/en57-blue-yellow.png")    { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_enxx_by_tail_open, "gfx/en57-blue-yellow.png")   { tmpl_sprite_train12_offset(4, 240, 1) }
+// livery black-red
+spriteset(sset_enxx_br_head, "gfx/en57-black-red.png")          { tmpl_sprite_train12(4, 20) }
+spriteset(sset_enxx_br_mid, "gfx/en57-black-red.png")           { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_enxx_br_tail, "gfx/en57-black-red.png")          { tmpl_sprite_train12_offset(4, 100, 1) }
+spriteset(sset_enxx_br_head_open, "gfx/en57-black-red.png")     { tmpl_sprite_train12(4, 160) }
+spriteset(sset_enxx_br_mid_open, "gfx/en57-black-red.png")      { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_enxx_br_tail_open, "gfx/en57-black-red.png")     { tmpl_sprite_train12_offset(4, 240, 1) }
+// livery "Koleje Mazowieckie"
+spriteset(sset_enxx_km_head, "gfx/en57-k-mazow.png")            { tmpl_sprite_train12(4, 20) }
+spriteset(sset_enxx_km_mid, "gfx/en57-k-mazow.png")             { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_enxx_km_tail, "gfx/en57-k-mazow.png")            { tmpl_sprite_train12_offset(4, 100, 1) }
+spriteset(sset_enxx_km_head_open, "gfx/en57-k-mazow.png")       { tmpl_sprite_train12(4, 160) }
+spriteset(sset_enxx_km_mid_open, "gfx/en57-k-mazow.png")        { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_enxx_km_tail_open, "gfx/en57-k-mazow.png")       { tmpl_sprite_train12_offset(4, 240, 1) }
+// livery "Koleje Dolnoslaskie"
+spriteset(sset_enxx_kd_head, "gfx/en57-kd.png")            { tmpl_sprite_train12(4, 20) }
+spriteset(sset_enxx_kd_mid, "gfx/en57-kd.png")             { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_enxx_kd_tail, "gfx/en57-kd.png")            { tmpl_sprite_train12_offset(4, 100, 1) }
+spriteset(sset_enxx_kd_head_open, "gfx/en57-kd.png")       { tmpl_sprite_train12(4, 160) }
+spriteset(sset_enxx_kd_mid_open, "gfx/en57-kd.png")        { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_enxx_kd_tail_open, "gfx/en57-kd.png")       { tmpl_sprite_train12_offset(4, 240, 1) }
+// livery "AP POMORSKIE"
+spriteset(sset_enxx_ap_head, "gfx/en57-ap.png")            { tmpl_sprite_train12(4, 20) }
+spriteset(sset_enxx_ap_mid, "gfx/en57-ap.png")             { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_enxx_ap_tail, "gfx/en57-ap.png")            { tmpl_sprite_train12_offset(4, 100, 1) }
+spriteset(sset_enxx_ap_head_open, "gfx/en57-ap.png")       { tmpl_sprite_train12(4, 160) }
+spriteset(sset_enxx_ap_mid_open, "gfx/en57-ap.png")        { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_enxx_ap_tail_open, "gfx/en57-ap.png")       { tmpl_sprite_train12_offset(4, 240, 1) }
+// livery "Polregio"
+spriteset(sset_enxx_prk_head, "gfx/en57-prk.png")            { tmpl_sprite_train12(4, 20) }
+spriteset(sset_enxx_prk_mid, "gfx/en57-prk.png")             { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_enxx_prk_tail, "gfx/en57-prk.png")            { tmpl_sprite_train12_offset(4, 100, 1) }
+spriteset(sset_enxx_prk_head_open, "gfx/en57-prk.png")       { tmpl_sprite_train12(4, 160) }
+spriteset(sset_enxx_prk_mid_open, "gfx/en57-prk.png")        { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_enxx_prk_tail_open, "gfx/en57-prk.png")       { tmpl_sprite_train12_offset(4, 240, 1) }
+// livery "SKM T"
+spriteset(sset_enxx_skmt_head, "gfx/en57_skmt_new.png")            { tmpl_sprite_train12(4, 20) }
+spriteset(sset_enxx_skmt_mid, "gfx/en57_skmt_new.png")             { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_enxx_skmt_tail, "gfx/en57_skmt_new.png")            { tmpl_sprite_train12_offset(4, 100, 1) }
+spriteset(sset_enxx_skmt_head_open, "gfx/en57_skmt_new.png")       { tmpl_sprite_train12(4, 160) }
+spriteset(sset_enxx_skmt_mid_open, "gfx/en57_skmt_new.png")        { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_enxx_skmt_tail_open, "gfx/en57_skmt_new.png")       { tmpl_sprite_train12_offset(4, 240, 1) }
+// default livery
+spritegroup sgroup_enxx_head {
+    loaded:     [sset_enxx_head];
+    loading:    [sset_enxx_head_open];
+}
+spritegroup sgroup_enxx_mid {
+    loaded:     [sset_enxx_mid];
+    loading:    [sset_enxx_mid_open];
+}
+spritegroup sgroup_enxx_tail {
+    loaded:     [sset_enxx_tail];
+    loading:    [sset_enxx_tail_open];
+}
+// livery orange
+spritegroup sgroup_enxx_or_head {
+    loaded:     [sset_enxx_or_head];
+    loading:    [sset_enxx_or_head_open];
+}
+spritegroup sgroup_enxx_or_mid {
+    loaded:     [sset_enxx_or_mid];
+    loading:    [sset_enxx_or_mid_open];
+}
+spritegroup sgroup_enxx_or_tail {
+    loaded:     [sset_enxx_or_tail];
+    loading:    [sset_enxx_or_tail_open];
+}
+// livery red-yellow
+spritegroup sgroup_enxx_ry_head {
+    loaded:     [sset_enxx_ry_head];
+    loading:    [sset_enxx_ry_head_open];
+}
+spritegroup sgroup_enxx_ry_mid {
+    loaded:     [sset_enxx_ry_mid];
+    loading:    [sset_enxx_ry_mid_open];
+}
+spritegroup sgroup_enxx_ry_tail {
+    loaded:     [sset_enxx_ry_tail];
+    loading:    [sset_enxx_ry_tail_open];
+}
+// livery blue-yellow
+spritegroup sgroup_enxx_by_head {
+    loaded:     [sset_enxx_by_head];
+    loading:    [sset_enxx_by_head_open];
+}
+spritegroup sgroup_enxx_by_mid {
+    loaded:     [sset_enxx_by_mid];
+    loading:    [sset_enxx_by_mid_open];
+}
+spritegroup sgroup_enxx_by_tail {
+    loaded:     [sset_enxx_by_tail];
+    loading:    [sset_enxx_by_tail_open];
+}
+// livery black-red
+spritegroup sgroup_enxx_br_head {
+    loaded:     [sset_enxx_br_head];
+    loading:    [sset_enxx_br_head_open];
+}
+spritegroup sgroup_enxx_br_mid {
+    loaded:     [sset_enxx_br_mid];
+    loading:    [sset_enxx_br_mid_open];
+}
+spritegroup sgroup_enxx_br_tail {
+    loaded:     [sset_enxx_br_tail];
+    loading:    [sset_enxx_br_tail_open];
+}
+// livery "Koleje Mazowieckie"
+spritegroup sgroup_enxx_km_head {
+    loaded:     [sset_enxx_km_head];
+    loading:    [sset_enxx_km_head_open];
+}
+spritegroup sgroup_enxx_km_mid {
+    loaded:     [sset_enxx_km_mid];
+    loading:    [sset_enxx_km_mid_open];
+}
+spritegroup sgroup_enxx_km_tail {
+    loaded:     [sset_enxx_km_tail];
+    loading:    [sset_enxx_km_tail_open];
+}
+// livery "Koleje Dolnoslaskie"
+spritegroup sgroup_enxx_kd_head {
+    loaded:     [sset_enxx_kd_head];
+    loading:    [sset_enxx_kd_head_open];
+}
+spritegroup sgroup_enxx_kd_mid {
+    loaded:     [sset_enxx_kd_mid];
+    loading:    [sset_enxx_kd_mid_open];
+}
+spritegroup sgroup_enxx_kd_tail {
+    loaded:     [sset_enxx_kd_tail];
+    loading:    [sset_enxx_kd_tail_open];
+}
+// livery "AP POMORSKIE"
+spritegroup sgroup_enxx_ap_head {
+    loaded:     [sset_enxx_ap_head];
+    loading:    [sset_enxx_ap_head_open];
+}
+spritegroup sgroup_enxx_ap_mid {
+    loaded:     [sset_enxx_ap_mid];
+    loading:    [sset_enxx_ap_mid_open];
+}
+spritegroup sgroup_enxx_ap_tail {
+    loaded:     [sset_enxx_ap_tail];
+    loading:    [sset_enxx_ap_tail_open];
+}
+// livery "POLREGIO"
+spritegroup sgroup_enxx_prk_head {
+    loaded:     [sset_enxx_prk_head];
+    loading:    [sset_enxx_prk_head_open];
+}
+spritegroup sgroup_enxx_prk_mid {
+    loaded:     [sset_enxx_prk_mid];
+    loading:    [sset_enxx_prk_mid_open];
+}
+spritegroup sgroup_enxx_prk_tail {
+    loaded:     [sset_enxx_prk_tail];
+    loading:    [sset_enxx_prk_tail_open];
+}
+// livery "SKM T"
+spritegroup sgroup_enxx_skmt_head {
+    loaded:     [sset_enxx_skmt_head];
+    loading:    [sset_enxx_skmt_head_open];
+}
+spritegroup sgroup_enxx_skmt_mid {
+    loaded:     [sset_enxx_skmt_mid];
+    loading:    [sset_enxx_skmt_mid_open];
+}
+spritegroup sgroup_enxx_skmt_tail {
+    loaded:     [sset_enxx_skmt_tail];
+    loading:    [sset_enxx_skmt_tail_open];
+}
+
+/* ENXX switches */
+#define IS_ENXX_NEW_LIVERY(year)     AFTER_DATE(year)
+#define AGE2    1991
+#define AGE3    1997
+switch (FEAT_TRAINS, SELF, switch_enxx_subtype_text2, cargo_subtype) {
+    0: return string(STR_SUBTYPE_LIVERY_YEAR_DEP);
+    1: return string(STR_SUBTYPE_LIVERY_CLASSIC);
+    2: return string(STR_SUBTYPE_ENXX_ORANGE);
+    3: return string(STR_SUBTYPE_ENXX_RED_YEL);
+    4: return string(STR_SUBTYPE_ENXX_BLU_YEL);
+    5: return string(STR_SUBTYPE_ENXX_BLK_RED);
+    6: return string(STR_SUBTYPE_ENXX_KM);
+    7: return string(STR_SUBTYPE_ENXX_KD);
+    8: return string(STR_SUBTYPE_ENXX_AP);
+    9: return string(STR_SUBTYPE_ENXX_PRK);
+    10: return string(STR_SUBTYPE_ENXX_KW);
+    11: return string(STR_SUBTYPE_ENXX_SKMT);
+    return CB_RESULT_NO_TEXT;
+}
+switch (FEAT_TRAINS, SELF, switch_enxx_subtype_text, PKP_LIVERIES_AVAILABLE) {
+    1: return switch_enxx_subtype_text2;
+    return CB_RESULT_NO_TEXT;
+}
+random_switch(FEAT_TRAINS, SELF, switch_enxx_head_age2) {
+    10: return sgroup_enxx_head;
+    6: return sgroup_enxx_or_head;
+}
+random_switch(FEAT_TRAINS, SELF, switch_enxx_head_age3) {
+    independent: switch_enxx_head_age2;
+    3: return sgroup_enxx_head;
+    3: return sgroup_enxx_or_head;
+    4: return sgroup_enxx_ry_head;
+    3: return sgroup_enxx_by_head;
+    3: return sgroup_enxx_br_head;
+}
+switch(FEAT_TRAINS, SELF, switch_enxx_head_year2, IS_ENXX_NEW_LIVERY(AGE3)) {
+    1: return switch_enxx_head_age3;
+    return switch_enxx_head_age2;
+}
+switch(FEAT_TRAINS, SELF, switch_enxx_head_year, IS_ENXX_NEW_LIVERY(AGE2)) {
+    1: return switch_enxx_head_year2;
+    return sgroup_enxx_head;
+}
+switch(FEAT_TRAINS, SELF, switch_enxx_head, cargo_subtype) {
+    0: return switch_enxx_head_year;
+    1: return sgroup_enxx_head;
+    2: return sgroup_enxx_or_head;
+    3: return sgroup_enxx_ry_head;
+    4: return sgroup_enxx_by_head;
+    5: return sgroup_enxx_br_head;
+    6: return sgroup_enxx_km_head;
+    7: return sgroup_enxx_kd_head;
+    8: return sgroup_enxx_ap_head;
+    9: return sgroup_enxx_prk_head;
+    10: return sgroup_enxx_kw_head;
+    11: return sgroup_enxx_skmt_head;
+    return sgroup_enxx_head;
+}
+random_switch(FEAT_TRAINS, FORWARD_SELF(LOAD_TEMP(0x7F)), switch_enxx_mid_age2) {
+    dependent: switch_enxx_head_age2;
+    10: return sgroup_enxx_mid;
+    6: return sgroup_enxx_or_mid;
+}
+random_switch(FEAT_TRAINS, FORWARD_SELF(LOAD_TEMP(0x7F)), switch_enxx_mid_age3) {
+    dependent: switch_enxx_head_age3;
+    3: return sgroup_enxx_mid;
+    3: return sgroup_enxx_or_mid;
+    4: return sgroup_enxx_ry_mid;
+    3: return sgroup_enxx_by_mid;
+    3: return sgroup_enxx_br_mid;
+}
+switch(FEAT_TRAINS, SELF, switch_enxx_mid_year2, IS_ENXX_NEW_LIVERY(AGE3)) {
+    1: return switch_enxx_mid_age3;
+    return switch_enxx_mid_age2;
+}
+switch(FEAT_TRAINS, SELF, switch_enxx_mid_year, IS_ENXX_NEW_LIVERY(AGE2)) {
+    1: return switch_enxx_mid_year2;
+    return sgroup_enxx_mid;
+}
+switch(FEAT_TRAINS, SELF, switch_enxx_mid, cargo_subtype) {
+    0: return switch_enxx_mid_year;
+    1: return sgroup_enxx_mid;
+    2: return sgroup_enxx_or_mid;
+    3: return sgroup_enxx_ry_mid;
+    4: return sgroup_enxx_by_mid;
+    5: return sgroup_enxx_br_mid;
+    6: return sgroup_enxx_km_mid;
+    7: return sgroup_enxx_kd_mid;
+    8: return sgroup_enxx_ap_mid;
+    9: return sgroup_enxx_prk_mid;
+    10: return sgroup_enxx_kw_mid;
+    11: return sgroup_enxx_skmt_mid;
+    return sgroup_enxx_mid;
+}
+random_switch(FEAT_TRAINS, FORWARD_SELF(LOAD_TEMP(0x7F)), switch_enxx_tail_age2) {
+    dependent: switch_enxx_head_age2;
+    10: return sgroup_enxx_tail;
+    6: return sgroup_enxx_or_tail;
+}
+random_switch(FEAT_TRAINS, FORWARD_SELF(LOAD_TEMP(0x7F)), switch_enxx_tail_age3) {
+    dependent: switch_enxx_head_age3;
+    3: return sgroup_enxx_tail;
+    3: return sgroup_enxx_or_tail;
+    4: return sgroup_enxx_ry_tail;
+    3: return sgroup_enxx_by_tail;
+    3: return sgroup_enxx_br_tail;
+}
+switch(FEAT_TRAINS, SELF, switch_enxx_tail_year2, IS_ENXX_NEW_LIVERY(AGE3)) {
+    1: return switch_enxx_tail_age3;
+    return switch_enxx_tail_age2;
+}
+switch(FEAT_TRAINS, SELF, switch_enxx_tail_year, IS_ENXX_NEW_LIVERY(AGE2)) {
+    1: return switch_enxx_tail_year2;
+    return sgroup_enxx_tail;
+}
+switch(FEAT_TRAINS, SELF, switch_enxx_tail, cargo_subtype) {
+    0: return switch_enxx_tail_year;
+    1: return sgroup_enxx_tail;
+    2: return sgroup_enxx_or_tail;
+    3: return sgroup_enxx_ry_tail;
+    4: return sgroup_enxx_by_tail;
+    5: return sgroup_enxx_br_tail;
+    6: return sgroup_enxx_km_tail;
+    7: return sgroup_enxx_kd_tail;
+    8: return sgroup_enxx_ap_tail;
+    9: return sgroup_enxx_prk_tail;
+    10: return sgroup_enxx_kw_tail;
+    11: return sgroup_enxx_skmt_tail;
+    return sgroup_enxx_tail;
+}
+/* ENXX special articulated part switches */
+switch(FEAT_TRAINS, SELF, switch_enxx_capacity, cargo_classes) {
+    bitmask(CC_MAIL): return int(12*POST_MULTIPLIER);
+    return 0;
+}
+
+/* Define ENXX special articulated part */
+item(FEAT_TRAINS, item_enxx_mail_dummy_2) {
+    property {
+        /* common properties */
+        climates_available:             NO_CLIMATE;
+        introduction_date:              PKP_INTRODUCTION_DATE;
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        // refit to passenger or mail available
+        refittable_cargo_classes:       bitmask(CC_PASSENGERS, CC_MAIL);
+        non_refittable_cargo_classes:   bitmask(); 
+        loading_speed:                  8;
+        cost_factor:                    0;
+        running_cost_factor:            0;
+        cargo_age_period:               185;  // CC_MAIL only
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        power:                          0;
+        cargo_capacity:                 1;
+        weight:                         0;
+        length:                         2;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+    graphics {
+        default:                    sset_dummy;
+        cargo_capacity:             switch_enxx_capacity;
+    }
+}

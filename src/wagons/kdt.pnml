@@ -1,0 +1,130 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* Kdt sprites */
+spriteset(sset_kdt_purchase, "gfx/kdt.png")     { tmpl_sprite_purchase(4, 100) }
+spriteset(sset_kdt, "gfx/kdt.png")              { tmpl_sprite_train(4, 20) }
+spriteset(sset_kdt_open, "gfx/kdt.png")         { tmpl_sprite_train(4, 120) }
+#ifdef ZOOM_SPRITES_ENABLED
+alternative_sprites(sset_kdt,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/kdt-x2.png")   { tmpl_sprite_train_x2(8, 40) }
+alternative_sprites(sset_kdt_open,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/kdt-x2.png")   { tmpl_sprite_train_x2(8, 200) }
+#endif
+spritegroup sgroup_kdt {
+    loaded:     [sset_kdt_open, sset_kdt, sset_kdt];
+    loading:    [sset_kdt_open];
+}
+/* Kdth sprites */
+spriteset(sset_kdth_purchase, "gfx/kdt.png")    { tmpl_sprite_purchase(124, 100) }
+spriteset(sset_kdth, "gfx/kdt.png")             { tmpl_sprite_train(4, 60) }
+spriteset(sset_kdth_open, "gfx/kdt.png")        { tmpl_sprite_train(4, 160) }
+#ifdef ZOOM_SPRITES_ENABLED
+alternative_sprites(sset_kdth,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/kdt-x2.png")   { tmpl_sprite_train_x2(8, 120) }
+alternative_sprites(sset_kdth_open,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/kdt-x2.png")   { tmpl_sprite_train_x2(8, 280) }
+#endif
+spritegroup sgroup_kdth {
+    loaded:     [sset_kdth_open, sset_kdth, sset_kdth];
+    loading:    [sset_kdth_open];
+}
+
+/* Kdt(h) switches */
+WAGON_RUNNING_COST_SWITCH(KDTH, RUNNING_COST_CARGO_SMALL)
+
+/* Define the wagon without the break */
+item(FEAT_TRAINS, item_kdt, 20401) {
+    property {
+        /* common properties */
+        name:                           string(STR_KDT_NAME);
+        variant_group:                  20400;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              PKP_INTRODUCTION_DATE;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_NORMAL_COVERED_WAGON_DEFINITION
+        loading_speed:                  5;
+        cost_factor:                    PURCHASE_COST_KDT;
+        running_cost_factor:            RUNNING_COST_CARGO_NO_BRAKE;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          65 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 16*CARGO_NORMAL_COVERED_WAGON_MULTIPLIER;
+        weight:                         11 ton;
+        length:                         6;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_CARGO_WAGON);
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     68;
+        retire_early:                   16;
+    }
+}
+
+    graphics {
+        purchase:                   sset_kdt_purchase;
+        additional_text:            return string(STR_BRAKE_NONE);
+        default:                    sgroup_kdt;
+    }
+}
+
+/* Define the wagon with the break */
+item(FEAT_TRAINS, item_kdth, 20402) {
+    property {
+        /* common properties */
+        name:                           string(STR_KDTH_NAME);
+        variant_group:                  20400;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              PKP_INTRODUCTION_DATE;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_NORMAL_COVERED_WAGON_DEFINITION
+        loading_speed:                  5;
+        cost_factor:                    PURCHASE_COST_KDTH;
+//        running_cost_factor:            RUNNING_COST_CARGO_SMALL+RUNNING_COST_BRAKEMAN;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          65 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 16*CARGO_NORMAL_COVERED_WAGON_MULTIPLIER;
+        weight:                         12 ton;
+        length:                         7;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_CARGO_WAGON);
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     68;
+        retire_early:                   16;
+    }
+}
+
+    graphics {
+        purchase:                   sset_kdth_purchase;
+        additional_text:            return string(STR_BRAKE_HAND);
+        default:                    sgroup_kdth;
+        WAGON_RUNNING_COST_CALLBACKS(KDTH, RUNNING_COST_CARGO_SMALL)
+    }
+}

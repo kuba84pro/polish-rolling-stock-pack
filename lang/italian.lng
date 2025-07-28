@@ -1,0 +1,221 @@
+##grflangid 0x27
+##plural 0
+##gender m ma f
+##case fp fs mp ms
+
+# GRF name and description
+STR_GRF_NAME        :{TITLE} {VERSION}
+STR_GRF_DESCRIPTION :{ORANGE}{TITLE} {VERSION}{BLACK} contiene la maggior parte del materiale rotabile polacco usato nel periodo dal 1918 al presente.{}{COPYRIGHT}2011-2021{}Autore: {SILVER}TadeuszD{BLACK}, {SILVER}Mewa{BLACK}{}Grafica: {SILVER}TadeuszD{BLACK}, {SILVER}Walter Novotny{BLACK}, {SILVER}Sojita{BLACK}, {SILVER}McZapkie{BLACK}, {SILVER}Czajnikowiec{BLACK}, {SILVER}101ksl, {SILVER}Mewa{BLACK}{}Ringraziamenti speciali a: {SILVER}niemiec{BLACK}{}Licenza: {SILVER}GPLv2{BLACK}{}WWW: {LTBLUE}http://openttd-polska.pl{BLACK}
+
+# GRF parameters
+STR_PARAM_NAME_DISABLE_ORIG     :Disattivare treni normali originali
+STR_PARAM_DESC_DISABLE_ORIG     :Questa opzione disattiva i veicoli ferroviari originali per binari normali. Non ha effetto su monorotaie e maglev.
+STR_PARAM_NAME_DISABLE_MONO_MAGLEV  :Disattivare monorotaia e maglev originali
+STR_PARAM_DESC_DISABLE_MONO_MAGLEV  :Questa opzione disattiva la monorotaia e il maglev originale. Non ha effetto sui veicoli ferroviari normali.
+STR_PARAM_NAME_KEEP_OLD_VEHS    :Mantenere veicoli vecchi sempre acquistabili
+STR_PARAM_DESC_KEEP_OLD_VEHS    :Questa opzione disabilita l'obsolescenza dei veicoli ferroviari di questo set: si potranno comprare veicoli storici, anche nell'era moderna. Ha effetto solo sui veicoli di questo set. Per bloccare l'obsolescenza di veicoli di altri set, usare l'opzione "Veicoli sempre disponibili" nelle impostazioni del gioco.
+STR_PARAM_NAME_REPLACE_CARGOES  :Transportare "Beni" in vagoni speciali
+STR_PARAM_DESC_REPLACE_CARGOES  :Alcuni vagoni di questo set sono adatti per il trasporto di merci speciali, definiti nei set industriali FIRS e ECS. Se FIRS e ECS non sono attivi, questi vagoni non sono presenti. Questa opzione permette di usare questi vagoni per trasportare i "Beni" standard di OTTD.
+
+STR_PARAM_NAME_PURCHASE_COST    :Moltiplicatore per costi d'acquisto
+STR_PARAM_DESC_PURCHASE_COST    :Questa opzione aumenta i costi d'acquisto delle locomotive e dei vagoni. Ha effetto solo su questo set.
+STR_PARAM_NAME_RUNNING_COST     :Moltiplicatore per costi d'esercizio
+STR_PARAM_DESC_RUNNING_COST     :Questa opzione aumenta i costi d'esercizio delle locomotive e dei vagoni. Ha effetto solo su questo set.
+STR_PARAM_COST_X1               :1x
+STR_PARAM_COST_X2               :2x
+STR_PARAM_COST_X4               :4x
+STR_PARAM_COST_X8               :8x
+
+STR_PURCHASE_DESCR_2L           :{STRING}{}{BLACK}{STRING}
+STR_PURCHASE_DESCR_3L           :{STRING}{}{BLACK}{STRING}{}{BLACK}{STRING}
+STR_PURCHASE_DESCR_4L           :{STRING}{}{BLACK}{STRING}{}{BLACK}{STRING}{}{BLACK}{STRING}
+STR_SUBTYPE_DESCR_2P            :{STRING}{BLACK}, {STRING}
+
+STR_ENGINE_HEAVY_FREIGHT        :Info: {ORANGE}Locomotiva per {YELLOW}treni merci pesanti
+STR_ENGINE_FREIGHT              :Info: {ORANGE}Locomotiva per {YELLOW}treni merci
+STR_ENGINE_PASSENGER_FREIGHT    :Info: {ORANGE}Locomotiva universale per {YELLOW}treni passeggeri e merci
+STR_ENGINE_PASSENGER            :Info: {ORANGE}Locomotiva per {YELLOW}treni passeggeri
+STR_ENGINE_EXPRESS              :Info: {ORANGE}Locomotiva per {YELLOW}treni espressi
+
+STR_BRAKE_NONE                  :Sistema dei freni: {RED}Nessuno
+STR_BRAKE_HAND                  :Sistema dei freni: {GREEN}A mano (cabina del frenatore)
+STR_BRAKE_AIR                   :Sistema dei freni: {GREEN}Aria compressa (centralizzato)
+
+STR_HEATING_STEAM_TEXT          :Sistema di riscaldamento: {LTBLUE}Vapore
+STR_HEATING_ST_EL_TEXT          :Sistema di riscaldamento: {LTBLUE}Vapore/elettrico
+STR_HEATING_ELECTRIC_TEXT       :Sistema di riscaldamento: {LTBLUE}Elettrico
+
+STR_INCOME_1_CLASS              :Nota: {YELLOW}Profitti più elevati{ORANGE} dai passeggeri di{RED}1{ORANGE}a classe sulle lunghe distanze
+STR_INCOME_LOWER                :Nota: {RED}Profitti meno elevati{ORANGE} dai passeggeri sulle lunghe distanze
+STR_INCOME_ALL_EXPRESS          :Nota: {YELLOW}Profitti più elevati{ORANGE} dai passeggeri nelle carrozze per treni espressi
+STR_INCOME_HIGH                 :Nota: {YELLOW}Profitti più elevati{ORANGE} dai passeggeri sulle lunghe distanze
+STR_INCOME_CARGO_HIGH           :Nota: {YELLOW}Profitti più elevati{ORANGE} dalle merci sulle lunghe distanze
+STR_CAPACITY_NON_FRIABLE        :Nota: {RED}Capacitá ridotta{ORANGE} per merci non friabili
+
+STR_HEATING_NONE_TEXT           :Sistema di riscaldamento: {RED}Nessuno
+STR_HEATING_STEAM_POWER_TEXT    :Sistema di riscaldamento: {LTBLUE}Vapore ({SIGNED_WORD}kW)
+STR_HEATING_STEAM_CLAYTON_TEXT  :Sistema di riscaldamento: {LTBLUE}Vapore "Clayton" (150kW)
+STR_HEATING_COMBINED_TEXT       :Sistema di riscaldamento: {LTBLUE}Combinato diesel/elettrico (150kW)
+STR_HEATING_ELECTRIC_POWER_TEXT :Sistema di riscaldamento: {LTBLUE}Elettrico ({SIGNED_WORD}kW)
+
+STR_ATTACH_DISALLOW_MCAR        :Non si può usare un veicolo motorizzato come se fosse un vagone normale.
+STR_ATTACH_DISALLOW_EZT2        :Ganci incompatibili. Non si possono accoppiare elettrotreni con ganci di tipo diverso.
+STR_ATTACH_DISALLOW_EZT1        :Ganci incompatibili. Non si può accoppiare un elettrotreno con locomotive o carrozze normali.
+STR_ATTACH_DISALLOW_TROLLEY     :Tipi incompatibili. Non si può accoppiare un tram con locomotive o vagoni normali.
+STR_ATTACH_DISALLOW             :Non si può agganciare questo veicolo a {STRING}.
+STR_TRAIN_TOO_LONG              :Ci sono troppi veicoli agganciati a {STRING}.
+STR_TRAIN_WITHOUT_BRAKE         :Il treno non ha forza frenante sufficiente.{} È necessario aggiungere carri frenati (a mano o ad aria compressa).
+STR_TRAIN_NOT_HEATED            :Il treno non è ben riscaldato. I sistemi di riscaldamento non sono adatti alla locomotiva, o manca la potenza di riscaldamento.{} È necessario cambiare la locomotiva, o aggiungere un carro risaldo.
+
+STR_SUBTYPE_OLD_2CLASS          :- scompartimenti di seconda classe
+STR_SUBTYPE_OLD_12CLASS         : - scompartimenti misti di prima e seconda classe
+STR_SUBTYPE_OLD_1CLASS          : - scompartimenti di prima classe
+STR_SUBTYPE_NEW_2CLASS          :- poltroncine di seconda classe
+STR_SUBTYPE_NEW_1CLASS          :- poltrone di prima classe
+
+STR_SUBTYPE_LIVERY_CLASSIC      : - livrea classica
+STR_SUBTYPE_LIVERY_YEAR_DEP     : - livrea a seconda dell'anno
+STR_SUBTYPE_LIVERY_CARGO_DEP    : - livrea a secondo del carico
+STR_SUBTYPE_LIVERY_RANDOM       : - livrea casuale
+
+STR_SUBTYPE_LIVERY_PKP_IC       : - livrea "PKP IC"
+STR_SUBTYPE_LIVERY_PKP_CARGO    : - livrea "PKP Cargo"
+STR_SUBTYPE_LIVERY_PKP_PR       : - livrea "PKP Przewozy Regionalne"
+STR_SUBTYPE_ENXX_ORANGE         : - livrea arancione
+STR_SUBTYPE_ENXX_RED_YEL        : - livrea giallo-rossa
+STR_SUBTYPE_ENXX_BLU_YEL        : - livrea giallo-blu
+STR_SUBTYPE_ENXX_BLK_RED        : - livrea rosso-nera
+STR_SUBTYPE_ENXX_KM             : - livrea "Koleje Mazowieckie"
+
+STR_TKH1_NAME           :TKh1 (Vapore)
+STR_TKI3_NAME           :TKi3 (Vapore)
+STR_OD13_NAME           :Od13 (Vapore)
+STR_TI12_NAME           :Ti12 (Vapore)
+STR_TP4_NAME            :Tp4 (Vapore)
+STR_OK1_NAME            :Ok1 (Vapore)
+STR_TY23_NAME           :Ty23 (Vapore)
+STR_OKL27_NAME          :OKl27 (Vapore)
+STR_PT31_NAME           :Pt31 (Vapore)
+STR_OKZ32_NAME          :OKz32 (Vapore)
+STR_TY37_NAME           :Ty37 (Vapore)
+STR_TY2_NAME            :Ty2 (Vapore)
+STR_PT47_NAME           :Pt47 (Vapore)
+STR_TKT48_NAME          :TKt48 (Vapore)
+STR_OL49_NAME           :Ol49 (Vapore)
+STR_TY51_NAME           :Ty51 (Vapore)
+STR_SN61_NAME           :SN61 (Carrozza motorizzata diesel)
+STR_SN61_TEXT           :Info: {ORANGE}Automotrice diesel - massimo {YELLOW}3 unità{ORANGE} e {YELLOW}3 rimorchi{ORANGE}
+STR_SA106_NAME          :SA106 (Automotrice diesel)
+STR_SA106_TEXT          :Info: {ORANGE}Automotrice diesel - massimo {YELLOW}3 unità{ORANGE} e {YELLOW}3 rimorchi{ORANGE}
+STR_SM30_NAME           :SM30 (Diesel)
+STR_SM41_NAME           :SM41 (Diesel)
+STR_SM42_NAME           :SM42 (Diesel)
+STR_SP42_NAME           :SP42 (Diesel)
+STR_SU42_NAME           :SU42 (Diesel)
+STR_ST43_NAME           :ST43 (Diesel)
+STR_ST44_NAME           :ST44 (Diesel)
+STR_SP45_NAME           :SP45 (Diesel)
+STR_SU45_NAME           :SU45 (Diesel)
+STR_SU46_NAME           :SU46 (Diesel)
+STR_SM31_NAME           :SM31 (Diesel)
+STR_SP32_NAME           :SP32 (Diesel)
+STR_SU160_NAME          :SU160-Gama (Diesel)
+STR_EP01_NAME           :EP01 (Elettrica)
+STR_EP02_NAME           :EP02 (Elettrica)
+STR_EU07_NAME           :EU07 (Elettrica)
+STR_ET21_NAME           :ET21 (Elettrica)
+STR_ET22_NAME           :ET22 (Elettrica)
+STR_EP05_NAME           :EP05 (Elettrica)
+STR_ET40_NAME           :ET40 (Elettrica)
+STR_ET41_NAME           :ET41 (Elettrica)
+STR_ET42_NAME           :ET42 (Elettrica)
+STR_EP09_NAME           :EP09 (Elettrica)
+STR_EU43_NAME           :EU43-Traxx (Elettrica)
+STR_EU44_NAME           :EU44 "Husarz" (Elettrica)
+STR_EU46_NAME           :EU46-Vectron (Elettrica)
+STR_EN57_NAME           :EN57 (Elettrotreno)
+STR_EN57_TEXT           :Info: elettrotreno di {YELLOW}3{ORANGE} parti
+STR_EN71_NAME           :EN71 (Elettrotreno)
+STR_EN71_TEXT           :Info: elettrotreno di {YELLOW}4{ORANGE} parti
+STR_ED72_NAME           :ED72 (Elettrotreno)
+STR_ED72_TEXT           :Info: elettrotreno di {YELLOW}4{ORANGE} parti
+STR_EN76_NAME           :EN76-Elf (Elettrotreno)
+STR_ED250_NAME          :ED250 "Pendolino" (Elettrotreno)
+
+STR_GMY_NAME            :Carrozza postale (Gmy)
+STR_GHMX_NAME           :Carrozza postale (Ghmx)
+STR_GMW_NAME            :Carrozza postale (Gmw)
+STR_PDN_NAME            :Carrozza postale (Pdn)
+STR_OHXT_NAME           :Carro di riscaldo (Ohxt)
+STR_FG_NAME             :Carrozza postale/bagagli (Fg)
+STR_FY_NAME             :Carrozza bagagliaio (Fy)
+STR_FHX_NAME            :Carrozza bagagliaio (Fhx)
+STR_DHXT_NAME           :Carrozza bagagliaio (Dhxt)
+STR_DWXZ_NAME           :Carrozza bagagliaio (Dwxz)
+STR_BDWXZD_NAME         :Carrozza passeggeri con comparto bagagli (BDwxzd)
+STR_JHX_NAME            :Carrozza ristorante (Jhx)
+STR_JHIX_NAME           :Carrozza ristorante (Jhix)
+STR_WRDMNU_NAME         :Carrozza ristorante (WRdmnu)
+STR_WRMNOUZ_NAME        :Carrozza ristorante (WRmnouz)
+STR_BCY_NAME            :Carrozza passeggeri (BCy)
+STR_BCYH_NAME           :Carrozza passeggeri (BCyh)
+STR_BHXZ_NAME           :Carrozza per treni espressi (Bhxz)
+STR_ABHXZ_NAME          :Carrozza per treni espressi (A/Bhxz)
+STR_ABHXZ_TEXT          :Riadattable a: carrozza passeggeri di {RED}2{ORANGE}a classe, mista {RED}1{ORANGE}a/{RED}2{ORANGE}a classe, {RED}1{ORANGE}a classe {BLACK}. Default: carrozza di {RED}2{ORANGE}a classe
+STR_BCI_NAME            :Carrozza passeggeri "kowbojka" (BCi)
+STR_BH_RYF_NAME         :Carrozza passeggeri "ryflak" (Bh)
+STR_BH_RYF_TEXT         :Info: {ORANGE}Rimorchio per {YELLOW}carrozza motorizzata diesel SN61
+STR_WLAB_NAME           :Vagone-letto (WLABd)
+STR_WLAB10MNOUZ_NAME    :Vagone-letto (WLAB10mnouz)
+STR_ABDNU_NAME          :Carrozza per treni espressi (A/Bdnu)
+STR_ABDNU_TEXT          :Riadattable a: carrozza per treni espressi di {RED}2{ORANGE}a classe, mista {RED}1{ORANGE}a/{RED}2{ORANGE}a classe, {RED}1{ORANGE}a classe {BLACK}. Default: carrozza di {RED}2{ORANGE}a classe
+STR_BH_BON_NAME         :Carrozza passeggeri "bonanza" (Bh)
+STR_BH_BON_TEXT         :Info: {ORANGE}Rimorchio per {YELLOW}automotrice diesel SA106
+STR_ABDHMNU_NAME        :Carrozza InterCity (A/Bdhmnu)
+STR_ABDHMNU_TEXT        :Riadattabile a: carrozza InterCity di {RED}2{ORANGE}a o {RED}1{ORANGE}a classe {BLACK}. Default: carrozza di {RED}2{ORANGE}a classe
+STR_AB9MNOPUZ_NAME      :Carrozza EuroCity (A/B9mnopuz)
+STR_AB9MNOPUZ_TEXT      :Riadattabile a: carrozza EuroCity di {RED}2{ORANGE}a o {RED}1{ORANGE}a classe {BLACK}. Default: carrozza di {RED}2{ORANGE}a classe
+STR_BIPA_NAME           :Carrozza a due piani (Bhp)
+STR_BIPA_TEXT           :Info: carrozza a due piani di{YELLOW}4{ORANGE} parti{}{BLACK}Riadattabile a: carrozza di {YELLOW}2{ORANGE}, {YELLOW}3{ORANGE} o {YELLOW}4{ORANGE} parti
+STR_BIPA_4PARTS         :- carrozza di 4 parti
+STR_BIPA_3PARTS         :- carrozza di 3 parti
+STR_BIPA_2PARTS         : - carrozza di 2 parti
+STR_BDHPUMN_NAME        :Carrozza a due piani (Bdhpumn)
+
+STR_WDDO_NAME           :Carro aperto (Wddo)
+STR_WDDOH_NAME          :Carro aperto (Wddoh)
+STR_WDDO_2W_NAME        :Carro aperto (Wddo) tipo 2W
+STR_ES_NAME             :Carro aperto (Es)
+STR_EAOS_NAME           :Carro aperto (Eaos)
+STR_EAMOS_NAME          :Carro aperto pesante (Eamos)
+STR_FALS_NAME           :Carro a scarico automatico "talbot" (Fals)
+STR_FALNS_NAME          :Carro a scarico automatico "talbot" (Falns)
+STR_TADNS_NAME          :Carro a tramoggia coperto (Tadns)
+STR_KDT_NAME            :Carro chiuso (Kdt)
+STR_KDTH_NAME           :Carro chiuso (Kdth)
+STR_KDDET_NAME          :Carro chiuso (Kddet)
+STR_GGS_NAME            :Carro chiuso (Ggs)
+STR_GAGS_NAME           :Carro chiuso (Gags)
+STR_GBS_NAME            :Carro chiuso (Gbs)
+STR_HBBINS_NAME         :Carro chiuso (Hbbins)
+STR_HABBINS_NAME        :Carro chiuso (Habbins)
+STR_SLR_NAME            :Carro frigorifero (Slr)
+STR_IBHSS_NAME          :Carro frigorifero (Ibhss)
+STR_PDK31_NAME          :Carro piatto (Pdk31)
+STR_PDKH31_NAME         :Carro piatto (Pdkh31)
+STR_KBKKS_NAME          :Carro piatto (Kbkks)
+STR_KGNS_NAME           :Carro piatto (Kgns)
+STR_RES_NAME            :Carro piatto (Res)
+STR_SGS_NAME            :Carro portacontainer (Sgs)
+STR_SDGMNSS_NAME        :Carro intermodale (Sdgmnss)
+STR_RH_NAME             :Carro cisterna (Rh)
+STR_RBH_NAME            :Carro cisterna (Rbh)
+STR_ZAES_NAME           :Carro cisterna (Zaes)
+STR_SN_NAME             :Carro bestiame (Sn)
+STR_SDW_NAME            :Carro per cemento (Sdw)
+STR_SDWH_NAME           :Carro per cemento (Sdwh)
+STR_UACS_NAME           :Carro silos (Uacs)
+STR_LEKQSS_NAME         :Carro porta-auto (Lekqss)
+
+STR_WM15A_NAME          :Tram WM-15A (Diesel)
+STR_PWM15_NAME          :Rimorchio PWM-15

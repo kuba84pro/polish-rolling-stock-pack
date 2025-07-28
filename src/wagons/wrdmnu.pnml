@@ -1,0 +1,180 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* WRdmnu sprites */
+spriteset(sset_wrdmnu_purchase, "gfx/bautzen89.png")        { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_wrdmnu_ic_purchase, "gfx/bautzen89.png")        { tmpl_sprite_purchase(4, 360) }
+spriteset(sset_wrdmnu_red, "gfx/bautzen89.png")             { tmpl_sprite_train12(4, 20) }
+spriteset(sset_wrdmnu_ic, "gfx/bautzen89.png")              { tmpl_sprite_train12(4, 80) }
+spriteset(sset_wrdmnu_red_open, "gfx/bautzen89.png")        { tmpl_sprite_train12(4, 120) }
+spriteset(sset_wrdmnu_ic_open, "gfx/bautzen89.png")         { tmpl_sprite_train12(4, 160) }
+spriteset(sset_wrdmnu_red_l, "gfx/bautzen89.png")           { tmpl_sprite_train12_l(4, 200) }
+spriteset(sset_wrdmnu_red_r, "gfx/bautzen89.png")           { tmpl_sprite_train12_r(4, 200) }
+spriteset(sset_wrdmnu_ic_l, "gfx/bautzen89.png")            { tmpl_sprite_train12_l(4, 240) }
+spriteset(sset_wrdmnu_ic_r, "gfx/bautzen89.png")            { tmpl_sprite_train12_r(4, 240) }
+spriteset(sset_wrdmnu_red_cut, "gfx/bautzen89.png")         { tmpl_sprite_train12(4, 280) }
+spriteset(sset_wrdmnu_ic_cut, "gfx/bautzen89.png")          { tmpl_sprite_train12(4, 320) }
+spriteset(sset_wrdmnu_red_rear, "gfx/bautzen89.png")        { tmpl_sprite_train12_rear(4, 20) }
+spriteset(sset_wrdmnu_ic_rear, "gfx/bautzen89.png")         { tmpl_sprite_train12_rear(4, 80) }
+spriteset(sset_wrdmnu_red_rear_open, "gfx/bautzen89.png")   { tmpl_sprite_train12_rear(4, 120) }
+spriteset(sset_wrdmnu_ic_rear_open, "gfx/bautzen89.png")    { tmpl_sprite_train12_rear(4, 160) }
+spritegroup sgroup_wrdmnu_red {
+    loaded:     [sset_wrdmnu_red];
+    loading:    [sset_wrdmnu_red_open];
+}
+spritegroup sgroup_wrdmnu_red_rear {
+    loaded:     [sset_wrdmnu_red_rear];
+    loading:    [sset_wrdmnu_red_rear_open];
+}
+spritegroup sgroup_wrdmnu_ic {
+    loaded:     [sset_wrdmnu_ic];
+    loading:    [sset_wrdmnu_ic_open];
+}
+spritegroup sgroup_wrdmnu_ic_rear {
+    loaded:     [sset_wrdmnu_ic_rear];
+    loading:    [sset_wrdmnu_ic_rear_open];
+}
+
+/* WRdmnu switches */
+#define WRDMNU_REFIT_AVAILABLE  current_year >= 2010
+switch(FEAT_TRAINS, SELF, switch_wrdmnu_articulated, extra_callback_info1) {
+    1: return item_dummy_4;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_wrdmnu_red_cut_front, other_veh_is_hidden(1)) {
+    1: return sset_wrdmnu_red_cut;
+    return sgroup_wrdmnu_red;
+}
+switch(FEAT_TRAINS, SELF, switch_wrdmnu_red_extra_front,
+   [STORE_TEMP(curv_info_prev_cur, 0), STORE_TEMP(curv_info_cur_next, 1),
+    STORE_TEMP((LOAD_TEMP(0)<0 && LOAD_TEMP(1)<0)?0:LOAD_TEMP(1), 1),
+    STORE_TEMP((LOAD_TEMP(0)>0 && LOAD_TEMP(1)>0)?0:LOAD_TEMP(1), 1),
+    LOAD_TEMP(1)]) {
+    -2..-1: return sset_wrdmnu_red_l;
+    1..2:   return sset_wrdmnu_red_r;
+    return switch_wrdmnu_red_cut_front;
+}
+switch(FEAT_TRAINS, SELF, switch_wrdmnu_red_front, (extra_callback_info1&0xFF)==0) {
+    1: return switch_wrdmnu_red_extra_front;  // viewport
+    return sgroup_wrdmnu_red;
+}
+switch(FEAT_TRAINS, SELF, switch_wrdmnu_red_rear, (extra_callback_info1&0xFF)==0 && curv_info_prev_cur==0 && other_veh_z_offset(-1)==0 ) {
+    1: return sgroup_wrdmnu_red_rear;  // viewport & no curves
+    return sset_dummy;
+}
+switch(FEAT_TRAINS, SELF, switch_wrdmnu_red_graphics, position_in_vehid_chain % 2) {
+    1: return switch_wrdmnu_red_rear;
+    return switch_wrdmnu_red_front;
+}
+switch(FEAT_TRAINS, SELF, switch_wrdmnu_ic_cut_front, other_veh_is_hidden(1)) {
+    1: return sset_wrdmnu_ic_cut;
+    return sgroup_wrdmnu_ic;
+}
+switch(FEAT_TRAINS, SELF, switch_wrdmnu_ic_extra_front, 
+   [STORE_TEMP(curv_info_prev_cur, 0), STORE_TEMP(curv_info_cur_next, 1),
+    STORE_TEMP((LOAD_TEMP(0)<0 && LOAD_TEMP(1)<0)?0:LOAD_TEMP(1), 1),
+    STORE_TEMP((LOAD_TEMP(0)>0 && LOAD_TEMP(1)>0)?0:LOAD_TEMP(1), 1),
+    LOAD_TEMP(1)]) {
+    -2..-1: return sset_wrdmnu_ic_l;
+    1..2:   return sset_wrdmnu_ic_r;
+    return switch_wrdmnu_ic_cut_front;
+}
+switch(FEAT_TRAINS, SELF, switch_wrdmnu_ic_front, (extra_callback_info1&0xFF)==0) {
+    1: return switch_wrdmnu_ic_extra_front;  // viewport
+    return sgroup_wrdmnu_ic;
+}
+switch(FEAT_TRAINS, SELF, switch_wrdmnu_ic_rear, (extra_callback_info1&0xFF)==0 && curv_info_prev_cur==0 && other_veh_z_offset(-1)==0 ) {
+    1: return sgroup_wrdmnu_ic_rear;  // viewport & no curves
+    return sset_dummy;
+}
+switch(FEAT_TRAINS, SELF, switch_wrdmnu_ic_graphics, position_in_vehid_chain % 2) {
+    1: return switch_wrdmnu_ic_rear;
+    return switch_wrdmnu_ic_front;
+}
+switch (FEAT_TRAINS, SELF, switch_wrdmnu_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_4L, string(STR_BRAKE_AIR), string(STR_HEATING_ELECTRIC_TEXT), string(STR_WRDMNU_TEXT), string(STR_INCOME_ALL_EXPRESS));
+    return string(STR_PURCHASE_DESCR_3L, string(STR_BRAKE_AIR), string(STR_WRDMNU_TEXT), string(STR_INCOME_ALL_EXPRESS));
+}
+switch (FEAT_TRAINS, SELF, switch_bautzen89_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_4L, string(STR_BRAKE_AIR), string(STR_HEATING_ELECTRIC_TEXT), string(STR_BAUTZEN89_TEXT), string(STR_INCOME_ALL_EXPRESS));
+    return string(STR_PURCHASE_DESCR_3L, string(STR_BRAKE_AIR), string(STR_BAUTZEN89_TEXT), string(STR_INCOME_ALL_EXPRESS));
+}
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_wrdmnu, 11302) {
+    property {
+        /* common properties */
+        name:                           string(STR_WRDMNU_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1989, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  5;
+        cost_factor:                    PURCHASE_COST_WRDMNU;
+        running_cost_factor:            RUNNING_COST_PASS_EXPRESS+1 + RUNNING_COST_COOK_CREW;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 1;
+        weight:                         48 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON, VINFO_RESTAURANT_WAGON);
+    }
+
+    graphics {
+        purchase:                   sset_wrdmnu_purchase;
+        additional_text:            switch_wrdmnu_add_text;
+        default:                    switch_wrdmnu_red_graphics;
+        articulated_part:           switch_wrdmnu_articulated;
+        purchase_cargo_capacity:    return 0;
+        cargo_capacity:             return 0;
+    }
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_bautzen89, 11303) {
+    property {
+        /* common properties */
+        name:                           string(STR_BAUTZEN89_NAME);
+        variant_group:                  11302;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2010, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  5;
+        cost_factor:                    PURCHASE_COST_WRDMNU;
+        running_cost_factor:            RUNNING_COST_PASS_EXPRESS+1 + RUNNING_COST_COOK_CREW;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 1;
+        weight:                         48 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON, VINFO_RESTAURANT_WAGON);
+    }
+
+    graphics {
+        purchase:                   sset_wrdmnu_ic_purchase;
+        additional_text:            switch_bautzen89_add_text;
+        default:                    switch_wrdmnu_ic_graphics;
+        articulated_part:           switch_wrdmnu_articulated;
+        purchase_cargo_capacity:    return 0;
+        cargo_capacity:             return 0;
+    }
+}

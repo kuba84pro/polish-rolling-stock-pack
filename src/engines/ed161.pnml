@@ -1,0 +1,222 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, GPL 2.0
+
+/* ED161 sprites */
+spriteset(sset_ed161_purchase, "gfx/ed161.png")   { tmpl_sprite_purchase(4, 660) }
+spriteset(sset_ed161_advert, "gfx/ed161.png")   { tmpl_sprite_advertisement300(4, 680) }
+
+spriteset(sset_ed161_head, "gfx/ed161.png")       { tmpl_sprite_train12(4, 20) }
+spriteset(sset_ed161_mid1, "gfx/ed161.png")       { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_ed161_mid2, "gfx/ed161.png")       { tmpl_sprite_train10_offset(4, 100, 1) }
+spriteset(sset_ed161_mid3, "gfx/ed161.png")       { tmpl_sprite_train10_offset(4, 140, 1) }
+spriteset(sset_ed161_mid4, "gfx/ed161.png")       { tmpl_sprite_train10_offset(4, 180, 1) }
+spriteset(sset_ed161_mid5, "gfx/ed161.png")       { tmpl_sprite_train10_offset(4, 220, 1) }
+spriteset(sset_ed161_mid6, "gfx/ed161.png")       { tmpl_sprite_train10_offset(4, 260, 1) }
+spriteset(sset_ed161_tail, "gfx/ed161.png")       { tmpl_sprite_train12_offset(4, 300, 1) }
+spriteset(sset_ed161_head_open, "gfx/ed161.png")  { tmpl_sprite_train12(4, 340) }
+spriteset(sset_ed161_mid1_open, "gfx/ed161.png")  { tmpl_sprite_train10_offset(4, 380, 1) }
+spriteset(sset_ed161_mid2_open, "gfx/ed161.png")  { tmpl_sprite_train10_offset(4, 420, 1) }
+spriteset(sset_ed161_mid3_open, "gfx/ed161.png")  { tmpl_sprite_train10_offset(4, 460, 1) }
+spriteset(sset_ed161_mid4_open, "gfx/ed161.png")  { tmpl_sprite_train10_offset(4, 500, 1) }
+spriteset(sset_ed161_mid5_open, "gfx/ed161.png")  { tmpl_sprite_train10_offset(4, 540, 1) }
+spriteset(sset_ed161_mid6_open, "gfx/ed161.png")  { tmpl_sprite_train10_offset(4, 580, 1) }
+spriteset(sset_ed161_tail_open, "gfx/ed161.png")  { tmpl_sprite_train12_offset(4, 620, 1) }
+spritegroup sgroup_ed161_head {
+    loaded:     [sset_ed161_head];
+    loading:    [sset_ed161_head_open];
+}
+spritegroup sgroup_ed161_mid1 {
+    loaded:     [sset_ed161_mid1];
+    loading:    [sset_ed161_mid1_open];
+}
+spritegroup sgroup_ed161_mid2 {
+    loaded:     [sset_ed161_mid2];
+    loading:    [sset_ed161_mid2_open];
+}
+spritegroup sgroup_ed161_mid3 {
+    loaded:     [sset_ed161_mid3];
+    loading:    [sset_ed161_mid3_open];
+}
+spritegroup sgroup_ed161_mid4 {
+    loaded:     [sset_ed161_mid4];
+    loading:    [sset_ed161_mid4_open];
+}
+spritegroup sgroup_ed161_mid5 {
+    loaded:     [sset_ed161_mid5];
+    loading:    [sset_ed161_mid5_open];
+}
+spritegroup sgroup_ed161_mid6 {
+    loaded:     [sset_ed161_mid6];
+    loading:    [sset_ed161_mid6_open];
+}
+spritegroup sgroup_ed161_tail {
+    loaded:     [sset_ed161_tail];
+    loading:    [sset_ed161_tail_open];
+}
+
+#ifdef ZOOM_SPRITES_ENABLED
+alternative_sprites(sset_ed161_head,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/ed161-x2.png")   { tmpl_sprite_train12_x2(8, 40) }
+alternative_sprites(sset_ed161_mid1,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/ed161-x2.png")   { tmpl_sprite_train10_offset_x2(8, 120, 1) }
+alternative_sprites(sset_ed161_mid2,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/ed161-x2.png")   { tmpl_sprite_train10_offset_x2(8, 200, 1) }
+alternative_sprites(sset_ed161_mid3,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/ed161-x2.png")   { tmpl_sprite_train10_offset_x2(8, 280, 1) }
+alternative_sprites(sset_ed161_mid4,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/ed161-x2.png")   { tmpl_sprite_train10_offset_x2(8, 360, 1) }
+alternative_sprites(sset_ed161_mid5,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/ed161-x2.png")   { tmpl_sprite_train10_offset_x2(8, 440, 1) }
+alternative_sprites(sset_ed161_mid6,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/ed161-x2.png")   { tmpl_sprite_train10_offset_x2(8, 520, 1) }
+alternative_sprites(sset_ed161_tail,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/ed161-x2.png")   { tmpl_sprite_train12_offset_x2(8, 600, 1) }
+alternative_sprites(sset_ed161_head_open,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/ed161-x2.png")   { tmpl_sprite_train12_x2(8, 680) }
+alternative_sprites(sset_ed161_mid1_open,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/ed161-x2.png")   { tmpl_sprite_train10_offset_x2(8, 760, 1) }
+alternative_sprites(sset_ed161_mid2_open,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/ed161-x2.png")   { tmpl_sprite_train10_offset_x2(8, 840, 1) }
+alternative_sprites(sset_ed161_mid3_open,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/ed161-x2.png")   { tmpl_sprite_train10_offset_x2(8, 920, 1) }
+alternative_sprites(sset_ed161_mid4_open,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/ed161-x2.png")   { tmpl_sprite_train10_offset_x2(8, 1000, 1) }
+alternative_sprites(sset_ed161_mid5_open,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/ed161-x2.png")   { tmpl_sprite_train10_offset_x2(8, 1080, 1) }
+alternative_sprites(sset_ed161_mid6_open,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/ed161-x2.png")   { tmpl_sprite_train10_offset_x2(8, 1160, 1) }
+alternative_sprites(sset_ed161_tail_open,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/ed161-x2.png")   { tmpl_sprite_train12_offset_x2(8, 1240, 1) }
+#endif
+
+/* ED161 switches */
+switch(FEAT_TRAINS, SELF, switch_ed161_articulated, extra_callback_info1) {
+    1..15: return item_ed161;     // including dummy parts
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_ed161_length, position_in_vehid_chain % 16) {
+    1: return 4;    // dummy part
+    3: return 1;    // dummy part
+    5: return 1;    // dummy part
+    7: return 1;    // dummy part
+    9: return 1;    // dummy part
+    11: return 1;    // dummy part
+    13: return 1;    // dummy part
+    15: return 2;    // dummy part
+    return 8;
+}
+switch(FEAT_TRAINS, SELF, switch_ed161_purchase, extra_callback_info1 & 0xFF) {
+    0x21: return sset_ed161_advert;
+    return sset_ed161_purchase;
+}
+switch(FEAT_TRAINS, SELF, switch_ed161_graphics, position_in_vehid_chain % 16) {
+    0: return sgroup_ed161_head;
+    2: return sgroup_ed161_mid1;
+    4: return sgroup_ed161_mid2;
+    6: return sgroup_ed161_mid3;
+    8: return sgroup_ed161_mid4;
+    10: return sgroup_ed161_mid5;
+    12: return sgroup_ed161_mid6;
+    14: return sgroup_ed161_tail;
+    return sset_dummy;      // dummy parts
+}
+switch(FEAT_TRAINS, SELF, switch_ed161_capacity, position_in_vehid_chain % 16) {
+    0: return 36-1;
+    2: return 28-1;
+    4: return 16-1;
+    6: return 48-1;
+    8: return 60-1;
+    10: return 56-1;
+    12: return 56-1;
+    14: return 56-1;
+    return 1;   // dummy parts
+}
+switch(FEAT_TRAINS, SELF, switch_ed161_visual_effect_local, position_in_vehid_chain % 16) {
+    14: return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, -3, DISABLE_WAGON_POWER);
+    return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+}
+switch(FEAT_TRAINS, SELF, switch_ed161_can_attach, vehicle_type_id) {
+    item_en57:  return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en71:  return string(STR_ATTACH_DISALLOW_EZT2);
+    item_ed72:  return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en76:  return string(STR_ATTACH_DISALLOW_EZT2);
+    item_ed74:  return string(STR_ATTACH_DISALLOW_EZT2);
+    item_ed250:  return string(STR_ATTACH_DISALLOW_EZT2);
+    item_ed161:  return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_ATTACH_DISALLOW_EZT1);
+}
+switch (FEAT_TRAINS, SELF, switch_ed161_start_stop, num_vehs_in_consist / 16) {
+    1..2: return CB_RESULT_NO_TEXT;
+    return string(STR_TRAIN_TOO_LONG, string(STR_ED161_NAME));
+}
+switch(FEAT_TRAINS, SELF, switch_ed161_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_3L, string(STR_HEATING_ELECTRIC_TEXT), string(STR_ED161_TEXT), string(STR_INCOME_1_CLASS));
+    return string(STR_PURCHASE_DESCR_2L, string(STR_ED161_TEXT), string(STR_INCOME_1_CLASS));
+}
+ENGINE_RUNNING_COST_SWITCH(ed161, ED161)
+DIESEL_ELECTRIC_ENGINE_POWER_SWITCH(ed161)
+ENGINE_VISUAL_EFFECT_SWITCH(ed161)
+
+#ifdef SITTING_PLACES
+    #undef SITTING_PLACES
+#endif
+#define SITTING_PLACES 36+28+16+48+60+56+56+56
+#define CARGO_CAPACITY_ED161    int((SITTING_PLACES+8)/16)
+
+#define AGE_ED161_2_CLASS   185*1.9
+#define AGE_ED161_1_CLASS   (185*2.82)*1.9
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_ed161, 2602) {
+    property {
+        /* common properties */
+        name:                           string(STR_ED161_PKP_IC_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2015, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  6;     // per part
+        cost_factor:                    PURCHASE_COST_ED161;
+        running_cost_factor:            RUNNING_COST_ED161;
+        cargo_age_period:               int((60*AGE_ED161_1_CLASS + (356-60)*AGE_ED161_2_CLASS)/356);
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          2400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 CARGO_CAPACITY_ED161;
+        weight:                         249 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.3*80/249;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   switch_ed161_purchase;
+        additional_text:            switch_ed161_add_text;
+        default:                    switch_ed161_graphics;
+        articulated_part:           switch_ed161_articulated;
+        length:                     switch_ed161_length;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_ed161_capacity;
+        visual_effect_and_powered:  switch_ed161_visual_effect;
+        can_attach_wagon:           switch_ed161_can_attach;
+        start_stop:                 switch_ed161_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(ed161)
+        ENGINE_POWER_CALLBACKS(ed161)
+    }
+}

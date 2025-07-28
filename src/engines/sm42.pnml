@@ -1,0 +1,795 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* SM42/SP42/SU42 sprites */
+// SM42 CLASSIC
+spriteset(sset_sm42_purchase, "gfx/sm42.png")                { tmpl_sprite_purchase(4, 50) }
+spriteset(sset_sm42, "gfx/sm42.png")                         { tmpl_sprite_train(4, 20) }
+// SM42 PKPCARGO
+spriteset(sset_sm42_pkp_cargo_purchase, "gfx/sm42.png")      { tmpl_sprite_purchase(4, 400) }
+spriteset(sset_sm42_pkp_cargo, "gfx/sm42.png")               { tmpl_sprite_train(4, 370) }
+// SM42 IC
+spriteset(sset_sm42_ic_purchase, "gfx/sm42.png")             { tmpl_sprite_purchase(4, 460) }
+spriteset(sset_sm42_pkp_ic, "gfx/sm42.png")                  { tmpl_sprite_train(4, 420) }
+// SM42 OLIWKOWE
+spriteset(sset_sm42_oliwkowe_purchase, "gfx/sm42.png")       { tmpl_sprite_purchase(4, 100) }
+spriteset(sset_sm42_oliwkowe, "gfx/sm42.png")                { tmpl_sprite_train(4, 70) }
+// SM42 TABOR DEBICA
+spriteset(sset_sm42_tabor_debica_purchase, "gfx/sm42.png")   { tmpl_sprite_purchase(4, 510) }
+spriteset(sset_sm42_tabor_debica, "gfx/sm42.png")            { tmpl_sprite_train(4, 480) }
+// SM42 SKPL
+spriteset(sset_sm42_skpl_purchase, "gfx/sm42.png")   { tmpl_sprite_purchase(4, 560) }
+spriteset(sset_sm42_skpl, "gfx/sm42.png")            { tmpl_sprite_train(4, 530) }
+// SM42 POLREGIO
+spriteset(sset_sm42_polregio_purchase, "gfx/sm42.png")   { tmpl_sprite_purchase(4, 680) }
+spriteset(sset_sm42_polregio, "gfx/sm42.png")            { tmpl_sprite_train(4, 650) }
+// SP42 CLASSIC
+spriteset(sset_sp42_purchase, "gfx/sm42.png")                { tmpl_sprite_purchase(4, 150) }
+spriteset(sset_sp42, "gfx/sm42.png")                         { tmpl_sprite_train(4, 120) }
+// SP42 OLIWKOWE
+spriteset(sset_sp42_oliwkowe_purchase, "gfx/sm42.png")       { tmpl_sprite_purchase(4, 200) }
+spriteset(sset_sp42_oliwkowe, "gfx/sm42.png")                { tmpl_sprite_train(4, 170) }
+// SU42 CLASSIC
+spriteset(sset_su42_purchase, "gfx/sm42.png")                { tmpl_sprite_purchase(4, 350) }
+spriteset(sset_su42, "gfx/sm42.png")                         { tmpl_sprite_train(4, 320) }
+// SU42 POLSAT
+spriteset(sset_su42_polsat_purchase, "gfx/sm42.png")         { tmpl_sprite_purchase(4, 250) }
+spriteset(sset_su42_polsat, "gfx/sm42.png")                  { tmpl_sprite_train(4, 220) }
+// SU42 PRZEWOZY REGIONALNE
+spriteset(sset_su42_pr_purchase, "gfx/sm42.png")             { tmpl_sprite_purchase(4, 300) }
+spriteset(sset_su42_pr, "gfx/sm42.png")                      { tmpl_sprite_train(4, 270) }
+// SU42 POLREGIO
+spriteset(sset_su42_polregio_purchase, "gfx/sm42.png")   { tmpl_sprite_purchase(4, 613) }
+spriteset(sset_su42_polregio, "gfx/sm42.png")            { tmpl_sprite_train(4, 583) }
+
+
+/* SM42/SP42/SU42 switches */
+switch(FEAT_TRAINS, PARENT, switch_sm42_visual_effect_local, 0) {
+    return visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 0, DISABLE_WAGON_POWER);
+}
+switch(FEAT_TRAINS, PARENT, switch_sp42_visual_effect_local, 0) {
+    return visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 0, DISABLE_WAGON_POWER);
+}
+switch(FEAT_TRAINS, PARENT, switch_su42_visual_effect_local, 0) {
+    return visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 0, DISABLE_WAGON_POWER);
+}
+
+switch (FEAT_TRAINS, SELF, switch_sm42_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_2L, string(STR_HEATING_NONE_TEXT), string(STR_ENGINE_PASSENGER_FREIGHT));
+    return string(STR_ENGINE_PASSENGER_FREIGHT);
+}
+switch (FEAT_TRAINS, SELF, switch_sp42_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_2L, string(STR_HEATING_STEAM_POWER_TEXT, HEATING_POWER_STEAM_MID), string(STR_ENGINE_PASSENGER_FREIGHT));
+    return string(STR_ENGINE_PASSENGER_FREIGHT);
+}
+switch (FEAT_TRAINS, SELF, switch_su42_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_2L, string(STR_HEATING_ELECTRIC_POWER_TEXT, HEATING_POWER_ELECTRIC_LOW), string(STR_ENGINE_PASSENGER_FREIGHT));
+    return string(STR_ENGINE_PASSENGER_FREIGHT);
+}
+ENGINE_RUNNING_COST_SWITCH(sm42, SM42)
+DIESEL_ELECTRIC_ENGINE_POWER_SWITCH(sm42)
+ENGINE_VISUAL_EFFECT_SWITCH(sm42)
+ENGINE_RUNNING_COST_SWITCH(sp42, SP42)
+DIESEL_ELECTRIC_ENGINE_POWER_SWITCH(sp42)
+ENGINE_VISUAL_EFFECT_SWITCH(sp42)
+ENGINE_RUNNING_COST_SWITCH(su42, SU42)
+DIESEL_ELECTRIC_ENGINE_POWER_SWITCH(su42)
+ENGINE_VISUAL_EFFECT_SWITCH(su42)
+
+/* Define the actual trains */
+item(FEAT_TRAINS, item_sm42, 250) {
+    property {
+        /* common properties */
+        name:                           string(STR_SM42_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1965, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5;
+        cost_factor:                    PURCHASE_COST_SM42;
+        running_cost_factor:            RUNNING_COST_SM42;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          90 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          588 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         70 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.300;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_sm42_purchase;
+        additional_text:            switch_sm42_add_text;
+        default:                    sset_sm42;
+        visual_effect_and_powered:  switch_sm42_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(sm42)
+        ENGINE_POWER_CALLBACKS(sm42)
+    }
+}
+// SM42 Oliwkowe
+/* Define the actual trains */
+item(FEAT_TRAINS, item_sm42_oliwkowe, 251) {
+    property {
+        /* common properties */
+        name:                           string(STR_SM42_OLIWKOWE_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1965, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5;
+        cost_factor:                    PURCHASE_COST_SM42;
+        running_cost_factor:            RUNNING_COST_SM42;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          90 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          588 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         70 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.300;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+        variant_group:                  250;
+    }
+
+    graphics {
+        purchase:                   sset_sm42_oliwkowe_purchase;
+        additional_text:            switch_sm42_add_text;
+        default:                    sset_sm42_oliwkowe;
+        visual_effect_and_powered:  switch_sm42_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(sm42)
+        ENGINE_POWER_CALLBACKS(sm42)
+    }
+}
+// SM42 PKP Cargo
+/* Define the actual trains */
+item(FEAT_TRAINS, item_sm42_pkp_cargo, 252) {
+    property {
+        /* common properties */
+        name:                           string(STR_SM42_PKP_CARGO_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2008, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5;
+        cost_factor:                    PURCHASE_COST_SM42;
+        running_cost_factor:            RUNNING_COST_SM42;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          90 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          588 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         70 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.300;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+        variant_group:                  250;
+    }
+
+    graphics {
+        purchase:                   sset_sm42_pkp_cargo_purchase;
+        additional_text:            switch_sm42_add_text;
+        default:                    sset_sm42_pkp_cargo;
+        visual_effect_and_powered:  switch_sm42_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(sm42)
+        ENGINE_POWER_CALLBACKS(sm42)
+    }
+}
+// SM42 IC
+/* Define the actual trains */
+item(FEAT_TRAINS, item_sm42_pkp_ic, 253) {
+    property {
+        /* common properties */
+        name:                           string(STR_SM42_PKP_IC_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2008, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5;
+        cost_factor:                    PURCHASE_COST_SM42;
+        running_cost_factor:            RUNNING_COST_SM42;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          90 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          588 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         70 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.300;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+        variant_group:                  250;
+    }
+
+    graphics {
+        purchase:                   sset_sm42_ic_purchase;
+        additional_text:            switch_sm42_add_text;
+        default:                    sset_sm42_pkp_ic;
+        visual_effect_and_powered:  switch_sm42_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(sm42)
+        ENGINE_POWER_CALLBACKS(sm42)
+    }
+}
+// SM42 TABOR DEBICA
+/* Define the actual trains */
+item(FEAT_TRAINS, item_sm42_tabor_debica, 254) {
+    property {
+        /* common properties */
+        name:                           string(STR_SM42_TABOR_DEBICA_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2013, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5;
+        cost_factor:                    PURCHASE_COST_SM42;
+        running_cost_factor:            RUNNING_COST_SM42;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          90 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          588 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         70 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.300;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+        variant_group:                  250;
+    }
+
+    graphics {
+        purchase:                   sset_sm42_tabor_debica_purchase;
+        additional_text:            switch_sm42_add_text;
+        default:                    sset_sm42_tabor_debica;
+        visual_effect_and_powered:  switch_sm42_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(sm42)
+        ENGINE_POWER_CALLBACKS(sm42)
+    }
+}
+// SM42 SKPL
+/* Define the actual trains */
+item(FEAT_TRAINS, item_sm42_skpl, 255) {
+    property {
+        /* common properties */
+        name:                           string(STR_SM42_SKPL_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2014, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5;
+        cost_factor:                    PURCHASE_COST_SM42;
+        running_cost_factor:            RUNNING_COST_SM42;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          90 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          588 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         70 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.300;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+        variant_group:                  250;
+    }
+
+    graphics {
+        purchase:                   sset_sm42_skpl_purchase;
+        additional_text:            switch_sm42_add_text;
+        default:                    sset_sm42_skpl;
+        visual_effect_and_powered:  switch_sm42_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(sm42)
+        ENGINE_POWER_CALLBACKS(sm42)
+    }
+}
+// SM42 POLREGIO
+/* Define the actual trains */
+item(FEAT_TRAINS, item_sm42_polregio, 256) {
+    property {
+        /* common properties */
+        name:                           string(STR_SM42_POLREGIO_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2017, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5;
+        cost_factor:                    PURCHASE_COST_SM42;
+        running_cost_factor:            RUNNING_COST_SM42;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          90 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          588 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         70 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.300;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+        variant_group:                  250;
+    }
+
+    graphics {
+        purchase:                   sset_sm42_polregio_purchase;
+        additional_text:            switch_sm42_add_text;
+        default:                    sset_sm42_polregio;
+        visual_effect_and_powered:  switch_sm42_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(sm42)
+        ENGINE_POWER_CALLBACKS(sm42)
+    }
+}
+// ========================================= SP42 =========================================
+item(FEAT_TRAINS, item_sp42, 270) {
+    property {
+        /* common properties */
+        name:                           string(STR_SP42_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1967, 1, 1);
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5;
+        cost_factor:                    PURCHASE_COST_SP42;
+        running_cost_factor:            RUNNING_COST_SP42;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          90 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          582 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_PROPERTY
+        weight:                         70 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.300;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+        variant_group:                  250;
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     55;
+        retire_early:                   16;
+    }
+}
+
+    graphics {
+        purchase:                   sset_sp42_purchase;
+        additional_text:            switch_sp42_add_text;
+        default:                    sset_sp42;
+        visual_effect_and_powered:  switch_sp42_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(sp42)
+        ENGINE_POWER_CALLBACKS(sp42)
+    }
+}
+// SP42 OLIWKOWE
+item(FEAT_TRAINS, item_sp42_oliwkowe, 271) {
+    property {
+        /* common properties */
+        name:                           string(STR_SP42_OLIWKOWE_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1967, 1, 1);
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5;
+        cost_factor:                    PURCHASE_COST_SP42;
+        running_cost_factor:            RUNNING_COST_SP42;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          90 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          582 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_PROPERTY
+        weight:                         70 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.300;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+        variant_group:                  270;
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     55;
+        retire_early:                   16;
+    }
+}
+
+    graphics {
+        purchase:                   sset_sp42_oliwkowe_purchase;
+        additional_text:            switch_sp42_add_text;
+        default:                    sset_sp42_oliwkowe;
+        visual_effect_and_powered:  switch_sp42_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(sp42)
+        ENGINE_POWER_CALLBACKS(sp42)
+    }
+}
+// ========================================= SU42 =========================================
+item(FEAT_TRAINS, item_su42, 290) {
+    property {
+        /* common properties */
+        name:                           string(STR_SU42_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1999, 1, 1);
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5;
+        cost_factor:                    PURCHASE_COST_SU42;
+        running_cost_factor:            RUNNING_COST_SU42;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          90 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          590 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_PROPERTY
+        weight:                         70 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.300;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+        variant_group:                  250;
+    }
+    
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     51;
+        retire_early:                   16;
+    }
+}
+
+    graphics {
+        purchase:                   sset_su42_purchase;
+        additional_text:            switch_su42_add_text;
+        default:                    sset_su42;
+        visual_effect_and_powered:  switch_su42_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(su42)
+        ENGINE_POWER_CALLBACKS(su42)
+    }
+}
+// SU42 POLSAT
+item(FEAT_TRAINS, item_su42_polsat, 291) {
+    property {
+        /* common properties */
+        name:                           string(STR_SU42_POLSAT_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1999, 1, 1);
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5;
+        cost_factor:                    PURCHASE_COST_SU42;
+        running_cost_factor:            RUNNING_COST_SU42;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          90 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          590 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_PROPERTY
+        weight:                         70 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.300;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+        variant_group:                  290;
+    }
+    
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     51;
+        retire_early:                   16;
+    }
+}
+
+    graphics {
+        purchase:                   sset_su42_polsat_purchase;
+        additional_text:            switch_su42_add_text;
+        default:                    sset_su42_polsat;
+        visual_effect_and_powered:  switch_su42_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(su42)
+        ENGINE_POWER_CALLBACKS(su42)
+    }
+}
+// SU42 PRZEWOZY REGIONALNE
+item(FEAT_TRAINS, item_su42_pr, 292) {
+    property {
+        /* common properties */
+        name:                           string(STR_SU42_PR_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1999, 1, 1);
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5;
+        cost_factor:                    PURCHASE_COST_SU42;
+        running_cost_factor:            RUNNING_COST_SU42;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          90 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          590 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_PROPERTY
+        weight:                         70 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.300;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+        variant_group:                  290;
+    }
+    
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     51;
+        retire_early:                   16;
+    }
+}
+
+    graphics {
+        purchase:                   sset_su42_pr_purchase;
+        additional_text:            switch_su42_add_text;
+        default:                    sset_su42_pr;
+        visual_effect_and_powered:  switch_su42_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(su42)
+        ENGINE_POWER_CALLBACKS(su42)
+    }
+}
+// SU42 PRZEWOZY REGIONALNE
+item(FEAT_TRAINS, item_su42_polregio, 294) {
+    property {
+        /* common properties */
+        name:                           string(STR_SU42_POLREGIO_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2020, 1, 1);
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5;
+        cost_factor:                    PURCHASE_COST_SU42;
+        running_cost_factor:            RUNNING_COST_SU42;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          90 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          590 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_PROPERTY
+        weight:                         70 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.300;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+        variant_group:                  290;
+    }
+    
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     51;
+        retire_early:                   16;
+    }
+}
+
+    graphics {
+        purchase:                   sset_su42_polregio_purchase;
+        additional_text:            switch_su42_add_text;
+        default:                    sset_su42_polregio;
+        visual_effect_and_powered:  switch_su42_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(su42)
+        ENGINE_POWER_CALLBACKS(su42)
+    }
+}
+

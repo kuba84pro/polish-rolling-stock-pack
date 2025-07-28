@@ -1,0 +1,72 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* Hes sprites */
+spriteset(sset_hes_purchase, "gfx/201s1.png")       { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_hes, "gfx/201s1.png")                { tmpl_sprite_train(4, 20) }
+spriteset(sset_hes_full, "gfx/201s1.png")           { tmpl_sprite_train(4, 80) }
+spriteset(sset_hes_open, "gfx/201s1.png")           { tmpl_sprite_train(4, 120) }
+spriteset(sset_hes_open_full, "gfx/201s1.png")      { tmpl_sprite_train(4, 160) }
+#ifdef _ZOOM_SPRITES_ENABLED_
+alternative_sprites(sset_hes,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/201s1-x2.png")   { tmpl_sprite_train_x2(8, 40) }
+alternative_sprites(sset_hes_full,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/201s1-x2.png")   { tmpl_sprite_train_x2(8, 120) }
+alternative_sprites(sset_hes_open,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/201s1-x2.png")   { tmpl_sprite_train_x2(8, 200) }
+alternative_sprites(sset_hes_open_full,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/201s1-x2.png")   { tmpl_sprite_train_x2(8, 280) }
+#endif
+spritegroup sgroup_hes {
+    loaded:     [sset_hes, sset_hes_full];
+    loading:    [sset_hes_open, sset_hes_open_full];
+}
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_hes, 21201) {
+    property {
+        /* common properties */
+        name:                           string(STR_HES_NAME);
+        variant_group:                  21200;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1959, 1, 1);
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_LIVESTOCK_WAGON_DEFINITION
+        loading_speed:                  5;
+        cost_factor:                    PURCHASE_COST_HES;
+        running_cost_factor:            RUNNING_COST_CARGO_MEDIUM + RUNNING_COST_OTHER;
+        cargo_age_period:               int(185*1.41);  // slow ageing
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 21*2*CARGO_LIVESTOCK_WAGON_MULTIPLIER;
+        weight:                         16 ton;
+        length:                         7;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_CARGO_WAGON);
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     56;
+        retire_early:                   16;
+    }
+}
+
+    graphics {
+        purchase:                   sset_hes_purchase;
+        additional_text:            return string(STR_BRAKE_AIR);
+        default:                    sgroup_hes;
+    }
+}

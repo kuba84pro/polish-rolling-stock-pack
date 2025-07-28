@@ -1,0 +1,562 @@
+// This file is spritesets/groups only
+/* Eaos sprites */
+spriteset(sset_eaos_old_purchase, "gfx/408w.png")       { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_eaos_new_purchase, "gfx/408w.png")       { tmpl_sprite_purchase(124, 60) }
+spriteset(sset_eaos_old_empty, "gfx/408w.png")          { tmpl_sprite_train_sym(4, 20) }
+spriteset(sset_eaos_new_empty, "gfx/408w.png")          { tmpl_sprite_train_sym(124, 20) }
+spriteset(sset_eaos_old_empty_8, "gfx/408w.png")        { tmpl_sprite_train_8(4, 20) }
+spriteset(sset_eaos_new_empty_8, "gfx/408w.png")        { tmpl_sprite_train_8(124, 20) }
+spriteset(sset_eaos_old_half, "gfx/408w.png")           { tmpl_sprite_train_sym(4, 80) }
+spriteset(sset_eaos_new_half, "gfx/408w.png")           { tmpl_sprite_train_sym(124, 80) }
+spriteset(sset_eaos_old_full, "gfx/408w.png")           { tmpl_sprite_train_sym(4, 120) }
+spriteset(sset_eaos_new_full, "gfx/408w.png")           { tmpl_sprite_train_sym(124, 120) }
+spriteset(sset_eaos_old_wood_half, "gfx/408w.png")      { tmpl_sprite_train_sym(4, 160) }
+spriteset(sset_eaos_new_wood_half, "gfx/408w.png")      { tmpl_sprite_train_sym(124, 160) }
+spriteset(sset_eaos_old_wood_full, "gfx/408w.png")      { tmpl_sprite_train_sym(4, 200) }
+spriteset(sset_eaos_new_wood_full, "gfx/408w.png")      { tmpl_sprite_train_sym(124, 200) }
+spriteset(sset_eaos_old_wdpr_half, "gfx/408w.png")      { tmpl_sprite_train(4, 240) }
+spriteset(sset_eaos_new_wdpr_half, "gfx/408w.png")      { tmpl_sprite_train(4, 280) }
+spriteset(sset_eaos_old_wdpr_full, "gfx/408w.png")      { tmpl_sprite_train_8(4, 320) }
+spriteset(sset_eaos_new_wdpr_full, "gfx/408w.png")      { tmpl_sprite_train_8(124, 320) }
+#ifdef ZOOM_SPRITES_ENABLED
+alternative_sprites(sset_eaos_old_empty,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/408w-x2.png")    { tmpl_sprite_train_sym_x2(8, 40) }
+alternative_sprites(sset_eaos_new_empty,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/408w-x2.png")    { tmpl_sprite_train_sym_x2(248, 40) }
+alternative_sprites(sset_eaos_old_empty_8,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/408w-x2.png")    { tmpl_sprite_train_8_x2(8, 40) }
+alternative_sprites(sset_eaos_new_empty_8,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/408w-x2.png")    { tmpl_sprite_train_8_x2(248, 40) }
+alternative_sprites(sset_eaos_old_half,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/408w-x2.png")    { tmpl_sprite_train_sym_x2(8, 120) }
+alternative_sprites(sset_eaos_new_half,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/408w-x2.png")    { tmpl_sprite_train_sym_x2(248, 120) }
+alternative_sprites(sset_eaos_old_full,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/408w-x2.png")    { tmpl_sprite_train_sym_x2(8, 200) }
+alternative_sprites(sset_eaos_new_full,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/408w-x2.png")    { tmpl_sprite_train_sym_x2(248, 200) }
+alternative_sprites(sset_eaos_old_wood_half,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/408w-x2.png")    { tmpl_sprite_train_sym_x2(8, 280) }
+alternative_sprites(sset_eaos_new_wood_half,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/408w-x2.png")    { tmpl_sprite_train_sym_x2(248, 280) }
+alternative_sprites(sset_eaos_old_wood_full,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/408w-x2.png")    { tmpl_sprite_train_sym_x2(8, 360) }
+alternative_sprites(sset_eaos_new_wood_full,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/408w-x2.png")    { tmpl_sprite_train_sym_x2(248, 360) }
+alternative_sprites(sset_eaos_old_wdpr_half,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/408w-x2.png")    { tmpl_sprite_train_x2(8, 440) }
+alternative_sprites(sset_eaos_new_wdpr_half,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/408w-x2.png")    { tmpl_sprite_train_x2(8, 520) }
+alternative_sprites(sset_eaos_old_wdpr_full,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/408w-x2.png")    { tmpl_sprite_train_8_x2(8, 600) }
+alternative_sprites(sset_eaos_new_wdpr_full,
+    ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/408w-x2.png")    { tmpl_sprite_train_8_x2(248, 600) }
+#endif
+spritegroup sgroup_eaos_old {
+    loaded:     [sset_eaos_old_empty, sset_eaos_old_half, sset_eaos_old_full];
+    loading:    [sset_eaos_old_empty, sset_eaos_old_half, sset_eaos_old_full];
+}
+spritegroup sgroup_eaos_new {
+    loaded:     [sset_eaos_new_empty, sset_eaos_new_half, sset_eaos_new_full];
+    loading:    [sset_eaos_new_empty, sset_eaos_new_half, sset_eaos_new_full];
+}
+spritegroup sgroup_eaos_old_wood {
+    loaded:     [sset_eaos_old_empty, sset_eaos_old_wood_half, sset_eaos_old_wood_full];
+    loading:    [sset_eaos_old_empty, sset_eaos_old_wood_half, sset_eaos_old_wood_full];
+}
+spritegroup sgroup_eaos_new_wood {
+    loaded:     [sset_eaos_new_empty, sset_eaos_new_wood_half, sset_eaos_new_wood_full];
+    loading:    [sset_eaos_new_empty, sset_eaos_new_wood_half, sset_eaos_new_wood_full];
+}
+spritegroup sgroup_eaos_old_wdpr {
+    loaded:     [sset_eaos_old_empty_8, sset_eaos_old_wdpr_half, sset_eaos_old_wdpr_full];
+    loading:    [sset_eaos_old_empty_8, sset_eaos_old_wdpr_half, sset_eaos_old_wdpr_full];
+}
+spritegroup sgroup_eaos_new_wdpr {
+    loaded:     [sset_eaos_new_empty_8, sset_eaos_new_wdpr_half, sset_eaos_new_wdpr_full];
+    loading:    [sset_eaos_new_empty_8, sset_eaos_new_wdpr_half, sset_eaos_new_wdpr_full];
+}
+// PMT livery //
+spriteset(sset_eas_pmt_purchase, "gfx/542ptk_polmied.png")       { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_eas_pmt_empty, "gfx/542ptk_polmied.png")          { tmpl_sprite_train_sym(4, 20) }
+spriteset(sset_eas_pmt_empty_8, "gfx/542ptk_polmied.png")        { tmpl_sprite_train_8(4, 20) }
+spriteset(sset_eas_pmt_half, "gfx/542ptk_polmied.png")           { tmpl_sprite_train_sym(4, 80) }
+spriteset(sset_eas_pmt_full, "gfx/542ptk_polmied.png")           { tmpl_sprite_train_sym(4, 120) }
+spriteset(sset_eas_pmt_wood_half, "gfx/542ptk_polmied.png")      { tmpl_sprite_train_sym(4, 159) }
+spriteset(sset_eas_pmt_wood_full, "gfx/542ptk_polmied.png")      { tmpl_sprite_train_sym(4, 200) }
+spriteset(sset_eas_pmt_wdpr_half, "gfx/542ptk_polmied.png")      { tmpl_sprite_train(4, 240) }
+spriteset(sset_eas_pmt_wdpr_full, "gfx/542ptk_polmied.png")      { tmpl_sprite_train_8(4, 320) }
+// PTK livery //
+spriteset(sset_eas_ptk_purchase, "gfx/542ptk_polmied.png")       { tmpl_sprite_purchase(124, 60) }
+spriteset(sset_eas_ptk_empty, "gfx/542ptk_polmied.png")          { tmpl_sprite_train_sym(124, 20) }
+spriteset(sset_eas_ptk_empty_8, "gfx/542ptk_polmied.png")        { tmpl_sprite_train_8(124, 20) }
+spriteset(sset_eas_ptk_half, "gfx/542ptk_polmied.png")           { tmpl_sprite_train_sym(124, 80) }
+spriteset(sset_eas_ptk_full, "gfx/542ptk_polmied.png")           { tmpl_sprite_train_sym(124, 120) }
+spriteset(sset_eas_ptk_wood_half, "gfx/542ptk_polmied.png")      { tmpl_sprite_train_sym(124, 159) }
+spriteset(sset_eas_ptk_wood_full, "gfx/542ptk_polmied.png")      { tmpl_sprite_train_sym(124, 200) }
+spriteset(sset_eas_ptk_wdpr_half, "gfx/542ptk_polmied.png")      { tmpl_sprite_train(4, 280) }
+spriteset(sset_eas_ptk_wdpr_full, "gfx/542ptk_polmied.png")      { tmpl_sprite_train_8(124, 320) }
+// CTL livery //
+spriteset(sset_eas_ctl_purchase, "gfx/190ctl_fpl.png")       { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_eas_ctl_empty, "gfx/190ctl_fpl.png")          { tmpl_sprite_train_sym(4, 20) }
+spriteset(sset_eas_ctl_empty_8, "gfx/190ctl_fpl.png")        { tmpl_sprite_train_8(4, 20) }
+spriteset(sset_eas_ctl_half, "gfx/190ctl_fpl.png")           { tmpl_sprite_train_sym(4, 80) }
+spriteset(sset_eas_ctl_full, "gfx/190ctl_fpl.png")           { tmpl_sprite_train_sym(4, 120) }
+spriteset(sset_eas_ctl_wood_half, "gfx/190ctl_fpl.png")      { tmpl_sprite_train_sym(4, 160) }
+spriteset(sset_eas_ctl_wood_full, "gfx/190ctl_fpl.png")      { tmpl_sprite_train_sym(4, 200) }
+spriteset(sset_eas_ctl_wdpr_half, "gfx/190ctl_fpl.png")      { tmpl_sprite_train(4, 240) }
+spriteset(sset_eas_ctl_wdpr_full, "gfx/190ctl_fpl.png")      { tmpl_sprite_train_8(4, 320) }
+// FPL livery //
+spriteset(sset_eas_fpl_purchase, "gfx/190ctl_fpl.png")       { tmpl_sprite_purchase(124, 60) }
+spriteset(sset_eas_fpl_empty, "gfx/190ctl_fpl.png")          { tmpl_sprite_train_sym(124, 20) }
+spriteset(sset_eas_fpl_empty_8, "gfx/190ctl_fpl.png")        { tmpl_sprite_train_8(124, 20) }
+spriteset(sset_eas_fpl_half, "gfx/190ctl_fpl.png")           { tmpl_sprite_train_sym(124, 80) }
+spriteset(sset_eas_fpl_full, "gfx/190ctl_fpl.png")           { tmpl_sprite_train_sym(124, 120) }
+spriteset(sset_eas_fpl_wood_half, "gfx/190ctl_fpl.png")      { tmpl_sprite_train_sym(124, 160) }
+spriteset(sset_eas_fpl_wood_full, "gfx/190ctl_fpl.png")      { tmpl_sprite_train_sym(124, 200) }
+spriteset(sset_eas_fpl_wdpr_half, "gfx/190ctl_fpl.png")      { tmpl_sprite_train(4, 280) }
+spriteset(sset_eas_fpl_wdpr_full, "gfx/190ctl_fpl.png")      { tmpl_sprite_train_8(124, 320) }
+spritegroup sgroup_eas_pmt {
+    loaded:     [sset_eas_pmt_empty, sset_eas_pmt_half, sset_eas_pmt_full];
+    loading:    [sset_eas_pmt_empty, sset_eas_pmt_half, sset_eas_pmt_full];
+}
+spritegroup sgroup_eas_pmt_wood {
+    loaded:     [sset_eas_pmt_empty, sset_eas_pmt_wood_half, sset_eas_pmt_wood_full];
+    loading:    [sset_eas_pmt_empty, sset_eas_pmt_wood_half, sset_eas_pmt_wood_full];
+}
+spritegroup sgroup_eas_pmt_wdpr {
+    loaded:     [sset_eas_pmt_empty_8, sset_eas_pmt_wdpr_half, sset_eas_pmt_wdpr_full];
+    loading:    [sset_eas_pmt_empty_8, sset_eas_pmt_wdpr_half, sset_eas_pmt_wdpr_full];
+}
+// PTK livery //
+spritegroup sgroup_eas_ptk {
+    loaded:     [sset_eas_ptk_empty, sset_eas_ptk_half, sset_eas_ptk_full];
+    loading:    [sset_eas_ptk_empty, sset_eas_ptk_half, sset_eas_ptk_full];
+}
+spritegroup sgroup_eas_ptk_wood {
+    loaded:     [sset_eas_ptk_empty, sset_eas_ptk_wood_half, sset_eas_ptk_wood_full];
+    loading:    [sset_eas_ptk_empty, sset_eas_ptk_wood_half, sset_eas_ptk_wood_full];
+}
+spritegroup sgroup_eas_ptk_wdpr {
+    loaded:     [sset_eas_ptk_empty_8, sset_eas_ptk_wdpr_half, sset_eas_ptk_wdpr_full];
+    loading:    [sset_eas_ptk_empty_8, sset_eas_ptk_wdpr_half, sset_eas_ptk_wdpr_full];
+}
+// CTL livery //
+spritegroup sgroup_eas_ctl {
+    loaded:     [sset_eas_ctl_empty, sset_eas_ctl_half, sset_eas_ctl_full];
+    loading:    [sset_eas_ctl_empty, sset_eas_ctl_half, sset_eas_ctl_full];
+}
+spritegroup sgroup_eas_ctl_wood {
+    loaded:     [sset_eas_ctl_empty, sset_eas_ctl_wood_half, sset_eas_ctl_wood_full];
+    loading:    [sset_eas_ctl_empty, sset_eas_ctl_wood_half, sset_eas_ctl_wood_full];
+}
+spritegroup sgroup_eas_ctl_wdpr {
+    loaded:     [sset_eas_ctl_empty_8, sset_eas_ctl_wdpr_half, sset_eas_ctl_wdpr_full];
+    loading:    [sset_eas_ctl_empty_8, sset_eas_ctl_wdpr_half, sset_eas_ctl_wdpr_full];
+}
+// FPL livery //
+spritegroup sgroup_eas_fpl {
+    loaded:     [sset_eas_fpl_empty, sset_eas_fpl_half, sset_eas_fpl_full];
+    loading:    [sset_eas_fpl_empty, sset_eas_fpl_half, sset_eas_fpl_full];
+}
+spritegroup sgroup_eas_fpl_wood {
+    loaded:     [sset_eas_fpl_empty, sset_eas_fpl_wood_half, sset_eas_fpl_wood_full];
+    loading:    [sset_eas_fpl_empty, sset_eas_fpl_wood_half, sset_eas_fpl_wood_full];
+}
+spritegroup sgroup_eas_fpl_wdpr {
+    loaded:     [sset_eas_fpl_empty_8, sset_eas_fpl_wdpr_half, sset_eas_fpl_wdpr_full];
+    loading:    [sset_eas_fpl_empty_8, sset_eas_fpl_wdpr_half, sset_eas_fpl_wdpr_full];
+}
+
+#define PRIVATE_LIVERIES_PNG "gfx/eaos_pv_liveries.png"
+// ECCO livery //
+spriteset(sset_eaos_ecco_purchase, PRIVATE_LIVERIES_PNG)       { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_eaos_ecco_empty, PRIVATE_LIVERIES_PNG)          { tmpl_sprite_train_sym(4, 20) }
+spriteset(sset_eaos_ecco_empty_8, PRIVATE_LIVERIES_PNG)        { tmpl_sprite_train_8(4, 20) }
+spriteset(sset_eaos_ecco_half, PRIVATE_LIVERIES_PNG)           { tmpl_sprite_train_sym(4, 80) }
+spriteset(sset_eaos_ecco_full, PRIVATE_LIVERIES_PNG)           { tmpl_sprite_train_sym(4, 120) }
+spriteset(sset_eaos_ecco_wood_half, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_sym(4, 160) }
+spriteset(sset_eaos_ecco_wood_full, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_sym(4, 200) }
+spriteset(sset_eaos_ecco_wdpr_half, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train(4, 240) }
+spriteset(sset_eaos_ecco_wdpr_full, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_8(4, 320) }
+// RKM livery //
+spriteset(sset_eaos_rkm_purchase, PRIVATE_LIVERIES_PNG)       { tmpl_sprite_purchase(124, 60) }
+spriteset(sset_eaos_rkm_empty, PRIVATE_LIVERIES_PNG)          { tmpl_sprite_train_sym(124, 20) }
+spriteset(sset_eaos_rkm_empty_8, PRIVATE_LIVERIES_PNG)        { tmpl_sprite_train_8(124, 20) }
+spriteset(sset_eaos_rkm_half, PRIVATE_LIVERIES_PNG)           { tmpl_sprite_train_sym(124, 80) }
+spriteset(sset_eaos_rkm_full, PRIVATE_LIVERIES_PNG)           { tmpl_sprite_train_sym(124, 120) }
+spriteset(sset_eaos_rkm_wood_half, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_sym(124, 160) }
+spriteset(sset_eaos_rkm_wood_full, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_sym(124, 200) }
+spriteset(sset_eaos_rkm_wdpr_half, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train(4, 280) }
+spriteset(sset_eaos_rkm_wdpr_full, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_8(124, 320) }
+// SRR livery //
+spriteset(sset_eaos_srr_purchase, PRIVATE_LIVERIES_PNG)       { tmpl_sprite_purchase(244, 60) }
+spriteset(sset_eaos_srr_empty, PRIVATE_LIVERIES_PNG)          { tmpl_sprite_train_sym(244, 20) }
+spriteset(sset_eaos_srr_empty_8, PRIVATE_LIVERIES_PNG)        { tmpl_sprite_train_8(244, 20) }
+spriteset(sset_eaos_srr_half, PRIVATE_LIVERIES_PNG)           { tmpl_sprite_train_sym(244, 80) }
+spriteset(sset_eaos_srr_full, PRIVATE_LIVERIES_PNG)           { tmpl_sprite_train_sym(244, 120) }
+spriteset(sset_eaos_srr_wood_half, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_sym(244, 160) }
+spriteset(sset_eaos_srr_wood_full, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_sym(244, 200) }
+spriteset(sset_eaos_srr_wdpr_half, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train(244, 240) }
+spriteset(sset_eaos_srr_wdpr_full, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_8(244, 320) }
+// EUWAG Black livery //
+spriteset(sset_eaos_euwag_black_purchase, PRIVATE_LIVERIES_PNG)       { tmpl_sprite_purchase(364, 60) }
+spriteset(sset_eaos_euwag_black_empty, PRIVATE_LIVERIES_PNG)          { tmpl_sprite_train_sym(364, 20) }
+spriteset(sset_eaos_euwag_black_empty_8, PRIVATE_LIVERIES_PNG)        { tmpl_sprite_train_8(364, 20) }
+spriteset(sset_eaos_euwag_black_half, PRIVATE_LIVERIES_PNG)           { tmpl_sprite_train_sym(364, 80) }
+spriteset(sset_eaos_euwag_black_full, PRIVATE_LIVERIES_PNG)           { tmpl_sprite_train_sym(364, 120) }
+spriteset(sset_eaos_euwag_black_wood_half, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_sym(364, 160) }
+spriteset(sset_eaos_euwag_black_wood_full, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_sym(364, 200) }
+spriteset(sset_eaos_euwag_black_wdpr_half, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train(244, 280) }
+spriteset(sset_eaos_euwag_black_wdpr_full, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_8(364, 320) }
+// RAILPOLSKA livery //
+spriteset(sset_eaos_railpolska_purchase, PRIVATE_LIVERIES_PNG)       { tmpl_sprite_purchase(484, 60) }
+spriteset(sset_eaos_railpolska_empty, PRIVATE_LIVERIES_PNG)          { tmpl_sprite_train_sym(484, 20) }
+spriteset(sset_eaos_railpolska_empty_8, PRIVATE_LIVERIES_PNG)        { tmpl_sprite_train_8(484, 20) }
+spriteset(sset_eaos_railpolska_half, PRIVATE_LIVERIES_PNG)           { tmpl_sprite_train_sym(484, 80) }
+spriteset(sset_eaos_railpolska_full, PRIVATE_LIVERIES_PNG)           { tmpl_sprite_train_sym(484, 120) }
+spriteset(sset_eaos_railpolska_wood_half, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_sym(484, 160) }
+spriteset(sset_eaos_railpolska_wood_full, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_sym(484, 200) }
+spriteset(sset_eaos_railpolska_wdpr_half, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train(484, 240) }
+spriteset(sset_eaos_railpolska_wdpr_full, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_8(484, 320) }
+// PMT OLD livery //
+spriteset(sset_eaos_pmt_old_purchase, PRIVATE_LIVERIES_PNG)       { tmpl_sprite_purchase(604, 60) }
+spriteset(sset_eaos_pmt_old_empty, PRIVATE_LIVERIES_PNG)          { tmpl_sprite_train_sym(604, 20) }
+spriteset(sset_eaos_pmt_old_empty_8, PRIVATE_LIVERIES_PNG)        { tmpl_sprite_train_8(604, 20) }
+spriteset(sset_eaos_pmt_old_half, PRIVATE_LIVERIES_PNG)           { tmpl_sprite_train_sym(604, 80) }
+spriteset(sset_eaos_pmt_old_full, PRIVATE_LIVERIES_PNG)           { tmpl_sprite_train_sym(604, 120) }
+spriteset(sset_eaos_pmt_old_wood_half, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_sym(604, 160) }
+spriteset(sset_eaos_pmt_old_wood_full, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_sym(604, 200) }
+spriteset(sset_eaos_pmt_old_wdpr_half, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train(484, 280) }
+spriteset(sset_eaos_pmt_old_wdpr_full, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_8(604, 320) }
+// PMT NEW livery //
+spriteset(sset_eaos_pmt_new_purchase, PRIVATE_LIVERIES_PNG)       { tmpl_sprite_purchase(724, 60) }
+spriteset(sset_eaos_pmt_new_empty, PRIVATE_LIVERIES_PNG)          { tmpl_sprite_train_sym(724, 20) }
+spriteset(sset_eaos_pmt_new_empty_8, PRIVATE_LIVERIES_PNG)        { tmpl_sprite_train_8(724, 20) }
+spriteset(sset_eaos_pmt_new_half, PRIVATE_LIVERIES_PNG)           { tmpl_sprite_train_sym(724, 80) }
+spriteset(sset_eaos_pmt_new_full, PRIVATE_LIVERIES_PNG)           { tmpl_sprite_train_sym(724, 120) }
+spriteset(sset_eaos_pmt_new_wood_half, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_sym(724, 160) }
+spriteset(sset_eaos_pmt_new_wood_full, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_sym(724, 200) }
+spriteset(sset_eaos_pmt_new_wdpr_half, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train(724, 240) }
+spriteset(sset_eaos_pmt_new_wdpr_full, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_8(724, 320) }
+// DB Cargo NEW livery //
+spriteset(sset_eaos_dbcargo_new_purchase, PRIVATE_LIVERIES_PNG)       { tmpl_sprite_purchase(844, 60) }
+spriteset(sset_eaos_dbcargo_new_empty, PRIVATE_LIVERIES_PNG)          { tmpl_sprite_train_sym(844, 20) }
+spriteset(sset_eaos_dbcargo_new_empty_8, PRIVATE_LIVERIES_PNG)        { tmpl_sprite_train_8(844, 20) }
+spriteset(sset_eaos_dbcargo_new_half, PRIVATE_LIVERIES_PNG)           { tmpl_sprite_train_sym(844, 80) }
+spriteset(sset_eaos_dbcargo_new_full, PRIVATE_LIVERIES_PNG)           { tmpl_sprite_train_sym(844, 120) }
+spriteset(sset_eaos_dbcargo_new_wood_half, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_sym(844, 160) }
+spriteset(sset_eaos_dbcargo_new_wood_full, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_sym(844, 200) }
+spriteset(sset_eaos_dbcargo_new_wdpr_half, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train(844, 280) }
+spriteset(sset_eaos_dbcargo_new_wdpr_full, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_8(844, 320) }
+// DB Cargo livery //
+spriteset(sset_eaos_dbcargo_purchase, PRIVATE_LIVERIES_PNG)       { tmpl_sprite_purchase(964, 60) }
+spriteset(sset_eaos_dbcargo_empty, PRIVATE_LIVERIES_PNG)          { tmpl_sprite_train_sym(964, 20) }
+spriteset(sset_eaos_dbcargo_empty_8, PRIVATE_LIVERIES_PNG)        { tmpl_sprite_train_8(964, 20) }
+spriteset(sset_eaos_dbcargo_half, PRIVATE_LIVERIES_PNG)           { tmpl_sprite_train_sym(964, 80) }
+spriteset(sset_eaos_dbcargo_full, PRIVATE_LIVERIES_PNG)           { tmpl_sprite_train_sym(964, 120) }
+spriteset(sset_eaos_dbcargo_wood_half, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_sym(964, 160) }
+spriteset(sset_eaos_dbcargo_wood_full, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_sym(964, 200) }
+spriteset(sset_eaos_dbcargo_wdpr_half, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train(964, 240) }
+spriteset(sset_eaos_dbcargo_wdpr_full, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_8(964, 320) }
+// DB Cargo OLD livery //
+spriteset(sset_eaos_dbcargo_old_purchase, PRIVATE_LIVERIES_PNG)       { tmpl_sprite_purchase(1084, 60) }
+spriteset(sset_eaos_dbcargo_old_empty, PRIVATE_LIVERIES_PNG)          { tmpl_sprite_train_sym(1084, 20) }
+spriteset(sset_eaos_dbcargo_old_empty_8, PRIVATE_LIVERIES_PNG)        { tmpl_sprite_train_8(1084, 20) }
+spriteset(sset_eaos_dbcargo_old_half, PRIVATE_LIVERIES_PNG)           { tmpl_sprite_train_sym(1084, 80) }
+spriteset(sset_eaos_dbcargo_old_full, PRIVATE_LIVERIES_PNG)           { tmpl_sprite_train_sym(1084, 120) }
+spriteset(sset_eaos_dbcargo_old_wood_half, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_sym(1084, 160) }
+spriteset(sset_eaos_dbcargo_old_wood_full, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_sym(1084, 200) }
+spriteset(sset_eaos_dbcargo_old_wdpr_half, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train(964, 280) }
+spriteset(sset_eaos_dbcargo_old_wdpr_full, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_8(1084, 320) }
+// PKP CARGO light_blue livery //
+spriteset(sset_eaos_pkpcargo_lt_purchase, PRIVATE_LIVERIES_PNG)       { tmpl_sprite_purchase(4, 390) }
+spriteset(sset_eaos_pkpcargo_lt_empty, PRIVATE_LIVERIES_PNG)          { tmpl_sprite_train_sym(4, 350) }
+spriteset(sset_eaos_pkpcargo_lt_empty_8, PRIVATE_LIVERIES_PNG)        { tmpl_sprite_train_8(4, 350) }
+spriteset(sset_eaos_pkpcargo_lt_half, PRIVATE_LIVERIES_PNG)           { tmpl_sprite_train_sym(4, 410) }
+spriteset(sset_eaos_pkpcargo_lt_full, PRIVATE_LIVERIES_PNG)           { tmpl_sprite_train_sym(4, 450) }
+spriteset(sset_eaos_pkpcargo_lt_wood_half, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_sym(4, 490) }
+spriteset(sset_eaos_pkpcargo_lt_wood_full, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_sym(4, 530) }
+spriteset(sset_eaos_pkpcargo_lt_wdpr_half, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train(4, 570) }
+spriteset(sset_eaos_pkpcargo_lt_wdpr_full, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_8(4, 650) }
+// PKP CARGO dark_blue livery //
+spriteset(sset_eaos_pkpcargo_dk_purchase, PRIVATE_LIVERIES_PNG)       { tmpl_sprite_purchase(124, 390) }
+spriteset(sset_eaos_pkpcargo_dk_empty, PRIVATE_LIVERIES_PNG)          { tmpl_sprite_train_sym(124, 350) }
+spriteset(sset_eaos_pkpcargo_dk_empty_8, PRIVATE_LIVERIES_PNG)        { tmpl_sprite_train_8(124, 350) }
+spriteset(sset_eaos_pkpcargo_dk_half, PRIVATE_LIVERIES_PNG)           { tmpl_sprite_train_sym(124, 410) }
+spriteset(sset_eaos_pkpcargo_dk_full, PRIVATE_LIVERIES_PNG)           { tmpl_sprite_train_sym(124, 450) }
+spriteset(sset_eaos_pkpcargo_dk_wood_half, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_sym(124, 490) }
+spriteset(sset_eaos_pkpcargo_dk_wood_full, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_sym(124, 530) }
+spriteset(sset_eaos_pkpcargo_dk_wdpr_half, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train(4, 610) }
+spriteset(sset_eaos_pkpcargo_dk_wdpr_full, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_8(124, 650) }
+// ZOS Zvolen livery //
+spriteset(sset_eaos_zvolen_purchase, PRIVATE_LIVERIES_PNG)       { tmpl_sprite_purchase(244, 390) }
+spriteset(sset_eaos_zvolen_empty, PRIVATE_LIVERIES_PNG)          { tmpl_sprite_train_sym(244, 350) }
+spriteset(sset_eaos_zvolen_empty_8, PRIVATE_LIVERIES_PNG)        { tmpl_sprite_train_8(244, 350) }
+spriteset(sset_eaos_zvolen_half, PRIVATE_LIVERIES_PNG)           { tmpl_sprite_train_sym(244, 410) }
+spriteset(sset_eaos_zvolen_full, PRIVATE_LIVERIES_PNG)           { tmpl_sprite_train_sym(244, 450) }
+spriteset(sset_eaos_zvolen_wood_half, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_sym(244, 490) }
+spriteset(sset_eaos_zvolen_wood_full, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_sym(244, 530) }
+spriteset(sset_eaos_zvolen_wdpr_half, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train(244, 570) }
+spriteset(sset_eaos_zvolen_wdpr_full, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_8(244, 650) }
+// ZOS Zvolen Old livery //
+spriteset(sset_eaos_zvolen_old_purchase, PRIVATE_LIVERIES_PNG)       { tmpl_sprite_purchase(364, 390) }
+spriteset(sset_eaos_zvolen_old_empty, PRIVATE_LIVERIES_PNG)          { tmpl_sprite_train_sym(364, 350) }
+spriteset(sset_eaos_zvolen_old_empty_8, PRIVATE_LIVERIES_PNG)        { tmpl_sprite_train_8(364, 350) }
+spriteset(sset_eaos_zvolen_old_half, PRIVATE_LIVERIES_PNG)           { tmpl_sprite_train_sym(364, 410) }
+spriteset(sset_eaos_zvolen_old_full, PRIVATE_LIVERIES_PNG)           { tmpl_sprite_train_sym(364, 450) }
+spriteset(sset_eaos_zvolen_old_wood_half, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_sym(364, 490) }
+spriteset(sset_eaos_zvolen_old_wood_full, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_sym(364, 530) }
+spriteset(sset_eaos_zvolen_old_wdpr_half, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train(244, 610) }
+spriteset(sset_eaos_zvolen_old_wdpr_full, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_8(364, 650) }
+// Ciech Cargo livery //
+spriteset(sset_eaos_ciech_cargo_purchase, PRIVATE_LIVERIES_PNG)       { tmpl_sprite_purchase(484, 390) }
+spriteset(sset_eaos_ciech_cargo_empty, PRIVATE_LIVERIES_PNG)          { tmpl_sprite_train_sym(484, 350) }
+spriteset(sset_eaos_ciech_cargo_empty_8, PRIVATE_LIVERIES_PNG)        { tmpl_sprite_train_8(484, 350) }
+spriteset(sset_eaos_ciech_cargo_half, PRIVATE_LIVERIES_PNG)           { tmpl_sprite_train_sym(484, 410) }
+spriteset(sset_eaos_ciech_cargo_full, PRIVATE_LIVERIES_PNG)           { tmpl_sprite_train_sym(484, 450) }
+spriteset(sset_eaos_ciech_cargo_wood_half, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_sym(484, 490) }
+spriteset(sset_eaos_ciech_cargo_wood_full, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_sym(484, 530) }
+spriteset(sset_eaos_ciech_cargo_wdpr_half, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train(484, 570) }
+spriteset(sset_eaos_ciech_cargo_wdpr_full, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_8(484, 650) }
+// Qemetica Cargo livery //
+spriteset(sset_eaos_qemetica_cargo_purchase, PRIVATE_LIVERIES_PNG)       { tmpl_sprite_purchase(604, 390) }
+spriteset(sset_eaos_qemetica_cargo_empty, PRIVATE_LIVERIES_PNG)          { tmpl_sprite_train_sym(604, 350) }
+spriteset(sset_eaos_qemetica_cargo_empty_8, PRIVATE_LIVERIES_PNG)        { tmpl_sprite_train_8(604, 350) }
+spriteset(sset_eaos_qemetica_cargo_half, PRIVATE_LIVERIES_PNG)           { tmpl_sprite_train_sym(604, 410) }
+spriteset(sset_eaos_qemetica_cargo_full, PRIVATE_LIVERIES_PNG)           { tmpl_sprite_train_sym(604, 450) }
+spriteset(sset_eaos_qemetica_cargo_wood_half, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_sym(604, 490) }
+spriteset(sset_eaos_qemetica_cargo_wood_full, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_sym(604, 530) }
+spriteset(sset_eaos_qemetica_cargo_wdpr_half, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train(484, 610) }
+spriteset(sset_eaos_qemetica_cargo_wdpr_full, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_8(604, 650) }
+// Euwag Blue livery //
+spriteset(sset_eaos_euwag_blue_purchase, PRIVATE_LIVERIES_PNG)       { tmpl_sprite_purchase(724, 390) }
+spriteset(sset_eaos_euwag_blue_empty, PRIVATE_LIVERIES_PNG)          { tmpl_sprite_train_sym(724, 350) }
+spriteset(sset_eaos_euwag_blue_empty_8, PRIVATE_LIVERIES_PNG)        { tmpl_sprite_train_8(724, 350) }
+spriteset(sset_eaos_euwag_blue_half, PRIVATE_LIVERIES_PNG)           { tmpl_sprite_train_sym(724, 410) }
+spriteset(sset_eaos_euwag_blue_full, PRIVATE_LIVERIES_PNG)           { tmpl_sprite_train_sym(724, 450) }
+spriteset(sset_eaos_euwag_blue_wood_half, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_sym(724, 490) }
+spriteset(sset_eaos_euwag_blue_wood_full, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_sym(724, 530) }
+spriteset(sset_eaos_euwag_blue_wdpr_half, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train(724, 570) }
+spriteset(sset_eaos_euwag_blue_wdpr_full, PRIVATE_LIVERIES_PNG)      { tmpl_sprite_train_8(724, 650) }
+// Ecco
+spritegroup sgroup_eaos_ecco {
+    loaded:     [sset_eaos_ecco_empty, sset_eaos_ecco_half, sset_eaos_ecco_full];
+    loading:    [sset_eaos_ecco_empty, sset_eaos_ecco_half, sset_eaos_ecco_full];
+}
+spritegroup sgroup_eaos_ecco_wood {
+    loaded:     [sset_eaos_ecco_empty, sset_eaos_ecco_wood_half, sset_eaos_ecco_wood_full];
+    loading:    [sset_eaos_ecco_empty, sset_eaos_ecco_wood_half, sset_eaos_ecco_wood_full];
+}
+spritegroup sgroup_eaos_ecco_wdpr {
+    loaded:     [sset_eaos_ecco_empty_8, sset_eaos_ecco_wdpr_half, sset_eaos_ecco_wdpr_full];
+    loading:    [sset_eaos_ecco_empty_8, sset_eaos_ecco_wdpr_half, sset_eaos_ecco_wdpr_full];
+}
+// RKM
+spritegroup sgroup_eaos_rkm {
+    loaded:     [sset_eaos_rkm_empty, sset_eaos_rkm_half, sset_eaos_rkm_full];
+    loading:    [sset_eaos_rkm_empty, sset_eaos_rkm_half, sset_eaos_rkm_full];
+}
+spritegroup sgroup_eaos_rkm_wood {
+    loaded:     [sset_eaos_rkm_empty, sset_eaos_rkm_wood_half, sset_eaos_rkm_wood_full];
+    loading:    [sset_eaos_rkm_empty, sset_eaos_rkm_wood_half, sset_eaos_rkm_wood_full];
+}
+spritegroup sgroup_eaos_rkm_wdpr {
+    loaded:     [sset_eaos_rkm_empty_8, sset_eaos_rkm_wdpr_half, sset_eaos_rkm_wdpr_full];
+    loading:    [sset_eaos_rkm_empty_8, sset_eaos_rkm_wdpr_half, sset_eaos_rkm_wdpr_full];
+}
+// SRR
+spritegroup sgroup_eaos_srr {
+    loaded:     [sset_eaos_srr_empty, sset_eaos_srr_half, sset_eaos_srr_full];
+    loading:    [sset_eaos_srr_empty, sset_eaos_srr_half, sset_eaos_srr_full];
+}
+spritegroup sgroup_eaos_srr_wood {
+    loaded:     [sset_eaos_srr_empty, sset_eaos_srr_wood_half, sset_eaos_srr_wood_full];
+    loading:    [sset_eaos_srr_empty, sset_eaos_srr_wood_half, sset_eaos_srr_wood_full];
+}
+spritegroup sgroup_eaos_srr_wdpr {
+    loaded:     [sset_eaos_srr_empty_8, sset_eaos_srr_wdpr_half, sset_eaos_srr_wdpr_full];
+    loading:    [sset_eaos_srr_empty_8, sset_eaos_srr_wdpr_half, sset_eaos_srr_wdpr_full];
+}
+// EUWAG Black
+spritegroup sgroup_eaos_euwag_black {
+    loaded:     [sset_eaos_euwag_black_empty, sset_eaos_euwag_black_half, sset_eaos_euwag_black_full];
+    loading:    [sset_eaos_euwag_black_empty, sset_eaos_euwag_black_half, sset_eaos_euwag_black_full];
+}
+spritegroup sgroup_eaos_euwag_black_wood {
+    loaded:     [sset_eaos_euwag_black_empty, sset_eaos_euwag_black_wood_half, sset_eaos_euwag_black_wood_full];
+    loading:    [sset_eaos_euwag_black_empty, sset_eaos_euwag_black_wood_half, sset_eaos_euwag_black_wood_full];
+}
+spritegroup sgroup_eaos_euwag_black_wdpr {
+    loaded:     [sset_eaos_euwag_black_empty_8, sset_eaos_euwag_black_wdpr_half, sset_eaos_euwag_black_wdpr_full];
+    loading:    [sset_eaos_euwag_black_empty_8, sset_eaos_euwag_black_wdpr_half, sset_eaos_euwag_black_wdpr_full];
+}
+// Railpolska
+spritegroup sgroup_eaos_railpolska {
+    loaded:     [sset_eaos_railpolska_empty, sset_eaos_railpolska_half, sset_eaos_railpolska_full];
+    loading:    [sset_eaos_railpolska_empty, sset_eaos_railpolska_half, sset_eaos_railpolska_full];
+}
+spritegroup sgroup_eaos_railpolska_wood {
+    loaded:     [sset_eaos_railpolska_empty, sset_eaos_railpolska_wood_half, sset_eaos_railpolska_wood_full];
+    loading:    [sset_eaos_railpolska_empty, sset_eaos_railpolska_wood_half, sset_eaos_railpolska_wood_full];
+}
+spritegroup sgroup_eaos_railpolska_wdpr {
+    loaded:     [sset_eaos_railpolska_empty_8, sset_eaos_railpolska_wdpr_half, sset_eaos_railpolska_wdpr_full];
+    loading:    [sset_eaos_railpolska_empty_8, sset_eaos_railpolska_wdpr_half, sset_eaos_railpolska_wdpr_full];
+}
+// PMT Old
+spritegroup sgroup_eaos_pmt_old {
+    loaded:     [sset_eaos_pmt_old_empty, sset_eaos_pmt_old_half, sset_eaos_pmt_old_full];
+    loading:    [sset_eaos_pmt_old_empty, sset_eaos_pmt_old_half, sset_eaos_pmt_old_full];
+}
+spritegroup sgroup_eaos_pmt_old_wood {
+    loaded:     [sset_eaos_pmt_old_empty, sset_eaos_pmt_old_wood_half, sset_eaos_pmt_old_wood_full];
+    loading:    [sset_eaos_pmt_old_empty, sset_eaos_pmt_old_wood_half, sset_eaos_pmt_old_wood_full];
+}
+spritegroup sgroup_eaos_pmt_old_wdpr {
+    loaded:     [sset_eaos_pmt_old_empty_8, sset_eaos_pmt_old_wdpr_half, sset_eaos_pmt_old_wdpr_full];
+    loading:    [sset_eaos_pmt_old_empty_8, sset_eaos_pmt_old_wdpr_half, sset_eaos_pmt_old_wdpr_full];
+}
+// PMT New
+spritegroup sgroup_eaos_pmt_new {
+    loaded:     [sset_eaos_pmt_new_empty, sset_eaos_pmt_new_half, sset_eaos_pmt_new_full];
+    loading:    [sset_eaos_pmt_new_empty, sset_eaos_pmt_new_half, sset_eaos_pmt_new_full];
+}
+spritegroup sgroup_eaos_pmt_new_wood {
+    loaded:     [sset_eaos_pmt_new_empty, sset_eaos_pmt_new_wood_half, sset_eaos_pmt_new_wood_full];
+    loading:    [sset_eaos_pmt_new_empty, sset_eaos_pmt_new_wood_half, sset_eaos_pmt_new_wood_full];
+}
+spritegroup sgroup_eaos_pmt_new_wdpr {
+    loaded:     [sset_eaos_pmt_new_empty_8, sset_eaos_pmt_new_wdpr_half, sset_eaos_pmt_new_wdpr_full];
+    loading:    [sset_eaos_pmt_new_empty_8, sset_eaos_pmt_new_wdpr_half, sset_eaos_pmt_new_wdpr_full];
+}
+// DB Cargo New
+spritegroup sgroup_eaos_dbcargo_new {
+    loaded:     [sset_eaos_dbcargo_new_empty, sset_eaos_dbcargo_new_half, sset_eaos_dbcargo_new_full];
+    loading:    [sset_eaos_dbcargo_new_empty, sset_eaos_dbcargo_new_half, sset_eaos_dbcargo_new_full];
+}
+spritegroup sgroup_eaos_dbcargo_new_wood {
+    loaded:     [sset_eaos_dbcargo_new_empty, sset_eaos_dbcargo_new_wood_half, sset_eaos_dbcargo_new_wood_full];
+    loading:    [sset_eaos_dbcargo_new_empty, sset_eaos_dbcargo_new_wood_half, sset_eaos_dbcargo_new_wood_full];
+}
+spritegroup sgroup_eaos_dbcargo_new_wdpr {
+    loaded:     [sset_eaos_dbcargo_new_empty_8, sset_eaos_dbcargo_new_wdpr_half, sset_eaos_dbcargo_new_wdpr_full];
+    loading:    [sset_eaos_dbcargo_new_empty_8, sset_eaos_dbcargo_new_wdpr_half, sset_eaos_dbcargo_new_wdpr_full];
+}
+// DB Cargo
+spritegroup sgroup_eaos_dbcargo {
+    loaded:     [sset_eaos_dbcargo_empty, sset_eaos_dbcargo_half, sset_eaos_dbcargo_full];
+    loading:    [sset_eaos_dbcargo_empty, sset_eaos_dbcargo_half, sset_eaos_dbcargo_full];
+}
+spritegroup sgroup_eaos_dbcargo_wood {
+    loaded:     [sset_eaos_dbcargo_empty, sset_eaos_dbcargo_wood_half, sset_eaos_dbcargo_wood_full];
+    loading:    [sset_eaos_dbcargo_empty, sset_eaos_dbcargo_wood_half, sset_eaos_dbcargo_wood_full];
+}
+spritegroup sgroup_eaos_dbcargo_wdpr {
+    loaded:     [sset_eaos_dbcargo_empty_8, sset_eaos_dbcargo_wdpr_half, sset_eaos_dbcargo_wdpr_full];
+    loading:    [sset_eaos_dbcargo_empty_8, sset_eaos_dbcargo_wdpr_half, sset_eaos_dbcargo_wdpr_full];
+}
+// DB Cargo Old
+spritegroup sgroup_eaos_dbcargo_old {
+    loaded:     [sset_eaos_dbcargo_old_empty, sset_eaos_dbcargo_old_half, sset_eaos_dbcargo_old_full];
+    loading:    [sset_eaos_dbcargo_old_empty, sset_eaos_dbcargo_old_half, sset_eaos_dbcargo_old_full];
+}
+spritegroup sgroup_eaos_dbcargo_old_wood {
+    loaded:     [sset_eaos_dbcargo_old_empty, sset_eaos_dbcargo_old_wood_half, sset_eaos_dbcargo_old_wood_full];
+    loading:    [sset_eaos_dbcargo_old_empty, sset_eaos_dbcargo_old_wood_half, sset_eaos_dbcargo_old_wood_full];
+}
+spritegroup sgroup_eaos_dbcargo_old_wdpr {
+    loaded:     [sset_eaos_dbcargo_old_empty_8, sset_eaos_dbcargo_old_wdpr_half, sset_eaos_dbcargo_old_wdpr_full];
+    loading:    [sset_eaos_dbcargo_old_empty_8, sset_eaos_dbcargo_old_wdpr_half, sset_eaos_dbcargo_old_wdpr_full];
+}
+// PKP Cargo light_blue
+spritegroup sgroup_eaos_pkpcargo_lt {
+    loaded:     [sset_eaos_pkpcargo_lt_empty, sset_eaos_pkpcargo_lt_half, sset_eaos_pkpcargo_lt_full];
+    loading:    [sset_eaos_pkpcargo_lt_empty, sset_eaos_pkpcargo_lt_half, sset_eaos_pkpcargo_lt_full];
+}
+spritegroup sgroup_eaos_pkpcargo_lt_wood {
+    loaded:     [sset_eaos_pkpcargo_lt_empty, sset_eaos_pkpcargo_lt_wood_half, sset_eaos_pkpcargo_lt_wood_full];
+    loading:    [sset_eaos_pkpcargo_lt_empty, sset_eaos_pkpcargo_lt_wood_half, sset_eaos_pkpcargo_lt_wood_full];
+}
+spritegroup sgroup_eaos_pkpcargo_lt_wdpr {
+    loaded:     [sset_eaos_pkpcargo_lt_empty_8, sset_eaos_pkpcargo_lt_wdpr_half, sset_eaos_pkpcargo_lt_wdpr_full];
+    loading:    [sset_eaos_pkpcargo_lt_empty_8, sset_eaos_pkpcargo_lt_wdpr_half, sset_eaos_pkpcargo_lt_wdpr_full];
+}
+// PKP Cargo dark_blue
+spritegroup sgroup_eaos_pkpcargo_dk {
+    loaded:     [sset_eaos_pkpcargo_dk_empty, sset_eaos_pkpcargo_dk_half, sset_eaos_pkpcargo_dk_full];
+    loading:    [sset_eaos_pkpcargo_dk_empty, sset_eaos_pkpcargo_dk_half, sset_eaos_pkpcargo_dk_full];
+}
+spritegroup sgroup_eaos_pkpcargo_dk_wood {
+    loaded:     [sset_eaos_pkpcargo_dk_empty, sset_eaos_pkpcargo_dk_wood_half, sset_eaos_pkpcargo_dk_wood_full];
+    loading:    [sset_eaos_pkpcargo_dk_empty, sset_eaos_pkpcargo_dk_wood_half, sset_eaos_pkpcargo_dk_wood_full];
+}
+spritegroup sgroup_eaos_pkpcargo_dk_wdpr {
+    loaded:     [sset_eaos_pkpcargo_dk_empty_8, sset_eaos_pkpcargo_dk_wdpr_half, sset_eaos_pkpcargo_dk_wdpr_full];
+    loading:    [sset_eaos_pkpcargo_dk_empty_8, sset_eaos_pkpcargo_dk_wdpr_half, sset_eaos_pkpcargo_dk_wdpr_full];
+}
+// ZOS Zvolen
+spritegroup sgroup_eaos_zvolen {
+    loaded:     [sset_eaos_zvolen_empty, sset_eaos_zvolen_half, sset_eaos_zvolen_full];
+    loading:    [sset_eaos_zvolen_empty, sset_eaos_zvolen_half, sset_eaos_zvolen_full];
+}
+spritegroup sgroup_eaos_zvolen_wood {
+    loaded:     [sset_eaos_zvolen_empty, sset_eaos_zvolen_wood_half, sset_eaos_zvolen_wood_full];
+    loading:    [sset_eaos_zvolen_empty, sset_eaos_zvolen_wood_half, sset_eaos_zvolen_wood_full];
+}
+spritegroup sgroup_eaos_zvolen_wdpr {
+    loaded:     [sset_eaos_zvolen_empty_8, sset_eaos_zvolen_wdpr_half, sset_eaos_zvolen_wdpr_full];
+    loading:    [sset_eaos_zvolen_empty_8, sset_eaos_zvolen_wdpr_half, sset_eaos_zvolen_wdpr_full];
+}
+// ZOS Zvolen Old
+spritegroup sgroup_eaos_zvolen_old {
+    loaded:     [sset_eaos_zvolen_old_empty, sset_eaos_zvolen_old_half, sset_eaos_zvolen_old_full];
+    loading:    [sset_eaos_zvolen_old_empty, sset_eaos_zvolen_old_half, sset_eaos_zvolen_old_full];
+}
+spritegroup sgroup_eaos_zvolen_old_wood {
+    loaded:     [sset_eaos_zvolen_old_empty, sset_eaos_zvolen_old_wood_half, sset_eaos_zvolen_old_wood_full];
+    loading:    [sset_eaos_zvolen_old_empty, sset_eaos_zvolen_old_wood_half, sset_eaos_zvolen_old_wood_full];
+}
+spritegroup sgroup_eaos_zvolen_old_wdpr {
+    loaded:     [sset_eaos_zvolen_old_empty_8, sset_eaos_zvolen_old_wdpr_half, sset_eaos_zvolen_old_wdpr_full];
+    loading:    [sset_eaos_zvolen_old_empty_8, sset_eaos_zvolen_old_wdpr_half, sset_eaos_zvolen_old_wdpr_full];
+}
+// Ciech Cargo
+spritegroup sgroup_eaos_ciech_cargo {
+    loaded:     [sset_eaos_ciech_cargo_empty, sset_eaos_ciech_cargo_half, sset_eaos_ciech_cargo_full];
+    loading:    [sset_eaos_ciech_cargo_empty, sset_eaos_ciech_cargo_half, sset_eaos_ciech_cargo_full];
+}
+spritegroup sgroup_eaos_ciech_cargo_wood {
+    loaded:     [sset_eaos_ciech_cargo_empty, sset_eaos_ciech_cargo_wood_half, sset_eaos_ciech_cargo_wood_full];
+    loading:    [sset_eaos_ciech_cargo_empty, sset_eaos_ciech_cargo_wood_half, sset_eaos_ciech_cargo_wood_full];
+}
+spritegroup sgroup_eaos_ciech_cargo_wdpr {
+    loaded:     [sset_eaos_ciech_cargo_empty_8, sset_eaos_ciech_cargo_wdpr_half, sset_eaos_ciech_cargo_wdpr_full];
+    loading:    [sset_eaos_ciech_cargo_empty_8, sset_eaos_ciech_cargo_wdpr_half, sset_eaos_ciech_cargo_wdpr_full];
+}
+// Qemetica Cargo
+spritegroup sgroup_eaos_qemetica_cargo {
+    loaded:     [sset_eaos_qemetica_cargo_empty, sset_eaos_qemetica_cargo_half, sset_eaos_qemetica_cargo_full];
+    loading:    [sset_eaos_qemetica_cargo_empty, sset_eaos_qemetica_cargo_half, sset_eaos_qemetica_cargo_full];
+}
+spritegroup sgroup_eaos_qemetica_cargo_wood {
+    loaded:     [sset_eaos_qemetica_cargo_empty, sset_eaos_qemetica_cargo_wood_half, sset_eaos_qemetica_cargo_wood_full];
+    loading:    [sset_eaos_qemetica_cargo_empty, sset_eaos_qemetica_cargo_wood_half, sset_eaos_qemetica_cargo_wood_full];
+}
+spritegroup sgroup_eaos_qemetica_cargo_wdpr {
+    loaded:     [sset_eaos_qemetica_cargo_empty_8, sset_eaos_qemetica_cargo_wdpr_half, sset_eaos_qemetica_cargo_wdpr_full];
+    loading:    [sset_eaos_qemetica_cargo_empty_8, sset_eaos_qemetica_cargo_wdpr_half, sset_eaos_qemetica_cargo_wdpr_full];
+}
+// Euwag blue
+spritegroup sgroup_eaos_euwag_blue {
+    loaded:     [sset_eaos_euwag_blue_empty, sset_eaos_euwag_blue_half, sset_eaos_euwag_blue_full];
+    loading:    [sset_eaos_euwag_blue_empty, sset_eaos_euwag_blue_half, sset_eaos_euwag_blue_full];
+}
+spritegroup sgroup_eaos_euwag_blue_wood {
+    loaded:     [sset_eaos_euwag_blue_empty, sset_eaos_euwag_blue_wood_half, sset_eaos_euwag_blue_wood_full];
+    loading:    [sset_eaos_euwag_blue_empty, sset_eaos_euwag_blue_wood_half, sset_eaos_euwag_blue_wood_full];
+}
+spritegroup sgroup_eaos_euwag_blue_wdpr {
+    loaded:     [sset_eaos_euwag_blue_empty_8, sset_eaos_euwag_blue_wdpr_half, sset_eaos_euwag_blue_wdpr_full];
+    loading:    [sset_eaos_euwag_blue_empty_8, sset_eaos_euwag_blue_wdpr_half, sset_eaos_euwag_blue_wdpr_full];
+}

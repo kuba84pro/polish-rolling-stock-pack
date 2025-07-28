@@ -1,0 +1,110 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* Wdn sprites */
+spriteset(sset_wdn_purchase, "gfx/wdn-gray.png")       { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_wdn_empty, "gfx/wdn-gray.png")          { tmpl_sprite_train(4, 20) }
+spriteset(sset_wdn_full, "gfx/wdn-gray.png")           { tmpl_sprite_train(4, 80) }
+spriteset(sset_wdn_wood_full, "gfx/wdn-gray.png")      { tmpl_sprite_train(4, 120) }
+spriteset(sset_wdn_wdprd_full, "gfx/wdn-gray.png")     { tmpl_sprite_train(4, 160) }
+spriteset(sset_wdn_steel_full, "gfx/wdn-gray.png")     { tmpl_sprite_train(4, 200) }
+spriteset(sset_wdn_bdmat_full, "gfx/wdn-gray.png")     { tmpl_sprite_train(4, 240) }
+spritegroup sgroup_wdn {
+    loaded:     [sset_wdn_empty, sset_wdn_full];
+    loading:    [sset_wdn_empty, sset_wdn_full];
+}
+spritegroup sgroup_wdn_wood {
+    loaded:     [sset_wdn_empty, sset_wdn_wood_full];
+    loading:    [sset_wdn_empty, sset_wdn_wood_full];
+}
+spritegroup sgroup_wdn_wdprd {
+    loaded:     [sset_wdn_empty, sset_wdn_wdprd_full];
+    loading:    [sset_wdn_empty, sset_wdn_wdprd_full];
+}
+spritegroup sgroup_wdn_steel {
+    loaded:     [sset_wdn_empty, sset_wdn_steel_full];
+    loading:    [sset_wdn_empty, sset_wdn_steel_full];
+}
+spritegroup sgroup_wdn_bdmat {
+    loaded:     [sset_wdn_empty, sset_wdn_bdmat_full];
+    loading:    [sset_wdn_empty, sset_wdn_bdmat_full];
+}
+
+/* Wdn switches */
+switch(FEAT_TRAINS, SELF, switch_wdn_capacity, cargo_type_in_veh) {
+    WOOD: return 12;
+    WDPR: return 12;
+    return CB_FAILED;
+}
+switch(FEAT_TRAINS, SELF, switch_wdn_loading_speed, cargo_type_in_veh) {
+    WOOD: return 3;
+    WDPR: return 3;     // 4 ticks
+    return CB_FAILED;   // 4 ticks
+}
+
+/* Define the wagon without the break */
+item(FEAT_TRAINS, item_wdn, 20000) {
+    property {
+		/* common properties */
+        name:                           string(STR_WDN_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              PKP_INTRODUCTION_DATE;
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_EARLY_OPEN_WAGON_DEFINITION
+        loading_speed:                  4; 
+        cost_factor:                    PURCHASE_COST_WDN;
+        running_cost_factor:            RUNNING_COST_CARGO_EARLY;
+        cargo_age_period:               int(185*1.41);  // slow ageing
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          45 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 15;
+        weight:                         9 ton;
+        length:                         5;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_CARGO_WAGON);
+    }
+
+if(param_orig_intro_dates) {
+    property {
+        introduction_date:              date(1882, 1, 1);
+    }
+}
+
+if(!param_keep_old_vehs) {
+    if(param_orig_intro_dates) {
+        property {
+            model_life:                 47+36;
+            retire_early:               16;
+        }
+    } else {
+        property {
+            model_life:                 47;
+            retire_early:               16;
+        }
+    }
+}
+
+    graphics {
+        WOOD:                       sgroup_wdn_wood;
+        WDPR:                       sgroup_wdn_wdprd;
+        STEL:                       sgroup_wdn_steel;
+        METL:                       sgroup_wdn_steel;
+        BDMT:                       sgroup_wdn_bdmat;
+        purchase:                   sset_wdn_purchase;
+		additional_text:            return string(STR_PURCHASE_DESCR_2L, string(STR_BRAKE_NONE), string(STR_CAPACITY_NON_FRIABLE));
+        default:                    sgroup_wdn;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_wdn_capacity;
+        loading_speed:              switch_wdn_loading_speed;
+        colour_mapping:             switch_bulk_recolour;
+    }
+}

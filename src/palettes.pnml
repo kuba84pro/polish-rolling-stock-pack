@@ -1,0 +1,472 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, GPL 2.0
+
+// Sprites for recolouring cargoes in open wagons
+#define CARGO_COAL      0
+#define CARGO_GRAI      CARGO_COAL+1
+#define CARGO_WHEA      CARGO_GRAI      // same as GRAI
+#define CARGO_MAIZ      CARGO_WHEA+1
+#define CARGO_IORE      CARGO_MAIZ+1
+#define CARGO_FRUT      CARGO_IORE+1
+#define CARGO_CORE      CARGO_FRUT+1
+#define CARGO_AORE      CARGO_CORE+1
+#define CARGO_CLAY      CARGO_AORE+1
+#define CARGO_FERT      CARGO_CLAY+1
+#define CARGO_GRVL      CARGO_FERT+1
+#define CARGO_LIME      CARGO_GRVL+1
+#define CARGO_OLSD      CARGO_LIME+1
+#define CARGO_POTA      CARGO_OLSD+1
+#define CARGO_SAND      CARGO_POTA+1
+#define CARGO_SCMT      CARGO_SAND+1
+#define CARGO_SGBT      CARGO_SCMT+1
+#define CARGO_SGCN      CARGO_SGBT+1
+#define CARGO_SULP      CARGO_SGCN+1
+#define CARGO_BDMT      CARGO_SULP+1
+// new cargoes
+#define CARGO_CASS      CARGO_BDMT+1
+#define CARGO_COKE      CARGO_CASS+1
+#define CARGO_SLAG      CARGO_COKE+1
+#define CARGO_MNO2      CARGO_SLAG+1
+#define CARGO_NITR      CARGO_MNO2+1
+#define CARGO_PHOS      CARGO_NITR+1
+#define CARGO_PORE      CARGO_PHOS+1
+#define CARGO_FECR      CARGO_PORE+1
+#define CARGO_RCYC      CARGO_FECR+1
+#define CARGO_PEAT      CARGO_RCYC+1
+
+#define NUM_CARGO_COLOURS   CARGO_PEAT-CARGO_COAL+1
+
+palette_cargo = reserve_sprites(NUM_CARGO_COLOURS);
+replace(palette_cargo) {
+    recolour_sprite {   // COAL
+        0xAA: 0x01;
+        0xAB: 0x01;
+        0xAC: 0x02;
+        0xAD: 0x02;
+        0xAE: 0x03;
+        0xAF: 0x04;
+        }
+    recolour_sprite {   // GRAI, WHEA
+        0xAA: 0x41;
+        0xAB: 0x42;
+        0xAC: 0x43;
+        0xAD: 0x33;
+        0xAE: 0x44;
+        0xAF: 0x45;
+        }
+    recolour_sprite {   // MAIZ
+        0xAA: 0x40;
+        0xAB: 0x41;
+        0xAC: 0x42;
+        0xAD: 0x43;
+        0xAE: 0x33;
+        0xAF: 0x44;
+        }
+    recolour_sprite {   // IORE
+        0xAA: 0x69;
+        0xAB: 0x47;
+        0xAC: 0x48;
+        0xAD: 0x49;
+        0xAE: 0x4A;
+        0xAF: 0x4B;
+        }
+    recolour_sprite {   // FRUT
+        0xAA: 0x58;
+        0xAB: 0x40;
+        0xAC: 0x1D;
+        0xAD: 0xC2;
+        0xAE: 0x42;
+        0xAF: 0xD1;
+        }
+    recolour_sprite {   // CORE
+        0xAA: 0x58;
+        0xAB: 0x19;
+        0xAC: 0x36;
+        0xAD: 0x1A;
+        0xAE: 0x37;
+        0xAF: 0x38;
+        }
+    recolour_sprite {   // AORE
+        0xAA: 0x2A;
+        0xAB: 0x2B;
+        0xAC: 0x4A;
+        0xAD: 0x2C;
+        0xAE: 0xA2;
+        0xAF: 0x2E;
+        }
+    recolour_sprite {   // CLAY
+        0xAA: 0x22;
+        0xAB: 0x6D;
+        0xAC: 0x4C;
+        0xAD: 0x75;
+        0xAE: 0x25;
+        0xAF: 0x4F;
+        }
+    recolour_sprite {   // FERT
+        0xAA: 0x18;
+        0xAB: 0x19;
+        0xAC: 0x1A;
+        0xAD: 0x1B;
+        0xAE: 0x1C;
+        0xAF: 0x1D;
+        }
+    recolour_sprite {   // GRVL
+        0xAA: 0x07;
+        0xAB: 0x08;
+        0xAC: 0x09;
+        0xAD: 0x0A;
+        0xAE: 0x0B;
+        0xAF: 0x0C;
+        }
+    recolour_sprite {   // LIME
+        0xAA: 0x08;
+        0xAB: 0x0A;
+        0xAC: 0x1E;
+        0xAD: 0x0B;
+        0xAE: 0x3B;
+        0xAF: 0x0C;
+        }
+    recolour_sprite {   // OLSD
+        0xAA: 0x22;
+        0xAB: 0x6D;
+        0xAC: 0x38;
+        0xAD: 0x5C;
+        0xAE: 0x6F;
+        0xAF: 0x5E;
+        }
+    recolour_sprite {   // POTA
+        0xAA: 0x16;
+        0xAB: 0x0D;
+        0xAC: 0x87;
+        0xAD: 0x0E;
+        0xAE: 0xD2;
+        0xAF: 0x0F;
+        }
+    recolour_sprite {   // SAND
+        0xAA: 0x6F;
+        0xAB: 0x3A;
+        0xAC: 0x1E;
+        0xAD: 0x3B;
+        0xAE: 0x26;
+        0xAF: 0x27;
+        }
+    recolour_sprite {   // SCMT
+        0xAA: 0x02;
+        0xAB: 0x29;
+        0xAC: 0x7B;
+        0xAD: 0x11;
+        0xAE: 0x72;
+        0xAF: 0x4D;
+        }
+    recolour_sprite {   // SGBT
+        0xAA: 0x22;
+        0xAB: 0x6F;
+        0xAC: 0x78;
+        0xAD: 0x1F;
+        0xAE: 0x27;
+        0xAF: 0xA9;
+        }
+    recolour_sprite {   // SGCN
+        0xAA: 0x35;
+        0xAB: 0x19;
+        0xAC: 0x6C;
+        0xAD: 0x6D;
+        0xAE: 0x40;
+        0xAF: 0x39;
+        }
+    recolour_sprite {   // SULP
+        0xAA: 0x40;
+        0xAB: 0x41;
+        0xAC: 0x57;
+        0xAD: 0x5E;
+        0xAE: 0x42;
+        0xAF: 0x32;
+        }
+    recolour_sprite {   // BDMT
+        0xAA: 0x13;
+        0xAB: 0x24;
+        0xAC: 0x15;
+        0xAD: 0x16;
+        0xAE: 0x26;
+        0xAF: 0x17;
+        }
+// new cargoes
+    recolour_sprite {   // CASS
+        0xAA: 0x6A;
+        0xAB: 0x6B;
+        0xAC: 0x05;
+        0xAD: 0x6D;
+        0xAE: 0x6E;
+        0xAF: 0x39;
+        }
+    recolour_sprite {   // COKE
+        0xAA: 0x02;
+        0xAB: 0x03;
+        0xAC: 0x11;
+        0xAD: 0x12;
+        0xAE: 0x07;
+        0xAF: 0x08;
+        }
+    recolour_sprite {   // SLAG
+        0xAA: 0x06;
+        0xAB: 0x13;
+        0xAC: 0x6F;
+        0xAD: 0x09;
+        0xAE: 0x25;
+        0xAF: 0x0B;
+        }
+    recolour_sprite {   // MNO2
+        0xAA: 0x69;
+        0xAB: 0x03;
+        0xAC: 0x48;
+        0xAD: 0x04;
+        0xAE: 0x05;
+        0xAF: 0x4A;
+        }
+    recolour_sprite {   // NITR
+        0xAA: 0x16;
+        0xAB: 0x0B;
+        0xAC: 0x0C;
+        0xAD: 0x17;
+        0xAE: 0x0D;
+        0xAF: 0x0E;
+        }
+    recolour_sprite {   // PHOS
+        0xAA: 0x74;
+        0xAB: 0x09;
+        0xAC: 0x76;
+        0xAD: 0x77;
+        0xAE: 0x26;
+        0xAF: 0x79;
+        }
+    recolour_sprite {   // PORE
+        0xAA: 0x38;
+        0xAB: 0x74;
+        0xAC: 0x40;
+        0xAD: 0x76;
+        0xAE: 0x41;
+        0xAF: 0x79;
+        }
+    recolour_sprite {   // FECR
+        0xAA: 0x11;
+        0xAB: 0x73;
+        0xAC: 0x40;
+        0xAD: 0x13;
+        0xAE: 0x0C;
+        0xAF: 0x15;
+        }
+    recolour_sprite {   // RCYC
+        0xAA: 0x93;
+        0xAB: 0x5D;
+        0xAC: 0x2E;
+        0xAD: 0xBD;
+        0xAE: 0xCE;
+        0xAF: 0x27;
+        }
+    recolour_sprite {   // PEAT (as biomass)
+        0xAA: 0x24;
+        0xAB: 0x37;
+        0xAC: 0x3E;
+        0xAD: 0x40;
+        0xAE: 0x1C;
+        0xAF: 0x6F;
+        }
+}
+
+// Switches for recolouring cargoes in open wagons
+switch(FEAT_TRAINS, SELF, switch_bulk_recolour2, cargo_type_in_veh) {
+// new cargoes
+    CASS: return palette_cargo + CARGO_CASS;
+    COKE: return palette_cargo + CARGO_COKE;
+    SLAG: return palette_cargo + CARGO_SLAG;
+    MNO2: return palette_cargo + CARGO_MNO2;
+    NITR: return palette_cargo + CARGO_NITR;
+    PHOS: return palette_cargo + CARGO_PHOS;
+    PORE: return palette_cargo + CARGO_PORE;
+    FECR: return palette_cargo + CARGO_FECR;
+    RCYC: return palette_cargo + CARGO_RCYC;
+    PEAT: return palette_cargo + CARGO_PEAT;
+    return PALETTE_CC_DARK_BLUE;  // no changes
+   }
+switch(FEAT_TRAINS, SELF, switch_bulk_recolour, cargo_type_in_veh) {
+    COAL: return palette_cargo + CARGO_COAL;
+    GRAI: return palette_cargo + CARGO_GRAI;
+    WHEA: return palette_cargo + CARGO_WHEA;
+    MAIZ: return palette_cargo + CARGO_MAIZ;
+    IORE: return palette_cargo + CARGO_IORE;
+    FRUT: return palette_cargo + CARGO_FRUT;
+    CORE: return palette_cargo + CARGO_CORE;
+    AORE: return palette_cargo + CARGO_AORE;
+    CLAY: return palette_cargo + CARGO_CLAY;
+    FERT: return palette_cargo + CARGO_FERT;
+    GRVL: return palette_cargo + CARGO_GRVL;
+    LIME: return palette_cargo + CARGO_LIME;
+    OLSD: return palette_cargo + CARGO_OLSD;
+    POTA: return palette_cargo + CARGO_POTA;
+    SAND: return palette_cargo + CARGO_SAND;
+    SCMT: return palette_cargo + CARGO_SCMT;
+    SGBT: return palette_cargo + CARGO_SGBT;
+    SGCN: return palette_cargo + CARGO_SGCN;
+    SULP: return palette_cargo + CARGO_SULP;
+    BDMT: return palette_cargo + CARGO_BDMT;
+    return switch_bulk_recolour2;
+   }
+
+//Standard company colours
+#define NUM_CC_COLOURS  16
+#define PALETTE_CC_DARKBLUE     0xC6..0xCD: 0xC6..0xCD;
+#define PALETTE_CC_PALEGREEN    0xC6..0xCD: 0x60..0x67;
+#define PALETTE_CC_PINK         0xC6..0xCB: 0x2A..0x2F; 0xCC..0xCD: 0x30..0x31;
+#define PALETTE_CC_YELLOW       0xC6..0xC7: 0x3E..0x3F; 0xC8..0xCD: 0x40..0x45;
+#define PALETTE_CC_RED          0xC6..0xCA: 0xB3..0xB7; 0xCB..0xCD: 0xA4..0xA6;
+#define PALETTE_CC_LIGHTBLUE    0xC6..0xCB: 0x9A..0x9F; 0xCC..0xCD: 0xA0..0xA1;
+#define PALETTE_CC_GREEN        0xC6..0xC9: 0x52..0x55; 0xCA..0xCD: 0xCE..0xD1;
+#define PALETTE_CC_DARKGREEN    0xC6..0xCD: 0x58..0x5F;
+#define PALETTE_CC_BLUE         0xC6..0xCD: 0x92..0x99;
+#define PALETTE_CC_CREAM        0xC6..0xCD: 0x72..0x79;
+#define PALETTE_CC_MAUVE        0xC6..0xCD: 0x80..0x87;
+#define PALETTE_CC_PURPLE       0xC6..0xCD: 0x88..0x8F;
+#define PALETTE_CC_ORANGE       0xC6: 0x40; 0xC7..0xCC: 0xC0..0xC5; 0xCD: 0x27;
+#define PALETTE_CC_BROWN        0xC6..0xCD: 0x20..0x27;
+#define PALETTE_CC_GREY         0xC6..0xCD: 0x04..0x0B;
+#define PALETTE_CC_WHITE        0xC6..0xCD: 0x08..0x0F;
+
+#define PALETTE_REAR_OFF        0xAA: 0x18; 0xAB: 0x19; 0xAC: 0x19; 0xAD: 0x1A;
+#define PALETTE_REAR_ON         0xAA: 0xB7; 0xAB: 0xA4; 0xAC: 0xA4; 0xAD: 0xA5;
+#define PALETTE_FRONT_OFF       0xAE: 0x04; 0xAF: 0x05; 0xB0: 0x06;
+#define PALETTE_FRONT_ON        0xAE: 0x0F; 0xAF: 0x0F; 0xB0: 0x0F;
+
+#define RECOLOUR_SPRITE_LIGHTS(rear, front, company) \
+    recolour_sprite { PALETTE_REAR_##rear PALETTE_FRONT_##front PALETTE_CC_##company }
+
+#define RECOLOUR_SPRITE_LIGHTS_GROUP(rear, front) \
+    RECOLOUR_SPRITE_LIGHTS(rear, front, DARKBLUE) \
+    RECOLOUR_SPRITE_LIGHTS(rear, front, PALEGREEN) \
+    RECOLOUR_SPRITE_LIGHTS(rear, front, PINK) \
+    RECOLOUR_SPRITE_LIGHTS(rear, front, YELLOW) \
+    RECOLOUR_SPRITE_LIGHTS(rear, front, RED) \
+    RECOLOUR_SPRITE_LIGHTS(rear, front, LIGHTBLUE) \
+    RECOLOUR_SPRITE_LIGHTS(rear, front, GREEN) \
+    RECOLOUR_SPRITE_LIGHTS(rear, front, DARKGREEN) \
+    RECOLOUR_SPRITE_LIGHTS(rear, front, BLUE) \
+    RECOLOUR_SPRITE_LIGHTS(rear, front, CREAM) \
+    RECOLOUR_SPRITE_LIGHTS(rear, front, MAUVE) \
+    RECOLOUR_SPRITE_LIGHTS(rear, front, PURPLE) \
+    RECOLOUR_SPRITE_LIGHTS(rear, front, ORANGE) \
+    RECOLOUR_SPRITE_LIGHTS(rear, front, BROWN) \
+    RECOLOUR_SPRITE_LIGHTS(rear, front, GREY) \
+    RECOLOUR_SPRITE_LIGHTS(rear, front, WHITE)
+
+// Sprites for recolouring lights in engines
+palette_lights_off_off = reserve_sprites(NUM_CC_COLOURS);
+replace(palette_lights_off_off) {
+    RECOLOUR_SPRITE_LIGHTS_GROUP(OFF, OFF)
+    }
+palette_lights_off_white = reserve_sprites(NUM_CC_COLOURS);
+replace(palette_lights_off_white) {
+    RECOLOUR_SPRITE_LIGHTS_GROUP(OFF, ON)
+    }
+palette_lights_red_off = reserve_sprites(NUM_CC_COLOURS);
+replace(palette_lights_red_off) {
+    RECOLOUR_SPRITE_LIGHTS_GROUP(ON, OFF)
+    }
+palette_lights_red_white = reserve_sprites(NUM_CC_COLOURS);
+replace(palette_lights_red_white) {
+    RECOLOUR_SPRITE_LIGHTS_GROUP(ON, ON)
+    }
+
+// Switches for recolouring lights in engines
+switch(FEAT_TRAINS, SELF, switch_lights_engine_2, (position_in_consist_from_end == 1)*2 + (position_in_consist == 0) ) {
+    1:  return palette_lights_off_white + company_colour1;
+    2:  return palette_lights_red_off + company_colour1;
+    3:  return palette_lights_red_white + company_colour1;
+    return palette_lights_off_off + company_colour1;
+}
+
+// Sprites for recolouring lights in wagons
+palette_lights_red = reserve_sprites(1);
+replace(palette_lights_red) { recolour_sprite {
+        PALETTE_REAR_ON // rear only
+        } }
+palette_lights_dark_olive = reserve_sprites(1);
+replace(palette_lights_dark_olive) { recolour_sprite {
+        0xAA: 0x18; // rear only
+        0xAB: 0x18;
+        0xAC: 0x19;
+        0xAD: 0x1A;
+        } }
+palette_lights_dark_green = reserve_sprites(1);
+replace(palette_lights_dark_green) { recolour_sprite {
+        0xAA: 0x59; // rear only
+        0xAB: 0x59;
+        0xAC: 0x5A;
+        0xAD: 0x5B;
+        } }
+palette_lights_dark_red = reserve_sprites(1);
+replace(palette_lights_dark_red) { recolour_sprite {
+        0xAA: 0xB5; // rear only
+        0xAB: 0xB5;
+        0xAC: 0xB6;
+        0xAD: 0xB7;
+        } }
+palette_lights_dark_blue = reserve_sprites(1);
+replace(palette_lights_dark_blue) { recolour_sprite {
+        0xAA: 0x80; // rear only
+        0xAB: 0x80;
+        0xAC: 0x81;
+        0xAD: 0x82;
+        } }
+palette_lights_light_blue = reserve_sprites(1);
+replace(palette_lights_light_blue) { recolour_sprite {
+        0xAA: 0x83; // rear only
+        0xAB: 0x83;
+        0xAC: 0x84;
+        0xAD: 0x13;
+        } }
+palette_lights_brown = reserve_sprites(1);
+replace(palette_lights_brown) { recolour_sprite {
+        0xAA: 0x20; // rear only
+        0xAB: 0x20;
+        0xAC: 0x21;
+        0xAD: 0x22;
+        } }
+
+// Switches for non-articulated vehicles
+switch(FEAT_TRAINS, SELF, switch_lights_wagon_olive_1, position_in_consist_from_end == 0 ) {
+    1:  return palette_lights_red;
+    return palette_lights_dark_olive;
+}
+switch(FEAT_TRAINS, SELF, switch_lights_wagon_dkblue_1, position_in_consist_from_end == 0 ) {
+    1:  return palette_lights_red;
+    return palette_lights_dark_blue;
+}
+switch(FEAT_TRAINS, SELF, switch_lights_wagon_ltblue_1, position_in_consist_from_end == 0 ) {
+    1:  return palette_lights_red;
+    return palette_lights_light_blue;
+}
+// Switches for articulated vehicles (2 parts)
+switch(FEAT_TRAINS, SELF, switch_lights_wagon_olive_2, position_in_consist_from_end <= 1 ) {
+    1:  return palette_lights_red;
+    return palette_lights_dark_olive;
+}
+switch(FEAT_TRAINS, SELF, switch_lights_wagon_green_2, position_in_consist_from_end <= 1 ) {
+    1:  return palette_lights_red;
+    return palette_lights_dark_green;
+}
+switch(FEAT_TRAINS, SELF, switch_lights_wagon_red_2, position_in_consist_from_end <= 1 ) {
+    1:  return palette_lights_red;
+    return palette_lights_dark_red;
+}
+switch(FEAT_TRAINS, SELF, switch_lights_wagon_dkblue_2, position_in_consist_from_end <= 1 ) {
+    1:  return palette_lights_red;
+    return palette_lights_dark_blue;
+}
+switch(FEAT_TRAINS, SELF, switch_lights_wagon_ltblue_2, position_in_consist_from_end <= 1 ) {
+    1:  return palette_lights_red;
+    return palette_lights_light_blue;
+}
+switch(FEAT_TRAINS, SELF, switch_lights_wagon_brown_2, position_in_consist_from_end <= 1 ) {
+    1:  return palette_lights_red;
+    return palette_lights_brown;
+}

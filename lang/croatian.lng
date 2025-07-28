@@ -1,0 +1,241 @@
+##grflangid 0x38
+##plural 6
+##gender male female middle
+##case aku dat gen ins lok nom vok
+
+# GRF name and description
+STR_GRF_NAME        :{TITLE} {VERSION}
+STR_GRF_DESCRIPTION :{ORANGE}{TITLE} {VERSION}{BLACK} sadrži većinu poznatog poljskog voznog parka korištenog tijekom godina, od 1918 do sadašnjosti.{}{COPYRIGHT}2011-2021{}Autor: {SILVER}TadeuszD{BLACK}, {SILVER}Mewa{BLACK}{}Grafika: {SILVER}TadeuszD{BLACK}, {SILVER}Walter Novotny{BLACK}, {SILVER}Sojita{BLACK}, {SILVER}McZapkie{BLACK}, {SILVER}Czajnikowiec{BLACK}, {SILVER}101ksl{BLACK}, {SILVER}Mewa{BLACK}{}Posebne zahvale: {SILVER}niemiec{BLACK}{}Licenca: {SILVER}GPLv2{BLACK}{}WWW: {LTBLUE}http://openttd-polska.pl{BLACK}
+
+# GRF parameters
+STR_PARAM_NAME_DISABLE_ORIG     :Isključite originalne obične vlakove
+STR_PARAM_DESC_DISABLE_ORIG     :Odaberite ovu opciju za isključivanje originalnih lokomotiva i vagona za obične pruge. Ne odnosi se na jednotračne i maglev vlakove.
+STR_PARAM_NAME_DISABLE_MONO_MAGLEV  :Isključite originalne jednotračne i maglev vlakove
+STR_PARAM_DESC_DISABLE_MONO_MAGLEV  :Odaberite ovu opciju za isključivanje originalnih jednotračnih i maglev vlakova. Ne odnosi se na lokomotive i vagone za obične pruge.
+STR_PARAM_NAME_KEEP_OLD_VEHS    :Zadrži stara vozila u meniju za kupovinu
+STR_PARAM_DESC_KEEP_OLD_VEHS    :Odaberite ovu opciju za isključivanje isteka roka trajanja starih lokomotiva i vagona. Povijesna vozila će ostati dostupna u meniju za kupovinu i tijekom modernih vremena. Ova opcija se odnosi samo na ovaj set. Za isključivanje isteka roka trajanja drugih vozila koristite "Vozila nikad ne zastarijevaju" u postavkama igre.
+STR_PARAM_NAME_REPLACE_CARGOES  :Prevozi "robu" u specijalnim vagonima
+STR_PARAM_DESC_REPLACE_CARGOES  :Neki vagoni u setu su namijenjeni prijevozu posebnih tereta, definiranih od strane FIRS i ECS setova. Ako igrate bez FIRS i ECS setova, ovi vagoni su isključeni. Odaberite ovu opciju da bi koristili ove vagone sa standardnim teretom "roba".
+STR_PARAM_NAME_ORIG_INTRO_DATES :Koristi originalne godine uvođenja za rana vozila
+STR_PARAM_DESC_ORIG_INTRO_DATES :Odaberite ovu postavku za korištenje originalnih godina uvođenja ranih PKP vozila umjesto 1918. - godine kad je Poljska dobila neovisnost.{}Kad je ova postavka ulključena, prva su vozila dostupna 1882.
+STR_PARAM_NAME_TOURISTS         :ECS 'turisti' u putničkim/prigradskim vagonima
+STR_PARAM_DESC_TOURISTS         :Ovo za sad ne radi.
+STR_PARAM_TOURISTS_AUTO         :Autoremont
+STR_PARAM_TOURISTS_MANUAL       :Ručno
+STR_PARAM_TOURISTS_OFF          :Isključeno
+
+STR_PARAM_NAME_PURCHASE_COST    :Višekratnik za troškove kupovine
+STR_PARAM_DESC_PURCHASE_COST    :Koristite ovu opciju za povećanje troškova kupnje lokomotiva i vagona. Odnosi se samo na ovaj set.
+STR_PARAM_NAME_RUNNING_COST     :Višekratnik za tekuće troškove
+STR_PARAM_DESC_RUNNING_COST     :Koristite ovu opciju za povećanje tekućih troškova lokomotiva i vagona. Odnosi se samo na vozila u ovom setu.
+STR_PARAM_COST_X1               :1x
+STR_PARAM_COST_X2               :2x
+STR_PARAM_COST_X4               :4x
+STR_PARAM_COST_X8               :8x
+
+STR_PURCHASE_DESCR_2L           :{STRING}{}{BLACK}{STRING}
+STR_PURCHASE_DESCR_3L           :{STRING}{}{BLACK}{STRING}{}{BLACK}{STRING}
+STR_PURCHASE_DESCR_4L           :{STRING}{}{BLACK}{STRING}{}{BLACK}{STRING}{}{BLACK}{STRING}
+STR_SUBTYPE_DESCR_2P            :{STRING}{BLACK}, {STRING}
+
+STR_ENGINE_HEAVY_FREIGHT        :Info: {ORANGE}Lokomotiva za {YELLOW}teške teretne vlakove
+STR_ENGINE_FREIGHT              :Info: {ORANGE}Lokomotiva za {YELLOW}teretne vlakove
+STR_ENGINE_PASSENGER_FREIGHT    :Info: {ORANGE}Univerzalna lokomotiva za {YELLOW}putničke i teretne vlakove
+STR_ENGINE_PASSENGER            :Info: {ORANGE}Lokomotiva za {YELLOW}putničke vlakove
+STR_ENGINE_EXPRESS              :Info: {ORANGE}Lokomotiva za {YELLOW}putničke i ekspresne vlakove
+STR_ENGINE_SHUNTER              :Info: {YELLOW}Manevarka
+
+STR_BRAKE_NONE                  :Sustav kočenja: {RED}Nema
+STR_BRAKE_HAND                  :Sustav kočenja: {GREEN}Ručni (kočničarska kabina)
+STR_BRAKE_AIR                   :Sustav kočenja: {GREEN}Zračni (centralizirani)
+
+STR_HEATING_STEAM_TEXT          :Snaga za grijanje: {LTBLUE}Para
+STR_HEATING_ST_EL_TEXT          :Sustav grijanja: {LTBLUE}Parni/električni
+STR_HEATING_ELECTRIC_TEXT       :Sustav grijanja: {LTBLUE}Električni
+
+STR_INCOME_1_CLASS              :Napomena: {YELLOW}Viša prijevozna tarifa{ORANGE} za putnike {RED}1.{ORANGE} razreda na dužim relacijama
+STR_INCOME_LOWER                :Napomena: {RED}Niža prijevozna tarifa{ORANGE} za putnike na dužim relacijama
+STR_INCOME_ALL_EXPRESS          :Napomena: {YELLOW}Viša prijevozna tarifa{ORANGE} za putnike u svim ekspresnim vagonima u kompoziciji vlaka
+STR_INCOME_HIGH                 :Napomena: {YELLOW}Viša prijevozna tarifa{ORANGE} za putnike na dužim relacijama
+STR_INCOME_CARGO_HIGH           :Napomena: {YELLOW}Viša prijevozna tarifa{ORANGE} za terete na dužim relacijama
+STR_CAPACITY_NON_FRIABLE        :Napomena: {RED}Smanjen kapacitet{ORANGE} za nepotrošne terete
+STR_CAPACITY_LIQUID             :Napomena: {RED}Smanjen kapacitet{ORANGE} za tekuće terete
+
+STR_HEATING_NONE_TEXT           :Snaga za grijanje: {RED}Nema
+STR_HEATING_STEAM_POWER_TEXT    :Snaga za grijanje: {LTBLUE}Para ({SIGNED_WORD}kW)
+STR_HEATING_STEAM_CLAYTON_TEXT  :Snaga za grijanje: {LTBLUE}Para "Clayton" (150kW)
+STR_HEATING_COMBINED_TEXT       :Snaga za grijanje: {LTBLUE}Kombinirana dizel/električna (150kW)
+STR_HEATING_ELECTRIC_POWER_TEXT :Snaga za grijanje: {LTBLUE}Električna ({SIGNED_WORD}kW)
+
+STR_ATTACH_DISALLOW_MCAR        :Ne možete koristiti motorni vagon kao obični vagon.
+STR_ATTACH_DISALLOW_EZT2        :Nekompatibilne spojnice. Ne možete spojiti EMV-ove sa različitim vrstama spojnica.
+STR_ATTACH_DISALLOW_EZT1        :Nekompatibilne spojnice. Ne možete spojiti EMV-ove sa klasičnim lokomotivama/vagonima.
+STR_ATTACH_DISALLOW_TROLLEY     :Nekompatibilne vrste. Ne možete spojiti drezine sa klasičnim lokomotivama/vagonima.
+STR_ATTACH_DISALLOW             :Ne možete priključiti ovo vozilo na {STRING}.
+STR_TRAIN_TOO_LONG              :Previše vozila je priključeno na {STRING}.
+STR_TRAIN_WITHOUT_BRAKE         :Vlak ima premalo vagona sa kočnicama.{} Trebali biste dodati još vagona sa ručnim/zračnim kočnicama.
+STR_TRAIN_NOT_HEATED            :Vlak nije grijan na odgovarajući način. Postoji neslaganje između sustava grijanja ili nedostaje snage za grijanje.{} Trebali biste promijeniti lokomotivu ili dodati posebni vagon za grijanje.
+
+STR_SUBTYPE_OLD_2CLASS          :- kupei 2og razreda
+STR_SUBTYPE_OLD_12CLASS         :- kupei 1og/2og razreda
+STR_SUBTYPE_OLD_1CLASS          :- kupei 1og razreda
+STR_SUBTYPE_NEW_2CLASS          :- sjedala 2og razreda
+STR_SUBTYPE_NEW_1CLASS          :- sjedala 1og razreda
+
+STR_SUBTYPE_LIVERY_CLASSIC      : - klasična livreja
+STR_SUBTYPE_LIVERY_YEAR_DEP     : - livreja ovisna o godini
+STR_SUBTYPE_LIVERY_CARGO_DEP    : - livreja ovisna o teretu
+STR_SUBTYPE_LIVERY_RANDOM       : - nasumična livreja
+STR_SUBTYPE_LIVERY_VISIBLE      :- vidljivo vozilo
+STR_SUBTYPE_LIVERY_INVISIBLE    :- nevidljivo vozilo
+
+STR_SUBTYPE_LIVERY_PKP_IC       : - "PKP IC" livreja
+STR_SUBTYPE_LIVERY_PKP_CARGO    : - "PKP Cargo" livreja
+STR_SUBTYPE_LIVERY_PKP_PR       : - "PKP Przewozy Regionalne" livreja
+STR_SUBTYPE_LIVERY_PKP_POLREGIO : - "PKP POLREGIO" livreja
+STR_SUBTYPE_ENXX_ORANGE         : - narančasta livreja
+STR_SUBTYPE_ENXX_RED_YEL        :- crveno-žuta livreja
+STR_SUBTYPE_ENXX_BLU_YEL        : - plavo-žuta livreja
+STR_SUBTYPE_ENXX_BLK_RED        : - crno-crvena livreja
+STR_SUBTYPE_ENXX_KM             : - "Koleje Mazowieckie" livreja
+
+STR_TKH1_NAME           :TKh1 (Para)
+STR_TKI3_NAME           :TKi3 (Para)
+STR_OD13_NAME           :Od13 (Para)
+STR_TI12_NAME           :Ti12 (Para)
+STR_TP4_NAME            :Tp4 (Para)
+STR_OK1_NAME            :Ok1 (Para)
+STR_TY23_NAME           :Ty23 (Para)
+STR_OKL27_NAME          :OKl27 (Para)
+STR_PT31_NAME           :Pt31 (Para)
+STR_OKZ32_NAME          :OKz32 (Para)
+STR_TY37_NAME           :Ty37 (Para)
+STR_TY2_NAME            :Ty2 (Para)
+STR_PT47_NAME           :Pt47 (Para)
+STR_TKT48_NAME          :TKt48 (Para)
+STR_OL49_NAME           :Ol49 (Para)
+STR_TY51_NAME           :Ty51 (Para)
+STR_SN61_NAME           :SN61 (Dizelski motorni vagon)
+STR_SN61_TEXT           :Info: {ORANGE}Dizelski motorni vagon - maks. dozvoljeno {YELLOW}3 jedinice{ORANGE} i {YELLOW}3 prikolice{ORANGE}
+STR_SA106_NAME          :SA106 (dizel šinobus)
+STR_SA106_TEXT          :Info: {ORANGE}dizel šinobus - maks. dozvoljeno {YELLOW}3 jedinice{ORANGE} i {YELLOW}3 prikolice{ORANGE}
+STR_SM30_NAME           :SM30 (Dizel)
+STR_SM41_NAME           :SM41 (Dizel)
+STR_SM42_NAME           :SM42 (Dizel)
+STR_SP42_NAME           :SP42 (Dizel)
+STR_SU42_NAME           :SU42 (Dizel)
+STR_ST43_NAME           :ST43 (Dizel)
+STR_ST44_NAME           :ST44 (Dizel)
+STR_SP45_NAME           :SP45 (Dizel)
+STR_SU45_NAME           :SU45 (Dizel)
+STR_SU46_NAME           :SU46 (Dizel)
+STR_SM31_NAME           :SM31 (dizel)
+STR_SP32_NAME           :SP32 (Dizel)
+STR_SU160_NAME          :SU160-Gama (Dizel)
+STR_EP01_NAME           :EP01 (Električni)
+STR_EP02_NAME           :EP02 (Električni)
+STR_EU07_NAME           :EU07 (Električni)
+STR_ET21_NAME           :ET21 (Električni)
+STR_ET22_NAME           :ET22 (Električni)
+STR_EP05_NAME           :EP05 (Električni)
+STR_ET40_NAME           :ET40 (Električni)
+STR_ET41_NAME           :ET41 (Električni)
+STR_ET42_NAME           :ET42 (Električni)
+STR_EP09_NAME           :EP09 (Električni)
+STR_EU43_NAME           :EU43-Traxx (Električni)
+STR_EU44_NAME           :EU44 "Husarz" (Električni)
+STR_EU46_NAME           :EU46-Vectron (Električni)
+STR_EN57_NAME           :EN57 (elektromotorni vlak)
+STR_EN57_TEXT           :Info: {YELLOW}3{ORANGE}-dijelni elektromotorni vlak
+STR_EN71_NAME           :EN71 (elektromotorni vlak)
+STR_EN71_TEXT           :Info: {YELLOW}4{ORANGE}-dijelni elektromotorni vlak
+STR_ED72_NAME           :ED72 (elektromotorni vlak)
+STR_ED72_TEXT           :Info: {YELLOW}4{ORANGE}-dijelni elektromotorni vlak
+STR_EN76_NAME           :EN76-Elf (elektromotorni vlak)
+STR_ED250_NAME          :ED250 "Pendolino" (elektromotorni vlak)
+
+STR_GMY_NAME            :Poštanski vagon (Gmy)
+STR_GHMX_NAME           :Poštanski vagon (Ghmx)
+STR_GMW_NAME            :Poštanski vagon (Gmw)
+STR_PDN_NAME            :Poštanski vagon (Pdn)
+STR_OHXT_NAME           :Vagon za grijanje (Ohxt)
+STR_FG_NAME             :Poštanski/prtljažni vagon (Fg)
+STR_FY_NAME             :Prtljažni vagon (Fy)
+STR_FHX_NAME            :Prtljažni vagon (Fhx)
+STR_DHXT_NAME           :Prtljažni vagon (Dhxt)
+STR_DWXZ_NAME           :Prtljažni vagon (Dwxz)
+STR_BDWXZD_NAME         :Putnički/prtljažni vagon (BDwxzd)
+STR_JHX_NAME            :Vagon restoran (Jhx)
+STR_JHIX_NAME           :Vagon restoran (Jhix)
+STR_WRDMNU_NAME         :Vagon restoran (WRdmnu)
+STR_WRMNOUZ_NAME        :Vagon restoran (WRmnouz)
+STR_BCY_NAME            :Putnički vagon (BCy)
+STR_BCYH_NAME           :Putnički vagon (BCyh)
+STR_BHXZ_NAME           :Ekpresni vagon (Bhxz)
+STR_ABHXZ_NAME          :Ekpresni vagon (A/Bhxz)
+STR_ABHXZ_TEXT          :Moguć remont u: ekspresni vagon {RED}2.{ORANGE}, {RED}1./2.{ORANGE} ili {RED}1.{ORANGE} razreda{BLACK}. Osnovna postavka: vagon {RED}2.{ORANGE} razreda
+STR_BCI_NAME            :Putnički vagon "Kaubojka" (BCi)
+STR_BH_RYF_NAME         :Putnički vagon "ryflak" (Bh)
+STR_BH_RYF_TEXT         :Info: {ORANGE}Prikolica za {YELLOW}dizelski motorni vagon SN61
+STR_WLAB_NAME           :Vagon za spavanje (WLABd)
+STR_WLAB10MNOUZ_NAME    :Vagon za spavanje (WLAB10mnouz)
+STR_ABDNU_NAME          :Ekspresni vagon (A/Bdnu)
+STR_ABDNU_TEXT          :Moguć remont u: ekspresni vagon {RED}2.{ORANGE}, {RED}1./2.{ORANGE} ili {RED}1.{ORANGE} razreda{BLACK}. Osnovna postavka: vagon {RED}2.{ORANGE} razreda
+STR_BH_BON_NAME         :Putnički vagon "bonanza" (Bh)
+STR_BH_BON_TEXT         :Info: {ORANGE}Prikolica za {YELLOW}dizel šinobus SA106
+STR_ABDHMNU_NAME        :InterCity vagon (A/Bdhmnu)
+STR_ABDHMNU_TEXT        :Moguć remont u: InterCity vagon {RED}2.{ORANGE} ili {RED}1.{ORANGE} razreda{BLACK}. Osnovna postavka: vagon {RED}2.{ORANGE} razreda
+STR_AB9MNOPUZ_NAME      :EuroCity vagon (A/B9mnopuz)
+STR_AB9MNOPUZ_TEXT      :Moguć remont u: EuroCity vagon {RED}2.{ORANGE} ili {RED}1.{ORANGE} razreda{BLACK}. Osnovna postavka: vagon {RED}2.{ORANGE} razreda
+STR_BIPA_NAME           :Vagon na kat (Bhp)
+STR_BIPA_TEXT           :Info: {ORANGE}višedijelni putnički vagon na kat{}{BLACK}Može se remontirati u: {YELLOW}2{ORANGE}-, {YELLOW}3{ORANGE}- ili {YELLOW}4{ORANGE}-dijelni vagon{BLACK}. Osnovna postavka: {YELLOW}2{ORANGE}-dijelni vagon
+STR_BIPA_4PARTS         :- 4-dijelni vagon
+STR_BIPA_3PARTS         :- 3-dijelni vagon
+STR_BIPA_2PARTS         :- 2-dijelni vagon
+STR_BDHPUMN_NAME        :Vagon na kat (Bdhpumn)
+
+STR_WDN_NAME            :Vagon za rasuti teret (Wdn)
+STR_WDDO_NAME           :Vagon za rasuti teret (Wddo)
+STR_WDDOH_NAME          :Vagon za rasuti teret (Wddoh)
+STR_WDDO_2W_NAME        :Vagon za rasuti teret (Wddo) tip 2W
+STR_ES_NAME             :Vagon za rasuti teret (Es)
+STR_EAOS_NAME           :Vagon za rasuti teret (Eaos)
+STR_PPU_NAME            :Teški vagon za rasuti teret (PPu)
+STR_EAMOS_NAME          :Teški vagon za rasuti teret (Eamos)
+STR_FALS_NAME           :Samoistovarujući vagon "talbot" (Fals)
+STR_FALNS_NAME          :Samoistovarujući vagon "talbot" (Falns)
+STR_TADNS_NAME          :Otvoreni vagon sa prekrivačem (Tadns)
+STR_KD_NAME             :Zatvoreni vagon (Kd)
+STR_KDT_NAME            :Zatvoreni vagon (Kdt)
+STR_KDTH_NAME           :Zatvoreni vagon (Kdth)
+STR_KDDET_NAME          :Zatvoreni vagon (Kddet)
+STR_GGS_NAME            :Zatvoreni vagon (Ggs)
+STR_GAGS_NAME           :Zatvoreni vagon (Gags)
+STR_GBS_NAME            :Zatvoreni vagon (Gbs)
+STR_HBBINS_NAME         :Zatvoreni vagon (Hbbins)
+STR_HABBINS_NAME        :Zatvoreni vagon (Habbins)
+STR_SLR_NAME            :Vagon hladnjača (Slr)
+STR_IBHSS_NAME          :Vagon hladnjača (Ibhss)
+STR_PDK31_NAME          :Plato-vagon (Pdk31)
+STR_PDKH31_NAME         :Plato-vagon (Pdkh31)
+STR_KBKKS_NAME          :Plato-vagon (Kbkks)
+STR_KGNS_NAME           :Plato-vagon (Kgns)
+STR_RES_NAME            :Plato-vagon (Res)
+STR_SGS_NAME            :Vagon za kontejnere (Sgs)
+STR_SDGMNSS_NAME        :Intermodalni vagon (Sdgmnss)
+STR_RH_NAME             :Vagon cisterna (Rh)
+STR_RBH_NAME            :Vagon cisterna (Rbh)
+STR_ZAES_NAME           :Vagon cisterna (Zaes)
+STR_SN_NAME             :Vagon za stoku (Sn)
+STR_HES_NAME            :Vagon za stoku (Hes)
+STR_RNH_NAME            :Vagon cisterna za kemikalije (Rnh)
+STR_RNH_5R_NAME         :Vagon cisterna za kemikalije (Rnh) tip 5R
+STR_UAHS_NAME           :Vagon cisterna za kemikalije (Uahs)
+STR_SDW_NAME            :Vagon za cement (Sdw)
+STR_SDWH_NAME           :Vagon za cement (Sdwh)
+STR_UACS_NAME           :Vagon-silos (Uacs)
+STR_LEKQSS_NAME         :Vagon za automobile (Lekqss)
+
+STR_WM15A_NAME          :Drezina WM-15A (Dizel)
+STR_PWM15_NAME          :Prikolica PWM-15
+STR_ASF_NAME            :Tegljač ASF EL16 (baterije)

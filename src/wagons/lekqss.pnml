@@ -1,0 +1,85 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* Lekqss sprites */
+spriteset(sset_lekqss_purchase, "gfx/203z.png")         { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_lekqss_empty, "gfx/203z.png")            { tmpl_sprite_train(4, 20) }
+spriteset(sset_lekqss_vehs1_half, "gfx/203z.png")       { tmpl_sprite_train(4, 80) }
+spriteset(sset_lekqss_vehs1_full, "gfx/203z.png")       { tmpl_sprite_train(4, 120) }
+spriteset(sset_lekqss_vehs2_half, "gfx/203z.png")       { tmpl_sprite_train(4, 160) }
+spriteset(sset_lekqss_vehs2_full, "gfx/203z.png")       { tmpl_sprite_train(4, 200) }
+spriteset(sset_lekqss_vehs3_half, "gfx/203z.png")       { tmpl_sprite_train(4, 240) }
+spriteset(sset_lekqss_vehs3_full, "gfx/203z.png")       { tmpl_sprite_train(4, 280) }
+spritegroup sgroup_lekqss_vehs1 {
+    loaded:     [sset_lekqss_empty, sset_lekqss_vehs1_half, sset_lekqss_vehs1_full];
+    loading:    [sset_lekqss_empty, sset_lekqss_vehs1_half, sset_lekqss_vehs1_full];
+}
+spritegroup sgroup_lekqss_vehs2 {
+    loaded:     [sset_lekqss_empty, sset_lekqss_vehs2_half, sset_lekqss_vehs2_full];
+    loading:    [sset_lekqss_empty, sset_lekqss_vehs2_half, sset_lekqss_vehs2_full];
+}
+spritegroup sgroup_lekqss_vehs3 {
+    loaded:     [sset_lekqss_empty, sset_lekqss_vehs3_half, sset_lekqss_vehs3_full];
+    loading:    [sset_lekqss_empty, sset_lekqss_vehs3_half, sset_lekqss_vehs3_full];
+}
+
+/* Lekqss switches */
+random_switch(FEAT_TRAINS, SELF, switch_lekqss_type, bitmask(TRIGGER_VEHICLE_UNLOAD_ALL, TRIGGER_VEHICLE_ANY_LOAD, TRIGGER_ALL_NEEDED)) {
+    6: return sgroup_lekqss_vehs1;
+    5: return sgroup_lekqss_vehs2;
+    5: return sgroup_lekqss_vehs3;
+}
+switch(FEAT_TRAINS, SELF, switch_lekqss_capacity, cargo_type_in_veh ) {
+    ENSP: return 10;
+    return CB_FAILED;   // property value
+}
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_lekqss, 21400) {
+    property {
+		/* common properties */
+        name:                           string(STR_LEKQSS_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1966, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+//        CARGO_VEHICLES_WAGON_DEFINITION
+        loading_speed:                  4;
+        cost_factor:                    PURCHASE_COST_LEKQSS;
+        running_cost_factor:            RUNNING_COST_CARGO_SPECIAL;
+        cargo_age_period:               int(185*1.19);  // slow ageing
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          120 km/h;
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        weight:                         16 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_CARGO_WAGON);
+    }
+
+if(param_replace_cargoes) {
+    property {
+        CARGO_GOODS_WAGON_DEFINITION
+        cargo_capacity:                 8*2;
+    }
+} else {
+    property {
+        CARGO_VEHICLES_WAGON_DEFINITION
+        cargo_capacity:                 8;
+    }
+}
+
+    graphics {
+        purchase:                   sset_lekqss_purchase;
+        additional_text:            return string(STR_BRAKE_AIR);
+        default:                    switch_lekqss_type;
+		random_trigger:				switch_lekqss_type;
+        cargo_capacity:             switch_lekqss_capacity;
+    }
+}
