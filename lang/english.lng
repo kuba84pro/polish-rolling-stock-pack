@@ -362,54 +362,54 @@ STR_EU46_RED_PKP_CARGO_NAME            :{DKGREEN}EU46 {SILVER}Red PKP Cargo
 STR_EU46_BLUE_PKP_CARGO_NAME           :{DKGREEN}EU46 {SILVER}Blue PKP Cargo
 STR_EU46_504_NAME                      :{DKGREEN}EU46-504 {SILVER}Blue PKP Cargo
 STR_EU46_BG_PKP_CARGO_NAME             :{DKGREEN}EU46 {SILVER}Blue-Green PKP Cargo
-STR_193_590_NAME                       :{DKGREEN}193-590 {SILVER}PKP Cargo International Alpha Train
+STR_193_590_NAME                       :{DKGREEN}193 590 {SILVER}PKP Cargo International Alpha Train
 STR_383_PKP_CARGO_INTERNATIONAL_NAME   :{DKGREEN}383 {SILVER}PKP Cargo International
-STR_6193_005_NAME                      :{DKGREEN}6193-005 {SILVER}Lotos
+STR_6193_005_NAME                      :{DKGREEN}6193 005 {SILVER}Lotos
 STR_193_RAILPOOL_NAME                  :{DKGREEN}193 {SILVER}Railpool
-STR_6193_160_NAME                      :{DKGREEN}6193-160 {SILVER}Ost-West Logistic Poland
+STR_6193_160_NAME                      :{DKGREEN}6193 160 {SILVER}Ost-West Logistic Poland
 STR_193_WHITE_NAME                     :{DKGREEN}193 {SILVER}White
 STR_193_MRCE_NAME                      :{DKGREEN}193 {SILVER}MRCE
 STR_193_BEACON_NAME                    :{DKGREEN}193 {SILVER}Beacon Rail
-STR_193_626_NAME                       :{DKGREEN}193-626 {SILVER}E-Mobility 140 Years
-STR_193_639_NAME                       :{DKGREEN}193-639 {SILVER}Blue Beacon Rail
-STR_193_694_NAME                       :{DKGREEN}193-694 {SILVER}Moveo Ergo Sum LTE
-STR_193_488_NAME                       :{DKGREEN}193-488 {SILVER}Laude
+STR_193_626_NAME                       :{DKGREEN}193 626 {SILVER}E-Mobility 140 Years
+STR_193_639_NAME                       :{DKGREEN}193 639 {SILVER}Blue Beacon Rail
+STR_193_694_NAME                       :{DKGREEN}193 694 {SILVER}Moveo Ergo Sum LTE
+STR_193_488_NAME                       :{DKGREEN}193 488 {SILVER}Laude
 STR_193_CAPTRAIN_NAME                  :{DKGREEN}193 {SILVER}Captrain
 STR_6193_CARGOUNIT_NAME                :{DKGREEN}6193 {SILVER}Cargounit
 STR_6193_CARGOUNIT_FPL_NAME            :{DKGREEN}6193 {SILVER}Cargounit Freightliner
-STR_6193_274_NAME                      :{DKGREEN}6193-274 {SILVER}Unity Star Cargounit
+STR_6193_274_NAME                      :{DKGREEN}6193 274 {SILVER}Unity Star Cargounit
 STR_6193_BAHNOPERATOR_NAME             :{DKGREEN}6193 {SILVER}Bahnoperator
-STR_193_489_NAME                       :{DKGREEN}193-489 {SILVER}"Sergiusz" Bahnoperator
-STR_193_568_NAME                       :{DKGREEN}193-568 {SILVER}"Robert" Bahnoperator
-STR_193_569_NAME                       :{DKGREEN}193-569 {SILVER}"Milena" Bahnoperator
+STR_193_489_NAME                       :{DKGREEN}193 489 {SILVER}"Sergiusz" Bahnoperator
+STR_193_568_NAME                       :{DKGREEN}193 568 {SILVER}"Robert" Bahnoperator
+STR_193_569_NAME                       :{DKGREEN}193 569 {SILVER}"Milena" Bahnoperator
 STR_193_CD_CARGO_NAME                  :{DKGREEN}193 {SILVER}CD Cargo
-STR_193_627_NAME                       :{DKGREEN}193-627 {SILVER}Raillogix
-STR_193_949_NAME                       :{DKGREEN}193-949 {SILVER}Sharky Rail Force One
-STR_193_509_NAME                       :{DKGREEN}193-509 {SILVER}Black LTG Cargo Poland
-STR_193_723_NAME                       :{DKGREEN}193-723 {SILVER}Yellow LTG Cargo Poland
-STR_193_617_NAME                       :{DKGREEN}193-617 {SILVER}TX Logistik AG
+STR_193_627_NAME                       :{DKGREEN}193 627 {SILVER}Raillogix
+STR_193_949_NAME                       :{DKGREEN}193 949 {SILVER}Sharky Rail Force One
+STR_193_509_NAME                       :{DKGREEN}193 509 {SILVER}Black LTG Cargo Poland
+STR_193_723_NAME                       :{DKGREEN}193 723 {SILVER}Yellow LTG Cargo Poland
+STR_193_617_NAME                       :{DKGREEN}193 617 {SILVER}TX Logistik AG
 STR_383_METRANS_NAME                   :{DKGREEN}383 {SILVER}Metrans
 STR_193_ELL_NAME                       :{DKGREEN}193 {SILVER}ELL
-STR_193_216_NAME                       :{DKGREEN}193-216 {SILVER}LTE
-STR_193_232_NAME                       :{DKGREEN}193-232 {SILVER}LTE
+STR_193_216_NAME                       :{DKGREEN}193 216 {SILVER}LTE
+STR_193_232_NAME                       :{DKGREEN}193 232 {SILVER}LTE
 STR_193_CARGO_MOTION_NAME              :{DKGREEN}193 {SILVER}Cargo Motion ELL
-STR_193_729_NAME                       :{DKGREEN}193-729 {SILVER}LTE
-STR_193_738_NAME                       :{DKGREEN}193-738 {SILVER}LTE
-STR_193_740_NAME                       :{DKGREEN}193-740 {SILVER}LTE
-STR_193_956_NAME                       :{DKGREEN}193-956 {SILVER}Black Face
+STR_193_729_NAME                       :{DKGREEN}193 729 {SILVER}LTE
+STR_193_738_NAME                       :{DKGREEN}193 738 {SILVER}LTE
+STR_193_740_NAME                       :{DKGREEN}193 740 {SILVER}LTE
+STR_193_956_NAME                       :{DKGREEN}193 956 {SILVER}Black Face
 STR_193_BIG_LOKOTRAIN_NAME             :{DKGREEN}193 {SILVER}Big Lokotrain ELL
-STR_193_720_NAME                       :{DKGREEN}193-720 {SILVER}LTE
+STR_193_720_NAME                       :{DKGREEN}193 720 {SILVER}LTE
 STR_193_RFO_ELL_NAME                   :{DKGREEN}193 {SILVER}Rail Force One ELL
 STR_193_YELLOW_LOKOTRAIN_NAME          :{DKGREEN}193 {SILVER}Yellow Lokotrain ELL
-STR_193_726_NAME                       :{DKGREEN}193-726 {SILVER}RTB Cargo
-STR_193_732_NAME                       :{DKGREEN}193-732 {SILVER}RTB Cargo
-STR_193_792_NAME                       :{DKGREEN}193-792 {SILVER}RTB Cargo
-STR_193_791_NAME                       :{DKGREEN}193-791 {SILVER}RTB Cargo
-STR_193_793_NAME                       :{DKGREEN}193-793 {SILVER}RTB Cargo
-STR_193_565_NAME                       :{DKGREEN}193-565 {SILVER}RTB Cargo
-STR_193_945_NAME                       :{DKGREEN}193-945 {SILVER}RTB Cargo
-STR_193_485_NAME                       :{DKGREEN}193-485 {SILVER}RTB Cargo
-STR_193_824_NAME                       :{DKGREEN}193-824 {SILVER}RTB Cargo
+STR_193_726_NAME                       :{DKGREEN}193 726 {SILVER}RTB Cargo
+STR_193_732_NAME                       :{DKGREEN}193 732 {SILVER}RTB Cargo
+STR_193_792_NAME                       :{DKGREEN}193 792 {SILVER}RTB Cargo
+STR_193_791_NAME                       :{DKGREEN}193 791 {SILVER}RTB Cargo
+STR_193_793_NAME                       :{DKGREEN}193 793 {SILVER}RTB Cargo
+STR_193_565_NAME                       :{DKGREEN}193 565 {SILVER}RTB Cargo
+STR_193_945_NAME                       :{DKGREEN}193 945 {SILVER}RTB Cargo
+STR_193_485_NAME                       :{DKGREEN}193 485 {SILVER}RTB Cargo
+STR_193_824_NAME                       :{DKGREEN}193 824 {SILVER}RTB Cargo
 STR_X4EC_DB_CARGO_NAME                 :{DKGREEN}X4EC {SILVER}DB Cargo
 STR_X4EAB_044_NAME                 :{DKGREEN}X4EAB-044 {SILVER}"Wybierz kolej"
 STR_X4EAB_045_NAME                 :{DKGREEN}X4EAB-045 {SILVER}"Gramy w zielone"
@@ -417,10 +417,10 @@ STR_X4EAB_046_NAME                 :{DKGREEN}X4EAB-046 {SILVER}"Koleją ponad ch
 STR_X4EAB_047_NAME                 :{DKGREEN}X4EAB-047 {SILVER}"Ekspress Bajkalski"
 STR_BALTIC_NAME                 :{DKGREEN}6193 {SILVER}"Baltic Express"
 STR_ADRIATIC_NAME                 :{DKGREEN}6193 {SILVER}"Adriatic Express"
-STR_193_428_NAME                 :{DKGREEN}193-428 {SILVER}"Kierunek Europa"
+STR_193_428_NAME                 :{DKGREEN}193 428 {SILVER}"Kierunek Europa"
 STR_CESKE_DRAHY_NAME                 :{DKGREEN}193 {SILVER}Ceske Drahy
-STR_193_366_NAME                 :{DKGREEN}193-366 {SILVER}"Einziganders"
-STR_193_488_NAME                 :{DKGREEN}193-488 {SILVER}Rail Cargo Group
+STR_193_366_NAME                 :{DKGREEN}193 366 {SILVER}"Einziganders"
+STR_193_448_NAME                 :{DKGREEN}193 448-8 {SILVER}Rail Cargo Group
 STR_OBB_NAME                     :{DKGREEN}1293 {SILVER}OBB
 
 STR_E4DCUD_NAME         :{LTBLUE}E4DCUd {SILVER}Griffin

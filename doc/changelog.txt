@@ -2,8 +2,8 @@ Polish Rolling Stock Pack - Change log
 ================================
 0.15.7
 Added:
-- 193-366
-- 193-488
+- 193 366
+- 193 448-8
 - 1293 OBB
 - 3E PCC Rail Szczakowa
 - EL16 Asf PKP Cargo

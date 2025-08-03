@@ -128,8 +128,8 @@ spriteset(sset_ceske_drahy_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase
 spriteset(sset_ceske_drahy, "gfx/vectron.png")            { tmpl_sprite_train10(274, 1760) }
 spriteset(sset_193_366_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(274, 1860) }
 spriteset(sset_193_366, "gfx/vectron.png")            { tmpl_sprite_train10(274, 1820) }
-spriteset(sset_193_488_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(274, 1920) }
-spriteset(sset_193_488, "gfx/vectron.png")            { tmpl_sprite_train10(274, 1880) }
+spriteset(sset_193_448_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(274, 1920) }
+spriteset(sset_193_448, "gfx/vectron.png")            { tmpl_sprite_train10(274, 1880) }
 spriteset(sset_obb_purchase, "gfx/vectron.png")   { tmpl_sprite_purchase(274, 1980) }
 spriteset(sset_obb, "gfx/vectron.png")            { tmpl_sprite_train10(274, 1940) }
 
@@ -3356,10 +3356,10 @@ item(FEAT_TRAINS, item_193_366, 1061) {
         ENGINE_POWER_CALLBACKS(eu46)
     }
 }
-item(FEAT_TRAINS, item_193_488, 1062) {
+item(FEAT_TRAINS, item_193_448, 1062) {
     property {
 		/* common properties */
-        name:                           string(STR_193_488_NAME);
+        name:                           string(STR_193_448_NAME);
         variant_group:                  1004;
         climates_available:             PKP_CLIMATES; 
         introduction_date:              date(2024, 1, 1);
@@ -3394,9 +3394,9 @@ item(FEAT_TRAINS, item_193_488, 1062) {
     }
 
     graphics {
-        purchase:                   sset_193_488_purchase;
+        purchase:                   sset_193_448_purchase;
         additional_text:            switch_eu46_add_text;
-        default:                    sset_193_488;
+        default:                    sset_193_448;
         articulated_part:           switch_vectron_articulated;
         visual_effect_and_powered:  switch_eu46_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;
