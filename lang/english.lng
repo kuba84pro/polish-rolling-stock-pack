@@ -229,6 +229,7 @@ STR_ET21_PTKIGK_NAME          :{DKGREEN}ET21 {SILVER}PTK Zabrze
 STR_ET21_DB_NAME              :{DKGREEN}3E/1 {SILVER}DB Cargo
 STR_ET21_SKPL_NAME            :{DKGREEN}3E/1-100 {SILVER}SKPL
 STR_ET21_TRAINSPEED_NAME      :{DKGREEN}3E/1 {SILVER}Train Speed
+STR_ET21_PCC_NAME             :{DKGREEN}3E {SILVER}PCC Rail Szczakowa
 STR_ET22_NAME                  :{DKGREEN}ET22
 STR_ET22_GREEN_NAME            :{DKGREEN}ET22 {SILVER}Historical Green
 STR_ET22_YELLOW_FRONT_NAME     :{DKGREEN}ET22 {SILVER}Historical Yellow Front
@@ -418,6 +419,9 @@ STR_BALTIC_NAME                 :{DKGREEN}6193 {SILVER}"Baltic Express"
 STR_ADRIATIC_NAME                 :{DKGREEN}6193 {SILVER}"Adriatic Express"
 STR_193_428_NAME                 :{DKGREEN}193-428 {SILVER}"Kierunek Europa"
 STR_CESKE_DRAHY_NAME                 :{DKGREEN}193 {SILVER}Ceske Drahy
+STR_193_366_NAME                 :{DKGREEN}193-366 {SILVER}"Einziganders"
+STR_193_488_NAME                 :{DKGREEN}193-488 {SILVER}Rail Cargo Group
+STR_OBB_NAME                     :{DKGREEN}1293 {SILVER}OBB
 
 STR_E4DCUD_NAME         :{LTBLUE}E4DCUd {SILVER}Griffin
 STR_E4DCUD_LOTOS_NAME   :{LTBLUE}E4DCUd {SILVER}Lotos
@@ -685,3 +689,4 @@ STR_WM15A_TEXT          :{ORANGE}Technical vehicle for carrying out maintenance 
 STR_PWM15_NAME          :PWM-15 (Trailer)
 STR_ASF_NAME            :{GREEN}EL16 {SILVER}ASF
 STR_ASF_INVISIBLE_NAME  :{GREEN}EL16 {SILVER}ASF Invisible livery
+STR_ASF_PKP_CARGO_NAME  :{GREEN}EL16 {SILVER}ASF PKP Cargo

@@ -7,5 +7,5 @@ if not exist out mkdir out
 echo Preprocessing...
 gcc -E -x c src\pkp.pnml -o tmp\pkp-set.nml
 echo Compiling...
-nmlc -c --grf out\polish-rolling-stock-pack-0.15.6.grf tmp\pkp-set.nml
+nmlc -c --grf out\polish-rolling-stock-pack-0.15.7.grf tmp\pkp-set.nml
 echo ========= END =========

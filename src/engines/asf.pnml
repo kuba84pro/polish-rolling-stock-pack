@@ -7,6 +7,8 @@ spriteset(sset_asf_purchase, "gfx/asf_el16b.png")   { tmpl_sprite_purchase(4, 60
 spriteset(sset_asf, "gfx/asf_el16b.png")            { tmpl_sprite_train(4, 20) }
 spriteset(sset_asf_inv_purchase, "gfx/asf_el16b.png")   { tmpl_sprite_purchase(4, 130) }
 spriteset(sset_asf_inv, "gfx/asf_el16b.png")            { tmpl_sprite_train(4, 90) }
+spriteset(sset_asf_pkp_cargo_purchase, "gfx/asf_el16b.png")   { tmpl_sprite_purchase(4, 190) }
+spriteset(sset_asf_pkp_cargo, "gfx/asf_el16b.png")            { tmpl_sprite_train(4, 150) }
 
 /* ASF switches */
 switch (FEAT_TRAINS, SELF, switch_asf_graphics, position_in_vehid_chain % 2) {
@@ -109,3 +111,55 @@ item(FEAT_TRAINS, item_asf_inv, 5001) {
         ENGINE_CAPACITY_CALLBACKS
     }
 }
+/* ASF PKP Cargo switches */
+switch (FEAT_TRAINS, SELF, switch_asf_pkp_cargo_graphics, position_in_vehid_chain % 2) {
+    0: return sset_asf_pkp_cargo;
+    return sset_dummy;
+}
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_asf_pkp_cargo, 5002) {
+    property {
+		/* common properties */
+        name:                           string(STR_ASF_PKP_CARGO_NAME);
+        variant_group:                  5000;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2008, 1, 1)E;
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   40;
+        reliability_decay:              0;
+        CARGO_LOCOMOTIVES_DEFINITION 
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_ASF;
+        running_cost_factor:            RUNNING_COST_ASF;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          6 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          17 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_PROPERTY
+        weight:                         12 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.340;
+        air_drag_coefficient:           0.07;
+        length:                         3;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:         0 ton;
+        bitmask_vehicle_info:           0;
+    }
+    graphics {
+        purchase:                   sset_asf_pkp_cargo_purchase;
+        additional_text:            return string(STR_ENGINE_SHUNTER);
+        default:                    switch_asf_pkp_cargo_graphics;
+        ENGINE_CAPACITY_CALLBACKS
+    }
+}
+

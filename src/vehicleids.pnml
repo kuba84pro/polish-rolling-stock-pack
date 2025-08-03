@@ -2,6 +2,8 @@
 // Don't include any headers inside this file!
 // (c) Tadeusz Domagalski, licence: GPLv2
 
+// THIS FILE IS NOT USED!
+
 /* Registering vehicle IDs */
 /* IDs of articulated parts *
 item(FEAT_TRAINS, item_dummy_1, 50) { }

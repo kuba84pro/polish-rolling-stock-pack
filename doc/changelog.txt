@@ -1,5 +1,19 @@
 Polish Rolling Stock Pack - Change log
 ================================
+0.15.7
+Added:
+- 193-366
+- 193-488
+- 1293 OBB
+- 3E PCC Rail Szczakowa
+- EL16 Asf PKP Cargo
+
+Fixed:
+- 35WE Koleje Slaskie sprites
+
+0.15.6
+Changelog, Readme and license available ingame.
+Website does work, but only from "online content" menu.
 
 0.15.5
 Published to bananas
