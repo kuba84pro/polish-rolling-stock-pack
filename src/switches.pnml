@@ -605,3 +605,53 @@ switch(FEAT_TRAINS, SELF, switch_impuls1_6part_add_text, IS_HEATING_CLIMATE ) {
     1: return string(STR_PURCHASE_DESCR_2L, string(STR_HEATING_ELECTRIC_TEXT), string(STR_6PART_EMU_TEXT));
     return string(STR_6PART_EMU_TEXT);
 }
+
+// Dragon 1 & 2, etc vehicle switches
+switch(FEAT_TRAINS, SELF, switch_et25_visual_effect_local, position_in_vehid_chain % 2) {
+    0: return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 3, DISABLE_WAGON_POWER);
+    return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+}
+switch(FEAT_TRAINS, SELF, switch_et43_visual_effect_local, position_in_vehid_chain % 2) {
+    0: return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 3, DISABLE_WAGON_POWER);
+    return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+}
+switch(FEAT_TRAINS, SELF, switch_e6acta_visual_effect_local, position_in_vehid_chain % 2) {
+    0: return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 3, DISABLE_WAGON_POWER);
+    return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+}
+switch(FEAT_TRAINS, SELF, switch_et26_visual_effect_diesel, tile_has_catenary) {
+    1: return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 3, DISABLE_WAGON_POWER);    
+    return visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+}
+switch(FEAT_TRAINS, SELF, switch_et26_visual_effect_local, position_in_vehid_chain % 2) {
+    0: return switch_et26_visual_effect_diesel;
+    return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+}
+switch (FEAT_TRAINS, SELF, switch_et25_add_text, IS_HEATING_CLIMATE ) {
+	1: return string(STR_PURCHASE_DESCR_2L, string(STR_HEATING_ELECTRIC_POWER_TEXT, HEATING_POWER_ELECTRIC_MID), string(STR_ENGINE_HEAVY_FREIGHT));
+	return string(STR_ENGINE_HEAVY_FREIGHT);
+}
+switch (FEAT_TRAINS, SELF, switch_et43_add_text, IS_HEATING_CLIMATE ) {
+	1: return string(STR_PURCHASE_DESCR_2L, string(STR_HEATING_ELECTRIC_POWER_TEXT, HEATING_POWER_ELECTRIC_MID), string(STR_ENGINE_HEAVY_FREIGHT));
+	return string(STR_ENGINE_HEAVY_FREIGHT);
+}
+switch (FEAT_TRAINS, SELF, switch_e6acta_add_text, IS_HEATING_CLIMATE ) {
+	1: return string(STR_PURCHASE_DESCR_2L, string(STR_HEATING_ELECTRIC_POWER_TEXT, HEATING_POWER_ELECTRIC_MID), string(STR_ENGINE_HEAVY_FREIGHT));
+	return string(STR_ENGINE_HEAVY_FREIGHT);
+}
+switch (FEAT_TRAINS, SELF, switch_et26_add_text, IS_HEATING_CLIMATE ) {
+	1: return string(STR_PURCHASE_DESCR_3L, string(STR_HEATING_ELECTRIC_POWER_TEXT, HEATING_POWER_ELECTRIC_HI), string(STR_ENGINE_HEAVY_FREIGHT), string(STR_E6ACTA_DIESEL_1_TEXT));
+	return string(STR_PURCHASE_DESCR_2L, string(STR_ENGINE_HEAVY_FREIGHT), string(STR_E6ACTA_DIESEL_1_TEXT));
+}
+switch (FEAT_TRAINS, SELF, switch_e6actadnb_add_text, IS_HEATING_CLIMATE ) {
+	1: return string(STR_PURCHASE_DESCR_3L, string(STR_HEATING_ELECTRIC_POWER_TEXT, HEATING_POWER_ELECTRIC_HI), string(STR_ENGINE_HEAVY_FREIGHT), string(STR_E6ACTA_DIESEL_2_TEXT));
+	return string(STR_PURCHASE_DESCR_2L, string(STR_ENGINE_HEAVY_FREIGHT), string(STR_E6ACTA_DIESEL_2_TEXT));
+}
+switch (FEAT_TRAINS, SELF, switch_et26_switch_power, tile_has_catenary) {
+    1: return 6705; //hp
+    return 734; //hp
+}
+switch (FEAT_TRAINS, PARENT, switch_et26_power, PKPSET_ITEM_ID) {
+	item_asf: return 0;
+	return switch_et26_switch_power;
+}

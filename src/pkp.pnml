@@ -2,7 +2,7 @@ grf {
     grfid: "MV\01\05";
     name: string(STR_GRF_NAME);
     desc: string(STR_GRF_DESCRIPTION);
-    version: 9;
+    version: 10;
     min_compatible_version: 1;
 
     param {
@@ -470,7 +470,15 @@ sort(FEAT_TRAINS,
     // E6ACT Variant_group
     1100, 1101, 1102, 1103,
     // E6ACTa, E6ACTab, E6ACTad, E6ACTadb, ET26 Vehicle_id
-    1120, 1121, 1122, 1123, 1130, 1131, 1124, 1125, 1126, 1127, 1128, 1129, 1132, 1133, 1134, 1135, 1136, 1137,
+    1120, 1121, 1122, 1123, 1124, 1126,  // E6ACTa
+    1125, 1130, // E6ACTad
+    1148, 1127, 1128, 1129, 1133, 1136, 1154, // E6ACTab
+    1149, 1132, 1131, 1150, 1134, 1135, // E6ACTadb
+    1151, 1152, 1153, 1155, 1156, 1157, 1159, 1158, // E6ACTadnb
+    1146, 1147, // E6MST
+    1139, 1138, 1140, // ET25
+    1137, // ET26
+    1141, 1142, 1143, 1144, 1145,  // ET43
     // 111Ed, 111Eo, 111Db
     1200, 1202, 1201, 1203, 1204,
     // EU160, E4DCUd Variant_group

@@ -1,5 +1,39 @@
 Polish Rolling Stock Pack - Change log
 ================================
+0.15.8
+Dragon 2 Update
+Variant group has been completely done from scratch. Dragons are now separeted based on their type.
+
+Added:
+- ET25-001
+- ET25-002 (Graphics from ET26)
+- ET25-003
+- ET43
+- ET43-001
+- ET43-007
+- ET43-015
+- ET43-21
+- E6MST, E6ACTadnb-077 (Akiem)
+- Dragon 2 RailSTM overhaul, E6MST, E6ACTadb, E6ACTadnb
+- Dragon 2 Cargounit overhaul, E6ACTadnb (E6ACTa-016 changed livery to new one)
+- E6ACTab, E6ACTadnb (Olavion)
+- E6ACTadnb-071
+- E6ACTadnb-073
+
+Some of the vehicles have the same livery but different types. This is because some of them have last-mile diesel engine (letter "d" in their name).
+Graphics were updated to make them drive on non-catenary tracks (pantographs are lowered) and names are now in light blue color (multifuncional).
+
+Now purchase cost, running cost and halted cost depends on their type.
+From cheapest to the most expensive:
+- ET25, E6ACTa, E6ACTab
+- ET26, E6ACTadb, E6ACTadnb
+- ET43, E6MST
+
+Fixed:
+- EN90 sprites
+- EN71-AKS sprites
+- EU160 IC purchase menu sprite
+
 0.15.7
 Added:
 - 193 366

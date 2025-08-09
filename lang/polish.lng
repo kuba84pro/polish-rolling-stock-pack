@@ -251,13 +251,6 @@ STR_ET41_NAME                 :{DKGREEN}ET41
 STR_ET41_YELLOW_FRONT_NAME    :{DKGREEN}ET41 {SILVER}Historyczne Zolte Czolo
 STR_ET42_NAME                 :{DKGREEN}ET42
 STR_ET42_YELLOW_FRONT_NAME    :{DKGREEN}ET42 {SILVER}Historyczne Zolte Czolo
-STR_E6ACTA_NAME         :{DKGREEN}E6ACTa {SILVER}Dragon 2
-STR_E6ACT_NAME          :{DKGREEN}E6ACT {SILVER}Dragon 1
-STR_E6ACTA_CS_NATRIX_NAME             :{DKGREEN}E6ACTad {SILVER}Szaro-Czerwone
-STR_E6ACTA_CS_JAXAN_NAME              :{DKGREEN}E6ACTadb-030 {SILVER}Jaxan Szaro-Czerwone
-STR_E6ACTA_CS_CARGOUNIT_NAME          :{DKGREEN}E6ACTa {SILVER}Cargounit Szaro-Czerwone
-STR_E6ACTA_CS_KOLPREM_NAME            :{DKGREEN}E6ACTa-013 {SILVER}Kolprem Szaro-Czerwone
-STR_E6ACTA_CS_CIECH_CARGO_NAME        :{DKGREEN}E6ACTa-014 {SILVER}Ciech Cargo Szaro-Czerwone
 STR_EP09_NAME              :{DKGREEN}EP09
 STR_EP09_ZP_NAME           :{DKGREEN}EP09 {SILVER}Zlota
 STR_SKODA163_NAME       :{DKGREEN}Skoda 71E
@@ -292,8 +285,55 @@ STR_EU46_BG_PKP_CARGO_NAME             :{DKGREEN}EU46 {SILVER}Niebiesko-Zielone 
 STR_193_WHITE_NAME                     :{DKGREEN}193 {SILVER}White
 STR_193_509_NAME                       :{DKGREEN}193-509 {SILVER}LTG Cargo Poland Czarne
 STR_193_723_NAME                       :{DKGREEN}193-723 {SILVER}LTG Cargo Poland Zolte
-STR_ET26_NAME           :{LTBLUE}ET26 {SILVER}PKP Cargo
-STR_ET26_TEXT           :Uwaga: {ORANGE}Lokomotywa elektryczna ze spalinowym silnikiem dojazdowym ({YELLOW}540 kW{ORANGE})
+
+STR_E6ACT_LOTOS_NAME          :{DKGREEN}E6ACT {SILVER}Lotos
+STR_E6ACT_CARGOUNIT_NAME      :{DKGREEN}E6ACT {SILVER}Cargounit
+STR_E6ACT_FREIGHTLINER_NAME   :{DKGREEN}E6ACTd {SILVER}Freightliner
+STR_E6ACT_RAILPOLONIA_NAME    :{DKGREEN}E6ACTd-106 {SILVER}Rail Polonia
+
+STR_E6ACTA_NAME                       :{DKGREEN}E6ACTa 
+STR_E6ACTA_CS_CARGOUNIT_NAME          :{DKGREEN}E6ACTa {SILVER}Czerwono-Szare Cargounit
+STR_E6ACTA_CS_KOLPREM_NAME            :{DKGREEN}E6ACTa-013 {SILVER}Czerwono-Szare Kolprem
+STR_E6ACTA_CS_CIECH_CARGO_NAME        :{DKGREEN}E6ACTa-014 {SILVER}Czerwono-Szare Ciech Cargo
+STR_E6ACTA_CARGOUNIT_NAME             :{DKGREEN}E6ACTa-016 {SILVER}Cargounit "USIA"
+STR_E6ACTA_JAXAN_NAME                 :{LTBLUE}E6ACTad-015 {SILVER}Jaxan
+STR_E6ACTA_LOTOS_NAME                 :{DKGREEN}E6ACTa {SILVER}Lotos
+STR_E6ACTAB_LOTOS_NAME                :{DKGREEN}E6ACTab {SILVER}Lotos
+STR_E6ACTAB_LAUDE_NAME                :{DKGREEN}E6ACTab {SILVER}Laude
+STR_E6ACTADB_LAUDE_NAME               :{LTBLUE}E6ACTadb {SILVER}Laude
+STR_E6ACTA_RCP_NAME                   :{DKGREEN}E6ACTab {SILVER}RCP
+STR_E6ACTA_RCP2_NAME                  :{DKGREEN}E6ACTab {SILVER}RCP #2
+STR_E6ACTA_CS_NATRIX_NAME             :{LTBLUE}E6ACTad {SILVER}Czerwono-Szare Natrix
+STR_E6ACTA_CS_JAXAN_NAME              :{LTBLUE}E6ACTadb-030 {SILVER}Czerwono-Szare Jaxan
+STR_E6ACTA_RAILPOLONIA_NAME           :{LTBLUE}E6ACTadb-029 {SILVER}Rail Polonia
+STR_E6ACTAB_CEMET_NAME                :{DKGREEN}E6ACTab {SILVER}Cemet
+STR_E6ACTADB_CEMET_NAME               :{LTBLUE}E6ACTadb {SILVER}Cemet
+STR_E6ACTADNB_CEMET_NAME              :{LTBLUE}E6ACTadnb {SILVER}Cemet
+STR_E6ACTADB_RAILSTM_NAME             :{LTBLUE}E6ACTadb-043 {SILVER}RailSTM
+STR_E6ACTADNB_RAILSTM_NAME            :{LTBLUE}E6ACTadnb {SILVER}RailSTM
+STR_E6ACTA_DOLATA_045_NAME            :{LTBLUE}E6ACTadb-045 {SILVER}Dolata
+STR_E6ACTA_DOLATA_055_NAME            :{LTBLUE}E6ACTadnb-055 {SILVER}Dolata
+STR_E6ACTA_GRUPA_AZOTY_NAME           :{DKGREEN}E6ACTab-051 {SILVER}Grupa Azoty
+STR_E6ACTAB_OLAVION_NAME              :{DKGREEN}E6ACTab {SILVER}Olavion
+STR_E6ACTADNB_OLAVION_NAME            :{LTBLUE}E6ACTadnb {SILVER}Olavion
+STR_E6ACTADNB_AKIEM_NAME              :{LTBLUE}E6ACTadnb-077 {SILVER}Akiem
+STR_E6ACTADNB_CARGOUNIT_NAME          :{LTBLUE}E6ACTadnb {SILVER}Cargounit
+STR_E6ACTADNB_073_NAME                :{LTBLUE}E6ACTadnb-073 {SILVER}PM Terminal
+STR_E6ACTADNB_071_NAME                :{LTBLUE}E6ACTadnb-071 {SILVER}JSW Logistics
+STR_ET26_NAME                         :{LTBLUE}ET26 {SILVER}PKP Cargo
+STR_ET25_001_NAME                     :{DKGREEN}ET25-001 {SILVER}"20 lat PKP Cargo"
+STR_ET25_002_NAME                     :{DKGREEN}ET25-002 {SILVER}PKP Cargo
+STR_ET25_003_NAME                     :{DKGREEN}ET25-003 {SILVER}"Niepodległa"
+STR_ET43_NAME                         :{DKGREEN}ET43 {SILVER}PKP Cargo
+STR_ET43_001_NAME                     :{DKGREEN}ET43-001 {SILVER}"Solidarność"
+STR_ET43_007_NAME                     :{DKGREEN}ET43-007 {SILVER}"Lech Kaczyński"
+STR_ET43_015_NAME                     :{DKGREEN}ET43-015 {SILVER}"Jan Kozietulski"
+STR_ET43_021_NAME                     :{DKGREEN}ET43-21 {SILVER}"Józef Piłsudski"
+STR_E6MST_AKIEM_NAME                  :{DKGREEN}E6MST {SILVER}Akiem
+STR_E6MST_RAILSTM_NAME                :{DKGREEN}E6MST {SILVER}RailSTM
+STR_E6ACTA_DIESEL_1_TEXT           :Uwaga: {ORANGE}Lokomotywa elektryczna ze spalinowym silnikiem dojazdowym ({YELLOW}540 kW{ORANGE})
+STR_E6ACTA_DIESEL_2_TEXT           :Uwaga: {ORANGE}Lokomotywa elektryczna ze spalinowym silnikiem dojazdowym ({YELLOW}503 kW{ORANGE})
+
 STR_E4DCUD_NAME         :{LTBLUE}E4DCUd {SILVER}Lotos
 STR_E4DCUD_TEXT         :Uwaga: {ORANGE}Lokomotywa elektryczna ze spalinowym silnikiem dojazdowym ({YELLOW}380 kW{ORANGE})
 STR_EN57_NAME           :{DKGREEN}EN57
