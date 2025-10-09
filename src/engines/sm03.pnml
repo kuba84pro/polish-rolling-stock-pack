@@ -1,0 +1,158 @@
+// This is part of Polish PKP Set 2.0 NewGRF.
+// Don't include any headers inside this file!
+// (c) Tadeusz Domagalski, licence: GPLv2
+
+/* SM03 sprites */
+spriteset(sset_sm03_purchase, "gfx/sm03.png")           { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_sm03, "gfx/sm03.png")                    { tmpl_sprite_train(4, 20) }
+spriteset(sset_sm03_rev, "gfx/sm03.png")                { tmpl_sprite_train(4, 80) }
+spriteset(sset_sm03_pkp_cargo_purchase, "gfx/sm03.png") { tmpl_sprite_purchase(4, 190) }
+spriteset(sset_sm03_pkp_cargo, "gfx/sm03.png")          { tmpl_sprite_train(4, 120) }
+spriteset(sset_sm03_pkp_cargo_rev, "gfx/sm03.png")      { tmpl_sprite_train(4, 160) }
+
+/* SM03 switches */
+switch(FEAT_TRAINS, PARENT, switch_sm03_classic_graphics, vehicle_is_reversed) {
+    1: return sset_sm03_rev;
+    return sset_sm03;
+}
+switch(FEAT_TRAINS, PARENT, switch_sm03_graphics, position_in_vehid_chain % 2) {
+    0: return switch_sm03_classic_graphics;
+    return sset_dummy;      // dummy parts
+}
+switch(FEAT_TRAINS, PARENT, switch_sm03_visual_effect_local, 0) {
+    return visual_effect_and_powered(VISUAL_EFFECT_STEAM, -1, DISABLE_WAGON_POWER);
+}
+switch (FEAT_TRAINS, SELF, switch_sm03_add_text, IS_HEATING_CLIMATE) {
+    1: return string(STR_PURCHASE_DESCR_2L, string(STR_HEATING_NONE_TEXT), string(STR_ENGINE_SHUNTER));
+    return string(STR_ENGINE_SHUNTER);
+}
+ENGINE_RUNNING_COST_SWITCH(sm03, SM03)
+DIESEL_ELECTRIC_ENGINE_POWER_SWITCH(sm03)
+ENGINE_VISUAL_EFFECT_SWITCH(sm03)
+
+/* Dummy vehicle */
+item(FEAT_TRAINS, item_sm03, 202) {
+    property {
+        name:                           string(STR_SM03_NAME);
+        climates_available:             PKP_CLIMATES;
+        introduction_date:              date(1959, 1, 1);
+        vehicle_life:                   35;
+        reliability_decay:              10;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5;
+        cost_factor:                    PURCHASE_COST_SM03;
+        running_cost_factor:            RUNNING_COST_SM03;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          25 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          110 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_PROPERTY
+        weight:                         24 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.2425;
+        air_drag_coefficient:           0.07;
+        length:                         4;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     72;
+        retire_early:                   16;
+    }
+}
+
+    graphics {
+        purchase:                   sset_sm03_purchase;
+        additional_text:            switch_sm03_add_text;
+        default:                    switch_sm03_graphics;
+        visual_effect_and_powered:  switch_sm03_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(sm03)
+        ENGINE_POWER_CALLBACKS(sm03)
+    }
+}
+/* SM03 PKP Cargo switches */
+switch(FEAT_TRAINS, PARENT, switch_sm03_pkp_cargo_graphics_rev, vehicle_is_reversed) {
+    1: return sset_sm03_pkp_cargo_rev;
+    return sset_sm03_pkp_cargo;
+}
+switch(FEAT_TRAINS, PARENT, switch_sm03_pkp_cargo_graphics, position_in_vehid_chain % 2) {
+    0: return switch_sm03_pkp_cargo_graphics_rev;
+    return sset_dummy;      // dummy parts
+}
+/* Dummy vehicle */
+item(FEAT_TRAINS, item_sm03_pkp_cargo, 203) {
+    property {
+        name:                           string(STR_SM03_PKP_CARGO_NAME);
+        variant_group:                  202;
+        climates_available:             PKP_CLIMATES;
+        introduction_date:              date(2008, 1, 1);
+        vehicle_life:                   35;
+        reliability_decay:              10;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5;
+        cost_factor:                    PURCHASE_COST_SM03;
+        running_cost_factor:            RUNNING_COST_SM03;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          25 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          110 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_PROPERTY
+        weight:                         24 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.2425;
+        air_drag_coefficient:           0.07;
+        length:                         4;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     72;
+        retire_early:                   16;
+    }
+}
+
+    graphics {
+        purchase:                   sset_sm03_pkp_cargo_purchase;
+        additional_text:            switch_sm03_add_text;
+        default:                    switch_sm03_pkp_cargo_graphics;
+        visual_effect_and_powered:  switch_sm03_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(sm03)
+        ENGINE_POWER_CALLBACKS(sm03)
+    }
+}

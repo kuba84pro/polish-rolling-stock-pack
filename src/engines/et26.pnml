@@ -115,7 +115,7 @@ item(FEAT_TRAINS, item_et25_002, 1138) {
         speed:                          120 km/h;
         misc_flags:                     bitmask();
         refit_cost:                     0;
-        track_type:                     RAIL;
+        track_type:                     ELRL;
         ai_special_flag:                AI_FLAG_CARGO;
         power:                          5000 kW;
         running_cost_base:              RUNNING_COST_ELECTRIC;
@@ -166,7 +166,7 @@ item(FEAT_TRAINS, item_et25_001, 1139) {
         speed:                          120 km/h;
         misc_flags:                     bitmask();
         refit_cost:                     0;
-        track_type:                     RAIL;
+        track_type:                     ELRL;
         ai_special_flag:                AI_FLAG_CARGO;
         power:                          5000 kW;
         running_cost_base:              RUNNING_COST_ELECTRIC;
@@ -217,7 +217,7 @@ item(FEAT_TRAINS, item_et25_003, 1140) {
         speed:                          120 km/h;
         misc_flags:                     bitmask();
         refit_cost:                     0;
-        track_type:                     RAIL;
+        track_type:                     ELRL;
         ai_special_flag:                AI_FLAG_CARGO;
         power:                          5000 kW;
         running_cost_base:              RUNNING_COST_ELECTRIC;
@@ -273,7 +273,7 @@ item(FEAT_TRAINS, item_et43, 1141) {
         speed:                          120 km/h;
         misc_flags:                     bitmask();
         refit_cost:                     0;
-        track_type:                     RAIL;
+        track_type:                     ELRL;
         ai_special_flag:                AI_FLAG_CARGO;
         power:                          5000 kW;
         running_cost_base:              RUNNING_COST_ELECTRIC;
@@ -325,7 +325,7 @@ item(FEAT_TRAINS, item_et43_001, 1142) {
         speed:                          120 km/h;
         misc_flags:                     bitmask();
         refit_cost:                     0;
-        track_type:                     RAIL;
+        track_type:                     ELRL;
         ai_special_flag:                AI_FLAG_CARGO;
         power:                          5000 kW;
         running_cost_base:              RUNNING_COST_ELECTRIC;
@@ -376,7 +376,7 @@ item(FEAT_TRAINS, item_et43_007, 1143) {
         speed:                          120 km/h;
         misc_flags:                     bitmask();
         refit_cost:                     0;
-        track_type:                     RAIL;
+        track_type:                     ELRL;
         ai_special_flag:                AI_FLAG_CARGO;
         power:                          5000 kW;
         running_cost_base:              RUNNING_COST_ELECTRIC;
@@ -427,7 +427,7 @@ item(FEAT_TRAINS, item_et43_015, 1144) {
         speed:                          120 km/h;
         misc_flags:                     bitmask();
         refit_cost:                     0;
-        track_type:                     RAIL;
+        track_type:                     ELRL;
         ai_special_flag:                AI_FLAG_CARGO;
         power:                          5000 kW;
         running_cost_base:              RUNNING_COST_ELECTRIC;
@@ -478,7 +478,7 @@ item(FEAT_TRAINS, item_et43_021, 1145) {
         speed:                          120 km/h;
         misc_flags:                     bitmask();
         refit_cost:                     0;
-        track_type:                     RAIL;
+        track_type:                     ELRL;
         ai_special_flag:                AI_FLAG_CARGO;
         power:                          5000 kW;
         running_cost_base:              RUNNING_COST_ELECTRIC;
@@ -529,7 +529,7 @@ item(FEAT_TRAINS, item_e6mst_akiem, 1146) {
         speed:                          120 km/h;
         misc_flags:                     bitmask();
         refit_cost:                     0;
-        track_type:                     RAIL;
+        track_type:                     ELRL;
         ai_special_flag:                AI_FLAG_CARGO;
         power:                          5000 kW;
         running_cost_base:              RUNNING_COST_ELECTRIC;
@@ -580,7 +580,7 @@ item(FEAT_TRAINS, item_e6mst_railstm, 1147) {
         speed:                          120 km/h;
         misc_flags:                     bitmask();
         refit_cost:                     0;
-        track_type:                     RAIL;
+        track_type:                     ELRL;
         ai_special_flag:                AI_FLAG_CARGO;
         power:                          5000 kW;
         running_cost_base:              RUNNING_COST_ELECTRIC;

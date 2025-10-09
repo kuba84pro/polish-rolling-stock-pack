@@ -11,6 +11,8 @@ spriteset(sset_su46_yellow_purchase, "gfx/su46.png")       { tmpl_sprite_purchas
 spriteset(sset_su46_yellow, "gfx/su46.png")      { tmpl_sprite_train10(4, 20) }
 spriteset(sset_su46_nysa_purchase, "gfx/su46.png")       { tmpl_sprite_purchase(4, 240) }
 spriteset(sset_su46_nysa, "gfx/su46.png")      { tmpl_sprite_train10(4, 200) }
+spriteset(sset_su46_old_pkp_cargo_purchase, "gfx/su46.png")       { tmpl_sprite_purchase(4, 300) }
+spriteset(sset_su46_old_pkp_cargo, "gfx/su46.png")      { tmpl_sprite_train10(4, 260) }
 
 /* SU46 switches */
 switch(FEAT_TRAINS, SELF, switch_su46_articulated, extra_callback_info1) {
@@ -224,6 +226,56 @@ item(FEAT_TRAINS, item_su46_nysa, 423) {
         purchase:                   sset_su46_nysa_purchase;
         additional_text:            switch_su46_add_text;
         default:                    sset_su46_nysa;
+        articulated_part:           switch_su46_articulated;
+        visual_effect_and_powered:  switch_su46_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(su46)
+        ENGINE_POWER_CALLBACKS(su46)
+    }
+}
+item(FEAT_TRAINS, item_su46_old_pkp_cargo, 424) {
+    property {
+		/* common properties */
+        name:                           string(STR_SU46_OLD_PKP_CARGO_NAME);
+        variant_group:                  420;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2005, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_SU46;
+        running_cost_factor:            RUNNING_COST_SU46;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          120 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          1655 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         105 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.307;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_su46_old_pkp_cargo_purchase;
+        additional_text:            switch_su46_add_text;
+        default:                    sset_su46_old_pkp_cargo;
         articulated_part:           switch_su46_articulated;
         visual_effect_and_powered:  switch_su46_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;

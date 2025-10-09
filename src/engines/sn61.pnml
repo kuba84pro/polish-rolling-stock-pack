@@ -10,9 +10,19 @@ spriteset(sset_bh_ryf_green, "gfx/sn61.png")            { tmpl_sprite_train12(4,
 spriteset(sset_bh_ryf_green_open, "gfx/sn61.png")       { tmpl_sprite_train12(4, 160) }
 spriteset(sset_sn61_cut, "gfx/sn61.png")                { tmpl_sprite_train12(4, 200) }
 spriteset(sset_bh_ryf_green_cut, "gfx/sn61.png")        { tmpl_sprite_train12(4, 240) }
+
+spriteset(sset_sn61_183_purchase, "gfx/sn61.png")           { tmpl_sprite_purchase(4, 320) }
+spriteset(sset_sn61_183, "gfx/sn61.png")                    { tmpl_sprite_train12(4, 280) }
+spriteset(sset_sn61_183_open, "gfx/sn61.png")               { tmpl_sprite_train12(4, 340) }
+spriteset(sset_sn61_183_cut, "gfx/sn61.png")                { tmpl_sprite_train12(4, 380) }
+
 spritegroup sgroup_sn61 {
     loaded:     [sset_sn61];
     loading:    [sset_sn61_open];
+}
+spritegroup sgroup_sn61_183 {
+    loaded:     [sset_sn61_183];
+    loading:    [sset_sn61_183_open];
 }
 spritegroup sgroup_bh_ryf_green {
     loaded:     [sset_bh_ryf_green];
@@ -37,6 +47,10 @@ switch(FEAT_TRAINS, SELF, switch_sn61_graphics, (extra_callback_info1&0xFF)==0 &
     1: return sset_sn61_cut;
     return sgroup_sn61;
 }
+switch(FEAT_TRAINS, SELF, switch_sn61_183_graphics, (extra_callback_info1&0xFF)==0 && other_veh_is_hidden(1)) {
+    1: return sset_sn61_183_cut;
+    return sgroup_sn61_183;
+}
 switch(FEAT_TRAINS, SELF, switch_sn61_capacity, cargo_type_in_veh) {
     TOUR: return SITTING_PLACES;
     return SITTING_PLACES+STANDING_PLACES;
@@ -50,6 +64,7 @@ switch (FEAT_TRAINS, SELF, switch_sn61_add_text, IS_HEATING_CLIMATE ) {
 }
 switch(FEAT_TRAINS, SELF, switch_sn61_can_attach, vehicle_type_id) {
     item_sn61:   return CB_RESULT_ATTACH_ALLOW;
+    item_sn61_183:   return CB_RESULT_ATTACH_ALLOW;
     item_bh_ryf: return CB_RESULT_ATTACH_ALLOW;
     item_bh_bon:  return CB_RESULT_ATTACH_ALLOW;
     item_bh_bon_new:  return CB_RESULT_ATTACH_ALLOW;
@@ -58,9 +73,15 @@ switch(FEAT_TRAINS, SELF, switch_sn61_can_attach, vehicle_type_id) {
     item_bdnu:  return CB_RESULT_ATTACH_ALLOW;
     item_abdnu:  return CB_RESULT_ATTACH_ALLOW;
     item_adnu:  return CB_RESULT_ATTACH_ALLOW;
+    item_ahxz:  return CB_RESULT_ATTACH_ALLOW;
+    item_abhxz:  return CB_RESULT_ATTACH_ALLOW;
+    item_bhxz:  return CB_RESULT_ATTACH_ALLOW;
+    item_bwxz:  return CB_RESULT_ATTACH_ALLOW;
+    item_abwxz:  return CB_RESULT_ATTACH_ALLOW;
+    item_awxz:  return CB_RESULT_ATTACH_ALLOW;
     return string(STR_ATTACH_DISALLOW, string(STR_SN61_NAME));
 }
-switch(FEAT_TRAINS, SELF, switch_sn61_start_stop, (count_veh_id(item_sn61) > 3 || count_veh_id(item_bh_ryf) > 3 || count_veh_id(item_bh_bon) > 3 || count_veh_id(item_bh_bon_new) > 3 || count_veh_id(item_120a_pr) > 3 || count_veh_id(item_120a_malopolskie) > 3 || count_veh_id(item_bdnu) > 3 || count_veh_id(item_abdnu) > 3 || count_veh_id(item_adnu) > 3)) {
+switch(FEAT_TRAINS, SELF, switch_sn61_start_stop, (count_veh_id(item_sn61) > 3 || count_veh_id(item_sn61_183) > 3 || count_veh_id(item_bh_ryf) > 3 || count_veh_id(item_bh_bon) > 3 || count_veh_id(item_bh_bon_new) > 3 || count_veh_id(item_120a_pr) > 3 || count_veh_id(item_120a_malopolskie) > 3 || count_veh_id(item_bdnu) > 3 || count_veh_id(item_abdnu) > 3 || count_veh_id(item_adnu) > 3)) {
     1: return string(STR_TRAIN_TOO_LONG, string(STR_SN61_NAME));
     return CB_RESULT_NO_TEXT;
 }
@@ -129,6 +150,76 @@ if(param_keep_old_vehs) {
         purchase:                   sset_sn61_purchase;
         additional_text:            switch_sn61_add_text;
         default:                    switch_sn61_graphics;
+        articulated_part:           switch_sn61_articulated;
+        visual_effect_and_powered:  switch_sn61_visual_effect;
+        purchase_cargo_capacity:    return CB_FAILED;
+        cargo_capacity:             switch_sn61_capacity;
+        colour_mapping:             switch_lights_engine_2;
+        can_attach_wagon:           switch_sn61_can_attach;
+        start_stop:                 switch_sn61_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(sn61)
+        ENGINE_POWER_CALLBACKS(sn61)
+    }
+
+    livery_override (item_bh_ryf) {
+        default:                    switch_bh_ryf_graphics;
+        articulated_part:           switch_bh_ryf_articulated;
+        cargo_capacity:             switch_bh_ryf_capacity;
+        colour_mapping:             switch_lights_wagon_olive_2;
+    }
+}
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_sn61_183, 441) {
+    property {
+        /* common properties */
+        name:                           string(STR_SN61_183_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2002, 1, 1);
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  11;
+        cost_factor:                    PURCHASE_COST_SN61;
+        running_cost_factor:            RUNNING_COST_SN61;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          108 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          368 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        cargo_capacity:                 SITTING_PLACES+STANDING_PLACES;
+        weight:                         58 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.088;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     51;
+        retire_early:                   12;
+    }
+}
+
+    graphics {
+        purchase:                   sset_sn61_183_purchase;
+        additional_text:            switch_sn61_add_text;
+        default:                    switch_sn61_183_graphics;
         articulated_part:           switch_sn61_articulated;
         visual_effect_and_powered:  switch_sn61_visual_effect;
         purchase_cargo_capacity:    return CB_FAILED;

@@ -15,7 +15,7 @@ cargotable {
     STAL, ALUM, NH3_, CBLK, STCB, CSTI, SOAP, CTAR, FECR, LYE_, O2__, COAT, STST, STSE, STSH, STWR,
     TYRE, VENG
 }
-    
+
 #define CARGO_LOCOMOTIVES_DEFINITION \
         refittable_cargo_classes:       bitmask(CC_PASSENGERS); \
         non_refittable_cargo_classes:   bitmask(); \

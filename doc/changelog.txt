@@ -1,5 +1,24 @@
-Polish Rolling Stock Pack - Change log
+Polish Rolling Stock Pack - Changelog
 ================================
+0.15.9
+Added:
+- 120a Polregio
+- SM03
+- ET22-5331, ET22 Green with Yellow Front
+- SN61-183
+- ET42-001
+- ET40 Yellow Front, Cargounit
+- SU46 Old PKP Cargo
+- EN71-043
+- ST43 Green, 060DA Lotos
+
+Changed:
+- SN61/SN80 now can couple more passenger coaches
+
+Fixed:
+- Some dragons were not able to drive on non-catenary tracks, some were able to drive without the last mile engine now Fixed
+- EN71akm/ aks max speed
+
 0.15.8
 Dragon 2 Update
 Variant group has been completely done from scratch. Dragons are now separeted based on their type.

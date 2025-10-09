@@ -50,6 +50,12 @@ switch(FEAT_TRAINS, SELF, switch_sn80_can_attach, vehicle_type_id) {
     item_bdnu:  return CB_RESULT_ATTACH_ALLOW;
     item_abdnu:  return CB_RESULT_ATTACH_ALLOW;
     item_adnu:  return CB_RESULT_ATTACH_ALLOW;
+    item_ahxz:  return CB_RESULT_ATTACH_ALLOW;
+    item_abhxz:  return CB_RESULT_ATTACH_ALLOW;
+    item_bhxz:  return CB_RESULT_ATTACH_ALLOW;
+    item_bwxz:  return CB_RESULT_ATTACH_ALLOW;
+    item_abwxz:  return CB_RESULT_ATTACH_ALLOW;
+    item_awxz:  return CB_RESULT_ATTACH_ALLOW;
     return string(STR_ATTACH_DISALLOW, string(STR_SN80_NAME));
 }
 switch(FEAT_TRAINS, SELF, switch_sn80_start_stop, (count_veh_id(item_sn80) > 3 || count_veh_id(item_bh_ryf) > 3 || count_veh_id(item_bh_bon) > 3 || count_veh_id(item_bh_bon_new) > 3 || count_veh_id(item_120a_pr) > 3 || count_veh_id(item_120a_malopolskie) > 3 || count_veh_id(item_bdnu) > 3 || count_veh_id(item_abdnu) > 3 || count_veh_id(item_adnu) > 3)) {

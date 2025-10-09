@@ -13,13 +13,19 @@ spriteset(sset_bh_bon_old_cut, "gfx/120a.png")          { tmpl_sprite_train12(4,
 spriteset(sset_bh_bon_new_cut, "gfx/120a.png")          { tmpl_sprite_train12(4, 260) }
 
 spriteset(sset_120a_pr_purchase, "gfx/120a.png")            { tmpl_sprite_purchase(4, 360) }
-spriteset(sset_120a_malopolskie_purchase, "gfx/120a.png")     { tmpl_sprite_purchase(4, 420) }
 spriteset(sset_120a_pr, "gfx/120a.png")                 { tmpl_sprite_train12(4, 320) }
-spriteset(sset_120a_malopolskie, "gfx/120a.png")              { tmpl_sprite_train12(4, 380) }
 spriteset(sset_120a_pr_open, "gfx/120a.png")                { tmpl_sprite_train12(4, 440) }
-spriteset(sset_120a_malopolskie_open, "gfx/120a.png")         { tmpl_sprite_train12(4, 480) }
 spriteset(sset_120a_pr_cut, "gfx/120a.png")                 { tmpl_sprite_train12(4, 520) }
+
+spriteset(sset_120a_malopolskie_purchase, "gfx/120a.png")     { tmpl_sprite_purchase(4, 420) }
+spriteset(sset_120a_malopolskie, "gfx/120a.png")              { tmpl_sprite_train12(4, 380) }
+spriteset(sset_120a_malopolskie_open, "gfx/120a.png")         { tmpl_sprite_train12(4, 480) }
 spriteset(sset_120a_malopolskie_cut, "gfx/120a.png")          { tmpl_sprite_train12(4, 560) }
+
+spriteset(sset_120a_polregio_purchase, "gfx/120a.png")            { tmpl_sprite_purchase(4, 660) }
+spriteset(sset_120a_polregio, "gfx/120a.png")                 { tmpl_sprite_train12(4, 620) }
+spriteset(sset_120a_polregio_open, "gfx/120a.png")            { tmpl_sprite_train12(4, 680) }
+spriteset(sset_120a_polregio_cut, "gfx/120a.png")             { tmpl_sprite_train12(4, 720) }
 
 spritegroup sgroup_bh_bon_old {
     loaded:     [sset_bh_bon_old];
@@ -36,6 +42,10 @@ spritegroup sgroup_120a_pr {
 spritegroup sgroup_120a_malopolskie {
     loaded:     [sset_120a_malopolskie];
     loading:    [sset_120a_malopolskie_open];
+}
+spritegroup sgroup_120a_polregio {
+    loaded:     [sset_120a_polregio];
+    loading:    [sset_120a_polregio_open];
 }
 
 #ifdef SITTING_PLACES
@@ -68,6 +78,10 @@ switch(FEAT_TRAINS, SELF, switch_120a_malopolskie_graphics, (extra_callback_info
     1: return sset_120a_malopolskie_cut;
     return sgroup_120a_malopolskie;
 }
+switch(FEAT_TRAINS, SELF, switch_120a_polregio_graphics, (extra_callback_info1&0xFF)==0 && other_veh_is_hidden(1)) {
+    1: return sset_120a_polregio_cut;
+    return sgroup_120a_polregio;
+}
 switch(FEAT_TRAINS, SELF, switch_bh_bon_capacity, cargo_type_in_veh) {
     TOUR: return SITTING_PLACES;
     return SITTING_PLACES+STANDING_PLACES;
@@ -82,6 +96,7 @@ switch(FEAT_TRAINS, SELF, switch_bh_bon_can_attach, vehicle_type_id) {
     item_bh_bon_new:  return CB_RESULT_ATTACH_ALLOW;
     item_120a_pr:  return CB_RESULT_ATTACH_ALLOW;
     item_120a_malopolskie:  return CB_RESULT_ATTACH_ALLOW;
+    item_120a_polregio:  return CB_RESULT_ATTACH_ALLOW;
     return switch_normal_can_attach;
 }
 
@@ -246,6 +261,48 @@ item(FEAT_TRAINS, item_120a_malopolskie, 10038) {
         purchase:                   sset_120a_malopolskie_purchase;
         additional_text:            switch_bh_bon_add_text;
         default:                    switch_120a_malopolskie_graphics;
+        articulated_part:           switch_bh_bon_articulated;
+        purchase_cargo_capacity:    return SITTING_PLACES+STANDING_PLACES;
+        cargo_capacity:             switch_bh_bon_capacity;
+        colour_mapping:             switch_lights_wagon_green_2;
+        can_attach_wagon:           switch_bh_bon_can_attach;
+    }
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_120a_polregio, 10039) {
+    property {
+        /* common properties */
+        name:                           string(STR_120A_POLREGIO_NAME);
+        variant_group:                  10035;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2017, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  11; // 15;
+        cost_factor:                    PURCHASE_COST_BH_BON;
+        running_cost_factor:            RUNNING_COST_PASS_SUBURB;
+        cargo_age_period:               int(185*0.84);  // faster ageing
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          120 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 SITTING_PLACES+STANDING_PLACES;
+        weight:                         39 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   sset_120a_polregio_purchase;
+        additional_text:            switch_bh_bon_add_text;
+        default:                    switch_120a_polregio_graphics;
         articulated_part:           switch_bh_bon_articulated;
         purchase_cargo_capacity:    return SITTING_PLACES+STANDING_PLACES;
         cargo_capacity:             switch_bh_bon_capacity;

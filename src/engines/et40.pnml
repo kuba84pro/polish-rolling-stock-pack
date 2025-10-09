@@ -6,9 +6,18 @@
 spriteset(sset_et40_purchase, "gfx/et40.png")           { tmpl_sprite_purchase(4, 100) }
 spriteset(sset_et40_head, "gfx/et40.png")               { tmpl_sprite_train10(4, 20) }
 spriteset(sset_et40_tail, "gfx/et40.png")               { tmpl_sprite_train10_offset(4, 60, 1) }
+
 spriteset(sset_et40_purchase_lotos, "gfx/et40.png")           { tmpl_sprite_purchase(4, 200) }
 spriteset(sset_et40_lotos_head, "gfx/et40.png")               { tmpl_sprite_train10(4, 120) }
 spriteset(sset_et40_lotos_tail, "gfx/et40.png")               { tmpl_sprite_train10_offset(4, 160, 1) }
+
+spriteset(sset_et40_purchase_yellow_front, "gfx/et40.png")           { tmpl_sprite_purchase(4, 300) }
+spriteset(sset_et40_yellow_front_head, "gfx/et40.png")               { tmpl_sprite_train10(4, 220) }
+spriteset(sset_et40_yellow_front_tail, "gfx/et40.png")               { tmpl_sprite_train10_offset(4, 260, 1) }
+
+spriteset(sset_et40_purchase_cu, "gfx/et40.png")           { tmpl_sprite_purchase(4, 300) }
+spriteset(sset_et40_cu_head, "gfx/et40.png")               { tmpl_sprite_train10(4, 320) }
+spriteset(sset_et40_cu_tail, "gfx/et40.png")               { tmpl_sprite_train10_offset(4, 360, 1) }
 
 /* ET40 switches */
 switch(FEAT_TRAINS, SELF, switch_et40_articulated, extra_callback_info1) {
@@ -160,6 +169,150 @@ if(param_keep_old_vehs) {
         additional_text:            switch_et40_add_text;
         default:                    switch_et40_lotos_graphics;
         articulated_part:           switch_et40_lotos_articulated;
+        length:                     switch_et40_length;
+        visual_effect_and_powered:  switch_et40_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(et40)
+        ENGINE_POWER_CALLBACKS(et40)
+    }
+}
+/* ET40 yellow front switches */
+switch(FEAT_TRAINS, SELF, switch_et40_yellow_front_articulated, extra_callback_info1) {
+    1..2: return item_et40_yellow_front;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_et40_yellow_front_graphics, position_in_vehid_chain % 3) {
+    0: return sset_et40_yellow_front_head;
+    2: return sset_et40_yellow_front_tail;
+    return sset_dummy;
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_et40_yellow_front, 757) {
+    property {
+        /* common properties */
+        name:                           string(STR_ET40_YELLOW_FRONT_NAME);
+        variant_group:                  755;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1987, 1, 1);
+        vehicle_life:                   30;
+        reliability_decay:              30;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5;
+        cost_factor:                    PURCHASE_COST_ET40;
+        running_cost_factor:            RUNNING_COST_ET40;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          4080 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_PROPERTY
+        weight:                         164 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.305;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     40;
+        retire_early:                   2;
+    }
+}
+
+    graphics {
+        purchase:                   sset_et40_purchase_yellow_front;
+        additional_text:            switch_et40_add_text;
+        default:                    switch_et40_yellow_front_graphics;
+        articulated_part:           switch_et40_yellow_front_articulated;
+        length:                     switch_et40_length;
+        visual_effect_and_powered:  switch_et40_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(et40)
+        ENGINE_POWER_CALLBACKS(et40)
+    }
+}
+/* ET40 Cargounit switches */
+switch(FEAT_TRAINS, SELF, switch_et40_cu_articulated, extra_callback_info1) {
+    1..2: return item_et40_cu;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_et40_cu_graphics, position_in_vehid_chain % 3) {
+    0: return sset_et40_cu_head;
+    2: return sset_et40_cu_tail;
+    return sset_dummy;
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_et40_cu, 757) {
+    property {
+        /* common properties */
+        name:                           string(STR_ET40_CU_NAME);
+        variant_group:                  755;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2021, 1, 1);
+        vehicle_life:                   30;
+        reliability_decay:              30;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5;
+        cost_factor:                    PURCHASE_COST_ET40;
+        running_cost_factor:            RUNNING_COST_ET40;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          4080 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_PROPERTY
+        weight:                         164 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.305;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     40;
+        retire_early:                   2;
+    }
+}
+
+    graphics {
+        purchase:                   sset_et40_purchase_cu;
+        additional_text:            switch_et40_add_text;
+        default:                    switch_et40_cu_graphics;
+        articulated_part:           switch_et40_cu_articulated;
         length:                     switch_et40_length;
         visual_effect_and_powered:  switch_et40_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;

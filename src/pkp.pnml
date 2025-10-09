@@ -202,6 +202,7 @@ basecost {
 #include "engines/ty51.pnml"
 
 /* Diesel engines */
+#include "engines/sm03.pnml"
 #include "engines/sm30.pnml"
 #include "engines/sm41.pnml"
 #include "engines/sm42.pnml"
@@ -380,6 +381,8 @@ sort(FEAT_TRAINS,
    [ 100, 101, 102, 103, 104, 105, 106, 107, 108,
     109, 110, 111, 112, 113, 117, 114, 116, 115,
     // diesel engines
+    //SM03 Variant_group
+    202, 203,
     // SM30 Variant_group
     200, 201,
     // SM41 Variant_group
@@ -397,19 +400,19 @@ sort(FEAT_TRAINS,
     // SM31 Variant_group
     325, 326,
     // ST43 Variant_group
-    330, 331,
+    330, 331, 332, 333,
     // ST44 Variant_group
     350, 351, 352, 353, 354, 355, 356, 357, 358, 359,
     // SP45, SU45, ST45, 301Db Variant_group
     400, 401, 402, 403, 404, 405,
     // SU46, ST46 Variant_group
-    420, 421, 422, 423,
+    420, 421, 422, 423, 424,
     // SP47
     425, 426,
     // SP32 Variant_group
     430, 431,
     // SN61 Variant_group
-    440,
+    440, 441,
     // SN80 Variant_group
     444,
     // SN81 Variant_group
@@ -444,13 +447,13 @@ sort(FEAT_TRAINS,
     // EP08 Variant_group
     685, 686, 687, 688, 689,
     // ET22 Variant_group
-    700, 701, 702, 703, 704, 705, 706, 707, 708,
+    700, 701, 702, 710, 703, 704, 705, 706, 707, 708, 709,
     // ET40 Variant_group
-    755, 756,
+    755, 757, 756, 758,
     // ET41 Variant_group
     760, 763, 764, 761, 765, 762,
     // ET42 Variant_group
-    770, 771, 772,
+    770, 771, 772, 773,
     // EM10 Variant_group
     427, 428,
     // EP09 Variant_group
@@ -490,7 +493,7 @@ sort(FEAT_TRAINS,
     // EN57AL, EN57AKM, EN57AKS, EN57AP, EN57AKW, EN57SPOT, EN71KM, EN71AKS Variant_group
     2000, 2001, 2002, 2003, 2004, 2007, 2008, 2009, 2010, 2011, 2005, 2006, 
     // EN71 Variant_group
-    2100, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108,
+    2100, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108, 2109,
     // ED72 Variant_group
     2200, 2201, 2202,
     // ED74 Variant_group
@@ -540,7 +543,7 @@ sort(FEAT_TRAINS,
     // bh "ryflak" Variant_group
     441,
     // bh bonanza, 120a
-    10035, 10036, 10037, 10038,
+    10035, 10036, 10037, 10038, 10039,
     // bipa
     10040, 10041, 10042, 10043, 10044, 10045,
     // bochun

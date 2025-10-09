@@ -30,6 +30,12 @@ spriteset(sset_201eo_cu, "gfx/et22.png")  { tmpl_sprite_train10(4, 440) }
 // 201eo Rail Polska
 spriteset(sset_201eo_rail_polska_purchase, "gfx/et22.png")   { tmpl_sprite_purchase(4, 540) }
 spriteset(sset_201eo_rail_polska, "gfx/et22.png")  { tmpl_sprite_train10(4, 500) }
+// ET22-5331
+spriteset(sset_et22_5331_purchase, "gfx/et22.png")   { tmpl_sprite_purchase(4, 600) }
+spriteset(sset_et22_5331, "gfx/et22.png")  { tmpl_sprite_train10(4, 560) }
+// ET22 Historic Green with Yellow Front
+spriteset(sset_et22_green_yellow_front_purchase, "gfx/et22.png")   { tmpl_sprite_purchase(4, 660) }
+spriteset(sset_et22_green_yellow_front, "gfx/et22.png")  { tmpl_sprite_train10(4, 620) }
 
 /* ET22 switches */
 switch(FEAT_TRAINS, SELF, switch_et22_articulated, extra_callback_info1) {
@@ -505,6 +511,110 @@ item(FEAT_TRAINS, item_201eo_rail_polska, 708) {
         purchase:                   sset_201eo_rail_polska_purchase;
         additional_text:            switch_et22_add_text;
         default:                    sset_201eo_rail_polska;
+        articulated_part:           switch_et22_articulated;
+        visual_effect_and_powered:  switch_et22_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(et22)
+        ENGINE_POWER_CALLBACKS(et22)
+    }
+}
+// ET22-5331
+/* Define the actual train */
+item(FEAT_TRAINS, item_et22_5331, 709) {
+    property {
+		/* common properties */
+        name:                           string(STR_ET22_5331_NAME);
+        variant_group:                  700;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2020, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_ET22;
+        running_cost_factor:            RUNNING_COST_ET22;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          125 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          3000 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         120 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.3516819571865443;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_et22_5331_purchase;
+        additional_text:            switch_et22_add_text;
+        default:                    sset_et22_5331;
+        articulated_part:           switch_et22_articulated;
+        visual_effect_and_powered:  switch_et22_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(et22)
+        ENGINE_POWER_CALLBACKS(et22)
+    }
+}
+// ET22 Green with Yellow Front
+/* Define the actual train */
+item(FEAT_TRAINS, item_et22_green_yellow_front, 710) {
+    property {
+		/* common properties */
+        name:                           string(STR_ET22_GREEN_YELLOW_FRONT_NAME);
+        variant_group:                  700;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1989, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_ET22;
+        running_cost_factor:            RUNNING_COST_ET22;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          125 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          3000 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         120 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.3516819571865443;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_et22_green_yellow_front_purchase;
+        additional_text:            switch_et22_add_text;
+        default:                    sset_et22_green_yellow_front;
         articulated_part:           switch_et22_articulated;
         visual_effect_and_powered:  switch_et22_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;

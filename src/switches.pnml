@@ -2,7 +2,7 @@
 // Don't include any headers inside this file!
 // (c) Tadeusz Domagalski, licence: GPLv2
 
-/* Definitions for universal switches */
+// Definitions for universal switches
 #define BRAKE_WAGON_SMALL_45    4
 #define BRAKE_WAGON_SMALL_65    10
 #define BRAKE_WAGON_SMALL_80    12
@@ -17,11 +17,11 @@
 #define BRAKE_FORCE_ENGINE_BIG      40
 
 #define BRAKE_FORCE \
-(count_veh_id(item_gmy) + count_veh_id(item_fg) + count_veh_id(item_fy) + \
- count_veh_id(item_bci) + count_veh_id(item_wddoh) + count_veh_id(item_wddo_2w) + \
- count_veh_id(item_es) + count_veh_id(item_ppu) + count_veh_id(item_kdth) + \
- count_veh_id(item_kddet) + count_veh_id(item_ggs) + count_veh_id(item_gbs) + \
- count_veh_id(item_hbbins) + count_veh_id(item_slr) + count_veh_id(item_slms) + \
+(count_veh_id(item_gmy) + count_veh_id(item_fg) + count_veh_id(item_fy) +
+ count_veh_id(item_bci) + count_veh_id(item_wddoh) + count_veh_id(item_wddo_2w) +
+ count_veh_id(item_es) + count_veh_id(item_ppu) + count_veh_id(item_kdth) +
+ count_veh_id(item_kddet) + count_veh_id(item_ggs) + count_veh_id(item_gbs) +
+ count_veh_id(item_hbbins) + count_veh_id(item_slr) + count_veh_id(item_slms) +
  count_veh_id(item_ibhss) + count_veh_id(item_pdkh31) + count_veh_id(item_kbkks) + \
  count_veh_id(item_kgns) + count_veh_id(item_res) + count_veh_id(item_rh) + \
  count_veh_id(item_rbh) + count_veh_id(item_sn) + count_veh_id(item_hes) + \

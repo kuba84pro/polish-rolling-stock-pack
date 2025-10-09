@@ -114,7 +114,7 @@ item(FEAT_TRAINS, item_en71akm, 2005) {
         running_cost_factor:            RUNNING_COST_EN71AKM;
         /* train properties */
         sprite_id:                      SPRITE_ID_NEW_TRAIN;
-        speed:                          120 km/h;
+        speed:                          110 km/h;
         misc_flags:                     bitmask();
         refit_cost:                     0;
         track_type:                     ELRL;
