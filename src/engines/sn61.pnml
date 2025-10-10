@@ -170,7 +170,7 @@ if(param_keep_old_vehs) {
 }
 
 /* Define the actual train */
-item(FEAT_TRAINS, item_sn61_183, 441) {
+item(FEAT_TRAINS, item_sn61_183, 442) {
     property {
         /* common properties */
         name:                           string(STR_SN61_183_NAME);

@@ -15,7 +15,7 @@ spriteset(sset_et40_purchase_yellow_front, "gfx/et40.png")           { tmpl_spri
 spriteset(sset_et40_yellow_front_head, "gfx/et40.png")               { tmpl_sprite_train10(4, 220) }
 spriteset(sset_et40_yellow_front_tail, "gfx/et40.png")               { tmpl_sprite_train10_offset(4, 260, 1) }
 
-spriteset(sset_et40_purchase_cu, "gfx/et40.png")           { tmpl_sprite_purchase(4, 300) }
+spriteset(sset_et40_purchase_cu, "gfx/et40.png")           { tmpl_sprite_purchase(4, 400) }
 spriteset(sset_et40_cu_head, "gfx/et40.png")               { tmpl_sprite_train10(4, 320) }
 spriteset(sset_et40_cu_tail, "gfx/et40.png")               { tmpl_sprite_train10_offset(4, 360, 1) }
 
