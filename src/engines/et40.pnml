@@ -261,7 +261,7 @@ switch(FEAT_TRAINS, SELF, switch_et40_cu_graphics, position_in_vehid_chain % 3) 
     return sset_dummy;
 }
 /* Define the actual train */
-item(FEAT_TRAINS, item_et40_cu, 757) {
+item(FEAT_TRAINS, item_et40_cu, 758) {
     property {
         /* common properties */
         name:                           string(STR_ET40_CU_NAME);

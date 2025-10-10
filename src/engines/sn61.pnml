@@ -174,6 +174,7 @@ item(FEAT_TRAINS, item_sn61_183, 441) {
     property {
         /* common properties */
         name:                           string(STR_SN61_183_NAME);
+        variant_group:                  440;
         climates_available:             PKP_CLIMATES; 
         introduction_date:              date(2002, 1, 1);
         vehicle_life:                   30;
