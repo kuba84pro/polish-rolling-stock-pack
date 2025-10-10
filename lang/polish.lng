@@ -154,7 +154,7 @@ STR_6DL_TEXT		              :Type: {ORANGE}SU4210 (6Dl)
 STR_6DG_NAME                      :{YELLOW}6DG {SILVER}PKP Cargo
 STR_ST43_NAME                        :{YELLOW}ST43
 STR_ST43_YELLOW_CZOLO_NAME           :{YELLOW}ST43 {SILVER}Historyczne Zolte Czolo
-STR_ST43_GREEN_NAME             :{YELLOW}ST43 {SILVER}Historical Green
+STR_ST43_GREEN_NAME             :{YELLOW}ST43 {SILVER}Historyczne Zielone
 STR_060DA_LOTOS_NAME            :{YELLOW}060DA {SILVER}Lotos
 STR_ST44_NAME                   :{YELLOW}ST44
 STR_ST44_YELLOW_FRONT_NAME      :{YELLOW}ST44 {SILVER}Historyczne Zolte Czolo
@@ -176,7 +176,7 @@ STR_SU46_NAME                        :{YELLOW}SU46
 STR_SU46_YELLOW_CZOLO_NAME           :{YELLOW}SU46 {SILVER}Historyczne Zolte Czolo
 STR_ST46_PKP_CARGO_NAME              :{YELLOW}ST46 {SILVER}PKP Cargo
 STR_SU46_NYSA_NAME              :{YELLOW}SU46 {SILVER}Dep. Nysa
-STR_SU46_OLD_PKP_CARGO_NAME              :{YELLOW}SU46 {SILVER}Old PKP Cargo
+STR_SU46_OLD_PKP_CARGO_NAME              :{YELLOW}SU46 {SILVER}Stare PKP Cargo
 STR_SP47_NAME                        :{YELLOW}SP47 {SILVER}
 STR_SP47_GREEN_NAME                  :{YELLOW}SP47 {SILVER}Zielone
 STR_SP32_NAME                     :{YELLOW}SP32
@@ -238,7 +238,7 @@ STR_ET22_910_NAME              :{DKGREEN}ET22-910 {SILVER}PKP Cargo
 STR_ET22_CTL_OLD_NAME          :{DKGREEN}ET22 {SILVER}CTL Logistics Stare Malowanie
 STR_ET22_TABOR_DEBICA_NAME     :{DKGREEN}ET22-5281 {SILVER}Tabor Debica
 STR_ET22_5331_NAME     :{DKGREEN}ET22-5331 {SILVER}Pol-Trans
-STR_ET22_GREEN_YELLOW_FRONT_NAME     :{DKGREEN}ET22 {SILVER}Historical Green with Yellow Front
+STR_ET22_GREEN_YELLOW_FRONT_NAME     :{DKGREEN}ET22 {SILVER}Historyczne Zielone z Zoltym Czolem
 STR_201EO_CARGOUNIT_NAME       :{DKGREEN}201Eo {SILVER}Cargounit
 STR_201EO_RAIL_POLSKA_NAME     :{DKGREEN}201Eo {SILVER}Rail Polska
 STR_EP08_NAME              :{DKGREEN}EP08
@@ -255,7 +255,7 @@ STR_EP05_TEXT                           :Opis: {ORANGE}Odmiana EU05 przeznaczona
 STR_EP05_WITHOUT_TC_TEXT                :Opis: {ORANGE}Odmiana EU05 przeznaczona do pociągów pośpiesznych{}Ta lokomotywa {YELLOW}nie posiada {ORANGE}gniazd ukrotnienia
 STR_ET40_NAME           :{DKGREEN}ET40
 STR_ET40_LOTOS_NAME         :{DKGREEN}ET40 {SILVER}Lotos
-STR_ET40_YELLOW_FRONT_NAME         :{DKGREEN}ET40 {SILVER}Historical Yellow Front
+STR_ET40_YELLOW_FRONT_NAME         :{DKGREEN}ET40 {SILVER}Historyczne Zolte Czolo
 STR_ET40_CU_NAME         :{DKGREEN}ET40 {SILVER}Cargounit
 STR_ET41_NAME                 :{DKGREEN}ET41
 STR_ET41_YELLOW_FRONT_NAME    :{DKGREEN}ET41 {SILVER}Historyczne Zolte Czolo
