@@ -62,7 +62,7 @@ item(FEAT_TRAINS, item_gags, 20501) {
 
     graphics {
         purchase:                   sset_gags_purchase;
-        additional_text:            return string(STR_PURCHASE_DESCR_2L, string(STR_BRAKE_AIR), string(STR_CAPACITY_NON_FRIABLE));
+        additional_text:            return string(STR_PURCHASE_DESCR_2L, string(STR_BRAKE_AIR));
         default:                    sgroup_gags;
         articulated_part:           switch_gags_articulated;
         cargo_capacity:             switch_gags_capacity;

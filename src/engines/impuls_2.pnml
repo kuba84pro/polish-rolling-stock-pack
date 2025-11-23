@@ -1,0 +1,127 @@
+// This is part of PRSP NewGRF.
+// (c) kuba84pro, GPL 2.0
+
+/* 31weba sprites */
+// SKM W //
+spriteset(sset_31weba_skm_purchase, "gfx/31weba-skm.png")   { tmpl_sprite_purchase(4, 380) }
+spriteset(sset_31weba_skm_advert, "gfx/31weba-skm.png")   { tmpl_sprite_advertisement200(4, 400) }
+spriteset(sset_31weba_skm_head, "gfx/31weba-skm.png")       { tmpl_sprite_train12(4, 20) }
+spriteset(sset_31weba_skm_mid, "gfx/31weba-skm.png")        { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_31weba_skm_mid2, "gfx/31weba-skm.png")       { tmpl_sprite_train10_offset(4, 100, 1) }
+spriteset(sset_31weba_skm_tail, "gfx/31weba-skm.png")       { tmpl_sprite_train12_offset(4, 140, 1) }
+spriteset(sset_31weba_skm_head_open, "gfx/31weba-skm.png")  { tmpl_sprite_train12(4, 200) }
+spriteset(sset_31weba_skm_mid_open, "gfx/31weba-skm.png")   { tmpl_sprite_train10_offset(4, 240, 1) }
+spriteset(sset_31weba_skm_mid2_open, "gfx/31weba-skm.png")  { tmpl_sprite_train10_offset(4, 280, 1) }
+spriteset(sset_31weba_skm_tail_open, "gfx/31weba-skm.png")  { tmpl_sprite_train12_offset(4, 320, 1) }
+// SKM W //
+spritegroup sgroup_31weba_skm_head {
+    loaded:     [sset_31weba_skm_head];
+    loading:    [sset_31weba_skm_head_open];
+}
+spritegroup sgroup_31weba_skm_mid {
+    loaded:     [sset_31weba_skm_mid];
+    loading:    [sset_31weba_skm_mid_open];
+}
+spritegroup sgroup_31weba_skm_mid2 {
+    loaded:     [sset_31weba_skm_mid2];
+    loading:    [sset_31weba_skm_mid2_open];
+}
+spritegroup sgroup_31weba_skm_tail {
+    loaded:     [sset_31weba_skm_tail];
+    loading:    [sset_31weba_skm_tail_open];
+}
+/* 31WE switches */
+switch(FEAT_TRAINS, SELF, switch_31weba_skm_articulated, extra_callback_info1) {
+    1..6: return item_31weba_skm_w;     // including dummy parts
+    7: return item_dummy_2;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_31weba_skm_length, position_in_vehid_chain % 7) {
+    1: return 4;    // dummy part
+    3: return 1;    // dummy part
+    5: return 1;    // dummy part
+    return 8;
+}
+switch(FEAT_TRAINS, SELF, switch_31weba_skm_purchase, extra_callback_info1 & 0xFF) {
+    0x21: return sset_31weba_skm_advert;
+    return sset_31weba_skm_purchase;
+}
+switch(FEAT_TRAINS, SELF, switch_31weba_skm_graphics, position_in_vehid_chain % 7) {
+    0: return sgroup_31weba_skm_head;
+    2: return sgroup_31weba_skm_mid;
+    4: return sgroup_31weba_skm_mid2;
+    6: return sgroup_31weba_skm_tail;
+    return sset_dummy;      // dummy parts
+}
+switch(FEAT_TRAINS, SELF, switch_31weba_capacity, position_in_vehid_chain % 7) {
+    0: return 170;
+    2: return 170;
+    4: return 170;
+    6: return 170;
+    return 1;   // dummy parts
+}
+switch(FEAT_TRAINS, SELF, switch_31weba_visual_effect_local, position_in_vehid_chain % 7) {
+    2: return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 3, DISABLE_WAGON_POWER);
+    4: return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 3, DISABLE_WAGON_POWER);
+    return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+}
+switch (FEAT_TRAINS, SELF, switch_31weba_start_stop, num_vehs_in_consist / 7) {
+    1..2: return CB_RESULT_NO_TEXT;
+    return string(STR_TRAIN_TOO_LONG, string(STR_31WEBA_SKM_W_NAME));
+}
+ENGINE_RUNNING_COST_SWITCH(31weba, 31WEBA)
+DIESEL_ELECTRIC_ENGINE_POWER_SWITCH(31weba)
+ENGINE_VISUAL_EFFECT_SWITCH(31weba)
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_31weba_skm_w, 2565) {
+    property {
+        /* common properties */
+        name:                           string(STR_31WEBA_SKM_W_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2021, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  15;     // per part
+        cost_factor:                    PURCHASE_COST_31WEBA;
+        running_cost_factor:            RUNNING_COST_31WEBA;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          2400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 1;
+        weight:                         144 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.1394;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   switch_31weba_skm_purchase;
+        default:                    switch_31weba_skm_graphics;
+        articulated_part:           switch_31weba_skm_articulated;
+        additional_text:            switch_impuls1_4part_add_text;
+        length:                     switch_31weba_skm_length;
+        purchase_cargo_capacity:    return 680/7;
+        cargo_capacity:             switch_31weba_capacity;
+        visual_effect_and_powered:  switch_31weba_visual_effect;
+        can_attach_wagon:           switch_impuls1_can_attach;
+        start_stop:                 switch_31weba_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(31weba)
+        ENGINE_POWER_CALLBACKS(31weba)
+    }
+}

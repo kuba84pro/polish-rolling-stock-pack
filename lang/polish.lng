@@ -392,24 +392,21 @@ STR_ED74_TEXT           :Opis: {YELLOW}4{ORANGE}-członowy Elektryczny Zespół 
 STR_EN76_NAME           :{DKGREEN}EN76 {SILVER}ELF
 STR_ED250_NAME          :{DKGREEN}ED250 {SILVER}Pendolino
 STR_ED250_TEXT          :Opis: {YELLOW}7{ORANGE}-członowy Elektryczny Zespół Trakcyjny z {YELLOW}45{ORANGE} miejscami siedzącymi {RED}1{ORANGE} klasy, {YELLOW}357{ORANGE} miejscami siedzącymi {RED}2{ORANGE} klasy i {YELLOW}przedziałem barowym{ORANGE}
-STR_36WEA_NAME          :{DKGREEN}36Wea {SILVER}Impuls
-STR_31WE_NAME         	:{DKGREEN}31We {SILVER}Impuls
-STR_45WE_NAME          	:{DKGREEN}45We {SILVER}Impuls
-STR_35WE_SKMW_NAME      :{DKGREEN}35We {SILVER}SKM Warszawa
-STR_35WE_KS_NAME      :{DKGREEN}35We {SILVER}Koleje Slaskie
-STR_36WEA_OP_NAME       :{DKGREEN}36Wea {SILVER}Opolskie
-STR_36WEA_PO_NAME       :{DKGREEN}36Wea {SILVER}Podkarpackie
-STR_36WEA_KD_NAME       :{DKGREEN}36Wea {SILVER}Koleje Dolnoslaskie
-STR_36WEA_KD_KOLEJ_NAME :{DKGREEN}36Wea {SILVER}Koleje Dolnoslaskie "Kolej na kolej"
-STR_36WEA_SLASKIE_NAME  :{DKGREEN}36Wea {SILVER}Koleje Slaskie
-STR_36WEA_KM_NAME       :{DKGREEN}36Wea {SILVER}Koleje Malopolskie
-STR_36WEA_SK_NAME       :{DKGREEN}36Wea {SILVER}Swietokrzyskie
-STR_31WE_KD_NAME        :{DKGREEN}31We {SILVER}Koleje Dolnoslaskie
+STR_35WE_SKMW_NAME      :{DKGREEN}35WE {SILVER}SKM Warszawa
+STR_35WE_KS_NAME      :{DKGREEN}35WE {SILVER}Koleje Slaskie
+STR_36WEA_OP_NAME       :{DKGREEN}36WEa {SILVER}Opolskie
+STR_36WEA_PO_NAME       :{DKGREEN}36WEa {SILVER}Podkarpackie
+STR_36WEA_KD_NAME       :{DKGREEN}36WEa {SILVER}Koleje Dolnoslaskie
+STR_36WEA_KD_KOLEJ_NAME :{DKGREEN}36WEa {SILVER}Koleje Dolnoslaskie "Kolej na kolej"
+STR_36WEA_SLASKIE_NAME  :{DKGREEN}36WEa {SILVER}Koleje Slaskie
+STR_36WEA_KM_NAME       :{DKGREEN}36WEa {SILVER}Koleje Malopolskie
+STR_36WEA_SK_NAME       :{DKGREEN}36WEa {SILVER}Swietokrzyskie
+STR_31WE_KD_NAME        :{DKGREEN}31WE {SILVER}Koleje Dolnoslaskie
 STR_EN78_KML_NAME       :{DKGREEN}EN78 {SILVER}Koleje Malopolskie
 STR_ED78_ZACH_POM_NAME       :{DKGREEN}ED78 {SILVER}Zachodnio-Pomorskie
 STR_ED78_ZACH_POM_DUMA_NAME  :{DKGREEN}ED78-028 {SILVER}Zachodnio-Pomorskie "Duma Pomorza"
-STR_45WE_KD_NAME        :{DKGREEN}45We {SILVER}Koleje Dolnoslaskie
-STR_45WE_KM_NAME        :{DKGREEN}45We {SILVER}Koleje Mazowieckie
+STR_45WE_KD_NAME        :{DKGREEN}45WE {SILVER}Koleje Dolnoslaskie
+STR_45WE_KM_NAME        :{DKGREEN}45WE {SILVER}Koleje Mazowieckie
 STR_EN90_POMORSKIE_NAME :{DKGREEN}EN90 {SILVER}Pomorskie
 STR_EN79_KML_NAME       :{DKGREEN}EN79 {SILVER}Koleje Malopolskie
 STR_ED161_NAME          :{DKGREEN}ED161 {SILVER}Dart

@@ -2,7 +2,7 @@ grf {
     grfid: "MV\01\05";
     name: string(STR_GRF_NAME);
     desc: string(STR_GRF_DESCRIPTION);
-    version: 10;
+    version: 11;
     min_compatible_version: 1;
 
     param {
@@ -258,6 +258,7 @@ basecost {
 #include "engines/e6act.pnml"
 
 /* EZT */
+#include "engines/ew58.pnml"
 #include "engines/en57.pnml"
 #include "engines/en57axx.pnml"
 // #include "engines/en57aks.pnml"
@@ -274,6 +275,7 @@ basecost {
 #include "engines/31we.pnml"
 #include "engines/45we.pnml"
 #include "engines/35we.pnml"
+#include "engines/impuls_2.pnml"
 #include "engines/ed161.pnml"
 #include "engines/ed160.pnml"
 #include "engines/er160.pnml"
@@ -416,7 +418,7 @@ sort(FEAT_TRAINS,
     // SN80 Variant_group
     444,
     // SN81 Variant_group
-    445,
+    445, 446,
     // Sa106 Variant_group
     500,
     // Sa103 Variant_group
@@ -441,7 +443,7 @@ sort(FEAT_TRAINS,
     // EU06 Variant_group
     610, 611, 612,
     // EU07 Variant_group
-    620, 621, 643, 622, 644, 645, 647, 646, 623, 642, 629, 632, 624, 625, 626, 634, 637, 627, 628, 630, 631, 632, 633, 635, 636, 638, 639, 640, 641,
+    620, 621, 643, 622, 644, 645, 647, 646, 623, 642, 629, 632, 624, 625, 626, 634, 637, 627, 628, 630, 631, 632, 633, 635, 636, 638, 639, 640, 641, 648,
     // EU07A Variant_group connected with EU07
     680, 681,
     // EP08 Variant_group
@@ -461,7 +463,7 @@ sort(FEAT_TRAINS,
     // EU44 Variant_group
     850, 851,
     // E186, 386, E483, EU43, EU47, BR285 Variant_group
-    900, 901, 902, 915, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 916, 917, 918, 919, 920,
+    900, 901, 902, 915, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 921, 916, 917, 918, 919, 920,
     // EU46, 193, 6193, X4EC, 383, 1293 Variant_group
     1000, 1001, 1002, 1003, // EU46
     1005, 1030, // 383
@@ -488,6 +490,8 @@ sort(FEAT_TRAINS,
     1230, 1231, 1232, 1233, 1235, 1236, 1234,
     // EU200 Variant_group
     1275, 1276,
+    // EW58 variant_group
+    1700, 1701,
     // EN57 Variant_group
     1800, 1801, 1802, 1803, 1804, 1805, 1806, 1807, 1808,
     // EN57AL, EN57AKM, EN57AKS, EN57AP, EN57AKW, EN57SPOT, EN71KM, EN71AKS Variant_group
@@ -509,6 +513,8 @@ sort(FEAT_TRAINS,
     2550, 2551, 2552, 2553,
     // 35we
     2560, 2561,
+    // 31weba
+    2565,
     // L-4268, LM-4268, ER160, ED160 Variant_group
     2605, 2604, 2601, 2600,
     // ED161 Variant_group
@@ -575,7 +581,7 @@ sort(FEAT_TRAINS,
     // wlabwxz
     11200,
     // wlab, gorlitz77
-    11201, 11202,
+    11201, 11202, 11204,
     // wlab10mnouz 
     11203,
 
@@ -597,9 +603,9 @@ sort(FEAT_TRAINS,
     20150,
     // ppu, eamos
     20200,
-    20201,
+    20201, 20202,
     // fals, falns
-    20250, 20251,
+    20250, 20251, 20254,
     20252, 20253,
     // tadns
     20300,
@@ -612,7 +618,7 @@ sort(FEAT_TRAINS,
     // pdk31, pdkh31, kbkks, kgns, res
     20700, 20701, 20702, 20703, 20704,
     // sgs, sdgmnss, sggrss
-    20800, 20801, 20805, 
+    20800, 20801, 20805, 20806, 20807,
     15000, 15001, 15002, 15003, 15004, 15005, 15006,
     // slr, slms, ibhss
     21000, 21001, 21002,

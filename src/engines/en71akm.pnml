@@ -42,10 +42,6 @@ switch(FEAT_TRAINS, SELF, switch_en71akm_length, position_in_vehid_chain % 7) {
     5: return 4;    // dummy part
     return 8;
 }
-switch(FEAT_TRAINS, SELF, switch_en71akm_purchase, extra_callback_info1 & 0xFF) {
-    0x21: return sset_en71akm_advert;
-    return sset_en71akm_purchase;
-}
 switch(FEAT_TRAINS, SELF, switch_en71akm_graphics, position_in_vehid_chain % 7) {
     0: return sgroup_en71akm_head;
     2: return sgroup_en71akm_mid1;
@@ -53,23 +49,12 @@ switch(FEAT_TRAINS, SELF, switch_en71akm_graphics, position_in_vehid_chain % 7) 
     6: return sgroup_en71akm_tail;
     return sset_dummy;      // dummy parts
 }
-switch(FEAT_TRAINS, SELF, switch_en71akm_tour_capacity, position_in_vehid_chain % 7) {
+switch(FEAT_TRAINS, SELF, switch_en71akm_capacity, position_in_vehid_chain % 7) {
     0: return 56;
-    2: return 76;
-    4: return 76;
+    2: return 75;
+    4: return 75;
     6: return 56;
     return 1;
-}
-switch(FEAT_TRAINS, SELF, switch_en71akm_pass_capacity, position_in_vehid_chain % 7) {
-    0: return 55;   //55;
-    2: return 75; //75;
-    4: return 75; //75;
-    6: return 55;   //55;
-    return 1;
-}
-switch(FEAT_TRAINS, SELF, switch_en71akm_capacity, cargo_type_in_veh) {
-    TOUR: return switch_en71akm_tour_capacity;
-    return switch_en71akm_pass_capacity;
 }
 switch(FEAT_TRAINS, SELF, switch_en71akm_visual_effect_local, position_in_vehid_chain % 7) {
     2: return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 3, DISABLE_WAGON_POWER);
@@ -88,15 +73,6 @@ ENGINE_RUNNING_COST_SWITCH(en71akm, EN71AKM)
 DIESEL_ELECTRIC_ENGINE_POWER_SWITCH(en71akm)
 ENGINE_VISUAL_EFFECT_SWITCH(en71akm)
 
-#ifdef SITTING_PLACES
-    #undef SITTING_PLACES
-#endif
-#ifdef STANDING_PLACES
-    #undef STANDING_PLACES
-#endif
-#define SITTING_PLACES 55*2+75*2
-#define STANDING_PLACES 56*2+76*2
-#define CARGO_CAPACITY_EN71AKM     int((SITTING_PLACES+STANDING_PLACES-2)/7)
 
 /* Define the actual train */
 item(FEAT_TRAINS, item_en71akm, 2005) {
@@ -122,7 +98,7 @@ item(FEAT_TRAINS, item_en71akm, 2005) {
         power:                          2000 kW;
         running_cost_base:              RUNNING_COST_ELECTRIC;
         dual_headed:                    0;
-        cargo_capacity:                 CARGO_CAPACITY_EN71AKM;
+        cargo_capacity:                 265/7;
         weight:                         182 ton;
         ai_engine_rank:                 0; // not intended to be used by the ai
         engine_class:                   ENGINE_CLASS_ELECTRIC;
@@ -137,12 +113,12 @@ item(FEAT_TRAINS, item_en71akm, 2005) {
     }
 
     graphics {
-        purchase:                   switch_en71akm_purchase;
+        purchase:                   sset_en71akm_purchase;
         default:                    switch_en71akm_graphics;
         articulated_part:           switch_en71akm_articulated;
         additional_text:            switch_en71akm_add_text;
         length:                     switch_en71akm_length;
-        purchase_cargo_capacity:    return CB_FAILED;
+        purchase_cargo_capacity:    return 265/7;
         cargo_capacity:             switch_en71akm_capacity;
         visual_effect_and_powered:  switch_en71akm_visual_effect;
         can_attach_wagon:           switch_en57axx_can_attach;

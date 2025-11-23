@@ -926,6 +926,10 @@ switch(FEAT_TRAINS, SELF, switch_en71_043_graphics, position_in_vehid_chain % 7)
     6: return sgroup_en71_043_tail;
     return sset_dummy;
 }
+switch(FEAT_TRAINS, SELF, switch_en71_043_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_3L, string(STR_HEATING_ELECTRIC_TEXT), string(STR_EN71_TEXT), string(STR_INCOME_LOWER_SPECIAL));
+    return string(STR_PURCHASE_DESCR_2L, string(STR_EN71_TEXT), string(STR_INCOME_LOWER_SPECIAL));
+}
 /* Define the actual train */
 item(FEAT_TRAINS, item_en71_043, 2109) {
     property {
@@ -941,7 +945,7 @@ item(FEAT_TRAINS, item_en71_043, 2109) {
         loading_speed:                  25;     // per part
         cost_factor:                    PURCHASE_COST_EN71;
         running_cost_factor:            RUNNING_COST_EN71;
-        cargo_age_period:               int(185*0.84);  // faster ageing
+        cargo_age_period:               int(185*0.79);  // faster ageing
         /* train properties */
         sprite_id:                      SPRITE_ID_NEW_TRAIN;
         speed:                          110 km/h;
@@ -966,7 +970,7 @@ item(FEAT_TRAINS, item_en71_043, 2109) {
     }
     graphics {
         purchase:                   sset_en71_043_purchase;
-        additional_text:            switch_en71_add_text;
+        additional_text:            switch_en71_043_add_text;
         default:                    switch_en71_043_graphics;
         articulated_part:           switch_en71_043_articulated;
         length:                     switch_en71_length;

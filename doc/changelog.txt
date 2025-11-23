@@ -1,5 +1,29 @@
 Polish Rolling Stock Pack - Changelog
 ================================
+0.16.0
+Added:
+- 31WEba SKM Warszawa
+- 308A sleeping coach
+- 401zb PKP Cargo
+- 434s PKP Cargo and OBB (Sdgmnss)
+- E186 DB (temporary until 189 will come out)
+- EU07 303E Poltrans
+- EW58 2x liveries
+- Fals PKP Cargo
+
+Changed:
+- EN57/EN71 modernisations passanger capacity
+- EAMOS cargo capacity (50 -> 60 tons)
+
+Fixed:
+(1) Sprites in;
+- 6Dl
+- E186 PKP Cargo
+- SM42 PKP Intercity
+- some Impuls 1
+- other
+(2) Additional Text in Gags
+
 0.15.9
 Added:
 - 120a Polregio

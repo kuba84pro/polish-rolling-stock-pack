@@ -83,6 +83,7 @@
 #define PURCHASE_COST_E6ACT  69
 
 /* EZT */
+#define PURCHASE_COST_EW58      52
 #define PURCHASE_COST_EN57      50
 #define PURCHASE_COST_EN57AKM      58
 #define PURCHASE_COST_EN57AKS      58
@@ -99,6 +100,7 @@
 #define PURCHASE_COST_ED250     255
 #define PURCHASE_COST_36WEA     60
 #define PURCHASE_COST_31WE     70
+#define PURCHASE_COST_31WEBA     74
 #define PURCHASE_COST_45WE     80
 #define PURCHASE_COST_35WE     95
 #define PURCHASE_COST_ED161     120
@@ -191,6 +193,7 @@
 #define RUNNING_COST_E6ACT  195
 
 /* EZT */
+#define RUNNING_COST_EW58       45
 #define RUNNING_COST_EN57       38
 #define RUNNING_COST_EN57AKM       40
 #define RUNNING_COST_EN57AKS       40
@@ -207,6 +210,7 @@
 #define RUNNING_COST_ED250      235
 #define RUNNING_COST_36WEA      69
 #define RUNNING_COST_31WE      75
+#define RUNNING_COST_31WEBA      77
 #define RUNNING_COST_45WE      80
 #define RUNNING_COST_35WE      95
 #define RUNNING_COST_ED161      145
@@ -299,6 +303,7 @@
 #define HALTED_COST_E6ACT  21
 
 /* EZT */
+#define HALTED_COST_EW58        20
 #define HALTED_COST_EN57        14
 #define HALTED_COST_EN57AKM        16
 #define HALTED_COST_EN57AKS        16
@@ -315,6 +320,7 @@
 #define HALTED_COST_ED250       47
 #define HALTED_COST_36WEA       20
 #define HALTED_COST_31WE       30
+#define HALTED_COST_31WEBA       33
 #define HALTED_COST_45WE       35
 #define HALTED_COST_35WE       40
 #define HALTED_COST_ED161       44

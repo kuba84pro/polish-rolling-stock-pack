@@ -10,7 +10,7 @@ spriteset(sset_sa103_pom_cut, "gfx/sa103_pomorskie.png")              { tmpl_spr
 spriteset(sset_sa103_podk_purchase, "gfx/sa103_podkarpackie.png")         { tmpl_sprite_purchase(4, 60) }
 spriteset(sset_sa103_podk, "gfx/sa103_podkarpackie.png")                  { tmpl_sprite_train12(4, 20) }
 spriteset(sset_sa103_podk_open, "gfx/sa103_podkarpackie.png")             { tmpl_sprite_train12(4, 80) }
-spriteset(sset_sa103_podk_cut, "gfx/sa103_podkarpackie.png")              { tmpl_sprite_train12(4, 120) }
+spriteset(sset_sa103_podk_cut, "gfx/sa103_podkarpackie.png")              { tmpl_sprite_train12(4, 122) }
 spriteset(sset_sa103_pom_old_purchase, "gfx/sa106_p_old.png")         { tmpl_sprite_purchase(4, 60) }
 spriteset(sset_sa103_pom_old, "gfx/sa106_p_old.png")                { tmpl_sprite_train12(4, 20) }
 spriteset(sset_sa103_pom_old_open, "gfx/sa106_p_old.png")              { tmpl_sprite_train12(4, 80) }

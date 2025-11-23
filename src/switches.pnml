@@ -523,6 +523,7 @@ switch(FEAT_TRAINS, SELF, switch_en57axx_can_attach, vehicle_type_id) {
     item_en90_pomorskie: return string(STR_ATTACH_DISALLOW_EZT2);
     item_35we_skm: return string(STR_ATTACH_DISALLOW_EZT2);
     item_35we_ks: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_31weba_skm_w: return string(STR_ATTACH_DISALLOW_EZT2);
     item_ed161: return string(STR_ATTACH_DISALLOW_EZT2);
     return string(STR_ATTACH_DISALLOW_EZT1);
 }
@@ -581,8 +582,14 @@ switch(FEAT_TRAINS, SELF, switch_impuls1_can_attach, vehicle_type_id) {
     item_en90_pomorskie: return CB_RESULT_ATTACH_ALLOW;
     item_35we_skm: return CB_RESULT_ATTACH_ALLOW;
     item_35we_ks: return CB_RESULT_ATTACH_ALLOW;
+    item_31weba_skm_w: return CB_RESULT_ATTACH_ALLOW;
     item_ed161: return string(STR_ATTACH_DISALLOW_EZT2);
     return string(STR_ATTACH_DISALLOW_EZT1);
+}
+switch(FEAT_TRAINS, SELF, switch_ew58_can_attach, vehicle_type_id) {
+    item_ew58: return CB_RESULT_ATTACH_ALLOW;
+    item_ew58_ry: return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_ATTACH_DISALLOW_EZT2);
 }
 // Additional Text Impuls 1
 switch(FEAT_TRAINS, SELF, switch_impuls1_2part_add_text, IS_HEATING_CLIMATE ) {

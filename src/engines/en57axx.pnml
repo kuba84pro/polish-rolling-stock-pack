@@ -53,8 +53,8 @@ switch(FEAT_TRAINS, SELF, switch_en57akm_graphics, position_in_vehid_chain % 5) 
 }
 switch(FEAT_TRAINS, SELF, switch_en57akm_capacity, position_in_vehid_chain % 5) {
     0: return 63;
-    2: return 63-1;
-    4: return 63-1;
+    2: return 63;
+    4: return 63;
     return 1;
 }
 switch(FEAT_TRAINS, SELF, switch_en57akm_visual_effect_local, position_in_vehid_chain % 5) {
@@ -98,7 +98,7 @@ item(FEAT_TRAINS, item_en57akm, 2003) {
         power:                          1000 kW;
         running_cost_base:              RUNNING_COST_ELECTRIC;
         dual_headed:                    0;
-        cargo_capacity:                 CARGO_CAPACITY_EN57AKM;
+        cargo_capacity:                 1;
         weight:                         125 ton;
         ai_engine_rank:                 0; // not intended to be used by the ai
         engine_class:                   ENGINE_CLASS_ELECTRIC;
@@ -118,7 +118,7 @@ item(FEAT_TRAINS, item_en57akm, 2003) {
         articulated_part:           switch_en57akm_articulated;
         additional_text:            switch_en57axx_add_text;
         length:                     switch_en57akm_length;
-        purchase_cargo_capacity:    return CB_FAILED;
+        purchase_cargo_capacity:    return 191/5;
         cargo_capacity:             switch_en57akm_capacity;
         visual_effect_and_powered:  switch_en57akm_visual_effect;
         can_attach_wagon:           switch_en57axx_can_attach;
@@ -172,8 +172,8 @@ switch(FEAT_TRAINS, SELF, switch_en57aks_graphics, position_in_vehid_chain % 5) 
 }
 switch(FEAT_TRAINS, SELF, switch_en57aks_capacity, position_in_vehid_chain % 5) {
     0: return 63;
-    2: return 63-1;
-    4: return 63-1;
+    2: return 63;
+    4: return 63;
     return 1;
 }
 switch(FEAT_TRAINS, SELF, switch_en57aks_visual_effect_local, position_in_vehid_chain % 5) {
@@ -213,7 +213,7 @@ item(FEAT_TRAINS, item_en57aks, 2004) {
         power:                          1000 kW;
         running_cost_base:              RUNNING_COST_ELECTRIC;
         dual_headed:                    0;
-        cargo_capacity:                 CARGO_CAPACITY_EN57AKM;
+        cargo_capacity:                 1;
         weight:                         125 ton;
         ai_engine_rank:                 0; // not intended to be used by the ai
         engine_class:                   ENGINE_CLASS_ELECTRIC;
@@ -233,7 +233,7 @@ item(FEAT_TRAINS, item_en57aks, 2004) {
         articulated_part:           switch_en57aks_articulated;
         additional_text:            switch_en57axx_add_text;
         length:                     switch_en57aks_length;
-        purchase_cargo_capacity:    return CB_FAILED;
+        purchase_cargo_capacity:    return 191/5;
         cargo_capacity:             switch_en57aks_capacity;
         visual_effect_and_powered:  switch_en57aks_visual_effect;
         can_attach_wagon:           switch_en57axx_can_attach;
@@ -286,8 +286,8 @@ switch(FEAT_TRAINS, SELF, switch_en57akw_graphics, position_in_vehid_chain % 5) 
 }
 switch(FEAT_TRAINS, SELF, switch_en57akw_capacity, position_in_vehid_chain % 5) {
     0: return 63;
-    2: return 63-1;
-    4: return 63-1;
+    2: return 63;
+    4: return 63;
     return 1;
 }
 switch(FEAT_TRAINS, SELF, switch_en57akw_visual_effect_local, position_in_vehid_chain % 5) {
@@ -327,7 +327,7 @@ item(FEAT_TRAINS, item_en57akw, 2007) {
         power:                          1000 kW;
         running_cost_base:              RUNNING_COST_ELECTRIC;
         dual_headed:                    0;
-        cargo_capacity:                 CARGO_CAPACITY_EN57AKM;
+        cargo_capacity:                 1;
         weight:                         125 ton;
         ai_engine_rank:                 0; // not intended to be used by the ai
         engine_class:                   ENGINE_CLASS_ELECTRIC;
@@ -347,7 +347,7 @@ item(FEAT_TRAINS, item_en57akw, 2007) {
         articulated_part:           switch_en57akw_articulated;
         additional_text:            switch_en57axx_add_text;
         length:                     switch_en57akw_length;
-        purchase_cargo_capacity:    return CB_FAILED;
+        purchase_cargo_capacity:    return 191/5;
         cargo_capacity:             switch_en57akw_capacity;
         visual_effect_and_powered:  switch_en57akw_visual_effect;
         can_attach_wagon:           switch_en57axx_can_attach;
@@ -400,8 +400,8 @@ switch(FEAT_TRAINS, SELF, switch_en57ap_graphics, position_in_vehid_chain % 5) {
 }
 switch(FEAT_TRAINS, SELF, switch_en57ap_capacity, position_in_vehid_chain % 5) {
     0: return 63;
-    2: return 63-1;
-    4: return 63-1;
+    2: return 63;
+    4: return 63;
     return 1;
 }
 switch(FEAT_TRAINS, SELF, switch_en57ap_visual_effect_local, position_in_vehid_chain % 5) {
@@ -441,7 +441,7 @@ item(FEAT_TRAINS, item_en57ap, 2008) {
         power:                          1000 kW;
         running_cost_base:              RUNNING_COST_ELECTRIC;
         dual_headed:                    0;
-        cargo_capacity:                 CARGO_CAPACITY_EN57AKM;
+        cargo_capacity:                 1;
         weight:                         125 ton;
         ai_engine_rank:                 0; // not intended to be used by the ai
         engine_class:                   ENGINE_CLASS_ELECTRIC;
@@ -461,7 +461,7 @@ item(FEAT_TRAINS, item_en57ap, 2008) {
         articulated_part:           switch_en57ap_articulated;
         additional_text:            switch_en57axx_add_text;
         length:                     switch_en57ap_length;
-        purchase_cargo_capacity:    return CB_FAILED;
+        purchase_cargo_capacity:    191/5;
         cargo_capacity:             switch_en57ap_capacity;
         visual_effect_and_powered:  switch_en57ap_visual_effect;
         can_attach_wagon:           switch_en57axx_can_attach;

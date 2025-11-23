@@ -64,6 +64,12 @@ switch(FEAT_TRAINS, SELF, switch_en57alpr_graphics, position_in_vehid_chain % 5)
     4: return sgroup_en57alpr_tail;
     return sset_dummy;
 }
+switch(FEAT_TRAINS, SELF, switch_en57alpr_capacity, position_in_vehid_chain % 5) {
+    0: return 59;
+    2: return 59;
+    4: return 59;
+    return 1;
+}
 switch(FEAT_TRAINS, SELF, switch_en57alpr_visual_effect_local, position_in_vehid_chain % 5) {
     0: return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 3, DISABLE_WAGON_POWER);
     3: return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, -3, DISABLE_WAGON_POWER);
@@ -123,8 +129,8 @@ item(FEAT_TRAINS, item_en57alpr, 2000) {
         articulated_part:           switch_en57alpr_articulated;
         additional_text:            switch_en57al_add_text;
         length:                     switch_en57alpr_length;
-        purchase_cargo_capacity:    return 171/5;
-        cargo_capacity:             return 171/5;
+        purchase_cargo_capacity:    return 179/5;
+        cargo_capacity:             switch_en57alpr_capacity;
         visual_effect_and_powered:  switch_en57alpr_visual_effect;
         can_attach_wagon:           switch_en57axx_can_attach;
         start_stop:                 switch_en57alpr_start_stop;
@@ -205,7 +211,7 @@ item(FEAT_TRAINS, item_en57al_kw, 2001) {
         additional_text:            switch_en57al_add_text;
         length:                     switch_en57alpr_length;
         purchase_cargo_capacity:    return 171/5;
-        cargo_capacity:             return 171/5;
+        cargo_capacity:             switch_en57alpr_capacity;
         visual_effect_and_powered:  switch_en57alpr_visual_effect;
         can_attach_wagon:           switch_en57axx_can_attach;
         start_stop:                 switch_en57alpr_start_stop;
@@ -286,7 +292,7 @@ item(FEAT_TRAINS, item_en57al_km, 2002) {
         additional_text:            switch_en57al_add_text;
         length:                     switch_en57alpr_length;
         purchase_cargo_capacity:    return 171/5;
-        cargo_capacity:             return 171/5;
+        cargo_capacity:             switch_en57alpr_capacity;
         visual_effect_and_powered:  switch_en57alpr_visual_effect;
         can_attach_wagon:           switch_en57axx_can_attach;
         start_stop:                 switch_en57alpr_start_stop;

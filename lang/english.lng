@@ -63,6 +63,7 @@ STR_INCOME_LOWER                :Note: {RED}Lower income rate{ORANGE} for passen
 STR_INCOME_ALL_EXPRESS          :Note: {YELLOW}Increases income rate{ORANGE} for passengers in all express coaches in the train
 STR_INCOME_HIGH                 :Note: {YELLOW}High income rate{ORANGE} for passengers over long distances
 STR_INCOME_CARGO_HIGH           :Note: {YELLOW}Higher income rate{ORANGE} for cargoes over long distances
+STR_INCOME_LOWER_SPECIAL        :Note: {RED}Lower income rate{ORANGE} for passengers over long distances, although 5% less cargo ageing period.
 STR_CAPACITY_NON_FRIABLE        :Note: {RED}Decreased capacity{ORANGE} for non-friable cargoes
 STR_CAPACITY_LIQUID             :Note: {RED}Decreased capacity{ORANGE} for liquid cargoes
 
@@ -118,6 +119,7 @@ STR_SN61_183_NAME           :{YELLOW}SN61-183
 STR_SN80_NAME           :{YELLOW}SN80
 STR_SN80_TEXT           :Info: {ORANGE}Diesel motor car - max. {YELLOW}3 trailers{ORANGE} allowed
 STR_SN81_NAME           :{YELLOW}SN81
+STR_SN81_002_NAME           :{YELLOW}SN81-002
 STR_SN81_TEXT           :Info: {YELLOW}2{ORANGE}-part Diesel Multiple Unit
 STR_SA106_NAME                        :{YELLOW}SA106
 STR_SA106_KD_NAME                     :{YELLOW}SA106 {SILVER}Koleje Dolnoslaskie
@@ -192,6 +194,7 @@ STR_SU160_NAME          :{YELLOW}SU160 {SILVER}PKP Intercity
 STR_SU160_TEXT		    :Type: {ORANGE}111Db
 STR_EP01_NAME           :{DKGREEN}EP01
 STR_EP02_NAME           :{DKGREEN}EP02
+
 STR_EU07_NAME                   :{DKGREEN}EU07
 STR_EU07_GREEN_NAME             :{DKGREEN}EU07 {SILVER}Historical Green
 STR_EU07_YELLOW_FRONT_NAME      :{DKGREEN}EU07 {SILVER}Historical Yellow Front
@@ -220,9 +223,11 @@ STR_EU07_303E_YELLOW_FRONT_NAME             :{DKGREEN}EU07 {DKBLUE}303E {SILVER}
 STR_EU07_303E_TRAPEZE_YELLOW_FRONT_NAME     :{DKGREEN}EU07 {DKBLUE}303E {SILVER}Trapeze with Yellow Front
 STR_EP07_361_NAME                           :{DKGREEN}EP07-361 {DKBLUE}303E
 STR_EU07_303E_TURQUOISE_YELLOW_FRONT_NAME   :{DKGREEN}EU07 {DKBLUE}303E {SILVER}Turquoise with Yellow Front
+STR_EU07_303E_POLTRANS_NAME   :{DKGREEN}EU07 {DKBLUE}303E {SILVER}Poltrans
 STR_EU07A_NAME                  :{DKGREEN}EU07A {SILVER}PKP Intercity Old Livery
 STR_EU07A_NEW_NAME              :{DKGREEN}EU07A {SILVER}PKP Intercity
 STR_EU07A_TEXT                  :Info: {ORANGE}Major modernisation of EU07 locomotive for pulling express trains
+
 STR_EU06_NAME           :{DKGREEN}EU06
 STR_EU06_GREEN_NAME     :{DKGREEN}EU06 {SILVER}Historical Green
 STR_EU06_YELLOW_NAME    :{DKGREEN}EU06 {SILVER}Historical Yellow Front
@@ -360,6 +365,7 @@ STR_E186_942_NAME              :{DKGREEN}E186-942 {SILVER}Attractive Forces
 STR_E186_944_NAME              :{DKGREEN}E186-944 {SILVER}Attractive Forces
 STR_E186_PCC_NAME              :{DKGREEN}E186 {SILVER}PCC Intermodal
 STR_E186_ORLEN_NAME            :{DKGREEN}E186 {SILVER}Orlen Koltrans
+STR_E186_DB_NAME               :{DKGREEN}E186 {SILVER}DB
 STR_386_METRANS_NAME           :{DKGREEN}386 {SILVER}Metrans
 STR_E483_PMT_NAME              :{DKGREEN}E483 {SILVER}Pol-Miedz-Trans
 STR_EU43_PKP_CARGO_NAME        :{DKGREEN}EU43 {SILVER}PKP Cargo
@@ -461,6 +467,10 @@ STR_E4DCUD_NAME         :{LTBLUE}E4DCUd {SILVER}Griffin
 STR_E4DCUD_LOTOS_NAME   :{LTBLUE}E4DCUd {SILVER}Lotos
 STR_E4DCUD_TEXT        	:Note: {ORANGE}Electric locomotive with last-mile diesel engine ({YELLOW}380 kW{ORANGE})
 
+STR_EW58_NAME           :{DKGREEN}EW58
+STR_EW58_RY_NAME        :{DKGREEN}EW58 {SILVER}Red-Yellow
+STR_EW58_TEXT          	:Info: {YELLOW}3{ORANGE}-part Electric Multiple Unit
+
 STR_EN57_NAME           :{DKGREEN}EN57
 STR_EN57_OR_NAME        :{DKGREEN}EN57 {SILVER}Historical Orange
 STR_EN57_RY_NAME        :{DKGREEN}EN57 {SILVER}Historical Red-Yellow
@@ -498,23 +508,27 @@ STR_EN76_NAME           :{DKGREEN}EN76 {SILVER}Elf
 STR_ED250_NAME          :{DKGREEN}ED250 {SILVER}Pendolino
 STR_ED250_PKP_IC_NAME          :{DKGREEN}ED250 {SILVER}PKP Intercity
 STR_ED250_TEXT         	:Info: {YELLOW}7{ORANGE}-part Electric Multiple Unit with {YELLOW}buffet car{ORANGE}, {YELLOW}45{ORANGE} {RED}1{ORANGE}-st and {YELLOW}357{ORANGE} {RED}2{ORANGE}-nd class sitting places
-STR_36WEA_OP_NAME       :{DKGREEN}36Wea {SILVER}Opolskie
-STR_36WEA_PO_NAME       :{DKGREEN}36Wea {SILVER}Podkarpackie
-STR_36WEA_KD_NAME       :{DKGREEN}36Wea {SILVER}Koleje Dolnoslaskie
-STR_36WEA_KD_KOLEJ_NAME :{DKGREEN}36Wea {SILVER}Koleje Dolnoslaskie "Kolej na kolej"
-STR_36WEA_SLASKIE_NAME  :{DKGREEN}36Wea {SILVER}Koleje Slaskie
-STR_36WEA_KM_NAME       :{DKGREEN}36Wea {SILVER}Koleje Malopolskie
-STR_36WEA_SK_NAME       :{DKGREEN}36Wea {SILVER}Swietokrzyskie
-STR_31WE_KD_NAME        :{DKGREEN}31We {SILVER}Koleje Dolnoslaskie
+
+STR_36WEA_OP_NAME       :{DKGREEN}36WEa {SILVER}Opolskie
+STR_36WEA_PO_NAME       :{DKGREEN}36WEa {SILVER}Podkarpackie
+STR_36WEA_KD_NAME       :{DKGREEN}36WEa {SILVER}Koleje Dolnoslaskie
+STR_36WEA_KD_KOLEJ_NAME :{DKGREEN}36WEa {SILVER}Koleje Dolnoslaskie "Kolej na kolej"
+STR_36WEA_SLASKIE_NAME  :{DKGREEN}36WEa {SILVER}Koleje Slaskie
+STR_36WEA_KM_NAME       :{DKGREEN}36WEa {SILVER}Koleje Malopolskie
+STR_36WEA_SK_NAME       :{DKGREEN}36WEa {SILVER}Swietokrzyskie
+STR_31WE_KD_NAME        :{DKGREEN}31WE {SILVER}Koleje Dolnoslaskie
 STR_EN78_KML_NAME       :{DKGREEN}EN78 {SILVER}Koleje Malopolskie
 STR_ED78_ZACH_POM_NAME       :{DKGREEN}ED78 {SILVER}Zachodnio-Pomorskie
 STR_ED78_ZACH_POM_DUMA_NAME  :{DKGREEN}ED78-028 {SILVER}Zachodnio-Pomorskie "Duma Pomorza"
-STR_45WE_KD_NAME        :{DKGREEN}45We {SILVER}Koleje Dolnoslaskie
-STR_45WE_KM_NAME        :{DKGREEN}45We {SILVER}Koleje Mazowieckie
+STR_45WE_KD_NAME        :{DKGREEN}45WE {SILVER}Koleje Dolnoslaskie
+STR_45WE_KM_NAME        :{DKGREEN}45WE {SILVER}Koleje Mazowieckie
 STR_EN90_POMORSKIE_NAME :{DKGREEN}EN90 {SILVER}Pomorskie
 STR_EN79_KML_NAME       :{DKGREEN}EN79 {SILVER}Koleje Malopolskie
-STR_35WE_SKMW_NAME      :{DKGREEN}35We {SILVER}Szybka Kolej Miejska Warszawa
-STR_35WE_KS_NAME      :{DKGREEN}35We {SILVER}Koleje Slaskie
+STR_35WE_SKMW_NAME      :{DKGREEN}35WE {SILVER}Szybka Kolej Miejska Warszawa
+STR_35WE_KS_NAME      :{DKGREEN}35WE {SILVER}Koleje Slaskie
+
+STR_31WEBA_SKM_W_NAME   :{DKGREEN}31WEba {SILVER}Szybka Kolej Miejska Warszawa
+
 STR_EN57AKM_NAME        :{DKGREEN}EN57AKM {SILVER}Koleje Mazowieckie
 STR_EN57AKS_NAME        :{DKGREEN}EN57AKS {SILVER}Koleje Slaskie
 STR_EN57AKW_NAME        :{DKGREEN}EN57AKW {SILVER}Koleje Wielkopolskie
@@ -574,6 +588,7 @@ STR_BH_RYF_NAME         :Passenger coach "ryflak" (Bh)
 STR_BH_RYF_TEXT         	:Info: {ORANGE}Supplementary passenger coach for {YELLOW}diesel motor car SN61
 STR_WLAB_NAME           :WLAB {SILVER} WARS PKP Livery
 STR_GORLITZ77_NAME      :Gorlitz77 {SILVER}PKP Intercity
+STR_308A_NAME           :308A {SILVER}PKP Intercity
 STR_WLABWXZ_NAME        :WLABwxz {SILVER}WARS Olive Drab
 STR_WLAB10MNOUZ_NAME    :305Ad {SILVER}PKP Intercity
 STR_WLAB10MNOUZ_TEXT    :UIC-Z Sleeping Car (WLAB10mnouz)
@@ -671,7 +686,9 @@ STR_EANOS_NAME          :Bulk wagon (Eanos)
 STR_EANOS_445W_NAME     :Bulk wagon (Eanos) type 445W
 STR_PPU_NAME            :Heavy bulk wagon (PPu)
 STR_EAMOS_NAME          :Heavy bulk wagon (Eamos)
+STR_EAMOS_PKP_CARGO_NAME:Eamos {SILVER}PKP Cargo
 STR_FALS_NAME           :Self-discharging wagon "talbot" (Fals)
+STR_FALS_PKP_CARGO_NAME :Fals {SILVER}PKP Cargo
 STR_FALNS_NAME          :Self-discharging wagon "talbot" (Falns)
 STR_TADNS_NAME          :Covered hopper wagon (Tadns)
 STR_KD_NAME             :Covered wagon (Kd)
@@ -691,9 +708,12 @@ STR_PDKH31_NAME         :Flatbed wagon (Pdkh31)
 STR_KBKKS_NAME          :Flatbed wagon (Kbkks)
 STR_KGNS_NAME           :Flatbed wagon (Kgns)
 STR_RES_NAME            :Flatbed wagon (Res)
+
 STR_SGS_PKP_CARGO_NAME  :Sgs {SILVER}PKP Cargo
 STR_SGS_PCC_NAME        :Sgs {SILVER}PCC Intermodal
-STR_SDGMNSS_NAME        :Sdgmnss
+STR_SDGMNSS_NAME        :Sdgmnss {SILVER}PKP Cargo White
+STR_SDGMNSS_PKP_CARGO_NAME        :Sdgmnss {SILVER}PKP Cargo
+STR_SDGMNSS_OBB_NAME        :Sdgmnss {SILVER}OBB
 STR_SGGRSS_PKP_CARGO_NAME        :Sggrss {SILVER}PKP Cargo
 STR_SGGRSS_DBCARGO_NAME        :Sggrss {SILVER}DB Cargo
 STR_SGGRSS_PCC_NAME        :Sggrss {SILVER}PCC

@@ -43,6 +43,8 @@ spriteset(sset_EU43_purchase_pkp_cargo, "gfx/e186.png")  { tmpl_sprite_purchase(
 spriteset(sset_EU43_pkp_cargo, "gfx/e186.png") { tmpl_sprite_train10(4, 1074) }
 spriteset(sset_EU47_purchase_km, "gfx/e186.png")  { tmpl_sprite_purchase(4, 1174) }
 spriteset(sset_EU47_km, "gfx/e186.png") { tmpl_sprite_train10(4, 1134) }
+spriteset(sset_e186_purchase_db, "gfx/e186.png")  { tmpl_sprite_purchase(4, 1234) }
+spriteset(sset_e186_db, "gfx/e186.png") { tmpl_sprite_train10(4, 1194) }
 
 /* E186(Traxx) switches */
 switch(FEAT_TRAINS, SELF, switch_e186_articulated, extra_callback_info1) {
@@ -1120,6 +1122,58 @@ item(FEAT_TRAINS, item_eu47_km, 919) {
         visual_effect_and_powered:  switch_e186_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;
         start_stop:                 switch_eu47_start_stop;
+        ENGINE_CAPACITY_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(e186)
+        ENGINE_POWER_CALLBACKS(e186)
+    }
+}
+/* E186 DB switches */
+/* Define the actual train */
+item(FEAT_TRAINS, item_e186_db, 921) {
+    property {
+		/* common properties */
+        name:                           string(STR_E186_DB_NAME);
+        variant_group:                  900;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2009, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_E186;
+        running_cost_factor:            RUNNING_COST_E186;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          140 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          5600 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_PROPERTY
+        weight:                         85 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.360;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_e186_purchase_db;
+        additional_text:            switch_e186_add_text;
+        default:                    sset_e186_db;
+        articulated_part:           switch_e186_articulated;
+        visual_effect_and_powered:  switch_e186_visual_effect;
+        can_attach_wagon:           switch_e186_can_attach;
+        start_stop:                 switch_normal_start_stop;
         ENGINE_CAPACITY_CALLBACKS
         ENGINE_RUNNING_COST_CALLBACKS(e186)
         ENGINE_POWER_CALLBACKS(e186)

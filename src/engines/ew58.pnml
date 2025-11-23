@@ -1,0 +1,207 @@
+// This is part of PRSP NewGRF.
+// (c) kuba84pro, GPL 2.0
+
+// default livery
+spriteset(sset_ew58_purchase, "gfx/EW58.png")       { tmpl_sprite_purchase(4, 140) }
+spriteset(sset_ew58_advert, "gfx/EW58.png")         { tmpl_sprite_advertisement200(4, 280) }
+spriteset(sset_ew58_head, "gfx/EW58.png")           { tmpl_sprite_train12(4, 20) }
+spriteset(sset_ew58_mid, "gfx/EW58.png")            { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_ew58_tail, "gfx/EW58.png")           { tmpl_sprite_train12_offset(4, 100, 3) }
+spriteset(sset_ew58_head_open, "gfx/EW58.png")      { tmpl_sprite_train12(4, 160) }
+spriteset(sset_ew58_mid_open, "gfx/EW58.png")       { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_ew58_tail_open, "gfx/EW58.png")      { tmpl_sprite_train12_offset(4, 240, 3) }
+// Red-Yellow livery
+spriteset(sset_ew58_ry_purchase, "gfx/EW58_red-yellow.png")       { tmpl_sprite_purchase(4, 140) }
+spriteset(sset_ew58_ry_head, "gfx/EW58_red-yellow.png")           { tmpl_sprite_train12(4, 20) }
+spriteset(sset_ew58_ry_mid, "gfx/EW58_red-yellow.png")            { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_ew58_ry_tail, "gfx/EW58_red-yellow.png")           { tmpl_sprite_train12_offset(4, 100, 3) }
+spriteset(sset_ew58_ry_head_open, "gfx/EW58_red-yellow.png")      { tmpl_sprite_train12(4, 160) }
+spriteset(sset_ew58_ry_mid_open, "gfx/EW58_red-yellow.png")       { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_ew58_ry_tail_open, "gfx/EW58_red-yellow.png")      { tmpl_sprite_train12_offset(4, 240, 3) }
+
+// Sgroups
+// default livery
+spritegroup sgroup_ew58_head {
+    loaded:     [sset_ew58_head];
+    loading:    [sset_ew58_head_open];
+}
+spritegroup sgroup_ew58_mid {
+    loaded:     [sset_ew58_mid];
+    loading:    [sset_ew58_mid_open];
+}
+spritegroup sgroup_ew58_tail {
+    loaded:     [sset_ew58_tail];
+    loading:    [sset_ew58_tail_open];
+}
+// Red-Yellow livery
+spritegroup sgroup_ew58_ry_head {
+    loaded:     [sset_ew58_ry_head];
+    loading:    [sset_ew58_ry_head_open];
+}
+spritegroup sgroup_ew58_ry_mid {
+    loaded:     [sset_ew58_ry_mid];
+    loading:    [sset_ew58_ry_mid_open];
+}
+spritegroup sgroup_ew58_ry_tail {
+    loaded:     [sset_ew58_ry_tail];
+    loading:    [sset_ew58_ry_tail_open];
+}
+
+/* EW58 switches */
+switch(FEAT_TRAINS, SELF, switch_ew58_articulated, extra_callback_info1) {
+    1..4: return item_ew58;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_ew58_length, position_in_vehid_chain % 5) {
+    1: return 4;    // dummy part
+    3: return 4;    // dummy part
+    return 8;
+}
+switch(FEAT_TRAINS, SELF, switch_ew58_purchase, extra_callback_info1 & 0xFF) {
+    0x21: return sset_ew58_advert;
+    return sset_ew58_purchase;
+}
+switch(FEAT_TRAINS, SELF, switch_ew58_capacity, position_in_vehid_chain % 5) {
+    0: return 188;
+    2: return 188;
+    4: return 188;
+    return 1;
+}
+switch(FEAT_TRAINS, SELF, switch_ew58_graphics, position_in_vehid_chain % 5) {
+    0: return sgroup_ew58_head;
+    2: return sgroup_ew58_mid;
+    4: return sgroup_ew58_tail;
+    return sset_dummy;
+}
+switch(FEAT_TRAINS, SELF, switch_ew58_visual_effect_local, position_in_vehid_chain % 5) {
+    2: return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 3, DISABLE_WAGON_POWER);
+    return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+}
+switch(FEAT_TRAINS, SELF, switch_ew58_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_3L, string(STR_HEATING_ELECTRIC_TEXT), string(STR_EW58_TEXT), string(STR_INCOME_LOWER));
+    return string(STR_PURCHASE_DESCR_2L, string(STR_EW58_TEXT), string(STR_INCOME_LOWER));
+}
+switch(FEAT_TRAINS, SELF, switch_ew58_start_stop, COUNT_EZT > 3) {
+    1: return string(STR_TRAIN_TOO_LONG, string(STR_EW58_NAME));
+    return CB_RESULT_NO_TEXT;
+}
+ENGINE_RUNNING_COST_SWITCH(ew58, EW58)
+DIESEL_ELECTRIC_ENGINE_POWER_SWITCH(ew58)
+ENGINE_VISUAL_EFFECT_SWITCH(ew58)
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_ew58, 1700) {
+    property {
+        /* common properties */
+        name:                           string(STR_EW58_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1974, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  25;     // per part
+        cost_factor:                    PURCHASE_COST_EW58;
+        running_cost_factor:            RUNNING_COST_EW58;
+        cargo_age_period:               int(185*0.65);  // faster ageing
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          1618 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 1;
+        weight:                         147 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.1617;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+    graphics {
+        purchase:                   switch_ew58_purchase;
+        additional_text:            switch_ew58_add_text;
+        default:                    switch_ew58_graphics;
+        articulated_part:           switch_ew58_articulated;
+        length:                     switch_ew58_length;
+        visual_effect_and_powered:  switch_ew58_visual_effect;
+        purchase_cargo_capacity:    return 564/5;
+        cargo_capacity:             switch_ew58_capacity;
+        can_attach_wagon:           switch_ew58_can_attach;
+        start_stop:                 switch_ew58_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(ew58)
+        ENGINE_POWER_CALLBACKS(ew58)
+    }
+}
+/* EW58 Red-Yellow switches */
+switch(FEAT_TRAINS, SELF, switch_ew58_ry_articulated, extra_callback_info1) {
+    1..4: return item_ew58_ry;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_ew58_ry_graphics, position_in_vehid_chain % 5) {
+    0: return sgroup_ew58_ry_head;
+    2: return sgroup_ew58_ry_mid;
+    4: return sgroup_ew58_ry_tail;
+    return sset_dummy;
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_ew58_ry, 1701) {
+    property {
+        /* common properties */
+        name:                           string(STR_EW58_RY_NAME);
+        variant_group:                  1700;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2000, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  25;     // per part
+        cost_factor:                    PURCHASE_COST_EW58;
+        running_cost_factor:            RUNNING_COST_EW58;
+        cargo_age_period:               int(185*0.65);  // faster ageing
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          1618 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 1;
+        weight:                         147 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.1617;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+    graphics {
+        purchase:                   sset_ew58_ry_purchase;
+        additional_text:            switch_ew58_add_text;
+        default:                    switch_ew58_ry_graphics;
+        articulated_part:           switch_ew58_ry_articulated;
+        length:                     switch_ew58_length;
+        visual_effect_and_powered:  switch_ew58_visual_effect;
+        purchase_cargo_capacity:    return 564/5;
+        cargo_capacity:             switch_ew58_capacity;
+        can_attach_wagon:           switch_ew58_can_attach;
+        start_stop:                 switch_ew58_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(ew58)
+        ENGINE_POWER_CALLBACKS(ew58)
+    }
+}
