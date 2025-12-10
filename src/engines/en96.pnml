@@ -1,0 +1,113 @@
+// This is part of PRSP NewGRF.
+// Don't include any headers inside this file!
+// (c) kuba84pro, GPL 2.0
+
+/* EN96 sprites */
+spriteset(sset_en96_purchase, "gfx/EN96.png")   { tmpl_sprite_purchase(4, 100) }
+spriteset(sset_en96_advert, "gfx/EN96.png")   { tmpl_sprite_advertisement200(4, 200) }
+
+spriteset(sset_en96_head, "gfx/EN96.png")       { tmpl_sprite_train10(4, 20) }
+spriteset(sset_en96_tail, "gfx/EN96.png")       { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_en96_head_open, "gfx/EN96.png")       { tmpl_sprite_train10(4, 120) }
+spriteset(sset_en96_tail_open, "gfx/EN96.png")       { tmpl_sprite_train10_offset(4, 160, 1) }
+spritegroup sgroup_en96_head {
+    loaded:     [sset_en96_head];
+    loading:    [sset_en96_head_open];
+}
+spritegroup sgroup_en96_tail {
+    loaded:     [sset_en96_tail];
+    loading:    [sset_en96_tail_open];
+}
+
+/* EN96 switches */
+switch(FEAT_TRAINS, SELF, switch_en96_articulated, extra_callback_info1) {
+    1..2: return item_en96;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_en96_length, position_in_vehid_chain % 3) {
+    1: return 2;    // dummy parts
+    return 8;
+}
+switch(FEAT_TRAINS, SELF, switch_en96_graphics, position_in_vehid_chain % 3) {
+    0: return sgroup_en96_head;
+    2: return sgroup_en96_tail;
+    return sset_dummy;
+}
+switch(FEAT_TRAINS, SELF, switch_en96_purchase, extra_callback_info1 & 0xFF) {
+    0x21: return sset_en96_advert;
+    return sset_en96_purchase;
+}
+switch(FEAT_TRAINS, SELF, switch_en96_capacity, position_in_vehid_chain % 3) {
+    0: return 112;
+    2: return 112;
+    return 1;   // dummy parts
+}
+switch(FEAT_TRAINS, SELF, switch_en96_visual_effect_local, position_in_vehid_chain % 3) {
+    2: return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+    return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+}
+switch (FEAT_TRAINS, SELF, switch_en96_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_3L, string(STR_HEATING_ELECTRIC_TEXT), string(STR_2PART_EMU_TEXT), string(STR_INCOME_LOWER));
+    return string(STR_PURCHASE_DESCR_2L, string(STR_2PART_EMU_TEXT), string(STR_INCOME_LOWER));
+}
+switch (FEAT_TRAINS, SELF, switch_en96_start_stop, num_vehs_in_consist / 3) {
+    1..3: return CB_RESULT_NO_TEXT;
+    return string(STR_TRAIN_TOO_LONG, string(STR_EN96_NAME));
+}
+
+ENGINE_RUNNING_COST_SWITCH(en96, EN96)
+DIESEL_ELECTRIC_2_ENGINE_POWER_SWITCH(en96, KW_TO_HP(1600))
+ENGINE_VISUAL_EFFECT_SWITCH(en96)
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_en96, 2399) {
+    property {
+        /* common properties */
+        name:                           string(STR_EN96_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2011, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  21;     // per part
+        cost_factor:                    PURCHASE_COST_EN96;
+        running_cost_factor:            RUNNING_COST_EN96;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          1600 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 1;
+        weight:                         83 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.3144;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   switch_en96_purchase;
+        default:                    switch_en96_graphics;
+        articulated_part:           switch_en96_articulated;
+        additional_text:            switch_en96_add_text;
+        length:                     switch_en96_length;
+        purchase_cargo_capacity:    return 214/3;
+        cargo_capacity:             switch_en96_capacity;
+        visual_effect_and_powered:  switch_en96_visual_effect;
+        can_attach_wagon:           switch_impuls1_can_attach;
+        start_stop:                 switch_en96_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(en96)
+        ENGINE_POWER_CALLBACKS(en96)
+    }
+}

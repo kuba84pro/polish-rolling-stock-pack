@@ -53,6 +53,7 @@ count_veh_id(item_jhx) + \
 count_veh_id(item_jhix) + \
 count_veh_id(item_wrdmnu)/2 + \
 count_veh_id(item_wrmnouz)/2 + \
+count_veh_id(item_406a_40)/2 + \
 count_veh_id(item_bipa)/6 + \
 count_veh_id(item_bdhpumn)/2 + \
 count_veh_id(item_twindexx)/2 + \
@@ -122,6 +123,8 @@ count_veh_id(item_sp42_oliwkowe)/2 \
 (count_veh_id(item_su45)/2 + \
  count_veh_id(item_sp32)/2 + \
  count_veh_id(item_6dl) + \
+ count_veh_id(item_eu04)/2 + \
+ count_veh_id(item_eu20)/2 + \
  count_veh_id(item_et21)/2 + \
  count_veh_id(item_et22)/2 + \
  count_veh_id(item_et40)/3 \
@@ -222,12 +225,26 @@ count_veh_id(item_sp42_oliwkowe)/2 \
  count_veh_id(item_wlab10mnouz)/2 + \
  count_veh_id(item_113A)/2 + \
  count_veh_id(item_113Aa)/2 + \
+ count_veh_id(item_113Aa_m)/2 + \
  count_veh_id(item_wrdmnu)/2 + \
- count_veh_id(item_wrmnouz)/2)*HEATING_NEW_WAG
+ count_veh_id(item_wrmnouz)/2 + \
+ count_veh_id(item_406a_40)/2)*HEATING_NEW_WAG
 
 /* universal definitions */
 #define COUNT_EZT \
- count_veh_id(item_en57)/5 + count_veh_id(item_en71)/7 + count_veh_id(item_ed72)/7
+ count_veh_id(1800)/5 + count_veh_id(1801)/5 + count_veh_id(1802)/5 + count_veh_id(1803)/5 + count_veh_id(1804)/5 + \
+ count_veh_id(1805)/5 + count_veh_id(1806)/5 + count_veh_id(1807)/5 + count_veh_id(1808)/5 + \
+ count_veh_id(2000)/5 + count_veh_id(2001)/5 + count_veh_id(2002)/5 + count_veh_id(2003)/5 + count_veh_id(2004)/5 + \
+ count_veh_id(2005)/7 + count_veh_id(2006)/7 + count_veh_id(2007)/5 + count_veh_id(2008)/5 + count_veh_id(2009)/5 + \
+ count_veh_id(2010)/5 + count_veh_id(2011)/5 + \
+ count_veh_id(2100)/7 + count_veh_id(2101)/7 + count_veh_id(2102)/7 + count_veh_id(2103)/7 + count_veh_id(2104)/7 + \
+ count_veh_id(2105)/7 + count_veh_id(2106)/7 + count_veh_id(2107)/7 + count_veh_id(2108)/7 + count_veh_id(2109)/7 + \
+ count_veh_id(2200)/7 + count_veh_id(2201)/7 + count_veh_id(2202)/7
+
+#define COUNT_120A_BOCHUN_609A \
+ count_veh_id(10035) + count_veh_id(10036) + count_veh_id(10037) + count_veh_id(10038) + count_veh_id(10039) + \
+ count_veh_id(10050)/2 + count_veh_id(10051)/2 + count_veh_id(10052)/2 + count_veh_id(10053)/2 + \
+ count_veh_id(10025) + count_veh_id(10026)
 
 #define PKPSET_ITEM_ID  (grfid==str2number("MV\01\05")) * vehicle_type_id
 
@@ -255,10 +272,11 @@ switch(FEAT_TRAINS, SELF, switch_check_features, BRAKE_FORCE >= 0) {
     1: switch_check_heating;
     return string(STR_TRAIN_WITHOUT_BRAKE);
 }
-switch(FEAT_TRAINS, SELF, switch_normal_start_stop, company_type == PLAYERTYPE_HUMAN) {
-    1: switch_check_features;
+switch(FEAT_TRAINS, SELF, switch_normal_start_stop, param_heating) {
+    0: switch_check_features;
     return CB_RESULT_NO_TEXT;
 }
+
 switch(FEAT_TRAINS, SELF, switch_normal_can_attach, vehicle_type_id) {
     item_sn61:  return string(STR_ATTACH_DISALLOW_MCAR);
     item_sn80:  return string(STR_ATTACH_DISALLOW_MCAR);
@@ -269,6 +287,7 @@ switch(FEAT_TRAINS, SELF, switch_normal_can_attach, vehicle_type_id) {
     item_ed72:  return string(STR_ATTACH_DISALLOW_EZT1);
     item_ed74:  return string(STR_ATTACH_DISALLOW_EZT1);
     item_en76:  return string(STR_ATTACH_DISALLOW_EZT1);
+    item_en96:  return string(STR_ATTACH_DISALLOW_EZT1);
     item_ed250:  return string(STR_ATTACH_DISALLOW_EZT1);
     item_ed161:  return string(STR_ATTACH_DISALLOW_EZT1);
 	item_wm15a: return string(STR_ATTACH_DISALLOW_TROLLEY);
@@ -505,6 +524,7 @@ switch(FEAT_TRAINS, SELF, switch_en57axx_can_attach, vehicle_type_id) {
     item_ed74: return string(STR_ATTACH_DISALLOW_EZT2);
     item_ed74_pkp_ic: return string(STR_ATTACH_DISALLOW_EZT2);
     item_en76: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en96: return string(STR_ATTACH_DISALLOW_EZT2);
     item_ed250: return string(STR_ATTACH_DISALLOW_EZT2);
     item_36wea_op: return string(STR_ATTACH_DISALLOW_EZT2);
     item_36wea_po: return string(STR_ATTACH_DISALLOW_EZT2);
@@ -564,6 +584,7 @@ switch(FEAT_TRAINS, SELF, switch_impuls1_can_attach, vehicle_type_id) {
     item_ed74: return string(STR_ATTACH_DISALLOW_EZT2);
     item_ed74_pkp_ic: return string(STR_ATTACH_DISALLOW_EZT2);
     item_en76: return CB_RESULT_ATTACH_ALLOW;
+    item_en96: return CB_RESULT_ATTACH_ALLOW;
     item_ed250: return string(STR_ATTACH_DISALLOW_EZT2);
     item_36wea_op: return CB_RESULT_ATTACH_ALLOW;
     item_36wea_po: return CB_RESULT_ATTACH_ALLOW;

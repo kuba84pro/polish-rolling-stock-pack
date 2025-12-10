@@ -38,7 +38,7 @@ spritegroup sgroup_158a_rear {
 
 /* A/B9mnopuz switches */
 switch(FEAT_TRAINS, SELF, switch_158a_articulated, extra_callback_info1) {
-    1: return item_158a;
+    1: return item_dummy_4;
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 switch(FEAT_TRAINS, SELF, switch_158a_cut_front, other_veh_is_hidden(1)) {
@@ -66,10 +66,6 @@ switch(FEAT_TRAINS, SELF, switch_158a_graphics, position_in_vehid_chain % 2) {
     1: return switch_158a_rear;
     return switch_158a_front;
 }
-switch(FEAT_TRAINS, SELF, switch_ab9mnopuz_length, position_in_vehid_chain % 2) {
-    1: return 4;
-    return 8;
-}
 switch (FEAT_TRAINS, SELF, switch_158a_add_text, IS_HEATING_CLIMATE ) {
     1: return string(STR_PURCHASE_DESCR_4L, string(STR_BRAKE_AIR), string(STR_HEATING_ELECTRIC_TEXT), string(STR_158A_TEXT), string(STR_INCOME_1_CLASS));
     return string(STR_PURCHASE_DESCR_3L, string(STR_BRAKE_AIR), string(STR_158A_TEXT), string(STR_INCOME_1_CLASS));
@@ -80,7 +76,7 @@ item(FEAT_TRAINS, item_158a, 11102) {
     property {
         /* common properties */
         name:                           string(STR_158A_NAME);
-        variant_group:                  11100;
+        variant_group:                  11104;
         climates_available:             PKP_CLIMATES; 
         introduction_date:              date(2010, 1, 1);
         model_life:                     VEHICLE_NEVER_EXPIRES;
@@ -92,13 +88,13 @@ item(FEAT_TRAINS, item_158a, 11102) {
         running_cost_factor:            RUNNING_COST_PASS_EXPRESS+2;
         /* train properties */
         sprite_id:                      SPRITE_ID_NEW_TRAIN;
-        speed:                          230 km/h;
+        speed:                          200 km/h;
         misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
         refit_cost:                     0;
         track_type:                     RAIL;
         power:                          0;
         running_cost_base:              RUNNING_COST_STEAM;
-        cargo_capacity:                 54/2;
+        cargo_capacity:                 54;
         weight:                         50 ton;
         length:                         8;
         visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
@@ -110,17 +106,12 @@ item(FEAT_TRAINS, item_158a, 11102) {
         additional_text:            switch_158a_add_text;
         default:                    switch_158a_graphics;
         articulated_part:           switch_158a_articulated;
-        length:                     switch_ab9mnopuz_length;
         cargo_age_period:           switch_new_cargo_age_period;
     }
 }
 
 // 159a
 
-switch(FEAT_TRAINS, SELF, switch_159a_articulated, extra_callback_info1) {
-    1: return item_159a;
-    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
-}
 switch(FEAT_TRAINS, SELF, switch_159a_cut_front, other_veh_is_hidden(1)) {
     1: return sset_159a_cut;
     return sgroup_159a;
@@ -155,7 +146,7 @@ item(FEAT_TRAINS, item_159a, 11103) {
     property {
         /* common properties */
         name:                           string(STR_159A_NAME);
-        variant_group:                  11101;
+        variant_group:                  11105;
         climates_available:             PKP_CLIMATES; 
         introduction_date:              date(2010, 1, 1);
         model_life:                     VEHICLE_NEVER_EXPIRES;
@@ -167,13 +158,13 @@ item(FEAT_TRAINS, item_159a, 11103) {
         running_cost_factor:            RUNNING_COST_PASS_EXPRESS+2;
         /* train properties */
         sprite_id:                      SPRITE_ID_NEW_TRAIN;
-        speed:                          230 km/h;
+        speed:                          200 km/h;
         misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
         refit_cost:                     0;
         track_type:                     RAIL;
         power:                          0;
         running_cost_base:              RUNNING_COST_STEAM;
-        cargo_capacity:                 72/2;
+        cargo_capacity:                 72;
         weight:                         50 ton;
         length:                         8;
         visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
@@ -184,8 +175,7 @@ item(FEAT_TRAINS, item_159a, 11103) {
         purchase:                   sset_159a_purchase;
         additional_text:            switch_159a_add_text;
         default:                    switch_159a_graphics;
-        articulated_part:           switch_159a_articulated;
-        length:                     switch_ab9mnopuz_length;
+        articulated_part:           switch_158a_articulated;
         cargo_age_period:           switch_new_cargo_age_period;
     }
 }

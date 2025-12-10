@@ -23,6 +23,8 @@ STR_PARAM_DESC_TOURISTS         :Ta opcja jeszcze nie działa.
 STR_PARAM_TOURISTS_AUTO         :Autorefit
 STR_PARAM_TOURISTS_MANUAL       :Ręczna
 STR_PARAM_TOURISTS_OFF          :Wyłączona
+STR_PARAM_NAME_HEATING          :Wyłącz parametr 'ogrzewanie'
+STR_PARAM_DESC_HEATING          :Zaznacz tę opcję aby wyłączyć parametr 'ogrzewania'. Działa tylko w Arktycznym klimacie.
 
 STR_PARAM_NAME_PURCHASE_COST    :Mnożnik cen zakupu pociągów
 STR_PARAM_DESC_PURCHASE_COST    :Użyj tę opcję aby zwiększyć ceny zakupu lokomotyw i wagonów. Dotyczy wyłącznie pojazdów z tego setu.
@@ -428,58 +430,20 @@ STR_DHXT_NAME           :Wagon bagażowy (Dhxt)
 STR_DWXZ_NAME           :Wagon bagażowy (Dwxz)
 STR_BDWXZD_NAME         :Wagon osobowy z przedz. bagażowym (BDwxzd)
 STR_BDWXZD_IC_NAME      :Wagon osobowy z przedz. bagażowym (BDwxzd) {SILVER}PKP Intercity
-STR_JHX_NAME            :Wagon restauracyjny (Jhx) {SILVER} WARS Oliwkowy
-STR_JHIX_NAME           :Wagon restauracyjny (Jhix) {SILVER} WARS Czerwony
-STR_WRDMNU_NAME         :Wagon restauracyjny (WRdmnu) {SILVER} WARS Czerwony
-STR_WRMNOUZ_NAME        :Wagon restauracyjny (WRmnouz)
-STR_407A_NAME           :Wagon restauracyjny 407A {SILVER}PKP Intercity
-STR_BAUTZEN89_NAME      :Wagon restauracyjny (WRmnou) Bautzen89 {SILVER}PKP Intercity
-STR_113A_NAME           :Wagon restauracyjny 113A {SILVER} PKP Intercity
-STR_113AA_NAME          :Wagon restauracyjny 113Aa {SILVER} PKP Intercity
 STR_BCY_NAME            :Wagon osobowy "boczniak" (BCy)
 STR_BCYH_NAME           :Wagon osobowy "boczniak" (BCyh)
 STR_BHXZ_PASSENGER_NAME :Wagon osobowy (Bhxz)
 STR_AHXZ_NAME           :Wagon pośpieszny (Ahxz)
 STR_BHXZ_NAME           :Wagon pośpieszny (Bhxz)
 STR_ABHXZ_NAME          :Wagon pośpieszny (A/Bhxz)
+
 STR_BWXZ_NAME           :Bwxz {SILVER}Oliwkowy
 STR_ABWXZ_NAME          :ABwxz {SILVER}Oliwkowy
 STR_AWXZ_NAME           :Awxz {SILVER}Oliwkowy
-STR_BDNU_NAME           :Bdnu {SILVER}Zielony
-STR_ABDNU_NAME          :ABdnu {SILVER}Czerwono-Zielony
-STR_ADNU_NAME           :Adnu {SILVER}Czerwony
-STR_163A_NAME              :163A {SILVER}Przewozy Regionalne
-STR_162A_NAME              :162A {SILVER}Przewozy Regionalne
-STR_162A_POLREGIO_NAME      :162A {SILVER}Polregio
-STR_163A_POLREGIO_NAME      :163A {SILVER}Polregio
-STR_140A_NAME           :140A {SILVER} PKP Intercity
-STR_140A_10_NAME        :140A-10 (A9nouz) {SILVER} PKP Intercity
-STR_112AT_NAME          :112At {SILVER} PKP Intercity
-STR_141A_20_NAME        :141A-20 (AB9nouz) {SILVER} PKP Intercity
-STR_141A_NAME           :141A {SILVER} PKP Intercity
-STR_174A_NAME           :174A (B10nouz) {SILVER} PKP Intercity
-STR_152A_PAPUGA_NAME    :152A {SILVER} PKP "Papuga"
-STR_154A_PAPUGA_NAME    :154A {SILVER} PKP "Papuga"
-STR_152A_NAME              :152A {SILVER} PKP Intercity
-STR_158A_NAME                 :158A {SILVER} PKP Intercity
-STR_154A_NAME              :154A {SILVER} PKP Intercity
-STR_159A_NAME                 :159A {SILVER} PKP Intercity
+
 STR_BCI_NAME            :Wagon osobowy "kowbojka" (BCi)
-STR_BH_RYF_NAME         :Wagon osobowy "ryflak" (Bh)
 STR_BH_RYF_TEXT         :Opis: {ORANGE}Wagon doczepny do {YELLOW}wagonu motorowego SN61
-STR_WLABWXZ_NAME        :Wagon sypialny (WLABwxz) {SILVER} Oliwkowy
-STR_WLAB_NAME           :Wagon sypialny (WLABd) {SILVER} Niebieski PKP
-STR_GORLITZ77_NAME      :Goerlitz77 {SILVER} PKP Intercity
-STR_WLAB10MNOUZ_NAME    :Wagon sypialny (WLAB10mnouz) {SILVER} PKP Intercity
-STR_BH_BON_NAME             :Wagon osobowy "Bonanza" (Bh)
-STR_BH_BON_NEW_NAME         :Wagon osobowy 120A {SILVER} Zielony
-STR_120A_PR_NAME            :Wagon osobowy 120A {SILVER} Przewozy Regionalne
-STR_120A_MALOPOLSKIE_NAME   :Wagon osobowy 120A {SILVER} Malopolskie
-STR_120A_POLREGIO_NAME   :Passenger coach 120A {SILVER} Polregio
 STR_BH_BON_TEXT         :Opis: {ORANGE}Wagon doczepny do {YELLOW}szynobusów nowszej generacji
-STR_ABDHMNU_NAME        :Wagon InterCity (A/Bdhmnu)
-STR_AB9MNOPUZ_NAME      :Wagon EuroCity (A/B9mnopuz)
-STR_AB9NOPUZ_NAME       :Wagon pośpieszny (A/B9nopuz)
 STR_BIPA_NAME           :Wagon osobowy piętrowy (Bhp)
 STR_BIPA_PR_NAME        :Wagon osobowy piętrowy (Bhp) {SILVER}Przewozy Regionalne
 STR_BIPA_TEXT           :Opis: {ORANGE}wieloczłonowy piętrowy wagon osobowy

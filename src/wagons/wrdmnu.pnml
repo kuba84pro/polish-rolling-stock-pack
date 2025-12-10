@@ -146,7 +146,7 @@ item(FEAT_TRAINS, item_bautzen89, 11303) {
         name:                           string(STR_BAUTZEN89_NAME);
         variant_group:                  11302;
         climates_available:             PKP_CLIMATES; 
-        introduction_date:              date(2010, 1, 1);
+        introduction_date:              date(2008, 1, 1);
         model_life:                     VEHICLE_NEVER_EXPIRES;
         vehicle_life:                   20;
         reliability_decay:              20;

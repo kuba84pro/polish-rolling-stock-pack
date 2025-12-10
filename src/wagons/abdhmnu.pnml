@@ -43,7 +43,7 @@ spritegroup sgroup_152a_rear {
 
 /* A/Bdhmnu switches */
 switch(FEAT_TRAINS, SELF, switch_152a_articulated, extra_callback_info1) {
-    1: return item_152a;
+    1: return item_dummy_4;
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 switch(FEAT_TRAINS, SELF, switch_152a_cut_front, other_veh_is_hidden(1)) {
@@ -70,10 +70,6 @@ switch(FEAT_TRAINS, SELF, switch_152a_rear, (extra_callback_info1&0xFF)==0 && cu
 switch(FEAT_TRAINS, SELF, switch_152a_graphics, position_in_vehid_chain % 2) {
     1: return switch_152a_rear;
     return switch_152a_front;
-}
-switch(FEAT_TRAINS, SELF, switch_abdhmnu_length, position_in_vehid_chain % 2) {
-    1: return 4;
-    return 8;
 }
 switch (FEAT_TRAINS, SELF, switch_152a_add_text, IS_HEATING_CLIMATE ) {
     1: return string(STR_PURCHASE_DESCR_4L, string(STR_BRAKE_AIR), string(STR_HEATING_ELECTRIC_TEXT), string(STR_152A_TEXT), string(STR_INCOME_1_CLASS));
@@ -117,16 +113,11 @@ item(FEAT_TRAINS, item_152a, 11100) {
         additional_text:            switch_152a_add_text;
         default:                    switch_152a_graphics;
         articulated_part:           switch_152a_articulated;
-        length:                     switch_abdhmnu_length;
         cargo_age_period:           switch_new_cargo_age_period;
     }
 }
 
 // 154a switches
-switch(FEAT_TRAINS, SELF, switch_154a_articulated, extra_callback_info1) {
-    1: return item_154a;
-    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
-}
 switch(FEAT_TRAINS, SELF, switch_154a_cut_front, other_veh_is_hidden(1)) {
     1: return sset_154a_cut;
     return sgroup_154a;
@@ -161,7 +152,7 @@ item(FEAT_TRAINS, item_154a, 11101) {
     property {
         /* common properties */
         name:                           string(STR_154A_NAME);
-        variant_group:                  11104;
+        variant_group:                  11105;
         climates_available:             PKP_CLIMATES; 
         introduction_date:              date(2003, 1, 1);
         model_life:                     VEHICLE_NEVER_EXPIRES;
@@ -190,8 +181,7 @@ item(FEAT_TRAINS, item_154a, 11101) {
         purchase:                   sset_154a_purchase;
         additional_text:            switch_154a_add_text;
         default:                    switch_154a_graphics;
-        articulated_part:           switch_154a_articulated;
-        length:                     switch_abdhmnu_length;
+        articulated_part:           switch_152a_articulated;
         cargo_age_period:           switch_new_cargo_age_period;
     }
 }

@@ -82,7 +82,7 @@ item(FEAT_TRAINS, item_162a, 10150) {
     property {
         /* common properties */
         name:                           string(STR_162A_NAME);
-        variant_group:                  10103;
+        variant_group:                  10100;
         climates_available:             PKP_CLIMATES; 
         introduction_date:              date(2010, 1, 1);
         model_life:                     VEHICLE_NEVER_EXPIRES;
@@ -120,7 +120,7 @@ item(FEAT_TRAINS, item_163a, 10151) {
     property {
         /* common properties */
         name:                           string(STR_163A_NAME);
-        variant_group:                  10104;
+        variant_group:                  10101;
         climates_available:             PKP_CLIMATES; 
         introduction_date:              date(2010, 1, 1);
         model_life:                     VEHICLE_NEVER_EXPIRES;
@@ -177,7 +177,7 @@ item(FEAT_TRAINS, item_162a_polregio, 10152) {
     property {
         /* common properties */
         name:                           string(STR_162A_POLREGIO_NAME);
-        variant_group:                  10103;
+        variant_group:                  10100;
         climates_available:             PKP_CLIMATES; 
         introduction_date:              date(2017, 1, 1);
         model_life:                     VEHICLE_NEVER_EXPIRES;
@@ -215,7 +215,7 @@ item(FEAT_TRAINS, item_163a_polregio, 10153) {
     property {
         /* common properties */
         name:                           string(STR_163A_POLREGIO_NAME);
-        variant_group:                  10104;
+        variant_group:                  10101;
         climates_available:             PKP_CLIMATES; 
         introduction_date:              date(2017, 1, 1);
         model_life:                     VEHICLE_NEVER_EXPIRES;

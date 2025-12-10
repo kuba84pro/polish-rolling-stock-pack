@@ -82,7 +82,7 @@ switch(FEAT_TRAINS, SELF, switch_sa136_can_attach, vehicle_type_id) {
     item_ed161:  return string(STR_ATTACH_DISALLOW_EZT2);
     return string(STR_ATTACH_DISALLOW_EZT1);
 }
-switch(FEAT_TRAINS, SELF, switch_sa136_start_stop, (count_veh_id(item_bh_bon)+count_veh_id(item_bdhpumn)/2+count_veh_id(item_bdwxzd) > 3) ) {
+switch(FEAT_TRAINS, SELF, switch_sa136_start_stop, (count_veh_id(520)/5 > 3 || COUNT_120A_BOCHUN_609A > 3)) {
     1: return string(STR_TRAIN_TOO_LONG, string(STR_SA136_NAME));
     return CB_RESULT_NO_TEXT;
 }

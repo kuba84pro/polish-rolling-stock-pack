@@ -111,6 +111,7 @@ item(FEAT_TRAINS, item_er160, 2600) {
     property {
         /* common properties */
         name:                           string(STR_ER160_KM_NAME);
+        variant_group:                  2605;
         climates_available:             PKP_CLIMATES; 
         introduction_date:              date(2019, 1, 1);
         model_life:                     VEHICLE_NEVER_EXPIRES;

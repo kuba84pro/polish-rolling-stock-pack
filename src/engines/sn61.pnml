@@ -81,7 +81,7 @@ switch(FEAT_TRAINS, SELF, switch_sn61_can_attach, vehicle_type_id) {
     item_awxz:  return CB_RESULT_ATTACH_ALLOW;
     return string(STR_ATTACH_DISALLOW, string(STR_SN61_NAME));
 }
-switch(FEAT_TRAINS, SELF, switch_sn61_start_stop, (count_veh_id(item_sn61) > 3 || count_veh_id(item_sn61_183) > 3 || count_veh_id(item_bh_ryf) > 3 || count_veh_id(item_bh_bon) > 3 || count_veh_id(item_bh_bon_new) > 3 || count_veh_id(item_120a_pr) > 3 || count_veh_id(item_120a_malopolskie) > 3 || count_veh_id(item_bdnu) > 3 || count_veh_id(item_abdnu) > 3 || count_veh_id(item_adnu) > 3)) {
+switch(FEAT_TRAINS, SELF, switch_sn61_start_stop, (count_veh_id(item_sn61) > 3 || count_veh_id(item_sn61_183) > 3 || count_veh_id(item_bh_ryf) > 3 || count_veh_id(item_bh_bon) > 3 || count_veh_id(item_bh_bon_new) > 3 || count_veh_id(item_120a_pr) > 3 || count_veh_id(item_120a_malopolskie) > 3 || count_veh_id(item_bdnu) > 3 || count_veh_id(item_abdnu) > 3 || count_veh_id(item_adnu) > 3|| count_veh_id(item_bwxz) > 3 || count_veh_id(item_abwxz) > 3 || count_veh_id(item_awxz) > 3)) {
     1: return string(STR_TRAIN_TOO_LONG, string(STR_SN61_NAME));
     return CB_RESULT_NO_TEXT;
 }

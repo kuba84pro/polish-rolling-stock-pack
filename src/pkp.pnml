@@ -2,7 +2,7 @@ grf {
     grfid: "MV\01\05";
     name: string(STR_GRF_NAME);
     desc: string(STR_GRF_DESCRIPTION);
-    version: 11;
+    version: 12;
     min_compatible_version: 1;
 
     param {
@@ -39,6 +39,12 @@ grf {
             bit:  2; // uses 3th bit
             name: string(STR_PARAM_NAME_ORIG_INTRO_DATES);
             desc: string(STR_PARAM_DESC_ORIG_INTRO_DATES);
+        }
+        param_heating {
+            type: bool;
+            bit:  3; // uses 3th bit
+            name: string(STR_PARAM_NAME_HEATING);
+            desc: string(STR_PARAM_DESC_HEATING);
         }
     }
     param {
@@ -232,6 +238,8 @@ basecost {
 /* Electric engines */
 #include "engines/ep01.pnml"
 #include "engines/ep02.pnml"
+#include "engines/eu04.pnml"
+#include "engines/eu20.pnml"
 #include "engines/et21.pnml"
 #include "engines/eu07.pnml"
 #include "engines/ep08.pnml"
@@ -269,6 +277,7 @@ basecost {
 #include "engines/en71akm.pnml"
 #include "engines/ed72.pnml"
 #include "engines/ed74.pnml"
+#include "engines/en96.pnml"
 #include "engines/en76-elf.pnml"
 #include "engines/ed250-pendolino.pnml"
 #include "engines/36wea.pnml"
@@ -302,12 +311,14 @@ basecost {
 #include "wagons/bdhpumn.pnml"
 #include "wagons/twindexx.pnml"
 #include "wagons/twindexxcontrolcar.pnml"
+#include "wagons/111Arow.pnml"
 #include "wagons/bhxz.pnml"
 #include "wagons/abhxz.pnml"
 #include "wagons/abdnu.pnml"
 #include "wagons/abdhmnu.pnml"
 // #include "wagons/wgpolregio.pnml"
 #include "wagons/ab9mnopuz.pnml"
+#include "wagons/158a_159a_new.pnml"
 #include "wagons/uic_y_174a.pnml"
 #include "wagons/uic_y_ab9nopuz.pnml"
 #include "wagons/wlabwxz.pnml"
@@ -317,7 +328,11 @@ basecost {
 #include "wagons/jhix.pnml"
 #include "wagons/wrdmnu.pnml"
 #include "wagons/wrmnouz.pnml"
+#include "wagons/155a.pnml"
+#include "wagons/157Aa.pnml"
+#include "wagons/175a.pnml"
 #include "wagons/113A.pnml"
+
 /* Freight wagons */
 #include "wagons/wddo.pnml"
 #include "wagons/wddo-2w.pnml"
@@ -404,7 +419,7 @@ sort(FEAT_TRAINS,
     // ST43 Variant_group
     330, 331, 332, 333,
     // ST44 Variant_group
-    350, 351, 352, 353, 354, 355, 356, 357, 358, 359,
+    350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360,
     // SP45, SU45, ST45, 301Db Variant_group
     400, 401, 402, 403, 404, 405,
     // SU46, ST46 Variant_group
@@ -427,7 +442,7 @@ sort(FEAT_TRAINS,
     515,
     // Sa136 Variant_group
     520,
-    // Sa1101/102 Variant_group
+    // Sa101/102 Variant_group
     521, 522,
     // electric engines
     // EP01, EP02 Variant_group
@@ -436,6 +451,10 @@ sort(FEAT_TRAINS,
     527, 528,
     // SKODA 181 Variant_group
     530, 531, 532,
+    // EU04
+    566, 567,
+    // EU20
+    568, 569,
     // ET21 Variant_group
     570, 571, 572, 573, 574, 575, 576, 577, 578, 579,
     // EU05/EP05 Variant_group
@@ -443,7 +462,7 @@ sort(FEAT_TRAINS,
     // EU06 Variant_group
     610, 611, 612,
     // EU07 Variant_group
-    620, 621, 643, 622, 644, 645, 647, 646, 623, 642, 629, 632, 624, 625, 626, 634, 637, 627, 628, 630, 631, 632, 633, 635, 636, 638, 639, 640, 641, 648,
+    620, 621, 643, 622, 644, 645, 647, 646, 623, 642, 629, 632, 624, 625, 626, 634, 637, 627, 628, 630, 631, 632, 633, 635, 636, 638, 639, 640, 641, 648, 649,
     // EU07A Variant_group connected with EU07
     680, 681,
     // EP08 Variant_group
@@ -489,7 +508,7 @@ sort(FEAT_TRAINS,
     // EU160, E4DCUd Variant_group
     1230, 1231, 1232, 1233, 1235, 1236, 1234,
     // EU200 Variant_group
-    1275, 1276,
+    1275, 1279, 1280, 1278, 1281, 1277, 1282, 1283, 1284, 1276,
     // EW58 variant_group
     1700, 1701,
     // EN57 Variant_group
@@ -502,6 +521,8 @@ sort(FEAT_TRAINS,
     2200, 2201, 2202,
     // ED74 Variant_group
     2300, 2301,
+    // EN96 
+    2399,
     // EN76 Variant_group
     2400,
     // Impuls one Variant_group
@@ -515,8 +536,10 @@ sort(FEAT_TRAINS,
     2560, 2561,
     // 31weba
     2565,
-    // L-4268, LM-4268, ER160, ED160 Variant_group
-    2605, 2604, 2601, 2600,
+    // L-4268, LM-4268, ER160, 
+    2605, 2604, 2600,
+    // ED160 variant_group
+    2601,
     // ED161 Variant_group
     2602,
     // ED250 Variant_group
@@ -545,7 +568,7 @@ sort(FEAT_TRAINS,
     10027,
     // passenger & sleeping cars
     // bci, bcy, bcyh
-    10030, 10031, 10032, 10033,
+    10032, 10033, 10030, 10031,
     // bh "ryflak" Variant_group
     441,
     // bh bonanza, 120a
@@ -560,21 +583,18 @@ sort(FEAT_TRAINS,
     10070,
     // ahxz, abhxz, bhxz express
     10071, 10072, 10073,
+
     // a/bwxz, a/bdnu, 141a, 140a, 112at (10100-10108)     
     // UIC-Y cars, 174a, 141a-20, 140a-10 (11000-11002)
     // 162a, 163a (10150-10153)
-    10102, 10101, 10100, 
-    10105,
-    10104, 10151, 10153,
-    10103, 10150, 10152,
-    10108, 11002, 
-    10107, 11001, 
-    10106, 11000,
+    10102 /*1st class */, 10105, 10108, 11002, 
+    10101 /*1st/2nd class */, 10104, 10151, 10153, 10107, 11001, 
+    10100 /*2nd class */, 10103, 10109, 10150, 10152, 10106, 10110, 11000,
+
     // UIC-Z 152a, 154a (papuga version also)
     // UIC-Z 158a, 159a
-    11104, 11105, 
-    11100, 11102, 
-    11101, 11103,
+    11104 /*1st class */, 11100, 11102, 11108,
+    11105 /*2nd class */, 11101, 11106, 11107, 11103, 11109,
     /*item_wgpolregio*/
 
     // Sleeping cars
@@ -582,17 +602,18 @@ sort(FEAT_TRAINS,
     11200,
     // wlab, gorlitz77
     11201, 11202, 11204,
-    // wlab10mnouz 
-    11203,
+    // wlab10mnouz, 305ad
+    11203, 11210, 11211,
 
     // restaurant cars
     // jhx, jhix, 113A, 113Aa
     11300, 11301, 
     11305, 11306,
-    // wrdmnu, bautzen89 (wrmnou), 407A (wrmnouz)
+    // wrdmnu, bautzen89 (wrmnou), 407A (wrmnouz), 406A-40, 155A, 175A
     11302, 11303,
-    11304,
-    
+    11309, 11304, 11308,
+    11310,
+    11307,
     // freight wagons
     // wdn, wddo, wddoh, wddo_2w (2 liveries)
     20000, 20001, 20002, 20003, 20004,

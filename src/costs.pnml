@@ -53,7 +53,9 @@
 /* Electric engines */
 #define PURCHASE_COST_EP01      25+2
 #define PURCHASE_COST_EP02      28
-#define PURCHASE_COST_ET21      29
+#define PURCHASE_COST_EU04      30
+#define PURCHASE_COST_EU20      32
+#define PURCHASE_COST_ET21      34
 #define PURCHASE_COST_EU07      35
 #define PURCHASE_COST_EU07A      45
 #define PURCHASE_COST_EU06      40
@@ -94,8 +96,9 @@
 #define PURCHASE_COST_EN71      71
 #define PURCHASE_COST_EN71AKS      71
 #define PURCHASE_COST_EN71AKM      71
-#define PURCHASE_COST_ED72      57
+#define PURCHASE_COST_ED72      73
 #define PURCHASE_COST_ED74      80
+#define PURCHASE_COST_EN96      65
 #define PURCHASE_COST_EN76      74
 #define PURCHASE_COST_ED250     255
 #define PURCHASE_COST_36WEA     60
@@ -157,13 +160,15 @@
 #define RUNNING_COST_SA103      60
 #define RUNNING_COST_SA135      70
 #define RUNNING_COST_SA136      85-2
-#define RUNNING_COST_SA101      65
-#define RUNNING_COST_SA102      69
+#define RUNNING_COST_SA101      74
+#define RUNNING_COST_SA102      76
 
 /* Electric engines */
 #define RUNNING_COST_EP01       55+2
 #define RUNNING_COST_EP02       57+1
-#define RUNNING_COST_ET21       70
+#define RUNNING_COST_EU04       65
+#define RUNNING_COST_EU20       73
+#define RUNNING_COST_ET21       75
 #define RUNNING_COST_EU07       80-1
 #define RUNNING_COST_EU07A       90-1
 #define RUNNING_COST_EU06       95
@@ -206,6 +211,7 @@
 #define RUNNING_COST_EN71AKM       61
 #define RUNNING_COST_ED72       64
 #define RUNNING_COST_ED74       89
+#define RUNNING_COST_EN96       81
 #define RUNNING_COST_EN76       89+1
 #define RUNNING_COST_ED250      235
 #define RUNNING_COST_36WEA      69
@@ -267,13 +273,15 @@
 #define HALTED_COST_SA103       20
 #define HALTED_COST_SA135       21
 #define HALTED_COST_SA136       30-2
-#define HALTED_COST_SA101       20
-#define HALTED_COST_SA102       22
+#define HALTED_COST_SA101       25
+#define HALTED_COST_SA102       28
 
 /* Electric engines */
 #define HALTED_COST_EP01        10+1
 #define HALTED_COST_EP02        11
-#define HALTED_COST_ET21        10
+#define HALTED_COST_EU04       11
+#define HALTED_COST_EU20       12
+#define HALTED_COST_ET21        13
 #define HALTED_COST_EU07        14-1
 #define HALTED_COST_EU07A        21-1
 #define HALTED_COST_EU06        18
@@ -316,6 +324,7 @@
 #define HALTED_COST_EN71AKM        14
 #define HALTED_COST_ED72        18-1
 #define HALTED_COST_ED74        25
+#define HALTED_COST_EN96        22
 #define HALTED_COST_EN76        25+1
 #define HALTED_COST_ED250       47
 #define HALTED_COST_36WEA       20
@@ -349,6 +358,8 @@
 #define PURCHASE_COST_113A      76
 #define PURCHASE_COST_WRDMNU    80
 #define PURCHASE_COST_WRMNOUZ   96
+#define PURCHASE_COST_157AA   93
+#define PURCHASE_COST_175A   102
 
 #define PURCHASE_COST_BCY       34
 #define PURCHASE_COST_BCYH      36

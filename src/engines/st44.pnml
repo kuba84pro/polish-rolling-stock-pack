@@ -13,6 +13,7 @@ spriteset(sset_st44_purchase_tabor_debica, "gfx/st44.png")           { tmpl_spri
 spriteset(sset_st44_purchase_orion, "gfx/st44.png")           { tmpl_sprite_purchase(4, 474) }
 spriteset(sset_st44_purchase_lhs, "gfx/st44.png")           { tmpl_sprite_purchase(4, 534) }
 spriteset(sset_st44_purchase_lhs_new, "gfx/st44.png")           { tmpl_sprite_purchase(4, 587) }
+spriteset(sset_m62_purchase_eurotrans, "gfx/st44.png")           { tmpl_sprite_purchase(4, 644) }
 spriteset(sset_st44, "gfx/st44.png")                    { tmpl_sprite_train10(4, 20) }
 spriteset(sset_st44_yellow, "gfx/st44.png")             { tmpl_sprite_train10(4, 80) }
 spriteset(sset_st44_pkp_cargo, "gfx/st44.png")          { tmpl_sprite_train10(4, 140) }
@@ -23,6 +24,7 @@ spriteset(sset_st44_tabor_debica, "gfx/st44.png")          { tmpl_sprite_train10
 spriteset(sset_st44_orion, "gfx/st44.png")          { tmpl_sprite_train10(4, 434) }
 spriteset(sset_st44_lhs, "gfx/st44.png")          { tmpl_sprite_train10(4, 494) }
 spriteset(sset_st44_lhs_new, "gfx/st44.png")          { tmpl_sprite_train10(4, 554) }
+spriteset(sset_m62_eurotrans, "gfx/st44.png")          { tmpl_sprite_train10(4, 604) }
 
 /* ST44 switches */
 switch(FEAT_TRAINS, SELF, switch_st44_articulated, extra_callback_info1) {
@@ -548,6 +550,57 @@ item(FEAT_TRAINS, item_st44_lhs_new, 359) {
         purchase:                   sset_st44_purchase_lhs_new;
         additional_text:            switch_st44_add_text;
         default:                    sset_st44_lhs_new;
+        articulated_part:           switch_st44_articulated;
+        visual_effect_and_powered:  switch_st44_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(st44)
+        ENGINE_POWER_CALLBACKS(st44)
+    }
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_m62_eurotrans, 360) {
+    property {
+		/* common properties */
+        name:                           string(STR_M62_EUROTRANS_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2024, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              10;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_ST44;
+        running_cost_factor:            RUNNING_COST_ST44;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          1472 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         116 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.32777953530879816;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        variant_group:                  350;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_m62_purchase_eurotrans;
+        additional_text:            switch_st44_add_text;
+        default:                    sset_m62_eurotrans;
         articulated_part:           switch_st44_articulated;
         visual_effect_and_powered:  switch_st44_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;

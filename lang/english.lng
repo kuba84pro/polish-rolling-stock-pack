@@ -18,8 +18,10 @@ STR_PARAM_DESC_ORIG_INTRO_DATES :Select this option to use original introduction
 STR_PARAM_NAME_TOURISTS         :ECS 'tourists' in passenger/suburban coaches
 STR_PARAM_DESC_TOURISTS         :This option don't work yet.
 STR_PARAM_TOURISTS_AUTO         :Autorefit
-STR_PARAM_TOURISTS_MANUAL       :Manulal
+STR_PARAM_TOURISTS_MANUAL       :Manual
 STR_PARAM_TOURISTS_OFF          :Disabled
+STR_PARAM_NAME_HEATING          :Disable 'heating' parameter
+STR_PARAM_DESC_HEATING          :Select this option to disable parameter 'heating'. Applies only in Arctic climate.
 
 STR_PARAM_NAME_PURCHASE_COST    :Purchase cost multiplier
 STR_PARAM_DESC_PURCHASE_COST    :Use this option to increase the purchase cost of engines and wagons. Applicable only in this set.
@@ -173,6 +175,8 @@ STR_ST44_TABOR_DEBICA_NAME      :{YELLOW}M62-1690 {SILVER}Tabor Debica
 STR_ST44_ORION_NAME             :{YELLOW}M62 {SILVER}Orion
 STR_ST44_LHS_NAME               :{YELLOW}ST44 {SILVER}LHS
 STR_ST44_LHS_NEW_NAME           :{YELLOW}ST44 {SILVER}LHS New Livery
+STR_M62_EUROTRANS_NAME           :{YELLOW}M62 {SILVER}Eurotrans
+
 STR_SP45_NAME                        :{YELLOW}SP45
 STR_SU45_NAME                        :{YELLOW}SU45
 STR_SU45_YELLOW_CZOLO_NAME           :{YELLOW}SU45 {SILVER}Historical Yellow Front 
@@ -223,7 +227,8 @@ STR_EU07_303E_YELLOW_FRONT_NAME             :{DKGREEN}EU07 {DKBLUE}303E {SILVER}
 STR_EU07_303E_TRAPEZE_YELLOW_FRONT_NAME     :{DKGREEN}EU07 {DKBLUE}303E {SILVER}Trapeze with Yellow Front
 STR_EP07_361_NAME                           :{DKGREEN}EP07-361 {DKBLUE}303E
 STR_EU07_303E_TURQUOISE_YELLOW_FRONT_NAME   :{DKGREEN}EU07 {DKBLUE}303E {SILVER}Turquoise with Yellow Front
-STR_EU07_303E_POLTRANS_NAME   :{DKGREEN}EU07 {DKBLUE}303E {SILVER}Poltrans
+STR_EU07_303E_POLTRANS_NAME     :{DKGREEN}EU07 {DKBLUE}303E {SILVER}Poltrans
+STR_EU07_RAILSTM_OLD_NAME       :{DKGREEN}EU07 {SILVER}RailSTM Old Livery
 STR_EU07A_NAME                  :{DKGREEN}EU07A {SILVER}PKP Intercity Old Livery
 STR_EU07A_NEW_NAME              :{DKGREEN}EU07A {SILVER}PKP Intercity
 STR_EU07A_TEXT                  :Info: {ORANGE}Major modernisation of EU07 locomotive for pulling express trains
@@ -231,6 +236,11 @@ STR_EU07A_TEXT                  :Info: {ORANGE}Major modernisation of EU07 locom
 STR_EU06_NAME           :{DKGREEN}EU06
 STR_EU06_GREEN_NAME     :{DKGREEN}EU06 {SILVER}Historical Green
 STR_EU06_YELLOW_NAME    :{DKGREEN}EU06 {SILVER}Historical Yellow Front
+
+STR_EU04_NAME           :{DKGREEN}EU04
+STR_EU04_CLASSIC_NAME           :{DKGREEN}EU04 {SILVER}Classic
+STR_EU20_NAME           :{DKGREEN}EU20
+STR_EU20_CLASSIC_NAME           :{DKGREEN}EU20 {SILVER}Classic
 STR_ET21_NAME           :{DKGREEN}ET21
 STR_ET21_GREEN_NAME           :{DKGREEN}ET21 {SILVER}Historical Green
 STR_ET21_YELLOW_FRONT_NAME    :{DKGREEN}ET21 {SILVER}Historical Yellow Front
@@ -268,6 +278,7 @@ STR_ET40_NAME           :{DKGREEN}ET40
 STR_ET40_LOTOS_NAME         :{DKGREEN}ET40 {SILVER}Lotos
 STR_ET40_YELLOW_FRONT_NAME         :{DKGREEN}ET40 {SILVER}Historical Yellow Front
 STR_ET40_CU_NAME         :{DKGREEN}ET40 {SILVER}Cargounit
+STR_ET40_31_NAME         :{DKGREEN}ET40-31 {SILVER}P.H.U Tom-Lok
 STR_ET41_NAME               :{DKGREEN}ET41
 STR_ET41_YELLOW_FRONT_NAME  :{DKGREEN}ET41 {SILVER}Historical Yellow Front
 STR_ET41_PKP_CARGO_NAME     :{DKGREEN}ET41 {SILVER}PKP Cargo
@@ -387,9 +398,18 @@ STR_EU160_WYBIERZ_KOLEJ_NAME        :{DKGREEN}EU160-015 {SILVER}PKP Intercity "E
 STR_EU160_20LAT_POLSKI_NAME         :{DKGREEN}EU160 {SILVER}PKP intercity "20 years of Poland in EU"
 STR_EU160_POWSTANIE_SLASKIE_NAME    :{DKGREEN}EU160 {SILVER}PKP intercity "3rd Silesian Uprising"
 STR_EU160_TEXT		    :Type: {ORANGE}E4MSU
+
 STR_EU200_NAME          :{DKGREEN}EU200 {SILVER}PKP Intercity
-STR_EU200_002_NAME      :{DKGREEN}EU200-002 {SILVER}PKP Intercity TRAKO 2023 Livery
 STR_EU200_TEXT		    :Type: {ORANGE}E4MSUa (Griffin 200)
+STR_EU200_012_NAME          :{DKGREEN}EU200-012 {SILVER}PKP Intercity "Boleslaw Prus"
+STR_EU200_003_CZOCHRALSKI_NAME   :{DKGREEN}EU200-003 {SILVER}PKP Intercity "Jan Czochralski"
+STR_EU200_003_SPRITE_NAME   :{DKGREEN}EU200-003 {SILVER}PKP Intercity "Sprite"
+STR_EU200_001_RODZINNE_NAME   :{DKGREEN}EU200-001 {SILVER}PKP Intercity "Rodzinne Podroze"
+STR_EU200_002_NAME   :{DKGREEN}EU200-002 {SILVER}PKP Intercity
+STR_EU200_MAKIETA_NAME   :{DKGREEN}EU200 {SILVER}PKP Intercity "Wystawa Makiet Kolejowych"
+STR_EU200_005_JARMARK_NAME   :{DKGREEN}EU200-005 {SILVER}PKP Intercity "765. Jarmark Sw. Dominika"
+STR_EU200_005_CPK_NAME   :{DKGREEN}EU200-005 {SILVER}PKP Intercity "CPK"
+STR_EU200_010_NAME       :{DKGREEN}EU200-010 {SILVER}PKP Intercity "Oranżada Helena"
 
 STR_111ED_NAME              :{DKGREEN}111Ed {SILVER}Gama
 STR_111ED_RCP_NAME          :{DKGREEN}111Ed {SILVER}Gama RCP
@@ -461,7 +481,7 @@ STR_193_428_NAME                 :{DKGREEN}193 428 {SILVER}"Kierunek Europa"
 STR_CESKE_DRAHY_NAME                 :{DKGREEN}193 {SILVER}Ceske Drahy
 STR_193_366_NAME                 :{DKGREEN}193 366 {SILVER}"Einziganders"
 STR_193_448_NAME                 :{DKGREEN}193 448-8 {SILVER}Rail Cargo Group
-STR_OBB_NAME                     :{DKGREEN}1293 {SILVER}OBB
+STR_OBB_NAME                     :{DKGREEN}1293 {SILVER}ÖBB
 
 STR_E4DCUD_NAME         :{LTBLUE}E4DCUd {SILVER}Griffin
 STR_E4DCUD_LOTOS_NAME   :{LTBLUE}E4DCUd {SILVER}Lotos
@@ -505,6 +525,7 @@ STR_ED74_PKP_IC_NAME    :{DKGREEN}ED74 {SILVER}PKP Intercity
 STR_ED74_PKP_PR_NAME    :{DKGREEN}ED74 {SILVER}Przewozy Regionalne
 STR_ED74_TEXT          	:Info: {YELLOW}4{ORANGE}-part Electric Multiple Unit with {YELLOW}33{ORANGE} {RED}1{ORANGE}-st and {YELLOW}169{ORANGE} {RED}2{ORANGE}-nd class sitting places
 STR_EN76_NAME           :{DKGREEN}EN76 {SILVER}Elf
+STR_EN96_NAME           :{DKGREEN}EN96 {SILVER}Swietokrzyskie
 STR_ED250_NAME          :{DKGREEN}ED250 {SILVER}Pendolino
 STR_ED250_PKP_IC_NAME          :{DKGREEN}ED250 {SILVER}PKP Intercity
 STR_ED250_TEXT         	:Info: {YELLOW}7{ORANGE}-part Electric Multiple Unit with {YELLOW}buffet car{ORANGE}, {YELLOW}45{ORANGE} {RED}1{ORANGE}-st and {YELLOW}357{ORANGE} {RED}2{ORANGE}-nd class sitting places
@@ -565,17 +586,27 @@ STR_DHXT_NAME           :Luggage van (Dhxt)
 STR_DWXZ_NAME           :Luggage van (Dwxz)
 STR_BDWXZD_NAME         :Passenger/luggage coach (BDwxzd)
 STR_BDWXZD_IC_NAME      :Passenger/luggage coach (BDwxzd) {SILVER}PKP Intercity
-STR_JHX_NAME            :Jhx {SILVER} WARS Olive Drab
-STR_JHIX_NAME           :Jhix {SILVER} WARS PKP Livery
-STR_WRDMNU_NAME         :WRdmnu {SILVER}WARS PKP Livery
-STR_WRDMNU_TEXT         :WRdmnu Restaurant Coach
-STR_113A_NAME           :113A {SILVER}PKP Intercity
-STR_113AA_NAME          :113Aa {SILVER}PKP Intercity
+STR_JHX_NAME            :WR4ü-35 (Jhx) {SILVER}WARS Olive Drab
+STR_JHIX_NAME           :Bautzen60 (Jhix) {SILVER} WARS PKP Livery
+
+STR_WRDMNU_NAME         :Bautzen89 (WRdmnu) {SILVER}WARS PKP Livery
+STR_WRDMNU_TEXT         :Restaurant Coach
+STR_113A_NAME           :113A (WRbd) {SILVER}PKP Intercity
 STR_113A_TEXT           :WRnouz Restaurant Car
-STR_BAUTZEN89_NAME      :Bautzen89 {SILVER}PKP intercity
+STR_113AA_NAME          :113Aa (WRnouz) {SILVER}PKP Intercity
+STR_113AA_M_NAME          :113Aa (WRnouz) {SILVER}PKP Intercity
+STR_113AA_M_TEXT           :Restaurant Car
+STR_BAUTZEN89_NAME      :Bautzen89 (WRdmnu) {SILVER}PKP intercity
 STR_BAUTZEN89_TEXT      :WRmnou Restaurant Car
-STR_407A_NAME        :407A {SILVER}PKP Intercity
-STR_407A_TEXT        :WRmnouz Restaurant Car
+STR_407A_NAME        :407A (WRmnouz) {SILVER}PKP Intercity
+STR_407A_TEXT        :Restaurant Car
+STR_406A_40_NAME        :406A-40 (WRmnouz) {SILVER}PKP Intercity
+STR_406A_40_TEXT        :Restaurant Car
+STR_155A_NAME        :155A (BR4mnouz) {SILVER}PKP Intercity
+STR_155A_TEXT        : Restaurant and {ORANGE}2nd class {BLACK}coach
+STR_175A_NAME        :175A (Smnopuz) {SILVER}PKP Intercity
+STR_175A_TEXT        :Military special coach
+
 STR_BCY_NAME            :Passenger coach (BCy)
 STR_BCYH_NAME           :Passenger coach (BCyh)
 STR_BHXZ_PASSENGER_NAME           :Passenger coach (Bhxz)
@@ -584,25 +615,36 @@ STR_ABHXZ_NAME          :Express coach (ABhxz)
 STR_BHXZ_NAME          :Express coach (Bhxz)
 STR_ABHXZ_TEXT          :Refitable to: {RED}2{ORANGE}-nd, {RED}1/2{ORANGE}-nd or {RED}1{ORANGE}-st class express coach{BLACK}. Default: {RED}2{ORANGE}-nd class coach
 STR_BCI_NAME            :Passenger coach "kowbojka" (BCi)
-STR_BH_RYF_NAME         :Passenger coach "ryflak" (Bh)
+STR_BH_RYF_NAME         :43A (Bwixt)
 STR_BH_RYF_TEXT         	:Info: {ORANGE}Supplementary passenger coach for {YELLOW}diesel motor car SN61
-STR_WLAB_NAME           :WLAB {SILVER} WARS PKP Livery
-STR_GORLITZ77_NAME      :Gorlitz77 {SILVER}PKP Intercity
-STR_308A_NAME           :308A {SILVER}PKP Intercity
-STR_WLABWXZ_NAME        :WLABwxz {SILVER}WARS Olive Drab
-STR_WLAB10MNOUZ_NAME    :305Ad {SILVER}PKP Intercity
-STR_WLAB10MNOUZ_TEXT    :UIC-Z Sleeping Car (WLAB10mnouz)
-STR_BWXZ_NAME          :Bwxz  {SILVER}OLive drab
-STR_ABWXZ_NAME         :ABwxz {SILVER}OLive drab
-STR_AWXZ_NAME          :Awxz  {SILVER}OLive drab
-STR_ABDNU_OLIWKOWE_TEXT           :UIC-Y coach
-STR_BDNU_NAME          :Bdnu  {SILVER}Green-Red Livery
-STR_ABDNU_NAME         :ABdnu {SILVER}Green-Red Livery
-STR_ADNU_NAME          :Adnu  {SILVER}Green-red Livery
+
+STR_WLABWXZ_NAME        :Görlitz67 (WLABwxz) {SILVER}WARS Olive Drab
+STR_WLAB_NAME           :Görlitz77 (WLABwxz) {SILVER}PKP Livery
+STR_GORLITZ77_NAME      :Görlitz77 (WLABd) {SILVER}PKP Intercity
+STR_308A_NAME           :308A (WLAB9bmnouz) {SILVER}PKP Intercity
+STR_WLAB10MNOUZ_NAME    :305Ad (WLABdmnu) {SILVER}Jan Kiepura
+STR_WLAB10MNOUZ_TEXT    :UIC-Z Sleeping Car "Jan Kiepura"
+STR_305AD_NAME          :305Ad (WLAB10mnouz){SILVER}PKP Intercity
+STR_305AD_TEXT          :UIC-Z Sleeping Car
+STR_305AD_M_NAME          :305Ad (WLAB10mnouz) {SILVER}PKP Intercity
+STR_305AD_M_TEXT          :UIC-Z Sleeping Car
+
+STR_BWXZ_NAME          :111A (Bwxz) {SILVER}Olive Drab
+STR_ABWXZ_NAME         :104A (ABwxz) {SILVER}Olive Drab
+STR_AWXZ_NAME          :112A (Awxz) {SILVER}Olive Drab
+STR_ABDNU_OLIWKOWE_TEXT   :UIC-Y coach
+STR_BDNU_NAME          :111A (Bdnu)
+STR_ABDNU_NAME         :112At (ABdnu)
+STR_ADNU_NAME          :112A (Adnu)
 STR_ABDNU_GREEN_RED_TEXT          :UIC-Y coach
-STR_141A_NAME          :141A  {SILVER}PKP Intercity
-STR_112AT_NAME         :112At {SILVER}PKP Intercity
-STR_140A_NAME          :140A  {SILVER}PKP Intercity
+
+STR_111AROW_GREEN_NAME         :111Arow (Brdhnu) {SILVER}PKP Przewozy Regionalne
+STR_111AROW_NAME               :111Arow (B9nopuvz) {SILVER}PKP Intercity
+STR_111AROW_GREEN_TEXT         :{RED}2{ORANGE}-nd class UIC-Y coach
+STR_111AROW_TEXT               :{RED}2{ORANGE}-nd class UIC-Y coach
+STR_141A_NAME          :141A (B10nou) {SILVER}PKP Intercity
+STR_112AT_NAME         :112At (AB9nou) {SILVER}PKP Intercity
+STR_140A_NAME          :140A (A9nou) {SILVER}PKP Intercity
 STR_ABDNU_IC_TEXT          :UIC-Y coach
 STR_174A_NAME          :174A (B10nouz) {SILVER}PKP Intercity
 STR_141A_20_NAME       :141A-20 (AB9nouz) {SILVER}PKP Intercity
@@ -610,34 +652,41 @@ STR_140A_10_NAME        :140A-10 (A9nouz) {SILVER}PKP Intercity
 STR_174A_TEXT          :{RED}2{ORANGE}-nd class UIC-Y modernized coach
 STR_141A_20_TEXT        :{RED}1/2{ORANGE}-nd class UIC-Y modernized coach
 STR_140A_10_TEXT          :{RED}1{ORANGE}-st class UIC-Y modernized coach
-STR_BH_BON_NAME             :Passenger coach "Bonanza" (Bh)
-STR_BH_BON_NEW_NAME         :Passenger coach 120A {SILVER} Green
-STR_120A_PR_NAME            :Passenger coach 120A {SILVER} Przewozy Regionalne
-STR_120A_MALOPOLSKIE_NAME   :Passenger coach 120A {SILVER} Małopolskie
-STR_120A_POLREGIO_NAME   :Passenger coach 120A {SILVER} Polregio
+
+STR_BH_BON_NAME             :120A (Bwix)
+STR_BH_BON_NEW_NAME         :120A (Bh) {SILVER}Green
+STR_120A_PR_NAME            :120A (B11p) {SILVER}Pomorskie
+STR_120A_MALOPOLSKIE_NAME   :120A (Bh) {SILVER}Malopolskie
+STR_120A_POLREGIO_NAME   :120A (B11pv) {SILVER}Polregio
 STR_BH_BON_TEXT      :Info: {ORANGE}Passenger coach (Bh "Bonanza"){}{ORANGE}Supplementary passenger coach for {YELLOW}diesel railbuses
-STR_152A_NAME        :152A {SILVER}PKP Intercity
-STR_154A_NAME        :154A {SILVER}PKP Intercity
-STR_152A_PAPUGA_NAME        :152A {SILVER}Historical "Parrot" livery
-STR_154A_PAPUGA_NAME        :154A {SILVER}Historical "Parrot" livery
+STR_152A_NAME        :152A (A9mnopuz) {SILVER}PKP Intercity
+STR_154A_NAME        :154A (B10mnopuz) {SILVER}PKP Intercity
+STR_152A_PAPUGA_NAME        :152A (Admnu) {SILVER}Parrot
+STR_154A_PAPUGA_NAME        :154A (Bdmnu) {SILVER}Parrot
 STR_WGPOLREGIO_NAME        :162a/163a wagon (A/B9nopuz)
-STR_152A_TEXT        :UIC-Z coach {SILVER}(Adhmnu, PKPIC Livery)
-STR_154A_TEXT        :UIC-Z coach {SILVER}(Bdhmnu, PKPIC Livery)
-STR_152A_PAPUGA_TEXT         :UIC-Z coach {SILVER}(Adhmnu, Old PKP Livery)
-STR_154A_PAPUGA_TEXT        :UIC-Z coach {SILVER}(Bdhmnu, Old PKP Livery)
+STR_152A_TEXT        :UIC-Z coach {SILVER}PKPIC Livery
+STR_154A_TEXT        :UIC-Z coach {SILVER}PKPIC Livery
+STR_152A_PAPUGA_TEXT         :UIC-Z coach
+STR_154A_PAPUGA_TEXT        :UIC-Z coach
 STR_WGPOLREGIO_TEXT        :PolRegio wagon 1 or 2 class
-STR_158A_NAME      :158A {SILVER}PKP Intercity
+
+STR_157AA_NAME      :157Aa (B9bmnouz) {SILVER}PKP Intercity
+STR_157AA_TEXT      :UIC-Z coach {SILVER}(B9bmnouz, PKPIC Livery)
+STR_157AA_M_NAME      :157Aa (B9bmnouz) {SILVER}PKP Intercity
+STR_157AA_M_TEXT      :UIC-Z coach {SILVER}(B9bmnouz, PKPIC Livery)
+STR_158A_NAME      :158A (A9mnopuz) {SILVER}PKP Intercity
 STR_158A_TEXT      :UIC-Z coach {SILVER}(A9mnopuz, PKPIC Livery)
-STR_159A_NAME      :159A {SILVER}PKP Intercity
-STR_159A_TEXT      :UIC-Z coach {SILVER}(B9mnopuz, PKPIC Livery)
-STR_162A_NAME      :162A {SILVER}Przewozy Regionalne
-STR_162A_TEXT      :UIC-Y coach (B9nopuz, Przewozy Regionalne Livery)
-STR_163A_NAME      :163A {SILVER}Przewozy Regionalne
+STR_159A_NAME      :159A (B9mnopuz) {SILVER}PKP Intercity
+STR_159A_TEXT      :UIC-Z coach {SILVER}PKPIC Livery
+STR_162A_NAME      :162A (B9nopuz) {SILVER}Przewozy Regionalne
+STR_162A_TEXT      :UIC-Y coach Przewozy Regionalne Livery
+STR_163A_NAME      :163A (AB8nopuz) {SILVER}Przewozy Regionalne
 STR_163A_TEXT      :UIC-Y coach (AB9nopuz, Przewozy Regionalne Livery)
-STR_162A_POLREGIO_NAME      :162A {SILVER}Polregio
-STR_162A_POLREGIO_TEXT      :UIC-Y coach (B9nopuz, Polregio Livery)
-STR_163A_POLREGIO_NAME      :163A {SILVER}Polregio
-STR_163A_POLREGIO_TEXT      :UIC-Y coach (AB9nopuz, Polregio Livery)
+STR_162A_POLREGIO_NAME      :162A (B9nopuz) {SILVER}Polregio
+STR_162A_POLREGIO_TEXT      :UIC-Y coach Polregio Livery
+STR_163A_POLREGIO_NAME      :163A (AB8nopuz) {SILVER}Polregio
+STR_163A_POLREGIO_TEXT      :UIC-Y coach Polregio Livery
+
 STR_BIPA_NAME           :Passenger double-decker coach (Bhp)
 STR_BIPA_PR_NAME           :Passenger double-decker coach (Bhp) {SILVER}Przewozy Regionalne Livery
 STR_BIPA_TEXT           	:Info: {ORANGE}customizable multiple unit double-decker passenger coach{}{BLACK}Refitable to: {YELLOW}2{ORANGE}-, {YELLOW}3{ORANGE}- or {YELLOW}4{ORANGE}-part variants{BLACK}. Default: {YELLOW}2{ORANGE}-part
@@ -713,7 +762,7 @@ STR_SGS_PKP_CARGO_NAME  :Sgs {SILVER}PKP Cargo
 STR_SGS_PCC_NAME        :Sgs {SILVER}PCC Intermodal
 STR_SDGMNSS_NAME        :Sdgmnss {SILVER}PKP Cargo White
 STR_SDGMNSS_PKP_CARGO_NAME        :Sdgmnss {SILVER}PKP Cargo
-STR_SDGMNSS_OBB_NAME        :Sdgmnss {SILVER}OBB
+STR_SDGMNSS_OBB_NAME        :Sdgmnss {SILVER}ÖBB
 STR_SGGRSS_PKP_CARGO_NAME        :Sggrss {SILVER}PKP Cargo
 STR_SGGRSS_DBCARGO_NAME        :Sggrss {SILVER}DB Cargo
 STR_SGGRSS_PCC_NAME        :Sggrss {SILVER}PCC

@@ -34,6 +34,7 @@ item(FEAT_TRAINS, item_bci, 10030) {
     property {
 		/* common properties */
         name:                           string(STR_BCI_NAME);
+        variant_group:                  10032;
         climates_available:             PKP_CLIMATES; 
         introduction_date:              date(1939, 1, 1);
         vehicle_life:                   20;
@@ -80,7 +81,7 @@ item(FEAT_TRAINS, item_bci2, 10031) {
     property {
 		/* common properties */
         name:                           string(STR_BCI_NAME);
-        variant_group:                  10030;
+        variant_group:                  10032;
         climates_available:             PKP_CLIMATES; 
         introduction_date:              date(1939, 1, 1);
         vehicle_life:                   20;

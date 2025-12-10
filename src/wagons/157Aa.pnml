@@ -1,0 +1,181 @@
+// This is part of PRSP NewGRF.
+// Don't include any headers inside this file!
+// (c) kuba84pro, licence: GPLv2
+
+spriteset(sset_157Aa_purchase, "gfx/157Aa.png")       { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_157Aa, "gfx/157Aa.png")             { tmpl_sprite_train12(4, 20) }
+spriteset(sset_157Aa_open, "gfx/157Aa.png")        { tmpl_sprite_train12(4, 80) }
+spriteset(sset_157Aa_l, "gfx/157Aa.png")           { tmpl_sprite_train12_l(4, 120) }
+spriteset(sset_157Aa_r, "gfx/157Aa.png")           { tmpl_sprite_train12_r(4, 120) }
+spriteset(sset_157Aa_cut, "gfx/157Aa.png")         { tmpl_sprite_train12(4, 160) }
+spriteset(sset_157Aa_rear, "gfx/157Aa.png")        { tmpl_sprite_train(32, 200) }
+spriteset(sset_157Aa_rear_open, "gfx/157Aa.png")   { tmpl_sprite_train(32, 240) }
+spritegroup sgroup_157Aa {
+    loaded:     [sset_157Aa];
+    loading:    [sset_157Aa_open];
+}
+spritegroup sgroup_157Aa_rear {
+    loaded:     [sset_157Aa_rear];
+    loading:    [sset_157Aa_rear_open];
+}
+
+switch(FEAT_TRAINS, SELF, switch_157Aa_articulated, extra_callback_info1) {
+    1: return item_dummy_4;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_157Aa_cut_front, other_veh_is_hidden(1)) {
+    1: return sset_157Aa_cut;
+    return sgroup_157Aa;
+}
+switch(FEAT_TRAINS, SELF, switch_157Aa_extra_front, 
+   [STORE_TEMP(curv_info_prev_cur, 0), STORE_TEMP(curv_info_cur_next, 1),
+    STORE_TEMP((LOAD_TEMP(0)<0 && LOAD_TEMP(1)<0)?0:LOAD_TEMP(1), 1),
+    STORE_TEMP((LOAD_TEMP(0)>0 && LOAD_TEMP(1)>0)?0:LOAD_TEMP(1), 1),
+    LOAD_TEMP(1)]) {
+    -2..-1: return sset_157Aa_l;
+    1..2:   return sset_157Aa_r;
+    return switch_157Aa_cut_front;
+}
+switch(FEAT_TRAINS, SELF, switch_157Aa_front, (extra_callback_info1&0xFF)==0) {
+    1: return switch_157Aa_extra_front;  // viewport
+    return sgroup_157Aa;
+}
+switch(FEAT_TRAINS, SELF, switch_157Aa_rear, (extra_callback_info1&0xFF)==0 && curv_info_prev_cur==0 && other_veh_z_offset(-1)==0 ) {
+    1: return sgroup_157Aa_rear;  // viewport & no curves
+    return sset_dummy;
+}
+switch(FEAT_TRAINS, SELF, switch_157Aa_graphics, position_in_vehid_chain % 2) {
+    1: return switch_157Aa_rear;
+    return switch_157Aa_front;
+}
+switch (FEAT_TRAINS, SELF, switch_157Aa_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_4L, string(STR_BRAKE_AIR), string(STR_HEATING_ELECTRIC_TEXT), string(STR_157AA_TEXT));
+    return string(STR_PURCHASE_DESCR_3L, string(STR_BRAKE_AIR), string(STR_157AA_TEXT));
+}
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_157Aa, 11106) {
+    property {
+        /* common properties */
+        name:                           string(STR_157AA_NAME);
+        variant_group:                  11105;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2013, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  7;
+        cost_factor:                    PURCHASE_COST_157AA;
+        running_cost_factor:            RUNNING_COST_PASS_EXPRESS+1;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          200 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 56;
+        weight:                         52 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON, VINFO_HIGH_SPEED_WAGON);
+    }
+
+    graphics {
+        purchase:                   sset_157Aa_purchase;
+        additional_text:            switch_157Aa_add_text;
+        default:                    switch_157Aa_graphics;
+        articulated_part:           switch_157Aa_articulated;
+        purchase_cargo_capacity:    return 56;
+        cargo_capacity:             return 56;
+    }
+}
+
+spriteset(sset_157aa_purchase, "gfx/157Aa.png")       { tmpl_sprite_purchase(304, 60) }
+spriteset(sset_157aa, "gfx/157Aa.png")             { tmpl_sprite_train12(304, 20) }
+spriteset(sset_157aa_open, "gfx/157Aa.png")        { tmpl_sprite_train12(304, 80) }
+spriteset(sset_157aa_l, "gfx/157Aa.png")           { tmpl_sprite_train12_l(304, 120) }
+spriteset(sset_157aa_r, "gfx/157Aa.png")           { tmpl_sprite_train12_r(304, 120) }
+spriteset(sset_157aa_cut, "gfx/157Aa.png")         { tmpl_sprite_train12(304, 160) }
+spriteset(sset_157aa_rear, "gfx/157Aa.png")        { tmpl_sprite_train(332, 200) }
+spriteset(sset_157aa_rear_open, "gfx/157Aa.png")   { tmpl_sprite_train(332, 240) }
+spritegroup sgroup_157aa {
+    loaded:     [sset_157aa];
+    loading:    [sset_157aa_open];
+}
+spritegroup sgroup_157aa_rear {
+    loaded:     [sset_157aa_rear];
+    loading:    [sset_157aa_rear_open];
+}
+
+switch(FEAT_TRAINS, SELF, switch_157aa_cut_front, other_veh_is_hidden(1)) {
+    1: return sset_157aa_cut;
+    return sgroup_157aa;
+}
+switch(FEAT_TRAINS, SELF, switch_157aa_extra_front, 
+   [STORE_TEMP(curv_info_prev_cur, 0), STORE_TEMP(curv_info_cur_next, 1),
+    STORE_TEMP((LOAD_TEMP(0)<0 && LOAD_TEMP(1)<0)?0:LOAD_TEMP(1), 1),
+    STORE_TEMP((LOAD_TEMP(0)>0 && LOAD_TEMP(1)>0)?0:LOAD_TEMP(1), 1),
+    LOAD_TEMP(1)]) {
+    -2..-1: return sset_157aa_l;
+    1..2:   return sset_157aa_r;
+    return switch_157aa_cut_front;
+}
+switch(FEAT_TRAINS, SELF, switch_157aa_front, (extra_callback_info1&0xFF)==0) {
+    1: return switch_157aa_extra_front;  // viewport
+    return sgroup_157aa;
+}
+switch(FEAT_TRAINS, SELF, switch_157aa_rear, (extra_callback_info1&0xFF)==0 && curv_info_prev_cur==0 && other_veh_z_offset(-1)==0 ) {
+    1: return sgroup_157aa_rear;  // viewport & no curves
+    return sset_dummy;
+}
+switch(FEAT_TRAINS, SELF, switch_157aa_graphics, position_in_vehid_chain % 2) {
+    1: return switch_157aa_rear;
+    return switch_157aa_front;
+}
+switch (FEAT_TRAINS, SELF, switch_157aa_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_4L, string(STR_BRAKE_AIR), string(STR_HEATING_ELECTRIC_TEXT), string(STR_157AA_M_TEXT));
+    return string(STR_PURCHASE_DESCR_3L, string(STR_BRAKE_AIR), string(STR_157AA_M_TEXT));
+}
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_157Aa_m, 11107) {
+    property {
+        /* common properties */
+        name:                           string(STR_157AA_M_NAME);
+        variant_group:                  11105;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2021, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  7;
+        cost_factor:                    PURCHASE_COST_157AA;
+        running_cost_factor:            RUNNING_COST_PASS_EXPRESS+1;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          200 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 52;
+        weight:                         52 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON, VINFO_HIGH_SPEED_WAGON);
+    }
+
+    graphics {
+        purchase:                   sset_157aa_purchase;
+        additional_text:            switch_157aa_add_text;
+        default:                    switch_157aa_graphics;
+        articulated_part:           switch_157Aa_articulated;
+        purchase_cargo_capacity:    return 52;
+        cargo_capacity:             return 52;
+    }
+}

@@ -165,9 +165,9 @@ switch(FEAT_TRAINS, SELF, switch_ed250_add_text, IS_HEATING_CLIMATE ) {
     1: return string(STR_PURCHASE_DESCR_3L, string(STR_HEATING_ELECTRIC_TEXT), string(STR_ED250_TEXT), string(STR_INCOME_1_CLASS));
     return string(STR_PURCHASE_DESCR_2L, string(STR_ED250_TEXT), string(STR_INCOME_1_CLASS));
 }
-switch (FEAT_TRAINS, SELF, switch_ed250_start_stop, num_vehs_in_consist / 14) {
-    1..2: return CB_RESULT_NO_TEXT;
-    return string(STR_TRAIN_TOO_LONG, string(STR_ED250_NAME));
+switch (FEAT_TRAINS, SELF, switch_ed250_start_stop, count_veh_id(2603) > 2) {
+    1: return string(STR_TRAIN_TOO_LONG, string(STR_ED250_NAME));
+    return CB_RESULT_NO_TEXT;
 }
 ENGINE_RUNNING_COST_SWITCH(ed250, ED250)
 DIESEL_ELECTRIC_ENGINE_POWER_SWITCH(ed250)

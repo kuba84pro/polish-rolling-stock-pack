@@ -1,5 +1,49 @@
 Polish Rolling Stock Pack - Changelog
 ================================
+0.17.0
+Added:
+Locomotives:
+- EU200 (10 liveries)
+- EU04 (2 liveries)
+- EU20 (2 liveries)
+- ET40-31
+- EN96 Swietokrzyskie
+- EU07 RailSTM
+- M62 Eurotrans
+
+Coaches:
+- 111Arow (Brdhnu, B9nopuvz)
+- 113Aa
+- 406A-40
+- 155A
+- 157Aa (two liveries)
+- 158A/159A (darkblue doors)
+- 175A
+- 305Ad (2 liveries)
+
+New parameter:
+In NewGRF options there is new option to disable 'heating' parameter which only works in Arctic climate.
+Because heating isn't really full completed and up to date, now It can be disabled to not bother you with errors.
+
+Changed:
+(1) Variant_group of:
+- UIC-Y coaches
+- UIC-Z coaches
+- Flirts 3 (beside ED160)
+(2) EU200 revamp with 10 liveries
+(3) EU05 sprites
+(4) Costs of SA101/SA102 (its lower to balance it with SA106/SA135)
+(5) Start_stop function for some EMUs (added new vehicles to variable)
+(6) Changed strings for UIC-Y and UIC-Z coaches to be more clear
+(7) Other from #bugs channel.
+
+Fixed:
+A lot of sprites in various vehicles has been fixed (problems with pure_white color or animated color).
+ASF EL-16 every 2 units had invisible livery - fixed.
+
+Disclaimer:
+152A and 154A could experience a problem with the length in ongoing save. If you want to fix it, just send these coaches to the depot and it should be fine.
+
 0.16.0
 Added:
 - 31WEba SKM Warszawa
