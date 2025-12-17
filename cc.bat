@@ -7,6 +7,6 @@ if not exist out mkdir out
 echo Preprocessing...
 gcc -E -x c src\pkp.pnml -o tmp\pkp-set.nml
 echo Compiling...
-nmlc -c --grf C:\Users\Kuba\Documents\OpenTTD\newgrf\polish-rolling-stock-pack-0.17.0.grf tmp\pkp-set.nml
+nmlc -c --grf C:\Users\Profil\Documents\OpenTTD\newgrf\polish-rolling-stock-pack-0.17.0.grf tmp\pkp-set.nml
 echo ========= END =========
 pause
