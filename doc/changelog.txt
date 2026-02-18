@@ -1,5 +1,10 @@
 Polish Rolling Stock Pack - Changelog
 ================================
+0.17.1
+Fixed:
+- EN96 length
+- ED250 not running from depot
+
 0.17.0
 Added:
 Locomotives:
