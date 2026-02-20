@@ -13,15 +13,13 @@ spriteset(sset_st45_pkp_cargo_purchase, "gfx/su45.png")           { tmpl_sprite_
 spriteset(sset_st45_pkp_cargo, "gfx/su45.png")                    { tmpl_sprite_train10(4, 189) }
 spriteset(sset_su45_skpl_purchase, "gfx/su45.png")           { tmpl_sprite_purchase(4, 289) }
 spriteset(sset_su45_skpl, "gfx/su45.png")                    { tmpl_sprite_train10(4, 250) }
+spriteset(sset_su45_btk_purchase, "gfx/su45.png")           { tmpl_sprite_purchase(4, 341) }
+spriteset(sset_su45_btk, "gfx/su45.png")                    { tmpl_sprite_train10(4, 307) }
 
 /* SU45 Switches */
 switch(FEAT_TRAINS, SELF, switch_su45_articulated, extra_callback_info1) {
     1: return item_dummy_2;        // dummy parts
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
-}
-switch(FEAT_TRAINS, SELF, switch_su45_graphics, position_in_vehid_chain % 2) {
-    0: return sset_su45;
-    return sset_dummy;
 }
 switch(FEAT_TRAINS, SELF, switch_su45_visual_effect_local, position_in_vehid_chain % 2) {
     0: return visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 1, DISABLE_WAGON_POWER);
@@ -285,6 +283,57 @@ item(FEAT_TRAINS, item_su45_skpl, 405) {
         purchase:                   sset_su45_skpl_purchase;
         additional_text:            switch_su45_add_text;
         default:                    sset_su45_skpl;
+        articulated_part:           switch_su45_articulated;
+        visual_effect_and_powered:  switch_su45_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(su45)
+        ENGINE_POWER_CALLBACKS(su45)
+    }
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_su45_btk, 406) {
+    property {
+		/* common properties */
+        name:                           string(STR_SU45_BTK_NAME);
+        variant_group:                  400;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2017, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_SU45;
+        running_cost_factor:            RUNNING_COST_SU45;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          120 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          1250 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         102 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.302;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_su45_btk_purchase;
+        additional_text:            switch_su45_add_text;
+        default:                    sset_su45_btk;
         articulated_part:           switch_su45_articulated;
         visual_effect_and_powered:  switch_su45_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;

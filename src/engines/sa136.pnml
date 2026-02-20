@@ -45,22 +45,6 @@ switch(FEAT_TRAINS, SELF, switch_sa136_graphics, position_in_vehid_chain % 5) {
     4: return sgroup_sa136_tail;
     return sset_dummy;      // dummy parts
 }
-switch(FEAT_TRAINS, SELF, switch_sa136_tour_capacity, position_in_vehid_chain % 5) {
-    0: return 52;
-    2: return 52-2;
-    4: return 52;
-    return 1;   // dummy parts
-}
-switch(FEAT_TRAINS, SELF, switch_sa136_pass_capacity, position_in_vehid_chain % 5) {
-    0: return 52+26;    //52;
-    2: return 52+26-2;  //52;
-    4: return 52+26;    //52;
-    return 1;   // dummy parts
-}
-switch(FEAT_TRAINS, SELF, switch_sa136_capacity, cargo_type_in_veh) {
-    TOUR: return switch_sa136_tour_capacity;
-    return switch_sa136_pass_capacity;
-}
 switch(FEAT_TRAINS, SELF, switch_sa136_add_text, IS_HEATING_CLIMATE ) {
     1: return string(STR_PURCHASE_DESCR_2L, string(STR_HEATING_COMBINED_TEXT), string(STR_SA136_TEXT));
     return string(STR_SA136_TEXT);
@@ -82,7 +66,7 @@ switch(FEAT_TRAINS, SELF, switch_sa136_can_attach, vehicle_type_id) {
     item_ed161:  return string(STR_ATTACH_DISALLOW_EZT2);
     return string(STR_ATTACH_DISALLOW_EZT1);
 }
-switch(FEAT_TRAINS, SELF, switch_sa136_start_stop, (count_veh_id(520)/5 > 3 || COUNT_120A_BOCHUN_609A > 3)) {
+switch(FEAT_TRAINS, SELF, switch_sa136_start_stop, count_veh_id(520)/5 > 3 || COUNT_120A_BOCHUN_609A > 3) {
     1: return string(STR_TRAIN_TOO_LONG, string(STR_SA136_NAME));
     return CB_RESULT_NO_TEXT;
 }
@@ -90,15 +74,6 @@ ENGINE_RUNNING_COST_SWITCH(sa136, SA136)
 DIESEL_ELECTRIC_ENGINE_POWER_SWITCH(sa136)
 ENGINE_VISUAL_EFFECT_SWITCH(sa136)
 
-#ifdef SITTING_PLACES
-    #undef SITTING_PLACES
-#endif
-#ifdef STANDING_PLACES
-    #undef STANDING_PLACES
-#endif
-#define SITTING_PLACES 52*3
-#define STANDING_PLACES 26*3
-#define CARGO_CAPACITY_SA136     int((SITTING_PLACES+STANDING_PLACES+2)/5)
 
 /* Define the actual train */
 item(FEAT_TRAINS, item_sa136, 520) {
@@ -124,7 +99,7 @@ item(FEAT_TRAINS, item_sa136, 520) {
         power:                          764 kW;
         running_cost_base:              RUNNING_COST_DIESEL;
         dual_headed:                    0;
-        cargo_capacity:                 CARGO_CAPACITY_SA136;
+        cargo_capacity:                 150/5;
         weight:                         108 ton;
         ai_engine_rank:                 0; // not intended to be used by the ai
         engine_class:                   ENGINE_CLASS_DIESEL;
@@ -143,8 +118,7 @@ item(FEAT_TRAINS, item_sa136, 520) {
         articulated_part:           switch_sa136_articulated;
         additional_text:            switch_sa136_add_text;
         length:                     switch_sa136_length;
-        purchase_cargo_capacity:    return CB_FAILED;
-        cargo_capacity:             switch_sa136_capacity;
+        purchase_cargo_capacity:    return 150/5;
         visual_effect_and_powered:  switch_sa136_visual_effect;
         can_attach_wagon:           switch_sa136_can_attach;
         start_stop:                 switch_sa136_start_stop;

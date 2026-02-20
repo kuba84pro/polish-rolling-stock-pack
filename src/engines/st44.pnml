@@ -14,6 +14,17 @@ spriteset(sset_st44_purchase_orion, "gfx/st44.png")           { tmpl_sprite_purc
 spriteset(sset_st44_purchase_lhs, "gfx/st44.png")           { tmpl_sprite_purchase(4, 534) }
 spriteset(sset_st44_purchase_lhs_new, "gfx/st44.png")           { tmpl_sprite_purchase(4, 587) }
 spriteset(sset_m62_purchase_eurotrans, "gfx/st44.png")           { tmpl_sprite_purchase(4, 644) }
+
+spriteset(sset_m62_1007_purchase, "gfx/st44.png")           { tmpl_sprite_purchase(4, 700) }
+spriteset(sset_m62_cargounit_purchase, "gfx/st44.png")           { tmpl_sprite_purchase(4, 756) }
+spriteset(sset_m62_ltc_purchase, "gfx/st44.png")           { tmpl_sprite_purchase(4, 812) }
+spriteset(sset_st44r_ctl_purchase, "gfx/st44.png")           { tmpl_sprite_purchase(4, 868) }
+spriteset(sset_m62_koltar_purchase, "gfx/st44.png")           { tmpl_sprite_purchase(4, 924) }
+spriteset(sset_m62_orion_old_purchase, "gfx/st44.png")           { tmpl_sprite_purchase(4, 980) }
+spriteset(sset_m62_orlen_old_purchase, "gfx/st44.png")           { tmpl_sprite_purchase(4, 1036) }
+spriteset(sset_m62y_ts_opole_purchase, "gfx/st44.png")           { tmpl_sprite_purchase(4, 1092) }
+spriteset(sset_m62_lotos_purchase, "gfx/st44.png")           { tmpl_sprite_purchase(4, 1148) }
+
 spriteset(sset_st44, "gfx/st44.png")                    { tmpl_sprite_train10(4, 20) }
 spriteset(sset_st44_yellow, "gfx/st44.png")             { tmpl_sprite_train10(4, 80) }
 spriteset(sset_st44_pkp_cargo, "gfx/st44.png")          { tmpl_sprite_train10(4, 140) }
@@ -24,7 +35,18 @@ spriteset(sset_st44_tabor_debica, "gfx/st44.png")          { tmpl_sprite_train10
 spriteset(sset_st44_orion, "gfx/st44.png")          { tmpl_sprite_train10(4, 434) }
 spriteset(sset_st44_lhs, "gfx/st44.png")          { tmpl_sprite_train10(4, 494) }
 spriteset(sset_st44_lhs_new, "gfx/st44.png")          { tmpl_sprite_train10(4, 554) }
-spriteset(sset_m62_eurotrans, "gfx/st44.png")          { tmpl_sprite_train10(4, 604) }
+spriteset(sset_m62_eurotrans, "gfx/st44.png")           { tmpl_sprite_purchase(4, 604) }
+
+spriteset(sset_m62_1007, "gfx/st44.png")          { tmpl_sprite_train10(4, 660) }
+spriteset(sset_m62_cargounit, "gfx/st44.png")          { tmpl_sprite_train10(4, 716) }
+spriteset(sset_m62_ltc, "gfx/st44.png")          { tmpl_sprite_train10(4, 772) }
+spriteset(sset_st44r_ctl, "gfx/st44.png")          { tmpl_sprite_train10(4, 828) }
+spriteset(sset_m62_koltar, "gfx/st44.png")          { tmpl_sprite_train10(4, 884) }
+spriteset(sset_m62_orion_old, "gfx/st44.png")          { tmpl_sprite_train10(4, 940) }
+spriteset(sset_m62_orlen_old, "gfx/st44.png")          { tmpl_sprite_train10(4, 996) }
+spriteset(sset_m62y_ts_opole, "gfx/st44.png")          { tmpl_sprite_train10(4, 1052) }
+spriteset(sset_m62_lotos, "gfx/st44.png")          { tmpl_sprite_train10(4, 1108) }
+
 
 /* ST44 switches */
 switch(FEAT_TRAINS, SELF, switch_st44_articulated, extra_callback_info1) {
@@ -93,8 +115,6 @@ item(FEAT_TRAINS, item_st44, 350) {
         ENGINE_POWER_CALLBACKS(st44)
     }
 }
-/* ST44 YELLOW FRONT switches */
-/* Define the actual train */
 item(FEAT_TRAINS, item_st44_yellow_front, 351) {
     property {
 		/* common properties */
@@ -145,8 +165,6 @@ item(FEAT_TRAINS, item_st44_yellow_front, 351) {
         ENGINE_POWER_CALLBACKS(st44)
     }
 }
-/* ST44 PKPCARGO switches */
-/* Define the actual train */
 item(FEAT_TRAINS, item_st44_pkp_cargo, 352) {
     property {
 		/* common properties */
@@ -197,8 +215,6 @@ item(FEAT_TRAINS, item_st44_pkp_cargo, 352) {
         ENGINE_POWER_CALLBACKS(st44)
     }
 }
-/* ST44 PMT switches */
-/* Define the actual train */
 item(FEAT_TRAINS, item_st44_pmt, 353) {
     property {
 		/* common properties */
@@ -249,8 +265,6 @@ item(FEAT_TRAINS, item_st44_pmt, 353) {
         ENGINE_POWER_CALLBACKS(st44)
     }
 }
-/* ST44 PTKIGK switches */
-/* Define the actual train */
 item(FEAT_TRAINS, item_st44_ptkigk, 354) {
     property {
 		/* common properties */
@@ -301,8 +315,6 @@ item(FEAT_TRAINS, item_st44_ptkigk, 354) {
         ENGINE_POWER_CALLBACKS(st44)
     }
 }
-/* ST44 orlen switches */
-/* Define the actual train */
 item(FEAT_TRAINS, item_st44_orlen, 355) {
     property {
 		/* common properties */
@@ -353,8 +365,6 @@ item(FEAT_TRAINS, item_st44_orlen, 355) {
         ENGINE_POWER_CALLBACKS(st44)
     }
 }
-/* ST44 TABOR DEBICA switches */
-/* Define the actual train */
 item(FEAT_TRAINS, item_st44_tabor_debica, 356) {
     property {
 		/* common properties */
@@ -405,8 +415,6 @@ item(FEAT_TRAINS, item_st44_tabor_debica, 356) {
         ENGINE_POWER_CALLBACKS(st44)
     }
 }
-/* ST44 Orion switches */
-/* Define the actual train */
 item(FEAT_TRAINS, item_st44_orion, 357) {
     property {
 		/* common properties */
@@ -457,7 +465,6 @@ item(FEAT_TRAINS, item_st44_orion, 357) {
         ENGINE_POWER_CALLBACKS(st44)
     }
 }
-/* Define the actual train */
 item(FEAT_TRAINS, item_st44_lhs, 358) {
     property {
 		/* common properties */
@@ -508,7 +515,6 @@ item(FEAT_TRAINS, item_st44_lhs, 358) {
         ENGINE_POWER_CALLBACKS(st44)
     }
 }
-/* Define the actual train */
 item(FEAT_TRAINS, item_st44_lhs_new, 359) {
     property {
 		/* common properties */
@@ -559,7 +565,6 @@ item(FEAT_TRAINS, item_st44_lhs_new, 359) {
         ENGINE_POWER_CALLBACKS(st44)
     }
 }
-/* Define the actual train */
 item(FEAT_TRAINS, item_m62_eurotrans, 360) {
     property {
 		/* common properties */
@@ -601,6 +606,456 @@ item(FEAT_TRAINS, item_m62_eurotrans, 360) {
         purchase:                   sset_m62_purchase_eurotrans;
         additional_text:            switch_st44_add_text;
         default:                    sset_m62_eurotrans;
+        articulated_part:           switch_st44_articulated;
+        visual_effect_and_powered:  switch_st44_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(st44)
+        ENGINE_POWER_CALLBACKS(st44)
+    }
+}
+item(FEAT_TRAINS, item_m62_1007, 361) {
+    property {
+		/* common properties */
+        name:                           string(STR_M62_1007_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2012, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              10;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_ST44;
+        running_cost_factor:            RUNNING_COST_ST44;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          1472 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         116 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.32777953530879816;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        variant_group:                  350;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_m62_1007_purchase;
+        additional_text:            switch_st44_add_text;
+        default:                    sset_m62_1007;
+        articulated_part:           switch_st44_articulated;
+        visual_effect_and_powered:  switch_st44_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(st44)
+        ENGINE_POWER_CALLBACKS(st44)
+    }
+}
+item(FEAT_TRAINS, item_m62_cargounit, 362) {
+    property {
+		/* common properties */
+        name:                           string(STR_M62_CARGOUNIT_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2021, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              10;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_ST44;
+        running_cost_factor:            RUNNING_COST_ST44;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          1472 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         116 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.32777953530879816;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        variant_group:                  350;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_m62_cargounit_purchase;
+        additional_text:            switch_st44_add_text;
+        default:                    sset_m62_cargounit;
+        articulated_part:           switch_st44_articulated;
+        visual_effect_and_powered:  switch_st44_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(st44)
+        ENGINE_POWER_CALLBACKS(st44)
+    }
+}
+item(FEAT_TRAINS, item_m62_ltc, 363) {
+    property {
+		/* common properties */
+        name:                           string(STR_M62_LTC_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2018, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              10;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_ST44;
+        running_cost_factor:            RUNNING_COST_ST44;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          1472 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         116 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.32777953530879816;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        variant_group:                  350;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_m62_ltc_purchase;
+        additional_text:            switch_st44_add_text;
+        default:                    sset_m62_ltc;
+        articulated_part:           switch_st44_articulated;
+        visual_effect_and_powered:  switch_st44_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(st44)
+        ENGINE_POWER_CALLBACKS(st44)
+    }
+}
+item(FEAT_TRAINS, item_st44r_ctl, 364) {
+    property {
+		/* common properties */
+        name:                           string(STR_ST44R_CTL_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2010, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              10;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_ST44;
+        running_cost_factor:            RUNNING_COST_ST44;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          1472 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         116 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.32777953530879816;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        variant_group:                  350;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_st44r_ctl_purchase;
+        additional_text:            switch_st44_add_text;
+        default:                    sset_st44r_ctl;
+        articulated_part:           switch_st44_articulated;
+        visual_effect_and_powered:  switch_st44_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(st44)
+        ENGINE_POWER_CALLBACKS(st44)
+    }
+}
+item(FEAT_TRAINS, item_m62_koltar, 365) {
+    property {
+		/* common properties */
+        name:                           string(STR_M62_KOLTAR_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2024, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              10;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_ST44;
+        running_cost_factor:            RUNNING_COST_ST44;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          1472 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         116 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.32777953530879816;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        variant_group:                  350;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_m62_koltar_purchase;
+        additional_text:            switch_st44_add_text;
+        default:                    sset_m62_koltar;
+        articulated_part:           switch_st44_articulated;
+        visual_effect_and_powered:  switch_st44_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(st44)
+        ENGINE_POWER_CALLBACKS(st44)
+    }
+}
+item(FEAT_TRAINS, item_m62_orion_old, 366) {
+    property {
+		/* common properties */
+        name:                           string(STR_M62_ORION_OLD_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2012, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              10;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_ST44;
+        running_cost_factor:            RUNNING_COST_ST44;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          1472 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         116 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.32777953530879816;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        variant_group:                  357;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_m62_orion_old_purchase;
+        additional_text:            switch_st44_add_text;
+        default:                    sset_m62_orion_old;
+        articulated_part:           switch_st44_articulated;
+        visual_effect_and_powered:  switch_st44_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(st44)
+        ENGINE_POWER_CALLBACKS(st44)
+    }
+}
+item(FEAT_TRAINS, item_m62_orlen_old, 367) {
+    property {
+		/* common properties */
+        name:                           string(STR_M62_ORLEN_OLD_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2005, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              10;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_ST44;
+        running_cost_factor:            RUNNING_COST_ST44;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          1472 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         116 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.32777953530879816;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        variant_group:                  355;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_m62_orlen_old_purchase;
+        additional_text:            switch_st44_add_text;
+        default:                    sset_m62_orlen_old;
+        articulated_part:           switch_st44_articulated;
+        visual_effect_and_powered:  switch_st44_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(st44)
+        ENGINE_POWER_CALLBACKS(st44)
+    }
+}
+item(FEAT_TRAINS, item_m62y_ts_opole, 368) {
+    property {
+		/* common properties */
+        name:                           string(STR_M62Y_TS_OPOLE_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2012, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              10;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_ST44;
+        running_cost_factor:            RUNNING_COST_ST44;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          1472 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         116 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.32777953530879816;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        variant_group:                  350;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_m62y_ts_opole_purchase;
+        additional_text:            switch_st44_add_text;
+        default:                    sset_m62y_ts_opole;
+        articulated_part:           switch_st44_articulated;
+        visual_effect_and_powered:  switch_st44_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(st44)
+        ENGINE_POWER_CALLBACKS(st44)
+    }
+}
+item(FEAT_TRAINS, item_m62_lotos, 369) {
+    property {
+		/* common properties */
+        name:                           string(STR_M62_LOTOS_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2005, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              10;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_ST44;
+        running_cost_factor:            RUNNING_COST_ST44;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          1472 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         116 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.32777953530879816;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        variant_group:                  350;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_m62_lotos_purchase;
+        additional_text:            switch_st44_add_text;
+        default:                    sset_m62_lotos;
         articulated_part:           switch_st44_articulated;
         visual_effect_and_powered:  switch_st44_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;

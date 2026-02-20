@@ -6,9 +6,18 @@
 spriteset(sset_falns_brown_purchase, "gfx/436v.png")    { tmpl_sprite_purchase(4, 60) }
 spriteset(sset_falns_blue_purchase, "gfx/436v.png")     { tmpl_sprite_purchase(124, 60) }
 spriteset(sset_falns_brown_empty, "gfx/436v.png")       { tmpl_sprite_train(4, 20) }
-spriteset(sset_falns_blue_empty, "gfx/436v.png")        { tmpl_sprite_train(4, 80) }
-spriteset(sset_falns_brown_full, "gfx/436v.png")        { tmpl_sprite_train(4, 120) }
-spriteset(sset_falns_blue_full, "gfx/436v.png")         { tmpl_sprite_train(4, 160) }
+spriteset(sset_falns_blue_empty, "gfx/436v.png")        { tmpl_sprite_train(4, 107) }
+spriteset(sset_falns_brown_full, "gfx/436v.png")        { tmpl_sprite_train(4, 147) }
+spriteset(sset_falns_blue_full, "gfx/436v.png")         { tmpl_sprite_train(4, 187) }
+
+spriteset(sset_falns_pkpcargo_red_purchase, "gfx/436v.png")    { tmpl_sprite_purchase(124, 87) }
+spriteset(sset_falns_pkpcargo_red_empty, "gfx/436v.png")       { tmpl_sprite_train(4, 227) }
+spriteset(sset_falns_pkpcargo_red_full, "gfx/436v.png")        { tmpl_sprite_train(4, 267) }
+
+spriteset(sset_falns_pkpcargo_purchase, "gfx/436v.png")    { tmpl_sprite_purchase(4, 87) }
+spriteset(sset_falns_pkpcargo_empty, "gfx/436v.png")       { tmpl_sprite_train(4, 307) }
+spriteset(sset_falns_pkpcargo_full, "gfx/436v.png")        { tmpl_sprite_train(4, 347) }
+
 spritegroup sgroup_falns_brown {
     loaded:     [sset_falns_brown_empty, sset_falns_brown_full];
     loading:    [sset_falns_brown_empty, sset_falns_brown_full];
@@ -17,7 +26,14 @@ spritegroup sgroup_falns_blue {
     loaded:     [sset_falns_blue_empty, sset_falns_blue_full];
     loading:    [sset_falns_blue_empty, sset_falns_blue_full];
 }
-
+spritegroup sgroup_falns_pkpcargo_red {
+    loaded:     [sset_falns_pkpcargo_red_empty, sset_falns_pkpcargo_red_full];
+    loading:    [sset_falns_pkpcargo_red_empty, sset_falns_pkpcargo_red_full];
+}
+spritegroup sgroup_falns_pkpcargo {
+    loaded:     [sset_falns_pkpcargo_empty, sset_falns_pkpcargo_full];
+    loading:    [sset_falns_pkpcargo_empty, sset_falns_pkpcargo_full];
+}
 /* Define the actual train */
 item(FEAT_TRAINS, item_falns, 20252) {
     property {
@@ -89,6 +105,80 @@ item(FEAT_TRAINS, item_falns_blue, 20253) {
         purchase:                   sset_falns_blue_purchase;
         additional_text:            return string(STR_BRAKE_AIR);
         default:                    sgroup_falns_blue;
+        colour_mapping:             switch_bulk_recolour;
+    }
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_falns_pkpcargo_red, 20255) {
+    property {
+		/* common properties */
+        name:                           string(STR_FALNS_PKPCARGO_RED_NAME);
+        variant_group:                  20252;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2003, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_NORMAL_SELF_DISCHARGING_WAGON_DEFINITION
+        loading_speed:                  18;
+        cost_factor:                    PURCHASE_COST_FALNS;
+        running_cost_factor:            RUNNING_COST_CARGO_SPECIAL;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          120 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 64;
+        weight:                         26 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_CARGO_WAGON);
+    }
+
+    graphics {
+        purchase:                   sset_falns_pkpcargo_red_purchase;
+        additional_text:            return string(STR_BRAKE_AIR);
+        default:                    sgroup_falns_pkpcargo_red;
+        colour_mapping:             switch_bulk_recolour;
+    }
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_falns_pkpcargo, 20256) {
+    property {
+		/* common properties */
+        name:                           string(STR_FALNS_PKPCARGO_NAME);
+        variant_group:                  20252;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2008, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_NORMAL_SELF_DISCHARGING_WAGON_DEFINITION
+        loading_speed:                  18;
+        cost_factor:                    PURCHASE_COST_FALNS;
+        running_cost_factor:            RUNNING_COST_CARGO_SPECIAL;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          120 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 64;
+        weight:                         26 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_CARGO_WAGON);
+    }
+
+    graphics {
+        purchase:                   sset_falns_pkpcargo_purchase;
+        additional_text:            return string(STR_BRAKE_AIR);
+        default:                    sgroup_falns_pkpcargo;
         colour_mapping:             switch_bulk_recolour;
     }
 }

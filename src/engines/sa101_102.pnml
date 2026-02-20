@@ -7,23 +7,36 @@ spriteset(sset_sa101_purchase, "gfx/sa101_102.png")   { tmpl_sprite_purchase(4, 
 
 spriteset(sset_sa101_head, "gfx/sa101_102.png")       { tmpl_sprite_train10(4, 20) }
 spriteset(sset_sa101_tail, "gfx/sa101_102.png")       { tmpl_sprite_train10_offset(4, 100, 1) }
+spriteset(sset_sa101_head_open, "gfx/sa101_102.png")       { tmpl_sprite_train10(4, 160) }
+spriteset(sset_sa101_tail_open, "gfx/sa101_102.png")       { tmpl_sprite_train10_offset(4, 240, 1) }
 spriteset(sset_sa102_head, "gfx/sa101_102.png")       { tmpl_sprite_train10(4, 20) }
 spriteset(sset_sa102_mid, "gfx/sa101_102.png")       { tmpl_sprite_train10(4, 60) }
 spriteset(sset_sa102_tail, "gfx/sa101_102.png")       { tmpl_sprite_train10_offset(4, 100, 1) }
+spriteset(sset_sa102_head_open, "gfx/sa101_102.png")       { tmpl_sprite_train10(4, 160) }
+spriteset(sset_sa102_mid_open, "gfx/sa101_102.png")       { tmpl_sprite_train10(4, 200) }
+spriteset(sset_sa102_tail_open, "gfx/sa101_102.png")       { tmpl_sprite_train10_offset(4, 240, 1) }
 
-/*spritegroup sgroup_sa136_head {
-    loaded:     [sset_sa136_head];
-    loading:    [sset_sa136_head_open];
+spritegroup sgroup_sa101_head {
+    loaded:     [sset_sa101_head];
+    loading:    [sset_sa101_head_open];
 }
-spritegroup sgroup_sa136_mid {
-    loaded:     [sset_sa136_mid];
-    loading:    [sset_sa136_mid_open];
+spritegroup sgroup_sa101_tail {
+    loaded:     [sset_sa101_tail];
+    loading:    [sset_sa101_tail_open];
 }
-spritegroup sgroup_sa136_tail {
-    loaded:     [sset_sa136_tail];
-    loading:    [sset_sa136_tail_open];
+spritegroup sgroup_sa102_head {
+    loaded:     [sset_sa102_head];
+    loading:    [sset_sa102_head_open];
 }
-*/
+spritegroup sgroup_sa102_mid {
+    loaded:     [sset_sa102_mid];
+    loading:    [sset_sa102_mid_open];
+}
+spritegroup sgroup_sa102_tail {
+    loaded:     [sset_sa102_tail];
+    loading:    [sset_sa102_tail_open];
+}
+
 
 /* SA101 switches */
 switch(FEAT_TRAINS, SELF, switch_sa101_articulated, extra_callback_info1) {
@@ -44,14 +57,14 @@ switch(FEAT_TRAINS, SELF, switch_sa102_length, position_in_vehid_chain % 5) {
     return 8;
 }
 switch(FEAT_TRAINS, SELF, switch_sa101_graphics, position_in_vehid_chain % 3) {
-    0: return sset_sa101_head;
-    2: return sset_sa101_tail;
+    0: return sgroup_sa101_head;
+    2: return sgroup_sa101_tail;
     return sset_dummy;      // dummy parts
 }
 switch(FEAT_TRAINS, SELF, switch_sa102_graphics, position_in_vehid_chain % 5) {
-    0: return sset_sa102_head;
-    2: return sset_sa102_mid;
-    4: return sset_sa102_tail;
+    0: return sgroup_sa102_head;
+    2: return sgroup_sa102_mid;
+    4: return sgroup_sa102_tail;
     return sset_dummy;      // dummy parts
 }
 switch(FEAT_TRAINS, SELF, switch_sa101_add_text, IS_HEATING_CLIMATE ) {
@@ -102,7 +115,7 @@ item(FEAT_TRAINS, item_sa101, 521) {
         power:                          360 kW;
         running_cost_base:              RUNNING_COST_DIESEL;
         dual_headed:                    0;
-        cargo_capacity:                 236/3;
+        cargo_capacity:                 96/3;
         weight:                         53 ton;
         ai_engine_rank:                 0; // not intended to be used by the ai
         engine_class:                   ENGINE_CLASS_DIESEL;
@@ -121,19 +134,19 @@ item(FEAT_TRAINS, item_sa101, 521) {
         articulated_part:           switch_sa101_articulated;
         additional_text:            switch_sa101_add_text;
         length:                     switch_sa101_length;
-        purchase_cargo_capacity:    return 236/3;
+        purchase_cargo_capacity:    return 96/3;
         visual_effect_and_powered:  switch_sa101_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;
         ENGINE_RUNNING_COST_CALLBACKS(sa101)
         ENGINE_POWER_CALLBACKS(sa101)
     }
 }
-#define SA102_CARGO_CAPACITY 354/5
 /* Define the actual train */
 item(FEAT_TRAINS, item_sa102, 522) {
     property {
         /* common properties */
         name:                           string(STR_SA102_NAME);
+        variant_group:                  521;
         climates_available:             PKP_CLIMATES; 
         introduction_date:              date(1991, 1, 1);
         model_life:                     VEHICLE_NEVER_EXPIRES;
@@ -153,7 +166,7 @@ item(FEAT_TRAINS, item_sa102, 522) {
         power:                          400 kW;
         running_cost_base:              RUNNING_COST_DIESEL;
         dual_headed:                    0;
-        cargo_capacity:                 SA102_CARGO_CAPACITY;
+        cargo_capacity:                 144/5;
         weight:                         80 ton;
         ai_engine_rank:                 0; // not intended to be used by the ai
         engine_class:                   ENGINE_CLASS_DIESEL;
@@ -172,7 +185,7 @@ item(FEAT_TRAINS, item_sa102, 522) {
         articulated_part:           switch_sa102_articulated;
         additional_text:            switch_sa102_add_text;
         length:                     switch_sa102_length;
-        purchase_cargo_capacity:    return 354/5;
+        purchase_cargo_capacity:    return 144/5;
         visual_effect_and_powered:  switch_sa102_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;
         ENGINE_RUNNING_COST_CALLBACKS(sa102)

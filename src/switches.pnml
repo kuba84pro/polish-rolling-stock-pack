@@ -236,7 +236,7 @@ count_veh_id(item_sp42_oliwkowe)/2 \
  count_veh_id(1805)/5 + count_veh_id(1806)/5 + count_veh_id(1807)/5 + count_veh_id(1808)/5 + \
  count_veh_id(2000)/5 + count_veh_id(2001)/5 + count_veh_id(2002)/5 + count_veh_id(2003)/5 + count_veh_id(2004)/5 + \
  count_veh_id(2005)/7 + count_veh_id(2006)/7 + count_veh_id(2007)/5 + count_veh_id(2008)/5 + count_veh_id(2009)/5 + \
- count_veh_id(2010)/5 + count_veh_id(2011)/5 + \
+ count_veh_id(2010)/5 + count_veh_id(2011)/5 + count_veh_id(2012)/5 + \
  count_veh_id(2100)/7 + count_veh_id(2101)/7 + count_veh_id(2102)/7 + count_veh_id(2103)/7 + count_veh_id(2104)/7 + \
  count_veh_id(2105)/7 + count_veh_id(2106)/7 + count_veh_id(2107)/7 + count_veh_id(2108)/7 + count_veh_id(2109)/7 + \
  count_veh_id(2200)/7 + count_veh_id(2201)/7 + count_veh_id(2202)/7
@@ -507,6 +507,7 @@ switch(FEAT_TRAINS, SELF, switch_en57axx_can_attach, vehicle_type_id) {
     item_en57alpr: return CB_RESULT_ATTACH_ALLOW;
     item_en57al_kw: return CB_RESULT_ATTACH_ALLOW;
     item_en57al_km: return CB_RESULT_ATTACH_ALLOW;
+    item_en57al_podl: return CB_RESULT_ATTACH_ALLOW;
     item_en71: return CB_RESULT_ATTACH_ALLOW;
     item_en71_or: return CB_RESULT_ATTACH_ALLOW;
     item_en71_ry: return CB_RESULT_ATTACH_ALLOW;
@@ -567,6 +568,7 @@ switch(FEAT_TRAINS, SELF, switch_impuls1_can_attach, vehicle_type_id) {
     item_en57alpr: return string(STR_ATTACH_DISALLOW_EZT2);
     item_en57al_kw: return string(STR_ATTACH_DISALLOW_EZT2);
     item_en57al_km: return string(STR_ATTACH_DISALLOW_EZT2);
+    item_en57al_podl: return string(STR_ATTACH_DISALLOW_EZT2);
     item_en71: return string(STR_ATTACH_DISALLOW_EZT2);
     item_en71_or: return string(STR_ATTACH_DISALLOW_EZT2);
     item_en71_ry: return string(STR_ATTACH_DISALLOW_EZT2);

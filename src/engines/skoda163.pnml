@@ -8,6 +8,15 @@ spriteset(sset_skoda163, "gfx/Skoda163.png")            { tmpl_sprite_train10(4,
 spriteset(sset_skoda163_pkp_pr_purchase, "gfx/Skoda163.png")   { tmpl_sprite_purchase(4, 120) }
 spriteset(sset_skoda163_pkp_pr, "gfx/Skoda163.png")  { tmpl_sprite_train10(4, 80) }
 
+spriteset(sset_skoda163_cd_purchase, "gfx/Skoda163.png")   { tmpl_sprite_purchase(4, 176) }
+spriteset(sset_skoda163_cd, "gfx/Skoda163.png")  { tmpl_sprite_train10(4, 136) }
+spriteset(sset_skoda163_022_purchase, "gfx/Skoda163.png")   { tmpl_sprite_purchase(4, 232) }
+spriteset(sset_skoda163_022, "gfx/Skoda163.png")  { tmpl_sprite_train10(4, 192) }
+spriteset(sset_skoda163_cd_cargo_purchase, "gfx/Skoda163.png")   { tmpl_sprite_purchase(4, 288) }
+spriteset(sset_skoda163_cd_cargo, "gfx/Skoda163.png")  { tmpl_sprite_train10(4, 248) }
+spriteset(sset_skoda163_classic_purchase, "gfx/Skoda163.png")   { tmpl_sprite_purchase(4, 344) }
+spriteset(sset_skoda163_classic, "gfx/Skoda163.png")  { tmpl_sprite_train10(4, 304) }
+
 /* SKODA163 switches */
 switch(FEAT_TRAINS, SELF, switch_skoda163_articulated, extra_callback_info1) {
     1: return item_dummy_1;        // dummy parts
@@ -30,8 +39,9 @@ item(FEAT_TRAINS, item_skoda163, 527) {
     property {
 		/* common properties */
         name:                           string(STR_SKODA163_NAME);
+        variant_group:                  552;
         climates_available:             PKP_CLIMATES; 
-        introduction_date:              date(1972, 1, 1);
+        introduction_date:              date(2012, 1, 1);
         model_life:                     VEHICLE_NEVER_EXPIRES;
         vehicle_life:                   33;     // 30;
         reliability_decay:              15;     // 20;
@@ -54,7 +64,7 @@ item(FEAT_TRAINS, item_skoda163, 527) {
         ai_engine_rank:                 0; // not intended to be used by the ai
         engine_class:                   ENGINE_CLASS_ELECTRIC;
         extra_power_per_wagon:          0 kW;
-        tractive_effort_coefficient:    0.22553516819571864;
+        tractive_effort_coefficient:    0.2148;
         air_drag_coefficient:           0.07;
         length:                         8;
         extra_weight_per_wagon:         0;
@@ -75,13 +85,11 @@ item(FEAT_TRAINS, item_skoda163, 527) {
         ENGINE_POWER_CALLBACKS(skoda163)
     }
 }
-/* SKODA163 PKP PR switches */
-/* Define the actual train */
 item(FEAT_TRAINS, item_skoda163_pr, 528) {
     property {
 		/* common properties */
         name:                           string(STR_SKODA163_PR_NAME);
-        variant_group:                  527;
+        variant_group:                  552;
         climates_available:             PKP_CLIMATES; 
         introduction_date:              date(2007, 1, 1);
         model_life:                     VEHICLE_NEVER_EXPIRES;
@@ -106,7 +114,7 @@ item(FEAT_TRAINS, item_skoda163_pr, 528) {
         ai_engine_rank:                 0; // not intended to be used by the ai
         engine_class:                   ENGINE_CLASS_ELECTRIC;
         extra_power_per_wagon:          0 kW;
-        tractive_effort_coefficient:    0.22553516819571864;
+        tractive_effort_coefficient:    0.2148;
         air_drag_coefficient:           0.07;
         length:                         8;
         extra_weight_per_wagon:         0;
@@ -118,6 +126,205 @@ item(FEAT_TRAINS, item_skoda163_pr, 528) {
         purchase:                   sset_skoda163_pkp_pr_purchase;
         additional_text:            switch_skoda163_add_text;
         default:                    sset_skoda163_pkp_pr;
+        articulated_part:           switch_skoda163_articulated;
+        visual_effect_and_powered:  switch_skoda163_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(skoda163)
+        ENGINE_POWER_CALLBACKS(skoda163)
+    }
+}
+item(FEAT_TRAINS, item_skoda163_cd, 529) {
+    property {
+		/* common properties */
+        name:                           string(STR_SKODA163_CD_NAME);
+        variant_group:                  552;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2011, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_SKODA163;
+        running_cost_factor:            RUNNING_COST_SKODA163;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          120 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          3480 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         84 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.2148;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_skoda163_cd_purchase;
+        additional_text:            switch_skoda163_add_text;
+        default:                    sset_skoda163_cd;
+        articulated_part:           switch_skoda163_articulated;
+        visual_effect_and_powered:  switch_skoda163_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(skoda163)
+        ENGINE_POWER_CALLBACKS(skoda163)
+    }
+}
+item(FEAT_TRAINS, item_skoda163_022, 550) {
+    property {
+		/* common properties */
+        name:                           string(STR_SKODA163_022_NAME);
+        variant_group:                  552;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2013, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_SKODA163;
+        running_cost_factor:            RUNNING_COST_SKODA163;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          120 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          3480 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         84 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.2148;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_skoda163_022_purchase;
+        additional_text:            switch_skoda163_add_text;
+        default:                    sset_skoda163_022;
+        articulated_part:           switch_skoda163_articulated;
+        visual_effect_and_powered:  switch_skoda163_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(skoda163)
+        ENGINE_POWER_CALLBACKS(skoda163)
+    }
+}
+item(FEAT_TRAINS, item_skoda163_cd_cargo, 551) {
+    property {
+		/* common properties */
+        name:                           string(STR_SKODA163_CD_CARGO_NAME);
+        variant_group:                  552;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2020, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_SKODA163;
+        running_cost_factor:            RUNNING_COST_SKODA163;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          120 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          3480 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         84 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.2148;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_skoda163_cd_cargo_purchase;
+        additional_text:            switch_skoda163_add_text;
+        default:                    sset_skoda163_cd_cargo;
+        articulated_part:           switch_skoda163_articulated;
+        visual_effect_and_powered:  switch_skoda163_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(skoda163)
+        ENGINE_POWER_CALLBACKS(skoda163)
+    }
+}
+item(FEAT_TRAINS, item_skoda163_classic, 552) {
+    property {
+		/* common properties */
+        name:                           string(STR_SKODA163_CLASSIC_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1984, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_SKODA163;
+        running_cost_factor:            RUNNING_COST_SKODA163;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          120 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          3480 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         84 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.2148;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_skoda163_classic_purchase;
+        additional_text:            switch_skoda163_add_text;
+        default:                    sset_skoda163_classic;
         articulated_part:           switch_skoda163_articulated;
         visual_effect_and_powered:  switch_skoda163_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;

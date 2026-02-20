@@ -11,6 +11,8 @@ spriteset(sset_st43_purchase_green, "gfx/st43.png")    { tmpl_sprite_purchase(4,
 spriteset(sset_st43_green, "gfx/st43.png")             { tmpl_sprite_train10(4, 140) }
 spriteset(sset_060da_purchase_lotos, "gfx/st43.png")    { tmpl_sprite_purchase(4, 240) }
 spriteset(sset_060da_lotos, "gfx/st43.png")             { tmpl_sprite_train10(4, 200) }
+spriteset(sset_st43r_purchase_ctl, "gfx/st43.png")    { tmpl_sprite_purchase(4, 299) }
+spriteset(sset_st43r_ctl, "gfx/st43.png")             { tmpl_sprite_train10(4, 259) }
 
 /* ST43 switches */
 switch(FEAT_TRAINS, SELF, switch_st43_articulated, extra_callback_info1) {
@@ -266,6 +268,67 @@ if(param_keep_old_vehs) {
         purchase:                   sset_060da_purchase_lotos;
         additional_text:            switch_st43_add_text;
         default:                    sset_060da_lotos;
+        articulated_part:           switch_st43_articulated;
+        visual_effect_and_powered:  switch_st43_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(st43)
+        ENGINE_POWER_CALLBACKS(st43)
+    }
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_st43r_ctl, 334) {
+    property {
+		/* common properties */
+        name:                           string(STR_ST43R_CTL_NAME);
+        variant_group:                  330;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2007, 1, 1);
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_ST43;
+        running_cost_factor:            RUNNING_COST_ST43;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          1544 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_PROPERTY
+        weight:                         118 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.276;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+    
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     66;
+        retire_early:                   16;
+    }
+}
+
+    graphics {
+        purchase:                   sset_st43r_purchase_ctl;
+        additional_text:            switch_st43_add_text;
+        default:                    sset_st43r_ctl;
         articulated_part:           switch_st43_articulated;
         visual_effect_and_powered:  switch_st43_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;

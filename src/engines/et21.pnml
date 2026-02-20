@@ -23,6 +23,8 @@ spriteset(sset_et21_trainspeed_purchase, "gfx/et21.png")           { tmpl_sprite
 spriteset(sset_et21_trainspeed, "gfx/et21.png")             { tmpl_sprite_train10(4, 447) }
 spriteset(sset_et21_pcc_purchase, "gfx/et21.png")           { tmpl_sprite_purchase(4, 604) }
 spriteset(sset_et21_pcc, "gfx/et21.png")             { tmpl_sprite_train10(4, 564) }
+spriteset(sset_et21_pmt_purchase, "gfx/et21.png")           { tmpl_sprite_purchase(4, 660) }
+spriteset(sset_et21_pmt, "gfx/et21.png")             { tmpl_sprite_train10(4, 620) }
 
 /* ET21 switches */
 switch(FEAT_TRAINS, SELF, switch_et21_articulated, extra_callback_info1) {
@@ -550,6 +552,57 @@ item(FEAT_TRAINS, item_et21_pcc, 579) {
         purchase:                   sset_et21_pcc_purchase;
         additional_text:            switch_et21_add_text;
         default:                    sset_et21_pcc;
+        articulated_part:           switch_et21_articulated;
+        visual_effect_and_powered:  switch_et21_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(et21)
+        ENGINE_POWER_CALLBACKS(et21)
+    }
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_et21_pmt, 580) {
+    property {
+		/* common properties */
+        name:                           string(STR_ET21_PMT_NAME);
+        variant_group:                  570;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2013, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   33;     // 30;
+        reliability_decay:              15;     // 20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_ET21;
+        running_cost_factor:            RUNNING_COST_ET21;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          1860 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         121 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.2643724989679952;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_et21_pmt_purchase;
+        additional_text:            switch_et21_add_text;
+        default:                    sset_et21_pmt;
         articulated_part:           switch_et21_articulated;
         visual_effect_and_powered:  switch_et21_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;

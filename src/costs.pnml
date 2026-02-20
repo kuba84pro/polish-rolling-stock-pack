@@ -13,6 +13,7 @@
 #define PURCHASE_COST_TY23      13
 #define PURCHASE_COST_OKL27     16
 #define PURCHASE_COST_PT31      28
+#define PURCHASE_COST_PM36      27
 #define PURCHASE_COST_OKZ32     20
 #define PURCHASE_COST_TY37      19
 #define PURCHASE_COST_TY2       20
@@ -36,6 +37,7 @@
 #define PURCHASE_COST_SU46      32
 #define PURCHASE_COST_SP47      38
 #define PURCHASE_COST_SM31      17
+#define PURCHASE_COST_TEM2      19
 #define PURCHASE_COST_SP32      23
 #define PURCHASE_COST_BR285     40
 #define PURCHASE_COST_6DL       19
@@ -43,8 +45,13 @@
 #define PURCHASE_COST_SN61      20
 #define PURCHASE_COST_SN80      18
 #define PURCHASE_COST_SN81      16
-#define PURCHASE_COST_SA106     28
 #define PURCHASE_COST_SA103     25
+#define PURCHASE_COST_SA105      20
+#define PURCHASE_COST_SA106     28
+#define PURCHASE_COST_SA107     18
+#define PURCHASE_COST_SA108     23
+#define PURCHASE_COST_SA109     22
+#define PURCHASE_COST_VT627      26
 #define PURCHASE_COST_SA135     27
 #define PURCHASE_COST_SA136     35
 #define PURCHASE_COST_SA101     20
@@ -74,6 +81,7 @@
 #define PURCHASE_COST_EU160      80
 #define PURCHASE_COST_EU200      85
 #define PURCHASE_COST_E4DCUD      80
+#define PURCHASE_COST_SKODA131  52
 #define PURCHASE_COST_SKODA163  40
 #define PURCHASE_COST_S181  25
 #define PURCHASE_COST_EM10  30
@@ -99,6 +107,7 @@
 #define PURCHASE_COST_ED72      73
 #define PURCHASE_COST_ED74      80
 #define PURCHASE_COST_EN96      65
+#define PURCHASE_COST_EN62      70
 #define PURCHASE_COST_EN76      74
 #define PURCHASE_COST_ED250     255
 #define PURCHASE_COST_36WEA     60
@@ -126,6 +135,7 @@
 #define RUNNING_COST_TY23       81
 #define RUNNING_COST_OKL27      68-1
 #define RUNNING_COST_PT31       118+1
+#define RUNNING_COST_PM36       124
 #define RUNNING_COST_OKZ32      108-1
 #define RUNNING_COST_TY37       102
 #define RUNNING_COST_TY2        98
@@ -149,6 +159,7 @@
 #define RUNNING_COST_SU46       138
 #define RUNNING_COST_SP47       150
 #define RUNNING_COST_SM31       80
+#define RUNNING_COST_TEM2       83
 #define RUNNING_COST_SP32       90
 #define RUNNING_COST_BR285      175
 #define RUNNING_COST_6DL        70
@@ -156,8 +167,13 @@
 #define RUNNING_COST_SN61       50-1
 #define RUNNING_COST_SN80       47
 #define RUNNING_COST_SN81       40
-#define RUNNING_COST_SA106      70-2
 #define RUNNING_COST_SA103      60
+#define RUNNING_COST_SA105      45
+#define RUNNING_COST_SA106      43
+#define RUNNING_COST_SA107     35
+#define RUNNING_COST_SA108     70
+#define RUNNING_COST_SA109      75
+#define RUNNING_COST_VT627      76
 #define RUNNING_COST_SA135      70
 #define RUNNING_COST_SA136      85-2
 #define RUNNING_COST_SA101      74
@@ -179,6 +195,7 @@
 #define RUNNING_COST_ET40       137
 #define RUNNING_COST_ET41       140
 #define RUNNING_COST_ET42       149
+#define RUNNING_COST_SKODA131       156
 #define RUNNING_COST_EP09       119
 #define RUNNING_COST_E186       191
 #define RUNNING_COST_EU44       226
@@ -212,6 +229,7 @@
 #define RUNNING_COST_ED72       64
 #define RUNNING_COST_ED74       89
 #define RUNNING_COST_EN96       81
+#define RUNNING_COST_EN62       84
 #define RUNNING_COST_EN76       89+1
 #define RUNNING_COST_ED250      235
 #define RUNNING_COST_36WEA      69
@@ -239,6 +257,7 @@
 #define HALTED_COST_TY23        16
 #define HALTED_COST_OKL27       17-1
 #define HALTED_COST_PT31        23
+#define HALTED_COST_PM36        23
 #define HALTED_COST_OKZ32       20
 #define HALTED_COST_TY37        20
 #define HALTED_COST_TY2         20
@@ -262,6 +281,7 @@
 #define HALTED_COST_SU46        20
 #define HALTED_COST_SP47        25
 #define HALTED_COST_SM31        13
+#define HALTED_COST_TEM2        13
 #define HALTED_COST_SP32        15
 #define HALTED_COST_BR285       21
 #define HALTED_COST_6DL         12
@@ -269,8 +289,13 @@
 #define HALTED_COST_SN61        15-1
 #define HALTED_COST_SN80        13
 #define HALTED_COST_SN81        10
-#define HALTED_COST_SA106       24-2
 #define HALTED_COST_SA103       20
+#define HALTED_COST_SA105       15
+#define HALTED_COST_SA106       22
+#define HALTED_COST_SA107       14
+#define HALTED_COST_SA108       18
+#define HALTED_COST_SA109       16
+#define HALTED_COST_VT627       18
 #define HALTED_COST_SA135       21
 #define HALTED_COST_SA136       30-2
 #define HALTED_COST_SA101       25
@@ -292,6 +317,7 @@
 #define HALTED_COST_ET40        10
 #define HALTED_COST_ET41        14
 #define HALTED_COST_ET42        10+1
+#define HALTED_COST_SKODA131    18
 #define HALTED_COST_EP09        21
 #define HALTED_COST_E186        17
 #define HALTED_COST_EU44        38
@@ -325,6 +351,7 @@
 #define HALTED_COST_ED72        18-1
 #define HALTED_COST_ED74        25
 #define HALTED_COST_EN96        22
+#define HALTED_COST_EN62        24
 #define HALTED_COST_EN76        25+1
 #define HALTED_COST_ED250       47
 #define HALTED_COST_36WEA       20
@@ -420,6 +447,7 @@
 #define PURCHASE_COST_RH        14
 #define PURCHASE_COST_RBH       17
 #define PURCHASE_COST_ZAES      24
+#define PURCHASE_COST_ZACNS    25
 #define PURCHASE_COST_ZACENS    24
 #define PURCHASE_COST_ZAGS    32
 #define PURCHASE_COST_SN        14

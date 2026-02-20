@@ -1,0 +1,84 @@
+// This is part of PRSP NewGRF.
+// Don't include any headers inside this file!
+// (c) kuba84pro, GPL 2.0
+
+/* SA107 sprites */
+spriteset(sset_sa107_purchase, "gfx/SA107.png")         { tmpl_sprite_purchase(4, 85) }
+spriteset(sset_sa107, "gfx/SA107.png")                  { tmpl_sprite_train(4, 15) }
+spriteset(sset_sa107_open, "gfx/SA107.png")             { tmpl_sprite_train(4, 50) }
+
+spritegroup sgroup_sa107 {
+    loaded:     [sset_sa107];
+    loading:    [sset_sa107_open];
+}
+/* SA107 switches */
+switch(FEAT_TRAINS, PARENT, switch_sa107_visual_effect_local,0) {
+    return visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 1, DISABLE_WAGON_POWER);
+}
+switch(FEAT_TRAINS, SELF, switch_sa107_kw_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_2L, string(STR_HEATING_ELECTRIC_TEXT), string(STR_SA107_TEXT));
+    return string(STR_SA107_TEXT);
+}
+switch(FEAT_TRAINS, SELF, switch_sa107_kw_can_attach, vehicle_type_id) {
+    item_sa107:  return CB_RESULT_ATTACH_ALLOW;
+    item_sa109_slaskie:  return CB_RESULT_ATTACH_ALLOW;
+    item_sa109_malopolska:  return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_ATTACH_DISALLOW_EZT1);
+}
+switch(FEAT_TRAINS, SELF, switch_sa107_kw_start_stop, count_veh_id(503) > 3 || count_veh_id(501) > 3 || count_veh_id(502) > 3) {
+    1: return string(STR_TRAIN_TOO_LONG, string(STR_SA107_NAME));
+    return CB_RESULT_NO_TEXT;
+}
+
+ENGINE_RUNNING_COST_SWITCH(sa107, SA107)
+DIESEL_ELECTRIC_ENGINE_POWER_SWITCH(sa107)
+ENGINE_VISUAL_EFFECT_SWITCH(sa107)
+/* Define the actual train */
+item(FEAT_TRAINS, item_sa107, 503) {
+    property {
+        /* common properties */
+        name:                           string(STR_SA107_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2003, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  11;     // per part
+        cost_factor:                    PURCHASE_COST_SA107;
+        running_cost_factor:            RUNNING_COST_SA107;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          190 kW;
+        running_cost_base:              RUNNING_COST_DIESEL;
+        dual_headed:                    0;
+        cargo_capacity:                 42;
+        weight:                         23 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.1251;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   sset_sa107_purchase;
+        default:                    sgroup_sa107;
+        additional_text:            switch_sa107_kw_add_text;
+        purchase_cargo_capacity:    return 42;
+        visual_effect_and_powered:  switch_sa107_visual_effect;
+        can_attach_wagon:           switch_sa107_kw_can_attach;
+        start_stop:                 switch_sa107_kw_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(sa107)
+        ENGINE_POWER_CALLBACKS(sa107)
+    }
+}

@@ -9,6 +9,14 @@ spriteset(sset_s181_ciech_purchase, "gfx/s181.png")    { tmpl_sprite_purchase(4,
 spriteset(sset_s181_ciech, "gfx/s181.png")             { tmpl_sprite_train10(4, 91) }
 spriteset(sset_s181_cu_purchase, "gfx/s181.png")    { tmpl_sprite_purchase(4, 190) }
 spriteset(sset_s181_cu, "gfx/s181.png")             { tmpl_sprite_train10(4, 156) }
+spriteset(sset_s181_stk_purchase, "gfx/s181.png")    { tmpl_sprite_purchase(4, 250) }
+spriteset(sset_s181_stk, "gfx/s181.png")             { tmpl_sprite_train10(4, 216) }
+spriteset(sset_s181_ctl_purchase, "gfx/s181.png")    { tmpl_sprite_purchase(4, 310) }
+spriteset(sset_s181_ctl, "gfx/s181.png")             { tmpl_sprite_train10(4, 276) }
+spriteset(sset_s181_pcc_purchase, "gfx/s181.png")    { tmpl_sprite_purchase(4, 370) }
+spriteset(sset_s181_pcc, "gfx/s181.png")             { tmpl_sprite_train10(4, 336) }
+spriteset(sset_s181_cd_cargo_purchase, "gfx/s181.png")    { tmpl_sprite_purchase(4, 430) }
+spriteset(sset_s181_cd_cargo, "gfx/s181.png")             { tmpl_sprite_train10(4, 396) }
 
 /* SKODA181 switches */
 switch(FEAT_TRAINS, SELF, switch_s181_articulated, extra_callback_info1) {
@@ -178,6 +186,207 @@ item(FEAT_TRAINS, item_s181_cu, 532) {
         purchase:                   sset_s181_cu_purchase;
         additional_text:            switch_s181_add_text;
         default:                    sset_s181_cu;
+        articulated_part:           switch_s181_articulated;
+        visual_effect_and_powered:  switch_s181_visual_effect;
+        can_attach_wagon:           switch_s181_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(s181)
+        ENGINE_POWER_CALLBACKS(s181)
+    }
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_s181_stk, 533) {
+    property {
+		/* common properties */
+        name:                           string(STR_S181_STK_NAME);
+        variant_group:                  530;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2007, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_S181;
+        running_cost_factor:            RUNNING_COST_S181;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          90 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          2790 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_PROPERTY
+        weight:                         124 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.2836144816020519;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_s181_stk_purchase;
+        additional_text:            switch_s181_add_text;
+        default:                    sset_s181_stk;
+        articulated_part:           switch_s181_articulated;
+        visual_effect_and_powered:  switch_s181_visual_effect;
+        can_attach_wagon:           switch_s181_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(s181)
+        ENGINE_POWER_CALLBACKS(s181)
+    }
+}
+item(FEAT_TRAINS, item_s181_ctl, 534) {
+    property {
+		/* common properties */
+        name:                           string(STR_S181_CTL_NAME);
+        variant_group:                  530;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2007, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_S181;
+        running_cost_factor:            RUNNING_COST_S181;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          90 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          2790 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_PROPERTY
+        weight:                         124 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.2836144816020519;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_s181_ctl_purchase;
+        additional_text:            switch_s181_add_text;
+        default:                    sset_s181_ctl;
+        articulated_part:           switch_s181_articulated;
+        visual_effect_and_powered:  switch_s181_visual_effect;
+        can_attach_wagon:           switch_s181_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(s181)
+        ENGINE_POWER_CALLBACKS(s181)
+    }
+}
+item(FEAT_TRAINS, item_s181_pcc, 535) {
+    property {
+		/* common properties */
+        name:                           string(STR_S181_PCC_NAME);
+        variant_group:                  530;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2007, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_S181;
+        running_cost_factor:            RUNNING_COST_S181;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          90 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          2790 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_PROPERTY
+        weight:                         124 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.2836144816020519;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_s181_pcc_purchase;
+        additional_text:            switch_s181_add_text;
+        default:                    sset_s181_pcc;
+        articulated_part:           switch_s181_articulated;
+        visual_effect_and_powered:  switch_s181_visual_effect;
+        can_attach_wagon:           switch_s181_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(s181)
+        ENGINE_POWER_CALLBACKS(s181)
+    }
+}
+item(FEAT_TRAINS, item_s181_cd_cargo, 536) {
+    property {
+		/* common properties */
+        name:                           string(STR_S181_CD_CARGO_NAME);
+        variant_group:                  530;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2019, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_S181;
+        running_cost_factor:            RUNNING_COST_S181;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          90 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          2790 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_PROPERTY
+        weight:                         124 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.2836144816020519;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_s181_cd_cargo_purchase;
+        additional_text:            switch_s181_add_text;
+        default:                    sset_s181_cd_cargo;
         articulated_part:           switch_s181_articulated;
         visual_effect_and_powered:  switch_s181_visual_effect;
         can_attach_wagon:           switch_s181_can_attach;

@@ -1,5 +1,47 @@
 Polish Rolling Stock Pack - Changelog
 ================================
+0.18.0
+Note:
+For the best user experience, set language to English, because it will be the most actual and proper one.
+
+Added:
+- PM36 (3 liveries)
+- SU45-194 BTK Karpiel
+- ST43-R CTL Logistics
+- 3E/1M Pol-Miedz-Trans
+- ZSSK 131 (5 liveries)
+- Skoda 163 (4 liveries)
+- Skoda 181 (4 liveries)
+- SM42 (7 liveries)
+- SM31-009 Trainspeed
+- EU07 (4 liveries)
+- ST44/M62 (9 liveries)
+- TEM2 (5 liveries)
+- EN62
+- SA108 (2 liveries)
+- SA107
+- SA109 (2 liveries)
+- VT627
+- SA105 (3 liveries)
+- EN57AL Podlaskie
+
+Coaches:
+- 140a/141a TLK
+- 152a/154a BWE
+- Bhp Orange livery
+- 436V (2 liveries)
+- Zacns GBX
+
+Fixed:
+- SA101/SA102 (sprites, capacity)
+- EN71 Szrenica (sprites)
+- Some EU07 (sprites)
+- Some Skoda 163 (sprites)
+- ET40-31 (sprites)
+- Bhp (capacity)
+- SA136 (capacity)
+and other things
+
 0.17.1
 Fixed:
 - EN96 length

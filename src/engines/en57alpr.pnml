@@ -30,6 +30,15 @@ spriteset(sset_en57alkm_tail, "gfx/en57_alkm.png") { tmpl_sprite_train12_offset(
 spriteset(sset_en57alkm_head_open, "gfx/en57_alkm.png") { tmpl_sprite_train12(4, 160) }
 spriteset(sset_en57alkm_mid_open, "gfx/en57_alkm.png") { tmpl_sprite_train10_offset(4, 200, 1) }
 spriteset(sset_en57alkm_tail_open, "gfx/en57_alkm.png") { tmpl_sprite_train12_offset(4, 240, 3) }
+// Livery Podlaskie
+spriteset(sset_en57alpodl_purchase, "gfx/en57_alpodl.png") { tmpl_sprite_purchase(4, 140) }
+spriteset(sset_en57alpodl_advert, "gfx/en57_alpodl.png") { tmpl_sprite_advertisement200(4, 280) }
+spriteset(sset_en57alpodl_head, "gfx/en57_alpodl.png") { tmpl_sprite_train12(4, 20) }
+spriteset(sset_en57alpodl_mid, "gfx/en57_alpodl.png") { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_en57alpodl_tail, "gfx/en57_alpodl.png") { tmpl_sprite_train12_offset(4, 100, 3) }
+spriteset(sset_en57alpodl_head_open, "gfx/en57_alpodl.png") { tmpl_sprite_train12(4, 160) }
+spriteset(sset_en57alpodl_mid_open, "gfx/en57_alpodl.png") { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_en57alpodl_tail_open, "gfx/en57_alpodl.png") { tmpl_sprite_train12_offset(4, 240, 3) }
 // Default Livery
 spritegroup sgroup_en57alpr_head {
     loaded: [sset_en57alpr_head];
@@ -289,6 +298,86 @@ item(FEAT_TRAINS, item_en57al_km, 2002) {
         purchase:                   switch_en57al_km_purchase;
         default:                    switch_en57al_km_graphics;
         articulated_part:           switch_en57al_km_articulated;
+        additional_text:            switch_en57al_add_text;
+        length:                     switch_en57alpr_length;
+        purchase_cargo_capacity:    return 171/5;
+        cargo_capacity:             switch_en57alpr_capacity;
+        visual_effect_and_powered:  switch_en57alpr_visual_effect;
+        can_attach_wagon:           switch_en57axx_can_attach;
+        start_stop:                 switch_en57alpr_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(en57alpr)
+        ENGINE_POWER_CALLBACKS(en57alpr)
+    }
+}
+/* EN57AL Podlaskie switches */
+spritegroup sgroup_en57alpodl_head {
+    loaded: [sset_en57alpodl_head];
+    loading: [sset_en57alpodl_head_open];
+}
+spritegroup sgroup_en57alpodl_mid {
+    loaded: [sset_en57alpodl_mid];
+    loading: [sset_en57alpodl_mid_open];
+}
+spritegroup sgroup_en57alpodl_tail {
+    loaded: [sset_en57alpodl_tail];
+    loading: [sset_en57alpodl_tail_open];
+}
+switch(FEAT_TRAINS, SELF, switch_en57al_podl_articulated, getbits(extra_callback_info1, 0, 8)) {
+    1..4: return item_en57al_podl;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_en57al_podl_purchase, extra_callback_info1 & 0xFF) {
+    0x21: return sset_en57alpodl_advert;
+    return sset_en57alpodl_purchase;
+}
+switch(FEAT_TRAINS, SELF, switch_en57al_podl_graphics, position_in_vehid_chain % 5) {
+    0: return sgroup_en57alpodl_head;
+    2: return sgroup_en57alpodl_mid;
+    4: return sgroup_en57alpodl_tail;
+    return sset_dummy;
+}
+
+item(FEAT_TRAINS, item_en57al_podl, 2012) {
+    property {
+        /* common properties */
+        name:                           string(STR_EN57AL_PODL_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2015, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  11;     // per part
+        cost_factor:                    PURCHASE_COST_EN57ALPR;
+        running_cost_factor:            RUNNING_COST_EN57ALPR;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          120 km/h;
+        misc_flags:                    bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          1000 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 1;
+        weight:                         132 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.25*75/110;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        variant_group:                  2000;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+    graphics {
+        purchase:                   switch_en57al_podl_purchase;
+        default:                    switch_en57al_podl_graphics;
+        articulated_part:           switch_en57al_podl_articulated;
         additional_text:            switch_en57al_add_text;
         length:                     switch_en57alpr_length;
         purchase_cargo_capacity:    return 171/5;

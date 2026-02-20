@@ -48,15 +48,6 @@ spritegroup sgroup_120a_polregio {
     loading:    [sset_120a_polregio_open];
 }
 
-#ifdef SITTING_PLACES
-    #undef SITTING_PLACES
-#endif
-#ifdef STANDING_PLACES
-    #undef STANDING_PLACES
-#endif
-#define SITTING_PLACES 80-24
-#define STANDING_PLACES 8
-
 /* Bh "bonanza" switches */
 switch(FEAT_TRAINS, SELF, switch_bh_bon_articulated, extra_callback_info1) {
     1: return item_bh_mail_dummy_3;
@@ -81,10 +72,6 @@ switch(FEAT_TRAINS, SELF, switch_120a_malopolskie_graphics, (extra_callback_info
 switch(FEAT_TRAINS, SELF, switch_120a_polregio_graphics, (extra_callback_info1&0xFF)==0 && other_veh_is_hidden(1)) {
     1: return sset_120a_polregio_cut;
     return sgroup_120a_polregio;
-}
-switch(FEAT_TRAINS, SELF, switch_bh_bon_capacity, cargo_type_in_veh) {
-    TOUR: return SITTING_PLACES;
-    return SITTING_PLACES+STANDING_PLACES;
 }
 switch (FEAT_TRAINS, SELF, switch_bh_bon_add_text, IS_HEATING_CLIMATE ) {
     1: return string(STR_PURCHASE_DESCR_4L, string(STR_BRAKE_AIR), string(STR_HEATING_ST_EL_TEXT), string(STR_BH_BON_TEXT), string(STR_INCOME_LOWER));
@@ -124,7 +111,7 @@ item(FEAT_TRAINS, item_bh_bon, 10035) {
         track_type:                     RAIL;
         power:                          0;
         running_cost_base:              RUNNING_COST_STEAM;
-        cargo_capacity:                 SITTING_PLACES+STANDING_PLACES;
+        cargo_capacity:                 72;
         weight:                         39 ton;
         length:                         8;
         visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
@@ -136,8 +123,7 @@ item(FEAT_TRAINS, item_bh_bon, 10035) {
         additional_text:            switch_bh_bon_add_text;
         default:                    switch_bh_bon_old_graphics;
         articulated_part:           switch_bh_bon_articulated;
-        purchase_cargo_capacity:    return SITTING_PLACES+STANDING_PLACES;
-        cargo_capacity:             switch_bh_bon_capacity;
+        purchase_cargo_capacity:    return 72;
         colour_mapping:             switch_lights_wagon_green_2;
         can_attach_wagon:           switch_bh_bon_can_attach;
     }
@@ -166,7 +152,7 @@ item(FEAT_TRAINS, item_bh_bon_new, 10036) {
         track_type:                     RAIL;
         power:                          0;
         running_cost_base:              RUNNING_COST_STEAM;
-        cargo_capacity:                 SITTING_PLACES+STANDING_PLACES;
+        cargo_capacity:                 72;
         weight:                         39 ton;
         length:                         8;
         visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
@@ -178,8 +164,7 @@ item(FEAT_TRAINS, item_bh_bon_new, 10036) {
         additional_text:            switch_bh_bon_add_text;
         default:                    switch_bh_bon_new_graphics;
         articulated_part:           switch_bh_bon_articulated;
-        purchase_cargo_capacity:    return SITTING_PLACES+STANDING_PLACES;
-        cargo_capacity:             switch_bh_bon_capacity;
+        purchase_cargo_capacity:    return 72;
         colour_mapping:             switch_lights_wagon_green_2;
         can_attach_wagon:           switch_bh_bon_can_attach;
     }
@@ -191,7 +176,7 @@ item(FEAT_TRAINS, item_120a_pr, 10037) {
         name:                           string(STR_120A_PR_NAME);
         variant_group:                  10035;
         climates_available:             PKP_CLIMATES; 
-        introduction_date:              date(1993, 1, 1);
+        introduction_date:              date(2014, 1, 1);
         model_life:                     VEHICLE_NEVER_EXPIRES;
         vehicle_life:                   20;
         reliability_decay:              20;
@@ -208,7 +193,7 @@ item(FEAT_TRAINS, item_120a_pr, 10037) {
         track_type:                     RAIL;
         power:                          0;
         running_cost_base:              RUNNING_COST_STEAM;
-        cargo_capacity:                 SITTING_PLACES+STANDING_PLACES;
+        cargo_capacity:                 72;
         weight:                         39 ton;
         length:                         8;
         visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
@@ -220,8 +205,7 @@ item(FEAT_TRAINS, item_120a_pr, 10037) {
         additional_text:            switch_bh_bon_add_text;
         default:                    switch_120a_pr_graphics;
         articulated_part:           switch_bh_bon_articulated;
-        purchase_cargo_capacity:    return SITTING_PLACES+STANDING_PLACES;
-        cargo_capacity:             switch_bh_bon_capacity;
+        purchase_cargo_capacity:    return 72;
         colour_mapping:             switch_lights_wagon_green_2;
         can_attach_wagon:           switch_bh_bon_can_attach;
     }
@@ -233,7 +217,7 @@ item(FEAT_TRAINS, item_120a_malopolskie, 10038) {
         name:                           string(STR_120A_MALOPOLSKIE_NAME);
         variant_group:                  10035;
         climates_available:             PKP_CLIMATES; 
-        introduction_date:              date(1993, 1, 1);
+        introduction_date:              date(2005, 1, 1);
         model_life:                     VEHICLE_NEVER_EXPIRES;
         vehicle_life:                   20;
         reliability_decay:              20;
@@ -250,7 +234,7 @@ item(FEAT_TRAINS, item_120a_malopolskie, 10038) {
         track_type:                     RAIL;
         power:                          0;
         running_cost_base:              RUNNING_COST_STEAM;
-        cargo_capacity:                 SITTING_PLACES+STANDING_PLACES;
+        cargo_capacity:                 72;
         weight:                         39 ton;
         length:                         8;
         visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
@@ -262,8 +246,7 @@ item(FEAT_TRAINS, item_120a_malopolskie, 10038) {
         additional_text:            switch_bh_bon_add_text;
         default:                    switch_120a_malopolskie_graphics;
         articulated_part:           switch_bh_bon_articulated;
-        purchase_cargo_capacity:    return SITTING_PLACES+STANDING_PLACES;
-        cargo_capacity:             switch_bh_bon_capacity;
+        purchase_cargo_capacity:    return 72;
         colour_mapping:             switch_lights_wagon_green_2;
         can_attach_wagon:           switch_bh_bon_can_attach;
     }
@@ -292,7 +275,7 @@ item(FEAT_TRAINS, item_120a_polregio, 10039) {
         track_type:                     RAIL;
         power:                          0;
         running_cost_base:              RUNNING_COST_STEAM;
-        cargo_capacity:                 SITTING_PLACES+STANDING_PLACES;
+        cargo_capacity:                 72;
         weight:                         39 ton;
         length:                         8;
         visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
@@ -304,8 +287,7 @@ item(FEAT_TRAINS, item_120a_polregio, 10039) {
         additional_text:            switch_bh_bon_add_text;
         default:                    switch_120a_polregio_graphics;
         articulated_part:           switch_bh_bon_articulated;
-        purchase_cargo_capacity:    return SITTING_PLACES+STANDING_PLACES;
-        cargo_capacity:             switch_bh_bon_capacity;
+        purchase_cargo_capacity:    return 72;
         colour_mapping:             switch_lights_wagon_green_2;
         can_attach_wagon:           switch_bh_bon_can_attach;
     }

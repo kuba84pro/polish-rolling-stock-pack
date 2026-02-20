@@ -1,0 +1,355 @@
+// This is part of PRSP NewGRF.
+// Don't include any headers inside this file!
+// (c) kuba84pro, GPL 2.0
+
+/* SKODA131 sprites */
+spriteset(sset_skoda131_purchase, "gfx/skoda131.png")           { tmpl_sprite_purchase(4, 84) }
+spriteset(sset_skoda131_head, "gfx/skoda131.png")               { tmpl_sprite_train10(4, 6) }
+spriteset(sset_skoda131_tail, "gfx/skoda131.png")               { tmpl_sprite_train10_offset(4, 44, 1) }
+
+spriteset(sset_skoda131_gy_purchase, "gfx/skoda131.png")           { tmpl_sprite_purchase(4, 180) }
+spriteset(sset_skoda131_gy_head, "gfx/skoda131.png")               { tmpl_sprite_train10(4, 102) }
+spriteset(sset_skoda131_gy_tail, "gfx/skoda131.png")               { tmpl_sprite_train10_offset(4, 140, 1) }
+
+spriteset(sset_skoda131_zssk_yellow_purchase, "gfx/skoda131.png")           { tmpl_sprite_purchase(4, 276) }
+spriteset(sset_skoda131_zssk_yellow_head, "gfx/skoda131.png")               { tmpl_sprite_train10(4, 198) }
+spriteset(sset_skoda131_zssk_yellow_tail, "gfx/skoda131.png")               { tmpl_sprite_train10_offset(4, 236, 1) }
+
+spriteset(sset_skoda131_zssk_green_purchase, "gfx/skoda131.png")           { tmpl_sprite_purchase(4, 372) }
+spriteset(sset_skoda131_zssk_green_head, "gfx/skoda131.png")               { tmpl_sprite_train10(4, 294) }
+spriteset(sset_skoda131_zssk_green_tail, "gfx/skoda131.png")               { tmpl_sprite_train10_offset(4, 332, 1) }
+
+spriteset(sset_skoda131_zssk_gray_purchase, "gfx/skoda131.png")           { tmpl_sprite_purchase(4, 468) }
+spriteset(sset_skoda131_zssk_gray_head, "gfx/skoda131.png")               { tmpl_sprite_train10(4, 390) }
+spriteset(sset_skoda131_zssk_gray_tail, "gfx/skoda131.png")               { tmpl_sprite_train10_offset(4, 428, 1) }
+
+/* SKODA131 switches */
+switch(FEAT_TRAINS, SELF, switch_skoda131_articulated, extra_callback_info1) {
+    1..2: return item_skoda131;     // add second part
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_skoda131_length, position_in_vehid_chain % 3) {
+    1: return 2;                // dummy parts
+    return 8;
+}
+switch(FEAT_TRAINS, SELF, switch_skoda131_graphics, position_in_vehid_chain % 3) {
+    0: return sset_skoda131_head;
+    2: return sset_skoda131_tail;
+    return sset_dummy;
+}
+switch(FEAT_TRAINS, SELF, switch_skoda131_visual_effect_local, position_in_vehid_chain % 3) {
+    0: return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 3, DISABLE_WAGON_POWER);
+    2: return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+    return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+}
+switch (FEAT_TRAINS, SELF, switch_skoda131_add_text, IS_HEATING_CLIMATE ) {
+	1: return string(STR_PURCHASE_DESCR_2L, string(STR_HEATING_ELECTRIC_POWER_TEXT, HEATING_POWER_ELECTRIC_HI), string(STR_ENGINE_HEAVY_FREIGHT));
+	return string(STR_ENGINE_HEAVY_FREIGHT);
+}
+ENGINE_RUNNING_COST_SWITCH(skoda131, SKODA131)
+DIESEL_ELECTRIC_2_ENGINE_POWER_SWITCH(skoda131, KW_TO_HP(4480))
+ENGINE_VISUAL_EFFECT_SWITCH(skoda131)
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_skoda131, 830) {
+    property {
+		/* common properties */
+        name:                           string(STR_SKODA131_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1980, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_SKODA131;
+        running_cost_factor:            RUNNING_COST_SKODA131;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          4480 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         169 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.2111;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_skoda131_purchase;
+        additional_text:            switch_skoda131_add_text;
+        default:                    switch_skoda131_graphics;
+        articulated_part:           switch_skoda131_articulated;
+        length:                     switch_skoda131_length;
+        visual_effect_and_powered:  switch_skoda131_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(skoda131)
+        ENGINE_POWER_CALLBACKS(skoda131)
+    }
+}
+
+/* SKODA131 GY switches */
+switch(FEAT_TRAINS, SELF, switch_skoda131_gy_articulated, extra_callback_info1) {
+    1..2: return item_skoda131_gy;     // add second part
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_skoda131_gy_graphics, position_in_vehid_chain % 3) {
+    0: return sset_skoda131_gy_head;
+    2: return sset_skoda131_gy_tail;
+    return sset_dummy;
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_skoda131_gy, 831) {
+    property {
+		/* common properties */
+        name:                           string(STR_SKODA131_GY_NAME);
+        variant_group:                  830;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1987, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_SKODA131;
+        running_cost_factor:            RUNNING_COST_SKODA131;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          4480 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         169 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.2111;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_skoda131_gy_purchase;
+        additional_text:            switch_skoda131_add_text;
+        default:                    switch_skoda131_gy_graphics;
+        articulated_part:           switch_skoda131_gy_articulated;
+        length:                     switch_skoda131_length;
+        visual_effect_and_powered:  switch_skoda131_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(skoda131)
+        ENGINE_POWER_CALLBACKS(skoda131)
+    }
+}
+
+/* SKODA131 ZSSK Yellow switches */
+switch(FEAT_TRAINS, SELF, switch_skoda131_zssk_yellow_articulated, extra_callback_info1) {
+    1..2: return item_skoda131_zssk_yellow;     // add second part
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_skoda131_zssk_yellow_graphics, position_in_vehid_chain % 3) {
+    0: return sset_skoda131_zssk_yellow_head;
+    2: return sset_skoda131_zssk_yellow_tail;
+    return sset_dummy;
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_skoda131_zssk_yellow, 832) {
+    property {
+		/* common properties */
+        name:                           string(STR_SKODA131_ZSSK_YELLOW_NAME);
+        variant_group:                  830;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2019, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_SKODA131;
+        running_cost_factor:            RUNNING_COST_SKODA131;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          4480 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         169 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.2111;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_skoda131_zssk_yellow_purchase;
+        additional_text:            switch_skoda131_add_text;
+        default:                    switch_skoda131_zssk_yellow_graphics;
+        articulated_part:           switch_skoda131_zssk_yellow_articulated;
+        length:                     switch_skoda131_length;
+        visual_effect_and_powered:  switch_skoda131_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(skoda131)
+        ENGINE_POWER_CALLBACKS(skoda131)
+    }
+}
+
+/* SKODA131 ZSSK Green switches */
+switch(FEAT_TRAINS, SELF, switch_skoda131_zssk_green_articulated, extra_callback_info1) {
+    1..2: return item_skoda131_zssk_green;     // add second part
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_skoda131_zssk_green_graphics, position_in_vehid_chain % 3) {
+    0: return sset_skoda131_zssk_green_head;
+    2: return sset_skoda131_zssk_green_tail;
+    return sset_dummy;
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_skoda131_zssk_green, 833) {
+    property {
+		/* common properties */
+        name:                           string(STR_SKODA131_ZSSK_GREEN_NAME);
+        variant_group:                  830;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2019, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_SKODA131;
+        running_cost_factor:            RUNNING_COST_SKODA131;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          4480 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         169 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.2111;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_skoda131_zssk_green_purchase;
+        additional_text:            switch_skoda131_add_text;
+        default:                    switch_skoda131_zssk_green_graphics;
+        articulated_part:           switch_skoda131_zssk_green_articulated;
+        length:                     switch_skoda131_length;
+        visual_effect_and_powered:  switch_skoda131_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(skoda131)
+        ENGINE_POWER_CALLBACKS(skoda131)
+    }
+}
+
+/* SKODA131 ZSSK Gray switches */
+switch(FEAT_TRAINS, SELF, switch_skoda131_zssk_gray_articulated, extra_callback_info1) {
+    1..2: return item_skoda131_zssk_gray;     // add second part
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_skoda131_zssk_gray_graphics, position_in_vehid_chain % 3) {
+    0: return sset_skoda131_zssk_gray_head;
+    2: return sset_skoda131_zssk_gray_tail;
+    return sset_dummy;
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_skoda131_zssk_gray, 834) {
+    property {
+		/* common properties */
+        name:                           string(STR_SKODA131_ZSSK_GRAY_NAME);
+        variant_group:                  830;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2019, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_SKODA131;
+        running_cost_factor:            RUNNING_COST_SKODA131;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          100 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          4480 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         169 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.2111;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_skoda131_zssk_gray_purchase;
+        additional_text:            switch_skoda131_add_text;
+        default:                    switch_skoda131_zssk_gray_graphics;
+        articulated_part:           switch_skoda131_zssk_gray_articulated;
+        length:                     switch_skoda131_length;
+        visual_effect_and_powered:  switch_skoda131_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(skoda131)
+        ENGINE_POWER_CALLBACKS(skoda131)
+    }
+}

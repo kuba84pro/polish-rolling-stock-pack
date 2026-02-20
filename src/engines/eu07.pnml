@@ -63,6 +63,14 @@ spriteset(sset_eu07_303e_purchase_poltrans, "gfx/eu07.png")    { tmpl_sprite_pur
 spriteset(sset_eu07_303e_poltrans, "gfx/eu07.png")          { tmpl_sprite_train10(4, 1777) }
 spriteset(sset_eu07_purchase_railstm_old, "gfx/eu07.png")    { tmpl_sprite_purchase(4, 1877) }
 spriteset(sset_eu07_railstm_old, "gfx/eu07.png")          { tmpl_sprite_train10(4, 1837) }
+spriteset(sset_eu07_purchase_trainspeed, "gfx/eu07.png")    { tmpl_sprite_purchase(4, 1933) }
+spriteset(sset_eu07_trainspeed, "gfx/eu07.png")          { tmpl_sprite_train10(4, 1893) }
+spriteset(sset_eu07_purchase_orion, "gfx/eu07.png")    { tmpl_sprite_purchase(4, 1989) }
+spriteset(sset_eu07_orion, "gfx/eu07.png")          { tmpl_sprite_train10(4, 1949) }
+spriteset(sset_eu07_purchase_ltc, "gfx/eu07.png")    { tmpl_sprite_purchase(4, 2045) }
+spriteset(sset_eu07_ltc, "gfx/eu07.png")          { tmpl_sprite_train10(4, 2005) }
+spriteset(sset_eu07_purchase_turquoise, "gfx/eu07.png")    { tmpl_sprite_purchase(4, 2103) }
+spriteset(sset_eu07_turquoise, "gfx/eu07.png")          { tmpl_sprite_train10(4, 2063) }
 
 /* EU07 switches */
 // Switches itself
@@ -151,8 +159,6 @@ item(FEAT_TRAINS, item_eu07, 620) {
         ENGINE_POWER_CALLBACKS(eu07)
     }
 }
-// EU07 Green itself
-/* Define the actual train */
 item(FEAT_TRAINS, item_eu07_green, 621) {
     property {
         /* common properties */
@@ -203,8 +209,6 @@ item(FEAT_TRAINS, item_eu07_green, 621) {
         ENGINE_POWER_CALLBACKS(eu07)
     }
 }
-// EU07 Yellow front itself
-/* Define the actual train */
 item(FEAT_TRAINS, item_eu07_yellow_front, 622) {
     property {
         /* common properties */
@@ -255,8 +259,6 @@ item(FEAT_TRAINS, item_eu07_yellow_front, 622) {
         ENGINE_POWER_CALLBACKS(eu07)
     }
 }
-// EU07 Budyn itself
-/* Define the actual train */
 item(FEAT_TRAINS, item_ep07_budyn, 623) {
     property {
         /* common properties */
@@ -307,8 +309,6 @@ item(FEAT_TRAINS, item_ep07_budyn, 623) {
         ENGINE_POWER_CALLBACKS(eu07)
     }
 }
-// EU07 Denaturat itself
-/* Define the actual train */
 item(FEAT_TRAINS, item_ep07_denaturat, 624) {
     property {
         /* common properties */
@@ -359,8 +359,6 @@ item(FEAT_TRAINS, item_ep07_denaturat, 624) {
         ENGINE_POWER_CALLBACKS(eu07)
     }
 }
-// EU07 km itself
-/* Define the actual train */
 item(FEAT_TRAINS, item_eu07_km, 625) {
     property {
         /* common properties */
@@ -411,8 +409,6 @@ item(FEAT_TRAINS, item_eu07_km, 625) {
         ENGINE_POWER_CALLBACKS(eu07)
     }
 }
-// EU07 pkp_cargo itself
-/* Define the actual train */
 item(FEAT_TRAINS, item_eu07_pkp_cargo, 626) {
     property {
         /* common properties */
@@ -463,8 +459,6 @@ item(FEAT_TRAINS, item_eu07_pkp_cargo, 626) {
         ENGINE_POWER_CALLBACKS(eu07)
     }
 }
-// EU07 pkp_ic_old itself
-/* Define the actual train */
 item(FEAT_TRAINS, item_ep07_pkp_ic_old, 627) {
     property {
         /* common properties */
@@ -515,8 +509,6 @@ item(FEAT_TRAINS, item_ep07_pkp_ic_old, 627) {
         ENGINE_POWER_CALLBACKS(eu07)
     }
 }
-// EU07 pkp_ic itself
-/* Define the actual train */
 item(FEAT_TRAINS, item_ep07_pkp_ic, 628) {
     property {
         /* common properties */
@@ -567,8 +559,6 @@ item(FEAT_TRAINS, item_ep07_pkp_ic, 628) {
         ENGINE_POWER_CALLBACKS(eu07)
     }
 }
-// EU07 papuga itself
-/* Define the actual train */
 item(FEAT_TRAINS, item_ep07p_papuga, 629) {
     property {
         /* common properties */
@@ -619,8 +609,6 @@ item(FEAT_TRAINS, item_ep07p_papuga, 629) {
         ENGINE_POWER_CALLBACKS(eu07)
     }
 }
-// EU07 chocolate itself
-/* Define the actual train */
 item(FEAT_TRAINS, item_eu07_chocolate, 630) {
     property {
         /* common properties */
@@ -671,8 +659,6 @@ item(FEAT_TRAINS, item_eu07_chocolate, 630) {
         ENGINE_POWER_CALLBACKS(eu07)
     }
 }
-// EU07 tabor_debica itself
-/* Define the actual train */
 item(FEAT_TRAINS, item_eu07_tabor_debica, 631) {
     property {
         /* common properties */
@@ -723,8 +709,6 @@ item(FEAT_TRAINS, item_eu07_tabor_debica, 631) {
         ENGINE_POWER_CALLBACKS(eu07)
     }
 }
-// EU07 polregio itself
-/* Define the actual train */
 item(FEAT_TRAINS, item_ep07p_polregio, 632) {
     property {
         /* common properties */
@@ -775,8 +759,6 @@ item(FEAT_TRAINS, item_ep07p_polregio, 632) {
         ENGINE_POWER_CALLBACKS(eu07)
     }
 }
-// EU07 pcc itself
-/* Define the actual train */
 item(FEAT_TRAINS, item_eu07_pcc, 633) {
     property {
         /* common properties */
@@ -827,8 +809,6 @@ item(FEAT_TRAINS, item_eu07_pcc, 633) {
         ENGINE_POWER_CALLBACKS(eu07)
     }
 }
-// ep07_1067 itself
-/* Define the actual train */
 item(FEAT_TRAINS, item_ep07_1067, 634) {
     property {
         /* common properties */
@@ -879,8 +859,6 @@ item(FEAT_TRAINS, item_ep07_1067, 634) {
         ENGINE_POWER_CALLBACKS(eu07)
     }
 }
-// eu07_ecco itself
-/* Define the actual train */
 item(FEAT_TRAINS, item_eu07_ecco, 635) {
     property {
         /* common properties */
@@ -931,8 +909,6 @@ item(FEAT_TRAINS, item_eu07_ecco, 635) {
         ENGINE_POWER_CALLBACKS(eu07)
     }
 }
-// eu07_ltg itself
-/* Define the actual train */
 item(FEAT_TRAINS, item_eu07_ltg, 636) {
     property {
         /* common properties */
@@ -983,8 +959,6 @@ item(FEAT_TRAINS, item_eu07_ltg, 636) {
         ENGINE_POWER_CALLBACKS(eu07)
     }
 }
-// eu07_pkp_cargo_rw itself
-/* Define the actual train */
 item(FEAT_TRAINS, item_eu07_pkp_cargo_rw, 637) {
     property {
         /* common properties */
@@ -1035,8 +1009,6 @@ item(FEAT_TRAINS, item_eu07_pkp_cargo_rw, 637) {
         ENGINE_POWER_CALLBACKS(eu07)
     }
 }
-// eu07_captrain itself
-/* Define the actual train */
 item(FEAT_TRAINS, item_eu07_captrain, 638) {
     property {
         /* common properties */
@@ -1087,8 +1059,6 @@ item(FEAT_TRAINS, item_eu07_captrain, 638) {
         ENGINE_POWER_CALLBACKS(eu07)
     }
 }
-// eu07_cargounit itself
-/* Define the actual train */
 item(FEAT_TRAINS, item_eu07_cargounit, 639) {
     property {
         /* common properties */
@@ -1139,8 +1109,6 @@ item(FEAT_TRAINS, item_eu07_cargounit, 639) {
         ENGINE_POWER_CALLBACKS(eu07)
     }
 }
-// eu07_puk_kolprem itself
-/* Define the actual train */
 item(FEAT_TRAINS, item_eu07_puk_kolprem, 640) {
     property {
         /* common properties */
@@ -1191,8 +1159,6 @@ item(FEAT_TRAINS, item_eu07_puk_kolprem, 640) {
         ENGINE_POWER_CALLBACKS(eu07)
     }
 }
-// eu07_dolata itself
-/* Define the actual train */
 item(FEAT_TRAINS, item_eu07_dolata, 641) {
     property {
         /* common properties */
@@ -1243,8 +1209,6 @@ item(FEAT_TRAINS, item_eu07_dolata, 641) {
         ENGINE_POWER_CALLBACKS(eu07)
     }
 }
-// ep07_1020 itself
-/* Define the actual train */
 item(FEAT_TRAINS, item_ep07_1020, 642) {
     property {
         /* common properties */
@@ -1295,8 +1259,6 @@ item(FEAT_TRAINS, item_ep07_1020, 642) {
         ENGINE_POWER_CALLBACKS(eu07)
     }
 }
-// eu07_303e_classic itself
-/* Define the actual train */
 item(FEAT_TRAINS, item_eu07_303e_classic, 643) {
     property {
         /* common properties */
@@ -1347,8 +1309,6 @@ item(FEAT_TRAINS, item_eu07_303e_classic, 643) {
         ENGINE_POWER_CALLBACKS(eu07)
     }
 }
-// eu07_303e_yellow_front itself
-/* Define the actual train */
 item(FEAT_TRAINS, item_eu07_303e_yellow_front, 644) {
     property {
         /* common properties */
@@ -1399,8 +1359,6 @@ item(FEAT_TRAINS, item_eu07_303e_yellow_front, 644) {
         ENGINE_POWER_CALLBACKS(eu07)
     }
 }
-// eu07_303e_trapeze_yellow_front itself
-/* Define the actual train */
 item(FEAT_TRAINS, item_eu07_303e_trapeze_yellow_front, 645) {
     property {
         /* common properties */
@@ -1451,8 +1409,6 @@ item(FEAT_TRAINS, item_eu07_303e_trapeze_yellow_front, 645) {
         ENGINE_POWER_CALLBACKS(eu07)
     }
 }
-// ep07_361 itself
-/* Define the actual train */
 item(FEAT_TRAINS, item_ep07_361, 646) {
     property {
         /* common properties */
@@ -1503,8 +1459,6 @@ item(FEAT_TRAINS, item_ep07_361, 646) {
         ENGINE_POWER_CALLBACKS(eu07)
     }
 }
-// eu07_303e_turquoise_yellow_front itself
-/* Define the actual train */
 item(FEAT_TRAINS, item_eu07_303e_turquoise_yellow_front, 647) {
     property {
         /* common properties */
@@ -1555,8 +1509,6 @@ item(FEAT_TRAINS, item_eu07_303e_turquoise_yellow_front, 647) {
         ENGINE_POWER_CALLBACKS(eu07)
     }
 }
-// eu07_303e_poltrans itself
-/* Define the actual train */
 item(FEAT_TRAINS, item_eu07_303e_poltrans, 648) {
     property {
         /* common properties */
@@ -1607,7 +1559,6 @@ item(FEAT_TRAINS, item_eu07_303e_poltrans, 648) {
         ENGINE_POWER_CALLBACKS(eu07)
     }
 }
-// railstm old
 item(FEAT_TRAINS, item_eu07_hst_old, 649) {
     property {
         /* common properties */
@@ -1649,6 +1600,206 @@ item(FEAT_TRAINS, item_eu07_hst_old, 649) {
         purchase:                   sset_eu07_purchase_railstm_old;
         additional_text:            switch_eu07_add_text;
         default:                    sset_eu07_railstm_old;
+        articulated_part:           switch_eu07_articulated;
+        visual_effect_and_powered:  switch_eu07_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu07)
+        ENGINE_POWER_CALLBACKS(eu07)
+    }
+}
+item(FEAT_TRAINS, item_eu07_trainspeed, 650) {
+    property {
+        /* common properties */
+        name:                           string(STR_EU07_TRAINSPEED_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2024, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU07;
+        running_cost_factor:            RUNNING_COST_EU07;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          125 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          2000 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         80 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.3567787971457696;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        variant_group:                  620;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_eu07_purchase_trainspeed;
+        additional_text:            switch_eu07_add_text;
+        default:                    sset_eu07_trainspeed;
+        articulated_part:           switch_eu07_articulated;
+        visual_effect_and_powered:  switch_eu07_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu07)
+        ENGINE_POWER_CALLBACKS(eu07)
+    }
+}
+item(FEAT_TRAINS, item_eu07_orion, 651) {
+    property {
+        /* common properties */
+        name:                           string(STR_EU07_ORION_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2013, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU07;
+        running_cost_factor:            RUNNING_COST_EU07;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          125 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          2000 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         80 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.3567787971457696;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        variant_group:                  620;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_eu07_purchase_orion;
+        additional_text:            switch_eu07_add_text;
+        default:                    sset_eu07_orion;
+        articulated_part:           switch_eu07_articulated;
+        visual_effect_and_powered:  switch_eu07_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu07)
+        ENGINE_POWER_CALLBACKS(eu07)
+    }
+}
+item(FEAT_TRAINS, item_eu07_ltc, 652) {
+    property {
+        /* common properties */
+        name:                           string(STR_EU07_LTC_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2019, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU07;
+        running_cost_factor:            RUNNING_COST_EU07;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          125 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          2000 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         80 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.3567787971457696;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        variant_group:                  620;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_eu07_purchase_ltc;
+        additional_text:            switch_eu07_add_text;
+        default:                    sset_eu07_ltc;
+        articulated_part:           switch_eu07_articulated;
+        visual_effect_and_powered:  switch_eu07_visual_effect;
+        can_attach_wagon:           switch_normal_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu07)
+        ENGINE_POWER_CALLBACKS(eu07)
+    }
+}
+item(FEAT_TRAINS, item_eu07_turquoise, 653) {
+    property {
+        /* common properties */
+        name:                           string(STR_EU07_TURQUOISE_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2015, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU07;
+        running_cost_factor:            RUNNING_COST_EU07;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          125 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          2000 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         80 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.3567787971457696;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        variant_group:                  620;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_eu07_purchase_turquoise;
+        additional_text:            switch_eu07_add_text;
+        default:                    sset_eu07_turquoise;
         articulated_part:           switch_eu07_articulated;
         visual_effect_and_powered:  switch_eu07_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;
