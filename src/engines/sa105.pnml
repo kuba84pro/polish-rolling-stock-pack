@@ -50,7 +50,7 @@ switch(FEAT_TRAINS, SELF, switch_sa105_kw_can_attach, vehicle_type_id) {
     item_sa105_kw_new:  return CB_RESULT_ATTACH_ALLOW;
     return string(STR_ATTACH_DISALLOW_EZT1);
 }
-switch(FEAT_TRAINS, SELF, switch_sa105_kw_start_stop, (count_veh_id(505)/2 > 3 || count_veh_id(506)/2 > 3)) {
+switch(FEAT_TRAINS, SELF, switch_sa105_kw_start_stop, count_veh_id(505)/2 > 3 || count_veh_id(506)/2 > 3) {
     1: return string(STR_TRAIN_TOO_LONG, string(STR_SA105_KW_NAME));
     return CB_RESULT_NO_TEXT;
 }

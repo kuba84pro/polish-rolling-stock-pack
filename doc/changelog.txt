@@ -1,5 +1,9 @@
 Polish Rolling Stock Pack - Changelog
 ================================
+0.18.1
+Fixed:
+- M62 Eurotrans sprites
+
 0.18.0
 Note:
 For the best user experience, set language to English, because it will be the most actual and proper one.

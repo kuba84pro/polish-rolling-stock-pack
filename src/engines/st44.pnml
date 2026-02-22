@@ -35,7 +35,7 @@ spriteset(sset_st44_tabor_debica, "gfx/st44.png")          { tmpl_sprite_train10
 spriteset(sset_st44_orion, "gfx/st44.png")          { tmpl_sprite_train10(4, 434) }
 spriteset(sset_st44_lhs, "gfx/st44.png")          { tmpl_sprite_train10(4, 494) }
 spriteset(sset_st44_lhs_new, "gfx/st44.png")          { tmpl_sprite_train10(4, 554) }
-spriteset(sset_m62_eurotrans, "gfx/st44.png")           { tmpl_sprite_purchase(4, 604) }
+spriteset(sset_m62_eurotrans, "gfx/st44.png")           { tmpl_sprite_train10(4, 604) }
 
 spriteset(sset_m62_1007, "gfx/st44.png")          { tmpl_sprite_train10(4, 660) }
 spriteset(sset_m62_cargounit, "gfx/st44.png")          { tmpl_sprite_train10(4, 716) }
