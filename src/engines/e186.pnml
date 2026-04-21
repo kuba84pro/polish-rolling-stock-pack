@@ -119,8 +119,6 @@ item(FEAT_TRAINS, item_e186, 900) {
         ENGINE_POWER_CALLBACKS(e186)
     }
 }
-/* E186 PKP PR switches */
-/* Define the actual train */
 item(FEAT_TRAINS, item_e186_pkp_pr, 901) {
     property {
 		/* common properties */
@@ -171,8 +169,6 @@ item(FEAT_TRAINS, item_e186_pkp_pr, 901) {
         ENGINE_POWER_CALLBACKS(e186)
     }
 }
-/* E186 Lotos switches */
-/* Define the actual train */
 item(FEAT_TRAINS, item_e186_lotos, 902) {
     property {
 		/* common properties */
@@ -223,8 +219,6 @@ item(FEAT_TRAINS, item_e186_lotos, 902) {
         ENGINE_POWER_CALLBACKS(e186)
     }
 }
-/* E186 Szaro-Zielone switches */
-/* Define the actual train */
 item(FEAT_TRAINS, item_e186_szaro_zielone, 903) {
     property {
 		/* common properties */
@@ -275,8 +269,6 @@ item(FEAT_TRAINS, item_e186_szaro_zielone, 903) {
         ENGINE_POWER_CALLBACKS(e186)
     }
 }
-/* E186 Szaro-Zielone_captrain switches */
-/* Define the actual train */
 item(FEAT_TRAINS, item_e186_szaro_zielone_captrain, 904) {
     property {
 		/* common properties */
@@ -327,8 +319,6 @@ item(FEAT_TRAINS, item_e186_szaro_zielone_captrain, 904) {
         ENGINE_POWER_CALLBACKS(e186)
     }
 }
-/* E186 Biale switches */
-/* Define the actual train */
 item(FEAT_TRAINS, item_e186_biale, 905) {
     property {
 		/* common properties */
@@ -379,8 +369,6 @@ item(FEAT_TRAINS, item_e186_biale, 905) {
         ENGINE_POWER_CALLBACKS(e186)
     }
 }
-/* E186 Biale_captrain switches */
-/* Define the actual train */
 item(FEAT_TRAINS, item_e186_biale_captrain, 906) {
     property {
 		/* common properties */
@@ -431,8 +419,6 @@ item(FEAT_TRAINS, item_e186_biale_captrain, 906) {
         ENGINE_POWER_CALLBACKS(e186)
     }
 }
-/* E186 Szare switches */
-/* Define the actual train */
 item(FEAT_TRAINS, item_e186_szare, 907) {
     property {
 		/* common properties */
@@ -483,8 +469,6 @@ item(FEAT_TRAINS, item_e186_szare, 907) {
         ENGINE_POWER_CALLBACKS(e186)
     }
 }
-/* E186 Szare 2 switches */
-/* Define the actual train */
 item(FEAT_TRAINS, item_e186_szare2, 908) {
     property {
 		/* common properties */
@@ -535,8 +519,6 @@ item(FEAT_TRAINS, item_e186_szare2, 908) {
         ENGINE_POWER_CALLBACKS(e186)
     }
 }
-/* E186 Akiem switches */
-/* Define the actual train */
 item(FEAT_TRAINS, item_e186_akiem, 909) {
     property {
 		/* common properties */
@@ -587,8 +569,6 @@ item(FEAT_TRAINS, item_e186_akiem, 909) {
         ENGINE_POWER_CALLBACKS(e186)
     }
 }
-/* E186 cargounit switches */
-/* Define the actual train */
 item(FEAT_TRAINS, item_e186_cargounit, 910) {
     property {
 		/* common properties */
@@ -639,8 +619,6 @@ item(FEAT_TRAINS, item_e186_cargounit, 910) {
         ENGINE_POWER_CALLBACKS(e186)
     }
 }
-/* E186 LTE1 switches */
-/* Define the actual train */
 item(FEAT_TRAINS, item_e186_lte1, 911) {
     property {
 		/* common properties */
@@ -691,8 +669,6 @@ item(FEAT_TRAINS, item_e186_lte1, 911) {
         ENGINE_POWER_CALLBACKS(e186)
     }
 }
-/* E186 942 switches */
-/* Define the actual train */
 item(FEAT_TRAINS, item_e186_942, 912) {
     property {
 		/* common properties */
@@ -743,8 +719,6 @@ item(FEAT_TRAINS, item_e186_942, 912) {
         ENGINE_POWER_CALLBACKS(e186)
     }
 }
-/* E186 944 switches */
-/* Define the actual train */
 item(FEAT_TRAINS, item_e186_944, 913) {
     property {
 		/* common properties */
@@ -795,8 +769,6 @@ item(FEAT_TRAINS, item_e186_944, 913) {
         ENGINE_POWER_CALLBACKS(e186)
     }
 }
-/* E186 PCC switches */
-/* Define the actual train */
 item(FEAT_TRAINS, item_e186_pcc, 914) {
     property {
 		/* common properties */
@@ -847,8 +819,6 @@ item(FEAT_TRAINS, item_e186_pcc, 914) {
         ENGINE_POWER_CALLBACKS(e186)
     }
 }
-/* E186 Orlen switches */
-/* Define the actual train */
 item(FEAT_TRAINS, item_e186_orlen, 915) {
     property {
 		/* common properties */
@@ -1072,7 +1042,7 @@ switch (FEAT_TRAINS, SELF, switch_eu47_add_text, IS_HEATING_CLIMATE ) {
 	1: return string(STR_PURCHASE_DESCR_3L, string(STR_HEATING_ELECTRIC_POWER_TEXT, HEATING_POWER_ELECTRIC_HI), string(STR_EU47_TEXT), string(STR_ENGINE_PASSENGER));
 	return string(STR_PURCHASE_DESCR_2L, string(STR_EU47_TEXT), string(STR_ENGINE_PASSENGER));
 }
-switch(FEAT_TRAINS, SELF, switch_eu47_start_stop, (count_veh_id(item_twindexx)/2 > 7) || (count_veh_id(item_twindexxcc)/2 > 1) ) {
+switch(FEAT_TRAINS, SELF, switch_eu47_start_stop, count_veh_id(item_twindexx)/2 > 7 || count_veh_id(item_twindexxcc)/2 > 1 ) {
     1: return string(STR_TRAIN_TOO_LONG, string(STR_EU47_KM_NAME));
     return CB_RESULT_NO_TEXT;
 }
@@ -1127,8 +1097,6 @@ item(FEAT_TRAINS, item_eu47_km, 919) {
         ENGINE_POWER_CALLBACKS(e186)
     }
 }
-/* E186 DB switches */
-/* Define the actual train */
 item(FEAT_TRAINS, item_e186_db, 921) {
     property {
 		/* common properties */

@@ -6,10 +6,7 @@
 spriteset(sset_sn61_purchase, "gfx/sn61.png")           { tmpl_sprite_purchase(4, 60) }
 spriteset(sset_sn61, "gfx/sn61.png")                    { tmpl_sprite_train12(4, 20) }
 spriteset(sset_sn61_open, "gfx/sn61.png")               { tmpl_sprite_train12(4, 80) }
-spriteset(sset_bh_ryf_green, "gfx/sn61.png")            { tmpl_sprite_train12(4, 120) }
-spriteset(sset_bh_ryf_green_open, "gfx/sn61.png")       { tmpl_sprite_train12(4, 160) }
 spriteset(sset_sn61_cut, "gfx/sn61.png")                { tmpl_sprite_train12(4, 200) }
-spriteset(sset_bh_ryf_green_cut, "gfx/sn61.png")        { tmpl_sprite_train12(4, 240) }
 
 spriteset(sset_sn61_183_purchase, "gfx/sn61.png")           { tmpl_sprite_purchase(4, 320) }
 spriteset(sset_sn61_183, "gfx/sn61.png")                    { tmpl_sprite_train12(4, 280) }
@@ -23,10 +20,6 @@ spritegroup sgroup_sn61 {
 spritegroup sgroup_sn61_183 {
     loaded:     [sset_sn61_183];
     loading:    [sset_sn61_183_open];
-}
-spritegroup sgroup_bh_ryf_green {
-    loaded:     [sset_bh_ryf_green];
-    loading:    [sset_bh_ryf_green_open];
 }
 
 #ifdef SITTING_PLACES
@@ -65,11 +58,16 @@ switch (FEAT_TRAINS, SELF, switch_sn61_add_text, IS_HEATING_CLIMATE ) {
 switch(FEAT_TRAINS, SELF, switch_sn61_can_attach, vehicle_type_id) {
     item_sn61:   return CB_RESULT_ATTACH_ALLOW;
     item_sn61_183:   return CB_RESULT_ATTACH_ALLOW;
-    item_bh_ryf: return CB_RESULT_ATTACH_ALLOW;
-    item_bh_bon:  return CB_RESULT_ATTACH_ALLOW;
-    item_bh_bon_new:  return CB_RESULT_ATTACH_ALLOW;
-    item_120a_pr:  return CB_RESULT_ATTACH_ALLOW;
-    item_120a_malopolskie:  return CB_RESULT_ATTACH_ALLOW;
+    441: return CB_RESULT_ATTACH_ALLOW;
+    450: return CB_RESULT_ATTACH_ALLOW;
+    451: return CB_RESULT_ATTACH_ALLOW;
+    452: return CB_RESULT_ATTACH_ALLOW;
+    453: return CB_RESULT_ATTACH_ALLOW;
+    10035: return CB_RESULT_ATTACH_ALLOW;
+    10036: return CB_RESULT_ATTACH_ALLOW;
+    10037: return CB_RESULT_ATTACH_ALLOW;
+    10038: return CB_RESULT_ATTACH_ALLOW;
+    10039: return CB_RESULT_ATTACH_ALLOW;
     item_bdnu:  return CB_RESULT_ATTACH_ALLOW;
     item_abdnu:  return CB_RESULT_ATTACH_ALLOW;
     item_adnu:  return CB_RESULT_ATTACH_ALLOW;
@@ -88,16 +86,6 @@ switch(FEAT_TRAINS, SELF, switch_sn61_start_stop, count_veh_id(item_sn61) > 3 ||
 ENGINE_RUNNING_COST_SWITCH(sn61, SN61)
 DIESEL_ELECTRIC_ENGINE_POWER_SWITCH(sn61)
 ENGINE_VISUAL_EFFECT_SWITCH(sn61)
-
-/* Livery switches */
-switch(FEAT_TRAINS, SELF, switch_bh_ryf_green, (extra_callback_info1&0xFF)==0 && other_veh_is_hidden(1)) {
-    1: return sset_bh_ryf_green_cut;
-    return sgroup_bh_ryf_green;
-}
-random_switch(FEAT_TRAINS, SELF, switch_bh_ryf_graphics) {
-    3: return switch_bh_ryf_classic;
-    5: return switch_bh_ryf_green;
-}
 
 /* Define the actual train */
 item(FEAT_TRAINS, item_sn61, 440) {
@@ -159,13 +147,6 @@ if(param_keep_old_vehs) {
         start_stop:                 switch_sn61_start_stop;
         ENGINE_RUNNING_COST_CALLBACKS(sn61)
         ENGINE_POWER_CALLBACKS(sn61)
-    }
-
-    livery_override (item_bh_ryf) {
-        default:                    switch_bh_ryf_graphics;
-        articulated_part:           switch_bh_ryf_articulated;
-        cargo_capacity:             switch_bh_ryf_capacity;
-        colour_mapping:             switch_lights_wagon_olive_2;
     }
 }
 
@@ -230,12 +211,5 @@ if(param_keep_old_vehs) {
         start_stop:                 switch_sn61_start_stop;
         ENGINE_RUNNING_COST_CALLBACKS(sn61)
         ENGINE_POWER_CALLBACKS(sn61)
-    }
-
-    livery_override (item_bh_ryf) {
-        default:                    switch_bh_ryf_graphics;
-        articulated_part:           switch_bh_ryf_articulated;
-        cargo_capacity:             switch_bh_ryf_capacity;
-        colour_mapping:             switch_lights_wagon_olive_2;
     }
 }

@@ -7,6 +7,19 @@ spriteset(sset_eu44_purchase, "gfx/taurus.png") { tmpl_sprite_purchase(4, 60) }
 spriteset(sset_eu44, "gfx/taurus.png")          { tmpl_sprite_train10(4, 20) }
 spriteset(sset_eu44_purchase_niepodlegla, "gfx/taurus.png") { tmpl_sprite_purchase(4, 120) }
 spriteset(sset_eu44_niepodlegla, "gfx/taurus.png")          { tmpl_sprite_train10(4, 80) }
+// Euro Liveries
+spriteset(sset_eu44_purchase_ukraine, "gfx/taurus.png") { tmpl_sprite_purchase(4, 180) }
+spriteset(sset_eu44_ukraine, "gfx/taurus.png")          { tmpl_sprite_train10(4, 140) }
+spriteset(sset_eu44_purchase_germany, "gfx/taurus.png") { tmpl_sprite_purchase(4, 240) }
+spriteset(sset_eu44_germany, "gfx/taurus.png")          { tmpl_sprite_train10(4, 200) }
+spriteset(sset_eu44_purchase_russia, "gfx/taurus.png") { tmpl_sprite_purchase(4, 300) }
+spriteset(sset_eu44_russia, "gfx/taurus.png")          { tmpl_sprite_train10(4, 260) }
+spriteset(sset_eu44_purchase_denmark, "gfx/taurus.png") { tmpl_sprite_purchase(4, 360) }
+spriteset(sset_eu44_denmark, "gfx/taurus.png")          { tmpl_sprite_train10(4, 320) }
+spriteset(sset_eu44_purchase_czech, "gfx/taurus.png") { tmpl_sprite_purchase(4, 420) }
+spriteset(sset_eu44_czech, "gfx/taurus.png")          { tmpl_sprite_train10(4, 380) }
+spriteset(sset_eu44_purchase_poland, "gfx/taurus.png") { tmpl_sprite_purchase(4, 480) }
+spriteset(sset_eu44_poland, "gfx/taurus.png")          { tmpl_sprite_train10(4, 440) }
 
 /* EU44 "Husarz" (Taurus) switches */
 switch(FEAT_TRAINS, SELF, switch_eu44_articulated, extra_callback_info1) {
@@ -124,6 +137,312 @@ item(FEAT_TRAINS, item_eu44_niepodlegla, 851) {
         purchase:                   sset_eu44_purchase_niepodlegla;
         additional_text:            switch_eu44_add_text;
         default:                    sset_eu44_niepodlegla;
+        articulated_part:           switch_eu44_articulated;
+        visual_effect_and_powered:  switch_eu44_visual_effect;
+        can_attach_wagon:           switch_eu44_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu44)
+        ENGINE_POWER_CALLBACKS(eu44)
+    }
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_eu44_ukraine, 852) {
+    property {
+		/* common properties */
+        name:                           string(STR_EU44_UKRAINE_NAME);
+        variant_group:                  850;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2012, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU44;
+        running_cost_factor:            RUNNING_COST_EU44;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          230 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_PROPERTY
+        weight:                         86 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.3555934855273451;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_eu44_purchase_ukraine;
+        additional_text:            switch_eu44_add_text;
+        default:                    sset_eu44_ukraine;
+        articulated_part:           switch_eu44_articulated;
+        visual_effect_and_powered:  switch_eu44_visual_effect;
+        can_attach_wagon:           switch_eu44_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu44)
+        ENGINE_POWER_CALLBACKS(eu44)
+    }
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_eu44_germany, 853) {
+    property {
+		/* common properties */
+        name:                           string(STR_EU44_GERMANY_NAME);
+        variant_group:                  850;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2012, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU44;
+        running_cost_factor:            RUNNING_COST_EU44;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          230 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_PROPERTY
+        weight:                         86 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.3555934855273451;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_eu44_purchase_germany;
+        additional_text:            switch_eu44_add_text;
+        default:                    sset_eu44_germany;
+        articulated_part:           switch_eu44_articulated;
+        visual_effect_and_powered:  switch_eu44_visual_effect;
+        can_attach_wagon:           switch_eu44_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu44)
+        ENGINE_POWER_CALLBACKS(eu44)
+    }
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_eu44_russia, 854) {
+    property {
+		/* common properties */
+        name:                           string(STR_EU44_RUSSIA_NAME);
+        variant_group:                  850;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2012, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU44;
+        running_cost_factor:            RUNNING_COST_EU44;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          230 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_PROPERTY
+        weight:                         86 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.3555934855273451;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_eu44_purchase_russia;
+        additional_text:            switch_eu44_add_text;
+        default:                    sset_eu44_russia;
+        articulated_part:           switch_eu44_articulated;
+        visual_effect_and_powered:  switch_eu44_visual_effect;
+        can_attach_wagon:           switch_eu44_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu44)
+        ENGINE_POWER_CALLBACKS(eu44)
+    }
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_eu44_denmark, 855) {
+    property {
+		/* common properties */
+        name:                           string(STR_EU44_DENMARK_NAME);
+        variant_group:                  850;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2012, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU44;
+        running_cost_factor:            RUNNING_COST_EU44;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          230 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_PROPERTY
+        weight:                         86 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.3555934855273451;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_eu44_purchase_denmark;
+        additional_text:            switch_eu44_add_text;
+        default:                    sset_eu44_denmark;
+        articulated_part:           switch_eu44_articulated;
+        visual_effect_and_powered:  switch_eu44_visual_effect;
+        can_attach_wagon:           switch_eu44_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu44)
+        ENGINE_POWER_CALLBACKS(eu44)
+    }
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_eu44_czech, 856) {
+    property {
+		/* common properties */
+        name:                           string(STR_EU44_CZECH_NAME);
+        variant_group:                  850;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2012, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU44;
+        running_cost_factor:            RUNNING_COST_EU44;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          230 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_PROPERTY
+        weight:                         86 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.3555934855273451;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_eu44_purchase_czech;
+        additional_text:            switch_eu44_add_text;
+        default:                    sset_eu44_czech;
+        articulated_part:           switch_eu44_articulated;
+        visual_effect_and_powered:  switch_eu44_visual_effect;
+        can_attach_wagon:           switch_eu44_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(eu44)
+        ENGINE_POWER_CALLBACKS(eu44)
+    }
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_eu44_poland, 857) {
+    property {
+		/* common properties */
+        name:                           string(STR_EU44_POLAND_NAME);
+        variant_group:                  850;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2012, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EU44;
+        running_cost_factor:            RUNNING_COST_EU44;
+		/* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          230 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          6400 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_PROPERTY
+        weight:                         86 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.3555934855273451;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_eu44_purchase_poland;
+        additional_text:            switch_eu44_add_text;
+        default:                    sset_eu44_poland;
         articulated_part:           switch_eu44_articulated;
         visual_effect_and_powered:  switch_eu44_visual_effect;
         can_attach_wagon:           switch_eu44_can_attach;

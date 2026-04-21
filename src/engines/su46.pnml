@@ -148,7 +148,7 @@ item(FEAT_TRAINS, item_st46_pkp_cargo, 422) {
         CARGO_LOCOMOTIVES_DEFINITION
         loading_speed:                  5; 
         cost_factor:                    PURCHASE_COST_SU46;
-        running_cost_factor:            RUNNING_COST_SU46;
+        running_cost_factor:            RUNNING_COST_ST46;
 		/* train properties */
         sprite_id:                      SPRITE_ID_NEW_TRAIN;
         speed:                          120 km/h;
@@ -156,7 +156,7 @@ item(FEAT_TRAINS, item_st46_pkp_cargo, 422) {
         refit_cost:                     0;
         track_type:                     RAIL;
         ai_special_flag:                AI_FLAG_PASSENGER;
-        power:                          1655 kW;
+        power:                          1500 kW;
         running_cost_base:              RUNNING_COST_DIESEL;
         dual_headed:                    0;
         ENGINE_CAPACITY_REFIT_PROPERTY
@@ -164,7 +164,7 @@ item(FEAT_TRAINS, item_st46_pkp_cargo, 422) {
         ai_engine_rank:                 0; // not intended to be used by the ai
         engine_class:                   ENGINE_CLASS_DIESEL;
         extra_power_per_wagon:          0 kW;
-        tractive_effort_coefficient:    0.307;
+        tractive_effort_coefficient:    0.3010;
         air_drag_coefficient:           0.07;
         length:                         8;
         extra_weight_per_wagon:         0;

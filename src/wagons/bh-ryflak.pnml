@@ -7,6 +7,27 @@ spriteset(sset_bh_ryf_purchase, "gfx/43a.png")      { tmpl_sprite_purchase(4, 60
 spriteset(sset_bh_ryf, "gfx/43a.png")               { tmpl_sprite_train12(4, 20) }
 spriteset(sset_bh_ryf_open, "gfx/43a.png")          { tmpl_sprite_train12(4, 80) }
 spriteset(sset_bh_ryf_cut, "gfx/43a.png")           { tmpl_sprite_train12(4, 120) }
+
+spriteset(sset_afhixt_purchase, "gfx/43a.png")      { tmpl_sprite_purchase(4, 203) }
+spriteset(sset_afhixt, "gfx/43a.png")               { tmpl_sprite_train12(4, 163) }
+spriteset(sset_afhixt_open, "gfx/43a.png")          { tmpl_sprite_train12(4, 223) }
+spriteset(sset_afhixt_cut, "gfx/43a.png")           { tmpl_sprite_train12(4, 263) }
+
+spriteset(sset_bh_purchase, "gfx/43a.png")      { tmpl_sprite_purchase(4, 489) }
+spriteset(sset_bh, "gfx/43a.png")               { tmpl_sprite_train12(4, 449) }
+spriteset(sset_bh_open, "gfx/43a.png")          { tmpl_sprite_train12(4, 509) }
+spriteset(sset_bh_cut, "gfx/43a.png")           { tmpl_sprite_train12(4, 549) }
+
+spriteset(sset_dbhixt_purchase, "gfx/43a.png")      { tmpl_sprite_purchase(4, 632) }
+spriteset(sset_dbhixt, "gfx/43a.png")               { tmpl_sprite_train12(4, 592) }
+spriteset(sset_dbhixt_open, "gfx/43a.png")          { tmpl_sprite_train12(4, 652) }
+spriteset(sset_dbhixt_cut, "gfx/43a.png")           { tmpl_sprite_train12(4, 692) }
+
+spriteset(sset_bh_ryf_green_purchase, "gfx/43a.png")   { tmpl_sprite_purchase(4, 346) }
+spriteset(sset_bh_ryf_green, "gfx/43a.png")            { tmpl_sprite_train12(4, 306) }
+spriteset(sset_bh_ryf_green_open, "gfx/43a.png")       { tmpl_sprite_train12(4, 366) }
+spriteset(sset_bh_ryf_green_cut, "gfx/43a.png")        { tmpl_sprite_train12(4, 406) }
+
 #ifdef ZOOM_SPRITES_ENABLED
 alternative_sprites(sset_bh_ryf,
     ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/43a-x2.png")     { tmpl_sprite_train12_x2(8, 40) }
@@ -15,19 +36,31 @@ alternative_sprites(sset_bh_ryf_open,
 alternative_sprites(sset_bh_ryf_cut,
     ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "gfx/43a-x2.png")     { tmpl_sprite_train12_x2(8, 200) }
 #endif
+
 spritegroup sgroup_bh_ryf {
     loaded:     [sset_bh_ryf];
     loading:    [sset_bh_ryf_open];
 }
 
-#ifdef SITTING_PLACES
-    #undef SITTING_PLACES
-#endif
-#ifdef STANDING_PLACES
-    #undef STANDING_PLACES
-#endif
-#define SITTING_PLACES 76-24
-#define STANDING_PLACES 8
+spritegroup sgroup_afhixt {
+    loaded:     [sset_afhixt];
+    loading:    [sset_afhixt_open];
+}
+
+spritegroup sgroup_bh {
+    loaded:     [sset_bh];
+    loading:    [sset_bh_open];
+}
+
+spritegroup sgroup_dbhixt {
+    loaded:     [sset_dbhixt];
+    loading:    [sset_dbhixt_open];
+}
+
+spritegroup sgroup_bh_ryf_green {
+    loaded:     [sset_bh_ryf_green];
+    loading:    [sset_bh_ryf_green_open];
+}
 
 /* Bh "ryflak" switches */
 switch(FEAT_TRAINS, SELF, switch_bh_ryf_articulated, extra_callback_info1) {
@@ -37,10 +70,6 @@ switch(FEAT_TRAINS, SELF, switch_bh_ryf_articulated, extra_callback_info1) {
 switch(FEAT_TRAINS, SELF, switch_bh_ryf_classic, (extra_callback_info1&0xFF)==0 && other_veh_is_hidden(1)) {
     1: return sset_bh_ryf_cut;
     return sgroup_bh_ryf;
-}
-switch(FEAT_TRAINS, SELF, switch_bh_ryf_capacity, cargo_type_in_veh) {
-    TOUR: return SITTING_PLACES;
-    return SITTING_PLACES+STANDING_PLACES;
 }
 switch (FEAT_TRAINS, SELF, switch_bh_ryf_add_text, IS_HEATING_CLIMATE ) {
     1: return string(STR_PURCHASE_DESCR_4L, string(STR_BRAKE_AIR), string(STR_HEATING_ST_EL_TEXT), string(STR_BH_RYF_TEXT), string(STR_INCOME_LOWER));
@@ -69,8 +98,8 @@ item(FEAT_TRAINS, item_bh_ryf, 441) {
         track_type:                     RAIL;
         power:                          0;
         running_cost_base:              RUNNING_COST_STEAM;
-        cargo_capacity:                 SITTING_PLACES+STANDING_PLACES;
-        weight:                         39 ton;
+        cargo_capacity:                 76/2;
+        weight:                         36 ton;
         length:                         8;
         visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
         bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
@@ -91,9 +120,242 @@ if(param_keep_old_vehs) {
         purchase:                   sset_bh_ryf_purchase;
         additional_text:            switch_bh_ryf_add_text;
         default:                    switch_bh_ryf_classic;
-        articulated_part:           switch_bh_ryf_articulated;
-        purchase_cargo_capacity:    return SITTING_PLACES+STANDING_PLACES;
-        cargo_capacity:             switch_bh_ryf_capacity;
+        articulated_part:           switch_dummy_3_articulated;
+        purchase_cargo_capacity:    return 76;
+        cargo_capacity:             return 76;
+        colour_mapping:             switch_lights_wagon_olive_2;
+    }
+}
+
+switch(FEAT_TRAINS, SELF, switch_afhixt_classic, (extra_callback_info1&0xFF)==0 && other_veh_is_hidden(1)) {
+    1: return sset_afhixt_cut;
+    return sgroup_afhixt;
+}
+switch (FEAT_TRAINS, SELF, switch_afhixt_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_4L, string(STR_BRAKE_AIR), string(STR_HEATING_ST_EL_TEXT), string(STR_BH_RYF_TEXT), string(STR_INCOME_1_CLASS));
+    return string(STR_PURCHASE_DESCR_3L, string(STR_BRAKE_AIR), string(STR_BH_RYF_TEXT), string(STR_INCOME_1_CLASS));
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_afhixt, 450) {
+    property {
+        /* common properties */
+        name:                           string(STR_AFHIXT_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1958, 1, 1);
+        variant_group:                  441;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  10; // 15;
+        cost_factor:                    PURCHASE_COST_BH_RYF;
+        running_cost_factor:            RUNNING_COST_PASS_SUBURB;
+        cargo_age_period:               int(185*1.41);  // slower ageing
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          120 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 44/2;
+        weight:                         35 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     67;
+        retire_early:                   16;
+    }
+}
+
+    graphics {
+        purchase:                   sset_afhixt_purchase;
+        additional_text:            switch_afhixt_add_text;
+        default:                    switch_afhixt_classic;
+        articulated_part:           switch_dummy_3_articulated;
+        purchase_cargo_capacity:    return 44;
+        cargo_capacity:             return 44;
+        colour_mapping:             switch_lights_wagon_olive_2;
+    }
+}
+
+switch(FEAT_TRAINS, SELF, switch_bh_classic, (extra_callback_info1&0xFF)==0 && other_veh_is_hidden(1)) {
+    1: return sset_bh_cut;
+    return sgroup_bh;
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_bh, 451) {
+    property {
+        /* common properties */
+        name:                           string(STR_BH_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1992, 1, 1);
+        variant_group:                  441;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  10; // 15;
+        cost_factor:                    PURCHASE_COST_BH_RYF;
+        running_cost_factor:            RUNNING_COST_PASS_SUBURB;
+        cargo_age_period:               int(185*0.84);  // faster ageing
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          120 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 76/2;
+        weight:                         35 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     67;
+        retire_early:                   16;
+    }
+}
+
+    graphics {
+        purchase:                   sset_bh_purchase;
+        additional_text:            switch_bh_ryf_add_text;
+        default:                    switch_bh_classic;
+        articulated_part:           switch_dummy_3_articulated;
+        purchase_cargo_capacity:    return 76;
+        cargo_capacity:             return 76;
+        colour_mapping:             switch_lights_wagon_olive_2;
+    }
+}
+
+switch(FEAT_TRAINS, SELF, switch_dbhixt_classic, (extra_callback_info1&0xFF)==0 && other_veh_is_hidden(1)) {
+    1: return sset_dbhixt_cut;
+    return sgroup_dbhixt;
+}
+switch (FEAT_TRAINS, SELF, switch_dbhixt_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_4L, string(STR_BRAKE_AIR), string(STR_HEATING_STEAM_TEXT), string(STR_BH_RYF_TEXT), string(STR_INCOME_LOWER));
+    return string(STR_PURCHASE_DESCR_3L, string(STR_BRAKE_AIR), string(STR_BH_RYF_TEXT), string(STR_INCOME_LOWER));
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_dbhixt, 452) {
+    property {
+        /* common properties */
+        name:                           string(STR_DBHIXT_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1961, 1, 1);
+        variant_group:                  441;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  10; // 15;
+        cost_factor:                    PURCHASE_COST_BH_RYF;
+        running_cost_factor:            RUNNING_COST_PASS_SUBURB;
+        cargo_age_period:               int(185*0.84);  // faster ageing
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          120 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 76/2;
+        weight:                         35 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     67;
+        retire_early:                   16;
+    }
+}
+
+    graphics {
+        purchase:                   sset_dbhixt_purchase;
+        additional_text:            switch_dbhixt_add_text;
+        default:                    switch_dbhixt_classic;
+        articulated_part:           switch_dummy_3_articulated;
+        purchase_cargo_capacity:    return 76;
+        cargo_capacity:             return 76;
+        colour_mapping:             switch_lights_wagon_olive_2;
+    }
+}
+
+/* Bh "ryflak" Green switches */
+switch(FEAT_TRAINS, SELF, switch_bh_ryf_green_classic, (extra_callback_info1&0xFF)==0 && other_veh_is_hidden(1)) {
+    1: return sset_bh_ryf_green_cut;
+    return sgroup_bh_ryf_green;
+}
+/* Define the actual train */
+item(FEAT_TRAINS, item_bh_ryf_green, 453) {
+    property {
+        /* common properties */
+        name:                           string(STR_BH_RYF_GREEN_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1960, 1, 1);
+        variant_group:                  441;
+        vehicle_life:                   20;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  10; // 15;
+        cost_factor:                    PURCHASE_COST_BH_RYF;
+        running_cost_factor:            RUNNING_COST_PASS_SUBURB;
+        cargo_age_period:               int(185*0.84);  // faster ageing
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          120 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     RAIL;
+        power:                          0;
+        running_cost_base:              RUNNING_COST_STEAM;
+        cargo_capacity:                 76/2;
+        weight:                         36 ton;
+        length:                         8;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+
+if(param_keep_old_vehs) {
+    property {
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+    }
+} else {
+    property {
+        model_life:                     67;
+        retire_early:                   16;
+    }
+}
+
+    graphics {
+        purchase:                   sset_bh_ryf_green_purchase;
+        additional_text:            switch_bh_ryf_add_text;
+        default:                    switch_bh_ryf_green_classic;
+        articulated_part:           switch_dummy_3_articulated;
+        purchase_cargo_capacity:    return 76;
+        cargo_capacity:             return 76;
         colour_mapping:             switch_lights_wagon_olive_2;
     }
 }

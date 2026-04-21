@@ -29,12 +29,10 @@ spriteset(sset_ep09_purchase_026_rodzyn, "gfx/ep09.png")       { tmpl_sprite_pur
 spriteset(sset_ep09_026_rodzyn, "gfx/ep09.png")                { tmpl_sprite_train10(4, 640) }
 spriteset(sset_ep09_purchase_classic, "gfx/ep09.png")       { tmpl_sprite_purchase(4, 737) }
 spriteset(sset_ep09_classic, "gfx/ep09.png")                { tmpl_sprite_train10(4, 697) }
+spriteset(sset_ep09_022_purchase_odkryj, "gfx/ep09.png")       { tmpl_sprite_purchase(304, 53) }
+spriteset(sset_ep09_022_odkryj, "gfx/ep09.png")                { tmpl_sprite_train10(304, 20) }
 
 /* EP09 switches */
-#define EP09_PKP_CARGO current_year >= 2005
-#define EP09_PKP_IC current_year >= 2009
-#define EP09_PKP_ZP current_year >= 2016
-#define EP09_PKP_OP current_year >= 2020
 switch(FEAT_TRAINS, SELF, switch_ep09_articulated, extra_callback_info1) {
     1: return item_dummy_1;        // dummy parts
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
@@ -714,6 +712,57 @@ item(FEAT_TRAINS, item_ep09_classic, 792) {
         purchase:                   sset_ep09_purchase_classic;
         additional_text:            switch_ep09_add_text;
         default:                    sset_ep09_classic;
+        articulated_part:           switch_ep09_articulated;
+        visual_effect_and_powered:  switch_ep09_visual_effect;
+        can_attach_wagon:           switch_ep09_can_attach;
+        start_stop:                 switch_normal_start_stop;
+        ENGINE_CAPACITY_REFIT_CALLBACKS
+        ENGINE_RUNNING_COST_CALLBACKS(ep09)
+        ENGINE_POWER_CALLBACKS(ep09)
+    }
+}
+
+item(FEAT_TRAINS, item_ep09_022_odkryj, 793) {
+    property {
+        /* common properties */
+        name:                           string(STR_EP09_022_ODKRYJ_NAME);
+        variant_group:                  792;
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(2014, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_LOCOMOTIVES_DEFINITION
+        loading_speed:                  5; 
+        cost_factor:                    PURCHASE_COST_EP09;
+        running_cost_factor:            RUNNING_COST_EP09;
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          160 km/h;
+        misc_flags:                     bitmask();
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                          2920 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        ENGINE_CAPACITY_REFIT_PROPERTY
+        weight:                         84 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.236638998106888;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DEFAULT, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           0;
+    }
+
+    graphics {
+        purchase:                   sset_ep09_022_purchase_odkryj;
+        additional_text:            switch_ep09_add_text;
+        default:                    sset_ep09_022_odkryj;
         articulated_part:           switch_ep09_articulated;
         visual_effect_and_powered:  switch_ep09_visual_effect;
         can_attach_wagon:           switch_ep09_can_attach;

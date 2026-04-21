@@ -5,7 +5,7 @@
 
 # GRF name and description
 STR_GRF_NAME        :{TITLE} {VERSION}
-STR_GRF_DESCRIPTION :{ORANGE}{TITLE} {VERSION}{BLACK} to kontynuacja paczki Polish PKP SET 3.0.3 zrobiony przez {SILVER}TadeuszD{BLACK}. {}PRSP zawiera znany Polski tabor używany przez lata, od 1918 do dzisiaj.{}{COPYRIGHT}2011-2025{}Autor: {SILVER}kuba84pro{BLACK}{}Graficy: {SILVER}101ksl{BLACK}, {SILVER}kopuwka{BLACK}, {SILVER}Serek{BLACK}, {SILVER}snubek_{BLACK}, {SILVER}Takumi Fujiwara{BLACK}, {SILVER}Patrylec{BLACK}{}Wielkie podziękowania do poprzedniego autora oraz wszystkich grafików{}License: {SILVER}GPLv2{BLACK}{}Discord: {LTBLUE}https://discord.gg/GNMWcCK4zh{BLACK}
+STR_GRF_DESCRIPTION :{ORANGE}{TITLE} {VERSION}{BLACK} to kontynuacja paczki Polish PKP SET 3.0.3 zrobiony przez {SILVER}TadeuszD{BLACK}. {}PRSP zawiera znany Polski tabor używany przez lata, od 1918 do dzisiaj.{}{COPYRIGHT}2011-2026{}Autor: {SILVER}kuba84pro{BLACK}{}Graficy: {SILVER}101ksl{BLACK}, {SILVER}kopuwka{BLACK}, {SILVER}Serek{BLACK}, {SILVER}snubek_{BLACK}, {SILVER}Takumi Fujiwara{BLACK}, {SILVER}Patrylec{BLACK}{}Wielkie podziękowania do poprzedniego autora oraz wszystkich grafików{}License: {SILVER}GPLv2{BLACK}{}Discord: {LTBLUE}https://discord.gg/GNMWcCK4zh{BLACK}
 
 # GRF parameters
 STR_PARAM_NAME_DISABLE_ORIG     :Wyłącz oryginalne pociągi normalnotorowe

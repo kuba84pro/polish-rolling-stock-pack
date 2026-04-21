@@ -1,0 +1,405 @@
+// This is part of PRSP NewGRF.
+// (c) kuba84pro, GPL 2.0
+
+// default livery
+spriteset(sset_e91_purchase, "gfx/EW51.png")       { tmpl_sprite_purchase(4, 140) }
+spriteset(sset_e91_advert, "gfx/EW51.png")         { tmpl_sprite_advertisement200(4, 280) }
+
+spriteset(sset_e91_head, "gfx/EW51.png")           { tmpl_sprite_train12(4, 20) }
+spriteset(sset_e91_mid, "gfx/EW51.png")            { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_e91_tail, "gfx/EW51.png")           { tmpl_sprite_train10_offset(4, 100, 2) }
+
+spriteset(sset_e91_head_open, "gfx/EW51.png")      { tmpl_sprite_train12(4, 160) }
+spriteset(sset_e91_mid_open, "gfx/EW51.png")       { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_e91_tail_open, "gfx/EW51.png")      { tmpl_sprite_train10_offset(4, 240, 2) }
+
+spriteset(sset_e91_head_rev, "gfx/EW51.png")           { tmpl_sprite_train12(305, 20) }
+spriteset(sset_e91_mid_rev, "gfx/EW51.png")            { tmpl_sprite_train10_offset(305, 60, 1) }
+spriteset(sset_e91_tail_rev, "gfx/EW51.png")           { tmpl_sprite_train10_offset(305, 100, 2) }
+
+spriteset(sset_e91_head_rev_open, "gfx/EW51.png")      { tmpl_sprite_train12(305, 160) }
+spriteset(sset_e91_mid_rev_open, "gfx/EW51.png")       { tmpl_sprite_train10_offset(305, 200, 1) }
+spriteset(sset_e91_tail_rev_open, "gfx/EW51.png")      { tmpl_sprite_train10_offset(305, 240, 2) }
+
+// E.91 refurbished
+spriteset(sset_e91_refurbished_purchase, "gfx/EW51.png")       { tmpl_sprite_purchase(4, 540) }
+
+spriteset(sset_e91_refurbished_head, "gfx/EW51.png")           { tmpl_sprite_train12(4, 300) }
+spriteset(sset_e91_refurbished_mid, "gfx/EW51.png")            { tmpl_sprite_train10_offset(4, 340, 1) }
+spriteset(sset_e91_refurbished_tail, "gfx/EW51.png")           { tmpl_sprite_train10_offset(4, 380, 2) }
+
+spriteset(sset_e91_refurbished_head_open, "gfx/EW51.png")      { tmpl_sprite_train12(4, 420) }
+spriteset(sset_e91_refurbished_mid_open, "gfx/EW51.png")       { tmpl_sprite_train10_offset(4, 460, 1) }
+spriteset(sset_e91_refurbished_tail_open, "gfx/EW51.png")      { tmpl_sprite_train10_offset(4, 500, 2) }
+
+spriteset(sset_e91_refurbished_head_rev, "gfx/EW51.png")           { tmpl_sprite_train12(305, 300) }
+spriteset(sset_e91_refurbished_mid_rev, "gfx/EW51.png")            { tmpl_sprite_train10_offset(305, 340, 1) }
+spriteset(sset_e91_refurbished_tail_rev, "gfx/EW51.png")           { tmpl_sprite_train10_offset(305, 380, 2) }
+
+spriteset(sset_e91_refurbished_head_rev_open, "gfx/EW51.png")      { tmpl_sprite_train12(305, 420) }
+spriteset(sset_e91_refurbished_mid_rev_open, "gfx/EW51.png")       { tmpl_sprite_train10_offset(305, 460, 1) }
+spriteset(sset_e91_refurbished_tail_rev_open, "gfx/EW51.png")      { tmpl_sprite_train10_offset(305, 500, 2) }
+
+// EW51
+spriteset(sset_ew51_purchase, "gfx/EW51.png")       { tmpl_sprite_purchase(4, 800) }
+
+spriteset(sset_ew51_head, "gfx/EW51.png")           { tmpl_sprite_train12(4, 560) }
+spriteset(sset_ew51_mid, "gfx/EW51.png")            { tmpl_sprite_train10_offset(4, 600, 1) }
+spriteset(sset_ew51_tail, "gfx/EW51.png")           { tmpl_sprite_train10_offset(4, 640, 2) }
+
+spriteset(sset_ew51_head_open, "gfx/EW51.png")      { tmpl_sprite_train12(4, 680) }
+spriteset(sset_ew51_mid_open, "gfx/EW51.png")       { tmpl_sprite_train10_offset(4, 720, 1) }
+spriteset(sset_ew51_tail_open, "gfx/EW51.png")      { tmpl_sprite_train10_offset(4, 760, 2) }
+
+spriteset(sset_ew51_head_rev, "gfx/EW51.png")           { tmpl_sprite_train12(305, 560) }
+spriteset(sset_ew51_mid_rev, "gfx/EW51.png")            { tmpl_sprite_train10_offset(305, 600, 1) }
+spriteset(sset_ew51_tail_rev, "gfx/EW51.png")           { tmpl_sprite_train10_offset(305, 640, 2) }
+
+spriteset(sset_ew51_head_rev_open, "gfx/EW51.png")      { tmpl_sprite_train12(305, 680) }
+spriteset(sset_ew51_mid_rev_open, "gfx/EW51.png")       { tmpl_sprite_train10_offset(305, 720, 1) }
+spriteset(sset_ew51_tail_rev_open, "gfx/EW51.png")      { tmpl_sprite_train10_offset(305, 760, 2) }
+
+// Sgroups
+// E.91 livery
+spritegroup sgroup_e91_head {
+    loaded:     [sset_e91_head];
+    loading:    [sset_e91_head_open];
+}
+spritegroup sgroup_e91_mid {
+    loaded:     [sset_e91_mid];
+    loading:    [sset_e91_mid_open];
+}
+spritegroup sgroup_e91_tail {
+    loaded:     [sset_e91_tail];
+    loading:    [sset_e91_tail_open];
+}
+
+spritegroup sgroup_e91_head_rev {
+    loaded:     [sset_e91_head_rev];
+    loading:    [sset_e91_head_rev_open];
+}
+spritegroup sgroup_e91_mid_rev {
+    loaded:     [sset_e91_mid_rev];
+    loading:    [sset_e91_mid_rev_open];
+}
+spritegroup sgroup_e91_tail_rev {
+    loaded:     [sset_e91_tail_rev];
+    loading:    [sset_e91_tail_rev_open];
+}
+// E.91 Refurbished livery
+spritegroup sgroup_e91_refurbished_head {
+    loaded:     [sset_e91_refurbished_head];
+    loading:    [sset_e91_refurbished_head_open];
+}
+spritegroup sgroup_e91_refurbished_mid {
+    loaded:     [sset_e91_refurbished_mid];
+    loading:    [sset_e91_refurbished_mid_open];
+}
+spritegroup sgroup_e91_refurbished_tail {
+    loaded:     [sset_e91_refurbished_tail];
+    loading:    [sset_e91_refurbished_tail_open];
+}
+
+spritegroup sgroup_e91_refurbished_head_rev {
+    loaded:     [sset_e91_refurbished_head_rev];
+    loading:    [sset_e91_refurbished_head_rev_open];
+}
+spritegroup sgroup_e91_refurbished_mid_rev {
+    loaded:     [sset_e91_refurbished_mid_rev];
+    loading:    [sset_e91_refurbished_mid_rev_open];
+}
+spritegroup sgroup_e91_refurbished_tail_rev {
+    loaded:     [sset_e91_refurbished_tail_rev];
+    loading:    [sset_e91_refurbished_tail_rev_open];
+}
+// EW51 livery
+spritegroup sgroup_ew51_head {
+    loaded:     [sset_ew51_head];
+    loading:    [sset_ew51_head_open];
+}
+spritegroup sgroup_ew51_mid {
+    loaded:     [sset_ew51_mid];
+    loading:    [sset_ew51_mid_open];
+}
+spritegroup sgroup_ew51_tail {
+    loaded:     [sset_ew51_tail];
+    loading:    [sset_ew51_tail_open];
+}
+
+spritegroup sgroup_ew51_head_rev {
+    loaded:     [sset_ew51_head_rev];
+    loading:    [sset_ew51_head_rev_open];
+}
+spritegroup sgroup_ew51_mid_rev {
+    loaded:     [sset_ew51_mid_rev];
+    loading:    [sset_ew51_mid_rev_open];
+}
+spritegroup sgroup_ew51_tail_rev {
+    loaded:     [sset_ew51_tail_rev];
+    loading:    [sset_ew51_tail_rev_open];
+}
+
+/* E91 switches */
+switch(FEAT_TRAINS, SELF, switch_e91_articulated, extra_callback_info1) {
+    1..4: return item_e91;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_e91_length, position_in_vehid_chain % 5) {
+    1: return 4;    // dummy part
+    3: return 3;    // dummy part
+    return 8;
+}
+switch(FEAT_TRAINS, SELF, switch_e91_purchase, extra_callback_info1 & 0xFF) {
+    0x21: return sset_e91_advert;
+    return sset_e91_purchase;
+}
+switch(FEAT_TRAINS, SELF, switch_e91_capacity, position_in_vehid_chain % 5) {
+    0: return 75;
+    2: return 75;
+    4: return 76;
+    return 1;
+}
+switch(FEAT_TRAINS, SELF, switch_e91_normal_graphics, position_in_vehid_chain % 5) {
+    0: return sgroup_e91_head;
+    2: return sgroup_e91_mid;
+    4: return sgroup_e91_tail;
+    return sset_dummy;
+}
+switch(FEAT_TRAINS, SELF, switch_e91_rev_graphics, position_in_vehid_chain % 5) {
+    0: return sgroup_e91_head_rev;
+    2: return sgroup_e91_mid_rev;
+    4: return sgroup_e91_tail_rev;
+    return sset_dummy;
+}
+switch(FEAT_TRAINS, PARENT, switch_e91_graphics, train_is_driving_backwards) {
+    1: return switch_e91_rev_graphics;
+    return switch_e91_normal_graphics;
+}
+switch(FEAT_TRAINS, SELF, switch_e91_visual_effect_normal, position_in_vehid_chain % 5) {
+    0: return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, -3, DISABLE_WAGON_POWER);
+    return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+}
+switch(FEAT_TRAINS, SELF, switch_e91_visual_effect_rev, position_in_vehid_chain % 5) {
+    4: return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 3, DISABLE_WAGON_POWER);
+    return visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+}
+switch(FEAT_TRAINS, PARENT, switch_e91_visual_effect_local, train_is_driving_backwards) {
+    1: return switch_e91_visual_effect_rev;
+    return switch_e91_visual_effect_normal;
+}
+switch(FEAT_TRAINS, SELF, switch_e91_add_text, IS_HEATING_CLIMATE ) {
+    1: return string(STR_PURCHASE_DESCR_3L, string(STR_HEATING_ELECTRIC_TEXT), string(STR_E91_TEXT), string(STR_INCOME_LOWER));
+    return string(STR_PURCHASE_DESCR_2L, string(STR_E91_TEXT), string(STR_INCOME_LOWER));
+}
+switch(FEAT_TRAINS, SELF, switch_e91_start_stop, COUNT_EW51 > 3) {
+    1: return string(STR_TRAIN_TOO_LONG, string(STR_E91_NAME));
+    return CB_RESULT_NO_TEXT;
+}
+ENGINE_RUNNING_COST_SWITCH(e91, E91)
+DIESEL_ELECTRIC_ENGINE_POWER_SWITCH(e91)
+ENGINE_VISUAL_EFFECT_SWITCH(e91)
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_e91, 1650) {
+    property {
+        /* common properties */
+        name:                           string(STR_E91_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1936, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  25;     // per part
+        cost_factor:                    PURCHASE_COST_E91;
+        running_cost_factor:            RUNNING_COST_E91;
+        cargo_age_period:               int(185*0.65);  // faster ageing
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          85 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          432 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 1;
+        weight:                         114 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.0554;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+    graphics {
+        purchase:                   switch_e91_purchase;
+        additional_text:            switch_e91_add_text;
+        default:                    switch_e91_graphics;
+        articulated_part:           switch_e91_articulated;
+        length:                     switch_e91_length;
+        visual_effect_and_powered:  switch_e91_visual_effect;
+        purchase_cargo_capacity:    return 226/5;
+        cargo_capacity:             switch_e91_capacity;
+        can_attach_wagon:           switch_e91_can_attach;
+        start_stop:                 switch_e91_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(e91)
+        ENGINE_POWER_CALLBACKS(e91)
+    }
+}
+
+/* E91 Refurbished switches */
+switch(FEAT_TRAINS, SELF, switch_e91_ref_articulated, extra_callback_info1) {
+    1..4: return item_e91_ref;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_e91_ref_normal_graphics, position_in_vehid_chain % 5) {
+    0: return sgroup_e91_refurbished_head;
+    2: return sgroup_e91_refurbished_mid;
+    4: return sgroup_e91_refurbished_tail;
+    return sset_dummy;
+}
+switch(FEAT_TRAINS, SELF, switch_e91_ref_rev_graphics, position_in_vehid_chain % 5) {
+    0: return sgroup_e91_refurbished_head_rev;
+    2: return sgroup_e91_refurbished_mid_rev;
+    4: return sgroup_e91_refurbished_tail_rev;
+    return sset_dummy;
+}
+switch(FEAT_TRAINS, PARENT, switch_e91_ref_graphics, train_is_driving_backwards) {
+    1: return switch_e91_ref_rev_graphics;
+    return switch_e91_ref_normal_graphics;
+}
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_e91_ref, 1651) {
+    property {
+        /* common properties */
+        name:                           string(STR_E91_REF_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1945, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        variant_group:                  1650;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  25;     // per part
+        cost_factor:                    PURCHASE_COST_E91;
+        running_cost_factor:            RUNNING_COST_E91;
+        cargo_age_period:               int(185*0.65);  // faster ageing
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          85 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          432 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 1;
+        weight:                         114 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.0554;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+    graphics {
+        purchase:                   sset_e91_refurbished_purchase;
+        additional_text:            switch_e91_add_text;
+        default:                    switch_e91_ref_graphics;
+        articulated_part:           switch_e91_ref_articulated;
+        length:                     switch_e91_length;
+        visual_effect_and_powered:  switch_e91_visual_effect;
+        purchase_cargo_capacity:    return 226/5;
+        cargo_capacity:             switch_e91_capacity;
+        can_attach_wagon:           switch_e91_can_attach;
+        start_stop:                 switch_e91_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(e91)
+        ENGINE_POWER_CALLBACKS(e91)
+    }
+}
+
+/* EW51 switches */
+switch(FEAT_TRAINS, SELF, switch_ew51_articulated, extra_callback_info1) {
+    1..4: return item_ew51;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch(FEAT_TRAINS, SELF, switch_ew51_normal_graphics, position_in_vehid_chain % 5) {
+    0: return sgroup_ew51_head;
+    2: return sgroup_ew51_mid;
+    4: return sgroup_ew51_tail;
+    return sset_dummy;
+}
+switch(FEAT_TRAINS, SELF, switch_ew51_rev_graphics, position_in_vehid_chain % 5) {
+    0: return sgroup_ew51_head_rev;
+    2: return sgroup_ew51_mid_rev;
+    4: return sgroup_ew51_tail_rev;
+    return sset_dummy;
+}
+switch(FEAT_TRAINS, PARENT, switch_ew51_graphics, train_is_driving_backwards) {
+    1: return switch_ew51_rev_graphics;
+    return switch_ew51_normal_graphics;
+}
+
+/* Define the actual train */
+item(FEAT_TRAINS, item_ew51, 1652) {
+    property {
+        /* common properties */
+        name:                           string(STR_EW51_NAME);
+        climates_available:             PKP_CLIMATES; 
+        introduction_date:              date(1956, 1, 1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        variant_group:                  1650;
+        vehicle_life:                   30;
+        reliability_decay:              20;
+        CARGO_PASSENGERS_WAGON_DEFINITION
+        loading_speed:                  25;     // per part
+        cost_factor:                    PURCHASE_COST_E91;
+        running_cost_factor:            RUNNING_COST_E91;
+        cargo_age_period:               int(185*0.65);  // faster ageing
+        /* train properties */
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        speed:                          85 km/h;
+        misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
+        refit_cost:                     0;
+        track_type:                     ELRL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                          432 kW;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        dual_headed:                    0;
+        cargo_capacity:                 1;
+        weight:                         114 ton;
+        ai_engine_rank:                 0; // not intended to be used by the ai
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:          0 kW;
+        tractive_effort_coefficient:    0.0554;
+        air_drag_coefficient:           0.07;
+        length:                         8;
+        extra_weight_per_wagon:         0;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+        bitmask_vehicle_info:           bitmask(VINFO_PASSENGER_WAGON);
+    }
+    graphics {
+        purchase:                   sset_ew51_purchase;
+        additional_text:            switch_e91_add_text;
+        default:                    switch_ew51_graphics;
+        articulated_part:           switch_ew51_articulated;
+        length:                     switch_e91_length;
+        visual_effect_and_powered:  switch_e91_visual_effect;
+        purchase_cargo_capacity:    return 226/5;
+        cargo_capacity:             switch_e91_capacity;
+        can_attach_wagon:           switch_e91_can_attach;
+        start_stop:                 switch_e91_start_stop;
+        ENGINE_RUNNING_COST_CALLBACKS(e91)
+        ENGINE_POWER_CALLBACKS(e91)
+    }
+}

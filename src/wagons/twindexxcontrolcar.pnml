@@ -56,7 +56,6 @@ switch(FEAT_TRAINS, SELF, switch_twindexxcc_graphics, position_in_vehid_chain % 
     1: return switch_twindexxcc_rear;
     return switch_twindexxcc_front;
 }
-
 switch(FEAT_TRAINS, SELF, switch_twindexxcc_length, position_in_vehid_chain % 2) {
     1: return 4;
     return 8;

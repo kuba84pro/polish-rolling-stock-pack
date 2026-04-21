@@ -2,7 +2,7 @@
 
 # GRF name and description
 STR_GRF_NAME        :{TITLE} {VERSION}
-STR_GRF_DESCRIPTION :{ORANGE}{TITLE} {VERSION}{BLACK} is a continuation of Polish PKP SET 3.0.3 pack made originally by {SILVER}TadeuszD{BLACK}. {}PRSP contains most known Polish rolling stock used over the years, since 1918 to the present.{}{COPYRIGHT}2011-2025{}Author: {SILVER}kuba84pro{BLACK}{}Graphics: {SILVER}101ksl{BLACK}, {SILVER}kopuwka{BLACK}, {SILVER}Serek{BLACK}, {SILVER}snubek_{BLACK}, {SILVER}Takumi Fujiwara{BLACK}, {SILVER}Patrylec{BLACK}{}Special thanks to previous author and all graphics designers{}License: {SILVER}GPLv2{BLACK}{}Discord: {LTBLUE}https://discord.gg/GNMWcCK4zh{BLACK}
+STR_GRF_DESCRIPTION :{ORANGE}{TITLE} {VERSION}{BLACK} is a continuation of Polish PKP SET 3.0.3 pack made originally by {SILVER}TadeuszD{BLACK}. {}PRSP contains most known Polish rolling stock used over the years, since 1918 to the present.{}{COPYRIGHT}2011-2026{}Author: {SILVER}kuba84pro{BLACK}{}Graphics: {SILVER}101ksl{BLACK}, {SILVER}kopuwka{BLACK}, {SILVER}Serek{BLACK}, {SILVER}snubek_{BLACK}, {SILVER}Takumi Fujiwara{BLACK}, {SILVER}Patrylec{BLACK}{}Special thanks to previous author and all graphics designers{}License: {SILVER}GPLv2{BLACK}{}Discord: {LTBLUE}https://discord.gg/GNMWcCK4zh{BLACK}
 
 # GRF parameters
 STR_PARAM_NAME_DISABLE_ORIG     :Disable original normal trains
@@ -118,6 +118,9 @@ STR_TKT48_BLACK_NAME    :{CREAM}TKt48 {SILVER}Black Livery
 STR_OL49_NAME           :{CREAM}Ol49
 STR_OL49_BLACK_NAME     :{CREAM}Ol49 {SILVER}Black Livery
 STR_TY51_NAME           :{CREAM}Ty51
+
+STR_WITTFELD_NAME       :{YELLOW}Battery-powered carriage "Wittfeld"
+
 STR_SN61_NAME           :{YELLOW}SN61
 STR_SN61_TEXT           :Info: {ORANGE}Diesel motor car - max. {YELLOW}3 trailers{ORANGE} allowed
 STR_SN61_183_NAME           :{YELLOW}SN61-183
@@ -126,6 +129,7 @@ STR_SN80_TEXT           :Info: {ORANGE}Diesel motor car - max. {YELLOW}3 trailer
 STR_SN81_NAME           :{YELLOW}SN81
 STR_SN81_002_NAME           :{YELLOW}SN81-002
 STR_SN81_TEXT           :Info: {YELLOW}2{ORANGE}-part Diesel Multiple Unit
+
 STR_SA103_NAME                        :{YELLOW}SA103
 STR_SA103_POMORSKIE_NAME              :{YELLOW}SA103 {SILVER}Pomorskie
 STR_SA103_PODKARPACKIE_NAME           :{YELLOW}SA103 {SILVER}Podkarpackie
@@ -142,10 +146,16 @@ STR_SA106_TEXT         	              :Info: {ORANGE}Diesel railbus - max. {YELL
 STR_SA107_NAME                        :{YELLOW}SA107 {SILVER}Slaskie
 STR_SA107_TEXT         	              :Info: {ORANGE}Diesel railbus - can attach 3 units of SA107 or SA109
 STR_SA108_KW_NAME                     :{YELLOW}SA108 {SILVER}Koleje Wielkopolskie
-STR_SA108_KW_NEW_NAME                     :{YELLOW}SA108 {SILVER}Koleje Wielkopolskie New
+STR_SA108_KW_NEW_NAME                 :{YELLOW}SA108 {SILVER}Koleje Wielkopolskie New
 STR_SA109_SLASKIE_NAME                :{YELLOW}SA109 {SILVER}Slaskie 
 STR_SA109_MALOPOLSKA_NAME             :{YELLOW}SA109 {SILVER}Malopolskie
 STR_SA109_TEXT         	              :Info: {ORANGE}Diesel railbus
+
+STR_SA131_POMORSKIE_NAME              :{YELLOW}SA131 {SILVER}Pomorskie
+STR_SA132_KD_NAME                     :{YELLOW}SA132 {SILVER}Koleje Dolnoslaskie
+STR_SA132_KW_NAME                     :{YELLOW}SA132 {SILVER}Koleje Wielkopolskie
+STR_SA131_POMORSKIE_TEXT              :Info: {ORANGE}Diesel Railbus - can attach SA103/SA106/SA135 or 120A wagons
+
 STR_VT627_NAME                        :{YELLOW}VT627 {SILVER}Koleje Mazowieckie
 STR_VT627_TEXT         	              :Info: {ORANGE}Diesel railbus - max 3 units
 STR_SA135_NAME                        :{YELLOW}SA135
@@ -155,6 +165,7 @@ STR_SA136_NAME                        :{YELLOW}SA136 {SILVER}Pomorskie
 STR_SA136_TEXT         	              :Info: {YELLOW}3{ORANGE}-part Diesel Multiple Unit - max. {YELLOW}3 trailers{ORANGE} allowed
 STR_SA101_NAME                        :{YELLOW}SA101 {SILVER}Przewozy Regionalne
 STR_SA102_NAME                        :{YELLOW}SA102 {SILVER}Przewozy Regionalne
+
 STR_SM03_NAME                     :{YELLOW}SM03
 STR_SM03_PKP_CARGO_NAME           :{YELLOW}SM03 {SILVER}PKP Cargo
 STR_SM30_NAME                     :{YELLOW}SM30
@@ -183,12 +194,23 @@ STR_SM42_TRAINSPEED_NAME          :{YELLOW}SM42 {SILVER}Trainspeed
 STR_SM42_GTC_NAME                 :{YELLOW}SM42 {SILVER}GTC
 STR_SM42_2141_NAME                :{YELLOW}SM42-2141 {SILVER}PolTrans
 STR_SM42_ORION_NAME               :{YELLOW}SM42 {SILVER}Orion
+STR_SM42_ORLEN_NAME               :{YELLOW}SM42 {SILVER}Orlen
+STR_SM42_ORLEN_TRIANGLE_NAME      :{YELLOW}SM42 {SILVER}Orlen #2
+STR_SM42_MOBIL_LOK_NAME           :{YELLOW}SM42 {SILVER}Mobil Lok
+STR_SM42_CTL_NEW_SCHEME_NAME      :{YELLOW}SM42 {SILVER}CTL Logistics New Scheme
+STR_SM42_OMNILOKO_NAME            :{YELLOW}SM42 {SILVER}Omniloko
+STR_SM42_CARGOUNIT_NAME           :{YELLOW}SM42 {SILVER}Cargounit
+STR_SM42_PLK_NAME                 :{YELLOW}SM42 {SILVER}PKP PLK
+STR_SM42_ENERGETYKA_NAME          :{YELLOW}SM42 {SILVER}PKP Energetyka
+
 STR_SP42_NAME                     :{YELLOW}SP42
 STR_SP42_OLIWKOWE_NAME            :{YELLOW}SP42 {SILVER}Olive Drab
+
 STR_SU42_NAME                     :{YELLOW}SU42
 STR_SU42_POLSAT_NAME              :{YELLOW}SU42 {SILVER}Przewozy Regionalne "Polsat"
 STR_SU42_PR_NAME                  :{YELLOW}SU42 {SILVER}Przewozy Regionalne
 STR_SU42_POLREGIO_NAME            :{YELLOW}SU42 {SILVER}Polregio
+
 STR_6DL_NAME                      :{YELLOW}SU4210 {SILVER}PKP Intercity
 STR_6DL_TEXT		              :Type: {ORANGE}SU4210 (6Dl)
 STR_6DG_NAME                      :{YELLOW}6DG {SILVER}PKP Cargo
@@ -219,18 +241,21 @@ STR_M62_ORLEN_OLD_NAME           :{YELLOW}M62 {SILVER}Orlen Old Scheme
 STR_M62Y_TS_OPOLE_NAME           :{YELLOW}M62Y {SILVER}TS Opole
 STR_M62_LOTOS_NAME               :{YELLOW}M62 {SILVER}Lotos
 
-STR_SP45_NAME                        :{YELLOW}SP45
-STR_SU45_NAME                        :{YELLOW}SU45
-STR_SU45_YELLOW_CZOLO_NAME           :{YELLOW}SU45 {SILVER}Historical Yellow Front 
-STR_SU45_PKP_REGIO_NAME              :{YELLOW}SU45 {SILVER}Przewozy Regionalne
-STR_ST45_PKP_CARGO_NAME              :{YELLOW}ST45 {SILVER}PKP Cargo
-STR_SU45_SKPL_NAME                   :{YELLOW}SU45 {SILVER}SKPL
+STR_SP45_NAME                       :{YELLOW}SP45
+STR_SU45_NAME                       :{YELLOW}SU45
+STR_SU45_YELLOW_CZOLO_NAME          :{YELLOW}SU45 {SILVER}Historical Yellow Front
+STR_SU45_PKP_REGIO_NAME             :{YELLOW}SU45 {SILVER}Przewozy Regionalne
+STR_ST45_PKP_CARGO_NAME             :{YELLOW}ST45 {SILVER}PKP Cargo
+STR_SU45_SKPL_NAME                  :{YELLOW}SU45 {SILVER}SKPL
 STR_SU45_BTK_NAME                   :{YELLOW}SU45-194 {SILVER}BTK Karpiel
-STR_SU46_NAME                        :{YELLOW}SU46
-STR_SU46_YELLOW_CZOLO_NAME           :{YELLOW}SU46 {SILVER}Historical Yellow Front 
-STR_ST46_PKP_CARGO_NAME              :{YELLOW}ST46 {SILVER}PKP Cargo
-STR_SU46_NYSA_NAME              :{YELLOW}SU46 {SILVER}Dep. Nysa
-STR_SU46_OLD_PKP_CARGO_NAME              :{YELLOW}SU46 {SILVER}Old PKP Cargo
+STR_SU45_GREEN_NAME                 :{YELLOW}SU45 {SILVER}Historical Green
+STR_SU45_GREEN_YELLOW_FRONT_NAME    :{YELLOW}SU45 {SILVER}Historical Green-Yellow Front
+
+STR_SU46_NAME              :{YELLOW}SU46
+STR_SU46_YELLOW_CZOLO_NAME :{YELLOW}SU46 {SILVER}Historical Yellow Front
+STR_ST46_PKP_CARGO_NAME    :{YELLOW}ST46 {SILVER}PKP Cargo
+STR_SU46_NYSA_NAME         :{YELLOW}SU46 {SILVER}Dep. Nysa
+STR_SU46_OLD_PKP_CARGO_NAME:{YELLOW}SU46 {SILVER}Old PKP Cargo
 STR_SP47_NAME                        :{YELLOW}SP47 {SILVER}
 STR_SP47_GREEN_NAME                  :{YELLOW}SP47 {SILVER}Green Livery
 STR_SP32_NAME                     :{YELLOW}SP32
@@ -242,40 +267,44 @@ STR_SU160_TEXT		    :Type: {ORANGE}111Db
 STR_EP01_NAME           :{DKGREEN}EP01
 STR_EP02_NAME           :{DKGREEN}EP02
 
-STR_EU07_NAME                   :{DKGREEN}EU07
-STR_EU07_GREEN_NAME             :{DKGREEN}EU07 {SILVER}Historical Green
-STR_EU07_YELLOW_FRONT_NAME      :{DKGREEN}EU07 {SILVER}Historical Yellow Front
-STR_EP07_BUDYN_NAME             :{DKGREEN}EP07 {SILVER}Przewozy Regionalne "Budyn"
-STR_EP07_DENATURAT_NAME         :{DKGREEN}EP07 {SILVER}PKP Intercity "Denaturat"
-STR_EU07_KM_NAME                :{DKGREEN}EU07 {SILVER}Koleje Mazowieckie
-STR_EU07_PKP_CARGO_NAME         :{DKGREEN}EU07 {SILVER}PKP Cargo
-STR_EU07_PKP_CARGO_RW_NAME      :{DKGREEN}EU07 {SILVER}Red-White PKP Cargo
-STR_EP07_PKP_IC_OLD_NAME        :{DKGREEN}EU/EP07 {SILVER}PKP Intercity Old Livery
-STR_EP07_PKP_IC_NAME            :{DKGREEN}EP07 {SILVER}PKP IC
-STR_EP07P_PAPUGA_NAME           :{DKGREEN}EP07P {SILVER}Przewozy Regionalne "Parrot"
-STR_EU07_CHOCOLATE_NAME         :{DKGREEN}EU07 {SILVER}TS Opole
-STR_EU07_TABOR_DEBICA_NAME      :{DKGREEN}EU07 {SILVER}Tabor Debica
-STR_EP07P_POLREGIO_NAME         :{DKGREEN}EP07P {SILVER}Polregio
-STR_EU07_PCC_NAME               :{DKGREEN}EU07 {SILVER}PCC Intermodal
-STR_EP07_1067_NAME              :{DKGREEN}EP07-1067 {SILVER} PKP Intercity
-STR_EU07_ECCO_NAME              :{DKGREEN}EU07 {SILVER}ECCO Rail
-STR_EU07_LTG_NAME               :{DKGREEN}EU07 {SILVER}LTG Cargo Polska
-STR_EU07_CAPTRAIN_NAME          :{DKGREEN}EU07 {SILVER}Captrain
-STR_EU07_CARGOUNIT_NAME         :{DKGREEN}EU07 {SILVER}Cargounit
-STR_EU07_PUK_KOLPREM_NAME       :{DKGREEN}EU07 {SILVER}PUK Kolprem
-STR_EU07_DOLATA_NAME            :{DKGREEN}EU07 {SILVER}Dolata
-STR_EP07_1020_NAME              :{DKGREEN}EP07-1020 {SILVER}Przewozy Regionalne "Budyn"
-STR_EU07_303E_CLASSIC_NAME                  :{DKGREEN}EU07 {DKBLUE}303E
-STR_EU07_303E_YELLOW_FRONT_NAME             :{DKGREEN}EU07 {DKBLUE}303E {SILVER}Yellow Front
-STR_EU07_303E_TRAPEZE_YELLOW_FRONT_NAME     :{DKGREEN}EU07 {DKBLUE}303E {SILVER}Trapeze with Yellow Front
-STR_EP07_361_NAME                           :{DKGREEN}EP07-361 {DKBLUE}303E
-STR_EU07_303E_TURQUOISE_YELLOW_FRONT_NAME   :{DKGREEN}EU07 {DKBLUE}303E {SILVER}Turquoise with Yellow Front
-STR_EU07_303E_POLTRANS_NAME     :{DKGREEN}EU07 {DKBLUE}303E {SILVER}Poltrans
-STR_EU07_RAILSTM_OLD_NAME       :{DKGREEN}EU07 {SILVER}RailSTM Old Livery
-STR_EU07_TRAINSPEED_NAME       :{DKGREEN}EU07 {SILVER}Trainspeed
-STR_EU07_ORION_NAME       :{DKGREEN}EU07 {SILVER}Orion
-STR_EU07_LTC_NAME       :{DKGREEN}EU07 {SILVER}LTC
-STR_EU07_TURQUOISE_NAME       :{DKGREEN}EU07 {SILVER}Turquoise
+STR_2E53_NAME           :{DKGREEN}2E53
+STR_2E53_YS_NAME        :{DKGREEN}2E53 {SILVER}Yellow stripes
+STR_2E53_LATE_NAME      :{DKGREEN}2E53 {SILVER}Late Livery
+
+STR_EU07_NAME                            :{DKGREEN}EU07
+STR_EU07_GREEN_NAME                      :{DKGREEN}EU07 {SILVER}Historical Green
+STR_EU07_YELLOW_FRONT_NAME               :{DKGREEN}EU07 {SILVER}Historical Yellow Front
+STR_EP07_BUDYN_NAME                      :{DKGREEN}EP07 {SILVER}Przewozy Regionalne "Budyn"
+STR_EP07_DENATURAT_NAME                  :{DKGREEN}EP07 {SILVER}PKP Intercity "Denaturat"
+STR_EU07_KM_NAME                         :{DKGREEN}EU07 {SILVER}Koleje Mazowieckie
+STR_EU07_PKP_CARGO_NAME                  :{DKGREEN}EU07 {SILVER}PKP Cargo
+STR_EU07_PKP_CARGO_RW_NAME               :{DKGREEN}EU07 {SILVER}Red-White PKP Cargo
+STR_EP07_PKP_IC_OLD_NAME                 :{DKGREEN}EU/EP07 {SILVER}PKP Intercity Old Livery
+STR_EP07_PKP_IC_NAME                     :{DKGREEN}EP07 {SILVER}PKP IC
+STR_EP07P_PAPUGA_NAME                    :{DKGREEN}EP07P {SILVER}Przewozy Regionalne "Parrot"
+STR_EU07_CHOCOLATE_NAME                  :{DKGREEN}EU07 {SILVER}TS Opole
+STR_EU07_TABOR_DEBICA_NAME               :{DKGREEN}EU07 {SILVER}Tabor Debica
+STR_EP07P_POLREGIO_NAME                  :{DKGREEN}EP07P {SILVER}Polregio
+STR_EU07_PCC_NAME                        :{DKGREEN}EU07 {SILVER}PCC Intermodal
+STR_EP07_1067_NAME                       :{DKGREEN}EP07-1067 {SILVER} PKP Intercity
+STR_EU07_ECCO_NAME                       :{DKGREEN}EU07 {SILVER}ECCO Rail
+STR_EU07_LTG_NAME                        :{DKGREEN}EU07 {SILVER}LTG Cargo Polska
+STR_EU07_CAPTRAIN_NAME                   :{DKGREEN}EU07 {SILVER}Captrain
+STR_EU07_CARGOUNIT_NAME                  :{DKGREEN}EU07 {SILVER}Cargounit
+STR_EU07_PUK_KOLPREM_NAME                :{DKGREEN}EU07 {SILVER}PUK Kolprem
+STR_EU07_DOLATA_NAME                     :{DKGREEN}EU07 {SILVER}Dolata
+STR_EP07_1020_NAME                       :{DKGREEN}EP07-1020 {SILVER}Przewozy Regionalne "Budyn"
+STR_EU07_303E_CLASSIC_NAME               :{DKGREEN}EU07 {DKBLUE}303E
+STR_EU07_303E_YELLOW_FRONT_NAME          :{DKGREEN}EU07 {DKBLUE}303E {SILVER}Yellow Front
+STR_EU07_303E_TRAPEZE_YELLOW_FRONT_NAME  :{DKGREEN}EU07 {DKBLUE}303E {SILVER}Trapeze with Yellow Front
+STR_EP07_361_NAME                        :{DKGREEN}EP07-361 {DKBLUE}303E
+STR_EU07_303E_TURQUOISE_YELLOW_FRONT_NAME:{DKGREEN}EU07 {DKBLUE}303E {SILVER}Turquoise with Yellow Front
+STR_EU07_303E_POLTRANS_NAME              :{DKGREEN}EU07 {DKBLUE}303E {SILVER}Poltrans
+STR_EU07_RAILSTM_OLD_NAME                :{DKGREEN}EU07 {SILVER}RailSTM Old Livery
+STR_EU07_TRAINSPEED_NAME                 :{DKGREEN}EU07 {SILVER}Trainspeed
+STR_EU07_ORION_NAME                      :{DKGREEN}EU07 {SILVER}Orion
+STR_EU07_LTC_NAME                        :{DKGREEN}EU07 {SILVER}LTC
+STR_EU07_TURQUOISE_NAME                  :{DKGREEN}EU07 {SILVER}Turquoise
 
 STR_EU07A_NAME                  :{DKGREEN}EU07A {SILVER}PKP Intercity Old Livery
 STR_EU07A_NEW_NAME              :{DKGREEN}EU07A {SILVER}PKP Intercity
@@ -286,9 +315,9 @@ STR_EU06_GREEN_NAME     :{DKGREEN}EU06 {SILVER}Historical Green
 STR_EU06_YELLOW_NAME    :{DKGREEN}EU06 {SILVER}Historical Yellow Front
 
 STR_EU04_NAME           :{DKGREEN}EU04
-STR_EU04_CLASSIC_NAME           :{DKGREEN}EU04 {SILVER}Classic
+STR_EU04_CLASSIC_NAME   :{DKGREEN}EU04 {SILVER}Classic
 STR_EU20_NAME           :{DKGREEN}EU20
-STR_EU20_CLASSIC_NAME           :{DKGREEN}EU20 {SILVER}Classic
+STR_EU20_CLASSIC_NAME   :{DKGREEN}EU20 {SILVER}Classic
 STR_ET21_NAME           :{DKGREEN}ET21
 STR_ET21_GREEN_NAME           :{DKGREEN}ET21 {SILVER}Historical Green
 STR_ET21_YELLOW_FRONT_NAME    :{DKGREEN}ET21 {SILVER}Historical Yellow Front
@@ -323,21 +352,22 @@ STR_EP05_023_ANNIVERSARY_NAME           :{DKGREEN}EP05-023 {SILVER}"60 years on 
 STR_EP05_PKP_CARGO_NAME :{DKGREEN}EP05 {SILVER}PKP Cargo
 STR_EP05_TEXT           :Info: {ORANGE}Rebuilt EU05 locomotive with modified transmission rate for pulling express trains
 STR_EP05_WITHOUT_TC_TEXT           :Info: {ORANGE}Rebuilt EU05 locomotive with modified transmission rate for pulling express trains{}This locomotive {YELLOW}does not have {ORANGE}sockets for multiple unit train control
-STR_ET40_NAME           :{DKGREEN}ET40
+
+STR_ET40_NAME               :{DKGREEN}ET40
 STR_ET40_LOTOS_NAME         :{DKGREEN}ET40 {SILVER}Lotos
-STR_ET40_YELLOW_FRONT_NAME         :{DKGREEN}ET40 {SILVER}Historical Yellow Front
-STR_ET40_CU_NAME         :{DKGREEN}ET40 {SILVER}Cargounit
-STR_ET40_31_NAME         :{DKGREEN}ET40-31 {SILVER}P.H.U Tom-Lok
+STR_ET40_YELLOW_FRONT_NAME  :{DKGREEN}ET40 {SILVER}Historical Yellow Front
+STR_ET40_CU_NAME            :{DKGREEN}ET40 {SILVER}Cargounit
+STR_ET40_31_NAME            :{DKGREEN}ET40-31 {SILVER}P.H.U Tom-Lok
 STR_ET41_NAME               :{DKGREEN}ET41
 STR_ET41_YELLOW_FRONT_NAME  :{DKGREEN}ET41 {SILVER}Historical Yellow Front
 STR_ET41_PKP_CARGO_NAME     :{DKGREEN}ET41 {SILVER}PKP Cargo
 STR_ET41_CLASSIC_2_NAME     :{DKGREEN}ET41 {SILVER}Classic 2
 STR_ET41_CLASSIC_3_NAME     :{DKGREEN}ET41 {SILVER}Classic 3
-STR_ET41_YELLOW_2_NAME  :{DKGREEN}ET41 {SILVER}Historical Yellow Front 2
+STR_ET41_YELLOW_2_NAME      :{DKGREEN}ET41 {SILVER}Historical Yellow Front 2
 STR_ET42_NAME               :{DKGREEN}ET42
 STR_ET42_YELLOW_FRONT_NAME  :{DKGREEN}ET42 {SILVER}Historical Yellow Front
 STR_ET42_PKP_CARGO_NAME     :{DKGREEN}ET42 {SILVER}PKP Cargo
-STR_ET42_001_NAME     :{DKGREEN}ET42-001
+STR_ET42_001_NAME           :{DKGREEN}ET42-001
 
 STR_E6ACT_LOTOS_NAME          :{DKGREEN}E6ACT {SILVER}Lotos
 STR_E6ACT_CARGOUNIT_NAME      :{DKGREEN}E6ACT {SILVER}Cargounit
@@ -403,6 +433,7 @@ STR_EP09_046_NAME           :{DKGREEN}EP09-046
 STR_EP09_026_NAME         :{DKGREEN}EP09-026
 STR_EP09_026_RODZYN_NAME  :{DKGREEN}EP09-026 {SILVER}Old
 STR_EP09_CLASSIC_NAME         :{DKGREEN}EP09 {SILVER}Classic
+STR_EP09_022_ODKRYJ_NAME    :{DKGREEN}EP09-022 {SILVER}"Odkryj nas na nowo"
 
 STR_SKODA163_NAME                :{DKGREEN}163 {SILVER}Ceske Drahy
 STR_SKODA163_PR_NAME             :{DKGREEN}163 {SILVER}Przewozy Regionalne
@@ -450,10 +481,18 @@ STR_386_TEXT		           :Type: {ORANGE}F140 MS2
 STR_E483_TEXT		           :Type: {ORANGE}F140 DC
 STR_EU43_TEXT		           :Type: {ORANGE}F140 MS2
 STR_EU47_TEXT		           :Type: {ORANGE}P160 DC{}{BLACK}Info: {ORANGE}Push-pull double-deck passenger coaches Twindexx Vario can be connected to a EU47 locomotive{}{BLACK}A configuration up to {YELLOW}7{ORANGE} middle cars (B16mnopuxz) and {YELLOW}1{ORANGE} control car (AB12bfmnopuvxz) {}is permitted
+
 STR_EU44_NAME                  :{DKGREEN}EU44 {SILVER}EuroSprinter
 STR_EU44_PKP_IC_NAME           :{DKGREEN}EU44 {SILVER}PKP Intercity
 STR_EU44_NIEPODLEGLA_NAME      :{DKGREEN}EU44 {SILVER}PKP Intercity "Niepodlegla"
+STR_EU44_UKRAINE_NAME      :{DKGREEN}EU44 {SILVER}Euro 2012 Ukraine
+STR_EU44_GERMANY_NAME      :{DKGREEN}EU44 {SILVER}Euro 2012 Germany
+STR_EU44_RUSSIA_NAME      :{DKGREEN}EU44 {SILVER}Euro 2012 Russian Federation
+STR_EU44_DENMARK_NAME      :{DKGREEN}EU44 {SILVER}Euro 2012 Denmark
+STR_EU44_CZECH_NAME      :{DKGREEN}EU44 {SILVER}Euro 2012 Czech Republic
+STR_EU44_POLAND_NAME      :{DKGREEN}EU44 {SILVER}Euro 2012 Poland
 STR_EU44_TEXT		    :Type: {ORANGE}ES64U4
+
 STR_EU160_NAME          :{DKGREEN}EU160 {SILVER}Griffin
 STR_EU160_PKP_IC_NAME               :{DKGREEN}EU160 {SILVER}PKP Intercity
 STR_EU160_TYSKIE_NAME               :{DKGREEN}EU160 {SILVER}PKP intercity "Tyskie"
@@ -463,17 +502,17 @@ STR_EU160_20LAT_POLSKI_NAME         :{DKGREEN}EU160 {SILVER}PKP intercity "20 ye
 STR_EU160_POWSTANIE_SLASKIE_NAME    :{DKGREEN}EU160 {SILVER}PKP intercity "3rd Silesian Uprising"
 STR_EU160_TEXT		    :Type: {ORANGE}E4MSU
 
-STR_EU200_NAME          :{DKGREEN}EU200 {SILVER}PKP Intercity
-STR_EU200_TEXT		    :Type: {ORANGE}E4MSUa (Griffin 200)
-STR_EU200_012_NAME          :{DKGREEN}EU200-012 {SILVER}PKP Intercity "Boleslaw Prus"
-STR_EU200_003_CZOCHRALSKI_NAME   :{DKGREEN}EU200-003 {SILVER}PKP Intercity "Jan Czochralski"
-STR_EU200_003_SPRITE_NAME   :{DKGREEN}EU200-003 {SILVER}PKP Intercity "Sprite"
-STR_EU200_001_RODZINNE_NAME   :{DKGREEN}EU200-001 {SILVER}PKP Intercity "Rodzinne Podroze"
-STR_EU200_002_NAME   :{DKGREEN}EU200-002 {SILVER}PKP Intercity
-STR_EU200_MAKIETA_NAME   :{DKGREEN}EU200 {SILVER}PKP Intercity "Wystawa Makiet Kolejowych"
-STR_EU200_005_JARMARK_NAME   :{DKGREEN}EU200-005 {SILVER}PKP Intercity "765. Jarmark Sw. Dominika"
-STR_EU200_005_CPK_NAME   :{DKGREEN}EU200-005 {SILVER}PKP Intercity "CPK"
-STR_EU200_010_NAME       :{DKGREEN}EU200-010 {SILVER}PKP Intercity "Oranżada Helena"
+STR_EU200_NAME                 :{DKGREEN}EU200 {SILVER}PKP Intercity
+STR_EU200_TEXT                 :Type: {ORANGE}E4MSUa (Griffin 200)
+STR_EU200_012_NAME             :{DKGREEN}EU200-012 {SILVER}PKP Intercity "Boleslaw Prus"
+STR_EU200_003_CZOCHRALSKI_NAME :{DKGREEN}EU200-003 {SILVER}PKP Intercity "Jan Czochralski"
+STR_EU200_003_SPRITE_NAME      :{DKGREEN}EU200-003 {SILVER}PKP Intercity "Sprite"
+STR_EU200_001_RODZINNE_NAME    :{DKGREEN}EU200-001 {SILVER}PKP Intercity "Rodzinne Podroze"
+STR_EU200_002_NAME             :{DKGREEN}EU200-002 {SILVER}PKP Intercity
+STR_EU200_MAKIETA_NAME         :{DKGREEN}EU200 {SILVER}PKP Intercity "Wystawa Makiet Kolejowych"
+STR_EU200_005_JARMARK_NAME     :{DKGREEN}EU200-005 {SILVER}PKP Intercity "765. Jarmark Sw. Dominika"
+STR_EU200_005_CPK_NAME         :{DKGREEN}EU200-005 {SILVER}PKP Intercity "CPK"
+STR_EU200_010_NAME             :{DKGREEN}EU200-010 {SILVER}PKP Intercity "Oranżada Helena"
 
 STR_111ED_NAME              :{DKGREEN}111Ed {SILVER}Gama
 STR_111ED_RCP_NAME          :{DKGREEN}111Ed {SILVER}Gama RCP
@@ -551,6 +590,11 @@ STR_E4DCUD_NAME         :{LTBLUE}E4DCUd {SILVER}Griffin
 STR_E4DCUD_LOTOS_NAME   :{LTBLUE}E4DCUd {SILVER}Lotos
 STR_E4DCUD_TEXT        	:Note: {ORANGE}Electric locomotive with last-mile diesel engine ({YELLOW}380 kW{ORANGE})
 
+STR_E91_NAME            :{DKGREEN}E.91
+STR_E91_REF_NAME        :{DKGREEN}E.91 {SILVER}Refurbished
+STR_EW51_NAME           :{DKGREEN}EW51
+STR_E91_TEXT          	:Info: {YELLOW}3{ORANGE}-part Electric Multiple Unit
+
 STR_EW58_NAME           :{DKGREEN}EW58
 STR_EW58_RY_NAME        :{DKGREEN}EW58 {SILVER}Red-Yellow
 STR_EW58_TEXT          	:Info: {YELLOW}3{ORANGE}-part Electric Multiple Unit
@@ -595,23 +639,23 @@ STR_ED250_NAME          :{DKGREEN}ED250 {SILVER}Pendolino
 STR_ED250_PKP_IC_NAME          :{DKGREEN}ED250 {SILVER}PKP Intercity
 STR_ED250_TEXT         	:Info: {YELLOW}7{ORANGE}-part Electric Multiple Unit with {YELLOW}buffet car{ORANGE}, {YELLOW}45{ORANGE} {RED}1{ORANGE}-st and {YELLOW}357{ORANGE} {RED}2{ORANGE}-nd class sitting places
 
-STR_36WEA_OP_NAME       :{DKGREEN}36WEa {SILVER}Opolskie
-STR_36WEA_PO_NAME       :{DKGREEN}36WEa {SILVER}Podkarpackie
-STR_36WEA_KD_NAME       :{DKGREEN}36WEa {SILVER}Koleje Dolnoslaskie
-STR_36WEA_KD_KOLEJ_NAME :{DKGREEN}36WEa {SILVER}Koleje Dolnoslaskie "Kolej na kolej"
-STR_36WEA_SLASKIE_NAME  :{DKGREEN}36WEa {SILVER}Koleje Slaskie
-STR_36WEA_KM_NAME       :{DKGREEN}36WEa {SILVER}Koleje Malopolskie
-STR_36WEA_SK_NAME       :{DKGREEN}36WEa {SILVER}Swietokrzyskie
-STR_31WE_KD_NAME        :{DKGREEN}31WE {SILVER}Koleje Dolnoslaskie
-STR_EN78_KML_NAME       :{DKGREEN}EN78 {SILVER}Koleje Malopolskie
-STR_ED78_ZACH_POM_NAME       :{DKGREEN}ED78 {SILVER}Zachodnio-Pomorskie
-STR_ED78_ZACH_POM_DUMA_NAME  :{DKGREEN}ED78-028 {SILVER}Zachodnio-Pomorskie "Duma Pomorza"
-STR_45WE_KD_NAME        :{DKGREEN}45WE {SILVER}Koleje Dolnoslaskie
-STR_45WE_KM_NAME        :{DKGREEN}45WE {SILVER}Koleje Mazowieckie
-STR_EN90_POMORSKIE_NAME :{DKGREEN}EN90 {SILVER}Pomorskie
-STR_EN79_KML_NAME       :{DKGREEN}EN79 {SILVER}Koleje Malopolskie
-STR_35WE_SKMW_NAME      :{DKGREEN}35WE {SILVER}Szybka Kolej Miejska Warszawa
-STR_35WE_KS_NAME      :{DKGREEN}35WE {SILVER}Koleje Slaskie
+STR_36WEA_OP_NAME          :{DKGREEN}36WEa {SILVER}Opolskie
+STR_36WEA_PO_NAME          :{DKGREEN}36WEa {SILVER}Podkarpackie
+STR_36WEA_KD_NAME          :{DKGREEN}36WEa {SILVER}Koleje Dolnoslaskie
+STR_36WEA_KD_KOLEJ_NAME    :{DKGREEN}36WEa {SILVER}Koleje Dolnoslaskie "Kolej na kolej"
+STR_36WEA_SLASKIE_NAME     :{DKGREEN}36WEa {SILVER}Koleje Slaskie
+STR_36WEA_KM_NAME          :{DKGREEN}36WEa {SILVER}Koleje Malopolskie
+STR_36WEA_SK_NAME          :{DKGREEN}36WEa {SILVER}Swietokrzyskie
+STR_31WE_KD_NAME           :{DKGREEN}31WE {SILVER}Koleje Dolnoslaskie
+STR_EN78_KML_NAME          :{DKGREEN}EN78 {SILVER}Koleje Malopolskie
+STR_ED78_ZACH_POM_NAME     :{DKGREEN}ED78 {SILVER}Zachodnio-Pomorskie
+STR_ED78_ZACH_POM_DUMA_NAME:{DKGREEN}ED78-028 {SILVER}Zachodnio-Pomorskie "Duma Pomorza"
+STR_45WE_KD_NAME           :{DKGREEN}45WE {SILVER}Koleje Dolnoslaskie
+STR_45WE_KM_NAME           :{DKGREEN}45WE {SILVER}Koleje Mazowieckie
+STR_EN90_POMORSKIE_NAME    :{DKGREEN}EN90 {SILVER}Pomorskie
+STR_EN79_KML_NAME          :{DKGREEN}EN79 {SILVER}Koleje Malopolskie
+STR_35WE_SKMW_NAME         :{DKGREEN}35WE {SILVER}Szybka Kolej Miejska Warszawa
+STR_35WE_KS_NAME           :{DKGREEN}35WE {SILVER}Koleje Slaskie
 
 STR_31WEBA_SKM_W_NAME   :{DKGREEN}31WEba {SILVER}Szybka Kolej Miejska Warszawa
 
@@ -623,22 +667,22 @@ STR_EN57ALPR_NAME       :{DKGREEN}EN57AL {SILVER}Polregio
 STR_EN57ALKW_NAME       :{DKGREEN}EN57AL {SILVER}Koleje Wielkopolskie
 STR_EN57ALKM_NAME       :{DKGREEN}EN57AL {SILVER}Koleje Mazowieckie
 STR_EN57AL_PODL_NAME    :{DKGREEN}EN57AL {SILVER}Podlaskie
-STR_EN57SPOT_NAME           :{DKGREEN}EN57 {SILVER}SPOT2000 Przewozy Regionalne
-STR_EN57SPOT_TG_NAME        :{DKGREEN}EN57 {SILVER}SPOT2000 "Tiger"
-STR_EN57SPOT_POLREGIO_NAME  :{DKGREEN}EN57 {SILVER}SPOT2000 Polregio
-STR_ED161_NAME          :{DKGREEN}ED161 {SILVER}Dart
-STR_ED161_PKP_IC_NAME          :{DKGREEN}ED161 {SILVER}PKP Intercity
-STR_ED161_TEXT          :Info: {YELLOW}8{ORANGE}-part Electric Multiple Unit with {YELLOW}buffet car{ORANGE}, {YELLOW}60{ORANGE} {RED}1{ORANGE}-st and {YELLOW}296{ORANGE} {RED}2{ORANGE}-nd class sitting places
-STR_ED160_NAME          :{DKGREEN}ED160 {SILVER}Flirt
-STR_ED160_PKP_IC_NAME          :{DKGREEN}ED160 {SILVER}PKP Intercity
-STR_ED160_TEXT          :Info: {YELLOW}8{ORANGE}-part Electric Multiple Unit with {YELLOW}buffet car{ORANGE}, {YELLOW}60{ORANGE} {RED}1{ORANGE}-st and {YELLOW}294{ORANGE} {RED}2{ORANGE}-nd class sitting places
-STR_ER160_NAME          :{DKGREEN}ER160 {SILVER}Flirt
-STR_ER160_KM_NAME       :{DKGREEN}ER160 {SILVER}Koleje Mazowieckie
-STR_ER160_TEXT          :Info: {YELLOW}5{ORANGE}-part Electric Multiple Unit, {YELLOW}279{ORANGE} sitting places and {YELLOW}311{ORANGE} standing places
-STR_LM4268_NAME       :{DKGREEN}LM-4268 {SILVER}LKA
-STR_LM4268_TEXT          :Info: {YELLOW}3{ORANGE}-part Electric Multiple Unit, {YELLOW}186{ORANGE} sitting places and {YELLOW}241{ORANGE} standing places
-STR_L4268_NAME       :{DKGREEN}L-4268 {SILVER}LKA
-STR_L4268_TEXT          :Info: {YELLOW}2{ORANGE}-part Electric Multiple Unit, {YELLOW}120{ORANGE} sitting places and {YELLOW}158{ORANGE} standing places
+STR_EN57SPOT_NAME         :{DKGREEN}EN57 {SILVER}SPOT2000 Przewozy Regionalne
+STR_EN57SPOT_TG_NAME      :{DKGREEN}EN57 {SILVER}SPOT2000 "Tiger"
+STR_EN57SPOT_POLREGIO_NAME:{DKGREEN}EN57 {SILVER}SPOT2000 Polregio
+STR_ED161_NAME            :{DKGREEN}ED161 {SILVER}Dart
+STR_ED161_PKP_IC_NAME     :{DKGREEN}ED161 {SILVER}PKP Intercity
+STR_ED161_TEXT            : Info: {YELLOW}8{ORANGE}-part Electric Multiple Unit with {YELLOW}buffet car{ORANGE}, {YELLOW}60{ORANGE} {RED}1{ORANGE}-st and {YELLOW}296{ORANGE} {RED}2{ORANGE}-nd class sitting places
+STR_ED160_NAME            :{DKGREEN}ED160 {SILVER}Flirt
+STR_ED160_PKP_IC_NAME     :{DKGREEN}ED160 {SILVER}PKP Intercity
+STR_ED160_TEXT            : Info: {YELLOW}8{ORANGE}-part Electric Multiple Unit with {YELLOW}buffet car{ORANGE}, {YELLOW}60{ORANGE} {RED}1{ORANGE}-st and {YELLOW}294{ORANGE} {RED}2{ORANGE}-nd class sitting places
+STR_ER160_NAME            :{DKGREEN}ER160 {SILVER}Flirt
+STR_ER160_KM_NAME         :{DKGREEN}ER160 {SILVER}Koleje Mazowieckie
+STR_ER160_TEXT            : Info: {YELLOW}5{ORANGE}-part Electric Multiple Unit,                                 {YELLOW}279{ORANGE} sitting places and {YELLOW}311{ORANGE} standing places
+STR_LM4268_NAME           :{DKGREEN}LM-4268 {SILVER}LKA
+STR_LM4268_TEXT           : Info: {YELLOW}3{ORANGE}-part Electric Multiple Unit,                                 {YELLOW}186{ORANGE} sitting places and {YELLOW}241{ORANGE} standing places
+STR_L4268_NAME            :{DKGREEN}L-4268 {SILVER}LKA
+STR_L4268_TEXT            : Info: {YELLOW}2{ORANGE}-part Electric Multiple Unit,                                 {YELLOW}120{ORANGE} sitting places and {YELLOW}158{ORANGE} standing places
 
 STR_GMY_NAME            :Mail van (Gmy)
 STR_GHMX_NAME           :Mail van (Ghmx)
@@ -653,12 +697,14 @@ STR_DWXZ_NAME           :Luggage van (Dwxz)
 STR_BDWXZD_NAME         :Passenger/luggage coach (BDwxzd)
 STR_BDWXZD_IC_NAME      :Passenger/luggage coach (BDwxzd) {SILVER}PKP Intercity
 STR_JHX_NAME            :WR4ü-35 (Jhx) {SILVER}WARS Olive Drab
-STR_JHIX_NAME           :Bautzen60 (Jhix) {SILVER} WARS PKP Livery
+STR_JHIX_NAME           :Bautzen60 (Jhix) {SILVER}WARS PKP Livery
 
 STR_WRDMNU_NAME         :Bautzen89 (WRdmnu) {SILVER}WARS PKP Livery
 STR_WRDMNU_TEXT         :Restaurant Coach
 STR_113A_NAME           :113A (WRbd) {SILVER}PKP Intercity
 STR_113A_TEXT           :WRnouz Restaurant Car
+STR_113A_OLIVE_NAME     :113A (WRbd) {SILVER}WARS Olive Drab
+STR_113A_PKP_NAME       :113A (WRbd) {SILVER}WARS PKP Livery
 STR_113AA_NAME          :113Aa (WRnouz) {SILVER}PKP Intercity
 STR_113AA_M_NAME          :113Aa (WRnouz) {SILVER}PKP Intercity
 STR_113AA_M_TEXT           :Restaurant Car
@@ -682,7 +728,11 @@ STR_BHXZ_NAME          :Express coach (Bhxz)
 STR_ABHXZ_TEXT          :Refitable to: {RED}2{ORANGE}-nd, {RED}1/2{ORANGE}-nd or {RED}1{ORANGE}-st class express coach{BLACK}. Default: {RED}2{ORANGE}-nd class coach
 STR_BCI_NAME            :Passenger coach "kowbojka" (BCi)
 STR_BH_RYF_NAME         :43A (Bwixt)
-STR_BH_RYF_TEXT         	:Info: {ORANGE}Supplementary passenger coach for {YELLOW}diesel motor car SN61
+STR_BH_RYF_TEXT         :Info: {ORANGE}Supplementary passenger coach for {YELLOW}diesel motor car SN61
+STR_AFHIXT_NAME         :43A/2 (Afhixt)
+STR_BH_NAME             :101A (Bh) {SILVER}PKP Green
+STR_DBHIXT_NAME         :101A (DBhixt) {SILVER}PKP Blue-Beige
+STR_BH_RYF_GREEN_NAME   :43A (Bwixt)Cyan-Green
 
 STR_WLABWXZ_NAME        :Görlitz67 (WLABwxz) {SILVER}WARS Olive Drab
 STR_WLAB_NAME           :Görlitz77 (WLABwxz) {SILVER}PKP Livery
@@ -837,18 +887,18 @@ STR_KBKKS_NAME          :Flatbed wagon (Kbkks)
 STR_KGNS_NAME           :Flatbed wagon (Kgns)
 STR_RES_NAME            :Flatbed wagon (Res)
 
-STR_SGS_PKP_CARGO_NAME  :Sgs {SILVER}PKP Cargo
-STR_SGS_PCC_NAME        :Sgs {SILVER}PCC Intermodal
-STR_SDGMNSS_NAME        :Sdgmnss {SILVER}PKP Cargo White
-STR_SDGMNSS_PKP_CARGO_NAME        :Sdgmnss {SILVER}PKP Cargo
-STR_SDGMNSS_OBB_NAME        :Sdgmnss {SILVER}ÖBB
-STR_SGGRSS_PKP_CARGO_NAME        :Sggrss {SILVER}PKP Cargo
-STR_SGGRSS_DBCARGO_NAME        :Sggrss {SILVER}DB Cargo
-STR_SGGRSS_PCC_NAME        :Sggrss {SILVER}PCC
-STR_SGGRSS_EUROWAGON_NAME        :Sggrss {SILVER}Eurowagon
-STR_SGGRSS_ERMEWA_NAME        :Sggrss {SILVER}Ermewa
-STR_SGGRSS_GATX_NAME        :Sggrss {SILVER}Gatx
-STR_SGGRSS_CBRAIL_NAME        :Sggrss {SILVER}Cb Rail
+STR_SGS_PKP_CARGO_NAME    :Sgs {SILVER}PKP Cargo
+STR_SGS_PCC_NAME          :Sgs {SILVER}PCC Intermodal
+STR_SDGMNSS_NAME          :Sdgmnss {SILVER}PKP Cargo White
+STR_SDGMNSS_PKP_CARGO_NAME:Sdgmnss {SILVER}PKP Cargo
+STR_SDGMNSS_OBB_NAME      :Sdgmnss {SILVER}ÖBB
+STR_SGGRSS_PKP_CARGO_NAME :Sggrss {SILVER}PKP Cargo
+STR_SGGRSS_DBCARGO_NAME   :Sggrss {SILVER}DB Cargo
+STR_SGGRSS_PCC_NAME       :Sggrss {SILVER}PCC
+STR_SGGRSS_EUROWAGON_NAME :Sggrss {SILVER}Eurowagon
+STR_SGGRSS_ERMEWA_NAME    :Sggrss {SILVER}Ermewa
+STR_SGGRSS_GATX_NAME      :Sggrss {SILVER}Gatx
+STR_SGGRSS_CBRAIL_NAME    :Sggrss {SILVER}Cb Rail
 
 STR_RH_NAME             :Tank wagon (Rh)
 STR_RBH_NAME            :Tank wagon (Rbh)
@@ -872,6 +922,12 @@ STR_LEKQSS_NAME         :Autorack wagon (Lekqss)
 STR_WM15A_NAME          :{YELLOW}WM-15A (Maintenance Vehicle)
 STR_WM15A_TEXT          :{ORANGE}Technical vehicle for carrying out maintenance and inspection works
 STR_PWM15_NAME          :PWM-15 (Trailer)
+
+STR_111A_ENERGETYKA_NAME          :111A (Network wagon){SILVER}PKP Energetyka
+STR_43A_ENERGETYKA_NAME           :43A (Network wagon){SILVER}PKP Energetyka
+STR_111A_POMIAROWY_NAME           :111A (Measuring wagon){SILVER}PKP Energetyka
+STR_111A_MEASURING_TEXT           :{ORANGE}Technical vehicle for carrying out maintenance and inspection works
+
 STR_ASF_NAME            :{GREEN}EL16 {SILVER}ASF
 STR_ASF_INVISIBLE_NAME  :{GREEN}EL16 {SILVER}ASF Invisible livery
 STR_ASF_PKP_CARGO_NAME  :{GREEN}EL16 {SILVER}ASF PKP Cargo

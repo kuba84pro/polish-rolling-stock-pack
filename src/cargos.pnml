@@ -210,6 +210,14 @@ cargotable {
         cargo_disallow_refit:           []; \
         default_cargo_type:             GOOD;
 
+#define CARGO_NETWORK_WAGON_DEFINITION \
+        refittable_cargo_classes:       bitmask(); \
+        non_refittable_cargo_classes:   bitmask(); \
+        cargo_allow_refit:              [GOOD, ENSP, PASS]; \
+        cargo_disallow_refit:           [TOUR]; \
+        default_cargo_type:             GOOD;
+
+
 // parameter's dependent definitions
 #define SUBURBAN_WAGON_PROPERTIES \
 if(param_tourists == 0) { \

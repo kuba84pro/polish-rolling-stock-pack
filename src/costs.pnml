@@ -42,6 +42,7 @@
 #define PURCHASE_COST_BR285     40
 #define PURCHASE_COST_6DL       19
 #define PURCHASE_COST_SU160     45
+#define PURCHASE_COST_WITTFELD  18
 #define PURCHASE_COST_SN61      20
 #define PURCHASE_COST_SN80      18
 #define PURCHASE_COST_SN81      16
@@ -51,6 +52,7 @@
 #define PURCHASE_COST_SA107     18
 #define PURCHASE_COST_SA108     23
 #define PURCHASE_COST_SA109     22
+#define PURCHASE_COST_SA131     25
 #define PURCHASE_COST_VT627      26
 #define PURCHASE_COST_SA135     27
 #define PURCHASE_COST_SA136     35
@@ -60,6 +62,7 @@
 /* Electric engines */
 #define PURCHASE_COST_EP01      25+2
 #define PURCHASE_COST_EP02      28
+#define PURCHASE_COST_2E53      25
 #define PURCHASE_COST_EU04      30
 #define PURCHASE_COST_EU20      32
 #define PURCHASE_COST_ET21      34
@@ -93,6 +96,7 @@
 #define PURCHASE_COST_E6ACT  69
 
 /* EZT */
+#define PURCHASE_COST_E91      30
 #define PURCHASE_COST_EW58      52
 #define PURCHASE_COST_EN57      50
 #define PURCHASE_COST_EN57AKM      58
@@ -157,6 +161,7 @@
 #define RUNNING_COST_SP45       114
 #define RUNNING_COST_SU45       RUNNING_COST_SP45+1
 #define RUNNING_COST_SU46       138
+#define RUNNING_COST_ST46       126
 #define RUNNING_COST_SP47       150
 #define RUNNING_COST_SM31       80
 #define RUNNING_COST_TEM2       83
@@ -164,6 +169,7 @@
 #define RUNNING_COST_BR285      175
 #define RUNNING_COST_6DL        70
 #define RUNNING_COST_SU160      194
+#define RUNNING_COST_WITTFELD   34
 #define RUNNING_COST_SN61       50-1
 #define RUNNING_COST_SN80       47
 #define RUNNING_COST_SN81       40
@@ -173,6 +179,7 @@
 #define RUNNING_COST_SA107     35
 #define RUNNING_COST_SA108     70
 #define RUNNING_COST_SA109      75
+#define RUNNING_COST_SA131     80
 #define RUNNING_COST_VT627      76
 #define RUNNING_COST_SA135      70
 #define RUNNING_COST_SA136      85-2
@@ -182,6 +189,7 @@
 /* Electric engines */
 #define RUNNING_COST_EP01       55+2
 #define RUNNING_COST_EP02       57+1
+#define RUNNING_COST_2E53       55
 #define RUNNING_COST_EU04       65
 #define RUNNING_COST_EU20       73
 #define RUNNING_COST_ET21       75
@@ -215,6 +223,7 @@
 #define RUNNING_COST_E6ACT  195
 
 /* EZT */
+#define RUNNING_COST_E91       45
 #define RUNNING_COST_EW58       45
 #define RUNNING_COST_EN57       38
 #define RUNNING_COST_EN57AKM       40
@@ -286,6 +295,7 @@
 #define HALTED_COST_BR285       21
 #define HALTED_COST_6DL         12
 #define HALTED_COST_SU160       32
+#define HALTED_COST_WITTFELD    9
 #define HALTED_COST_SN61        15-1
 #define HALTED_COST_SN80        13
 #define HALTED_COST_SN81        10
@@ -295,6 +305,7 @@
 #define HALTED_COST_SA107       14
 #define HALTED_COST_SA108       18
 #define HALTED_COST_SA109       16
+#define HALTED_COST_SA131       20
 #define HALTED_COST_VT627       18
 #define HALTED_COST_SA135       21
 #define HALTED_COST_SA136       30-2
@@ -304,6 +315,7 @@
 /* Electric engines */
 #define HALTED_COST_EP01        10+1
 #define HALTED_COST_EP02        11
+#define HALTED_COST_2E53        10
 #define HALTED_COST_EU04       11
 #define HALTED_COST_EU20       12
 #define HALTED_COST_ET21        13
@@ -337,6 +349,7 @@
 #define HALTED_COST_E6ACT  21
 
 /* EZT */
+#define HALTED_COST_E91        13
 #define HALTED_COST_EW58        20
 #define HALTED_COST_EN57        14
 #define HALTED_COST_EN57AKM        16
