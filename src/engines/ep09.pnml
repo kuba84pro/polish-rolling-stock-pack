@@ -5,34 +5,106 @@
 /* EP09 sprites */
 spriteset(sset_ep09_purchase, "gfx/ep09.png")       { tmpl_sprite_purchase(4, 60) }
 spriteset(sset_ep09, "gfx/ep09.png")                { tmpl_sprite_train10(4, 20) }
-spriteset(sset_ep09_purchase_pkp_ic, "gfx/ep09.png")       { tmpl_sprite_purchase(4, 113) }
+spriteset(sset_ep09_rev, "gfx/ep09.png")                { tmpl_sprite_train10(274, 20) }
+spriteset(sset_ep09_purchase_pkp_ic, "gfx/ep09.png")       { tmpl_sprite_purchase(4, 120) }
 spriteset(sset_ep09_pkp_ic, "gfx/ep09.png")         { tmpl_sprite_train10(4, 80) }
-spriteset(sset_ep09_purchase_pkp_cargo, "gfx/ep09.png")       { tmpl_sprite_purchase(4, 161) }
-spriteset(sset_ep09_pkp_cargo, "gfx/ep09.png")      { tmpl_sprite_train10(4, 128) }
-spriteset(sset_ep09_purchase_zp, "gfx/ep09.png")       { tmpl_sprite_purchase(4, 215) }
-spriteset(sset_ep09_pkp_zp, "gfx/ep09.png")      { tmpl_sprite_train10(4, 175) }
-spriteset(sset_ep09_purchase_pkp_olkol, "gfx/ep09.png")       { tmpl_sprite_purchase(4, 287) }
-spriteset(sset_ep09_pkp_olkol, "gfx/ep09.png")      { tmpl_sprite_train10(4, 247) }
-spriteset(sset_ep09_purchase_db, "gfx/ep09.png")       { tmpl_sprite_purchase(4, 471) }
-spriteset(sset_ep09_db, "gfx/ep09.png")      { tmpl_sprite_train10(4, 431) }
-spriteset(sset_ep09_purchase_db_P5, "gfx/ep09.png")       { tmpl_sprite_purchase(4, 350) }
-spriteset(sset_ep09_db_P5, "gfx/ep09.png")      { tmpl_sprite_train10(4, 310) }
-spriteset(sset_ep09_purchase_016, "gfx/ep09.png")       { tmpl_sprite_purchase(4, 411) }
-spriteset(sset_ep09_016, "gfx/ep09.png")      { tmpl_sprite_train10(4, 371) }
-spriteset(sset_ep09_purchase_pkp_ic_old, "gfx/ep09.png")       { tmpl_sprite_purchase(4, 520) }
-spriteset(sset_ep09_pkp_ic_old, "gfx/ep09.png")         { tmpl_sprite_train10(4, 487) }
-spriteset(sset_ep09_purchase_046, "gfx/ep09.png")       { tmpl_sprite_purchase(4, 575) }
-spriteset(sset_ep09_046, "gfx/ep09.png")                { tmpl_sprite_train10(4, 535) }
-spriteset(sset_ep09_purchase_026, "gfx/ep09.png")       { tmpl_sprite_purchase(4, 625) }
-spriteset(sset_ep09_026, "gfx/ep09.png")                { tmpl_sprite_train10(4, 592) }
-spriteset(sset_ep09_purchase_026_rodzyn, "gfx/ep09.png")       { tmpl_sprite_purchase(4, 680) }
-spriteset(sset_ep09_026_rodzyn, "gfx/ep09.png")                { tmpl_sprite_train10(4, 640) }
-spriteset(sset_ep09_purchase_classic, "gfx/ep09.png")       { tmpl_sprite_purchase(4, 737) }
-spriteset(sset_ep09_classic, "gfx/ep09.png")                { tmpl_sprite_train10(4, 697) }
-spriteset(sset_ep09_022_purchase_odkryj, "gfx/ep09.png")       { tmpl_sprite_purchase(304, 53) }
-spriteset(sset_ep09_022_odkryj, "gfx/ep09.png")                { tmpl_sprite_train10(304, 20) }
+spriteset(sset_ep09_pkp_ic_rev, "gfx/ep09.png")         { tmpl_sprite_train10(274, 80) }
+spriteset(sset_ep09_purchase_pkp_cargo, "gfx/ep09.png")       { tmpl_sprite_purchase(4, 180) }
+spriteset(sset_ep09_pkp_cargo, "gfx/ep09.png")      { tmpl_sprite_train10(4, 140) }
+spriteset(sset_ep09_pkp_cargo_rev, "gfx/ep09.png")      { tmpl_sprite_train10(274, 140) }
+spriteset(sset_ep09_purchase_zp, "gfx/ep09.png")       { tmpl_sprite_purchase(4, 240) }
+spriteset(sset_ep09_pkp_zp, "gfx/ep09.png")      { tmpl_sprite_train10(4, 200) }
+spriteset(sset_ep09_pkp_zp_rev, "gfx/ep09.png")      { tmpl_sprite_train10(274, 200) }
+spriteset(sset_ep09_purchase_pkp_olkol, "gfx/ep09.png")       { tmpl_sprite_purchase(4, 300) }
+spriteset(sset_ep09_pkp_olkol, "gfx/ep09.png")      { tmpl_sprite_train10(4, 260) }
+spriteset(sset_ep09_pkp_olkol_rev, "gfx/ep09.png")      { tmpl_sprite_train10(274, 260) }
+spriteset(sset_ep09_purchase_db_P5, "gfx/ep09.png")       { tmpl_sprite_purchase(4, 360) }
+spriteset(sset_ep09_db_P5, "gfx/ep09.png")      { tmpl_sprite_train10(4, 320) }
+spriteset(sset_ep09_db_P5_rev, "gfx/ep09.png")      { tmpl_sprite_train10(274, 320) }
+spriteset(sset_ep09_purchase_016, "gfx/ep09.png")       { tmpl_sprite_purchase(4, 420) }
+spriteset(sset_ep09_016, "gfx/ep09.png")      { tmpl_sprite_train10(4, 380) }
+spriteset(sset_ep09_016_rev, "gfx/ep09.png")      { tmpl_sprite_train10(274, 380) }
+spriteset(sset_ep09_purchase_db, "gfx/ep09.png")       { tmpl_sprite_purchase(4, 480) }
+spriteset(sset_ep09_db, "gfx/ep09.png")      { tmpl_sprite_train10(4, 440) }
+spriteset(sset_ep09_db_rev, "gfx/ep09.png")      { tmpl_sprite_train10(274, 440) }
+spriteset(sset_ep09_purchase_pkp_ic_old, "gfx/ep09.png")       { tmpl_sprite_purchase(4, 540) }
+spriteset(sset_ep09_pkp_ic_old, "gfx/ep09.png")         { tmpl_sprite_train10(4, 500) }
+spriteset(sset_ep09_pkp_ic_old_rev, "gfx/ep09.png")         { tmpl_sprite_train10(274, 500) }
+spriteset(sset_ep09_purchase_046, "gfx/ep09.png")       { tmpl_sprite_purchase(4, 600) }
+spriteset(sset_ep09_046, "gfx/ep09.png")                { tmpl_sprite_train10(4, 560) }
+spriteset(sset_ep09_046_rev, "gfx/ep09.png")                { tmpl_sprite_train10(274, 560) }
+spriteset(sset_ep09_purchase_026, "gfx/ep09.png")       { tmpl_sprite_purchase(4, 660) }
+spriteset(sset_ep09_026, "gfx/ep09.png")                { tmpl_sprite_train10(4, 620) }
+spriteset(sset_ep09_026_rev, "gfx/ep09.png")                { tmpl_sprite_train10(274, 620) }
+spriteset(sset_ep09_purchase_026_rodzyn, "gfx/ep09.png")       { tmpl_sprite_purchase(4, 720) }
+spriteset(sset_ep09_026_rodzyn, "gfx/ep09.png")                { tmpl_sprite_train10(4, 680) }
+spriteset(sset_ep09_026_rodzyn_rev, "gfx/ep09.png")                { tmpl_sprite_train10(274, 680) }
+spriteset(sset_ep09_purchase_classic, "gfx/ep09.png")       { tmpl_sprite_purchase(4, 780) }
+spriteset(sset_ep09_classic, "gfx/ep09.png")                { tmpl_sprite_train10(4, 740) }
+spriteset(sset_ep09_classic_rev, "gfx/ep09.png")                { tmpl_sprite_train10(274, 740) }
+spriteset(sset_ep09_022_purchase_odkryj, "gfx/ep09.png")       { tmpl_sprite_purchase(4, 840) }
+spriteset(sset_ep09_022_odkryj, "gfx/ep09.png")                { tmpl_sprite_train10(4, 800) }
+spriteset(sset_ep09_022_odkryj_rev, "gfx/ep09.png")                { tmpl_sprite_train10(274, 800) }
 
 /* EP09 switches */
+// graphics
+switch(FEAT_TRAINS, SELF, switch_ep09_graphics, train_is_driving_backwards) {
+    1: return sset_ep09_rev;
+    return sset_ep09;
+}
+switch(FEAT_TRAINS, SELF, switch_ep09_pkp_ic_graphics, train_is_driving_backwards) {
+    1: return sset_ep09_pkp_ic_rev;
+    return sset_ep09_pkp_ic;
+}
+switch(FEAT_TRAINS, SELF, switch_ep09_pkp_cargo_graphics, train_is_driving_backwards) {
+    1: return sset_ep09_pkp_cargo_rev;
+    return sset_ep09_pkp_cargo;
+}
+switch(FEAT_TRAINS, SELF, switch_ep09_pkp_zp_graphics, train_is_driving_backwards) {
+    1: return sset_ep09_pkp_zp_rev;
+    return sset_ep09_pkp_zp;
+}
+switch(FEAT_TRAINS, SELF, switch_ep09_pkp_olkol_graphics, train_is_driving_backwards) {
+    1: return sset_ep09_pkp_olkol_rev;
+    return sset_ep09_pkp_olkol;
+}
+switch(FEAT_TRAINS, SELF, switch_ep09_db_graphics, train_is_driving_backwards) {
+    1: return sset_ep09_db_rev;
+    return sset_ep09_db;
+}
+switch(FEAT_TRAINS, SELF, switch_ep09_db_P5_graphics, train_is_driving_backwards) {
+    1: return sset_ep09_db_P5_rev;
+    return sset_ep09_db_P5;
+}
+switch(FEAT_TRAINS, SELF, switch_ep09_016_graphics, train_is_driving_backwards) {
+    1: return sset_ep09_016_rev;
+    return sset_ep09_016;
+}
+switch(FEAT_TRAINS, SELF, switch_ep09_pkp_ic_old_graphics, train_is_driving_backwards) {
+    1: return sset_ep09_pkp_ic_old_rev;
+    return sset_ep09_pkp_ic_old;
+}
+switch(FEAT_TRAINS, SELF, switch_ep09_046_graphics, train_is_driving_backwards) {
+    1: return sset_ep09_046_rev;
+    return sset_ep09_046;
+}
+switch(FEAT_TRAINS, SELF, switch_ep09_026_graphics, train_is_driving_backwards) {
+    1: return sset_ep09_026_rev;
+    return sset_ep09_026;
+}
+switch(FEAT_TRAINS, SELF, switch_ep09_026_rodzyn_graphics, train_is_driving_backwards) {
+    1: return sset_ep09_026_rodzyn_rev;
+    return sset_ep09_026_rodzyn;
+}
+switch(FEAT_TRAINS, SELF, switch_ep09_classic_graphics, train_is_driving_backwards) {
+    1: return sset_ep09_classic_rev;
+    return sset_ep09_classic;
+}
+switch(FEAT_TRAINS, SELF, switch_ep09_022_odkryj_graphics, train_is_driving_backwards) {
+    1: return sset_ep09_022_odkryj_rev;
+    return sset_ep09_022_odkryj;
+}
+// other
 switch(FEAT_TRAINS, SELF, switch_ep09_articulated, extra_callback_info1) {
     1: return item_dummy_1;        // dummy parts
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
@@ -96,7 +168,7 @@ item(FEAT_TRAINS, item_ep09, 780) {
     graphics {
         purchase:                   sset_ep09_purchase;
         additional_text:            switch_ep09_add_text;
-        default:                    sset_ep09;
+        default:                    switch_ep09_graphics;
         articulated_part:           switch_ep09_articulated;
         visual_effect_and_powered:  switch_ep09_visual_effect;
         can_attach_wagon:           switch_ep09_can_attach;
@@ -148,7 +220,7 @@ item(FEAT_TRAINS, item_ep09_pkp_ic, 781) {
     graphics {
         purchase:                   sset_ep09_purchase_pkp_ic;
         additional_text:            switch_ep09_add_text;
-        default:                    sset_ep09_pkp_ic;
+        default:                    switch_ep09_pkp_ic_graphics;
         articulated_part:           switch_ep09_articulated;
         visual_effect_and_powered:  switch_ep09_visual_effect;
         can_attach_wagon:           switch_ep09_can_attach;
@@ -200,7 +272,7 @@ item(FEAT_TRAINS, item_ep09_pkp_cargo, 782) {
     graphics {
         purchase:                   sset_ep09_purchase_pkp_cargo;
         additional_text:            switch_ep09_add_text;
-        default:                    sset_ep09_pkp_cargo;
+        default:                    switch_ep09_pkp_cargo_graphics;
         articulated_part:           switch_ep09_articulated;
         visual_effect_and_powered:  switch_ep09_visual_effect;
         can_attach_wagon:           switch_ep09_can_attach;
@@ -252,7 +324,7 @@ item(FEAT_TRAINS, item_ep09_zp, 783) {
     graphics {
         purchase:                   sset_ep09_purchase_zp;
         additional_text:            switch_ep09_add_text;
-        default:                    sset_ep09_pkp_zp;
+        default:                    switch_ep09_pkp_zp_graphics;
         articulated_part:           switch_ep09_articulated;
         visual_effect_and_powered:  switch_ep09_visual_effect;
         can_attach_wagon:           switch_ep09_can_attach;
@@ -304,7 +376,7 @@ item(FEAT_TRAINS, item_ep09_olkol, 784) {
     graphics {
         purchase:                   sset_ep09_purchase_pkp_olkol;
         additional_text:            switch_ep09_add_text;
-        default:                    sset_ep09_pkp_olkol;
+        default:                    switch_ep09_pkp_olkol_graphics;
         articulated_part:           switch_ep09_articulated;
         visual_effect_and_powered:  switch_ep09_visual_effect;
         can_attach_wagon:           switch_ep09_can_attach;
@@ -355,7 +427,7 @@ item(FEAT_TRAINS, item_ep09_db, 785) {
     graphics {
         purchase:                   sset_ep09_purchase_db;
         additional_text:            switch_ep09_add_text;
-        default:                    sset_ep09_db;
+        default:                    switch_ep09_db_graphics;
         articulated_part:           switch_ep09_articulated;
         visual_effect_and_powered:  switch_ep09_visual_effect;
         can_attach_wagon:           switch_ep09_can_attach;
@@ -406,7 +478,7 @@ item(FEAT_TRAINS, item_ep09_db_P5, 786) {
     graphics {
         purchase:                   sset_ep09_purchase_db_P5;
         additional_text:            switch_ep09_add_text;
-        default:                    sset_ep09_db_P5;
+        default:                    switch_ep09_db_P5_graphics;
         articulated_part:           switch_ep09_articulated;
         visual_effect_and_powered:  switch_ep09_visual_effect;
         can_attach_wagon:           switch_ep09_can_attach;
@@ -457,7 +529,7 @@ item(FEAT_TRAINS, item_ep09_016, 787) {
     graphics {
         purchase:                   sset_ep09_purchase_016;
         additional_text:            switch_ep09_add_text;
-        default:                    sset_ep09_016;
+        default:                    switch_ep09_016_graphics;
         articulated_part:           switch_ep09_articulated;
         visual_effect_and_powered:  switch_ep09_visual_effect;
         can_attach_wagon:           switch_ep09_can_attach;
@@ -508,7 +580,7 @@ item(FEAT_TRAINS, item_ep09_pkp_ic_old, 788) {
     graphics {
         purchase:                   sset_ep09_purchase_pkp_ic_old;
         additional_text:            switch_ep09_add_text;
-        default:                    sset_ep09_pkp_ic_old;
+        default:                    switch_ep09_pkp_ic_old_graphics;
         articulated_part:           switch_ep09_articulated;
         visual_effect_and_powered:  switch_ep09_visual_effect;
         can_attach_wagon:           switch_ep09_can_attach;
@@ -559,7 +631,7 @@ item(FEAT_TRAINS, item_ep09_046, 789) {
     graphics {
         purchase:                   sset_ep09_purchase_046;
         additional_text:            switch_ep09_add_text;
-        default:                    sset_ep09_046;
+        default:                    switch_ep09_046_graphics;
         articulated_part:           switch_ep09_articulated;
         visual_effect_and_powered:  switch_ep09_visual_effect;
         can_attach_wagon:           switch_ep09_can_attach;
@@ -610,7 +682,7 @@ item(FEAT_TRAINS, item_ep09_026, 790) {
     graphics {
         purchase:                   sset_ep09_purchase_026;
         additional_text:            switch_ep09_add_text;
-        default:                    sset_ep09_026;
+        default:                    switch_ep09_026_graphics;
         articulated_part:           switch_ep09_articulated;
         visual_effect_and_powered:  switch_ep09_visual_effect;
         can_attach_wagon:           switch_ep09_can_attach;
@@ -661,7 +733,7 @@ item(FEAT_TRAINS, item_ep09_026_rodzyn, 791) {
     graphics {
         purchase:                   sset_ep09_purchase_026_rodzyn;
         additional_text:            switch_ep09_add_text;
-        default:                    sset_ep09_026_rodzyn;
+        default:                    switch_ep09_026_rodzyn_graphics;
         articulated_part:           switch_ep09_articulated;
         visual_effect_and_powered:  switch_ep09_visual_effect;
         can_attach_wagon:           switch_ep09_can_attach;
@@ -711,7 +783,7 @@ item(FEAT_TRAINS, item_ep09_classic, 792) {
     graphics {
         purchase:                   sset_ep09_purchase_classic;
         additional_text:            switch_ep09_add_text;
-        default:                    sset_ep09_classic;
+        default:                    switch_ep09_classic_graphics;
         articulated_part:           switch_ep09_articulated;
         visual_effect_and_powered:  switch_ep09_visual_effect;
         can_attach_wagon:           switch_ep09_can_attach;
@@ -762,7 +834,7 @@ item(FEAT_TRAINS, item_ep09_022_odkryj, 793) {
     graphics {
         purchase:                   sset_ep09_022_purchase_odkryj;
         additional_text:            switch_ep09_add_text;
-        default:                    sset_ep09_022_odkryj;
+        default:                    switch_ep09_022_odkryj_graphics;
         articulated_part:           switch_ep09_articulated;
         visual_effect_and_powered:  switch_ep09_visual_effect;
         can_attach_wagon:           switch_ep09_can_attach;

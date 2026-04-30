@@ -7,6 +7,10 @@ template tmpl_sprite_purchase(x, y) {
 // [left_x,   upper_y,    width,    height,    offset_x,    offset_y]
     [x,          y,       50,        12,         -25,         -8]
 }
+template tmpl_sprite_advertisement100(x, y) {
+// [left_x,   upper_y,    width,    height,    offset_x,    offset_y]
+    [x,          y,       100,       12,        -50,         -8]
+}
 template tmpl_sprite_advertisement200(x, y) {
 // [left_x,   upper_y,    width,    height,    offset_x,    offset_y]
     [x,          y,       200,       12,        -100,         -8]

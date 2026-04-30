@@ -280,7 +280,6 @@ switch(FEAT_TRAINS, SELF, switch_check_features, BRAKE_FORCE >= 0) {
 }  
 switch(FEAT_TRAINS, SELF, switch_normal_start_stop, param_heating) {
     0: switch_check_features;
-    0: switch_check_heating;
     return CB_RESULT_NO_TEXT;
 }
 

@@ -923,9 +923,9 @@ STR_WM15A_NAME          :{YELLOW}WM-15A (Maintenance Vehicle)
 STR_WM15A_TEXT          :{ORANGE}Technical vehicle for carrying out maintenance and inspection works
 STR_PWM15_NAME          :PWM-15 (Trailer)
 
-STR_111A_ENERGETYKA_NAME          :111A (Network wagon){SILVER}PKP Energetyka
-STR_43A_ENERGETYKA_NAME           :43A (Network wagon){SILVER}PKP Energetyka
-STR_111A_POMIAROWY_NAME           :111A (Measuring wagon){SILVER}PKP Energetyka
+STR_111A_ENERGETYKA_NAME          :111A (Maintenance of way wagon){SILVER}PKP Energetyka
+STR_43A_ENERGETYKA_NAME           :43A (Maintenance of way wagon){SILVER}PKP Energetyka
+STR_111A_POMIAROWY_NAME           :111A (Inspection wagon){SILVER}PKP Energetyka
 STR_111A_MEASURING_TEXT           :{ORANGE}Technical vehicle for carrying out maintenance and inspection works
 
 STR_ASF_NAME            :{GREEN}EL16 {SILVER}ASF

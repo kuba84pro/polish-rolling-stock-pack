@@ -5,74 +5,246 @@
 /* EU07 sprites */
 spriteset(sset_eu07_purchase, "gfx/eu07.png")           { tmpl_sprite_purchase(4, 60) }
 spriteset(sset_eu07, "gfx/eu07.png")                    { tmpl_sprite_train10(4, 20) }
+spriteset(sset_eu07_rev, "gfx/eu07.png")                    { tmpl_sprite_train10(274, 20) }
 spriteset(sset_eu07_purchase_yellow, "gfx/eu07.png")    { tmpl_sprite_purchase(4, 120) }
 spriteset(sset_eu07_yellow, "gfx/eu07.png")             { tmpl_sprite_train10(4, 80) }
+spriteset(sset_eu07_yellow_rev, "gfx/eu07.png")             { tmpl_sprite_train10(274, 80) }
 spriteset(sset_ep07_purchase_pkp_ic, "gfx/eu07.png")    { tmpl_sprite_purchase(4, 180) }
 spriteset(sset_ep07_pkp_ic, "gfx/eu07.png")             { tmpl_sprite_train10(4, 140) }
+spriteset(sset_ep07_pkp_ic_rev, "gfx/eu07.png")             { tmpl_sprite_train10(274, 140) }
 spriteset(sset_ep07_purchase_pkp_ic_old, "gfx/eu07.png")    { tmpl_sprite_purchase(4, 240) }
 spriteset(sset_ep07_pkp_ic_old, "gfx/eu07.png")         { tmpl_sprite_train10(4, 200) }
+spriteset(sset_ep07_pkp_ic_old_rev, "gfx/eu07.png")         { tmpl_sprite_train10(274, 200) }
 spriteset(sset_eu07_purchase_pkp_cargo, "gfx/eu07.png")    { tmpl_sprite_purchase(4, 300) }
 spriteset(sset_eu07_pkp_cargo, "gfx/eu07.png")          { tmpl_sprite_train10(4, 260) }
+spriteset(sset_eu07_pkp_cargo_rev, "gfx/eu07.png")          { tmpl_sprite_train10(274, 260) }
 spriteset(sset_ep07_purchase_budyn, "gfx/eu07.png")    { tmpl_sprite_purchase(4, 360) }
 spriteset(sset_ep07_budyn, "gfx/eu07.png")              { tmpl_sprite_train10(4, 320) }
+spriteset(sset_ep07_budyn_rev, "gfx/eu07.png")              { tmpl_sprite_train10(274, 320) }
 spriteset(sset_ep07_purchase_papuga, "gfx/eu07.png")    { tmpl_sprite_purchase(4, 420) }
 spriteset(sset_ep07_papuga, "gfx/eu07.png")             { tmpl_sprite_train10(4, 380) }
+spriteset(sset_ep07_papuga_rev, "gfx/eu07.png")             { tmpl_sprite_train10(274, 380) }
 spriteset(sset_ep07p_purchase_pkp_polregio, "gfx/eu07.png")    { tmpl_sprite_purchase(4, 480) }
 spriteset(sset_ep07p_pkp_polregio, "gfx/eu07.png")       { tmpl_sprite_train10(4, 440) }
+spriteset(sset_ep07p_pkp_polregio_rev, "gfx/eu07.png")       { tmpl_sprite_train10(274, 440) }
 spriteset(sset_eu07_purchase_ltg, "gfx/eu07.png")    { tmpl_sprite_purchase(4, 540) }
 spriteset(sset_eu07_ltg, "gfx/eu07.png")                { tmpl_sprite_train10(4, 500) }
+spriteset(sset_eu07_ltg_rev, "gfx/eu07.png")                { tmpl_sprite_train10(274, 500) }
 spriteset(sset_eu07_purchase_green, "gfx/eu07.png")    { tmpl_sprite_purchase(4, 600) }
 spriteset(sset_eu07_green, "gfx/eu07.png")            { tmpl_sprite_train10(4, 560) }
+spriteset(sset_eu07_green_rev, "gfx/eu07.png")            { tmpl_sprite_train10(274, 560) }
 spriteset(sset_eu07_purchase_ecco, "gfx/eu07.png")    { tmpl_sprite_purchase(4, 660) }
 spriteset(sset_eu07_ecco, "gfx/eu07.png")               { tmpl_sprite_train10(4, 620) }
+spriteset(sset_eu07_ecco_rev, "gfx/eu07.png")               { tmpl_sprite_train10(274, 620) }
 spriteset(sset_eu07_purchase_pcc, "gfx/eu07.png")    { tmpl_sprite_purchase(4, 720) }
 spriteset(sset_eu07_pcc, "gfx/eu07.png")                { tmpl_sprite_train10(4, 680) }
+spriteset(sset_eu07_pcc_rev, "gfx/eu07.png")                { tmpl_sprite_train10(274, 680) }
 spriteset(sset_eu07_purchase_km, "gfx/eu07.png")    { tmpl_sprite_purchase(4, 780) }
 spriteset(sset_eu07_km, "gfx/eu07.png")                 { tmpl_sprite_train10(4, 740) }
+spriteset(sset_eu07_km_rev, "gfx/eu07.png")                 { tmpl_sprite_train10(274, 740) }
 spriteset(sset_eu07_purchase_chocolate, "gfx/eu07.png")    { tmpl_sprite_purchase(4, 840) }
 spriteset(sset_eu07_chocolate, "gfx/eu07.png")          { tmpl_sprite_train10(4, 800) }
+spriteset(sset_eu07_chocolate_rev, "gfx/eu07.png")          { tmpl_sprite_train10(274, 800) }
 spriteset(sset_ep07_purchase_denaturat, "gfx/eu07.png")    { tmpl_sprite_purchase(4, 900) }
 spriteset(sset_ep07_denaturat, "gfx/eu07.png")          { tmpl_sprite_train10(4, 860) }
+spriteset(sset_ep07_denaturat_rev, "gfx/eu07.png")          { tmpl_sprite_train10(274, 860) }
 spriteset(sset_ep07_purchase_1067, "gfx/eu07.png")    { tmpl_sprite_purchase(4, 960) }
 spriteset(sset_ep07_1067, "gfx/eu07.png")               { tmpl_sprite_train10(4, 920) }
+spriteset(sset_ep07_1067_rev, "gfx/eu07.png")               { tmpl_sprite_train10(274, 920) }
 spriteset(sset_eu07_purchase_tabor_debica, "gfx/eu07.png")    { tmpl_sprite_purchase(4, 1020) }
 spriteset(sset_eu07_tabor_debica, "gfx/eu07.png")               { tmpl_sprite_train10(4, 980) }
+spriteset(sset_eu07_tabor_debica_rev, "gfx/eu07.png")               { tmpl_sprite_train10(274, 980) }
 spriteset(sset_eu07_purchase_pkp_cargo_rw, "gfx/eu07.png")    { tmpl_sprite_purchase(4, 1080) }
 spriteset(sset_eu07_pkp_cargo_rw, "gfx/eu07.png")          { tmpl_sprite_train10(4, 1040) }
+spriteset(sset_eu07_pkp_cargo_rw_rev, "gfx/eu07.png")          { tmpl_sprite_train10(274, 1040) }
 spriteset(sset_eu07_purchase_captrain, "gfx/eu07.png")    { tmpl_sprite_purchase(4, 1140) }
 spriteset(sset_eu07_captrain, "gfx/eu07.png")          { tmpl_sprite_train10(4, 1100) }
+spriteset(sset_eu07_captrain_rev, "gfx/eu07.png")          { tmpl_sprite_train10(274, 1100) }
 spriteset(sset_eu07_purchase_cargounit, "gfx/eu07.png")    { tmpl_sprite_purchase(4, 1200) }
 spriteset(sset_eu07_cargounit, "gfx/eu07.png")          { tmpl_sprite_train10(4, 1160) }
+spriteset(sset_eu07_cargounit_rev, "gfx/eu07.png")          { tmpl_sprite_train10(274, 1160) }
 spriteset(sset_eu07_purchase_puk_kolprem, "gfx/eu07.png")    { tmpl_sprite_purchase(4, 1260) }
 spriteset(sset_eu07_puk_kolprem, "gfx/eu07.png")          { tmpl_sprite_train10(4, 1220) }
+spriteset(sset_eu07_puk_kolprem_rev, "gfx/eu07.png")          { tmpl_sprite_train10(274, 1220) }
 spriteset(sset_eu07_purchase_dolata, "gfx/eu07.png")    { tmpl_sprite_purchase(4, 1320) }
 spriteset(sset_eu07_dolata, "gfx/eu07.png")          { tmpl_sprite_train10(4, 1280) }
+spriteset(sset_eu07_dolata_rev, "gfx/eu07.png")          { tmpl_sprite_train10(274, 1280) }
 spriteset(sset_ep07_purchase_1020, "gfx/eu07.png")    { tmpl_sprite_purchase(4, 1379) }
 spriteset(sset_ep07_1020, "gfx/eu07.png")          { tmpl_sprite_train10(4, 1339) }
+spriteset(sset_ep07_1020_rev, "gfx/eu07.png")          { tmpl_sprite_train10(274, 1339) }
 spriteset(sset_eu07_303e_purchase_classic, "gfx/eu07.png")    { tmpl_sprite_purchase(4, 1446) }
 spriteset(sset_eu07_303e_classic, "gfx/eu07.png")          { tmpl_sprite_train10(4, 1406) }
+spriteset(sset_eu07_303e_classic_rev, "gfx/eu07.png")          { tmpl_sprite_train10(274, 1406) }
 spriteset(sset_eu07_303e_purchase_yellow_front, "gfx/eu07.png")    { tmpl_sprite_purchase(4, 1514) }
 spriteset(sset_eu07_303e_yellow_front, "gfx/eu07.png")          { tmpl_sprite_train10(4, 1474) }
+spriteset(sset_eu07_303e_yellow_front_rev, "gfx/eu07.png")          { tmpl_sprite_train10(274, 1474) }
 spriteset(sset_eu07_303e_purchase_trapeze_yellow_front, "gfx/eu07.png")    { tmpl_sprite_purchase(4, 1577) }
 spriteset(sset_eu07_303e_trapeze_yellow_front, "gfx/eu07.png")          { tmpl_sprite_train10(4, 1537) }
+spriteset(sset_eu07_303e_trapeze_yellow_front_rev, "gfx/eu07.png")          { tmpl_sprite_train10(274, 1537) }
 spriteset(sset_ep07_purchase_361, "gfx/eu07.png")    { tmpl_sprite_purchase(4, 1661) }
 spriteset(sset_ep07_361, "gfx/eu07.png")          { tmpl_sprite_train10(4, 1621) }
+spriteset(sset_ep07_361_rev, "gfx/eu07.png")          { tmpl_sprite_train10(274, 1621) }
 spriteset(sset_eu07_303e_purchase_turquoise_yellow_front, "gfx/eu07.png")    { tmpl_sprite_purchase(4, 1747) }
 spriteset(sset_eu07_303e_turquoise_yellow_front, "gfx/eu07.png")          { tmpl_sprite_train10(4, 1707) }
+spriteset(sset_eu07_303e_turquoise_yellow_front_rev, "gfx/eu07.png")          { tmpl_sprite_train10(274, 1707) }
 spriteset(sset_eu07_303e_purchase_poltrans, "gfx/eu07.png")    { tmpl_sprite_purchase(4, 1817) }
 spriteset(sset_eu07_303e_poltrans, "gfx/eu07.png")          { tmpl_sprite_train10(4, 1777) }
+spriteset(sset_eu07_303e_poltrans_rev, "gfx/eu07.png")          { tmpl_sprite_train10(274, 1777) }
 spriteset(sset_eu07_purchase_railstm_old, "gfx/eu07.png")    { tmpl_sprite_purchase(4, 1877) }
 spriteset(sset_eu07_railstm_old, "gfx/eu07.png")          { tmpl_sprite_train10(4, 1837) }
+spriteset(sset_eu07_railstm_old_rev, "gfx/eu07.png")          { tmpl_sprite_train10(274, 1837) }
 spriteset(sset_eu07_purchase_trainspeed, "gfx/eu07.png")    { tmpl_sprite_purchase(4, 1933) }
 spriteset(sset_eu07_trainspeed, "gfx/eu07.png")          { tmpl_sprite_train10(4, 1893) }
+spriteset(sset_eu07_trainspeed_rev, "gfx/eu07.png")          { tmpl_sprite_train10(274, 1893) }
 spriteset(sset_eu07_purchase_orion, "gfx/eu07.png")    { tmpl_sprite_purchase(4, 1989) }
 spriteset(sset_eu07_orion, "gfx/eu07.png")          { tmpl_sprite_train10(4, 1949) }
+spriteset(sset_eu07_orion_rev, "gfx/eu07.png")          { tmpl_sprite_train10(274, 1949) }
 spriteset(sset_eu07_purchase_ltc, "gfx/eu07.png")    { tmpl_sprite_purchase(4, 2045) }
 spriteset(sset_eu07_ltc, "gfx/eu07.png")          { tmpl_sprite_train10(4, 2005) }
+spriteset(sset_eu07_ltc_rev, "gfx/eu07.png")          { tmpl_sprite_train10(274, 2005) }
 spriteset(sset_eu07_purchase_turquoise, "gfx/eu07.png")    { tmpl_sprite_purchase(4, 2103) }
 spriteset(sset_eu07_turquoise, "gfx/eu07.png")          { tmpl_sprite_train10(4, 2063) }
+spriteset(sset_eu07_turquoise_rev, "gfx/eu07.png")          { tmpl_sprite_train10(274, 2063) }
 
 /* EU07 switches */
+// graphics
+switch(FEAT_TRAINS, SELF, switch_eu07_graphics, train_is_driving_backwards) {
+    1: return sset_eu07_rev;
+    return sset_eu07;
+}
+switch(FEAT_TRAINS, SELF, switch_eu07_green_graphics, train_is_driving_backwards) {
+    1: return sset_eu07_green_rev;
+    return sset_eu07_green;
+}
+switch(FEAT_TRAINS, SELF, switch_eu07_yellow_graphics, train_is_driving_backwards) {
+    1: return sset_eu07_yellow_rev;
+    return sset_eu07_yellow;
+}
+switch(FEAT_TRAINS, SELF, switch_ep07_budyn_graphics, train_is_driving_backwards) {
+    1: return sset_ep07_budyn_rev;
+    return sset_ep07_budyn;
+}
+switch(FEAT_TRAINS, SELF, switch_ep07_denaturat_graphics, train_is_driving_backwards) {
+    1: return sset_ep07_denaturat_rev;
+    return sset_ep07_denaturat;
+}
+switch(FEAT_TRAINS, SELF, switch_eu07_km_graphics, train_is_driving_backwards) {
+    1: return sset_eu07_km_rev;
+    return sset_eu07_km;
+}
+switch(FEAT_TRAINS, SELF, switch_eu07_pkp_cargo_graphics, train_is_driving_backwards) {
+    1: return sset_eu07_pkp_cargo_rev;
+    return sset_eu07_pkp_cargo;
+}
+switch(FEAT_TRAINS, SELF, switch_ep07_pkp_ic_old_graphics, train_is_driving_backwards) {
+    1: return sset_ep07_pkp_ic_old_rev;
+    return sset_ep07_pkp_ic_old;
+}
+switch(FEAT_TRAINS, SELF, switch_ep07_pkp_ic_graphics, train_is_driving_backwards) {
+    1: return sset_ep07_pkp_ic_rev;
+    return sset_ep07_pkp_ic;
+}
+switch(FEAT_TRAINS, SELF, switch_ep07_papuga_graphics, train_is_driving_backwards) {
+    1: return sset_ep07_papuga_rev;
+    return sset_ep07_papuga;
+}
+switch(FEAT_TRAINS, SELF, switch_eu07_chocolate_graphics, train_is_driving_backwards) {
+    1: return sset_eu07_chocolate_rev;
+    return sset_eu07_chocolate;
+}
+switch(FEAT_TRAINS, SELF, switch_eu07_tabor_debica_graphics, train_is_driving_backwards) {
+    1: return sset_eu07_tabor_debica_rev;
+    return sset_eu07_tabor_debica;
+}
+switch(FEAT_TRAINS, SELF, switch_ep07p_pkp_polregio_graphics, train_is_driving_backwards) {
+    1: return sset_ep07p_pkp_polregio_rev;
+    return sset_ep07p_pkp_polregio;
+}
+switch(FEAT_TRAINS, SELF, switch_eu07_pcc_graphics, train_is_driving_backwards) {
+    1: return sset_eu07_pcc_rev;
+    return sset_eu07_pcc;
+}
+switch(FEAT_TRAINS, SELF, switch_ep07_1067_graphics, train_is_driving_backwards) {
+    1: return sset_ep07_1067_rev;
+    return sset_ep07_1067;
+}
+switch(FEAT_TRAINS, SELF, switch_eu07_ecco_graphics, train_is_driving_backwards) {
+    1: return sset_eu07_ecco_rev;
+    return sset_eu07_ecco;
+}
+switch(FEAT_TRAINS, SELF, switch_eu07_ltg_graphics, train_is_driving_backwards) {
+    1: return sset_eu07_ltg_rev;
+    return sset_eu07_ltg;
+}
+switch(FEAT_TRAINS, SELF, switch_eu07_pkp_cargo_rw_graphics, train_is_driving_backwards) {
+    1: return sset_eu07_pkp_cargo_rw_rev;
+    return sset_eu07_pkp_cargo_rw;
+}
+switch(FEAT_TRAINS, SELF, switch_eu07_captrain_graphics, train_is_driving_backwards) {
+    1: return sset_eu07_captrain_rev;
+    return sset_eu07_captrain;
+}
+switch(FEAT_TRAINS, SELF, switch_eu07_cargounit_graphics, train_is_driving_backwards) {
+    1: return sset_eu07_cargounit_rev;
+    return sset_eu07_cargounit;
+}
+switch(FEAT_TRAINS, SELF, switch_eu07_puk_kolprem_graphics, train_is_driving_backwards) {
+    1: return sset_eu07_puk_kolprem_rev;
+    return sset_eu07_puk_kolprem;
+}
+switch(FEAT_TRAINS, SELF, switch_eu07_dolata_graphics, train_is_driving_backwards) {
+    1: return sset_eu07_dolata_rev;
+    return sset_eu07_dolata;
+}
+switch(FEAT_TRAINS, SELF, switch_ep07_1020_graphics, train_is_driving_backwards) {
+    1: return sset_ep07_1020_rev;
+    return sset_ep07_1020;
+}
+switch(FEAT_TRAINS, SELF, switch_eu07_303e_classic_graphics, train_is_driving_backwards) {
+    1: return sset_eu07_303e_classic_rev;
+    return sset_eu07_303e_classic;
+}
+switch(FEAT_TRAINS, SELF, switch_eu07_303e_yellow_front_graphics, train_is_driving_backwards) {
+    1: return sset_eu07_303e_yellow_front_rev;
+    return sset_eu07_303e_yellow_front;
+}
+switch(FEAT_TRAINS, SELF, switch_eu07_303e_trapeze_yellow_front_graphics, train_is_driving_backwards) {
+    1: return sset_eu07_303e_trapeze_yellow_front_rev;
+    return sset_eu07_303e_trapeze_yellow_front;
+}
+switch(FEAT_TRAINS, SELF, switch_ep07_361_graphics, train_is_driving_backwards) {
+    1: return sset_ep07_361_rev;
+    return sset_ep07_361;
+}
+switch(FEAT_TRAINS, SELF, switch_eu07_303e_turquoise_yellow_front_graphics, train_is_driving_backwards) {
+    1: return sset_eu07_303e_turquoise_yellow_front_rev;
+    return sset_eu07_303e_turquoise_yellow_front;
+}
+switch(FEAT_TRAINS, SELF, switch_eu07_303e_poltrans_graphics, train_is_driving_backwards) {
+    1: return sset_eu07_303e_poltrans_rev;
+    return sset_eu07_303e_poltrans;
+}
+switch(FEAT_TRAINS, SELF, switch_eu07_trainspeed_graphics, train_is_driving_backwards) {
+    1: return sset_eu07_trainspeed_rev;
+    return sset_eu07_trainspeed;
+}
+switch(FEAT_TRAINS, SELF, switch_eu07_railstm_old_graphics, train_is_driving_backwards) {
+    1: return sset_eu07_railstm_old_rev;
+    return sset_eu07_railstm_old;
+}
+switch(FEAT_TRAINS, SELF, switch_eu07_orion_graphics, train_is_driving_backwards) {
+    1: return sset_eu07_orion_rev;
+    return sset_eu07_orion;
+}
+switch(FEAT_TRAINS, SELF, switch_eu07_ltc_graphics, train_is_driving_backwards) {
+    1: return sset_eu07_ltc_rev;
+    return sset_eu07_ltc;
+}
+switch(FEAT_TRAINS, SELF, switch_eu07_turquoise_graphics, train_is_driving_backwards) {
+    1: return sset_eu07_turquoise_rev;
+    return sset_eu07_turquoise;
+}
+
 // Switches itself
 switch(FEAT_TRAINS, SELF, switch_eu07_articulated, getbits(extra_callback_info1, 0, 8)) {
     1: return item_dummy_1;        // dummy parts
@@ -88,7 +260,6 @@ switch (FEAT_TRAINS, SELF, switch_eu07_add_text, IS_HEATING_CLIMATE) {
 }
 ENGINE_RUNNING_COST_SWITCH(eu07, EU07)
 ENGINE_VISUAL_EFFECT_SWITCH(eu07)
-
 switch (FEAT_TRAINS, SELF, switch_eu07_power2, position_in_consist > 2 ) { \
 	1: return 1904; \
 	return CB_FAILED; \
@@ -149,7 +320,7 @@ item(FEAT_TRAINS, item_eu07, 620) {
     graphics {
         purchase:                   sset_eu07_purchase;
         additional_text:            switch_eu07_add_text;
-        default:                    sset_eu07;
+        default:                    switch_eu07_graphics;
         articulated_part:           switch_eu07_articulated;
         visual_effect_and_powered:  switch_eu07_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;
@@ -199,7 +370,7 @@ item(FEAT_TRAINS, item_eu07_green, 621) {
     graphics {
         purchase:                   sset_eu07_purchase_green;
         additional_text:            switch_eu07_add_text;
-        default:                    sset_eu07_green;
+        default:                    switch_eu07_green_graphics;
         articulated_part:           switch_eu07_articulated;
         visual_effect_and_powered:  switch_eu07_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;
@@ -249,7 +420,7 @@ item(FEAT_TRAINS, item_eu07_yellow_front, 622) {
     graphics {
         purchase:                   sset_eu07_purchase_yellow;
         additional_text:            switch_eu07_add_text;
-        default:                    sset_eu07_yellow;
+        default:                    switch_eu07_yellow_graphics;
         articulated_part:           switch_eu07_articulated;
         visual_effect_and_powered:  switch_eu07_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;
@@ -299,7 +470,7 @@ item(FEAT_TRAINS, item_ep07_budyn, 623) {
     graphics {
         purchase:                   sset_ep07_purchase_budyn;
         additional_text:            switch_eu07_add_text;
-        default:                    sset_ep07_budyn;
+        default:                    switch_ep07_budyn_graphics;
         articulated_part:           switch_eu07_articulated;
         visual_effect_and_powered:  switch_eu07_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;
@@ -349,7 +520,7 @@ item(FEAT_TRAINS, item_ep07_denaturat, 624) {
     graphics {
         purchase:                   sset_ep07_purchase_denaturat;
         additional_text:            switch_eu07_add_text;
-        default:                    sset_ep07_denaturat;
+        default:                    switch_ep07_denaturat_graphics;
         articulated_part:           switch_eu07_articulated;
         visual_effect_and_powered:  switch_eu07_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;
@@ -399,7 +570,7 @@ item(FEAT_TRAINS, item_eu07_km, 625) {
     graphics {
         purchase:                   sset_eu07_purchase_km;
         additional_text:            switch_eu07_add_text;
-        default:                    sset_eu07_km;
+        default:                    switch_eu07_km_graphics;
         articulated_part:           switch_eu07_articulated;
         visual_effect_and_powered:  switch_eu07_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;
@@ -449,7 +620,7 @@ item(FEAT_TRAINS, item_eu07_pkp_cargo, 626) {
     graphics {
         purchase:                   sset_eu07_purchase_pkp_cargo;
         additional_text:            switch_eu07_add_text;
-        default:                    sset_eu07_pkp_cargo;
+        default:                    switch_eu07_pkp_cargo_graphics;
         articulated_part:           switch_eu07_articulated;
         visual_effect_and_powered:  switch_eu07_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;
@@ -499,7 +670,7 @@ item(FEAT_TRAINS, item_ep07_pkp_ic_old, 627) {
     graphics {
         purchase:                   sset_ep07_purchase_pkp_ic_old;
         additional_text:            switch_eu07_add_text;
-        default:                    sset_ep07_pkp_ic_old;
+        default:                    switch_ep07_pkp_ic_old_graphics;
         articulated_part:           switch_eu07_articulated;
         visual_effect_and_powered:  switch_eu07_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;
@@ -549,7 +720,7 @@ item(FEAT_TRAINS, item_ep07_pkp_ic, 628) {
     graphics {
         purchase:                   sset_ep07_purchase_pkp_ic;
         additional_text:            switch_eu07_add_text;
-        default:                    sset_ep07_pkp_ic;
+        default:                    switch_ep07_pkp_ic_graphics;
         articulated_part:           switch_eu07_articulated;
         visual_effect_and_powered:  switch_eu07_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;
@@ -599,7 +770,7 @@ item(FEAT_TRAINS, item_ep07p_papuga, 629) {
     graphics {
         purchase:                   sset_ep07_purchase_papuga;
         additional_text:            switch_eu07_add_text;
-        default:                    sset_ep07_papuga;
+        default:                    switch_ep07_papuga_graphics;
         articulated_part:           switch_eu07_articulated;
         visual_effect_and_powered:  switch_eu07_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;
@@ -649,7 +820,7 @@ item(FEAT_TRAINS, item_eu07_chocolate, 630) {
     graphics {
         purchase:                   sset_eu07_purchase_chocolate;
         additional_text:            switch_eu07_add_text;
-        default:                    sset_eu07_chocolate;
+        default:                    switch_eu07_chocolate_graphics;
         articulated_part:           switch_eu07_articulated;
         visual_effect_and_powered:  switch_eu07_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;
@@ -699,7 +870,7 @@ item(FEAT_TRAINS, item_eu07_tabor_debica, 631) {
     graphics {
         purchase:                   sset_eu07_purchase_tabor_debica;
         additional_text:            switch_eu07_add_text;
-        default:                    sset_eu07_tabor_debica;
+        default:                    switch_eu07_tabor_debica_graphics;
         articulated_part:           switch_eu07_articulated;
         visual_effect_and_powered:  switch_eu07_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;
@@ -749,7 +920,7 @@ item(FEAT_TRAINS, item_ep07p_polregio, 632) {
     graphics {
         purchase:                   sset_ep07p_purchase_pkp_polregio;
         additional_text:            switch_eu07_add_text;
-        default:                    sset_ep07p_pkp_polregio;
+        default:                    switch_ep07p_pkp_polregio_graphics;
         articulated_part:           switch_eu07_articulated;
         visual_effect_and_powered:  switch_eu07_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;
@@ -799,7 +970,7 @@ item(FEAT_TRAINS, item_eu07_pcc, 633) {
     graphics {
         purchase:                   sset_eu07_purchase_pcc;
         additional_text:            switch_eu07_add_text;
-        default:                    sset_eu07_pcc;
+        default:                    switch_eu07_pcc_graphics;
         articulated_part:           switch_eu07_articulated;
         visual_effect_and_powered:  switch_eu07_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;
@@ -849,7 +1020,7 @@ item(FEAT_TRAINS, item_ep07_1067, 634) {
     graphics {
         purchase:                   sset_ep07_purchase_1067;
         additional_text:            switch_eu07_add_text;
-        default:                    sset_ep07_1067;
+        default:                    switch_ep07_1067_graphics;
         articulated_part:           switch_eu07_articulated;
         visual_effect_and_powered:  switch_eu07_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;
@@ -899,7 +1070,7 @@ item(FEAT_TRAINS, item_eu07_ecco, 635) {
     graphics {
         purchase:                   sset_eu07_purchase_ecco;
         additional_text:            switch_eu07_add_text;
-        default:                    sset_eu07_ecco;
+        default:                    switch_eu07_ecco_graphics;
         articulated_part:           switch_eu07_articulated;
         visual_effect_and_powered:  switch_eu07_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;
@@ -949,7 +1120,7 @@ item(FEAT_TRAINS, item_eu07_ltg, 636) {
     graphics {
         purchase:                   sset_eu07_purchase_ltg;
         additional_text:            switch_eu07_add_text;
-        default:                    sset_eu07_ltg;
+        default:                    switch_eu07_ltg_graphics;
         articulated_part:           switch_eu07_articulated;
         visual_effect_and_powered:  switch_eu07_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;
@@ -999,7 +1170,7 @@ item(FEAT_TRAINS, item_eu07_pkp_cargo_rw, 637) {
     graphics {
         purchase:                   sset_eu07_purchase_pkp_cargo_rw;
         additional_text:            switch_eu07_add_text;
-        default:                    sset_eu07_pkp_cargo_rw;
+        default:                    switch_eu07_pkp_cargo_rw_graphics;
         articulated_part:           switch_eu07_articulated;
         visual_effect_and_powered:  switch_eu07_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;
@@ -1049,7 +1220,7 @@ item(FEAT_TRAINS, item_eu07_captrain, 638) {
     graphics {
         purchase:                   sset_eu07_purchase_captrain;
         additional_text:            switch_eu07_add_text;
-        default:                    sset_eu07_captrain;
+        default:                    switch_eu07_captrain_graphics;
         articulated_part:           switch_eu07_articulated;
         visual_effect_and_powered:  switch_eu07_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;
@@ -1099,7 +1270,7 @@ item(FEAT_TRAINS, item_eu07_cargounit, 639) {
     graphics {
         purchase:                   sset_eu07_purchase_cargounit;
         additional_text:            switch_eu07_add_text;
-        default:                    sset_eu07_cargounit;
+        default:                    switch_eu07_cargounit_graphics;
         articulated_part:           switch_eu07_articulated;
         visual_effect_and_powered:  switch_eu07_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;
@@ -1149,7 +1320,7 @@ item(FEAT_TRAINS, item_eu07_puk_kolprem, 640) {
     graphics {
         purchase:                   sset_eu07_purchase_puk_kolprem;
         additional_text:            switch_eu07_add_text;
-        default:                    sset_eu07_puk_kolprem;
+        default:                    switch_eu07_puk_kolprem_graphics;
         articulated_part:           switch_eu07_articulated;
         visual_effect_and_powered:  switch_eu07_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;
@@ -1199,7 +1370,7 @@ item(FEAT_TRAINS, item_eu07_dolata, 641) {
     graphics {
         purchase:                   sset_eu07_purchase_dolata;
         additional_text:            switch_eu07_add_text;
-        default:                    sset_eu07_dolata;
+        default:                    switch_eu07_dolata_graphics;
         articulated_part:           switch_eu07_articulated;
         visual_effect_and_powered:  switch_eu07_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;
@@ -1249,7 +1420,7 @@ item(FEAT_TRAINS, item_ep07_1020, 642) {
     graphics {
         purchase:                   sset_ep07_purchase_1020;
         additional_text:            switch_eu07_add_text;
-        default:                    sset_ep07_1020;
+        default:                    switch_ep07_1020_graphics;
         articulated_part:           switch_eu07_articulated;
         visual_effect_and_powered:  switch_eu07_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;
@@ -1299,7 +1470,7 @@ item(FEAT_TRAINS, item_eu07_303e_classic, 643) {
     graphics {
         purchase:                   sset_eu07_303e_purchase_classic;
         additional_text:            switch_eu07_add_text;
-        default:                    sset_eu07_303e_classic;
+        default:                    switch_eu07_303e_classic_graphics;
         articulated_part:           switch_eu07_articulated;
         visual_effect_and_powered:  switch_eu07_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;
@@ -1349,7 +1520,7 @@ item(FEAT_TRAINS, item_eu07_303e_yellow_front, 644) {
     graphics {
         purchase:                   sset_eu07_303e_purchase_yellow_front;
         additional_text:            switch_eu07_add_text;
-        default:                    sset_eu07_303e_yellow_front;
+        default:                    switch_eu07_303e_yellow_front_graphics;
         articulated_part:           switch_eu07_articulated;
         visual_effect_and_powered:  switch_eu07_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;
@@ -1399,7 +1570,7 @@ item(FEAT_TRAINS, item_eu07_303e_trapeze_yellow_front, 645) {
     graphics {
         purchase:                   sset_eu07_303e_purchase_trapeze_yellow_front;
         additional_text:            switch_eu07_add_text;
-        default:                    sset_eu07_303e_trapeze_yellow_front;
+        default:                    switch_eu07_303e_trapeze_yellow_front_graphics;
         articulated_part:           switch_eu07_articulated;
         visual_effect_and_powered:  switch_eu07_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;
@@ -1449,7 +1620,7 @@ item(FEAT_TRAINS, item_ep07_361, 646) {
     graphics {
         purchase:                   sset_ep07_purchase_361;
         additional_text:            switch_eu07_add_text;
-        default:                    sset_ep07_361;
+        default:                    switch_ep07_361_graphics;
         articulated_part:           switch_eu07_articulated;
         visual_effect_and_powered:  switch_eu07_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;
@@ -1499,7 +1670,7 @@ item(FEAT_TRAINS, item_eu07_303e_turquoise_yellow_front, 647) {
     graphics {
         purchase:                   sset_eu07_303e_purchase_turquoise_yellow_front;
         additional_text:            switch_eu07_add_text;
-        default:                    sset_eu07_303e_turquoise_yellow_front;
+        default:                    switch_eu07_303e_turquoise_yellow_front_graphics;
         articulated_part:           switch_eu07_articulated;
         visual_effect_and_powered:  switch_eu07_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;
@@ -1549,7 +1720,7 @@ item(FEAT_TRAINS, item_eu07_303e_poltrans, 648) {
     graphics {
         purchase:                   sset_eu07_303e_purchase_poltrans;
         additional_text:            switch_eu07_add_text;
-        default:                    sset_eu07_303e_poltrans;
+        default:                    switch_eu07_303e_poltrans_graphics;
         articulated_part:           switch_eu07_articulated;
         visual_effect_and_powered:  switch_eu07_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;
@@ -1599,7 +1770,7 @@ item(FEAT_TRAINS, item_eu07_hst_old, 649) {
     graphics {
         purchase:                   sset_eu07_purchase_railstm_old;
         additional_text:            switch_eu07_add_text;
-        default:                    sset_eu07_railstm_old;
+        default:                    switch_eu07_railstm_old_graphics;
         articulated_part:           switch_eu07_articulated;
         visual_effect_and_powered:  switch_eu07_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;
@@ -1649,7 +1820,7 @@ item(FEAT_TRAINS, item_eu07_trainspeed, 650) {
     graphics {
         purchase:                   sset_eu07_purchase_trainspeed;
         additional_text:            switch_eu07_add_text;
-        default:                    sset_eu07_trainspeed;
+        default:                    switch_eu07_trainspeed_graphics;
         articulated_part:           switch_eu07_articulated;
         visual_effect_and_powered:  switch_eu07_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;
@@ -1699,7 +1870,7 @@ item(FEAT_TRAINS, item_eu07_orion, 651) {
     graphics {
         purchase:                   sset_eu07_purchase_orion;
         additional_text:            switch_eu07_add_text;
-        default:                    sset_eu07_orion;
+        default:                    switch_eu07_orion_graphics;
         articulated_part:           switch_eu07_articulated;
         visual_effect_and_powered:  switch_eu07_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;
@@ -1749,7 +1920,7 @@ item(FEAT_TRAINS, item_eu07_ltc, 652) {
     graphics {
         purchase:                   sset_eu07_purchase_ltc;
         additional_text:            switch_eu07_add_text;
-        default:                    sset_eu07_ltc;
+        default:                    switch_eu07_ltc_graphics;
         articulated_part:           switch_eu07_articulated;
         visual_effect_and_powered:  switch_eu07_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;
@@ -1799,7 +1970,7 @@ item(FEAT_TRAINS, item_eu07_turquoise, 653) {
     graphics {
         purchase:                   sset_eu07_purchase_turquoise;
         additional_text:            switch_eu07_add_text;
-        default:                    sset_eu07_turquoise;
+        default:                    switch_eu07_turquoise_graphics;
         articulated_part:           switch_eu07_articulated;
         visual_effect_and_powered:  switch_eu07_visual_effect;
         can_attach_wagon:           switch_normal_can_attach;
