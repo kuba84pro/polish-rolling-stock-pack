@@ -79,7 +79,6 @@ switch(FEAT_TRAINS, SELF, switch_er160_can_attach, vehicle_type_id) {
     item_en57:  return string(STR_ATTACH_DISALLOW_EZT2);
     item_en71:  return string(STR_ATTACH_DISALLOW_EZT2);
     item_ed72:  return string(STR_ATTACH_DISALLOW_EZT2);
-    item_en76:  return string(STR_ATTACH_DISALLOW_EZT2);
     item_ed74:  return string(STR_ATTACH_DISALLOW_EZT2);
     item_ed250:  return string(STR_ATTACH_DISALLOW_EZT2);
     item_er160:  return CB_RESULT_ATTACH_ALLOW;

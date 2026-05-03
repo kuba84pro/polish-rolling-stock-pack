@@ -252,6 +252,9 @@ count_veh_id(item_sp42_oliwkowe)/2 \
  count_veh_id(10050)/2 + count_veh_id(10051)/2 + count_veh_id(10052)/2 + count_veh_id(10053)/2 + \
  count_veh_id(10025) + count_veh_id(10026)
 
+#define COUNT_ELF_1 \
+ count_veh_id(2399)/3 + count_veh_id(2400)/7 + count_veh_id(2401)/5 + count_veh_id(2402)/7 + count_veh_id(2410)/11 \
+
 #define PKPSET_ITEM_ID  (grfid==str2number("MV\01\05")) * vehicle_type_id
 
 #define KW_TO_HP(PowerKW)       int(PowerKW*1.3410)
@@ -292,7 +295,6 @@ switch(FEAT_TRAINS, SELF, switch_normal_can_attach, vehicle_type_id) {
     item_en71:  return string(STR_ATTACH_DISALLOW_EZT1);
     item_ed72:  return string(STR_ATTACH_DISALLOW_EZT1);
     item_ed74:  return string(STR_ATTACH_DISALLOW_EZT1);
-    item_en76:  return string(STR_ATTACH_DISALLOW_EZT1);
     item_en96:  return string(STR_ATTACH_DISALLOW_EZT1);
     item_ed250:  return string(STR_ATTACH_DISALLOW_EZT1);
     item_ed161:  return string(STR_ATTACH_DISALLOW_EZT1);
@@ -530,7 +532,6 @@ switch(FEAT_TRAINS, SELF, switch_en57axx_can_attach, vehicle_type_id) {
     item_en71aks       :return CB_RESULT_ATTACH_ALLOW;
     item_ed74          :return string(STR_ATTACH_DISALLOW_EZT2);
     item_ed74_pkp_ic   :return string(STR_ATTACH_DISALLOW_EZT2);
-    item_en76          :return string(STR_ATTACH_DISALLOW_EZT2);
     item_en96          :return string(STR_ATTACH_DISALLOW_EZT2);
     item_ed250         :return string(STR_ATTACH_DISALLOW_EZT2);
     item_36wea_op      :return string(STR_ATTACH_DISALLOW_EZT2);
@@ -591,7 +592,6 @@ switch(FEAT_TRAINS, SELF, switch_impuls1_can_attach, vehicle_type_id) {
     item_en71aks       :return string(STR_ATTACH_DISALLOW_EZT2);
     item_ed74          :return string(STR_ATTACH_DISALLOW_EZT2);
     item_ed74_pkp_ic   :return string(STR_ATTACH_DISALLOW_EZT2);
-    item_en76          :return CB_RESULT_ATTACH_ALLOW;
     item_en96          :return CB_RESULT_ATTACH_ALLOW;
     item_ed250         :return string(STR_ATTACH_DISALLOW_EZT2);
     item_36wea_op      :return CB_RESULT_ATTACH_ALLOW;
@@ -624,6 +624,14 @@ switch(FEAT_TRAINS, SELF, switch_e91_can_attach, vehicle_type_id) {
     item_e91: return CB_RESULT_ATTACH_ALLOW;
     item_e91_ref: return CB_RESULT_ATTACH_ALLOW;
     item_ew51: return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_ATTACH_DISALLOW_EZT2);
+}
+switch(FEAT_TRAINS, SELF, switch_elf1_can_attach, vehicle_type_id) {
+    2399: return CB_RESULT_ATTACH_ALLOW;
+    2400: return CB_RESULT_ATTACH_ALLOW;
+    2401: return CB_RESULT_ATTACH_ALLOW;
+    2402: return CB_RESULT_ATTACH_ALLOW;
+    2410: return CB_RESULT_ATTACH_ALLOW;
     return string(STR_ATTACH_DISALLOW_EZT2);
 }
 // Additional Text Impuls 1

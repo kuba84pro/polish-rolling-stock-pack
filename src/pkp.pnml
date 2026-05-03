@@ -289,9 +289,7 @@ basecost {
 #include "engines/en71akm.pnml"
 #include "engines/ed72.pnml"
 #include "engines/ed74.pnml"
-#include "engines/en96.pnml"
-#include "engines/en62.pnml"
-#include "engines/en76-elf.pnml"
+#include "engines/elf_1.pnml"
 #include "engines/ed250-pendolino.pnml"
 #include "engines/36wea.pnml"
 #include "engines/31we.pnml"
@@ -567,7 +565,9 @@ sort(FEAT_TRAINS,
     // EN62
     2401,
     // EN76
-    2400,
+    2400, 2402,
+    // 27WE
+    2410,
     // Impuls one
     // 36wea
     2500, 2501, 2502, 2503, 2504, 2505, 2506,

@@ -113,6 +113,7 @@
 #define PURCHASE_COST_EN96      65
 #define PURCHASE_COST_EN62      70
 #define PURCHASE_COST_EN76      74
+#define PURCHASE_COST_27WE      88
 #define PURCHASE_COST_ED250     255
 #define PURCHASE_COST_36WEA     60
 #define PURCHASE_COST_31WE     70
@@ -240,6 +241,7 @@
 #define RUNNING_COST_EN96       81
 #define RUNNING_COST_EN62       84
 #define RUNNING_COST_EN76       89+1
+#define RUNNING_COST_27WE       92
 #define RUNNING_COST_ED250      235
 #define RUNNING_COST_36WEA      69
 #define RUNNING_COST_31WE      75
@@ -366,6 +368,7 @@
 #define HALTED_COST_EN96        22
 #define HALTED_COST_EN62        24
 #define HALTED_COST_EN76        25+1
+#define HALTED_COST_27WE        28
 #define HALTED_COST_ED250       47
 #define HALTED_COST_36WEA       20
 #define HALTED_COST_31WE       30

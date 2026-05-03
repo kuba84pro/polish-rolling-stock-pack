@@ -1,5 +1,45 @@
 Polish Rolling Stock Pack - Changelog
 ================================
+0.19.0
+Added:
+- EU44 EURO 2012 (6 liveries)
+- EW51/E.91 (3 liveries)
+- 2E53 (3 liveries)
+- SU45 (2 liveries)
+- Battery-powered carriage "Wittfeld"
+- 27WE SKM Warszawa
+- EN76 (2 liveries)
+- SM42 (8 liveries)
+- SA131 Pomorskie
+- SA132 (2 liveries)
+- EP09-022 "Odkryj nas na nowo"
+
+Wagons:
+- 113A WARS Olive Drab
+- 113A WARS PKP Livery
+- 111A (Maintenance of way wagon) PKP Energetyka
+- 43A (Maintenance of way wagon) PKP Energetyka
+- 111A (Inspection wagon) PKP Energetyka
+- 43A/2
+- 101A (Bh) PKP green
+- 101A  (DBhixt) Blue-Beige
+
+Deleted:
+- EN76 Company Colors
+
+Fixes: 
+- 113A/ 113Aa parameters 
+- 111a/112a sprites
+- ST45/ST46 parameters
+- EN96 sprites
+- EN62 Additional text
+- SN80 sprites
+- SU45 sprites
+- EU07 sprites position
+
+Note: The recent feature in JGRPP (and future feature in Openttd) the "push-pull" isn't working properly right now besides: EU07, EP09, EW51 and E.91. It will take some time to update existing sprites. We will gradually be adding them. 
+If you don't want any inconveniences, stay on "All" option in "Allow trains to flip when reversing".
+
 0.18.1
 Fixed:
 - M62 Eurotrans sprites

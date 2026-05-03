@@ -66,6 +66,7 @@ STR_INCOME_ALL_EXPRESS          :Note: {YELLOW}Increases income rate{ORANGE} for
 STR_INCOME_HIGH                 :Note: {YELLOW}High income rate{ORANGE} for passengers over long distances
 STR_INCOME_CARGO_HIGH           :Note: {YELLOW}Higher income rate{ORANGE} for cargoes over long distances
 STR_INCOME_LOWER_SPECIAL        :Note: {RED}Lower income rate{ORANGE} for passengers over long distances, although 5% less cargo ageing period.
+STR_INCOME_LOWER_LOADING_FASTER :Note: {RED}Lower income rate{ORANGE} for passengers over long distances, but faster loading speed
 STR_CAPACITY_NON_FRIABLE        :Note: {RED}Decreased capacity{ORANGE} for non-friable cargoes
 STR_CAPACITY_LIQUID             :Note: {RED}Decreased capacity{ORANGE} for liquid cargoes
 
@@ -632,9 +633,11 @@ STR_ED74_NAME           :{DKGREEN}ED74 {SILVER}Bydgostia
 STR_ED74_PKP_IC_NAME    :{DKGREEN}ED74 {SILVER}PKP Intercity
 STR_ED74_PKP_PR_NAME    :{DKGREEN}ED74 {SILVER}Przewozy Regionalne
 STR_ED74_TEXT          	:Info: {YELLOW}4{ORANGE}-part Electric Multiple Unit with {YELLOW}33{ORANGE} {RED}1{ORANGE}-st and {YELLOW}169{ORANGE} {RED}2{ORANGE}-nd class sitting places
-STR_EN76_NAME           :{DKGREEN}EN76 {SILVER}Elf
+STR_EN76_KW_NAME        :{DKGREEN}EN76 {SILVER}Koleje Wielkopolskie
+STR_EN76_KUJ_NAME       :{DKGREEN}EN76 {SILVER}Kujawsko-Pomorskie
 STR_EN96_NAME           :{DKGREEN}EN96 {SILVER}Swietokrzyskie
 STR_EN62_NAME           :{DKGREEN}EN62 {SILVER}Warminsko-Mazurskie
+STR_27WE_NAME           :{DKGREEN}27WE {SILVER}SKM Warszawa
 STR_ED250_NAME          :{DKGREEN}ED250 {SILVER}Pendolino
 STR_ED250_PKP_IC_NAME          :{DKGREEN}ED250 {SILVER}PKP Intercity
 STR_ED250_TEXT         	:Info: {YELLOW}7{ORANGE}-part Electric Multiple Unit with {YELLOW}buffet car{ORANGE}, {YELLOW}45{ORANGE} {RED}1{ORANGE}-st and {YELLOW}357{ORANGE} {RED}2{ORANGE}-nd class sitting places
