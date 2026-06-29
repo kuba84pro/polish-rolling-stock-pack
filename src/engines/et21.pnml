@@ -3,26 +3,26 @@
 // (c) Tadeusz Domagalski, GPL 2.0
 
 /* ET21 sprites */
-spriteset(sset_et21_purchase, "gfx/et21.png")           { tmpl_sprite_purchase(4, 545) }
-spriteset(sset_et21, "gfx/et21.png")                    { tmpl_sprite_train10(4, 505) }
+spriteset(sset_et21_purchase, "gfx/et21.png")           { tmpl_sprite_purchase(4, 540) }
+spriteset(sset_et21, "gfx/et21.png")                    { tmpl_sprite_train10(4, 500) }
 spriteset(sset_et21_green_purchase, "gfx/et21.png")           { tmpl_sprite_purchase(4, 60) }
 spriteset(sset_et21_green, "gfx/et21.png")                    { tmpl_sprite_train10(4, 20) }
-spriteset(sset_et21_purchase_yellow_front, "gfx/et21.png")    { tmpl_sprite_purchase(4, 113) }
+spriteset(sset_et21_purchase_yellow_front, "gfx/et21.png")    { tmpl_sprite_purchase(4, 120) }
 spriteset(sset_et21_yellow_front, "gfx/et21.png")             { tmpl_sprite_train10(4, 80) }
-spriteset(sset_et21_ctl_purchase, "gfx/et21.png")           { tmpl_sprite_purchase(4, 173) }
-spriteset(sset_et21_ctl, "gfx/et21.png")             { tmpl_sprite_train10(4, 133) }
-spriteset(sset_et21_ctlnew_purchase, "gfx/et21.png")           { tmpl_sprite_purchase(4, 233) }
-spriteset(sset_et21_ctlnew, "gfx/et21.png")             { tmpl_sprite_train10(4, 193) }
-spriteset(sset_et21_ptkigk_purchase, "gfx/et21.png")           { tmpl_sprite_purchase(4, 307) }
-spriteset(sset_et21_ptkigk, "gfx/et21.png")             { tmpl_sprite_train10(4, 267) }
-spriteset(sset_et21_db_purchase, "gfx/et21.png")           { tmpl_sprite_purchase(4, 366) }
-spriteset(sset_et21_db, "gfx/et21.png")             { tmpl_sprite_train10(4, 327) }
-spriteset(sset_et21_skpl_purchase, "gfx/et21.png")           { tmpl_sprite_purchase(4, 426) }
-spriteset(sset_et21_skpl, "gfx/et21.png")             { tmpl_sprite_train10(4, 387) }
-spriteset(sset_et21_trainspeed_purchase, "gfx/et21.png")           { tmpl_sprite_purchase(4, 486) }
-spriteset(sset_et21_trainspeed, "gfx/et21.png")             { tmpl_sprite_train10(4, 447) }
-spriteset(sset_et21_pcc_purchase, "gfx/et21.png")           { tmpl_sprite_purchase(4, 604) }
-spriteset(sset_et21_pcc, "gfx/et21.png")             { tmpl_sprite_train10(4, 564) }
+spriteset(sset_et21_ctl_purchase, "gfx/et21.png")           { tmpl_sprite_purchase(4, 180) }
+spriteset(sset_et21_ctl, "gfx/et21.png")             { tmpl_sprite_train10(4, 140) }
+spriteset(sset_et21_ctlnew_purchase, "gfx/et21.png")           { tmpl_sprite_purchase(4, 240) }
+spriteset(sset_et21_ctlnew, "gfx/et21.png")             { tmpl_sprite_train10(4, 200) }
+spriteset(sset_et21_ptkigk_purchase, "gfx/et21.png")           { tmpl_sprite_purchase(4, 300) }
+spriteset(sset_et21_ptkigk, "gfx/et21.png")             { tmpl_sprite_train10(4, 260) }
+spriteset(sset_et21_db_purchase, "gfx/et21.png")           { tmpl_sprite_purchase(4, 360) }
+spriteset(sset_et21_db, "gfx/et21.png")             { tmpl_sprite_train10(4, 320) }
+spriteset(sset_et21_skpl_purchase, "gfx/et21.png")           { tmpl_sprite_purchase(4, 420) }
+spriteset(sset_et21_skpl, "gfx/et21.png")             { tmpl_sprite_train10(4, 380) }
+spriteset(sset_et21_trainspeed_purchase, "gfx/et21.png")           { tmpl_sprite_purchase(4, 480) }
+spriteset(sset_et21_trainspeed, "gfx/et21.png")             { tmpl_sprite_train10(4, 440) }
+spriteset(sset_et21_pcc_purchase, "gfx/et21.png")           { tmpl_sprite_purchase(4, 600) }
+spriteset(sset_et21_pcc, "gfx/et21.png")             { tmpl_sprite_train10(4, 560) }
 spriteset(sset_et21_pmt_purchase, "gfx/et21.png")           { tmpl_sprite_purchase(4, 660) }
 spriteset(sset_et21_pmt, "gfx/et21.png")             { tmpl_sprite_train10(4, 620) }
 

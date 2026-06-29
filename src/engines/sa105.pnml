@@ -7,13 +7,13 @@ spriteset(sset_sa105_kw_purchase, "gfx/sa105.png")         { tmpl_sprite_purchas
 spriteset(sset_sa105_kw, "gfx/sa105.png")                  { tmpl_sprite_train10(4, 20) }
 spriteset(sset_sa105_kw_open, "gfx/sa105.png")             { tmpl_sprite_train10(4, 60) }
 
-spriteset(sset_sa105_kw_new_purchase, "gfx/sa105.png")         { tmpl_sprite_purchase(4, 202) }
+spriteset(sset_sa105_kw_new_purchase, "gfx/sa105.png")         { tmpl_sprite_purchase(4, 200) }
 spriteset(sset_sa105_kw_new, "gfx/sa105.png")                  { tmpl_sprite_train10(4, 120) }
-spriteset(sset_sa105_kw_new_open, "gfx/sa105.png")             { tmpl_sprite_train10(4, 162) }
+spriteset(sset_sa105_kw_new_open, "gfx/sa105.png")             { tmpl_sprite_train10(4, 160) }
 
-spriteset(sset_sa105_podl_purchase, "gfx/sa105.png")         { tmpl_sprite_purchase(4, 302) }
+spriteset(sset_sa105_podl_purchase, "gfx/sa105.png")         { tmpl_sprite_purchase(4, 300) }
 spriteset(sset_sa105_podl, "gfx/sa105.png")                  { tmpl_sprite_train10(4, 220) }
-spriteset(sset_sa105_podl_open, "gfx/sa105.png")             { tmpl_sprite_train10(4, 262) }
+spriteset(sset_sa105_podl_open, "gfx/sa105.png")             { tmpl_sprite_train10(4, 260) }
 
 spritegroup sgroup_sa105_kw {
     loaded:     [sset_sa105_kw];

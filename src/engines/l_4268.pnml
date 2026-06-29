@@ -3,13 +3,13 @@
 // (c) kuba84pro, GPL 2.0
 
 /* L-4268 sprites */
-spriteset(sset_l4268_purchase, "gfx/L-4268.png")   { tmpl_sprite_purchase(4, 190) }
-spriteset(sset_l4268_advert, "gfx/L-4268.png")   { tmpl_sprite_advertisement200(4, 210) }
+spriteset(sset_l4268_purchase, "gfx/L-4268.png")   { tmpl_sprite_purchase(4, 180) }
+spriteset(sset_l4268_advert, "gfx/L-4268.png")   { tmpl_sprite_advertisement200(4, 200) }
 
 spriteset(sset_l4268_head, "gfx/L-4268.png")       { tmpl_sprite_train12(4, 20) }
 spriteset(sset_l4268_tail, "gfx/L-4268.png")       { tmpl_sprite_train12_offset(4, 60, 1) }
-spriteset(sset_l4268_head_open, "gfx/L-4268.png")  { tmpl_sprite_train12(4, 110) }
-spriteset(sset_l4268_tail_open, "gfx/L-4268.png")  { tmpl_sprite_train12_offset(4, 150, 1) }
+spriteset(sset_l4268_head_open, "gfx/L-4268.png")  { tmpl_sprite_train12(4, 100) }
+spriteset(sset_l4268_tail_open, "gfx/L-4268.png")  { tmpl_sprite_train12_offset(4, 140, 1) }
 spritegroup sgroup_l4268_head {
     loaded:     [sset_l4268_head];
     loading:    [sset_l4268_head_open];

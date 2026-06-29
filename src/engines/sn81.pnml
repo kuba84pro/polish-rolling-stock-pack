@@ -8,11 +8,11 @@ spriteset(sset_sn81_head, "gfx/sn81.png")                    { tmpl_sprite_train
 spriteset(sset_sn81_head_open, "gfx/sn81.png")               { tmpl_sprite_train(4, 100) }
 spriteset(sset_sn81_tail, "gfx/sn81.png")                    { tmpl_sprite_train(4, 60) }
 spriteset(sset_sn81_tail_open, "gfx/sn81.png")               { tmpl_sprite_train(4, 140) }
-spriteset(sset_sn81_002_purchase, "gfx/sn81.png")           { tmpl_sprite_purchase(4, 380) }
-spriteset(sset_sn81_002_head, "gfx/sn81.png")                    { tmpl_sprite_train(4, 220) }
-spriteset(sset_sn81_002_head_open, "gfx/sn81.png")               { tmpl_sprite_train(4, 300) }
-spriteset(sset_sn81_002_tail, "gfx/sn81.png")                    { tmpl_sprite_train(4, 260) }
-spriteset(sset_sn81_002_tail_open, "gfx/sn81.png")               { tmpl_sprite_train(4, 340) }
+spriteset(sset_sn81_002_purchase, "gfx/sn81.png")           { tmpl_sprite_purchase(4, 360) }
+spriteset(sset_sn81_002_head, "gfx/sn81.png")                    { tmpl_sprite_train(4, 200) }
+spriteset(sset_sn81_002_head_open, "gfx/sn81.png")               { tmpl_sprite_train(4, 280) }
+spriteset(sset_sn81_002_tail, "gfx/sn81.png")                    { tmpl_sprite_train(4, 240) }
+spriteset(sset_sn81_002_tail_open, "gfx/sn81.png")               { tmpl_sprite_train(4, 320) }
 spritegroup sgroup_sn81_head {
     loaded:     [sset_sn81_head];
     loading:    [sset_sn81_head_open];

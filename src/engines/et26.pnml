@@ -3,27 +3,27 @@
 // (c) Tadeusz Domagalski, GPL 2.0
 
 /* ET26 (Dragon 2) sprites */
-spriteset(sset_et26_purchase, "gfx/et26.png")  { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_et26_purchase, "gfx/et26.png")  { tmpl_sprite_purchase(4, 100) }
 spriteset(sset_et26, "gfx/et26.png")           { tmpl_sprite_train12(4, 20) }
-spriteset(sset_et26_diesel, "gfx/et26.png")    { tmpl_sprite_train12(304, 20) }
-spriteset(sset_et25_001, "gfx/et26.png")           { tmpl_sprite_train12(4, 80) }
-spriteset(sset_et25_001_purchase, "gfx/et26.png")  { tmpl_sprite_purchase(4, 120) }
-spriteset(sset_et25_003, "gfx/et26.png")           { tmpl_sprite_train12(4, 140) }
-spriteset(sset_et25_003_purchase, "gfx/et26.png")  { tmpl_sprite_purchase(4, 180) }
-spriteset(sset_et43, "gfx/et26.png")           { tmpl_sprite_train12(4, 200) }
-spriteset(sset_et43_purchase, "gfx/et26.png")  { tmpl_sprite_purchase(4, 240) }
-spriteset(sset_et43_001, "gfx/et26.png")           { tmpl_sprite_train12(4, 260) }
-spriteset(sset_et43_001_purchase, "gfx/et26.png")  { tmpl_sprite_purchase(4, 300) }
-spriteset(sset_et43_007, "gfx/et26.png")           { tmpl_sprite_train12(4, 320) }
-spriteset(sset_et43_007_purchase, "gfx/et26.png")  { tmpl_sprite_purchase(4, 360) }
-spriteset(sset_et43_015, "gfx/et26.png")           { tmpl_sprite_train12(4, 440) }
-spriteset(sset_et43_015_purchase, "gfx/et26.png")  { tmpl_sprite_purchase(4, 480) }
-spriteset(sset_et43_021, "gfx/et26.png")           { tmpl_sprite_train12(4, 500) }
-spriteset(sset_et43_021_purchase, "gfx/et26.png")  { tmpl_sprite_purchase(4, 540) }
-spriteset(sset_e6mst_akiem, "gfx/et26.png")           { tmpl_sprite_train12(304, 80) }
-spriteset(sset_e6mst_akiem_purchase, "gfx/et26.png")  { tmpl_sprite_purchase(304, 120) }
-spriteset(sset_e6mst_railstm, "gfx/et26.png")           { tmpl_sprite_train12(304, 140) }
-spriteset(sset_e6mst_railstm_purchase, "gfx/et26.png")  { tmpl_sprite_purchase(304, 180) }
+spriteset(sset_et26_diesel, "gfx/et26.png")    { tmpl_sprite_train12(4, 60) }
+spriteset(sset_et25_001, "gfx/et26.png")           { tmpl_sprite_train12(4, 120) }
+spriteset(sset_et25_001_purchase, "gfx/et26.png")  { tmpl_sprite_purchase(4, 200) }
+spriteset(sset_et25_003, "gfx/et26.png")           { tmpl_sprite_train12(4, 240) }
+spriteset(sset_et25_003_purchase, "gfx/et26.png")  { tmpl_sprite_purchase(4, 320) }
+spriteset(sset_et43, "gfx/et26.png")           { tmpl_sprite_train12(4, 360) }
+spriteset(sset_et43_purchase, "gfx/et26.png")  { tmpl_sprite_purchase(4, 400) }
+spriteset(sset_et43_001, "gfx/et26.png")           { tmpl_sprite_train12(4, 420) }
+spriteset(sset_et43_001_purchase, "gfx/et26.png")  { tmpl_sprite_purchase(4, 460) }
+spriteset(sset_et43_007, "gfx/et26.png")           { tmpl_sprite_train12(4, 480) }
+spriteset(sset_et43_007_purchase, "gfx/et26.png")  { tmpl_sprite_purchase(4, 520) }
+spriteset(sset_et43_015, "gfx/et26.png")           { tmpl_sprite_train12(4, 540) }
+spriteset(sset_et43_015_purchase, "gfx/et26.png")  { tmpl_sprite_purchase(4, 580) }
+spriteset(sset_et43_021, "gfx/et26.png")           { tmpl_sprite_train12(4, 600) }
+spriteset(sset_et43_021_purchase, "gfx/et26.png")  { tmpl_sprite_purchase(4, 640) }
+spriteset(sset_e6mst_akiem, "gfx/et26.png")           { tmpl_sprite_train12(4, 160) }
+spriteset(sset_e6mst_akiem_purchase, "gfx/et26.png")  { tmpl_sprite_purchase(4, 220) }
+spriteset(sset_e6mst_railstm, "gfx/et26.png")           { tmpl_sprite_train12(4, 280) }
+spriteset(sset_e6mst_railstm_purchase, "gfx/et26.png")  { tmpl_sprite_purchase(4, 340) }
 
 /* ET26 (Dragon 2) switches */
 switch(FEAT_TRAINS, SELF, switch_et26_articulated, extra_callback_info1) {

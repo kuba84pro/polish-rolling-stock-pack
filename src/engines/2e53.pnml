@@ -2,14 +2,14 @@
 // (c) kuba84pro, licence: GPLv2
 
 /* 2E53 sprites */
-spriteset(sset_2e53_purchase, "gfx/2E53.png")   { tmpl_sprite_purchase(12, 57) }
-spriteset(sset_2e53, "gfx/2E53.png")            { tmpl_sprite_train10(12, 24) }
+spriteset(sset_2e53_purchase, "gfx/2E53.png")   { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_2e53, "gfx/2E53.png")            { tmpl_sprite_train10(4, 20) }
 /* 2E53 YS sprites */
-spriteset(sset_2e53_ys_purchase, "gfx/2E53.png")   { tmpl_sprite_purchase(12, 113) }
-spriteset(sset_2e53_ys, "gfx/2E53.png")            { tmpl_sprite_train10(12, 80) }
+spriteset(sset_2e53_ys_purchase, "gfx/2E53.png")   { tmpl_sprite_purchase(4, 120) }
+spriteset(sset_2e53_ys, "gfx/2E53.png")            { tmpl_sprite_train10(4, 80) }
 /* 2E53 Late sprites */
-spriteset(sset_2e53_late_purchase, "gfx/2E53.png")   { tmpl_sprite_purchase(12, 167) }
-spriteset(sset_2e53_late, "gfx/2E53.png")            { tmpl_sprite_train10(12, 134) }
+spriteset(sset_2e53_late_purchase, "gfx/2E53.png")   { tmpl_sprite_purchase(4, 180) }
+spriteset(sset_2e53_late, "gfx/2E53.png")            { tmpl_sprite_train10(4, 140) }
 
 /* 2E53 switches */
 switch(FEAT_TRAINS, SELF, switch_2e53_articulated, extra_callback_info1) {

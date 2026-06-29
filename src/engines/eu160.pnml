@@ -5,16 +5,16 @@
 /* EU160 sprites */
 spriteset(sset_eu160_purchase, "gfx/eu160.png")   { tmpl_sprite_purchase(4, 60) }
 spriteset(sset_eu160, "gfx/eu160.png")            { tmpl_sprite_train12(4, 20) }
-spriteset(sset_eu160_purchase_tyskie, "gfx/eu160.png")   { tmpl_sprite_purchase(4, 117) }
-spriteset(sset_eu160_tyskie, "gfx/eu160.png")            { tmpl_sprite_train12(4, 77) }
-spriteset(sset_eu160_purchase_rmf, "gfx/eu160.png")   { tmpl_sprite_purchase(4, 170) }
-spriteset(sset_eu160_rmf, "gfx/eu160.png")            { tmpl_sprite_train12(4, 130) }
-spriteset(sset_eu160_purchase_wybierz_kolej, "gfx/eu160.png")   { tmpl_sprite_purchase(4, 230) }
-spriteset(sset_eu160_wybierz_kolej, "gfx/eu160.png")            { tmpl_sprite_train12(4, 190) }
-spriteset(sset_eu160_purchase_20lat_polski, "gfx/eu160.png")   { tmpl_sprite_purchase(4, 290) }
-spriteset(sset_eu160_20lat_polski, "gfx/eu160.png")            { tmpl_sprite_train12(4, 250) }
-spriteset(sset_eu160_purchase_powstanie_slaskie, "gfx/eu160.png")   { tmpl_sprite_purchase(4, 350) }
-spriteset(sset_eu160_powstanie_slaskie, "gfx/eu160.png")            { tmpl_sprite_train12(4, 310) }
+spriteset(sset_eu160_purchase_tyskie, "gfx/eu160.png")   { tmpl_sprite_purchase(4, 120) }
+spriteset(sset_eu160_tyskie, "gfx/eu160.png")            { tmpl_sprite_train12(4, 80) }
+spriteset(sset_eu160_purchase_rmf, "gfx/eu160.png")   { tmpl_sprite_purchase(4, 180) }
+spriteset(sset_eu160_rmf, "gfx/eu160.png")            { tmpl_sprite_train12(4, 140) }
+spriteset(sset_eu160_purchase_wybierz_kolej, "gfx/eu160.png")   { tmpl_sprite_purchase(4, 240) }
+spriteset(sset_eu160_wybierz_kolej, "gfx/eu160.png")            { tmpl_sprite_train12(4, 200) }
+spriteset(sset_eu160_purchase_20lat_polski, "gfx/eu160.png")   { tmpl_sprite_purchase(4, 300) }
+spriteset(sset_eu160_20lat_polski, "gfx/eu160.png")            { tmpl_sprite_train12(4, 260) }
+spriteset(sset_eu160_purchase_powstanie_slaskie, "gfx/eu160.png")   { tmpl_sprite_purchase(4, 360) }
+spriteset(sset_eu160_powstanie_slaskie, "gfx/eu160.png")            { tmpl_sprite_train12(4, 320) }
 
 /* EU160 (GRIFFIN) switches */
 switch(FEAT_TRAINS, SELF, switch_eu160_articulated, extra_callback_info1) {

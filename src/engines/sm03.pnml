@@ -6,7 +6,7 @@
 spriteset(sset_sm03_purchase, "gfx/sm03.png")           { tmpl_sprite_purchase(4, 60) }
 spriteset(sset_sm03, "gfx/sm03.png")                    { tmpl_sprite_train(4, 20) }
 spriteset(sset_sm03_rev, "gfx/sm03.png")                { tmpl_sprite_train(4, 80) }
-spriteset(sset_sm03_pkp_cargo_purchase, "gfx/sm03.png") { tmpl_sprite_purchase(4, 190) }
+spriteset(sset_sm03_pkp_cargo_purchase, "gfx/sm03.png") { tmpl_sprite_purchase(4, 200) }
 spriteset(sset_sm03_pkp_cargo, "gfx/sm03.png")          { tmpl_sprite_train(4, 120) }
 spriteset(sset_sm03_pkp_cargo_rev, "gfx/sm03.png")      { tmpl_sprite_train(4, 160) }
 

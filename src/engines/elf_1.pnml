@@ -6,14 +6,14 @@
 #define EN76_KUJ_PNG "gfx/EN76_KUJ.png"
 
 /* 27WE sprites */
-spriteset(sset_27we_purchase, WE27_PNG)   { tmpl_sprite_purchase(4, 132) }
+spriteset(sset_27we_purchase, WE27_PNG)   { tmpl_sprite_purchase(4, 140) }
 
 spriteset(sset_27we_head, WE27_PNG)       { tmpl_sprite_train10(4, 20) }
-spriteset(sset_27we_mid, WE27_PNG)       { tmpl_sprite_train10_offset(4, 58, 1) }
-spriteset(sset_27we_tail, WE27_PNG)       { tmpl_sprite_train10_offset(4, 92, 2) }
-spriteset(sset_27we_head_open, WE27_PNG)       { tmpl_sprite_train10(4, 151) }
-spriteset(sset_27we_mid_open, WE27_PNG)       { tmpl_sprite_train10_offset(4, 189, 1) }
-spriteset(sset_27we_tail_open, WE27_PNG)            { tmpl_sprite_train10_offset(4, 229, 2) }
+spriteset(sset_27we_mid, WE27_PNG)       { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_27we_tail, WE27_PNG)       { tmpl_sprite_train10_offset(4, 100, 2) }
+spriteset(sset_27we_head_open, WE27_PNG)       { tmpl_sprite_train10(4, 160) }
+spriteset(sset_27we_mid_open, WE27_PNG)       { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_27we_tail_open, WE27_PNG)            { tmpl_sprite_train10_offset(4, 240, 2) }
 
 spritegroup sgroup_27we_head {
     loaded:     [sset_27we_head];
@@ -29,16 +29,16 @@ spritegroup sgroup_27we_tail {
 }
 
 /* EN76 KW sprites */
-spriteset(sset_en76_kw_purchase, EN76_KW_PNG)   { tmpl_sprite_purchase(4, 174) }
+spriteset(sset_en76_kw_purchase, EN76_KW_PNG)   { tmpl_sprite_purchase(4, 180) }
 
 spriteset(sset_en76_kw_head, EN76_KW_PNG)       { tmpl_sprite_train10(4, 20) }
-spriteset(sset_en76_kw_mid, EN76_KW_PNG)       { tmpl_sprite_train10_offset(4, 58, 1) }
-spriteset(sset_en76_kw_mid2, EN76_KW_PNG)       { tmpl_sprite_train10_offset(4, 96, 1) }
-spriteset(sset_en76_kw_tail, EN76_KW_PNG)       { tmpl_sprite_train10_offset(4, 134, 2) }
-spriteset(sset_en76_kw_head_open, EN76_KW_PNG)       { tmpl_sprite_train10(4, 193) }
-spriteset(sset_en76_kw_mid_open, EN76_KW_PNG)       { tmpl_sprite_train10_offset(4, 231, 1) }
-spriteset(sset_en76_kw_mid2_open, EN76_KW_PNG)       { tmpl_sprite_train10_offset(4, 269, 1) }
-spriteset(sset_en76_kw_tail_open, EN76_KW_PNG)            { tmpl_sprite_train10_offset(4, 309, 2) }
+spriteset(sset_en76_kw_mid, EN76_KW_PNG)       { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_en76_kw_mid2, EN76_KW_PNG)       { tmpl_sprite_train10_offset(4, 100, 1) }
+spriteset(sset_en76_kw_tail, EN76_KW_PNG)       { tmpl_sprite_train10_offset(4, 140, 2) }
+spriteset(sset_en76_kw_head_open, EN76_KW_PNG)       { tmpl_sprite_train10(4, 200) }
+spriteset(sset_en76_kw_mid_open, EN76_KW_PNG)       { tmpl_sprite_train10_offset(4, 240, 1) }
+spriteset(sset_en76_kw_mid2_open, EN76_KW_PNG)       { tmpl_sprite_train10_offset(4, 280, 1) }
+spriteset(sset_en76_kw_tail_open, EN76_KW_PNG)            { tmpl_sprite_train10_offset(4, 320, 2) }
 
 spritegroup sgroup_en76_kw_head {
     loaded:     [sset_en76_kw_head];
@@ -57,16 +57,16 @@ spritegroup sgroup_en76_kw_tail {
     loading:    [sset_en76_kw_tail_open];
 }
 /* EN76 KUJ sprites */
-spriteset(sset_en76_kuj_purchase, EN76_KUJ_PNG)   { tmpl_sprite_purchase(4, 174) }
+spriteset(sset_en76_kuj_purchase, EN76_KUJ_PNG)   { tmpl_sprite_purchase(4, 180) }
 
 spriteset(sset_en76_kuj_head, EN76_KUJ_PNG)       { tmpl_sprite_train10(4, 20) }
-spriteset(sset_en76_kuj_mid, EN76_KUJ_PNG)       { tmpl_sprite_train10_offset(4, 58, 1) }
-spriteset(sset_en76_kuj_mid2, EN76_KUJ_PNG)       { tmpl_sprite_train10_offset(4, 96, 1) }
-spriteset(sset_en76_kuj_tail, EN76_KUJ_PNG)       { tmpl_sprite_train10_offset(4, 134, 2) }
-spriteset(sset_en76_kuj_head_open, EN76_KUJ_PNG)       { tmpl_sprite_train10(4, 193) }
-spriteset(sset_en76_kuj_mid_open, EN76_KUJ_PNG)       { tmpl_sprite_train10_offset(4, 231, 1) }
-spriteset(sset_en76_kuj_mid2_open, EN76_KUJ_PNG)       { tmpl_sprite_train10_offset(4, 269, 1) }
-spriteset(sset_en76_kuj_tail_open, EN76_KUJ_PNG)            { tmpl_sprite_train10_offset(4, 309, 2) }
+spriteset(sset_en76_kuj_mid, EN76_KUJ_PNG)       { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_en76_kuj_mid2, EN76_KUJ_PNG)       { tmpl_sprite_train10_offset(4, 100, 1) }
+spriteset(sset_en76_kuj_tail, EN76_KUJ_PNG)       { tmpl_sprite_train10_offset(4, 140, 2) }
+spriteset(sset_en76_kuj_head_open, EN76_KUJ_PNG)       { tmpl_sprite_train10(4, 200) }
+spriteset(sset_en76_kuj_mid_open, EN76_KUJ_PNG)       { tmpl_sprite_train10_offset(4, 240, 1) }
+spriteset(sset_en76_kuj_mid2_open, EN76_KUJ_PNG)       { tmpl_sprite_train10_offset(4, 280, 1) }
+spriteset(sset_en76_kuj_tail_open, EN76_KUJ_PNG)            { tmpl_sprite_train10_offset(4, 320, 2) }
 
 spritegroup sgroup_en76_kuj_head {
     loaded:     [sset_en76_kuj_head];
@@ -86,14 +86,14 @@ spritegroup sgroup_en76_kuj_tail {
 }
 
 /* EN62 sprites */
-spriteset(sset_en62_purchase, "gfx/EN62.png")   { tmpl_sprite_purchase(4, 136) }
+spriteset(sset_en62_purchase, "gfx/EN62.png")   { tmpl_sprite_purchase(4, 140) }
 
 spriteset(sset_en62_head, "gfx/EN62.png")       { tmpl_sprite_train10(4, 20) }
-spriteset(sset_en62_mid, "gfx/EN62.png")       { tmpl_sprite_train10_offset(4, 58, 1) }
-spriteset(sset_en62_tail, "gfx/EN62.png")       { tmpl_sprite_train10_offset(4, 96, 2) }
-spriteset(sset_en62_head_open, "gfx/EN62.png")       { tmpl_sprite_train10(4, 155) }
-spriteset(sset_en62_mid_open, "gfx/EN62.png")       { tmpl_sprite_train10_offset(4, 193, 1) }
-spriteset(sset_en62_tail_open, "gfx/EN62.png")            { tmpl_sprite_train10_offset(4, 231, 2) }
+spriteset(sset_en62_mid, "gfx/EN62.png")       { tmpl_sprite_train10_offset(4, 60, 1) }
+spriteset(sset_en62_tail, "gfx/EN62.png")       { tmpl_sprite_train10_offset(4, 100, 2) }
+spriteset(sset_en62_head_open, "gfx/EN62.png")       { tmpl_sprite_train10(4, 160) }
+spriteset(sset_en62_mid_open, "gfx/EN62.png")       { tmpl_sprite_train10_offset(4, 200, 1) }
+spriteset(sset_en62_tail_open, "gfx/EN62.png")            { tmpl_sprite_train10_offset(4, 240, 2) }
 
 spritegroup sgroup_en62_head {
     loaded:     [sset_en62_head];
@@ -109,13 +109,13 @@ spritegroup sgroup_en62_tail {
 }
 
 /* EN96 sprites */
-spriteset(sset_en96_purchase, "gfx/EN96.png")   { tmpl_sprite_purchase(3, 101) }
-spriteset(sset_en96_advert, "gfx/EN96.png")   { tmpl_sprite_advertisement100(3, 202) }
+spriteset(sset_en96_purchase, "gfx/EN96.png")   { tmpl_sprite_purchase(4, 100) }
+spriteset(sset_en96_advert, "gfx/EN96.png")   { tmpl_sprite_advertisement100(4, 200) }
 
-spriteset(sset_en96_head, "gfx/EN96.png")       { tmpl_sprite_train10(4, 21) }
-spriteset(sset_en96_tail, "gfx/EN96.png")       { tmpl_sprite_train10_offset(4, 61, 2) }
-spriteset(sset_en96_head_open, "gfx/EN96.png")       { tmpl_sprite_train10(3, 121) }
-spriteset(sset_en96_tail_open, "gfx/EN96.png")       { tmpl_sprite_train10_offset(3, 162, 2) }
+spriteset(sset_en96_head, "gfx/EN96.png")       { tmpl_sprite_train10(4, 20) }
+spriteset(sset_en96_tail, "gfx/EN96.png")       { tmpl_sprite_train10_offset(4, 60, 2) }
+spriteset(sset_en96_head_open, "gfx/EN96.png")       { tmpl_sprite_train10(4, 120) }
+spriteset(sset_en96_tail_open, "gfx/EN96.png")       { tmpl_sprite_train10_offset(4, 160, 2) }
 spritegroup sgroup_en96_head {
     loaded:     [sset_en96_head];
     loading:    [sset_en96_head_open];

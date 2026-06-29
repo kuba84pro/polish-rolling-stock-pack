@@ -1,7 +1,7 @@
 /* SA105 sprites */
-spriteset(sset_vt627_purchase, "gfx/VT627.png")         { tmpl_sprite_purchase(5, 61) }
-spriteset(sset_vt627, "gfx/VT627.png")                  { tmpl_sprite_train12(5, 21) }
-spriteset(sset_vt627_open, "gfx/VT627.png")             { tmpl_sprite_train12(4, 83) }
+spriteset(sset_vt627_purchase, "gfx/VT627.png")         { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_vt627, "gfx/VT627.png")                  { tmpl_sprite_train12(4, 20) }
+spriteset(sset_vt627_open, "gfx/VT627.png")             { tmpl_sprite_train12(4, 80) }
 
 spritegroup sgroup_vt627 {
     loaded:     [sset_vt627];

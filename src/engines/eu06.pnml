@@ -3,12 +3,12 @@
 // (c) Tadeusz Domagalski, licence: GPLv2
 
 /* EU06 sprites */
-spriteset(sset_eu06_purchase, "gfx/eu06.png")   { tmpl_sprite_purchase(2, 162) }
-spriteset(sset_eu06, "gfx/eu06.png")            { tmpl_sprite_train10(2, 120) }
-spriteset(sset_eu06_yellow_purchase, "gfx/eu06.png")   { tmpl_sprite_purchase(2, 102) }
-spriteset(sset_eu06_yellow, "gfx/eu06.png")            { tmpl_sprite_train10(2, 61) }
-spriteset(sset_eu06_green_purchase, "gfx/eu06.png")   { tmpl_sprite_purchase(2, 42) }
-spriteset(sset_eu06_green, "gfx/eu06.png")            { tmpl_sprite_train10(2, 2) }
+spriteset(sset_eu06_purchase, "gfx/eu06.png")   { tmpl_sprite_purchase(4, 180) }
+spriteset(sset_eu06, "gfx/eu06.png")            { tmpl_sprite_train10(4, 140) }
+spriteset(sset_eu06_yellow_purchase, "gfx/eu06.png")   { tmpl_sprite_purchase(4, 120) }
+spriteset(sset_eu06_yellow, "gfx/eu06.png")            { tmpl_sprite_train10(4, 80) }
+spriteset(sset_eu06_green_purchase, "gfx/eu06.png")   { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_eu06_green, "gfx/eu06.png")            { tmpl_sprite_train10(4, 20) }
 
 /* EU06 switches */
 switch(FEAT_TRAINS, SELF, switch_eu06_articulated, extra_callback_info1) {

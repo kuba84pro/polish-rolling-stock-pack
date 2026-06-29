@@ -3,17 +3,17 @@
 // (c) Tadeusz Domagalski, GPL 2.0
 
 /* Pm36 sprites */
-spriteset(sset_pm36_purchase, "gfx/pm36.png")   { tmpl_sprite_purchase(4, 94) }
+spriteset(sset_pm36_purchase, "gfx/pm36.png")   { tmpl_sprite_purchase(4, 100) }
 spriteset(sset_pm36, "gfx/pm36.png")            { tmpl_sprite_train10(4, 20) }
 spriteset(sset_pm36_tender, "gfx/pm36.png")     { tmpl_sprite_train(4, 60) }
 
-spriteset(sset_pm36_bright_green_purchase, "gfx/pm36.png")   { tmpl_sprite_purchase(4, 188) }
-spriteset(sset_pm36_bright_green, "gfx/pm36.png")            { tmpl_sprite_train10(4, 113) }
-spriteset(sset_pm36_bright_green_tender, "gfx/pm36.png")     { tmpl_sprite_train(4, 153) }
+spriteset(sset_pm36_bright_green_purchase, "gfx/pm36.png")   { tmpl_sprite_purchase(4, 200) }
+spriteset(sset_pm36_bright_green, "gfx/pm36.png")            { tmpl_sprite_train10(4, 120) }
+spriteset(sset_pm36_bright_green_tender, "gfx/pm36.png")     { tmpl_sprite_train(4, 160) }
 
-spriteset(sset_pm36_1_purchase, "gfx/pm36.png")   { tmpl_sprite_purchase(4, 283) }
-spriteset(sset_pm36_1, "gfx/pm36.png")            { tmpl_sprite_train10(4, 208) }
-spriteset(sset_pm36_1_tender, "gfx/pm36.png")     { tmpl_sprite_train(4, 248) }
+spriteset(sset_pm36_1_purchase, "gfx/pm36.png")   { tmpl_sprite_purchase(4, 300) }
+spriteset(sset_pm36_1, "gfx/pm36.png")            { tmpl_sprite_train10(4, 220) }
+spriteset(sset_pm36_1_tender, "gfx/pm36.png")     { tmpl_sprite_train(4, 260) }
 
 /* Pm36 switches */
 switch(FEAT_TRAINS, SELF, switch_pm36_articulated, extra_callback_info1) {

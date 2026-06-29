@@ -6,12 +6,12 @@
 spriteset(sset_sn61_purchase, "gfx/sn61.png")           { tmpl_sprite_purchase(4, 60) }
 spriteset(sset_sn61, "gfx/sn61.png")                    { tmpl_sprite_train12(4, 20) }
 spriteset(sset_sn61_open, "gfx/sn61.png")               { tmpl_sprite_train12(4, 80) }
-spriteset(sset_sn61_cut, "gfx/sn61.png")                { tmpl_sprite_train12(4, 200) }
+spriteset(sset_sn61_cut, "gfx/sn61.png")                { tmpl_sprite_train12(4, 120) }
 
-spriteset(sset_sn61_183_purchase, "gfx/sn61.png")           { tmpl_sprite_purchase(4, 320) }
-spriteset(sset_sn61_183, "gfx/sn61.png")                    { tmpl_sprite_train12(4, 280) }
-spriteset(sset_sn61_183_open, "gfx/sn61.png")               { tmpl_sprite_train12(4, 340) }
-spriteset(sset_sn61_183_cut, "gfx/sn61.png")                { tmpl_sprite_train12(4, 380) }
+spriteset(sset_sn61_183_purchase, "gfx/sn61.png")           { tmpl_sprite_purchase(4, 200) }
+spriteset(sset_sn61_183, "gfx/sn61.png")                    { tmpl_sprite_train12(4, 160) }
+spriteset(sset_sn61_183_open, "gfx/sn61.png")               { tmpl_sprite_train12(4, 220) }
+spriteset(sset_sn61_183_cut, "gfx/sn61.png")                { tmpl_sprite_train12(4, 260) }
 
 spritegroup sgroup_sn61 {
     loaded:     [sset_sn61];

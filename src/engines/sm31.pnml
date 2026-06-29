@@ -6,12 +6,12 @@
 spriteset(sset_sm31_purchase, "gfx/sm31.png")       { tmpl_sprite_purchase(4, 60) }
 spriteset(sset_sm31, "gfx/sm31.png")                { tmpl_sprite_train10(4, 20) }
 spriteset(sset_sm31_rev, "gfx/sm31.png")            { tmpl_sprite_train10(4, 80) }
-spriteset(sset_sm31_pkp_cargo, "gfx/sm31.png")                { tmpl_sprite_train10(4, 117) }
-spriteset(sset_sm31_pkp_cargo_rev, "gfx/sm31.png")            { tmpl_sprite_train10(4, 155) }
-spriteset(sset_sm31_pkp_cargo_purchase, "gfx/sm31.png")       { tmpl_sprite_purchase(4, 190) }
-spriteset(sset_sm31_trainspeed_purchase, "gfx/sm31.png")       { tmpl_sprite_purchase(4, 279) }
-spriteset(sset_sm31_trainspeed, "gfx/sm31.png")                { tmpl_sprite_train10(4, 206) }
-spriteset(sset_sm31_trainspeed_rev, "gfx/sm31.png")            { tmpl_sprite_train10(4, 244) }
+spriteset(sset_sm31_pkp_cargo, "gfx/sm31.png")                { tmpl_sprite_train10(4, 120) }
+spriteset(sset_sm31_pkp_cargo_rev, "gfx/sm31.png")            { tmpl_sprite_train10(4, 160) }
+spriteset(sset_sm31_pkp_cargo_purchase, "gfx/sm31.png")       { tmpl_sprite_purchase(4, 200) }
+spriteset(sset_sm31_trainspeed_purchase, "gfx/sm31.png")       { tmpl_sprite_purchase(4, 300) }
+spriteset(sset_sm31_trainspeed, "gfx/sm31.png")                { tmpl_sprite_train10(4, 220) }
+spriteset(sset_sm31_trainspeed_rev, "gfx/sm31.png")            { tmpl_sprite_train10(4, 260) }
 
 /* SM31 switches */
 switch(FEAT_TRAINS, SELF, switch_sm31_articulated, extra_callback_info1) {
