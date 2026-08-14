@@ -63,7 +63,7 @@ switch(FEAT_TRAINS, SELF, switch_eanos_loading_speed, cargo_type_in_veh) {
 }
 switch(FEAT_TRAINS, SELF, switch_eanos_speed, cargo_count % 67) {
     1..66: return 100;
-    return 120;
+    return 100;
 }
 
 /* Define the actual train */
@@ -82,7 +82,7 @@ item(FEAT_TRAINS, item_eanos, 20100) {
         running_cost_factor:            RUNNING_COST_CARGO_LARGE;
 		/* train properties */
         sprite_id:                      SPRITE_ID_NEW_TRAIN;
-        speed:                          120 km/h;
+        speed:                          100 km/h;
         misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
         refit_cost:                     0;
         track_type:                     RAIL;
@@ -115,7 +115,7 @@ if(param_keep_old_vehs) {
         purchase_cargo_capacity:    return CB_FAILED;
         cargo_capacity:             switch_eanos_capacity;
         loading_speed:              switch_eanos_loading_speed;
-        purchase_speed:             return 120;
+        purchase_speed:             return 100;
         speed:                      switch_eanos_speed;
         colour_mapping:             switch_bulk_recolour;
         articulated_part:           switch_eanos_articulated;
@@ -137,7 +137,7 @@ item(FEAT_TRAINS, item_eanos_new, 20101) {
         running_cost_factor:            RUNNING_COST_CARGO_LARGE;
 		/* train properties */
         sprite_id:                      SPRITE_ID_NEW_TRAIN;
-        speed:                          120 km/h;
+        speed:                          100 km/h;
         misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
         refit_cost:                     0;
         track_type:                     RAIL;
@@ -170,7 +170,7 @@ if(param_keep_old_vehs) {
         purchase_cargo_capacity:    return CB_FAILED;
         cargo_capacity:             switch_eanos_capacity;
         loading_speed:              switch_eanos_loading_speed;
-        purchase_speed:             return 120;
+        purchase_speed:             return 100;
         speed:                      switch_eanos_speed;
         colour_mapping:             switch_bulk_recolour;
         articulated_part:           switch_eanos_articulated;

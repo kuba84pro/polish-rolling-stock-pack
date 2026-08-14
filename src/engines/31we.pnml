@@ -238,10 +238,6 @@ switch(FEAT_TRAINS, SELF, switch_en78_kml_articulated, extra_callback_info1) {
     7: return item_dummy_2;
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
-switch(FEAT_TRAINS, SELF, switch_en78_kml_purchase, extra_callback_info1 & 0xFF) {
-    0x21: return sset_en78_advert_kml;
-    return sset_en78_purchase_kml;
-}
 switch(FEAT_TRAINS, SELF, switch_en78_kml_graphics, position_in_vehid_chain % 7) {
     0: return sgroup_en78_head_kml;
     2: return sgroup_en78_mid_kml;
@@ -288,7 +284,7 @@ item(FEAT_TRAINS, item_en78_kml, 2531) {
     }
 
     graphics {
-        purchase:                   switch_en78_kml_purchase;
+        purchase:                   sset_en78_purchase_kml;
         default:                    switch_en78_kml_graphics;
         articulated_part:           switch_en78_kml_articulated;
         additional_text:            switch_impuls1_4part_add_text;
@@ -307,10 +303,6 @@ switch(FEAT_TRAINS, SELF, switch_ed78_zach_pom_articulated, extra_callback_info1
     1..6: return item_ed78_zach_pom;     // including dummy parts
     7: return item_dummy_2;
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
-}
-switch(FEAT_TRAINS, SELF, switch_ed78_zach_pom_purchase, extra_callback_info1 & 0xFF) {
-    0x21: return sset_ed78_advert_zach_pom;
-    return sset_ed78_purchase_zach_pom;
 }
 switch(FEAT_TRAINS, SELF, switch_ed78_zach_pom_graphics, position_in_vehid_chain % 7) {
     0: return sgroup_ed78_head_zach_pom;
@@ -358,7 +350,7 @@ item(FEAT_TRAINS, item_ed78_zach_pom, 2532) {
     }
 
     graphics {
-        purchase:                   switch_ed78_zach_pom_purchase;
+        purchase:                   sset_ed78_purchase_zach_pom;
         default:                    switch_ed78_zach_pom_graphics;
         articulated_part:           switch_ed78_zach_pom_articulated;
         additional_text:            switch_impuls1_4part_add_text;
@@ -377,10 +369,6 @@ switch(FEAT_TRAINS, SELF, switch_ed78_zach_pom_duma_articulated, extra_callback_
     1..6: return item_ed78_028;     // including dummy parts
     7: return item_dummy_2;
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
-}
-switch(FEAT_TRAINS, SELF, switch_ed78_zach_pom_duma_purchase, extra_callback_info1 & 0xFF) {
-    0x21: return sset_ed78_advert_zach_pom_duma;
-    return sset_ed78_purchase_zach_pom_duma;
 }
 switch(FEAT_TRAINS, SELF, switch_ed78_zach_pom_duma_graphics, position_in_vehid_chain % 7) {
     0: return sgroup_ed78_head_zach_pom_duma;
@@ -428,7 +416,7 @@ item(FEAT_TRAINS, item_ed78_028, 2533) {
     }
 
     graphics {
-        purchase:                   switch_ed78_zach_pom_duma_purchase;
+        purchase:                   sset_ed78_purchase_zach_pom_duma;
         default:                    switch_ed78_zach_pom_duma_graphics;
         articulated_part:           switch_ed78_zach_pom_duma_articulated;
         additional_text:            switch_impuls1_4part_add_text;

@@ -209,10 +209,6 @@ switch(FEAT_TRAINS, SELF, switch_36wea_podkarpackie_articulated, extra_callback_
     1..4: return item_36wea_po;     // including dummy parts
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
-switch(FEAT_TRAINS, SELF, switch_36wea_podkarpackie_purchase, extra_callback_info1 & 0xFF) {
-    0x21: return sset_36wea_podkarpackie_advert;
-    return sset_36wea_podkarpackie_purchase;
-}
 switch(FEAT_TRAINS, SELF, switch_36wea_podkarpackie_graphics, position_in_vehid_chain % 5) {
     0: return sgroup_36wea_head_podkarpackie;
     2: return sgroup_36wea_mid_podkarpackie;
@@ -257,7 +253,7 @@ item(FEAT_TRAINS, item_36wea_po, 2501) {
     }
 
     graphics {
-        purchase:                   switch_36wea_podkarpackie_purchase;
+        purchase:                   sset_36wea_podkarpackie_purchase;
         default:                    switch_36wea_podkarpackie_graphics;
         articulated_part:           switch_36wea_podkarpackie_articulated;
         additional_text:            switch_impuls1_3part_add_text;
@@ -288,10 +284,6 @@ spritegroup sgroup_36wea_tail_kd {
 switch(FEAT_TRAINS, SELF, switch_36wea_kd_articulated, extra_callback_info1) {
     1..4: return item_36wea_kd;     // including dummy parts
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
-}
-switch(FEAT_TRAINS, SELF, switch_36wea_kd_purchase, extra_callback_info1 & 0xFF) {
-    0x21: return sset_36wea_kd_advert;
-    return sset_36wea_kd_purchase;
 }
 switch(FEAT_TRAINS, SELF, switch_36wea_kd_graphics, position_in_vehid_chain % 5) {
     0: return sgroup_36wea_head_kd;
@@ -337,7 +329,7 @@ item(FEAT_TRAINS, item_36wea_kd, 2502) {
     }
 
     graphics {
-        purchase:                   switch_36wea_kd_purchase;
+        purchase:                   sset_36wea_kd_purchase;
         default:                    switch_36wea_kd_graphics;
         articulated_part:           switch_36wea_kd_articulated;
         additional_text:            switch_impuls1_3part_add_text;
@@ -368,10 +360,6 @@ spritegroup sgroup_36wea_tail_kd_kolej {
 switch(FEAT_TRAINS, SELF, switch_36wea_kd_kolej_articulated, extra_callback_info1) {
     1..4: return item_36wea_kd_kolej;     // including dummy parts
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
-}
-switch(FEAT_TRAINS, SELF, switch_36wea_kd_kolej_purchase, extra_callback_info1 & 0xFF) {
-    0x21: return sset_36wea_kd_kolej_advert;
-    return sset_36wea_kd_kolej_purchase;
 }
 switch(FEAT_TRAINS, SELF, switch_36wea_kd_kolej_graphics, position_in_vehid_chain % 5) {
     0: return sgroup_36wea_head_kd_kolej;
@@ -417,7 +405,7 @@ item(FEAT_TRAINS, item_36wea_kd_kolej, 2503) {
     }
 
     graphics {
-        purchase:                   switch_36wea_kd_kolej_purchase;
+        purchase:                   sset_36wea_kd_kolej_purchase;
         default:                    switch_36wea_kd_kolej_graphics;
         articulated_part:           switch_36wea_kd_kolej_articulated;
         additional_text:            switch_impuls1_3part_add_text;
@@ -448,10 +436,6 @@ spritegroup sgroup_36wea_tail_slaskie {
 switch(FEAT_TRAINS, SELF, switch_36wea_slaskie_articulated, extra_callback_info1) {
     1..4: return item_36wea_slaskie;     // including dummy parts
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
-}
-switch(FEAT_TRAINS, SELF, switch_36wea_slaskie_purchase, extra_callback_info1 & 0xFF) {
-    0x21: return sset_36wea_slaskie_advert;
-    return sset_36wea_slaskie_purchase;
 }
 switch(FEAT_TRAINS, SELF, switch_36wea_slaskie_graphics, position_in_vehid_chain % 5) {
     0: return sgroup_36wea_head_slaskie;
@@ -497,7 +481,7 @@ item(FEAT_TRAINS, item_36wea_slaskie, 2504) {
     }
 
     graphics {
-        purchase:                   switch_36wea_slaskie_purchase;
+        purchase:                   sset_36wea_slaskie_purchase;
         default:                    switch_36wea_slaskie_graphics;
         articulated_part:           switch_36wea_slaskie_articulated;
         additional_text:            switch_impuls1_3part_add_text;
@@ -528,10 +512,6 @@ spritegroup sgroup_36wea_tail_km {
 switch(FEAT_TRAINS, SELF, switch_36wea_km_articulated, extra_callback_info1) {
     1..4: return item_36wea_km;     // including dummy parts
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
-}
-switch(FEAT_TRAINS, SELF, switch_36wea_km_purchase, extra_callback_info1 & 0xFF) {
-    0x21: return sset_36wea_km_advert;
-    return sset_36wea_km_purchase;
 }
 switch(FEAT_TRAINS, SELF, switch_36wea_km_graphics, position_in_vehid_chain % 5) {
     0: return sgroup_36wea_head_km;
@@ -577,7 +557,7 @@ item(FEAT_TRAINS, item_36wea_km, 2505) {
     }
 
     graphics {
-        purchase:                   switch_36wea_km_purchase;
+        purchase:                   sset_36wea_km_purchase;
         default:                    switch_36wea_km_graphics;
         articulated_part:           switch_36wea_km_articulated;
         additional_text:            switch_impuls1_3part_add_text;
@@ -608,10 +588,6 @@ spritegroup sgroup_36wea_tail_sk {
 switch(FEAT_TRAINS, SELF, switch_36wea_sk_articulated, extra_callback_info1) {
     1..4: return item_36wea_sk;     // including dummy parts
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
-}
-switch(FEAT_TRAINS, SELF, switch_36wea_sk_purchase, extra_callback_info1 & 0xFF) {
-    0x21: return sset_36wea_sk_advert;
-    return sset_36wea_sk_purchase;
 }
 switch(FEAT_TRAINS, SELF, switch_36wea_sk_graphics, position_in_vehid_chain % 5) {
     0: return sgroup_36wea_head_sk;
@@ -657,7 +633,7 @@ item(FEAT_TRAINS, item_36wea_sk, 2506) {
     }
 
     graphics {
-        purchase:                   switch_36wea_sk_purchase;
+        purchase:                   sset_36wea_sk_purchase;
         default:                    switch_36wea_sk_graphics;
         articulated_part:           switch_36wea_sk_articulated;
         additional_text:            switch_impuls1_3part_add_text;

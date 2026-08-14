@@ -485,7 +485,7 @@ item(FEAT_TRAINS, item_sggrss_pcc, 15002) {
         running_cost_factor:            RUNNING_COST_CARGO_MEDIUM;
 		/* train properties */
         sprite_id:                      SPRITE_ID_NEW_TRAIN;
-        speed:                          120 km/h;
+        speed:                          100 km/h;
         misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
         refit_cost:                     0;
         track_type:                     RAIL;
@@ -506,7 +506,7 @@ item(FEAT_TRAINS, item_sggrss_pcc, 15002) {
         purchase_cargo_capacity:    return 108;
         cargo_capacity:             switch_sggrss_cargo_capacity;
         random_trigger:             switch_sggrss_pcc_graphics;
-        purchase_speed:             return 120;
+        purchase_speed:             return 100;
         speed:                      switch_sggrss_speed;
         loading_speed:              return 20*(cargo_capacity/SGGRSS_CAPACITY);
     }

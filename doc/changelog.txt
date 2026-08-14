@@ -1,5 +1,9 @@
 Polish Rolling Stock Pack - Changelog
 ================================
+0.19.1
+Changes:
+Due to recent desync bug while playing a multiplayer game, caused probably by wagons which have different speed while loaded or unloaded, the speed of them was decreased to the lower one. This should be fixed as soon as the Openttd developers fix the problem.
+
 0.19.0
 Added:
 - EU44 EURO 2012 (6 liveries)

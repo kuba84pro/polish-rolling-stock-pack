@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION="0.19.0"
+VERSION="0.19.1"
 MODNAME="polish-rolling-stock-pack"
 
 

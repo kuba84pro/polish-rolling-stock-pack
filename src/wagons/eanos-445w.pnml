@@ -53,7 +53,7 @@ switch(FEAT_TRAINS, SELF, switch_eanos_445w_loading_speed, cargo_type_in_veh) {
 }
 switch(FEAT_TRAINS, SELF, switch_eanos_445w_speed, cargo_count % 61) {
     1..60: return 100;
-    return 120;
+    return 100;
 }
 
 /* Define the actual train */
@@ -73,7 +73,7 @@ item(FEAT_TRAINS, item_eanos_445w, 20150) {
         running_cost_factor:            RUNNING_COST_CARGO_LARGE;
 		/* train properties */
         sprite_id:                      SPRITE_ID_NEW_TRAIN;
-        speed:                          120 km/h;
+        speed:                          100 km/h;
         misc_flags:                     bitmask(TRAIN_FLAG_AUTOREFIT);
         refit_cost:                     0;
         track_type:                     RAIL;

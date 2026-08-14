@@ -17,7 +17,7 @@ switch(FEAT_TRAINS, SELF, switch_zags_articulated, extra_callback_info1) {
 }
 switch(FEAT_TRAINS, SELF, switch_zags_speed, cargo_count % 58) {
     1..57: return 100;
-    return 120;
+    return 100;
 }
 
 /* Define the actual train */
@@ -37,7 +37,7 @@ item(FEAT_TRAINS, item_zags_gatx, 21107) {
         running_cost_factor:            RUNNING_COST_CARGO_MEDIUM+1;
 		/* train properties */
         sprite_id:                      SPRITE_ID_NEW_TRAIN;
-        speed:                          120 km/h;
+        speed:                          100 km/h;
         refit_cost:                     0;
         track_type:                     RAIL;
         power:                          0;
@@ -75,7 +75,7 @@ item(FEAT_TRAINS, item_zags_ermewa, 21108) {
         running_cost_factor:            RUNNING_COST_CARGO_MEDIUM+1;
 		/* train properties */
         sprite_id:                      SPRITE_ID_NEW_TRAIN;
-        speed:                          120 km/h;
+        speed:                          100 km/h;
         refit_cost:                     0;
         track_type:                     RAIL;
         power:                          0;
@@ -92,7 +92,7 @@ item(FEAT_TRAINS, item_zags_ermewa, 21108) {
         additional_text:            return string(STR_PURCHASE_DESCR_2L, string(STR_BRAKE_AIR), string(STR_120_100_CAR_SPEED_TEXT));
         default:                    sset_zags_ermewa;
         articulated_part:           switch_zags_articulated;
-        purchase_speed:             return 120;
+        purchase_speed:             return 100;
         speed:                      switch_zags_speed;
     }
 }
@@ -113,7 +113,7 @@ item(FEAT_TRAINS, item_zags_wascosa, 21109) {
         running_cost_factor:            RUNNING_COST_CARGO_MEDIUM+1;
 		/* train properties */
         sprite_id:                      SPRITE_ID_NEW_TRAIN;
-        speed:                          120 km/h;
+        speed:                          100 km/h;
         refit_cost:                     0;
         track_type:                     RAIL;
         power:                          0;
@@ -130,7 +130,7 @@ item(FEAT_TRAINS, item_zags_wascosa, 21109) {
         additional_text:            return string(STR_PURCHASE_DESCR_2L, string(STR_BRAKE_AIR), string(STR_120_100_CAR_SPEED_TEXT));
         default:                    sset_zags_wascosa;
         articulated_part:           switch_zags_articulated;
-        purchase_speed:             return 120;
+        purchase_speed:             return 100;
         speed:                      switch_zags_speed;
     }
 }
