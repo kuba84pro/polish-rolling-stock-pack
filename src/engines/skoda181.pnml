@@ -5,18 +5,18 @@
 /* SKODA181 sprites */
 spriteset(sset_s181_purchase, "gfx/s181.png")    { tmpl_sprite_purchase(4, 60) }
 spriteset(sset_s181, "gfx/s181.png")             { tmpl_sprite_train10(4, 20) }
-spriteset(sset_s181_ciech_purchase, "gfx/s181.png")    { tmpl_sprite_purchase(4, 130) }
-spriteset(sset_s181_ciech, "gfx/s181.png")             { tmpl_sprite_train10(4, 91) }
-spriteset(sset_s181_cu_purchase, "gfx/s181.png")    { tmpl_sprite_purchase(4, 190) }
-spriteset(sset_s181_cu, "gfx/s181.png")             { tmpl_sprite_train10(4, 156) }
-spriteset(sset_s181_stk_purchase, "gfx/s181.png")    { tmpl_sprite_purchase(4, 250) }
-spriteset(sset_s181_stk, "gfx/s181.png")             { tmpl_sprite_train10(4, 216) }
-spriteset(sset_s181_ctl_purchase, "gfx/s181.png")    { tmpl_sprite_purchase(4, 310) }
-spriteset(sset_s181_ctl, "gfx/s181.png")             { tmpl_sprite_train10(4, 276) }
-spriteset(sset_s181_pcc_purchase, "gfx/s181.png")    { tmpl_sprite_purchase(4, 370) }
-spriteset(sset_s181_pcc, "gfx/s181.png")             { tmpl_sprite_train10(4, 336) }
-spriteset(sset_s181_cd_cargo_purchase, "gfx/s181.png")    { tmpl_sprite_purchase(4, 430) }
-spriteset(sset_s181_cd_cargo, "gfx/s181.png")             { tmpl_sprite_train10(4, 396) }
+spriteset(sset_s181_ciech_purchase, "gfx/s181.png")    { tmpl_sprite_purchase(4, 120) }
+spriteset(sset_s181_ciech, "gfx/s181.png")             { tmpl_sprite_train10(4, 80) }
+spriteset(sset_s181_cu_purchase, "gfx/s181.png")    { tmpl_sprite_purchase(4, 180) }
+spriteset(sset_s181_cu, "gfx/s181.png")             { tmpl_sprite_train10(4, 140) }
+spriteset(sset_s181_stk_purchase, "gfx/s181.png")    { tmpl_sprite_purchase(4, 240) }
+spriteset(sset_s181_stk, "gfx/s181.png")             { tmpl_sprite_train10(4, 200) }
+spriteset(sset_s181_ctl_purchase, "gfx/s181.png")    { tmpl_sprite_purchase(4, 300) }
+spriteset(sset_s181_ctl, "gfx/s181.png")             { tmpl_sprite_train10(4, 260) }
+spriteset(sset_s181_pcc_purchase, "gfx/s181.png")    { tmpl_sprite_purchase(4, 360) }
+spriteset(sset_s181_pcc, "gfx/s181.png")             { tmpl_sprite_train10(4, 320) }
+spriteset(sset_s181_cd_cargo_purchase, "gfx/s181.png")    { tmpl_sprite_purchase(4, 420) }
+spriteset(sset_s181_cd_cargo, "gfx/s181.png")             { tmpl_sprite_train10(4, 380) }
 
 /* SKODA181 switches */
 switch(FEAT_TRAINS, SELF, switch_s181_articulated, extra_callback_info1) {

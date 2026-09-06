@@ -3,22 +3,22 @@
 // (c) Tadeusz Domagalski, licence: GPLv2
 
 /* SU45 sprites */
-spriteset(sset_su45_purchase, "gfx/su45.png")           { tmpl_sprite_purchase(4, 113) }
-spriteset(sset_su45, "gfx/su45.png")                    { tmpl_sprite_train10(4, 78) }
+spriteset(sset_su45_purchase, "gfx/su45.png")           { tmpl_sprite_purchase(4, 120) }
+spriteset(sset_su45, "gfx/su45.png")                    { tmpl_sprite_train10(4, 80) }
 spriteset(sset_su45_yellow_purchase, "gfx/su45.png")           { tmpl_sprite_purchase(4, 60) }
 spriteset(sset_su45_yellow, "gfx/su45.png")                    { tmpl_sprite_train10(4, 20) }
-spriteset(sset_su45_przewozy_regio_purchase, "gfx/su45.png")           { tmpl_sprite_purchase(4, 173) }
-spriteset(sset_su45_przewozy_regio, "gfx/su45.png")                    { tmpl_sprite_train10(4, 133) }
-spriteset(sset_st45_pkp_cargo_purchase, "gfx/su45.png")           { tmpl_sprite_purchase(4, 229) }
-spriteset(sset_st45_pkp_cargo, "gfx/su45.png")                    { tmpl_sprite_train10(4, 189) }
-spriteset(sset_su45_skpl_purchase, "gfx/su45.png")           { tmpl_sprite_purchase(4, 289) }
-spriteset(sset_su45_skpl, "gfx/su45.png")                    { tmpl_sprite_train10(4, 250) }
-spriteset(sset_su45_btk_purchase, "gfx/su45.png")           { tmpl_sprite_purchase(4, 341) }
-spriteset(sset_su45_btk, "gfx/su45.png")                    { tmpl_sprite_train10(4, 307) }
-spriteset(sset_su45_green_purchase, "gfx/su45.png")           { tmpl_sprite_purchase(4, 394) }
-spriteset(sset_su45_green, "gfx/su45.png")                    { tmpl_sprite_train10(4, 359) }
-spriteset(sset_su45_green_yellow_front_purchase, "gfx/su45.png")           { tmpl_sprite_purchase(4, 447) }
-spriteset(sset_su45_green_yellow_front, "gfx/su45.png")                    { tmpl_sprite_train10(4, 412) }
+spriteset(sset_su45_przewozy_regio_purchase, "gfx/su45.png")           { tmpl_sprite_purchase(4, 180) }
+spriteset(sset_su45_przewozy_regio, "gfx/su45.png")                    { tmpl_sprite_train10(4, 140) }
+spriteset(sset_st45_pkp_cargo_purchase, "gfx/su45.png")           { tmpl_sprite_purchase(4, 240) }
+spriteset(sset_st45_pkp_cargo, "gfx/su45.png")                    { tmpl_sprite_train10(4, 200) }
+spriteset(sset_su45_skpl_purchase, "gfx/su45.png")           { tmpl_sprite_purchase(4, 300) }
+spriteset(sset_su45_skpl, "gfx/su45.png")                    { tmpl_sprite_train10(4, 260) }
+spriteset(sset_su45_btk_purchase, "gfx/su45.png")           { tmpl_sprite_purchase(4, 360) }
+spriteset(sset_su45_btk, "gfx/su45.png")                    { tmpl_sprite_train10(4, 320) }
+spriteset(sset_su45_green_purchase, "gfx/su45.png")           { tmpl_sprite_purchase(4, 420) }
+spriteset(sset_su45_green, "gfx/su45.png")                    { tmpl_sprite_train10(4, 380) }
+spriteset(sset_su45_green_yellow_front_purchase, "gfx/su45.png")           { tmpl_sprite_purchase(4, 480) }
+spriteset(sset_su45_green_yellow_front, "gfx/su45.png")                    { tmpl_sprite_train10(4, 440) }
 
 /* SU45 Switches */
 switch(FEAT_TRAINS, SELF, switch_su45_articulated, extra_callback_info1) {

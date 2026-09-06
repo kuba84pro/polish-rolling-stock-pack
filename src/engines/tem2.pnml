@@ -3,16 +3,16 @@
 // (c) Tadeusz Domagalski, licence: GPLv2
 
 /* TEM2sprites */
-spriteset(sset_tem2_purchase, "gfx/tem2.png")       { tmpl_sprite_purchase(4, 49) }
-spriteset(sset_tem2, "gfx/tem2.png")                { tmpl_sprite_train10(4, 9) }
-spriteset(sset_tem2_pkpcargo_purchase, "gfx/tem2.png")       { tmpl_sprite_purchase(4, 108) }
-spriteset(sset_tem2_pkpcargo, "gfx/tem2.png")                { tmpl_sprite_train10(4, 68) }
-spriteset(sset_tem2_orlen_purchase, "gfx/tem2.png")       { tmpl_sprite_purchase(4, 168) }
-spriteset(sset_tem2_orlen, "gfx/tem2.png")                { tmpl_sprite_train10(4, 128) }
-spriteset(sset_tem2_ctl_purchase, "gfx/tem2.png")       { tmpl_sprite_purchase(4, 228) }
-spriteset(sset_tem2_ctl, "gfx/tem2.png")                { tmpl_sprite_train10(4, 188) }
-spriteset(sset_tem2_pmt_purchase, "gfx/tem2.png")       { tmpl_sprite_purchase(4, 288) }
-spriteset(sset_tem2_pmt, "gfx/tem2.png")                { tmpl_sprite_train10(4, 248) }
+spriteset(sset_tem2_purchase, "gfx/tem2.png")       { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_tem2, "gfx/tem2.png")                { tmpl_sprite_train10(4, 20) }
+spriteset(sset_tem2_pkpcargo_purchase, "gfx/tem2.png")       { tmpl_sprite_purchase(4, 120) }
+spriteset(sset_tem2_pkpcargo, "gfx/tem2.png")                { tmpl_sprite_train10(4, 80) }
+spriteset(sset_tem2_orlen_purchase, "gfx/tem2.png")       { tmpl_sprite_purchase(4, 180) }
+spriteset(sset_tem2_orlen, "gfx/tem2.png")                { tmpl_sprite_train10(4, 140) }
+spriteset(sset_tem2_ctl_purchase, "gfx/tem2.png")       { tmpl_sprite_purchase(4, 240) }
+spriteset(sset_tem2_ctl, "gfx/tem2.png")                { tmpl_sprite_train10(4, 200) }
+spriteset(sset_tem2_pmt_purchase, "gfx/tem2.png")       { tmpl_sprite_purchase(4, 300) }
+spriteset(sset_tem2_pmt, "gfx/tem2.png")                { tmpl_sprite_train10(4, 260) }
 
 /* TEM2 switches */
 switch(FEAT_TRAINS, SELF, switch_tem2_articulated, extra_callback_info1) {

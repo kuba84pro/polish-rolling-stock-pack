@@ -3,9 +3,9 @@
 // (c) kuba84pro, GPL 2.0
 
 /* SA107 sprites */
-spriteset(sset_sa107_purchase, "gfx/SA107.png")         { tmpl_sprite_purchase(4, 85) }
-spriteset(sset_sa107, "gfx/SA107.png")                  { tmpl_sprite_train(4, 15) }
-spriteset(sset_sa107_open, "gfx/SA107.png")             { tmpl_sprite_train(4, 50) }
+spriteset(sset_sa107_purchase, "gfx/SA107.png")         { tmpl_sprite_purchase(4, 100) }
+spriteset(sset_sa107, "gfx/SA107.png")                  { tmpl_sprite_train(4, 20) }
+spriteset(sset_sa107_open, "gfx/SA107.png")             { tmpl_sprite_train(4, 60) }
 
 spritegroup sgroup_sa107 {
     loaded:     [sset_sa107];

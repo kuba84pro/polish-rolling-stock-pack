@@ -6,7 +6,7 @@
 spriteset(sset_sn80_purchase, "gfx/sn80.png")           { tmpl_sprite_purchase(4, 60) }
 spriteset(sset_sn80, "gfx/sn80.png")                    { tmpl_sprite_train12(4, 20) }
 spriteset(sset_sn80_open, "gfx/sn80.png")               { tmpl_sprite_train12(4, 80) }
-spriteset(sset_sn80_cut, "gfx/sn80.png")                { tmpl_sprite_train12(4, 128) }
+spriteset(sset_sn80_cut, "gfx/sn80.png")                { tmpl_sprite_train12(4, 120) }
 spritegroup sgroup_sn80 {
     loaded:     [sset_sn80];
     loading:    [sset_sn80_open];

@@ -5,8 +5,8 @@
 /* SP47 sprites */
 spriteset(sset_sp47_purchase, "gfx/SP47.png")       { tmpl_sprite_purchase(4, 60) }
 spriteset(sset_sp47, "gfx/SP47.png")                { tmpl_sprite_train12(4, 20) }
-spriteset(sset_sp47_green_purchase, "gfx/SP47.png")       { tmpl_sprite_purchase(4, 125) }
-spriteset(sset_sp47_green, "gfx/SP47.png")      { tmpl_sprite_train12(4, 85) }
+spriteset(sset_sp47_green_purchase, "gfx/SP47.png")       { tmpl_sprite_purchase(4, 120) }
+spriteset(sset_sp47_green, "gfx/SP47.png")      { tmpl_sprite_train12(4, 80) }
 
 /* SP47 switches */
 switch(FEAT_TRAINS, SELF, switch_sp47_articulated, extra_callback_info1) {

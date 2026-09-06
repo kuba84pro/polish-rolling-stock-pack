@@ -3,10 +3,10 @@
 // (c) Tadeusz Domagalski, GPL 2.0
 
 /* eu07a sprites */
-spriteset(sset_eu07a_purchase, "gfx/eu07a.png")   { tmpl_sprite_purchase(4, 59) }
-spriteset(sset_eu07a, "gfx/eu07a.png")            { tmpl_sprite_train10(4, 19) }
-spriteset(sset_eu07a_old_purchase, "gfx/eu07a.png")   { tmpl_sprite_purchase(4, 111) }
-spriteset(sset_eu07a_old, "gfx/eu07a.png")  { tmpl_sprite_train10(4, 78) }
+spriteset(sset_eu07a_purchase, "gfx/eu07a.png")   { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_eu07a, "gfx/eu07a.png")            { tmpl_sprite_train10(4, 20) }
+spriteset(sset_eu07a_old_purchase, "gfx/eu07a.png")   { tmpl_sprite_purchase(4, 120) }
+spriteset(sset_eu07a_old, "gfx/eu07a.png")  { tmpl_sprite_train10(4, 80) }
 
 /* EU07A switches */
 switch(FEAT_TRAINS, SELF, switch_eu07a_articulated, extra_callback_info1) {

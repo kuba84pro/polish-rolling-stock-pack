@@ -6,21 +6,21 @@
 spriteset(sset_et41_purchase, "gfx/et41.png")           { tmpl_sprite_purchase(4, 100) }
 spriteset(sset_et41_purchase_yellow, "gfx/et41.png")    { tmpl_sprite_purchase(4, 200) }
 spriteset(sset_et41_purchase_pkp_cargo, "gfx/et41.png")    { tmpl_sprite_purchase(4, 300) }
-spriteset(sset_et41_purchase_classic_2, "gfx/et41.png")    { tmpl_sprite_purchase(4, 414) }
-spriteset(sset_et41_purchase_classic_3, "gfx/et41.png")    { tmpl_sprite_purchase(4, 527) }
-spriteset(sset_et41_purchase_yellow_2, "gfx/et41.png")    { tmpl_sprite_purchase(4, 654) }
+spriteset(sset_et41_purchase_classic_2, "gfx/et41.png")    { tmpl_sprite_purchase(4, 400) }
+spriteset(sset_et41_purchase_classic_3, "gfx/et41.png")    { tmpl_sprite_purchase(4, 500) }
+spriteset(sset_et41_purchase_yellow_2, "gfx/et41.png")    { tmpl_sprite_purchase(4, 600) }
 spriteset(sset_et41_head, "gfx/et41.png")               { tmpl_sprite_train10(4, 20) }
 spriteset(sset_et41_tail, "gfx/et41.png")               { tmpl_sprite_train10_offset(4, 60, 1) }
 spriteset(sset_et41_head_yellow, "gfx/et41.png")        { tmpl_sprite_train10(4, 120) }
 spriteset(sset_et41_tail_yellow, "gfx/et41.png")        { tmpl_sprite_train10_offset(4, 160, 1) }
 spriteset(sset_et41_head_pkp_cargo, "gfx/et41.png")     { tmpl_sprite_train10(4, 220) }
 spriteset(sset_et41_tail_pkp_cargo, "gfx/et41.png")     { tmpl_sprite_train10_offset(4, 260, 1) }
-spriteset(sset_et41_head_classic_2, "gfx/et41.png")     { tmpl_sprite_train10(4, 334) }
-spriteset(sset_et41_tail_classic_2, "gfx/et41.png")     { tmpl_sprite_train10_offset(4, 374, 1) }
-spriteset(sset_et41_head_classic_3, "gfx/et41.png")     { tmpl_sprite_train10(4, 447) }
-spriteset(sset_et41_tail_classic_3, "gfx/et41.png")     { tmpl_sprite_train10_offset(4, 487, 1) }
-spriteset(sset_et41_head_yellow_2, "gfx/et41.png")     { tmpl_sprite_train10(4, 574) }
-spriteset(sset_et41_tail_yellow_2, "gfx/et41.png")     { tmpl_sprite_train10_offset(4, 614, 1) }
+spriteset(sset_et41_head_classic_2, "gfx/et41.png")     { tmpl_sprite_train10(4, 320) }
+spriteset(sset_et41_tail_classic_2, "gfx/et41.png")     { tmpl_sprite_train10_offset(4, 360, 1) }
+spriteset(sset_et41_head_classic_3, "gfx/et41.png")     { tmpl_sprite_train10(4, 420) }
+spriteset(sset_et41_tail_classic_3, "gfx/et41.png")     { tmpl_sprite_train10_offset(4, 460, 1) }
+spriteset(sset_et41_head_yellow_2, "gfx/et41.png")     { tmpl_sprite_train10(4, 520) }
+spriteset(sset_et41_tail_yellow_2, "gfx/et41.png")     { tmpl_sprite_train10_offset(4, 560, 1) }
 
 /* ET41 switches */
 #define IS_ET41_YELLOW  current_year >= 1989
