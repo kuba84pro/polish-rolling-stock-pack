@@ -6,11 +6,11 @@
 spriteset(sset_111ed_rcp_purchase, "gfx/111ed.png")       { tmpl_sprite_purchase(4, 60) }
 spriteset(sset_111ed_rcp, "gfx/111ed.png")                { tmpl_sprite_train10(4, 20) }
 spriteset(sset_111eo_pcc_purchase, "gfx/111ed.png")       { tmpl_sprite_purchase(4, 120) }
-spriteset(sset_111eo_pcc, "gfx/111ed.png")         { tmpl_sprite_train10(4, 85) }
-spriteset(sset_111ed_cu_purchase, "gfx/111ed.png")       { tmpl_sprite_purchase(4, 175) }
+spriteset(sset_111eo_pcc, "gfx/111ed.png")         { tmpl_sprite_train10(4, 80) }
+spriteset(sset_111ed_cu_purchase, "gfx/111ed.png")       { tmpl_sprite_purchase(4, 180) }
 spriteset(sset_111ed_cu, "gfx/111ed.png")      { tmpl_sprite_train10(4, 140) }
-spriteset(sset_111eo_orion_purchase, "gfx/111ed.png")       { tmpl_sprite_purchase(4, 225) }
-spriteset(sset_111eo_orion, "gfx/111ed.png")      { tmpl_sprite_train10(4, 190) }
+spriteset(sset_111eo_orion_purchase, "gfx/111ed.png")       { tmpl_sprite_purchase(4, 240) }
+spriteset(sset_111eo_orion, "gfx/111ed.png")      { tmpl_sprite_train10(4, 200) }
 
 /* 111ed switches */
 switch(FEAT_TRAINS, SELF, switch_111ed_articulated, getbits(extra_callback_info1, 0, 8)) {

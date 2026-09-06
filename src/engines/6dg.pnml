@@ -4,8 +4,8 @@
 
 /* 6dg sprites */
 // 6dg PKP Cargo
-spriteset(sset_6dg_purchase, "gfx/sm42.png")                { tmpl_sprite_purchase(244, 60) }
-spriteset(sset_6dg, "gfx/sm42.png")                         { tmpl_sprite_train(244, 20) }
+spriteset(sset_6dg_purchase, "gfx/sm42.png")                { tmpl_sprite_purchase(4, 120) }
+spriteset(sset_6dg, "gfx/sm42.png")                         { tmpl_sprite_train(4, 20) }
 
 // 6dg switches
 switch(FEAT_TRAINS, PARENT, switch_6dg_visual_effect_local, 0) {

@@ -3,9 +3,9 @@
 // (c) Tadeusz Domagalski, GPL 2.0
 
 /* E4DCUD (Griffin) sprites */
-spriteset(sset_e4dcud_purchase, "gfx/E4DCUD.png")  { tmpl_sprite_purchase(0, 51) }
-spriteset(sset_e4dcud, "gfx/E4DCUD.png")           { tmpl_sprite_train12(0, 11) }
-spriteset(sset_e4dcud_diesel, "gfx/E4DCUD.png")    { tmpl_sprite_train12(0, 71) }
+spriteset(sset_e4dcud_purchase, "gfx/E4DCUD.png")  { tmpl_sprite_purchase(4, 60) }
+spriteset(sset_e4dcud, "gfx/E4DCUD.png")           { tmpl_sprite_train12(4, 20) }
+spriteset(sset_e4dcud_diesel, "gfx/E4DCUD.png")    { tmpl_sprite_train12(4, 80) }
 
 
 /* E4DCUD (Griffin) switches */

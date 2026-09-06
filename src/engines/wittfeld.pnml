@@ -2,11 +2,11 @@
 // (c) kuba84pro, licence: GPLv2
 
 /* Wittfeld sprites */
-spriteset(sset_wittfeld_purchase, "gfx/Wittfeld.png")           { tmpl_sprite_purchase(4, 153) }
-spriteset(sset_wittfeld_head, "gfx/Wittfeld.png")               { tmpl_sprite_train(4, 15) }
-spriteset(sset_wittfeld_tail, "gfx/Wittfeld.png")               { tmpl_sprite_train(4, 50) }
-spriteset(sset_wittfeld_head_open, "gfx/Wittfeld.png")               { tmpl_sprite_train(4, 85) }
-spriteset(sset_wittfeld_tail_open, "gfx/Wittfeld.png")               { tmpl_sprite_train(4, 120) }
+spriteset(sset_wittfeld_purchase, "gfx/Wittfeld.png")           { tmpl_sprite_purchase(4, 180) }
+spriteset(sset_wittfeld_head, "gfx/Wittfeld.png")               { tmpl_sprite_train(4, 20) }
+spriteset(sset_wittfeld_tail, "gfx/Wittfeld.png")               { tmpl_sprite_train(4, 60) }
+spriteset(sset_wittfeld_head_open, "gfx/Wittfeld.png")               { tmpl_sprite_train(4, 100) }
+spriteset(sset_wittfeld_tail_open, "gfx/Wittfeld.png")               { tmpl_sprite_train(4, 140) }
 
 spritegroup sgroup_wittfeld_head {
     loaded:     [sset_wittfeld_head];

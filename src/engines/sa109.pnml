@@ -1,15 +1,15 @@
 /* SA109 sprites */
-spriteset(sset_sa109_slaskie_purchase, "gfx/SA109.png")           { tmpl_sprite_purchase(4, 153) }
-spriteset(sset_sa109_slaskie_head, "gfx/SA109.png")                    { tmpl_sprite_train(4, 15) }
-spriteset(sset_sa109_slaskie_head_open, "gfx/SA109.png")               { tmpl_sprite_train(4, 85) }
-spriteset(sset_sa109_slaskie_tail, "gfx/SA109.png")                    { tmpl_sprite_train(4, 50) }
-spriteset(sset_sa109_slaskie_tail_open, "gfx/SA109.png")               { tmpl_sprite_train(4, 120) }
+spriteset(sset_sa109_slaskie_purchase, "gfx/SA109.png")           { tmpl_sprite_purchase(4, 180) }
+spriteset(sset_sa109_slaskie_head, "gfx/SA109.png")                    { tmpl_sprite_train(4, 20) }
+spriteset(sset_sa109_slaskie_head_open, "gfx/SA109.png")               { tmpl_sprite_train(4, 100) }
+spriteset(sset_sa109_slaskie_tail, "gfx/SA109.png")                    { tmpl_sprite_train(4, 60) }
+spriteset(sset_sa109_slaskie_tail_open, "gfx/SA109.png")               { tmpl_sprite_train(4, 140) }
 
-spriteset(sset_sa109_malopolska_purchase, "gfx/SA109.png")           { tmpl_sprite_purchase(4, 310) }
-spriteset(sset_sa109_malopolska_head, "gfx/SA109.png")                    { tmpl_sprite_train(4, 172) }
-spriteset(sset_sa109_malopolska_head_open, "gfx/SA109.png")               { tmpl_sprite_train(4, 242) }
-spriteset(sset_sa109_malopolska_tail, "gfx/SA109.png")                    { tmpl_sprite_train(4, 207) }
-spriteset(sset_sa109_malopolska_tail_open, "gfx/SA109.png")               { tmpl_sprite_train(4, 277) }
+spriteset(sset_sa109_malopolska_purchase, "gfx/SA109.png")           { tmpl_sprite_purchase(4, 360) }
+spriteset(sset_sa109_malopolska_head, "gfx/SA109.png")                    { tmpl_sprite_train(4, 200) }
+spriteset(sset_sa109_malopolska_head_open, "gfx/SA109.png")               { tmpl_sprite_train(4, 280) }
+spriteset(sset_sa109_malopolska_tail, "gfx/SA109.png")                    { tmpl_sprite_train(4, 240) }
+spriteset(sset_sa109_malopolska_tail_open, "gfx/SA109.png")               { tmpl_sprite_train(4, 320) }
 
 spritegroup sgroup_sa109_slaskie_head {
     loaded:     [sset_sa109_slaskie_head];

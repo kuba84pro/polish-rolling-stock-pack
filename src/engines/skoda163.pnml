@@ -8,14 +8,14 @@ spriteset(sset_skoda163, "gfx/Skoda163.png")            { tmpl_sprite_train10(4,
 spriteset(sset_skoda163_pkp_pr_purchase, "gfx/Skoda163.png")   { tmpl_sprite_purchase(4, 120) }
 spriteset(sset_skoda163_pkp_pr, "gfx/Skoda163.png")  { tmpl_sprite_train10(4, 80) }
 
-spriteset(sset_skoda163_cd_purchase, "gfx/Skoda163.png")   { tmpl_sprite_purchase(4, 176) }
-spriteset(sset_skoda163_cd, "gfx/Skoda163.png")  { tmpl_sprite_train10(4, 136) }
-spriteset(sset_skoda163_022_purchase, "gfx/Skoda163.png")   { tmpl_sprite_purchase(4, 232) }
-spriteset(sset_skoda163_022, "gfx/Skoda163.png")  { tmpl_sprite_train10(4, 192) }
-spriteset(sset_skoda163_cd_cargo_purchase, "gfx/Skoda163.png")   { tmpl_sprite_purchase(4, 288) }
-spriteset(sset_skoda163_cd_cargo, "gfx/Skoda163.png")  { tmpl_sprite_train10(4, 248) }
-spriteset(sset_skoda163_classic_purchase, "gfx/Skoda163.png")   { tmpl_sprite_purchase(4, 344) }
-spriteset(sset_skoda163_classic, "gfx/Skoda163.png")  { tmpl_sprite_train10(4, 304) }
+spriteset(sset_skoda163_cd_purchase, "gfx/Skoda163.png")   { tmpl_sprite_purchase(4, 180) }
+spriteset(sset_skoda163_cd, "gfx/Skoda163.png")  { tmpl_sprite_train10(4, 140) }
+spriteset(sset_skoda163_022_purchase, "gfx/Skoda163.png")   { tmpl_sprite_purchase(4, 240) }
+spriteset(sset_skoda163_022, "gfx/Skoda163.png")  { tmpl_sprite_train10(4, 200) }
+spriteset(sset_skoda163_cd_cargo_purchase, "gfx/Skoda163.png")   { tmpl_sprite_purchase(4, 300) }
+spriteset(sset_skoda163_cd_cargo, "gfx/Skoda163.png")  { tmpl_sprite_train10(4, 260) }
+spriteset(sset_skoda163_classic_purchase, "gfx/Skoda163.png")   { tmpl_sprite_purchase(4, 360) }
+spriteset(sset_skoda163_classic, "gfx/Skoda163.png")  { tmpl_sprite_train10(4, 320) }
 
 /* SKODA163 switches */
 switch(FEAT_TRAINS, SELF, switch_skoda163_articulated, extra_callback_info1) {

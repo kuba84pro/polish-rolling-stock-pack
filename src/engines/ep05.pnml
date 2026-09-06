@@ -9,12 +9,12 @@ spriteset(sset_ep05_pkpcargo_purchase, "gfx/ep05.png")   { tmpl_sprite_purchase(
 spriteset(sset_ep05_pkpcargo, "gfx/ep05.png")   { tmpl_sprite_train10(4, 80) }
 spriteset(sset_eu05_purchase, "gfx/eu05.png")   { tmpl_sprite_purchase(4, 60) }
 spriteset(sset_eu05, "gfx/eu05.png")   { tmpl_sprite_train10(4, 20) }
-spriteset(sset_ep05_without_tc_purchase, "gfx/ep05.png")   { tmpl_sprite_purchase(4, 190) }
-spriteset(sset_ep05_without_tc, "gfx/ep05.png")            { tmpl_sprite_train10(4, 150) }
-spriteset(sset_ep05_023_purchase, "gfx/ep05.png")   { tmpl_sprite_purchase(4, 250) }
-spriteset(sset_ep05_023, "gfx/ep05.png")            { tmpl_sprite_train10(4, 210) }
-spriteset(sset_ep05_023_anniversary_purchase, "gfx/ep05.png")   { tmpl_sprite_purchase(4, 310) }
-spriteset(sset_ep05_023_anniversary, "gfx/ep05.png")            { tmpl_sprite_train10(4, 270) }
+spriteset(sset_ep05_without_tc_purchase, "gfx/ep05.png")   { tmpl_sprite_purchase(4, 180) }
+spriteset(sset_ep05_without_tc, "gfx/ep05.png")            { tmpl_sprite_train10(4, 140) }
+spriteset(sset_ep05_023_purchase, "gfx/ep05.png")   { tmpl_sprite_purchase(4, 240) }
+spriteset(sset_ep05_023, "gfx/ep05.png")            { tmpl_sprite_train10(4, 200) }
+spriteset(sset_ep05_023_anniversary_purchase, "gfx/ep05.png")   { tmpl_sprite_purchase(4, 300) }
+spriteset(sset_ep05_023_anniversary, "gfx/ep05.png")            { tmpl_sprite_train10(4, 260) }
 
 /* EU05 switches */
 switch(FEAT_TRAINS, SELF, switch_eu05_articulated, extra_callback_info1) {
