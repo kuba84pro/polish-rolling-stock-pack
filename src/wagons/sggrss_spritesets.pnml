@@ -400,8 +400,8 @@ switch(FEAT_TRAINS, SELF, switch_sggrss_cargo_capacity, cargo_type_in_veh) {
     GOOD: return 108;
     return 108/2;
 }
-switch(FEAT_TRAINS, SELF, switch_sggrss_speed, cargo_count % 109) {
+/*switch(FEAT_TRAINS, SELF, switch_sggrss_speed, cargo_count % 109) {
     1..108: return 100;
     return 100;
-}
+}*/
 #define SGGRSS_CAPACITY    108

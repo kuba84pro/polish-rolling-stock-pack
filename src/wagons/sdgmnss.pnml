@@ -214,10 +214,10 @@ switch(FEAT_TRAINS, SELF, switch_sdgmnss_cargo_capacity, cargo_type_in_veh) {
     GOOD: return 68*2;
     return 68;
 }
-switch(FEAT_TRAINS, SELF, switch_sdgmnss_speed, cargo_count % 69) {
+/*switch(FEAT_TRAINS, SELF, switch_sdgmnss_speed, cargo_count % 69) {
     1..68: return 100;
     return 120;
-}
+}*/
 
 /* Define the actual train */
 #define SDGMNSS_CAPACITY    68
@@ -265,7 +265,7 @@ item(FEAT_TRAINS, item_sdgmnss, 20805) {
         random_trigger:             switch_sdgmnss_graphics_goods;
         loading_speed:              return 20*(cargo_capacity/SDGMNSS_CAPACITY);
         purchase_speed:             return 120;
-        speed:                      switch_sdgmnss_speed;
+        /*speed:                      switch_sdgmnss_speed;*/
         cargo_age_period:           switch_sdgmnss_cargo_age_period;
     }
 }
@@ -333,7 +333,7 @@ item(FEAT_TRAINS, item_sdgmnss_pkp_cargo, 20806) {
         random_trigger:             switch_sdgmnss_pkp_cargo_graphics_goods;
         loading_speed:              return 20*(cargo_capacity/SDGMNSS_CAPACITY);
         purchase_speed:             return 120;
-        speed:                      switch_sdgmnss_speed;
+        /*speed:                      switch_sdgmnss_speed;*/
         cargo_age_period:           switch_sdgmnss_cargo_age_period;
     }
 }
@@ -399,7 +399,7 @@ item(FEAT_TRAINS, item_sdgmnss_obb, 20807) {
         random_trigger:             switch_sdgmnss_obb_graphics_goods;
         loading_speed:              return 20*(cargo_capacity/SDGMNSS_CAPACITY);
         purchase_speed:             return 120;
-        speed:                      switch_sdgmnss_speed;
+        /*speed:                      switch_sdgmnss_speed;*/
         cargo_age_period:           switch_sdgmnss_cargo_age_period;
     }
 }

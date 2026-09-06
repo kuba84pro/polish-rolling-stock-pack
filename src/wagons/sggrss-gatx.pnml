@@ -508,7 +508,7 @@ item(FEAT_TRAINS, item_sggrss_gatx, 15005) {
         cargo_capacity:             switch_sggrss_cargo_capacity;
         random_trigger:             switch_sggrss_gatx_graphics;
         purchase_speed:             return 100;
-        speed:                      switch_sggrss_speed;
+        //speed:                      switch_sggrss_speed;
         loading_speed:              return 20*(cargo_capacity/SGGRSS_CAPACITY);
     }
 }
